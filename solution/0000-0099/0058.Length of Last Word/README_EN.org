@@ -1,0 +1,186 @@
+* [[https://leetcode.com/problems/length-of-last-word][58. Length of
+Last Word]]
+  :PROPERTIES:
+  :CUSTOM_ID: length-of-last-word
+  :END:
+[[./solution/0000-0099/0058.Length of Last Word/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a string s consists of some words separated by spaces, return the
+length of the last word in the string. If the last word does not exist,
+return 0.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A word is a maximal substring consisting of non-space characters only.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>Input:</strong> s = "Hello World"
+  <strong>Output:</strong> 5
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>Input:</strong> s = " "
+  <strong>Output:</strong> 0
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s.length <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s consists of only English letters and spaces ' '.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def lengthOfLastWord(self, s: str) -> int:
+          last_word_length = 0
+          meet_word = False
+          for i in range(len(s) - 1, -1, -1):
+              ch = ord(s[i])
+              if ch >= 65 and ch <= 122:
+                  meet_word = True
+                  last_word_length += 1
+              elif meet_word:
+                  break
+          return last_word_length
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int lengthOfLastWord(String s) {
+          int n = s.length();
+          int lastWordLength = 0;
+          boolean meetWord = false;
+          for (int i = n - 1; i >= 0; --i) {
+              char ch = s.charAt(i);
+              if (ch >= 'A' && ch <= 'z') {
+                  meetWord = true;
+                  ++lastWordLength;
+              } else if (meetWord) {
+                  break;
+              }
+          }
+          return lastWordLength;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

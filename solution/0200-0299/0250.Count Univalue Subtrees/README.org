@@ -1,0 +1,107 @@
+* [[https://leetcode-cn.com/problems/count-univalue-subtrees][250.
+统计同值子树]]
+  :PROPERTIES:
+  :CUSTOM_ID: 统计同值子树
+  :END:
+[[./solution/0200-0299/0250.Count Univalue Subtrees/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个二叉树，统计该二叉树数值相同的子树个数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+同值子树是指该子树的所有节点都拥有相同的数值。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入: </strong>root = [5,1,5,5,5,null,5]
+
+                5
+               / \
+              1   5
+             / \   \
+            5   5   5
+
+  <strong>输出:</strong> 4
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,203 @@
+* [[https://leetcode.com/problems/battleships-in-a-board][419.
+Battleships in a Board]]
+  :PROPERTIES:
+  :CUSTOM_ID: battleships-in-a-board
+  :END:
+[[./solution/0400-0499/0419.Battleships in a Board/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an m x n matrix board where each cell is a battleship 'X' or empty
+'.', return the number of the battleships on board.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Battleships can only be placed horizontally or vertically on board. In
+other words, they can only be made of the shape 1 x k (1 row, k columns)
+or k x 1 (k rows, 1 column), where k can be of any size. At least one
+horizontal or vertical cell separates between two battleships (i.e.,
+there are no adjacent battleships).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> board = [[&quot;X&quot;,&quot;.&quot;,&quot;.&quot;,&quot;X&quot;],[&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;X&quot;],[&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;X&quot;]]
+  <strong>Output:</strong> 2
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> board = [[&quot;.&quot;]]
+  <strong>Output:</strong> 0
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+m == board.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n == board[i].length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= m, n <= 200
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+board[i][j] is either '.' or 'X'.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow up: Could you do it in one-pass, using only O(1) extra memory and
+without modifying the values board?
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

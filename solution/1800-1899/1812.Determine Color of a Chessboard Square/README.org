@@ -1,0 +1,251 @@
+* [[https://leetcode-cn.com/problems/determine-color-of-a-chessboard-square][1812.
+判断国际象棋棋盘中一个格子的颜色]]
+  :PROPERTIES:
+  :CUSTOM_ID: 判断国际象棋棋盘中一个格子的颜色
+  :END:
+[[./solution/1800-1899/1812.Determine Color of a Chessboard Square/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个坐标 coordinates ，它是一个字符串，表示国际象棋棋盘中一个格子的坐标。下图是国际象棋棋盘示意图。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+如果所给格子的颜色是白色，请你返回 true，如果是黑色，请返回 false 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定坐标一定代表国际象棋棋盘上一个存在的格子。坐标第一个字符是字母，第二个字符是数字。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <b>输入：</b>coordinates = "a1"
+  <b>输出：</b>false
+  <b>解释：</b>如上图棋盘所示，"a1" 坐标的格子是黑色的，所以返回 false 。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <b>输入：</b>coordinates = "h3"
+  <b>输出：</b>true
+  <b>解释：</b>如上图棋盘所示，"h3" 坐标的格子是白色的，所以返回 true 。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <b>输入：</b>coordinates = "c7"
+  <b>输出：</b>false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+coordinates.length == 2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+'a' <= coordinates[0] <= 'h'
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+'1' <= coordinates[1] <= '8'
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def squareIsWhite(self, coordinates: str) -> bool:
+          x = ord(coordinates[0]) - ord('a') + 1
+          y = int(coordinates[1])
+          return ((x + y) & 1) == 1
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public boolean squareIsWhite(String coordinates) {
+          int x = coordinates.charAt(0) - 'a' + 1;
+          int y = coordinates.charAt(1) - '0';
+          return ((x + y) & 1) == 1;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {string} coordinates
+   * @return {boolean}
+   */
+   var squareIsWhite = function(coordinates) {
+      let x = coordinates.charAt(0).charCodeAt() - 'a'.charCodeAt() + 1;
+      let y = Number(coordinates.charAt(1));
+      return ((x + y) & 1) == 1;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

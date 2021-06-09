@@ -1,0 +1,256 @@
+* [[https://leetcode.com/problems/flatten-2d-vector][251. Flatten 2D
+Vector]]
+  :PROPERTIES:
+  :CUSTOM_ID: flatten-2d-vector
+  :END:
+[[./solution/0200-0299/0251.Flatten 2D Vector/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Design an iterator to flatten a 2D vector. It should support the next
+and hasNext operations.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement the Vector2D class:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Vector2D(int[][] vec) initializes the object with the 2D vector vec.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+next() returns the next element from the 2D vector and moves the pointer
+one step forward. You may assume that all the calls to next are valid.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+hasNext() returns true if there are still some elements in the vector,
+and false otherwise.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input</strong>
+  [&quot;Vector2D&quot;, &quot;next&quot;, &quot;next&quot;, &quot;next&quot;, &quot;hasNext&quot;, &quot;hasNext&quot;, &quot;next&quot;, &quot;hasNext&quot;]
+  [[[[1, 2], [3], [4]]], [], [], [], [], [], [], []]
+  <strong>Output</strong>
+  [null, 1, 2, 3, true, true, 4, false]
+
+  <strong>Explanation</strong>
+  Vector2D vector2D = new Vector2D([[1, 2], [3], [4]]);
+  vector2D.next();    // return 1
+  vector2D.next();    // return 2
+  vector2D.next();    // return 3
+  vector2D.hasNext(); // return True
+  vector2D.hasNext(); // return True
+  vector2D.next();    // return 4
+  vector2D.hasNext(); // return False
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= vec.length <= 200
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= vec[i].length <= 500
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-500 <= vec[i][j] <= 500
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+At most 105 calls will be made to next and hasNext.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow up: As an added challenge, try to code it using only iterators in
+C++ or iterators in Java.
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Vector2D:
+
+      def __init__(self, vec: List[List[int]]):
+          self.flatten = []
+          for item in vec:
+              for e in item:
+                  self.flatten.append(e)
+          self.cur = -1
+
+      def next(self) -> int:
+          self.cur += 1
+          return self.flatten[self.cur]
+
+      def hasNext(self) -> bool:
+          return self.cur < len(self.flatten) - 1
+
+
+  # Your Vector2D object will be instantiated and called as such:
+  # obj = Vector2D(vec)
+  # param_1 = obj.next()
+  # param_2 = obj.hasNext()
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

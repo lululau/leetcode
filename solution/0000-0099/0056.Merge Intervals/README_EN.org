@@ -1,0 +1,160 @@
+* [[https://leetcode.com/problems/merge-intervals][56. Merge Intervals]]
+  :PROPERTIES:
+  :CUSTOM_ID: merge-intervals
+  :END:
+[[./solution/0000-0099/0056.Merge Intervals/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array of intervals where intervals[i] = [starti, endi], merge
+all overlapping intervals, and return an array of the non-overlapping
+intervals that cover all the intervals in the input.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> intervals = [[1,3],[2,6],[8,10],[15,18]]
+  <strong>Output:</strong> [[1,6],[8,10],[15,18]]
+  <strong>Explanation:</strong> Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> intervals = [[1,4],[4,5]]
+  <strong>Output:</strong> [[1,5]]
+  <strong>Explanation:</strong> Intervals [1,4] and [4,5] are considered overlapping.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= intervals.length <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+intervals[i].length == 2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= starti <= endi <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,166 @@
+* [[https://leetcode.com/problems/sum-of-floored-pairs][1862. Sum of
+Floored Pairs]]
+  :PROPERTIES:
+  :CUSTOM_ID: sum-of-floored-pairs
+  :END:
+[[./solution/1800-1899/1862.Sum of Floored Pairs/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an integer array nums, return the sum of floor(nums[i] / nums[j])
+for all pairs of indices 0 <= i, j < nums.length in the array. Since the
+answer may be too large, return it modulo 109 + 7.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The floor() function returns the integer part of the division.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [2,5,9]
+  <strong>Output:</strong> 10
+  <strong>Explanation:</strong>
+  floor(2 / 5) = floor(2 / 9) = floor(5 / 9) = 0
+  floor(2 / 2) = floor(5 / 5) = floor(9 / 9) = 1
+  floor(5 / 2) = 2
+  floor(9 / 2) = 4
+  floor(9 / 5) = 1
+  We calculate the floor of the division for every pair of indices in the array then sum them up.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [7,7,7,7,7,7,7]
+  <strong>Output:</strong> 49
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums[i] <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

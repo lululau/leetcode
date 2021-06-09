@@ -1,0 +1,219 @@
+* [[https://leetcode.com/problems/best-time-to-buy-and-sell-stock][121.
+Best Time to Buy and Sell Stock]]
+  :PROPERTIES:
+  :CUSTOM_ID: best-time-to-buy-and-sell-stock
+  :END:
+[[./solution/0100-0199/0121.Best Time to Buy and Sell Stock/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given an array prices where prices[i] is the price of a given
+stock on the ith day.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You want to maximize your profit by choosing a single day to buy one
+stock and choosing a different day in the future to sell that stock.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the maximum profit you can achieve from this transaction. If you
+cannot achieve any profit, return 0.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> prices = [7,1,5,3,6,4]
+  <strong>Output:</strong> 5
+  <strong>Explanation:</strong> Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+  Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> prices = [7,6,4,3,1]
+  <strong>Output:</strong> 0
+  <strong>Explanation:</strong> In this case, no transactions are done and the max profit = 0.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= prices.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= prices[i] <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def maxProfit(self, prices: List[int]) -> int:
+          if not prices:
+              return 0
+          res = 0
+          min_price = prices[0]
+          for price in prices:
+              min_price = min(min_price, price)
+              res = max(res, price - min_price)
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int maxProfit(int[] prices) {
+          if (prices == null) return 0;
+          int res = 0;
+          int min = Integer.MAX_VALUE;
+          for (int price : prices) {
+              min = Math.min(min, price);
+              res = Math.max(res, price - min);
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number[]} prices
+   * @return {number}
+   */
+  const maxProfit = function (prices) {
+    let min = prices[0];
+    let profit = 0;
+    for (let i = 0; i < prices.length; i++) {
+      if (prices[i] < min) {
+        min = prices[i];
+      }
+      if (profit < prices[i] - min) {
+        profit = prices[i] - min;
+      }
+    }
+    return profit;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

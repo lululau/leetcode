@@ -1,0 +1,111 @@
+* [[https://leetcode.com/problems/minimum-factorization][625. Minimum
+Factorization]]
+  :PROPERTIES:
+  :CUSTOM_ID: minimum-factorization
+  :END:
+[[./solution/0600-0699/0625.Minimum Factorization/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a positive integer a, find the smallest positive integer b whose
+multiplication of each digit equals to a.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If there is no answer or the answer is not fit in 32-bit signed integer,
+then return 0.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1
+
+Input:
+
+#+begin_html
+  <pre>48 </pre>
+#+end_html
+
+Output:
+
+#+begin_html
+  <pre>68</pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2
+
+Input:
+
+#+begin_html
+  <pre>15</pre>
+#+end_html
+
+Output:
+
+#+begin_html
+  <pre>35</pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

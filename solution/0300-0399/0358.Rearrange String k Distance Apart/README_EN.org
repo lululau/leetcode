@@ -1,0 +1,179 @@
+* [[https://leetcode.com/problems/rearrange-string-k-distance-apart][358.
+Rearrange String k Distance Apart]]
+  :PROPERTIES:
+  :CUSTOM_ID: rearrange-string-k-distance-apart
+  :END:
+[[./solution/0300-0399/0358.Rearrange String k Distance Apart/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a string s and an integer k, rearrange s such that the same
+characters are at least distance k from each other. If it is not
+possible to rearrange the string, return an empty string "".
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;aabbcc&quot;, k = 3
+  <strong>Output:</strong> &quot;abcabc&quot;
+  <strong>Explanation:</strong> The same letters are at least a distance of 3 from each other.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;aaabc&quot;, k = 3
+  <strong>Output:</strong> &quot;&quot;
+  <strong>Explanation:</strong> It is not possible to rearrange the string.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;aaadbbcc&quot;, k = 2
+  <strong>Output:</strong> &quot;abacabcd&quot;
+  <strong>Explanation:</strong> The same letters are at least a distance of 2 from each other.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s.length <= 3 * 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s consists of only lowercase English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= k <= s.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

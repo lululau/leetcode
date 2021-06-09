@@ -1,0 +1,97 @@
+* [[https://leetcode-cn.com/problems/reverse-bits-lcci][05.03. Reverse
+Bits]]
+  :PROPERTIES:
+  :CUSTOM_ID: reverse-bits
+  :END:
+[[./lcci/05.03.Reverse Bits/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You have an integer and you can flip exactly one bit from a 0 to a 1.
+Write code to find the length of the longest sequence of 1s you could
+create.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> <code>num</code> = 1775(11011101111<sub>2</sub>)
+
+  <strong>Output:</strong> 8
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> <code>num</code> = 7(0111<sub>2</sub>)
+
+  <strong>Output:</strong> 4
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,213 @@
+* [[https://leetcode-cn.com/problems/my-calendar-iii][732.
+我的日程安排表 III]]
+  :PROPERTIES:
+  :CUSTOM_ID: 我的日程安排表-iii
+  :END:
+[[./solution/0700-0799/0732.My Calendar III/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+当 k 个日程安排有一些时间上的交叉时（例如 k
+个日程安排都在同一时间内），就会产生 k 次预订。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一些日程安排 [start, end) ，请你在每个日程安排添加后，返回一个整数 k
+，表示所有先前日程安排会产生的最大 k 次预订。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+实现一个 MyCalendarThree
+类来存放你的日程安排，你可以一直添加新的日程安排。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+MyCalendarThree() 初始化对象。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int book(int start, int end) 返回一个整数 k ，表示日历中存在的 k
+次预订的最大值。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>
+  ["MyCalendarThree", "book", "book", "book", "book", "book", "book"]
+  [[], [10, 20], [50, 60], [10, 40], [5, 15], [5, 10], [25, 55]]
+  <strong>输出：</strong>
+  [null, 1, 1, 2, 3, 3, 3]
+
+  <strong>解释：</strong>
+  MyCalendarThree myCalendarThree = new MyCalendarThree();
+  myCalendarThree.book(10, 20); // 返回 1 ，第一个日程安排可以预订并且不存在相交，所以最大 k 次预订是 1 次预订。
+  myCalendarThree.book(50, 60); // 返回 1 ，第二个日程安排可以预订并且不存在相交，所以最大 k 次预订是 1 次预订。
+  myCalendarThree.book(10, 40); // 返回 2 ，第三个日程安排 [10, 40) 与第一个日程安排相交，所以最大 k 次预订是 2 次预订。
+  myCalendarThree.book(5, 15); // 返回 3 ，剩下的日程安排的最大 k 次预订是 3 次预订。
+  myCalendarThree.book(5, 10); // 返回 3
+  myCalendarThree.book(25, 55); // 返回 3
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= start < end <= 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+每个测试用例，调用 book 函数最多不超过 400次
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

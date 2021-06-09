@@ -1,0 +1,214 @@
+* [[https://leetcode.com/problems/minimum-value-to-get-positive-step-by-step-sum][1413.
+Minimum Value to Get Positive Step by Step Sum]]
+  :PROPERTIES:
+  :CUSTOM_ID: minimum-value-to-get-positive-step-by-step-sum
+  :END:
+[[./solution/1400-1499/1413.Minimum Value to Get Positive Step by Step Sum/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array of integers nums, you start with an initial positive
+value startValue.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+In each iteration, you calculate the step by step sum of
+startValue plus elements in nums (from left to right).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the minimum positive value of startValue such that the step by
+step sum is never less than 1.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> nums = [-3,2,-3,4,2]
+
+  <strong>Output:</strong> 5
+
+  <strong>Explanation: </strong>If you choose startValue = 4, in the third iteration your step by step sum is less than 1.
+
+  <strong>                step by step sum
+
+  &nbsp;               startValue = 4 | startValue = 5 | nums
+
+  </strong>&nbsp;                 (4 <strong>-3</strong> ) = 1  | (5 <strong>-3</strong> ) = 2    |  -3
+
+  &nbsp;                 (1 <strong>+2</strong> ) = 3  | (2 <strong>+2</strong> ) = 4    |   2
+
+  &nbsp;                 (3 <strong>-3</strong> ) = 0  | (4 <strong>-3</strong> ) = 1    |  -3
+
+  &nbsp;                 (0 <strong>+4</strong> ) = 4  | (1 <strong>+4</strong> ) = 5    |   4
+
+  &nbsp;                 (4 <strong>+2</strong> ) = 6  | (5 <strong>+2</strong> ) = 7    |   2
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> nums = [1,2]
+
+  <strong>Output:</strong> 1
+
+  <strong>Explanation:</strong> Minimum start value should be positive. 
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> nums = [1,-2,-3]
+
+  <strong>Output:</strong> 5
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-100 <= nums[i] <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

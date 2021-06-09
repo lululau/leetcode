@@ -1,0 +1,211 @@
+* [[https://leetcode-cn.com/problems/encode-and-decode-strings][271.
+字符串的编码与解码]]
+  :PROPERTIES:
+  :CUSTOM_ID: 字符串的编码与解码
+  :END:
+[[./solution/0200-0299/0271.Encode and Decode Strings/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你设计一个算法，可以将一个 字符串列表 编码成为一个 字符串。这个编码后的字符串是可以通过网络进行高效传送的，并且可以在接收端被解码回原来的字符串列表。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+1 号机（发送方）有如下函数：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>string encode(vector&lt;string&gt; strs) {
+    // ... your code
+    return encoded_string;
+  }</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+2 号机（接收方）有如下函数：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>vector&lt;string&gt; decode(string s) {
+    //... your code
+    return strs;
+  }
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+1 号机（发送方）执行：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>string encoded_string = encode(strs);
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+2 号机（接收方）执行：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>vector&lt;string&gt; strs2 = decode(encoded_string);
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+此时，2 号机（接收方）的 strs2 需要和 1 号机（发送方）的 strs 相同。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你来实现这个 encode 和 decode 方法。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+因为字符串可能会包含 256 个合法 ascii
+字符中的任何字符，所以您的算法必须要能够处理任何可能会出现的字符。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+请勿使用 “类成员”、“全局变量” 或 “静态变量”
+来存储这些状态，您的编码和解码算法应该是非状态依赖的。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+请不要依赖任何方法库，例如
+eval 又或者是 serialize 之类的方法。本题的宗旨是需要您自己实现 “编码” 和
+“解码” 算法。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

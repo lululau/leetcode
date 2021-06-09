@@ -1,0 +1,241 @@
+* [[https://leetcode.com/problems/remove-outermost-parentheses][1021.
+Remove Outermost Parentheses]]
+  :PROPERTIES:
+  :CUSTOM_ID: remove-outermost-parentheses
+  :END:
+[[./solution/1000-1099/1021.Remove Outermost Parentheses/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+A valid parentheses string is either empty (""), "(" + A + ")", or A +
+B, where A and B are valid parentheses strings, and + represents string
+concatenation.  For example, "", "()", "(())()", and "(()(()))" are all
+valid parentheses strings.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A valid parentheses string S is primitive if it is nonempty, and there
+does not exist a way to split it into S = A+B, with A and B nonempty
+valid parentheses strings.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a valid parentheses string S, consider its primitive
+decomposition: S = P_1 + P_2 + ... + P_k, where P_i are primitive valid
+parentheses strings.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return S after removing the outermost parentheses of every primitive
+string in the primitive decomposition of S.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-1-1">&quot;(()())(())&quot;</span>
+
+  <strong>Output: </strong><span id="example-output-1">&quot;()()()&quot;</span>
+
+  <strong>Explanation: </strong>
+
+  The input string is &quot;(()())(())&quot;, with primitive decomposition &quot;(()())&quot; + &quot;(())&quot;.
+
+  After removing outer parentheses of each part, this is &quot;()()&quot; + &quot;()&quot; = &quot;()()()&quot;.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-2-1">&quot;(()())(())(()(()))&quot;</span>
+
+  <strong>Output: </strong><span id="example-output-2">&quot;()()()()(())&quot;</span>
+
+  <strong>Explanation: </strong>
+
+  The input string is &quot;(()())(())(()(()))&quot;, with primitive decomposition &quot;(()())&quot; + &quot;(())&quot; + &quot;(()(()))&quot;.
+
+  After removing outer parentheses of each part, this is &quot;()()&quot; + &quot;()&quot; + &quot;()(())&quot; = &quot;()()()()(())&quot;.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-3-1">&quot;()()&quot;</span>
+
+  <strong>Output: </strong><span id="example-output-3">&quot;&quot;</span>
+
+  <strong>Explanation: </strong>
+
+  The input string is &quot;()()&quot;, with primitive decomposition &quot;()&quot; + &quot;()&quot;.
+
+  After removing outer parentheses of each part, this is &quot;&quot; + &quot;&quot; = &quot;&quot;.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+S.length <= 10000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+S[i] is "(" or ")"
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+S is a valid parentheses string
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+ 
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

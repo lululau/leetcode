@@ -1,0 +1,197 @@
+* [[https://leetcode.com/problems/investments-in-2016][585. Investments
+in 2016]]
+  :PROPERTIES:
+  :CUSTOM_ID: investments-in-2016
+  :END:
+[[./solution/0500-0599/0585.Investments in 2016/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Write a query to print the sum of all total investment values in 2016
+(TIV_2016), to a scale of 2 decimal places, for all policy holders who
+meet the following criteria:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Have the same TIV_2015 value as one or more other policyholders.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Are not located in the same city as any other policyholder (i.e.: the
+(latitude, longitude) attribute pairs must be unique).
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Input Format:
+
+The insurance table is described as follows:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  | Column Name | Type          |
+
+  |-------------|---------------|
+
+  | PID         | INTEGER(11)   |
+
+  | TIV_2015    | NUMERIC(15,2) |
+
+  | TIV_2016    | NUMERIC(15,2) |
+
+  | LAT         | NUMERIC(5,2)  |
+
+  | LON         | NUMERIC(5,2)  |
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+where PID is the policyholder's policy ID, TIV_2015 is the total
+investment value in 2015, TIV_2016 is the total investment value in
+2016, LAT is the latitude of the policy holder's city, and LON is the
+longitude of the policy holder's city.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Sample Input
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  | PID | TIV_2015 | TIV_2016 | LAT | LON |
+
+  |-----|----------|----------|-----|-----|
+
+  | 1   | 10       | 5        | 10  | 10  |
+
+  | 2   | 20       | 20       | 20  | 20  |
+
+  | 3   | 10       | 30       | 20  | 20  |
+
+  | 4   | 10       | 40       | 40  | 40  |
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Sample Output
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  | TIV_2016 |
+
+  |----------|
+
+  | 45.00    |
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Explanation
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  The first record in the table, like the last record, meets both of the two criteria.
+
+  The <b>TIV_2015</b> value &#39;10&#39; is as the same as the third and forth record, and its location unique.
+
+
+
+  The second record does not meet any of the two criteria. Its <b>TIV_2015</b> is not like any other policyholders.
+
+
+
+  And its location is the same with the third record, which makes the third record fail, too.
+
+
+
+  So, the result is the sum of <b>TIV_2016</b> of the first and last record, which is 45.</pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

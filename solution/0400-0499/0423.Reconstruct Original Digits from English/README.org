@@ -1,0 +1,159 @@
+* [[https://leetcode-cn.com/problems/reconstruct-original-digits-from-english][423.
+从英文中重建数字]]
+  :PROPERTIES:
+  :CUSTOM_ID: 从英文中重建数字
+  :END:
+[[./solution/0400-0499/0423.Reconstruct Original Digits from English/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个非空字符串，其中包含字母顺序打乱的英文单词表示的数字0-9。按升序输出原始的数字。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+输入只包含小写英文字母。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+输入保证合法并可以转换为原始的数字，这意味着像 "abc" 或 "zerone"
+的输入是不允许的。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+输入字符串的长度小于 50,000。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  输入: &quot;owoztneoer&quot;
+
+  输出: &quot;012&quot; (zeroonetwo)
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  输入: &quot;fviefuro&quot;
+
+  输出: &quot;45&quot; (fourfive)
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

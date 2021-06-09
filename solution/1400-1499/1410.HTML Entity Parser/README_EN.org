@@ -1,0 +1,301 @@
+* [[https://leetcode.com/problems/html-entity-parser][1410. HTML Entity
+Parser]]
+  :PROPERTIES:
+  :CUSTOM_ID: html-entity-parser
+  :END:
+[[./solution/1400-1499/1410.HTML Entity Parser/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+HTML entity parser is the parser that takes HTML code as input and
+replace all the entities of the special characters by the characters
+itself.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The special characters and their entities for HTML are:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Quotation Mark: the entity is &quot; and symbol character is ".
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Single Quote Mark: the entity is &apos; and symbol character is '.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Ampersand: the entity is &amp; and symbol character is &.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Greater Than Sign: the entity is &gt; and symbol character is >.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Less Than Sign: the entity is &lt; and symbol character is <.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Slash: the entity is &frasl; and symbol character is /.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the input text string to the HTML parser, you have to implement
+the entity parser.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the text after replacing the entities by the special characters.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> text = &quot;&amp;amp; is an HTML entity but &amp;ambassador; is not.&quot;
+  <strong>Output:</strong> &quot;&amp; is an HTML entity but &amp;ambassador; is not.&quot;
+  <strong>Explanation:</strong> The parser will replace the &amp;amp; entity by &amp;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> text = &quot;and I quote: &amp;quot;...&amp;quot;&quot;
+  <strong>Output:</strong> &quot;and I quote: \&quot;...\&quot;&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> text = &quot;Stay home! Practice on Leetcode :)&quot;
+  <strong>Output:</strong> &quot;Stay home! Practice on Leetcode :)&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> text = &quot;x &amp;gt; y &amp;amp;&amp;amp; x &amp;lt; y is always false&quot;
+  <strong>Output:</strong> &quot;x &gt; y &amp;&amp; x &lt; y is always false&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> text = &quot;leetcode.com&amp;frasl;problemset&amp;frasl;all&quot;
+  <strong>Output:</strong> &quot;leetcode.com/problemset/all&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= text.length <= 10^5
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The string may contain any possible characters out of all the 256 ASCII
+characters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

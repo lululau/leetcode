@@ -1,0 +1,126 @@
+* [[https://leetcode.com/problems/consecutive-numbers-sum][829.
+Consecutive Numbers Sum]]
+  :PROPERTIES:
+  :CUSTOM_ID: consecutive-numbers-sum
+  :END:
+[[./solution/0800-0899/0829.Consecutive Numbers Sum/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a positive integer N, how many ways can we write it as a sum
+of consecutive positive integers?
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>5
+
+  <strong>Output: </strong>2
+
+  <strong>Explanation: </strong>5 = 5 = 2 + 3</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>9
+
+  <strong>Output: </strong>3
+
+  <strong>Explanation: </strong>9 = 9 = 4 + 5 = 2 + 3 + 4</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>15
+
+  <strong>Output: </strong>4
+
+  <strong>Explanation: </strong>15 = 15 = 8 + 7 = 4 + 5 + 6 = 1 + 2 + 3 + 4 + 5</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note: 1 <= N <= 10 ^ 9.
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

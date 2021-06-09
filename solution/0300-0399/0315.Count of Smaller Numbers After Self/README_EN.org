@@ -1,0 +1,171 @@
+* [[https://leetcode.com/problems/count-of-smaller-numbers-after-self][315.
+Count of Smaller Numbers After Self]]
+  :PROPERTIES:
+  :CUSTOM_ID: count-of-smaller-numbers-after-self
+  :END:
+[[./solution/0300-0399/0315.Count of Smaller Numbers After Self/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given an integer array nums and you have to return a new counts
+array. The counts array has the property where counts[i] is the number
+of smaller elements to the right of nums[i].
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [5,2,6,1]
+  <strong>Output:</strong> [2,1,1,0]
+  <strong>Explanation:</strong>
+  To the right of 5 there are <b>2</b> smaller elements (2 and 1).
+  To the right of 2 there is only <b>1</b> smaller element (1).
+  To the right of 6 there is <b>1</b> smaller element (1).
+  To the right of 1 there is <b>0</b> smaller element.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [-1]
+  <strong>Output:</strong> [0]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [-1,-1]
+  <strong>Output:</strong> [0,0]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-104 <= nums[i] <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

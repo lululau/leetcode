@@ -1,0 +1,233 @@
+* [[https://leetcode-cn.com/problems/single-number-ii][137.
+只出现一次的数字 II]]
+  :PROPERTIES:
+  :CUSTOM_ID: 只出现一次的数字-ii
+  :END:
+[[./solution/0100-0199/0137.Single Number II/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个整数数组 nums ，除某个元素仅出现 一次 外，其余每个元素都恰出现
+三次 。请你找出并返回那个只出现了一次的元素。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>nums = [2,2,3,2]
+  <strong>输出：</strong>3
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>nums = [0,1,0,1,0,1,99]
+  <strong>输出：</strong>99
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 3 * 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-231 <= nums[i] <= 231 - 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+nums 中，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+进阶：你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+统计所有数字每个位中 1 出现的次数，对于某个位，1 出现的次数一定是 3
+的倍数 +1 或 0。对这个数 %3
+得到的结果就是那个出现一次的数字在该位上的值。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def singleNumber(self, nums: List[int]) -> int:
+          bits = [0] * 32
+          for num in nums:
+              for i in range(32):
+                  bits[i] += (num & 1)
+                  num >>= 1
+          res = 0
+          for i in range(32):
+              if bits[i] % 3 != 0:
+                  res |= (1 << i)
+          # 如果为负数，先将 0-32 位取反（即 res ^ 0xffffffff ），再将所有位取反（即 ~ ）
+          return res if bits[31] % 3 == 0 else ~(res ^ 0xffffffff)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int singleNumber(int[] nums) {
+          int[] bits = new int[32];
+          for (int num : nums) {
+              for (int i = 0; i < 32; ++i) {
+                  bits[i] += (num & 1);
+                  num >>= 1;
+              }
+          }
+
+          int res = 0;
+          for (int i = 0; i < 32; ++i) {
+              if (bits[i] % 3 == 1) {
+                  res |= (1 << i);
+              }
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

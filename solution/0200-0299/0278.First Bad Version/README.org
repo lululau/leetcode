@@ -1,0 +1,192 @@
+* [[https://leetcode-cn.com/problems/first-bad-version][278.
+第一个错误的版本]]
+  :PROPERTIES:
+  :CUSTOM_ID: 第一个错误的版本
+  :END:
+[[./solution/0200-0299/0278.First Bad Version/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你是产品经理，目前正在带领一个团队开发新的产品。不幸的是，你的产品的最新版本没有通过质量检测。由于每个版本都是基于之前的版本开发的，所以错误的版本之后的所有版本都是错的。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+假设你有 n 个版本 [1, 2, ...,
+n]，你想找出导致之后所有版本出错的第一个错误的版本。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你可以通过调用 bool isBadVersion(version) 接口来判断版本号 version
+是否在单元测试中出错。实现一个函数来查找第一个错误的版本。你应该尽量减少对调用
+API 的次数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>给定 n = 5，并且 version = 4 是第一个错误的版本。
+
+  <code>调用 isBadVersion(3) -&gt; false
+  调用 isBadVersion(5)&nbsp;-&gt; true
+  调用 isBadVersion(4)&nbsp;-&gt; true
+
+  所以，4 是第一个错误的版本。&nbsp;</code></pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+二分查找。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  # The isBadVersion API is already defined for you.
+  # @param version, an integer
+  # @return an integer
+  # def isBadVersion(version):
+
+  class Solution:
+      def firstBadVersion(self, n):
+          """
+          :type n: int
+          :rtype: int
+          """
+          low, high = 1, n
+          while low < high:
+              mid = (low + high) >> 1
+              if isBadVersion(mid):
+                  high = mid
+              else:
+                  low = mid + 1
+          return low
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  /* The isBadVersion API is defined in the parent class VersionControl.
+        boolean isBadVersion(int version); */
+
+  public class Solution extends VersionControl {
+      public int firstBadVersion(int n) {
+          int low = 1, high = n;
+          while (low < high) {
+              int mid = (low + high) >>> 1;
+              if (isBadVersion(mid)) high = mid;
+              else low = mid + 1;
+          }
+          return low;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * Definition for isBadVersion()
+   *
+   * @param {integer} version number
+   * @return {boolean} whether the version is bad
+   * isBadVersion = function(version) {
+   *     ...
+   * };
+   */
+
+  /**
+   * @param {function} isBadVersion()
+   * @return {function}
+   */
+  var solution = function (isBadVersion) {
+    /**
+     * @param {integer} n Total versions
+     * @return {integer} The first bad version
+     */
+    return function (n) {
+      let low = 1,
+        high = n;
+      while (low < high) {
+        const mid = (low + high) >>> 1;
+        if (isBadVersion(mid)) {
+          high = mid;
+        } else {
+          low = mid + 1;
+        }
+      }
+      return low;
+    };
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

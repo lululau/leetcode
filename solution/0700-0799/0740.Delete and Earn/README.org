@@ -1,0 +1,263 @@
+* [[https://leetcode-cn.com/problems/delete-and-earn][740.
+删除与获得点数]]
+  :PROPERTIES:
+  :CUSTOM_ID: 删除与获得点数
+  :END:
+[[./solution/0700-0799/0740.Delete and Earn/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个整数数组 nums ，你可以对它进行一些操作。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+每次操作中，选择任意一个 nums[i] ，删除它并获得 nums[i] 的点数。之后，你必须删除每个等于 nums[i] -
+1 或 nums[i] + 1 的元素。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+开始你拥有 0 个点数。返回你能通过这些操作获得的最大点数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入:</strong> nums = [3, 4, 2]
+  <strong>输出:</strong> 6
+  <strong>解释:</strong>
+  删除 4 来获得 4 个点数，因此 3 也被删除。
+  之后，删除 2 来获得 2 个点数。总共获得 6 个点数。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入:</strong> nums = [2, 2, 3, 3, 3, 4]
+  <strong>输出:</strong> 9
+  <strong>解释:</strong>
+  删除 3 来获得 3 个点数，接着要删除两个 2 和 4 。
+  之后，再次删除 3 获得 3 个点数，再次删除 3 获得 3 个点数。
+  总共获得 9 个点数。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+nums的长度最大为20000。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+每个整数nums[i]的大小都在[1, 10000]范围内。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+核心思路: *一个数字要么不选，要么全选*
+
+首先计算出每个数字的总和 sums，并维护两个 dp 数组：select 和 nonSelect
+
+- sums[i] 代表值为 i 的元素总和
+- select[i] 代表如果选数字 i，从 0 处理到 i 的最大和
+- nonSelect[i] 代表如果不选数字 i，从 0 处理到 i 的最大和
+
+那么我们有以下逻辑：
+
+- 如果选 i，那么 i-1 肯定不能选；
+- 如果不选 i，那么 i-1 选不选都可以，因此我们选择其中较大的选法
+
+#+begin_src java
+  select[i] = nonSelect[i-1] + sums[i];
+  nonSelect[i] = Math.max(select[i-1], nonSelect[i-1]);
+#+end_src
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def deleteAndEarn(self, nums: List[int]) -> int:
+          mx = float('-inf')
+          for num in nums:
+              mx = max(mx, num)
+          total = [0] * (mx + 1)
+          for num in nums:
+              total[num] += num
+          first = total[0]
+          second = max(total[0], total[1])
+          for i in range(2, mx + 1):
+              cur = max(first + total[i], second)
+              first = second
+              second = cur
+          return second
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int deleteAndEarn(int[] nums) {
+          if (nums.length == 0) {
+              return 0;
+          }
+
+          int[] sums = new int[10010];
+          int[] select = new int[10010];
+          int[] nonSelect = new int[10010];
+
+          int maxV = 0;
+          for (int x : nums) {
+              sums[x] += x;
+              maxV = Math.max(maxV, x);
+          }
+
+          for (int i = 1; i <= maxV; i++) {
+              select[i] = nonSelect[i - 1] + sums[i];
+              nonSelect[i] = Math.max(select[i - 1], nonSelect[i - 1]);
+          }
+          return Math.max(select[maxV], nonSelect[maxV]);
+      }
+  }
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  func deleteAndEarn(nums []int) int {
+
+      max := func(x, y int) int {
+          if x > y {
+              return x
+          }
+          return y
+      }
+
+      mx := math.MinInt32
+      for _, num := range nums {
+          mx = max(mx, num)
+      }
+      total := make([]int, mx+1)
+      for _, num := range nums {
+          total[num] += num
+      }
+      first := total[0]
+      second := max(total[0], total[1])
+      for i := 2; i <= mx; i++ {
+          cur := max(first+total[i], second)
+          first = second
+          second = cur
+      }
+      return second
+  }
+#+end_example
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

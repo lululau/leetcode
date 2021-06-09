@@ -1,0 +1,172 @@
+* [[https://leetcode-cn.com/problems/string-rotation-lcci][面试题 01.09.
+字符串轮转]]
+  :PROPERTIES:
+  :CUSTOM_ID: 面试题-01.09.-字符串轮转
+  :END:
+[[./lcci/01.09.String Rotation/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+字符串轮转。给定两个字符串s1和s2，请编写代码检查s2是否为s1旋转而成（比如，waterbottle是erbottlewat旋转后的字符串）。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong> 输入</strong>：s1 = &quot;waterbottle&quot;, s2 = &quot;erbottlewat&quot;
+  <strong> 输出</strong>：True
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong> 输入</strong>：s1 = &quot;aa&quot;, &quot;aba&quot;
+  <strong> 输出</strong>：False
+  </pre>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+字符串长度在[0, 100000]范围内。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+说明:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+你能只调用一次检查子串的方法吗？
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def isFlipedString(self, s1: str, s2: str) -> bool:
+          return len(s1) == len(s2) and s1 in (s2 * 2)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public boolean isFlipedString(String s1, String s2) {
+          return s1.length() == s2.length() && (s2 + s2).indexOf(s1) != -1;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

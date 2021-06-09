@@ -1,0 +1,23 @@
+* Basic Algorithms
+  :PROPERTIES:
+  :CUSTOM_ID: basic-algorithms
+  :END:
+** Sorting
+   :PROPERTIES:
+   :CUSTOM_ID: sorting
+   :END:
+
+- [[./sorting/BubbleSort/README.org][Bubble Sort]]
+- [[./sorting/InsertionSort/README.org][Insertion Sort]]
+- [[./sorting/SelectionSort/README.org][Selection Sort]]
+- [[./sorting/MergeSort/README.org][Merge Sort]]
+- [[./sorting/QuickSort/README.org][Quick Sort]]
+- [[./sorting/ShellSort/README.org][Shell Sort]]
+
+** Searching
+   :PROPERTIES:
+   :CUSTOM_ID: searching
+   :END:
+
+- [[./searching/BinarySearch/README.org][Binary Search]]
+- [[./searching/BinarySearch-II/README.org][Binary Search II]]

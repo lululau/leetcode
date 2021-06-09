@@ -1,0 +1,398 @@
+* [[https://leetcode-cn.com/problems/design-linked-list][707. 设计链表]]
+  :PROPERTIES:
+  :CUSTOM_ID: 设计链表
+  :END:
+[[./solution/0700-0799/0707.Design Linked List/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+设计链表的实现。您可以选择使用单链表或双链表。单链表中的节点应该具有两个属性：val 和 next。val 是当前节点的值，next 是指向下一个节点的指针/引用。如果要使用双向链表，则还需要一个属性 prev 以指示链表中的上一个节点。假设链表中的所有节点都是
+0-index 的。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+在链表类中实现这些功能：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+get(index)：获取链表中第 index 个节点的值。如果索引无效，则返回-1。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+addAtHead(val)：在链表的第一个元素之前添加一个值为 val 的节点。插入后，新节点将成为链表的第一个节点。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+addAtTail(val)：将值为 val 的节点追加到链表的最后一个元素。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+addAtIndex(index,val)：在链表中的第 index 个节点之前添加值为 val 
+的节点。如果 index 等于链表的长度，则该节点将附加到链表的末尾。如果
+index 大于链表长度，则不会插入节点。如果index小于0，则在头部插入节点。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+deleteAtIndex(index)：如果索引 index 有效，则删除链表中的第 index
+个节点。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>MyLinkedList linkedList = new MyLinkedList();
+  linkedList.addAtHead(1);
+  linkedList.addAtTail(3);
+  linkedList.addAtIndex(1,2);   //链表变为1-&gt; 2-&gt; 3
+  linkedList.get(1);            //返回2
+  linkedList.deleteAtIndex(1);  //现在链表是1-&gt; 3
+  linkedList.get(1);            //返回3
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+所有val值都在 [1, 1000] 之内。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+操作次数将在  [1, 1000] 之内。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+请不要使用内置的 LinkedList 库。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+定义虚拟头结点 dummy，count 记录当前链表结点个数。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class ListNode:
+
+      def __init__(self, val=0, next=None):
+          self.val = val
+          self.next = next
+
+
+  class MyLinkedList:
+
+      def __init__(self):
+          """
+          Initialize your data structure here.
+          """
+          self.dummy = ListNode()
+          self.count = 0
+
+
+      def get(self, index: int) -> int:
+          """
+          Get the value of the index-th node in the linked list. If the index is invalid, return -1.
+          """
+          if index < 0 or index >= self.count:
+              return -1
+          cur = self.dummy.next
+          for _ in range(index):
+              cur = cur.next
+          return cur.val
+
+
+      def addAtHead(self, val: int) -> None:
+          """
+          Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list.
+          """
+          self.addAtIndex(0, val)
+
+
+      def addAtTail(self, val: int) -> None:
+          """
+          Append a node of value val to the last element of the linked list.
+          """
+          self.addAtIndex(self.count, val)
+
+
+      def addAtIndex(self, index: int, val: int) -> None:
+          """
+          Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted.
+          """
+          if index > self.count:
+              return
+          pre = self.dummy
+          for _ in range(index):
+              pre = pre.next
+          pre.next = ListNode(val, pre.next)
+          self.count += 1
+
+
+      def deleteAtIndex(self, index: int) -> None:
+          """
+          Delete the index-th node in the linked list, if the index is valid.
+          """
+          if index < 0 or index >= self.count:
+              return
+          pre = self.dummy
+          for _ in range(index):
+              pre = pre.next
+          t = pre.next
+          pre.next = t.next
+          t.next = None
+          self.count -= 1
+
+
+
+  # Your MyLinkedList object will be instantiated and called as such:
+  # obj = MyLinkedList()
+  # param_1 = obj.get(index)
+  # obj.addAtHead(val)
+  # obj.addAtTail(val)
+  # obj.addAtIndex(index,val)
+  # obj.deleteAtIndex(index)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class MyLinkedList {
+
+      private class ListNode {
+          int val;
+          ListNode next;
+          ListNode(int val) {
+              this(val, null);
+          }
+          ListNode(int val, ListNode next) {
+              this.val = val;
+              this.next = next;
+          }
+      }
+
+      private ListNode dummy;
+      private int count;
+
+      /** Initialize your data structure here. */
+      public MyLinkedList() {
+          dummy = new ListNode(0);
+          count = 0;
+      }
+
+      /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
+      public int get(int index) {
+          if (index < 0 || index >= count) {
+              return -1;
+          }
+          ListNode cur = dummy.next;
+          while (index-- > 0) {
+              cur = cur.next;
+          }
+          return cur.val;
+      }
+
+      /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
+      public void addAtHead(int val) {
+          addAtIndex(0, val);
+      }
+
+      /** Append a node of value val to the last element of the linked list. */
+      public void addAtTail(int val) {
+          addAtIndex(count, val);
+      }
+
+      /** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
+      public void addAtIndex(int index, int val) {
+          if (index > count) {
+              return;
+          }
+          ListNode pre = dummy;
+          while (index-- > 0) {
+              pre = pre.next;
+          }
+          pre.next = new ListNode(val, pre.next);
+          ++count;
+      }
+
+      /** Delete the index-th node in the linked list, if the index is valid. */
+      public void deleteAtIndex(int index) {
+          if (index < 0 || index >= count) {
+              return;
+          }
+          ListNode pre = dummy;
+          while (index-- > 0) {
+              pre = pre.next;
+          }
+          ListNode t = pre.next;
+          pre.next = t.next;
+          t.next = null;
+          --count;
+      }
+  }
+
+  /**
+   * Your MyLinkedList object will be instantiated and called as such:
+   * MyLinkedList obj = new MyLinkedList();
+   * int param_1 = obj.get(index);
+   * obj.addAtHead(val);
+   * obj.addAtTail(val);
+   * obj.addAtIndex(index,val);
+   * obj.deleteAtIndex(index);
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

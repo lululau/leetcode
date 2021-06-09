@@ -1,0 +1,200 @@
+* [[https://leetcode-cn.com/problems/kth-node-from-end-of-list-lcci][02.02.
+Kth Node From End of List]]
+  :PROPERTIES:
+  :CUSTOM_ID: kth-node-from-end-of-list
+  :END:
+[[./lcci/02.02.Kth Node From End of List/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement an algorithm to find the kth to last element of a singly
+linked list. Return the value of the element.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note: This problem is slightly different from the original one in the
+book.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong> 1-&gt;2-&gt;3-&gt;4-&gt;5 和 <em>k</em> = 2
+
+  <strong>Output:  </strong>4</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+k is always valid.
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  # Definition for singly-linked list.
+  # class ListNode:
+  #     def __init__(self, x):
+  #         self.val = x
+  #         self.next = None
+
+  class Solution:
+      def kthToLast(self, head: ListNode, k: int) -> int:
+          slow = fast = head
+          for _ in range(k):
+              fast = fast.next
+          while fast:
+              slow, fast = slow.next, fast.next
+          return slow.val
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  /**
+   * Definition for singly-linked list.
+   * public class ListNode {
+   *     int val;
+   *     ListNode next;
+   *     ListNode(int x) { val = x; }
+   * }
+   */
+  class Solution {
+      public int kthToLast(ListNode head, int k) {
+          ListNode slow = head, fast = head;
+          while (k-- > 0) {
+              fast = fast.next;
+          }
+          while (fast != null) {
+              slow = slow.next;
+              fast = fast.next;
+          }
+          return slow.val;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * Definition for singly-linked list.
+   * function ListNode(val) {
+   *     this.val = val;
+   *     this.next = null;
+   * }
+   */
+  /**
+   * @param {ListNode} head
+   * @param {number} k
+   * @return {number}
+   */
+  var kthToLast = function(head, k) {
+      let fast = head, slow = head;
+      for (let i = 0; i < k; i++) {
+          fast = fast.next;
+      }
+      while (fast != null) {
+          fast = fast.next;
+          slow = slow.next;
+      }
+      return slow.val;
+  };
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  /**
+   * Definition for singly-linked list.
+   * struct ListNode {
+   *     int val;
+   *     ListNode *next;
+   *     ListNode(int x) : val(x), next(NULL) {}
+   * };
+   */
+  class Solution {
+  public:
+      int kthToLast(ListNode* head, int k) {
+          ListNode* fast = head;
+          ListNode* slow = head;
+          while (k-- > 0) {
+              fast = fast->next;
+          }
+          while (fast) {
+              slow = slow->next;
+              fast = fast->next;
+          }
+          return slow->val;
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

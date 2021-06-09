@@ -1,0 +1,216 @@
+* [[https://leetcode.com/problems/sort-characters-by-frequency][451.
+Sort Characters By Frequency]]
+  :PROPERTIES:
+  :CUSTOM_ID: sort-characters-by-frequency
+  :END:
+[[./solution/0400-0499/0451.Sort Characters By Frequency/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a string s, sort it in decreasing order based on the frequency of
+characters, and return the sorted string.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;tree&quot;
+  <strong>Output:</strong> &quot;eert&quot;
+  <strong>Explanation:</strong> &#39;e&#39; appears twice while &#39;r&#39; and &#39;t&#39; both appear once.
+  So &#39;e&#39; must appear before both &#39;r&#39; and &#39;t&#39;. Therefore &quot;eetr&quot; is also a valid answer.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;cccaaa&quot;
+  <strong>Output:</strong> &quot;aaaccc&quot;
+  <strong>Explanation:</strong> Both &#39;c&#39; and &#39;a&#39; appear three times, so &quot;aaaccc&quot; is also a valid answer.
+  Note that &quot;cacaca&quot; is incorrect, as the same characters must be together.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;Aabb&quot;
+  <strong>Output:</strong> &quot;bbAa&quot;
+  <strong>Explanation:</strong> &quot;bbaA&quot; is also a valid answer, but &quot;Aabb&quot; is incorrect.
+  Note that &#39;A&#39; and &#39;a&#39; are treated as two different characters.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s.length <= 5 * 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s consists of English letters and digits.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def frequencySort(self, s: str) -> str:
+          if not s or len(s) < 3:
+              return s
+          counter = collections.Counter(s)
+          buckets = [[] for _ in range(len(s) + 1)]
+          for c, freq in counter.items():
+              buckets[freq].append(c)
+          res = []
+          for i in range(len(s), -1, -1):
+              if buckets[i]:
+                  for c in buckets[i]:
+                      res.append(c * i)
+          return ''.join(res)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public String frequencySort(String s) {
+          if (s == null || s.length() < 3) {
+              return s;
+          }
+          Map<Character, Integer> counter = new HashMap<>();
+          for (int i = 0; i < s.length(); ++i) {
+              counter.put(s.charAt(i), counter.getOrDefault(s.charAt(i), 0) + 1);
+          }
+          List<Character>[] buckets = new List[s.length() + 1];
+          for (Map.Entry<Character, Integer> entry : counter.entrySet()) {
+              char c = entry.getKey();
+              int freq = entry.getValue();
+              if (buckets[freq] == null) {
+                  buckets[freq] = new ArrayList<>();
+              }
+              buckets[freq].add(c);
+          }
+          StringBuilder sb = new StringBuilder();
+          for (int i = s.length(); i >= 0; --i) {
+              if (buckets[i] != null) {
+                  for (char c : buckets[i]) {
+                      for (int j = 0; j < i; ++j) {
+                          sb.append(c);
+                      }
+                  }
+              }
+          }
+          return sb.toString();
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

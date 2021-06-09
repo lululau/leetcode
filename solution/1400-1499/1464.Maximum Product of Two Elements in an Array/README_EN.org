@@ -1,0 +1,187 @@
+* [[https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array][1464.
+Maximum Product of Two Elements in an Array]]
+  :PROPERTIES:
+  :CUSTOM_ID: maximum-product-of-two-elements-in-an-array
+  :END:
+[[./solution/1400-1499/1464.Maximum Product of Two Elements in an Array/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+Given the array of integers nums, you will choose two different indices
+i and j of that array. Return the maximum value of
+(nums[i]-1)*(nums[j]-1).
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [3,4,5,2]
+  <strong>Output:</strong> 12 
+  <strong>Explanation:</strong> If you choose the indices i=1 and j=2 (indexed from 0), you will get the maximum value, that is, (nums[1]-1)*(nums[2]-1) = (4-1)*(5-1) = 3*4 = 12. 
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [1,5,4,5]
+  <strong>Output:</strong> 16
+  <strong>Explanation:</strong> Choosing the indices i=1 and j=3 (indexed from 0), you will get the maximum value of (5-1)*(5-1) = 16.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [3,7]
+  <strong>Output:</strong> 12
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+2 <= nums.length <= 500
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums[i] <= 10^3
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def maxProduct(self, nums: List[int]) -> int:
+          i = 0 if nums[0] > nums[1] else 1
+          j = 1 - i
+          for k in range(2, len(nums)):
+              if nums[k] > nums[i]:
+                  j = k
+                  i, j = j, i
+              elif nums[k] > nums[j]:
+                  j = k
+          return (nums[i] - 1) * (nums[j] - 1)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int maxProduct(int[] nums) {
+          int i = nums[0] > nums[1] ? 0 : 1;
+          int j = 1 - i;
+          for (int k = 2; k < nums.length; ++k) {
+              if (nums[k] > nums[i]) {
+                  j = k;
+                  int t = i;
+                  i = j;
+                  j = t;
+              } else if (nums[k] > nums[j]) {
+                  j = k;
+              }
+          }
+          return (nums[i] - 1) * (nums[j] - 1);
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

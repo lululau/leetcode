@@ -1,0 +1,251 @@
+* [[https://leetcode.com/problems/combination-sum-iii][216. Combination
+Sum III]]
+  :PROPERTIES:
+  :CUSTOM_ID: combination-sum-iii
+  :END:
+[[./solution/0200-0299/0216.Combination Sum III/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Find all valid combinations of k numbers that sum up to n such that the
+following conditions are true:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Only numbers 1 through 9 are used.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Each number is used at most once.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return a list of all possible valid combinations. The list must not
+contain the same combination twice, and the combinations may be returned
+in any order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> k = 3, n = 7
+  <strong>Output:</strong> [[1,2,4]]
+  <strong>Explanation:</strong>
+  1 + 2 + 4 = 7
+  There are no other valid combinations.</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> k = 3, n = 9
+  <strong>Output:</strong> [[1,2,6],[1,3,5],[2,3,4]]
+  <strong>Explanation:</strong>
+  1 + 2 + 6 = 9
+  1 + 3 + 5 = 9
+  2 + 3 + 4 = 9
+  There are no other valid combinations.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> k = 4, n = 1
+  <strong>Output:</strong> []
+  <strong>Explanation:</strong> There are no valid combinations. [1,2,1] is not valid because 1 is used twice.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> k = 3, n = 2
+  <strong>Output:</strong> []
+  <strong>Explanation:</strong> There are no valid combinations.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> k = 9, n = 45
+  <strong>Output:</strong> [[1,2,3,4,5,6,7,8,9]]
+  <strong>Explanation:</strong>
+  1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = 45
+  ​​​​​​​There are no other valid combinations.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+2 <= k <= 9
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 60
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

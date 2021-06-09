@@ -1,0 +1,390 @@
+* [[https://leetcode-cn.com/problems/implement-stack-using-queues][225.
+用队列实现栈]]
+  :PROPERTIES:
+  :CUSTOM_ID: 用队列实现栈
+  :END:
+[[./solution/0200-0299/0225.Implement Stack using Queues/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你仅使用两个队列实现一个后入先出（LIFO）的栈，并支持普通队列的全部四种操作（push、top、pop
+和 empty）。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+实现 MyStack 类：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void push(int x) 将元素 x 压入栈顶。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int pop() 移除并返回栈顶元素。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int top() 返回栈顶元素。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+boolean empty() 如果栈是空的，返回 true ；否则，返回 false 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+你只能使用队列的基本操作 ------ 也就是 push to back、peek/pop from
+front、size 和 is empty 这些操作。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+你所使用的语言也许不支持队列。 你可以使用 list （列表）或者
+deque（双端队列）来模拟一个队列 , 只要是标准的队列操作即可。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>
+  ["MyStack", "push", "push", "top", "pop", "empty"]
+  [[], [1], [2], [], [], []]
+  <strong>输出：</strong>
+  [null, null, null, 2, 2, false]
+
+  <strong>解释：</strong>
+  MyStack myStack = new MyStack();
+  myStack.push(1);
+  myStack.push(2);
+  myStack.top(); // 返回 2
+  myStack.pop(); // 返回 2
+  myStack.empty(); // 返回 False
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= x <= 9
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+最多调用100 次 push、pop、top 和 empty
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+每次调用 pop 和 top 都保证栈不为空
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+进阶：你能否实现每种操作的均摊时间复杂度为 O(1) 的栈？换句话说，执行 n
+个操作的总时间复杂度 O(n)
+，尽管其中某个操作可能需要比其他操作更长的时间。你可以使用两个以上的队列。
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class MyStack:
+
+      def __init__(self):
+          """
+          Initialize your data structure here.
+          """
+          self.q = []
+
+
+      def push(self, x: int) -> None:
+          """
+          Push element x onto stack.
+          """
+          self.q.append(x)
+          n = len(self.q)
+          for i in range(1, n):
+              self.q.append(self.q.pop(0))
+
+
+      def pop(self) -> int:
+          """
+          Removes the element on top of the stack and returns that element.
+          """
+          return self.q.pop(0)
+
+
+      def top(self) -> int:
+          """
+          Get the top element.
+          """
+          return self.q[0]
+
+
+      def empty(self) -> bool:
+          """
+          Returns whether the stack is empty.
+          """
+          return len(self.q) == 0
+
+
+
+  # Your MyStack object will be instantiated and called as such:
+  # obj = MyStack()
+  # obj.push(x)
+  # param_2 = obj.pop()
+  # param_3 = obj.top()
+  # param_4 = obj.empty()
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class MyStack {
+
+      private Deque<Integer> q;
+
+      /** Initialize your data structure here. */
+      public MyStack() {
+          q = new ArrayDeque<>();
+      }
+
+      /** Push element x onto stack. */
+      public void push(int x) {
+          q.offerLast(x);
+          int n = q.size();
+          while (n-- > 1) {
+              q.offerLast(q.pollFirst());
+          }
+      }
+
+      /** Removes the element on top of the stack and returns that element. */
+      public int pop() {
+          return q.pollFirst();
+      }
+
+      /** Get the top element. */
+      public int top() {
+          return q.peekFirst();
+      }
+
+      /** Returns whether the stack is empty. */
+      public boolean empty() {
+          return q.isEmpty();
+      }
+  }
+
+  /**
+   * Your MyStack object will be instantiated and called as such:
+   * MyStack obj = new MyStack();
+   * obj.push(x);
+   * int param_2 = obj.pop();
+   * int param_3 = obj.top();
+   * boolean param_4 = obj.empty();
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

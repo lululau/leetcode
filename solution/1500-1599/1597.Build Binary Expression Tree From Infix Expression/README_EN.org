@@ -1,0 +1,254 @@
+* [[https://leetcode.com/problems/build-binary-expression-tree-from-infix-expression][1597.
+Build Binary Expression Tree From Infix Expression]]
+  :PROPERTIES:
+  :CUSTOM_ID: build-binary-expression-tree-from-infix-expression
+  :END:
+[[./solution/1500-1599/1597.Build Binary Expression Tree From Infix Expression/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+A binary expression tree is a kind of binary tree used to represent
+arithmetic expressions. Each node of a binary expression tree has either
+zero or two children. Leaf nodes (nodes with 0 children) correspond to
+operands (numbers), and internal nodes (nodes with 2 children)
+correspond to the operators '+' (addition), '-' (subtraction), '*'
+(multiplication), and '/' (division).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For each internal node with operator o, the infix expression that it
+represents is (A o B), where A is the expression the left subtree
+represents and B is the expression the right subtree represents.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given a string s, an infix expression containing operands, the
+operators described above, and parentheses '(' and ')'.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return any valid binary expression tree, which its in-order
+traversal reproduces s after omitting the parenthesis from it (see
+examples below).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Please note that order of operations applies in s. That is, expressions
+in parentheses are evaluated first, and multiplication and division
+happen before addition and subtraction.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Operands must also appear in the same order in both s and the in-order
+traversal of the tree.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;3*4-2*5&quot;
+  <strong>Output:</strong> [-,*,*,3,4,2,5]
+  <strong>Explanation:</strong> The tree above is the only valid tree whose inorder traversal produces s.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;2-3/(5*2)+1&quot;
+  <strong>Output:</strong> [+,-,1,2,/,null,null,null,null,3,*,null,null,5,2]
+  <strong>Explanation:</strong> The inorder traversal of the tree above is 2-3/5*2+1 which is the same as s without the parenthesis. The tree also produces the correct result and its operands are in the same order as they appear in s.
+  The tree below is also a valid binary expression tree with the same inorder traversal as s, but it not a valid answer because it does not evaluate to the same value.
+  <img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/1500-1599/1597.Build Binary Expression Tree From Infix Expression/images/ex1-1.png" style="width: 201px; height: 281px;" />
+  The third tree below is also not valid. Although it produces the same result and is equivalent to the above trees, its inorder traversal does not produce s and its operands are not in the same order as s.
+  <img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/1500-1599/1597.Build Binary Expression Tree From Infix Expression/images/ex1-3.png" style="width: 281px; height: 281px;" />
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;1+2+3+4+5&quot;
+  <strong>Output:</strong> [+,+,5,+,4,null,null,+,3,null,null,1,2]
+  <strong>Explanation:</strong> The tree [+,+,5,+,+,null,null,1,2,3,4] is also one of many other valid trees.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s consists of digits and the characters '+', '-', '*', and '/'.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Operands in s are exactly 1 digit.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+It is guaranteed that s is a valid expression.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

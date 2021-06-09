@@ -1,0 +1,212 @@
+* [[https://leetcode.com/problems/number-of-ways-to-split-a-string][1573.
+Number of Ways to Split a String]]
+  :PROPERTIES:
+  :CUSTOM_ID: number-of-ways-to-split-a-string
+  :END:
+[[./solution/1500-1599/1573.Number of Ways to Split a String/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a binary string s (a string consisting only of '0's and '1's), we
+can split s into 3 non-empty strings s1, s2, s3 (s1+ s2+ s3 = s).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the number of ways s can be split such that the number
+of characters '1' is the same in s1, s2, and s3.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Since the answer may be too large, return it modulo 10^9 + 7.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;10101&quot;
+  <strong>Output:</strong> 4
+  <strong>Explanation:</strong> There are four ways to split s in 3 parts where each part contain the same number of letters &#39;1&#39;.
+  &quot;1|010|1&quot;
+  &quot;1|01|01&quot;
+  &quot;10|10|1&quot;
+  &quot;10|1|01&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;1001&quot;
+  <strong>Output:</strong> 0
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;0000&quot;
+  <strong>Output:</strong> 3
+  <strong>Explanation:</strong> There are three ways to split s in 3 parts.
+  &quot;0|0|00&quot;
+  &quot;0|00|0&quot;
+  &quot;00|0|0&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;100100010100110&quot;
+  <strong>Output:</strong> 12
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+3 <= s.length <= 10^5
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s[i] is '0' or '1'.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,266 @@
+* [[https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii][82.
+删除排序链表中的重复元素 II]]
+  :PROPERTIES:
+  :CUSTOM_ID: 删除排序链表中的重复元素-ii
+  :END:
+[[./solution/0000-0099/0082.Remove Duplicates from Sorted List II/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+存在一个按升序排列的链表，给你这个链表的头节点 head
+，请你删除链表中所有存在数字重复情况的节点，只保留原始链表中 没有重复出现 的数字。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回同样按升序排列的结果链表。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>head = [1,2,3,3,4,4,5]
+  <strong>输出：</strong>[1,2,5]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>head = [1,1,1,2,3]
+  <strong>输出：</strong>[2,3]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+链表中节点数目在范围 [0, 300] 内
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-100 <= Node.val <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+题目数据保证链表已经按升序排列
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  # Definition for singly-linked list.
+  # class ListNode:
+  #     def __init__(self, val=0, next=None):
+  #         self.val = val
+  #         self.next = next
+  class Solution:
+      def deleteDuplicates(self, head: ListNode) -> ListNode:
+          dummy = ListNode(-1, head)
+          cur = dummy
+          while cur.next and cur.next.next:
+              if cur.next.val == cur.next.next.val:
+                  val = cur.next.val
+                  while cur.next and cur.next.val == val:
+                      cur.next = cur.next.next
+              else:
+                  cur = cur.next
+          return dummy.next
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  /**
+   * Definition for singly-linked list.
+   * public class ListNode {
+   *     int val;
+   *     ListNode next;
+   *     ListNode() {}
+   *     ListNode(int val) { this.val = val; }
+   *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+   * }
+   */
+  class Solution {
+      public ListNode deleteDuplicates(ListNode head) {
+          ListNode dummy = new ListNode(-1, head);
+          ListNode cur = dummy;
+          while (cur.next != null && cur.next.next != null) {
+              if (cur.next.val == cur.next.next.val) {
+                  int val = cur.next.val;
+                  while (cur.next != null && cur.next.val == val) {
+                      cur.next = cur.next.next;
+                  }
+              } else {
+                  cur = cur.next;
+              }
+          }
+          return dummy.next;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  /**
+   * Definition for singly-linked list.
+   * struct ListNode {
+   *     int val;
+   *     ListNode *next;
+   *     ListNode() : val(0), next(nullptr) {}
+   *     ListNode(int x) : val(x), next(nullptr) {}
+   *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+   * };
+   */
+  class Solution {
+  public:
+      ListNode* deleteDuplicates(ListNode* head) {
+          ListNode* dummy = new ListNode(-1, head);
+          ListNode* cur = dummy;
+          while (cur->next != nullptr && cur->next->next != nullptr) {
+              if (cur->next->val == cur->next->next->val) {
+                  int val = cur->next->val;
+                  while (cur->next != nullptr && cur->next->val == val) {
+                      cur->next = cur->next->next;
+                  }
+              } else {
+                  cur = cur->next;
+              }
+          }
+          return dummy->next;
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,231 @@
+* [[https://leetcode.com/problems/reverse-integer][7. Reverse Integer]]
+  :PROPERTIES:
+  :CUSTOM_ID: reverse-integer
+  :END:
+[[./solution/0000-0099/0007.Reverse Integer/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a signed 32-bit integer x, return x with its digits reversed. If
+reversing x causes the value to go outside the signed 32-bit integer
+range [-231, 231 - 1], then return 0.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Assume the environment does not allow you to store 64-bit integers
+(signed or unsigned).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>Input:</strong> x = 123
+  <strong>Output:</strong> 321
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>Input:</strong> x = -123
+  <strong>Output:</strong> -321
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>Input:</strong> x = 120
+  <strong>Output:</strong> 21
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>Input:</strong> x = 0
+  <strong>Output:</strong> 0
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-231 <= x <= 231 - 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def reverse(self, x: int) -> int:
+          y = int(str(abs(x))[::-1])
+          res = -y if x < 0 else y
+          return 0 if res < -2**31 or res > 2**31 -1 else res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int reverse(int x) {
+          long res = 0;
+          while (x != 0) {
+              res = res * 10 + (x % 10);
+              x /= 10;
+          }
+          return res < Integer.MIN_VALUE || res > Integer.MAX_VALUE ? 0 : (int) res;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      int reverse(int x) {
+          long long ans = 0;
+          while (x) {
+              ans = ans * 10 + x % 10;
+              x /= 10;
+          }
+          return ans < INT_MIN || ans > INT_MAX ? 0 : ans;
+      }
+  };
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number} x
+   * @return {number}
+   */
+  var reverse = function (x) {
+    let res = 0;
+    while (x) {
+      res = res * 10 + (x % 10);
+      x = ~~(x / 10);
+    }
+    return res < Math.pow(-2, 31) || res > Math.pow(2, 31) - 1 ? 0 : res;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

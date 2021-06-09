@@ -1,0 +1,107 @@
+* [[https://leetcode-cn.com/problems/minimum-moves-to-equal-array-elements][453.
+最小操作次数使数组元素相等]]
+  :PROPERTIES:
+  :CUSTOM_ID: 最小操作次数使数组元素相等
+  :END:
+[[./solution/0400-0499/0453.Minimum Moves to Equal Array Elements/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个长度为 n 的 非空 整数数组，每次操作将会使 n - 1 个元素增加
+1。找出让数组所有元素相等的最小操作次数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>
+  [1,2,3]
+  <strong>输出：</strong>
+  3
+  <strong>解释：</strong>
+  只需要3次操作（注意每次操作会增加两个元素的值）：
+  [1,2,3]  =>  [2,3,3]  =>  [3,4,3]  =>  [4,4,4]
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

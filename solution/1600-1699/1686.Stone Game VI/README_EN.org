@@ -1,0 +1,269 @@
+* [[https://leetcode.com/problems/stone-game-vi][1686. Stone Game VI]]
+  :PROPERTIES:
+  :CUSTOM_ID: stone-game-vi
+  :END:
+[[./solution/1600-1699/1686.Stone Game VI/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Alice and Bob take turns playing a game, with Alice starting first.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+There are n stones in a pile. On each player's turn, they can remove a
+stone from the pile and receive points based on the stone's value. Alice
+and Bob may value the stones differently.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given two integer arrays of length n, aliceValues and bobValues.
+Each aliceValues[i] and bobValues[i] represents how Alice and Bob,
+respectively, value the ith stone.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The winner is the person with the most points after all the stones are
+chosen. If both players have the same amount of points, the game results
+in a draw. Both players will play optimally. Both players know the
+other's values.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Determine the result of the game, and:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If Alice wins, return 1.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If Bob wins, return -1.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If the game results in a draw, return 0.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> aliceValues = [1,3], bobValues = [2,1]
+  <strong>Output:</strong> 1
+  <strong>Explanation:</strong>
+  If Alice takes stone 1 (0-indexed) first, Alice will receive 3 points.
+  Bob can only choose stone 0, and will only receive 2 points.
+  Alice wins.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> aliceValues = [1,2], bobValues = [3,1]
+  <strong>Output:</strong> 0
+  <strong>Explanation:</strong>
+  If Alice takes stone 0, and Bob takes stone 1, they will both have 1 point.
+  Draw.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> aliceValues = [2,4,3], bobValues = [1,6,7]
+  <strong>Output:</strong> -1
+  <strong>Explanation:</strong>
+  Regardless of how Alice plays, Bob will be able to have more points than Alice.
+  For example, if Alice takes stone 1, Bob can take stone 2, and Alice takes stone 0, Alice will have 6 points to Bob&#39;s 7.
+  Bob wins.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n == aliceValues.length == bobValues.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= aliceValues[i], bobValues[i] <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

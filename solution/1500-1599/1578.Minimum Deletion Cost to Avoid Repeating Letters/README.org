@@ -1,0 +1,227 @@
+* [[https://leetcode-cn.com/problems/minimum-deletion-cost-to-avoid-repeating-letters][1578.
+避免重复字母的最小删除成本]]
+  :PROPERTIES:
+  :CUSTOM_ID: 避免重复字母的最小删除成本
+  :END:
+[[./solution/1500-1599/1578.Minimum Deletion Cost to Avoid Repeating Letters/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个字符串 s 和一个整数数组 cost ，其中 cost[i] 是从 s 中删除字符 i
+的代价。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回使字符串任意相邻两个字母不相同的最小删除成本。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请注意，删除一个字符后，删除其他字符的成本不会改变。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>s = &quot;abaac&quot;, cost = [1,2,3,4,5]
+  <strong>输出：</strong>3
+  <strong>解释：</strong>删除字母 &quot;a&quot; 的成本为 3，然后得到 &quot;abac&quot;（字符串中相邻两个字母不相同）。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>s = &quot;abc&quot;, cost = [1,2,3]
+  <strong>输出：</strong>0
+  <strong>解释：</strong>无需删除任何字母，因为字符串中不存在相邻两个字母相同的情况。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>s = &quot;aabaa&quot;, cost = [1,2,3,4,1]
+  <strong>输出：</strong>2
+  <strong>解释：</strong>删除第一个和最后一个字母，得到字符串 (&quot;aba&quot;) 。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s.length == cost.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s.length, cost.length <= 10^5
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= cost[i] <= 10^4
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s 中只含有小写英文字母
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

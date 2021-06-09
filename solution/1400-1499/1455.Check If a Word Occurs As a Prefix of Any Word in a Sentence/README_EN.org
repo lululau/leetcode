@@ -1,0 +1,286 @@
+* [[https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence][1455.
+Check If a Word Occurs As a Prefix of Any Word in a Sentence]]
+  :PROPERTIES:
+  :CUSTOM_ID: check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence
+  :END:
+[[./solution/1400-1499/1455.Check If a Word Occurs As a Prefix of Any Word in a Sentence/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a sentence that consists of some words separated by a single
+space, and a searchWord.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You have to check if searchWord is a prefix of any word in sentence.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the index of the word in sentence where searchWord is a prefix of
+this word (1-indexed).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If searchWord is a prefix of more than one word, return the index of the
+first word (minimum index). If there is no such word return -1.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A prefix of a string S is any leading contiguous substring of S.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> sentence = &quot;i love eating burger&quot;, searchWord = &quot;burg&quot;
+  <strong>Output:</strong> 4
+  <strong>Explanation:</strong> &quot;burg&quot; is prefix of &quot;burger&quot; which is the 4th word in the sentence.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> sentence = &quot;this problem is an easy problem&quot;, searchWord = &quot;pro&quot;
+  <strong>Output:</strong> 2
+  <strong>Explanation:</strong> &quot;pro&quot; is prefix of &quot;problem&quot; which is the 2nd and the 6th word in the sentence, but we return 2 as it&#39;s the minimal index.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> sentence = &quot;i am tired&quot;, searchWord = &quot;you&quot;
+  <strong>Output:</strong> -1
+  <strong>Explanation:</strong> &quot;you&quot; is not a prefix of any word in the sentence.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> sentence = &quot;i use triple pillow&quot;, searchWord = &quot;pill&quot;
+  <strong>Output:</strong> 4
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> sentence = &quot;hello from the other side&quot;, searchWord = &quot;they&quot;
+  <strong>Output:</strong> -1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= sentence.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= searchWord.length <= 10
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+sentence consists of lowercase English letters and spaces.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+searchWord consists of lowercase English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def isPrefixOfWord(self, sentence: str, searchWord: str) -> int:
+          words = sentence.split(' ')
+          i, n = 0, len(words)
+          while i < n:
+              word = words[i]
+              if word[: len(searchWord)] == searchWord:
+                  return i + 1
+              i += 1
+          return -1
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int isPrefixOfWord(String sentence, String searchWord) {
+          String[] words = sentence.split(" ");
+          int i = 0, n = words.length;
+          for (; i < n; ++i) {
+              if (words[i].indexOf(searchWord) == 0) {
+                  return i + 1;
+              }
+          }
+          return -1;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

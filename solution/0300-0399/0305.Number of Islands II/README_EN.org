@@ -1,0 +1,243 @@
+* [[https://leetcode.com/problems/number-of-islands-ii][305. Number of
+Islands II]]
+  :PROPERTIES:
+  :CUSTOM_ID: number-of-islands-ii
+  :END:
+[[./solution/0300-0399/0305.Number of Islands II/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given an empty 2D binary grid grid of size m x n. The grid
+represents a map where 0's represent water and 1's represent land.
+Initially, all the cells of grid are water cells (i.e., all the cells
+are 0's).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+We may perform an add land operation which turns the water at position
+into a land. You are given an array positions where positions[i] = [ri,
+ci] is the position (ri, ci) at which we should operate the ith
+operation.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return an array of integers answer where answer[i] is the number of
+islands after turning the cell (ri, ci) into a land.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+An island is surrounded by water and is formed by connecting adjacent
+lands horizontally or vertically. You may assume all four edges of the
+grid are all surrounded by water.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> m = 3, n = 3, positions = [[0,0],[0,1],[1,2],[2,1]]
+  <strong>Output:</strong> [1,1,2,3]
+  <strong>Explanation:</strong>
+  Initially, the 2d grid is filled with water.
+  - Operation #1: addLand(0, 0) turns the water at grid[0][0] into a land. We have 1 island.
+  - Operation #2: addLand(0, 1) turns the water at grid[0][1] into a land. We still have 1 island.
+  - Operation #3: addLand(1, 2) turns the water at grid[1][2] into a land. We have 2 islands.
+  - Operation #4: addLand(2, 1) turns the water at grid[2][1] into a land. We have 3 islands.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> m = 1, n = 1, positions = [[0,0]]
+  <strong>Output:</strong> [1]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= m, n, positions.length <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= m * n <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+positions[i].length == 2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= ri < m
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= ci < n
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow up: Could you solve it in time complexity O(k log(mn)), where k
+== positions.length?
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

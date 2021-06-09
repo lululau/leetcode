@@ -1,0 +1,235 @@
+* [[https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended][1353.
+Maximum Number of Events That Can Be Attended]]
+  :PROPERTIES:
+  :CUSTOM_ID: maximum-number-of-events-that-can-be-attended
+  :END:
+[[./solution/1300-1399/1353.Maximum Number of Events That Can Be Attended/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array of events where events[i] = [startDayi, endDayi]. Every
+event i starts at startDayi and ends at endDayi.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You can attend an event i at any day d where startTimei <= d <=
+endTimei. Notice that you can only attend one event at any time d.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the maximum number of events you can attend.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> events = [[1,2],[2,3],[3,4]]
+  <strong>Output:</strong> 3
+  <strong>Explanation:</strong> You can attend all the three events.
+  One way to attend them all is as shown.
+  Attend the first event on day 1.
+  Attend the second event on day 2.
+  Attend the third event on day 3.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> events= [[1,2],[2,3],[3,4],[1,2]]
+  <strong>Output:</strong> 4
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> events = [[1,4],[4,4],[2,2],[3,4],[1,1]]
+  <strong>Output:</strong> 4
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> events = [[1,100000]]
+  <strong>Output:</strong> 1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> events = [[1,1],[1,2],[1,3],[1,4],[1,5],[1,6],[1,7]]
+  <strong>Output:</strong> 7
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= events.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+events[i].length == 2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= startDayi <= endDayi <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

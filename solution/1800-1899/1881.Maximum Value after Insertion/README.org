@@ -1,0 +1,316 @@
+* [[https://leetcode-cn.com/problems/maximum-value-after-insertion][1881.
+插入后的最大值]]
+  :PROPERTIES:
+  :CUSTOM_ID: 插入后的最大值
+  :END:
+[[./solution/1800-1899/1881.Maximum Value after Insertion/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个非常大的整数 n 和一个整数数字 x ，大整数 n 用一个字符串表示。n
+中每一位数字和数字 x 都处于闭区间 [1, 9] 中，且 n 可能表示一个 负数 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你打算通过在 n 的十进制表示的任意位置插入 x 来 最大化 n 的 数值
+​​​​​​。但 不能 在负号的左边插入 x 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+例如，如果 n = 73 且 x = 6 ，那么最佳方案是将 6 插入 7 和 3 之间，使 n =
+763 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+如果 n = -55 且 x = 2 ，那么最佳方案是将 2 插在第一个 5 之前，使 n =
+-255 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回插入操作后，用字符串表示的 n 的最大值。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>n = "99", x = 9
+  <strong>输出：</strong>"999"
+  <strong>解释：</strong>不管在哪里插入 9 ，结果都是相同的。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>n = "-13", x = 2
+  <strong>输出：</strong>"-123"
+  <strong>解释：</strong>向 n 中插入 x 可以得到 -213、-123 或者 -132 ，三者中最大的是 -123 。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= x <= 9
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n​​​ 中每一位的数字都在闭区间 [1, 9] 中。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n 代表一个有效的整数。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+当 n 表示负数时，将会以字符 '-' 开始。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def maxValue(self, n: str, x: int) -> str:
+          negative = n[0] == '-'
+          i, res = 0, []
+          if negative:
+              i += 1
+              res.append('-')
+          find = False
+          while i < len(n):
+              num = int(n[i])
+              if (negative and x < num) or (not negative and x > num):
+                  res.append(str(x))
+                  find = True
+                  break
+              res.append(n[i])
+              i += 1
+          res.append(n[i:] if find else str(x))
+          return ''.join(res)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public String maxValue(String n, int x) {
+          boolean negative = n.charAt(0) == '-';
+          StringBuilder res = new StringBuilder();
+          int i = 0;
+          if (negative) {
+              ++i;
+              res.append("-");
+          }
+          boolean find = false;
+          for (; i < n.length(); ++i) {
+              int num = n.charAt(i) - '0';
+              if ((negative && x < num) || (!negative && x > num)) {
+                  res.append(x);
+                  find = true;
+                  break;
+              }
+              res.append(n.charAt(i));
+          }
+          res.append(find ? n.substring(i) : x);
+          return res.toString();
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {string} n
+   * @param {number} x
+   * @return {string}
+   */
+   var maxValue = function(n, x) {
+      let nums = [...n];
+      let sign = 1, i = 0;
+      if (nums[0] == '-') {
+          sign = -1;
+          i++;
+      }
+      while (i < n.length && (nums[i] - x) * sign >= 0) {
+          i++;
+      }
+      nums.splice(i, 0, x);
+      return nums.join('');
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

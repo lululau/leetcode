@@ -1,0 +1,144 @@
+* [[https://leetcode-cn.com/problems/winning-candidate][574. 当选者]]
+  :PROPERTIES:
+  :CUSTOM_ID: 当选者
+  :END:
+[[./solution/0500-0599/0574.Winning Candidate/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+表: Candidate
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+-----+---------+
+  | id  | Name    |
+  +-----+---------+
+  | 1   | A       |
+  | 2   | B       |
+  | 3   | C       |
+  | 4   | D       |
+  | 5   | E       |
+  +-----+---------+  
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+表: Vote
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+-----+--------------+
+  | id  | CandidateId  |
+  +-----+--------------+
+  | 1   |     2        |
+  | 2   |     4        |
+  | 3   |     3        |
+  | 4   |     2        |
+  | 5   |     5        |
+  +-----+--------------+
+  id 是自动递增的主键，
+  CandidateId 是 Candidate 表中的 id.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请编写 sql 语句来找到当选者的名字，上面的例子将返回当选者 B.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+------+
+  | Name |
+  +------+
+  | B    |
+  +------+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+你可以假设没有平局，换言之，最多只有一位当选者。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

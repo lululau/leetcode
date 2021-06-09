@@ -1,0 +1,231 @@
+* [[https://leetcode-cn.com/problems/count-submatrices-with-all-ones][1504.
+统计全 1 子矩形]]
+  :PROPERTIES:
+  :CUSTOM_ID: 统计全-1-子矩形
+  :END:
+[[./solution/1500-1599/1504.Count Submatrices With All Ones/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个只包含 0 和 1 的 rows *
+columns 矩阵 mat ，请你返回有多少个 子矩形 的元素全部都是 1 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>mat = [[1,0,1],
+  &nbsp;           [1,1,0],
+  &nbsp;           [1,1,0]]
+  <strong>输出：</strong>13
+  <strong>解释：
+  </strong>有 <strong>6</strong>&nbsp;个 1x1 的矩形。
+  有 <strong>2</strong> 个 1x2 的矩形。
+  有 <strong>3</strong> 个 2x1 的矩形。
+  有 <strong>1</strong> 个 2x2 的矩形。
+  有 <strong>1</strong> 个 3x1 的矩形。
+  矩形数目总共 = 6 + 2 + 3 + 1 + 1 = <strong>13</strong>&nbsp;。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>mat = [[0,1,1,0],
+  &nbsp;           [0,1,1,1],
+  &nbsp;           [1,1,1,0]]
+  <strong>输出：</strong>24
+  <strong>解释：</strong>
+  有 <strong>8</strong> 个 1x1 的子矩形。
+  有 <strong>5</strong> 个 1x2 的子矩形。
+  有 <strong>2</strong> 个 1x3 的子矩形。
+  有 <strong>4</strong> 个 2x1 的子矩形。
+  有 <strong>2</strong> 个 2x2 的子矩形。
+  有 <strong>2</strong> 个 3x1 的子矩形。
+  有 <strong>1</strong> 个 3x2 的子矩形。
+  矩形数目总共 = 8 + 5 + 2 + 4 + 2 + 2 + 1 = <strong>24</strong><strong> 。</strong>
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>mat = [[1,1,1,1,1,1]]
+  <strong>输出：</strong>21
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 4：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>mat = [[1,0,1],[0,1,0],[1,0,1]]
+  <strong>输出：</strong>5
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= rows <= 150
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= columns <= 150
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= mat[i][j] <= 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

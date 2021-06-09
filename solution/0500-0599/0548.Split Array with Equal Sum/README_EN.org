@@ -1,0 +1,150 @@
+* [[https://leetcode.com/problems/split-array-with-equal-sum][548. Split
+Array with Equal Sum]]
+  :PROPERTIES:
+  :CUSTOM_ID: split-array-with-equal-sum
+  :END:
+[[./solution/0500-0599/0548.Split Array with Equal Sum/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array with n integers, you need to find if there are triplets
+(i, j, k) which satisfies following conditions:
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 < i, i + 1 < j, j + 1 < k < n - 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Sum of subarrays (0, i - 1), (i + 1, j - 1), (j + 1, k - 1) and (k + 1,
+n - 1) should be equal.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+where we define that subarray (L, R) represents a slice of the original
+array starting from the element indexed L to the element indexed R.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> [1,2,1,2,1,2,1]
+
+  <b>Output:</b> True
+
+  <b>Explanation:</b>
+
+  i = 1, j = 3, k = 5. 
+
+  sum(0, i - 1) = sum(0, 0) = 1
+
+  sum(i + 1, j - 1) = sum(2, 2) = 1
+
+  sum(j + 1, k - 1) = sum(4, 4) = 1
+
+  sum(k + 1, n - 1) = sum(6, 6) = 1
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+Note:
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 2000.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Elements in the given array will be in range [-1,000,000, 1,000,000].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,241 @@
+* [[https://leetcode.com/problems/prison-cells-after-n-days][957. Prison
+Cells After N Days]]
+  :PROPERTIES:
+  :CUSTOM_ID: prison-cells-after-n-days
+  :END:
+[[./solution/0900-0999/0957.Prison Cells After N Days/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+There are 8 prison cells in a row and each cell is either occupied or
+vacant.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Each day, whether the cell is occupied or vacant changes according to
+the following rules:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If a cell has two adjacent neighbors that are both occupied or both
+vacant, then the cell becomes occupied.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Otherwise, it becomes vacant.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note that because the prison is a row, the first and the last cells in
+the row can't have two adjacent neighbors.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given an integer array cells where cells[i] == 1 if the ith cell
+is occupied and cells[i] == 0 if the ith cell is vacant, and you are
+given an integer n.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the state of the prison after n days (i.e., n such changes
+described above).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> cells = [0,1,0,1,1,0,0,1], n = 7
+  <strong>Output:</strong> [0,0,1,1,0,0,0,0]
+  <strong>Explanation:</strong> The following table summarizes the state of the prison on each day:
+  Day 0: [0, 1, 0, 1, 1, 0, 0, 1]
+  Day 1: [0, 1, 1, 0, 0, 0, 0, 0]
+  Day 2: [0, 0, 0, 0, 1, 1, 1, 0]
+  Day 3: [0, 1, 1, 0, 0, 1, 0, 0]
+  Day 4: [0, 0, 0, 0, 0, 1, 0, 0]
+  Day 5: [0, 1, 1, 1, 0, 1, 0, 0]
+  Day 6: [0, 0, 1, 0, 1, 1, 0, 0]
+  Day 7: [0, 0, 1, 1, 0, 0, 0, 0]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> cells = [1,0,0,1,0,0,1,0], n = 1000000000
+  <strong>Output:</strong> [0,0,1,1,1,1,1,0]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+cells.length == 8
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+cells[i] is either 0 or 1.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

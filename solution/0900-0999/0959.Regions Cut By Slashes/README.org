@@ -1,0 +1,269 @@
+* [[https://leetcode-cn.com/problems/regions-cut-by-slashes][959.
+由斜杠划分区域]]
+  :PROPERTIES:
+  :CUSTOM_ID: 由斜杠划分区域
+  :END:
+[[./solution/0900-0999/0959.Regions Cut By Slashes/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+在由 1 x 1 方格组成的 N x N 网格 grid 中，每个 1 x 1 方块由 /、</code>
+或空格构成。这些字符会将方块划分为一些共边的区域。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+（请注意，反斜杠字符是转义的，因此 </code> 用 "\" 表示。）。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回区域的数目。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：
+  </strong>[
+  &nbsp; &quot; /&quot;,
+  &nbsp; &quot;/ &quot;
+  ]
+  <strong>输出：</strong>2
+  <strong>解释：</strong>2x2 网格如下：
+  <img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0900-0999/0959.Regions Cut By Slashes/images/1.png"></pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：
+  </strong>[
+  &nbsp; &quot; /&quot;,
+  &nbsp; &quot;  &quot;
+  ]
+  <strong>输出：</strong>1
+  <strong>解释：</strong>2x2 网格如下：
+  <img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0900-0999/0959.Regions Cut By Slashes/images/2.png"></pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：
+  </strong>[
+  &nbsp; &quot;\\/&quot;,
+  &nbsp; &quot;/\\&quot;
+  ]
+  <strong>输出：</strong>4
+  <strong>解释：</strong>（回想一下，因为 \ 字符是转义的，所以 &quot;\\/&quot; 表示 \/，而 &quot;/\\&quot; 表示 /\。）
+  2x2 网格如下：
+  <img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0900-0999/0959.Regions Cut By Slashes/images/3.png"></pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 4：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：
+  </strong>[
+  &nbsp; &quot;/\\&quot;,
+  &nbsp; &quot;\\/&quot;
+  ]
+  <strong>输出：</strong>5
+  <strong>解释：</strong>（回想一下，因为 \ 字符是转义的，所以 &quot;/\\&quot; 表示 /\，而 &quot;\\/&quot; 表示 \/。）
+  2x2 网格如下：
+  <img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0900-0999/0959.Regions Cut By Slashes/images/4.png"></pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 5：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：
+  </strong>[
+  &nbsp; &quot;//&quot;,
+  &nbsp; &quot;/ &quot;
+  ]
+  <strong>输出：</strong>3
+  <strong>解释：</strong>2x2 网格如下：
+  <img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0900-0999/0959.Regions Cut By Slashes/images/5.png">
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= grid.length == grid[0].length <= 30
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+grid[i][j] 是 '/'、'&#39;、或 ' '。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,240 @@
+* [[https://leetcode-cn.com/problems/binary-watch][401. 二进制手表]]
+  :PROPERTIES:
+  :CUSTOM_ID: 二进制手表
+  :END:
+[[./solution/0400-0499/0401.Binary Watch/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+二进制手表顶部有 4 个 LED 代表 小时（0-11），底部的 6 个 LED 代表
+分钟（0-59）。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+每个 LED 代表一个 0 或 1，最低位在右侧。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+（图源：WikiMedia - Binary clock samui moon.jpg
+，许可协议：Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) ）
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+例如，上面的二进制手表读取 "3:25"。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个非负整数 n 代表当前 LED 亮着的数量，返回所有可能的时间。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  输入: n = 1
+  返回: ["1:00", "2:00", "4:00", "8:00", "0:01", "0:02", "0:04", "0:08", "0:16", "0:32"]</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+输出的顺序没有要求。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+小时不会以零开头，比如 "01:00" 是不允许的，应为 "1:00"。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+分钟必须由两位数组成，可能会以零开头，比如 "10:2" 是无效的，应为
+"10:02"。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+超过表示范围（小时 0-11，分钟 0-59）的数据将会被舍弃，也就是说不会出现
+"13:00", "0:61" 等时间。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+题目可转换为求 i(=i∈[0,12)=) 和 j(=j∈[0,60)=) 所有可能的组合。
+
+合法组合需要满足的条件是：i 的二进制形式中 1 的个数加上 j 的二进制形式中
+1 的个数，结果等于 num。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def readBinaryWatch(self, num: int) -> List[str]:
+          return ['{:d}:{:02d}'.format(i, j) for i in range(12) for j in range(60) if (bin(i) + bin(j)).count('1') == num]
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public List<String> readBinaryWatch(int num) {
+          List<String> res = new ArrayList<>();
+          for (int i = 0; i < 12; ++i) {
+              for (int j = 0; j < 60; ++j) {
+                  if (Integer.bitCount(i) + Integer.bitCount(j) == num) {
+                      res.add(String.format("%d:%02d", i, j));
+                  }
+              }
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

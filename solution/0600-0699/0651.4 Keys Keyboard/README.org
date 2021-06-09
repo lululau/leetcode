@@ -1,0 +1,230 @@
+* [[https://leetcode-cn.com/problems/4-keys-keyboard][651. 4键键盘]]
+  :PROPERTIES:
+  :CUSTOM_ID: 键键盘
+  :END:
+[[./solution/0600-0699/0651.4 Keys Keyboard/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+假设你有一个特殊的键盘包含下面的按键：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Key 1: (A)：在屏幕上打印一个 'A'。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Key 2: (Ctrl-A)：选中整个屏幕。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Key 3: (Ctrl-C)：复制选中区域到缓冲区。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Key 4: (Ctrl-V)：将缓冲区内容输出到上次输入的结束位置，并显示在屏幕上。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+现在，你只可以按键 N 次（使用上述四种按键），请问屏幕上最多可以显示几个
+'A'呢？
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+样例 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong> N = 3
+  <strong>输出:</strong> 3
+  <strong>解释:</strong> 
+  我们最多可以在屏幕上显示三个&#39;A&#39;通过如下顺序按键：
+  A, A, A
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+样例 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong> N = 7
+  <strong>输出:</strong> 9
+  <strong>解释:</strong> 
+  我们最多可以在屏幕上显示九个&#39;A&#39;通过如下顺序按键：
+  A, A, A, Ctrl A, Ctrl C, Ctrl V, Ctrl V
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注释:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= N <= 50
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+结果不会超过 32 位有符号整数范围。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

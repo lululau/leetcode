@@ -1,0 +1,199 @@
+* [[https://leetcode-cn.com/problems/reverse-vowels-of-a-string][345.
+反转字符串中的元音字母]]
+  :PROPERTIES:
+  :CUSTOM_ID: 反转字符串中的元音字母
+  :END:
+[[./solution/0300-0399/0345.Reverse Vowels of a String/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+编写一个函数，以字符串作为输入，反转该字符串中的元音字母。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>&quot;hello&quot;
+  <strong>输出：</strong>&quot;holle&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>&quot;leetcode&quot;
+  <strong>输出：</strong>&quot;leotcede&quot;</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+元音字母不包含字母 "y" 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+将字符串转为字符数组（或列表），定义双指针
+i、j，分别指向数组（列表）头部和尾部，当 i、j
+指向的字符均为元音字母时，进行交换。
+
+依次遍历，当 =i >= j=
+时，遍历结束。将字符数组（列表）转为字符串返回即可。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def reverseVowels(self, s: str) -> str:
+          vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}
+          i, j = 0, len(s) - 1
+          chars = list(s)
+          while i < j:
+              if chars[i] not in vowels:
+                  i += 1
+                  continue
+              if chars[j] not in vowels:
+                  j -= 1
+                  continue
+              chars[i], chars[j] = chars[j], chars[i]
+              i += 1
+              j -= 1
+          return ''.join(chars)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public String reverseVowels(String s) {
+          Set<Character> vowels = new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'));
+          int i = 0, j = s.length() - 1;
+          char[] chars = s.toCharArray();
+          while (i < j) {
+              if (!vowels.contains(chars[i])) {
+                  ++i;
+                  continue;
+              }
+              if (!vowels.contains(chars[j])) {
+                  --j;
+                  continue;
+              }
+              char t = chars[i];
+              chars[i] = chars[j];
+              chars[j] = t;
+              ++i;
+              --j;
+          }
+          return new String(chars);
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

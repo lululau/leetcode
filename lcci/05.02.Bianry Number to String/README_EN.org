@@ -1,0 +1,128 @@
+* [[https://leetcode-cn.com/problems/bianry-number-to-string-lcci][05.02.
+Bianry Number to String]]
+  :PROPERTIES:
+  :CUSTOM_ID: bianry-number-to-string
+  :END:
+[[./lcci/05.02.Bianry Number to String/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a real number between O and 1 (e.g., 0.72) that is passed in as a
+double, print the binary representation. If the number cannot be
+represented accurately in binary with at most 32 characters, print
+"ERROR".
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong> Input</strong>: 0.625
+
+  <strong> Output</strong>: &quot;0.101&quot;
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong> Input</strong>: 0.1
+
+  <strong> Output</strong>: &quot;ERROR&quot;
+
+  <strong> Note</strong>: 0.1 cannot be represented accurately in binary.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+This two charaters "0." should be counted into 32 characters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

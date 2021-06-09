@@ -1,0 +1,185 @@
+* [[https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string][1047.
+Remove All Adjacent Duplicates In String]]
+  :PROPERTIES:
+  :CUSTOM_ID: remove-all-adjacent-duplicates-in-string
+  :END:
+[[./solution/1000-1099/1047.Remove All Adjacent Duplicates In String/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a string S of lowercase letters, a duplicate removal consists of
+choosing two adjacent and equal letters, and removing them.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+We repeatedly make duplicate removals on S until we no longer can.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the final string after all such duplicate removals have been
+made.  It is guaranteed the answer is unique.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-1-1">&quot;abbaca&quot;</span>
+
+  <strong>Output: </strong><span id="example-output-1">&quot;ca&quot;</span>
+
+  <strong>Explanation: </strong>
+
+  For example, in &quot;abbaca&quot; we could remove &quot;bb&quot; since the letters are adjacent and equal, and this is the only possible move.&nbsp; The result of this move is that the string is &quot;aaca&quot;, of which only &quot;aa&quot; is possible, so the final string is &quot;ca&quot;.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= S.length <= 20000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+S consists only of English lowercase letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def removeDuplicates(self, S: str) -> str:
+          res = []
+          for s in S:
+              if not res or res[-1] != s:
+                  res.append(s)
+              else:
+                  res.pop()
+          return ''.join(res)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public String removeDuplicates(String S) {
+          StringBuilder sb = new StringBuilder();
+          int top = -1;
+          for (int i = 0, n = S.length(); i < n; ++i) {
+              char s = S.charAt(i);
+              if (top == -1 || sb.charAt(top) != s) {
+                  sb.append(s);
+                  ++top;
+              } else {
+                  sb.deleteCharAt(top);
+                  --top;
+              }
+          }
+          return sb.toString();
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

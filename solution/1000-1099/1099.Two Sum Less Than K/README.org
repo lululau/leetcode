@@ -1,0 +1,240 @@
+* [[https://leetcode-cn.com/problems/two-sum-less-than-k][1099. 小于 K
+的两数之和]]
+  :PROPERTIES:
+  :CUSTOM_ID: 小于-k-的两数之和
+  :END:
+[[./solution/1000-1099/1099.Two Sum Less Than K/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个整数数组 nums 和整数 k ，返回最大和 sum ，满足存在 i < j 使得
+nums[i] + nums[j] = sum 且 sum < k 。如果没有满足此等式的 i,j
+存在，则返回 -1 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>nums = [34,23,1,24,75,33,54,8], k = 60
+  <strong>输出：</strong>58
+  <strong>解释：</strong>
+  34 和 24 相加得到 58，58 小于 60，满足题意。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>nums = [10,20,30], k = 15
+  <strong>输出：</strong>-1
+  <strong>解释：</strong>
+  我们无法找到和小于 15 的两个元素。</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums[i] <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= k <= 2000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+先进行排序，再用双指针 =low= 、=high=
+分别指向排序数组的首尾，遍历获取满足条件的和 =nums[low] + nums[high]=
+并求最大和。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def twoSumLessThanK(self, nums: List[int], k: int) -> int:
+          nums.sort()
+          low, high = 0, len(nums) - 1
+          res = -1
+          while low < high:
+              val = nums[low] + nums[high]
+              if val < k:
+                  res = max(res, val)
+                  low += 1
+              else:
+                  high -= 1
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int twoSumLessThanK(int[] nums, int k) {
+          Arrays.sort(nums);
+          int low = 0, high = nums.length - 1;
+          int res = -1;
+          while (low < high) {
+              int val = nums[low] + nums[high];
+              if (val < k) {
+                  res = Math.max(res, val);
+                  ++low;
+              } else {
+                  --high;
+              }
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      int twoSumLessThanK(vector<int>& nums, int k) {
+          sort(nums.begin(), nums.end());
+          int low = 0, high = nums.size() - 1;
+          int res = -1;
+          while (low < high) {
+              int val = nums[low] + nums[high];
+              if (val < k) {
+                  res = max(res, val);
+                  ++low;
+              } else {
+                  --high;
+              }
+          }
+          return res;
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

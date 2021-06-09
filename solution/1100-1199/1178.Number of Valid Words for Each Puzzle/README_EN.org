@@ -1,0 +1,206 @@
+* [[https://leetcode.com/problems/number-of-valid-words-for-each-puzzle][1178.
+Number of Valid Words for Each Puzzle]]
+  :PROPERTIES:
+  :CUSTOM_ID: number-of-valid-words-for-each-puzzle
+  :END:
+[[./solution/1100-1199/1178.Number of Valid Words for Each Puzzle/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+With respect to a given puzzle string, a word is valid if both the
+following conditions are satisfied:
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+word contains the first letter of puzzle.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For each letter in word, that letter is in puzzle. For example, if the
+puzzle is "abcdefg", then valid words are "faced", "cabbage", and
+"baggage"; while invalid words are "beefed" (doesn't include "a") and
+"based" (includes "s" which isn't in the puzzle).
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+Return an array answer, where answer[i] is the number of words in the
+given word list words that are valid with respect to the puzzle
+puzzles[i].
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example :
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> 
+  words = [&quot;aaaa&quot;,&quot;asas&quot;,&quot;able&quot;,&quot;ability&quot;,&quot;actt&quot;,&quot;actor&quot;,&quot;access&quot;], 
+  puzzles = [&quot;aboveyz&quot;,&quot;abrodyz&quot;,&quot;abslute&quot;,&quot;absoryz&quot;,&quot;actresz&quot;,&quot;gaswxyz&quot;]
+  <strong>Output:</strong> [1,1,3,2,4,0]
+  <strong>Explanation:</strong>
+  1 valid word&nbsp;for &quot;aboveyz&quot; : &quot;aaaa&quot; 
+  1 valid word&nbsp;for &quot;abrodyz&quot; : &quot;aaaa&quot;
+  3 valid words for &quot;abslute&quot; : &quot;aaaa&quot;, &quot;asas&quot;, &quot;able&quot;
+  2 valid words for&nbsp;&quot;absoryz&quot; : &quot;aaaa&quot;, &quot;asas&quot;
+  4 valid words for&nbsp;&quot;actresz&quot; : &quot;aaaa&quot;, &quot;asas&quot;, &quot;actt&quot;, &quot;access&quot;
+  There&#39;re&nbsp;no valid words for&nbsp;&quot;gaswxyz&quot; cause none of the words in the list contains letter &#39;g&#39;.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= words.length <= 10^5
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+4 <= words[i].length <= 50
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= puzzles.length <= 10^4
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+puzzles[i].length == 7
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+words[i][j], puzzles[i][j] are English lowercase letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Each puzzles[i] doesn't contain repeated characters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

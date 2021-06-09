@@ -1,0 +1,208 @@
+* [[https://leetcode.com/problems/check-if-one-string-swap-can-make-strings-equal][1790.
+Check if One String Swap Can Make Strings Equal]]
+  :PROPERTIES:
+  :CUSTOM_ID: check-if-one-string-swap-can-make-strings-equal
+  :END:
+[[./solution/1700-1799/1790.Check if One String Swap Can Make Strings Equal/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given two strings s1 and s2 of equal length. A string swap is an
+operation where you choose two indices in a string (not necessarily
+different) and swap the characters at these indices.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return true if it is possible to make both strings equal by performing
+at most one string swap on exactly one of the strings. Otherwise, return
+false.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s1 = &quot;bank&quot;, s2 = &quot;kanb&quot;
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> For example, swap the first character with the last character of s2 to make &quot;bank&quot;.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s1 = &quot;attack&quot;, s2 = &quot;defend&quot;
+  <strong>Output:</strong> false
+  <strong>Explanation:</strong> It is impossible to make them equal with one string swap.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s1 = &quot;kelb&quot;, s2 = &quot;kelb&quot;
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> The two strings are already equal, so no string swap operation is required.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s1 = &quot;abcd&quot;, s2 = &quot;dcba&quot;
+  <strong>Output:</strong> false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s1.length, s2.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s1.length == s2.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s1 and s2 consist of only lowercase English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

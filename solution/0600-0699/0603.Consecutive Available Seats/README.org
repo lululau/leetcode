@@ -1,0 +1,150 @@
+* [[https://leetcode-cn.com/problems/consecutive-available-seats][603.
+连续空余座位]]
+  :PROPERTIES:
+  :CUSTOM_ID: 连续空余座位
+  :END:
+[[./solution/0600-0699/0603.Consecutive Available Seats/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+几个朋友来到电影院的售票处，准备预约连续空余座位。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你能利用表 cinema ，帮他们写一个查询语句，获取所有空余座位，并将它们按照
+seat_id 排序后返回吗？
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>| seat_id | free |
+  |---------|------|
+  | 1       | 1    |
+  | 2       | 0    |
+  | 3       | 1    |
+  | 4       | 1    |
+  | 5       | 1    |
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+对于如上样例，你的查询语句应该返回如下结果。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>| seat_id |
+  |---------|
+  | 3       |
+  | 4       |
+  | 5       |
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+seat_id 字段是一个自增的整数，free 字段是布尔类型（'1' 表示空余， '0'
+表示已被占据）。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+连续空余座位的定义是大于等于 2 个连续空余的座位。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

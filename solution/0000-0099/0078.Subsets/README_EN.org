@@ -1,0 +1,198 @@
+* [[https://leetcode.com/problems/subsets][78. Subsets]]
+  :PROPERTIES:
+  :CUSTOM_ID: subsets
+  :END:
+[[./solution/0000-0099/0078.Subsets/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an integer array nums of unique elements, return all possible
+subsets (the power set).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The solution set must not contain duplicate subsets. Return the solution
+in any order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [1,2,3]
+  <strong>Output:</strong> [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [0]
+  <strong>Output:</strong> [[],[0]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 10
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-10 <= nums[i] <= 10
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All the numbers of nums are unique.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def subsets(self, nums: List[int]) -> List[List[int]]:
+          def dfs(nums, i, res, path):
+              res.append(copy.deepcopy(path))
+              while i < len(nums):
+                  path.append(nums[i])
+                  dfs(nums, i + 1, res, path)
+                  path.pop()
+                  i += 1
+          res, path = [], []
+          dfs(nums, 0, res, path)
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public List<List<Integer>> subsets(int[] nums) {
+          List<Integer> path = new ArrayList<>();
+          List<List<Integer>> res = new ArrayList<>();
+          dfs(nums, 0, res, path);
+          return res;
+      }
+
+      private void dfs(int[] nums, int i, List<List<Integer>> res, List<Integer> path) {
+          res.add(new ArrayList<>(path));
+          while (i < nums.length) {
+              path.add(nums[i]);
+              dfs(nums, i + 1, res, path);
+              path.remove(path.size() - 1);
+              ++i;
+          }
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

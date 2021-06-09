@@ -1,0 +1,229 @@
+* [[https://leetcode.com/problems/positions-of-large-groups][830.
+Positions of Large Groups]]
+  :PROPERTIES:
+  :CUSTOM_ID: positions-of-large-groups
+  :END:
+[[./solution/0800-0899/0830.Positions of Large Groups/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+In a string s of lowercase letters, these letters form consecutive
+groups of the same character.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example, a string like s = "abbxxxxzyy" has the groups "a", "bb",
+"xxxx", "z", and "yy".
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A group is identified by an interval [start, end],
+where start and end denote the start and end indices (inclusive) of the
+group. In the above example, "xxxx" has the interval [3,6].
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A group is considered large if it has 3 or more characters.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the intervals of every large group sorted in increasing order by
+start index.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;abbxxxxzzy&quot;
+  <strong>Output:</strong> [[3,6]]
+  <strong>Explanation</strong>: <code>&quot;xxxx&quot; is the only </code>large group with start index 3 and end index 6.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;abc&quot;
+  <strong>Output:</strong> []
+  <strong>Explanation</strong>: We have groups &quot;a&quot;, &quot;b&quot;, and &quot;c&quot;, none of which are large groups.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;abcdddeeeeaabbbcd&quot;
+  <strong>Output:</strong> [[3,5],[6,9],[12,14]]
+  <strong>Explanation</strong>: The large groups are &quot;ddd&quot;, &quot;eeee&quot;, and &quot;bbb&quot;.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;aba&quot;
+  <strong>Output:</strong> []
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s contains lower-case English letters only.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

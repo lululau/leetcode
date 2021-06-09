@@ -1,0 +1,194 @@
+* [[https://leetcode.com/problems/minimize-rounding-error-to-meet-target][1058.
+Minimize Rounding Error to Meet Target]]
+  :PROPERTIES:
+  :CUSTOM_ID: minimize-rounding-error-to-meet-target
+  :END:
+[[./solution/1000-1099/1058.Minimize Rounding Error to Meet Target/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array of prices [p1,p2...,pn] and a target, round each price pi
+to Roundi(pi) so that the rounded array
+[Round1(p1),Round2(p2)...,Roundn(pn)] sums to the given target. Each
+operation Roundi(pi) could be either Floor(pi) or Ceil(pi).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the string "-1" if the rounded array is impossible to sum to
+target. Otherwise, return the smallest rounding error, which is defined
+as Σ |Roundi(pi) - (pi)| for i from 1 to n, as a string with three
+places after the decimal.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> prices = [&quot;0.700&quot;,&quot;2.800&quot;,&quot;4.900&quot;], target = 8
+  <strong>Output:</strong> &quot;1.000&quot;
+  <strong>Explanation:</strong>
+  Use Floor, Ceil and Ceil operations to get (0.7 - 0) + (3 - 2.8) + (5 - 4.9) = 0.7 + 0.2 + 0.1 = 1.0 .
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> prices = [&quot;1.500&quot;,&quot;2.500&quot;,&quot;3.500&quot;], target = 10
+  <strong>Output:</strong> &quot;-1&quot;
+  <strong>Explanation:</strong> It is impossible to meet the target.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> prices = [&quot;1.500&quot;,&quot;2.500&quot;,&quot;3.500&quot;], target = 9
+  <strong>Output:</strong> &quot;1.500&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= prices.length <= 500
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Each string prices[i] represents a real number in the range [0.0,
+1000.0] and has exactly 3 decimal places.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= target <= 106
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

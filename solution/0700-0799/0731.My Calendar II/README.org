@@ -1,0 +1,206 @@
+* [[https://leetcode-cn.com/problems/my-calendar-ii][731. 我的日程安排表
+II]]
+  :PROPERTIES:
+  :CUSTOM_ID: 我的日程安排表-ii
+  :END:
+[[./solution/0700-0799/0731.My Calendar II/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+实现一个 MyCalendar
+类来存放你的日程安排。如果要添加的时间内不会导致三重预订时，则可以存储这个新的日程安排。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+MyCalendar 有一个 book(int start, int end)方法。它意味着在 start 到 end
+时间内增加一个日程安排，注意，这里的时间是半开区间，即 [start, end),
+实数 x 的范围为，  start <= x < end。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+当三个日程安排有一些时间上的交叉时（例如三个日程安排都在同一时间内），就会产生三重预订。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+每次调用
+MyCalendar.book方法时，如果可以将日程安排成功添加到日历中而不会导致三重预订，返回
+true。否则，返回 false 并且不要将该日程安排添加到日历中。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请按照以下步骤调用MyCalendar 类: MyCalendar cal = new MyCalendar();
+MyCalendar.book(start, end)
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>MyCalendar();
+  MyCalendar.book(10, 20); // returns true
+  MyCalendar.book(50, 60); // returns true
+  MyCalendar.book(10, 40); // returns true
+  MyCalendar.book(5, 15); // returns false
+  MyCalendar.book(5, 10); // returns true
+  MyCalendar.book(25, 55); // returns true
+  <strong>解释：</strong> 
+  前两个日程安排可以添加至日历中。 第三个日程安排会导致双重预订，但可以添加至日历中。
+  第四个日程安排活动（5,15）不能添加至日历中，因为它会导致三重预订。
+  第五个日程安排（5,10）可以添加至日历中，因为它未使用已经双重预订的时间10。
+  第六个日程安排（25,55）可以添加至日历中，因为时间 [25,40] 将和第三个日程安排双重预订；
+  时间 [40,50] 将单独预订，时间 [50,55）将和第二个日程安排双重预订。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+每个测试用例，调用 MyCalendar.book 函数最多不超过 1000次。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+调用函数 MyCalendar.book(start, end)时， start 和 end 的取值范围为 [0,
+10^9]。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,201 @@
+* [[https://leetcode-cn.com/problems/flatten-2d-vector][251.
+展开二维向量]]
+  :PROPERTIES:
+  :CUSTOM_ID: 展开二维向量
+  :END:
+[[./solution/0200-0299/0251.Flatten 2D Vector/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请设计并实现一个能够展开二维向量的迭代器。该迭代器需要支持 next
+和 hasNext 两种操作。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  Vector2D iterator = new Vector2D([[1,2],[3],[4]]);
+
+  iterator.next(); // 返回 1
+  iterator.next(); // 返回 2
+  iterator.next(); // 返回 3
+  iterator.hasNext(); // 返回 true
+  iterator.hasNext(); // 返回 true
+  iterator.next(); // 返回 4
+  iterator.hasNext(); // 返回 false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+请记得 重置 在 Vector2D
+中声明的类变量（静态变量），因为类变量会 在多个测试用例中保持不变，影响判题准确。请
+查阅 这里。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+你可以假定 next() 的调用总是合法的，即当 next()
+被调用时，二维向量总是存在至少一个后续元素。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+进阶：尝试在代码中仅使用 C++ 提供的迭代器 或 Java 提供的迭代器。
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Vector2D:
+
+      def __init__(self, vec: List[List[int]]):
+          self.flatten = []
+          for item in vec:
+              for e in item:
+                  self.flatten.append(e)
+          self.cur = -1
+
+      def next(self) -> int:
+          self.cur += 1
+          return self.flatten[self.cur]
+
+      def hasNext(self) -> bool:
+          return self.cur < len(self.flatten) - 1
+
+
+  # Your Vector2D object will be instantiated and called as such:
+  # obj = Vector2D(vec)
+  # param_1 = obj.next()
+  # param_2 = obj.hasNext()
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

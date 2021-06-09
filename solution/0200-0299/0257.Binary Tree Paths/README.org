@@ -1,0 +1,164 @@
+* [[https://leetcode-cn.com/problems/binary-tree-paths][257.
+二叉树的所有路径]]
+  :PROPERTIES:
+  :CUSTOM_ID: 二叉树的所有路径
+  :END:
+[[./solution/0200-0299/0257.Binary Tree Paths/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个二叉树，返回所有从根节点到叶子节点的路径。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+说明: 叶子节点是指没有子节点的节点。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong>
+
+     1
+   /   \
+  2     3
+   \
+    5
+
+  <strong>输出:</strong> [&quot;1-&gt;2-&gt;5&quot;, &quot;1-&gt;3&quot;]
+
+  <strong>解释:</strong> 所有根节点到叶子节点的路径为: 1-&gt;2-&gt;5, 1-&gt;3</pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+深度优先搜索+路径记录。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  # Definition for a binary tree node.
+  # class TreeNode:
+  #     def __init__(self, x):
+  #         self.val = x
+  #         self.left = None
+  #         self.right = None
+
+  class Solution:
+      def binaryTreePaths(self, root: TreeNode) -> List[str]:
+          def dfs(root):
+              if root is None:
+                  return
+              path.append(str(root.val))
+              if root.left is None and root.right is None:
+                  res.append("->".join(path))
+              dfs(root.left)
+              dfs(root.right)
+              path.pop()
+          res = []
+          path = []
+          dfs(root)
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  /**
+   * Definition for a binary tree node.
+   * public class TreeNode {
+   *     int val;
+   *     TreeNode left;
+   *     TreeNode right;
+   *     TreeNode(int x) { val = x; }
+   * }
+   */
+  class Solution {
+      private List<String> res;
+      private List<String> path;
+
+      public List<String> binaryTreePaths(TreeNode root) {
+          if (root == null) return Collections.emptyList();
+          res = new ArrayList<>();
+          path = new ArrayList<>();
+          dfs(root);
+          return res;
+      }
+
+      private void dfs(TreeNode root) {
+          if (root == null) return;
+          path.add(String.valueOf(root.val));
+          if (root.left == null && root.right == null) {
+              res.add(String.join("->", path));
+          }
+          dfs(root.left);
+          dfs(root.right);
+          path.remove(path.size() - 1);
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

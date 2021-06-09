@@ -1,0 +1,106 @@
+* [[https://leetcode-cn.com/problems/bst-sequences-lcci][04.09. BST
+Sequences]]
+  :PROPERTIES:
+  :CUSTOM_ID: bst-sequences
+  :END:
+[[./lcci/04.09.BST Sequences/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+A binary search tree was created by traversing through an array from
+left to right and inserting each element. Given a binary search tree
+with distinct elements, print all possible arrays that could have led to
+this tree.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+Given the following tree:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+          2
+
+         / \
+
+        1   3
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Output:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  [
+
+     [2,1,3],
+
+     [2,3,1]
+
+  ]
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

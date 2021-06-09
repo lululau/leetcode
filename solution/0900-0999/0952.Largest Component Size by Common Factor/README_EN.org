@@ -1,0 +1,217 @@
+* [[https://leetcode.com/problems/largest-component-size-by-common-factor][952.
+Largest Component Size by Common Factor]]
+  :PROPERTIES:
+  :CUSTOM_ID: largest-component-size-by-common-factor
+  :END:
+[[./solution/0900-0999/0952.Largest Component Size by Common Factor/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a non-empty array of unique positive integers A, consider the
+following graph:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+There are A.length nodes, labelled A[0] to A[A.length - 1];
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+There is an edge between A[i] and A[j] if and only if A[i] and A[j]
+share a common factor greater than 1.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the size of the largest connected component in the graph.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-1-1">[4,6,15,35]</span>
+
+  <strong>Output: </strong><span id="example-output-1">4</span>
+
+  <span><img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0900-0999/0952.Largest Component Size by Common Factor/images/ex1.png" style="width: 257px; height: 50px;" /></span>
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-2-1">[20,50,9,63]</span>
+
+  <strong>Output: </strong><span id="example-output-2">2</span>
+
+  <span><img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0900-0999/0952.Largest Component Size by Common Factor/images/ex2.png" style="width: 293px; height: 50px;" /></span>
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-3-1">[2,3,6,7,4,12,21,39]</span>
+
+  <strong>Output: </strong><span id="example-output-3">8</span>
+
+  <span><img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0900-0999/0952.Largest Component Size by Common Factor/images/ex3.png" style="width: 346px; height: 180px;" /></span>
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= A.length <= 20000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= A[i] <= 100000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

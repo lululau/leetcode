@@ -1,0 +1,130 @@
+* [[https://leetcode-cn.com/problems/best-line-lcci][16.14. Best Line]]
+  :PROPERTIES:
+  :CUSTOM_ID: best-line
+  :END:
+[[./lcci/16.14.Best Line/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a two-dimensional graph with points on it, find a line which
+passes the most number of points.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Assume all the points that passed by the line are stored in list
+S sorted by their number. You need to return [S[0], S[1]], that is , two
+points that have smallest number. If there are more than one line that
+passes the most number of points, choose the one that has the smallest
+S[0]. If there are more that one line that has the same S[0], choose the
+one that has smallest S[1].
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong> [[0,0],[1,1],[1,0],[2,0]]
+
+  <strong>Output: </strong> [0,2]
+
+  <strong>Explanation: </strong> The numbers of points passed by the line are [0,2,3].
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+2 <= len(Points) <= 300
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+len(Points[i]) = 2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

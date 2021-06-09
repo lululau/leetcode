@@ -1,0 +1,193 @@
+* [[https://leetcode.com/problems/shortest-way-to-form-string][1055.
+Shortest Way to Form String]]
+  :PROPERTIES:
+  :CUSTOM_ID: shortest-way-to-form-string
+  :END:
+[[./solution/1000-1099/1055.Shortest Way to Form String/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+From any string, we can form a subsequence of that string by deleting
+some number of characters (possibly no deletions).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given two strings source and target, return the minimum number of
+subsequences of source such that their concatenation equals target. If
+the task is impossible, return -1.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>source = <span id="example-input-1-1">&quot;abc&quot;</span>, target = <span id="example-input-1-2">&quot;abcbc&quot;</span>
+
+  <strong>Output: </strong><span id="example-output-1">2</span>
+
+  <strong>Explanation: </strong>The target &quot;abcbc&quot; can be formed by &quot;abc&quot; and &quot;bc&quot;, which are subsequences of source &quot;abc&quot;.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>source = <span id="example-input-2-1">&quot;abc&quot;</span>, target = <span id="example-input-2-2">&quot;acdbc&quot;</span>
+
+  <strong>Output: </strong><span id="example-output-2">-1</span>
+
+  <strong>Explanation: </strong>The target string cannot be constructed from the subsequences of source string due to the character &quot;d&quot; in target string.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>source = <span id="example-input-3-1">&quot;xyz&quot;</span>, target = <span id="example-input-3-2">&quot;xzyxz&quot;</span>
+
+  <strong>Output: </strong><span id="example-output-3">3</span>
+
+  <strong>Explanation: </strong>The target string can be constructed as follows &quot;xz&quot; + &quot;y&quot; + &quot;xz&quot;.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Both the source and target strings consist of only lowercase English
+letters from "a"-"z".
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The lengths of source and target string are between 1 and 1000.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

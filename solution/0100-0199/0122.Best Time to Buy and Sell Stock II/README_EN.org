@@ -1,0 +1,234 @@
+* [[https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii][122.
+Best Time to Buy and Sell Stock II]]
+  :PROPERTIES:
+  :CUSTOM_ID: best-time-to-buy-and-sell-stock-ii
+  :END:
+[[./solution/0100-0199/0122.Best Time to Buy and Sell Stock II/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given an array prices where prices[i] is the price of a given
+stock on the ith day.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Find the maximum profit you can achieve. You may complete as many
+transactions as you like (i.e., buy one and sell one share of the stock
+multiple times).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note: You may not engage in multiple transactions simultaneously (i.e.,
+you must sell the stock before you buy again).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> prices = [7,1,5,3,6,4]
+  <strong>Output:</strong> 7
+  <strong>Explanation:</strong> Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.
+  Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> prices = [1,2,3,4,5]
+  <strong>Output:</strong> 4
+  <strong>Explanation:</strong> Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
+  Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are engaging multiple transactions at the same time. You must sell before buying again.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> prices = [7,6,4,3,1]
+  <strong>Output:</strong> 0
+  <strong>Explanation:</strong> In this case, no transaction is done, i.e., max profit = 0.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= prices.length <= 3 * 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= prices[i] <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def maxProfit(self, prices: List[int]) -> int:
+          if not prices:
+              return 0
+          res = 0
+          for i in range(1, len(prices)):
+              t = prices[i] - prices[i - 1]
+              res += max(t, 0)
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int maxProfit(int[] prices) {
+          if (prices == null) return 0;
+          int res = 0;
+          for (int i = 1, n = prices.length; i < n; ++i) {
+              // 策略是所有上涨交易日都做买卖，所以下跌交易日都不做买卖
+              int t = prices[i] - prices[i - 1];
+              res += Math.max(t, 0);
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      int maxProfit(vector<int>& prices) {
+          int res = 0, n;
+          if ((n = prices.size()) == 0) return 0;
+          for (int i = 1; i < n; ++i)
+          {
+              int t = prices[i] - prices[i - 1];
+              res += max(0, t);
+          }
+          return res;
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

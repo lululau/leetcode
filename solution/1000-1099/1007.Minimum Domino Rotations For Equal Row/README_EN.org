@@ -1,0 +1,189 @@
+* [[https://leetcode.com/problems/minimum-domino-rotations-for-equal-row][1007.
+Minimum Domino Rotations For Equal Row]]
+  :PROPERTIES:
+  :CUSTOM_ID: minimum-domino-rotations-for-equal-row
+  :END:
+[[./solution/1000-1099/1007.Minimum Domino Rotations For Equal Row/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+In a row of dominoes, A[i] and B[i] represent the top and bottom halves
+of the ith domino.  (A domino is a tile with two numbers from 1 to 6 -
+one on each half of the tile.)
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+We may rotate the ith domino, so that A[i] and B[i] swap values.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the minimum number of rotations so that all the values in A are
+the same, or all the values in B are the same.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If it cannot be done, return -1.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> A = [2,1,2,4,2,2], B = [5,2,6,2,3,2]
+  <strong>Output:</strong> 2
+  <strong>Explanation:</strong> 
+  The first figure represents the dominoes as given by A and B: before we do any rotations.
+  If we rotate the second and fourth dominoes, we can make every value in the top row equal to 2, as indicated by the second figure.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> A = [3,5,1,2,3], B = [3,6,3,3,4]
+  <strong>Output:</strong> -1
+  <strong>Explanation:</strong> 
+  In this case, it is not possible to rotate the dominoes to make one row of values equal.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+2 <= A.length == B.length <= 2 * 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= A[i], B[i] <= 6
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

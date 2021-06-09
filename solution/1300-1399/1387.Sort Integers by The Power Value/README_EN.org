@@ -1,0 +1,305 @@
+* [[https://leetcode.com/problems/sort-integers-by-the-power-value][1387.
+Sort Integers by The Power Value]]
+  :PROPERTIES:
+  :CUSTOM_ID: sort-integers-by-the-power-value
+  :END:
+[[./solution/1300-1399/1387.Sort Integers by The Power Value/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+The power of an integer x is defined as the number of steps needed to
+transform x into 1 using the following steps:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+if x is even then x = x / 2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+if x is odd then x = 3 * x + 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example, the power of x = 3 is 7 because 3 needs 7 steps to become 1
+(3 --> 10 --> 5 --> 16 --> 8 --> 4 --> 2 --> 1).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given three integers lo, hi and k. The task is to sort all integers in
+the interval [lo, hi] by the power value in ascending order, if two or
+more integers have the same power value sort them by ascending order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the k-th integer in the range [lo, hi] sorted by the power value.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Notice that for any integer x (lo <= x <= hi) it is guaranteed that x
+will transform into 1 using these steps and that the power of x is will
+fit in 32 bit signed integer.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> lo = 12, hi = 15, k = 2
+
+  <strong>Output:</strong> 13
+
+  <strong>Explanation:</strong> The power of 12 is 9 (12 --&gt; 6 --&gt; 3 --&gt; 10 --&gt; 5 --&gt; 16 --&gt; 8 --&gt; 4 --&gt; 2 --&gt; 1)
+
+  The power of 13 is 9
+
+  The power of 14 is 17
+
+  The power of 15 is 17
+
+  The interval sorted by the power value [12,13,14,15]. For k = 2 answer is the second element which is 13.
+
+  Notice that 12 and 13 have the same power value and we sorted them in ascending order. Same for 14 and 15.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> lo = 1, hi = 1, k = 1
+
+  <strong>Output:</strong> 1
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> lo = 7, hi = 11, k = 4
+
+  <strong>Output:</strong> 7
+
+  <strong>Explanation:</strong> The power array corresponding to the interval [7, 8, 9, 10, 11] is [16, 3, 19, 6, 14].
+
+  The interval sorted by power is [8, 10, 11, 7, 9].
+
+  The fourth number in the sorted array is 7.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> lo = 10, hi = 20, k = 5
+
+  <strong>Output:</strong> 13
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> lo = 1, hi = 1000, k = 777
+
+  <strong>Output:</strong> 570
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= lo <= hi <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= k <= hi - lo + 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

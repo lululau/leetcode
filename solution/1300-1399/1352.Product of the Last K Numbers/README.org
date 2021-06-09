@@ -1,0 +1,307 @@
+* [[https://leetcode-cn.com/problems/product-of-the-last-k-numbers][1352.
+最后 K 个数的乘积]]
+  :PROPERTIES:
+  :CUSTOM_ID: 最后-k-个数的乘积
+  :END:
+[[./solution/1300-1399/1352.Product of the Last K Numbers/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你实现一个「数字乘积类」ProductOfNumbers，要求支持下述两种方法：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+1. add(int num)
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+将数字 num 添加到当前数字列表的最后面。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+2. getProduct(int k)
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+返回当前数字列表中，最后 k 个数字的乘积。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+你可以假设当前列表中始终 至少 包含 k 个数字。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+题目数据保证：任何时候，任一连续数字序列的乘积都在 32-bit
+整数范围内，不会溢出。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>
+  [&quot;ProductOfNumbers&quot;,&quot;add&quot;,&quot;add&quot;,&quot;add&quot;,&quot;add&quot;,&quot;add&quot;,&quot;getProduct&quot;,&quot;getProduct&quot;,&quot;getProduct&quot;,&quot;add&quot;,&quot;getProduct&quot;]
+  [[],[3],[0],[2],[5],[4],[2],[3],[4],[8],[2]]
+
+  <strong>输出：</strong>
+  [null,null,null,null,null,null,20,40,0,null,32]
+
+  <strong>解释：</strong>
+  ProductOfNumbers productOfNumbers = new ProductOfNumbers();
+  productOfNumbers.add(3);        // [3]
+  productOfNumbers.add(0);        // [3,0]
+  productOfNumbers.add(2);        // [3,0,2]
+  productOfNumbers.add(5);        // [3,0,2,5]
+  productOfNumbers.add(4);        // [3,0,2,5,4]
+  productOfNumbers.getProduct(2); // 返回 20 。最后 2 个数字的乘积是 5 * 4 = 20
+  productOfNumbers.getProduct(3); // 返回 40 。最后 3 个数字的乘积是 2 * 5 * 4 = 40
+  productOfNumbers.getProduct(4); // 返回  0 。最后 4 个数字的乘积是 0 * 2 * 5 * 4 = 0
+  productOfNumbers.add(8);        // [3,0,2,5,4,8]
+  productOfNumbers.getProduct(2); // 返回 32 。最后 2 个数字的乘积是 4 * 8 = 32 
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+add 和 getProduct 两种操作加起来总共不会超过 40000 次。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= num <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= k <= 40000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+"前缀积"实现。
+
+若遇到 0，则清空前缀积列表。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class ProductOfNumbers:
+
+      def __init__(self):
+          self.pre_product = []
+
+      def add(self, num: int) -> None:
+          if num == 0:
+              self.pre_product = []
+              return
+          if not self.pre_product:
+              self.pre_product.append(1)
+          self.pre_product.append(num * self.pre_product[-1])
+
+      def getProduct(self, k: int) -> int:
+          n = len(self.pre_product)
+          return 0 if n <= k else self.pre_product[n - 1] // self.pre_product[n - k - 1]
+
+
+  # Your ProductOfNumbers object will be instantiated and called as such:
+  # obj = ProductOfNumbers()
+  # obj.add(num)
+  # param_2 = obj.getProduct(k)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class ProductOfNumbers {
+      private List<Integer> preProduct;
+
+      public ProductOfNumbers() {
+          preProduct = new ArrayList<>();
+      }
+
+      public void add(int num) {
+          if (num == 0) {
+              preProduct.clear();
+              return;
+          }
+          if (preProduct.isEmpty()) {
+              preProduct.add(1);
+          }
+          preProduct.add(num * preProduct.get(preProduct.size() - 1));
+      }
+
+      public int getProduct(int k) {
+          return preProduct.size() <= k ? 0 : preProduct.get(preProduct.size() - 1) / preProduct.get(preProduct.size() - 1 - k);
+      }
+  }
+
+  /**
+   * Your ProductOfNumbers object will be instantiated and called as such:
+   * ProductOfNumbers obj = new ProductOfNumbers();
+   * obj.add(num);
+   * int param_2 = obj.getProduct(k);
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

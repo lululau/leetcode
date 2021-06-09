@@ -1,0 +1,238 @@
+* [[https://leetcode.com/problems/valid-palindrome][125. Valid
+Palindrome]]
+  :PROPERTIES:
+  :CUSTOM_ID: valid-palindrome
+  :END:
+[[./solution/0100-0199/0125.Valid Palindrome/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a string s, determine if it is a palindrome, considering only
+alphanumeric characters and ignoring cases.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;A man, a plan, a canal: Panama&quot;
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> &quot;amanaplanacanalpanama&quot; is a palindrome.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;race a car&quot;
+  <strong>Output:</strong> false
+  <strong>Explanation:</strong> &quot;raceacar&quot; is not a palindrome.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s.length <= 2 * 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s consists only of printable ASCII characters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def isPalindrome(self, s: str) -> bool:
+          i, j = 0, len(s) - 1
+          while i < j:
+              if not s[i].isalnum():
+                  i += 1
+              elif not s[j].isalnum():
+                  j -= 1
+              elif s[i].lower() != s[j].lower():
+                  return False
+              else:
+                  i += 1
+                  j -= 1
+          return True
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public boolean isPalindrome(String s) {
+          int i = 0, j = s.length() - 1;
+          while (i < j) {
+              if (!Character.isLetterOrDigit(s.charAt(i))) {
+                  ++i;
+              } else if (!Character.isLetterOrDigit(s.charAt(j))) {
+                  --j;
+              } else if (Character.toUpperCase(s.charAt(i)) != Character.toUpperCase(s.charAt(j))) {
+                  return false;
+              } else {
+                  ++i;
+                  --j;
+              }
+          }
+          return true;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      bool isPalindrome(string s) {
+          int i = 0, j = s.size() - 1;
+          while (i < j) {
+              if (!isAlphaNum(s[i])) ++i;
+              else if (!isAlphaNum(s[j])) --j;
+              else if ((s[i] + 32 - 'a') % 32 != (s[j] + 32 - 'a') % 32) return false;
+              else {
+                  ++i;
+                  --j;
+              }
+          }
+          return true;
+      }
+
+  private:
+      bool isAlphaNum(char &ch) {
+          if (ch >= 'a' && ch <= 'z') return true;
+          if (ch >= 'A' && ch <= 'Z') return true;
+          if (ch >= '0' && ch <= '9') return true;
+          return false;
+      }
+  };
+#+end_src
+
+*** *TypeScript*
+    :PROPERTIES:
+    :CUSTOM_ID: typescript
+    :END:
+#+begin_example
+  function isPalindrome(s: string): boolean {
+      let left: number = 0, right: number = s.length - 1;
+      while (left < right) {
+          let char1: string = s.charAt(left);
+          let char2: string = s.charAt(right);
+          if (!(/[a-zA-Z0-9]/).test(char1)) {
+              ++left;
+          } else if (!(/[a-zA-Z0-9]/).test(char2)) {
+              --right;
+          } else if (char1.toLocaleLowerCase() != char2.toLocaleLowerCase()) {
+              return false;
+          } else {
+              ++left;
+              --right;
+          }
+      }
+      return true;
+  };
+#+end_example
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

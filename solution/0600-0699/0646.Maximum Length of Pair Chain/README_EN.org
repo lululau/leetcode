@@ -1,0 +1,129 @@
+* [[https://leetcode.com/problems/maximum-length-of-pair-chain][646.
+Maximum Length of Pair Chain]]
+  :PROPERTIES:
+  :CUSTOM_ID: maximum-length-of-pair-chain
+  :END:
+[[./solution/0600-0699/0646.Maximum Length of Pair Chain/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given n pairs of numbers. In every pair, the first number is
+always smaller than the second number.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Now, we define a pair (c, d) can follow another pair (a, b) if and only
+if b < c. Chain of pairs can be formed in this fashion.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a set of pairs, find the length longest chain which can be formed.
+You needn't use up all the given pairs. You can select pairs in any
+order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> [[1,2], [2,3], [3,4]]
+
+  <b>Output:</b> 2
+
+  <b>Explanation:</b> The longest chain is [1,2] -> [3,4]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of given pairs will be in the range [1, 1000].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

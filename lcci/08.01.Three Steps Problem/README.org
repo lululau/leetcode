@@ -1,0 +1,196 @@
+* [[https://leetcode-cn.com/problems/three-steps-problem-lcci][面试题
+08.01. 三步问题]]
+  :PROPERTIES:
+  :CUSTOM_ID: 面试题-08.01.-三步问题
+  :END:
+[[./lcci/08.01.Three Steps Problem/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+三步问题。有个小孩正在上楼梯，楼梯有n阶台阶，小孩一次可以上1阶、2阶或3阶。实现一种方法，计算小孩有多少种上楼梯的方式。结果可能很大，你需要对结果模1000000007。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong> 输入</strong>：n = 3 
+  <strong> 输出</strong>：4
+  <strong> 说明</strong>: 有四种走法
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong> 输入</strong>：n = 5
+  <strong> 输出</strong>：13
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n范围在[1, 1000000]之间
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+递推法。=f(n)=f(n-1)+f(n-2)+f(n-3)=
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def waysToStep(self, n: int) -> int:
+          if n < 3:
+              return n
+          a, b, c = 1, 2, 4
+          for _ in range(4, n + 1):
+              a, b, c = b, c, (a + b + c) % 1000000007
+          return c
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int waysToStep(int n) {
+          if (n < 3) {
+              return n;
+          }
+          int a = 1, b = 2, c = 4;
+          for (int i = 4; i <= n; ++i) {
+              int t = a;
+              a = b;
+              b = c;
+              c = ((a + b) % 1000000007 + t) % 1000000007;
+          }
+          return c;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number} n
+   * @return {number}
+   */
+   var waysToStep = function(n) {
+      if (n < 3) return n;
+      let a = 1, b = 2, c = 4;
+      for (let i = 3; i < n; i++) {
+          [a, b, c] = [b, c, (a + b + c) % 1000000007];
+      }
+      return c;
+  };
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      int waysToStep(int n) {
+          if (n < 3) {
+              return n;
+          }
+          int a = 1, b = 2, c = 4, i = 4;
+          while (i++ <= n) {
+              int t = ((a + b) % 1000000007 + c) % 1000000007;
+              a = b;
+              b = c;
+              c = t;
+          }
+          return c;
+      }
+  };
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,154 @@
+* [[https://leetcode.com/problems/24-game][679. 24 Game]]
+  :PROPERTIES:
+  :CUSTOM_ID: game
+  :END:
+[[./solution/0600-0699/0679.24 Game/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You have 4 cards each containing a number from 1 to 9. You need to judge
+whether they could operated through *, /, +, -, (, ) to get the value
+of 24.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> [4, 1, 8, 7]
+
+  <b>Output:</b> True
+
+  <b>Explanation:</b> (8-4) * (7-1) = 24
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> [1, 2, 1, 2]
+
+  <b>Output:</b> False
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The division operator / represents real division, not integer division.
+For example, 4 / (1 - 2/3) = 12.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Every operation done is between two numbers. In particular, we cannot
+use - as a unary operator. For example, with [1, 1, 1, 1] as input, the
+expression -1 - 1 - 1 - 1 is not allowed.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+You cannot concatenate numbers together. For example, if the input is
+[1, 2, 1, 2], we cannot write this as 12 + 12.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,181 @@
+* [[https://leetcode.com/problems/predict-the-winner][486. Predict the
+Winner]]
+  :PROPERTIES:
+  :CUSTOM_ID: predict-the-winner
+  :END:
+[[./solution/0400-0499/0486.Predict the Winner/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given an integer array nums. Two players are playing a game with
+this array: player 1 and player 2.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Player 1 and player 2 take turns, with player 1 starting first. Both
+players start the game with a score of 0. At each turn, the player takes
+one of the numbers from either end of the array (i.e., nums[0] or
+nums[nums.length - 1]) which reduces the size of the array by 1. The
+player adds the chosen number to their score. The game ends when there
+are no more elements in the array.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return true if Player 1 can win the game. If the scores of both players
+are equal, then player 1 is still the winner, and you should also return
+true. You may assume that both players are playing optimally.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [1,5,2]
+  <strong>Output:</strong> false
+  <strong>Explanation:</strong> Initially, player 1 can choose between 1 and 2. 
+  If he chooses 2 (or 1), then player 2 can choose from 1 (or 2) and 5. If player 2 chooses 5, then player 1 will be left with 1 (or 2). 
+  So, final score of player 1 is 1 + 2 = 3, and player 2 is 5. 
+  Hence, player 1 will never be the winner and you need to return false.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [1,5,233,7]
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> Player 1 first chooses 1. Then player 2 has to choose between 5 and 7. No matter which number player 2 choose, player 1 can choose 233.
+  Finally, player 1 has more score (234) than player 2 (12), so you need to return True representing player1 can win.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 20
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= nums[i] <= 107
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

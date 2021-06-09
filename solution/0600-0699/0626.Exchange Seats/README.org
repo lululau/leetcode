@@ -1,0 +1,164 @@
+* [[https://leetcode-cn.com/problems/exchange-seats][626. 换座位]]
+  :PROPERTIES:
+  :CUSTOM_ID: 换座位
+  :END:
+[[./solution/0600-0699/0626.Exchange Seats/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+小美是一所中学的信息科技老师，她有一张
+seat 座位表，平时用来储存学生名字和与他们相对应的座位 id。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+其中纵列的 id 是连续递增的
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+小美想改变相邻俩学生的座位。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你能不能帮她写一个 SQL query 来输出小美想要的结果呢？
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +---------+---------+
+  |    id   | student |
+  +---------+---------+
+  |    1    | Abbot   |
+  |    2    | Doris   |
+  |    3    | Emerson |
+  |    4    | Green   |
+  |    5    | Jeames  |
+  +---------+---------+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+假如数据输入的是上表，则输出结果如下：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +---------+---------+
+  |    id   | student |
+  +---------+---------+
+  |    1    | Doris   |
+  |    2    | Abbot   |
+  |    3    | Green   |
+  |    4    | Emerson |
+  |    5    | Jeames  |
+  +---------+---------+</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+如果学生人数是奇数，则不需要改变最后一个同学的座位。
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_example
+  SELECT
+      s1.id, COALESCE(s2.student, s1.student) AS student
+  FROM
+      seat s1
+          LEFT JOIN
+      seat s2 ON (s1.id+1)^1-1 = s2.id
+  ORDER BY s1.id;
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

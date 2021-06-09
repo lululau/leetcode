@@ -1,0 +1,125 @@
+* [[https://leetcode.com/problems/most-frequent-subtree-sum][508. Most
+Frequent Subtree Sum]]
+  :PROPERTIES:
+  :CUSTOM_ID: most-frequent-subtree-sum
+  :END:
+[[./solution/0500-0599/0508.Most Frequent Subtree Sum/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the root of a tree, you are asked to find the most frequent
+subtree sum. The subtree sum of a node is defined as the sum of all the
+node values formed by the subtree rooted at that node (including the
+node itself). So what is the most frequent subtree sum value? If there
+is a tie, return all the values with the highest frequency in any order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Examples 1
+
+Input:
+
+#+begin_html
+  <pre>
+
+    5
+
+   /  \
+
+  2   -3
+
+  </pre>
+#+end_html
+
+return [2, -3, 4], since all the values happen only once, return all of
+them in any order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Examples 2
+
+Input:
+
+#+begin_html
+  <pre>
+
+    5
+
+   /  \
+
+  2   -5
+
+  </pre>
+#+end_html
+
+return [2], since 2 happens twice, however -5 only occur once.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+You may assume the sum of values in any subtree is in the range of
+32-bit signed integer.
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

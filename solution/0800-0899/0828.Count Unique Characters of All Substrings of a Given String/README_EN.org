@@ -1,0 +1,184 @@
+* [[https://leetcode.com/problems/count-unique-characters-of-all-substrings-of-a-given-string][828.
+Count Unique Characters of All Substrings of a Given String]]
+  :PROPERTIES:
+  :CUSTOM_ID: count-unique-characters-of-all-substrings-of-a-given-string
+  :END:
+[[./solution/0800-0899/0828.Count Unique Characters of All Substrings of a Given String/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Let's define a function countUniqueChars(s) that returns the number of
+unique characters on s, for example if s = "LEETCODE" then "L",
+"T","C","O","D" are the unique characters since they appear only once in
+s, therefore countUniqueChars(s) = 5. On this problem given a string s
+we need to return the sum of countUniqueChars(t) where t is a substring
+of s. Notice that some substrings can be repeated so on this case you
+have to count the repeated ones too.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Since the answer can be very large, return the answer modulo 10 ^ 9 + 7.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;ABC&quot;
+  <strong>Output:</strong> 10
+  <strong>Explanation: </strong>All possible substrings are: &quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;AB&quot;,&quot;BC&quot; and &quot;ABC&quot;.
+  Evey substring is composed with only unique letters.
+  Sum of lengths of all substring is 1 + 1 + 1 + 2 + 2 + 3 = 10
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;ABA&quot;
+  <strong>Output:</strong> 8
+  <strong>Explanation: </strong>The same as example 1, except <code>countUniqueChars</code>(&quot;ABA&quot;) = 1.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;LEETCODE&quot;
+  <strong>Output:</strong> 92
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= s.length <= 10^4
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s contain upper-case English letters only.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

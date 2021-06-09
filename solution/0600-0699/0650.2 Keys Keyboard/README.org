@@ -1,0 +1,164 @@
+* [[https://leetcode-cn.com/problems/2-keys-keyboard][650.
+只有两个键的键盘]]
+  :PROPERTIES:
+  :CUSTOM_ID: 只有两个键的键盘
+  :END:
+[[./solution/0600-0699/0650.2 Keys Keyboard/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+最初在一个记事本上只有一个字符 'A'。你每次可以对这个记事本进行两种操作：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Copy All (复制全部) :
+你可以复制这个记事本中的所有字符(部分的复制是不允许的)。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Paste (粘贴) : 你可以粘贴你上一次复制的字符。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个数字 n 。你需要使用最少的操作次数，在记事本中打印出恰好 n 个
+'A'。输出能够打印出 n 个 'A' 的最少操作次数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入:</strong> 3
+  <strong>输出:</strong> 3
+  <strong>解释:</strong>
+  最初, 我们只有一个字符 &#39;A&#39;。
+  第 1 步, 我们使用 <strong>Copy All</strong> 操作。
+  第 2 步, 我们使用 <strong>Paste </strong>操作来获得 &#39;AA&#39;。
+  第 3 步, 我们使用 <strong>Paste</strong> 操作来获得 &#39;AAA&#39;。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+说明:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n 的取值范围是 [1, 1000] 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

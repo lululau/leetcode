@@ -1,0 +1,157 @@
+* [[https://leetcode-cn.com/problems/shortest-distance-in-a-plane][612.
+平面上的最近距离]]
+  :PROPERTIES:
+  :CUSTOM_ID: 平面上的最近距离
+  :END:
+[[./solution/0600-0699/0612.Shortest Distance in a Plane/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+表 point_2d 保存了所有点（多于 2 个点）的坐标 (x,y)
+，这些点在平面上两两不重合。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+写一个查询语句找到两点之间的最近距离，保留 2 位小数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>| x  | y  |
+  |----|----|
+  | -1 | -1 |
+  | 0  | 0  |
+  | -1 | -2 |
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+最近距离在点 (-1,-1) 和(-1,2) 之间，距离为 1.00 。所以输出应该为：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>| shortest |
+  |----------|
+  | 1.00     |
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意：任意点之间的最远距离小于 10000 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

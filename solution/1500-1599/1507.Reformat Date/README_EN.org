@@ -1,0 +1,264 @@
+* [[https://leetcode.com/problems/reformat-date][1507. Reformat Date]]
+  :PROPERTIES:
+  :CUSTOM_ID: reformat-date
+  :END:
+[[./solution/1500-1599/1507.Reformat Date/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a date string in the form Day Month Year, where:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Day is in the set {"1st", "2nd", "3rd", "4th", ..., "30th", "31st"}.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Month is in the set {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",
+"Aug", "Sep", "Oct", "Nov", "Dec"}.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Year is in the range [1900, 2100].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Convert the date string to the format YYYY-MM-DD, where:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+YYYY denotes the 4 digit year.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+MM denotes the 2 digit month.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+DD denotes the 2 digit day.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> date = &quot;20th Oct 2052&quot;
+  <strong>Output:</strong> &quot;2052-10-20&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> date = &quot;6th Jun 1933&quot;
+  <strong>Output:</strong> &quot;1933-06-06&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> date = &quot;26th May 1960&quot;
+  <strong>Output:</strong> &quot;1960-05-26&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The given dates are guaranteed to be valid, so no error handling is
+necessary.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def reformatDate(self, date: str) -> str:
+          months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+          mapper = {v: str(k + 1) for k, v in enumerate(months)}
+          split = date.split(' ')
+          year = split[2]
+          month = mapper.get(split[1])
+          day = split[0][:len(split[0]) - 2]
+          return year + '-' + month.zfill(2) + '-' + day.zfill(2)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public String reformatDate(String date) {
+          Map<String, Integer> mapper = new HashMap<>();
+          String[] months = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+          for (int i = 0; i < months.length; ++i) {
+              mapper.put(months[i], i + 1);
+          }
+          String[] split = date.split(" ");
+          int year = Integer.parseInt(split[2]);
+          int month = mapper.get(split[1]);
+          int day = Integer.parseInt(split[0].substring(0, split[0].length() -2));
+          return String.format("%d-%02d-%02d", year, month, day);
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

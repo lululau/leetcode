@@ -1,0 +1,351 @@
+* [[https://leetcode.com/problems/car-pooling][1094. Car Pooling]]
+  :PROPERTIES:
+  :CUSTOM_ID: car-pooling
+  :END:
+[[./solution/1000-1099/1094.Car Pooling/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are driving a vehicle that has capacity empty seats initially
+available for passengers.  The vehicle only drives east (ie. it cannot
+turn around and drive west.)
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a list of trips, trip[i] = [num_passengers, start_location,
+end_location] contains information about the i-th trip: the number of
+passengers that must be picked up, and the locations to pick them up and
+drop them off.  The locations are given as the number of kilometers due
+east from your vehicle's initial location.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return true if and only if it is possible to pick up and drop off all
+passengers for all the given trips. 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong>trips = <span id="example-input-1-1">[[2,1,5],[3,3,7]]</span>, capacity = <span id="example-input-1-2">4</span>
+  <strong>Output: </strong><span id="example-output-1">false</span>
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong>trips = <span id="example-input-2-1">[[2,1,5],[3,3,7]]</span>, capacity = <span id="example-input-2-2">5</span>
+  <strong>Output: </strong><span id="example-output-2">true</span>
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong>trips = <span id="example-input-3-1">[[2,1,5],[3,5,7]]</span>, capacity = <span id="example-input-3-2">3</span>
+  <strong>Output: </strong><span id="example-output-3">true</span>
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong>trips = <span id="example-input-4-1">[[3,2,7],[3,7,9],[8,3,9]]</span>, capacity = <span id="example-input-4-2">11</span>
+  <strong>Output: </strong><span id="example-output-4">true</span>
+  </pre>
+#+end_html
+
+ 
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+trips.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+trips[i].length == 3
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= trips[i][0] <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= trips[i][1] < trips[i][2] <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= capacity <= 100000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def carPooling(self, trips: List[List[int]], capacity: int) -> bool:
+          delta = [0] * 1001
+          for num, start, end in trips:
+              delta[start] += num
+              delta[end] -= num
+          cur = 0
+          for num in delta:
+              cur += num
+              if cur > capacity:
+                  return False
+          return True
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public boolean carPooling(int[][] trips, int capacity) {
+          int[] delta = new int[1001];
+          for (int[] trip : trips) {
+              int num = trip[0], start = trip[1], end = trip[2];
+              delta[start] += num;
+              delta[end] -= num;
+          }
+          int cur = 0;
+          for (int num : delta) {
+              cur += num;
+              if (cur > capacity) {
+                  return false;
+              }
+          }
+          return true;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number[][]} trips
+   * @param {number} capacity
+   * @return {boolean}
+   */
+   var carPooling = function(trips, capacity) {
+      let delta = new Array();
+      for (let trip of trips) {
+          let [num, start, end] = trip;
+          delta[start] = (delta[start] || 0) + num;
+          delta[end] = (delta[end] || 0) - num;
+      }
+      let total = 0;
+      for (let i = 0; i < delta.length; i++) {
+          let cur = delta[i];
+          if (cur == undefined) continue;
+          total += cur;
+          if (total > capacity) return false;
+      }
+      return true;
+  };
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      bool carPooling(vector<vector<int>>& trips, int capacity) {
+          vector<int> delta(1001);
+          for (auto &trip : trips) {
+              int num = trip[0], start = trip[1], end = trip[2];
+              delta[start] += num;
+              delta[end] -= num;
+          }
+          int cur = 0;
+          for (auto &num : delta) {
+              cur += num;
+              if (cur > capacity) {
+                  return false;
+              }
+          }
+          return true;
+      }
+  };
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript-1
+    :END:
+#+begin_src js
+  /**
+   * @param {number[][]} trips
+   * @param {number} capacity
+   * @return {boolean}
+   */
+   var carPooling = function(trips, capacity) {
+      let delta = new Array();
+      for (let trip of trips) {
+          let [num, start, end] = trip;
+          delta[start] = (delta[start] || 0) + num;
+          delta[end] = (delta[end] || 0) - num;
+      }
+      let total = 0;
+      for (let i = 0; i < delta.length; i++) {
+          let cur = delta[i];
+          if (cur == undefined) continue;
+          total += cur;
+          if (total > capacity) return false;
+      }
+      return true;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

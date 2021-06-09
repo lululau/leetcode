@@ -1,0 +1,290 @@
+* [[https://leetcode.com/problems/flipping-an-image][832. Flipping an
+Image]]
+  :PROPERTIES:
+  :CUSTOM_ID: flipping-an-image
+  :END:
+[[./solution/0800-0899/0832.Flipping an Image/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an n x n binary matrix image, flip the image horizontally, then
+invert it, and return the resulting image.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+To flip an image horizontally means that each row of the image is
+reversed.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For example, flipping [1,1,0] horizontally results in [0,1,1].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+To invert an image means that each 0 is replaced by 1, and each 1 is
+replaced by 0.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For example, inverting [0,1,1] results in [1,0,0].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> image = [[1,1,0],[1,0,1],[0,0,0]]
+  <strong>Output:</strong> [[1,0,0],[0,1,0],[1,1,1]]
+  <strong>Explanation:</strong> First reverse each row: [[0,1,1],[1,0,1],[0,0,0]].
+  Then, invert the image: [[1,0,0],[0,1,0],[1,1,1]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> image = [[1,1,0,0],[1,0,0,1],[0,1,1,1],[1,0,1,0]]
+  <strong>Output:</strong> [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]
+  <strong>Explanation:</strong> First reverse each row: [[0,0,1,1],[1,0,0,1],[1,1,1,0],[0,1,0,1]].
+  Then invert the image: [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n == image.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n == image[i].length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 20
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+images[i][j] is either 0 or 1.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def flipAndInvertImage(self, A: List[List[int]]) -> List[List[int]]:
+          m, n = len(A), len(A[0])
+          for i in range(m):
+              p, q = 0, n - 1
+              while p < q:
+                  t = A[i][p] ^ 1
+                  A[i][p] = A[i][q] ^ 1
+                  A[i][q] = t
+                  p += 1
+                  q -= 1
+              if p == q:
+                  A[i][p] ^= 1
+          return A
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int[][] flipAndInvertImage(int[][] A) {
+          int m = A.length, n = A[0].length;
+          for (int i = 0; i < m; ++i) {
+              int p = 0, q = n - 1;
+              while (p < q) {
+                  int t = A[i][p] ^ 1;
+                  A[i][p] = A[i][q] ^ 1;
+                  A[i][q] = t;
+                  ++p;
+                  --q;
+              }
+              if (p == q) {
+                  A[i][p] ^= 1;
+              }
+          }
+          return A;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      vector<vector<int>> flipAndInvertImage(vector<vector<int>>& A) {
+          int m = A.size(), n = A[0].size();
+          for (int i = 0; i < m; ++i) {
+              int p = 0, q = n - 1;
+              while (p < q) {
+                  int t = A[i][p] ^ 1;
+                  A[i][p] = A[i][q] ^ 1;
+                  A[i][q] = t;
+                  ++p;
+                  --q;
+              }
+              if (p == q) {
+                  A[i][p] ^= 1;
+              }
+          }
+          return A;
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

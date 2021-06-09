@@ -1,0 +1,165 @@
+* [[https://leetcode-cn.com/problems/word-rectangle-lcci][17.25. Word
+Rectangle]]
+  :PROPERTIES:
+  :CUSTOM_ID: word-rectangle
+  :END:
+[[./lcci/17.25.Word Rectangle/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a list of millions of words, design an algorithm to create the
+largest possible rectangle of letters such that every row forms a word
+(reading left to right) and every column forms a word (reading top to
+bottom). The words need not be chosen consecutively from the list but
+all rows must be the same length and all columns must be the same
+height.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If there are more than one answer, return any one of them. A word can be
+used more than once.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> <code>[&quot;this&quot;, &quot;real&quot;, &quot;hard&quot;, &quot;trh&quot;, &quot;hea&quot;, &quot;iar&quot;, &quot;sld&quot;]</code>
+
+  <strong>Output:
+
+  </strong><code>[
+
+  &nbsp;  &quot;this&quot;,
+
+  &nbsp;  &quot;real&quot;,
+
+  &nbsp;  &quot;hard&quot;</code>
+
+  ]</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> <code>[&quot;aa&quot;]</code>
+
+  <strong>Output: </strong>[&quot;aa&quot;,&quot;aa&quot;]</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Notes:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+words.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+words[i].length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+It's guaranteed that all the words are randomly generated.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

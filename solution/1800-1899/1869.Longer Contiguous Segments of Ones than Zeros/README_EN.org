@@ -1,0 +1,267 @@
+* [[https://leetcode.com/problems/longer-contiguous-segments-of-ones-than-zeros][1869.
+Longer Contiguous Segments of Ones than Zeros]]
+  :PROPERTIES:
+  :CUSTOM_ID: longer-contiguous-segments-of-ones-than-zeros
+  :END:
+[[./solution/1800-1899/1869.Longer Contiguous Segments of Ones than Zeros/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a binary string s, return true if the longest contiguous segment
+of 1s is strictly longer than the longest contiguous segment of 0s in s.
+Return false otherwise.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For example, in s = "110100010" the longest contiguous segment of 1s has
+length 2, and the longest contiguous segment of 0s has length 3.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note that if there are no 0s, then the longest contiguous segment of 0s
+is considered to have length 0. The same applies if there are no 1s.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;1101&quot;
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong>
+  The longest contiguous segment of 1s has length 2: &quot;<u>11</u>01&quot;
+  The longest contiguous segment of 0s has length 1: &quot;11<u>0</u>1&quot;
+  The segment of 1s is longer, so return true.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;111000&quot;
+  <strong>Output:</strong> false
+  <strong>Explanation:</strong>
+  The longest contiguous segment of 1s has length 3: &quot;<u>111</u>000&quot;
+  The longest contiguous segment of 0s has length 3: &quot;111<u>000</u>&quot;
+  The segment of 1s is not longer, so return false.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;110100010&quot;
+  <strong>Output:</strong> false
+  <strong>Explanation:</strong>
+  The longest contiguous segment of 1s has length 2: &quot;<u>11</u>0100010&quot;
+  The longest contiguous segment of 0s has length 3: &quot;1101<u>000</u>10&quot;
+  The segment of 1s is not longer, so return false.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s[i] is either '0' or '1'.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def checkZeroOnes(self, s: str) -> bool:
+          len0 = len1 = 0
+          t0 = t1 = 0
+          for c in s:
+              if c == '0':
+                  t0 += 1
+                  t1 = 0
+              else:
+                  t0 = 0
+                  t1 += 1
+              len0 = max(len0, t0)
+              len1 = max(len1, t1)
+          return len1 > len0
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public boolean checkZeroOnes(String s) {
+          int len0 = 0, len1 = 0;
+          int t0 = 0, t1 = 0;
+          for (int i = 0; i < s.length(); ++i) {
+              if (s.charAt(i) == '0') {
+                  t0 += 1;
+                  t1 = 0;
+              } else {
+                  t0 = 0;
+                  t1 += 1;
+              }
+              len0 = Math.max(len0, t0);
+              len1 = Math.max(len1, t1);
+          }
+          return len1 > len0;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {string} s
+   * @return {boolean}
+   */
+   var checkZeroOnes = function(s) {
+      let max0 = 0, max1 = 0;
+      let t0 = 0, t1 = 0;
+      for (let char of s) {
+          if (char == '0') {
+              t0++;
+              t1 = 0;
+          } else {
+              t1++;
+              t0 = 0;
+          }
+          max0 = Math.max(max0, t0);
+          max1 = Math.max(max1, t1);
+      }
+      return max1 > max0;
+  }; 
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

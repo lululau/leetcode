@@ -1,0 +1,273 @@
+* [[https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list][83.
+删除排序链表中的重复元素]]
+  :PROPERTIES:
+  :CUSTOM_ID: 删除排序链表中的重复元素
+  :END:
+[[./solution/0000-0099/0083.Remove Duplicates from Sorted List/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+存在一个按升序排列的链表，给你这个链表的头节点 head
+，请你删除所有重复的元素，使每个元素 只出现一次 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回同样按升序排列的结果链表。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>head = [1,1,2]
+  <strong>输出：</strong>[1,2]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>head = [1,1,2,3,3]
+  <strong>输出：</strong>[1,2,3]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+链表中节点数目在范围 [0, 300] 内
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-100 <= Node.val <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+题目数据保证链表已经按升序排列
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  # Definition for singly-linked list.
+  # class ListNode:
+  #     def __init__(self, val=0, next=None):
+  #         self.val = val
+  #         self.next = next
+  class Solution:
+      def deleteDuplicates(self, head: ListNode) -> ListNode:
+          cur = head
+          while cur and cur.next:
+              if cur.val == cur.next.val:
+                  cur.next = cur.next.next
+              else:
+                  cur = cur.next
+          return head
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  /**
+   * Definition for singly-linked list.
+   * public class ListNode {
+   *     int val;
+   *     ListNode next;
+   *     ListNode() {}
+   *     ListNode(int val) { this.val = val; }
+   *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+   * }
+   */
+  class Solution {
+      public ListNode deleteDuplicates(ListNode head) {
+          ListNode cur = head;
+          while (cur != null && cur.next != null) {
+              if (cur.val == cur.next.val) {
+                  cur.next = cur.next.next;
+              } else {
+                  cur = cur.next;
+              }
+          }
+          return head;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  /**
+   * Definition for singly-linked list.
+   * struct ListNode {
+   *     int val;
+   *     ListNode *next;
+   *     ListNode() : val(0), next(nullptr) {}
+   *     ListNode(int x) : val(x), next(nullptr) {}
+   *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+   * };
+   */
+  class Solution {
+  public:
+      ListNode* deleteDuplicates(ListNode* head) {
+          ListNode* cur = head;
+          while (cur != nullptr && cur->next != nullptr) {
+              if (cur->val == cur->next->val) {
+                  cur->next = cur->next->next;
+              } else {
+                  cur = cur->next;
+              }
+          }
+          return head;
+      }
+  };
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  func deleteDuplicates(head *ListNode) *ListNode {
+      current := head
+      for current != nil && current.Next != nil {
+          if current.Val == current.Next.Val {
+              current.Next = current.Next.Next
+          } else {
+              current = current.Next
+          }
+      }
+      return head
+  }
+#+end_example
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

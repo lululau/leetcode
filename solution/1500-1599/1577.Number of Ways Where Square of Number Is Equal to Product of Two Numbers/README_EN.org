@@ -1,0 +1,221 @@
+* [[https://leetcode.com/problems/number-of-ways-where-square-of-number-is-equal-to-product-of-two-numbers][1577.
+Number of Ways Where Square of Number Is Equal to Product of Two
+Numbers]]
+  :PROPERTIES:
+  :CUSTOM_ID: number-of-ways-where-square-of-number-is-equal-to-product-of-two-numbers
+  :END:
+[[./solution/1500-1599/1577.Number of Ways Where Square of Number Is Equal to Product of Two Numbers/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given two arrays of integers nums1 and nums2, return the number of
+triplets formed (type 1 and type 2) under the following rules:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Type 1: Triplet (i, j, k) if nums1[i]2 == nums2[j] * nums2[k] where 0 <=
+i < nums1.length and 0 <= j < k < nums2.length.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Type 2: Triplet (i, j, k) if nums2[i]2 == nums1[j] * nums1[k] where 0 <=
+i < nums2.length and 0 <= j < k < nums1.length.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums1 = [7,4], nums2 = [5,2,8,9]
+  <strong>Output:</strong> 1
+  <strong>Explanation:</strong> Type 1: (1,1,2), nums1[1]^2 = nums2[1] * nums2[2]. (4^2 = 2 * 8). 
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums1 = [1,1], nums2 = [1,1,1]
+  <strong>Output:</strong> 9
+  <strong>Explanation:</strong> All Triplets are valid, because 1^2 = 1 * 1.
+  Type 1: (0,0,1), (0,0,2), (0,1,2), (1,0,1), (1,0,2), (1,1,2).  nums1[i]^2 = nums2[j] * nums2[k].
+  Type 2: (0,0,1), (1,0,1), (2,0,1). nums2[i]^2 = nums1[j] * nums1[k].
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums1 = [7,7,8,3], nums2 = [1,2,9,7]
+  <strong>Output:</strong> 2
+  <strong>Explanation:</strong> There are 2 valid triplets.
+  Type 1: (3,0,2).  nums1[3]^2 = nums2[0] * nums2[2].
+  Type 2: (3,0,1).  nums2[3]^2 = nums1[0] * nums1[1].
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums1 = [4,7,9,11,23], nums2 = [3,5,1024,12,18]
+  <strong>Output:</strong> 0
+  <strong>Explanation:</strong> There are no valid triplets.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums1.length, nums2.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums1[i], nums2[i] <= 10^5
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

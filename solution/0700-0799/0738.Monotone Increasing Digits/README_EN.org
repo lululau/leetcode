@@ -1,0 +1,143 @@
+* [[https://leetcode.com/problems/monotone-increasing-digits][738.
+Monotone Increasing Digits]]
+  :PROPERTIES:
+  :CUSTOM_ID: monotone-increasing-digits
+  :END:
+[[./solution/0700-0799/0738.Monotone Increasing Digits/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a non-negative integer N, find the largest number that is less
+than or equal to N with monotone increasing digits.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+(Recall that an integer has monotone increasing digits if and only if
+each pair of adjacent digits x and y satisfy x <= y.)
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> N = 10
+
+  <b>Output:</b> 9
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> N = 1234
+
+  <b>Output:</b> 1234
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> N = 332
+
+  <b>Output:</b> 299
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+N is an integer in the range [0, 10^9].
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

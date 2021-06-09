@@ -1,0 +1,227 @@
+* [[https://leetcode-cn.com/problems/freedom-trail][514. 自由之路]]
+  :PROPERTIES:
+  :CUSTOM_ID: 自由之路
+  :END:
+[[./solution/0500-0599/0514.Freedom Trail/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+电子游戏“辐射4”中，任务“通向自由”要求玩家到达名为“Freedom Trail
+Ring”的金属表盘，并使用表盘拼写特定关键词才能开门。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个字符串 ring，表示刻在外环上的编码；给定另一个字符串 key，表示需要拼写的关键词。您需要算出能够拼写关键词中所有字符的最少步数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+最初，ring 的第一个字符与12:00方向对齐。您需要顺时针或逆时针旋转 ring
+以使 key 的一个字符在 12:00
+方向对齐，然后按下中心按钮，以此逐个拼写完 key 中的所有字符。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+旋转 ring 拼出 key 字符 key[i] 的阶段中：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+您可以将 ring 顺时针或逆时针旋转一个位置，计为1步。旋转的最终目的是将字符串 ring 的一个字符与
+12:00 方向对齐，并且这个字符必须等于字符 key[i] 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+如果字符 key[i] 已经对齐到12:00方向，您需要按下中心按钮进行拼写，这也将算作 1
+步。按完之后，您可以开始拼写 key 的下一个字符（下一阶段）,
+直至完成所有拼写。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <center>
+#+end_html
+
+#+begin_html
+  </center>
+#+end_html
+
+ 
+
+#+begin_html
+  <pre>
+  <strong>输入:</strong> ring = "godding", key = "gd"
+  <strong>输出:</strong> 4
+  <strong>解释:</strong>
+   对于 key 的第一个字符 'g'，已经在正确的位置, 我们只需要1步来拼写这个字符。 
+   对于 key 的第二个字符 'd'，我们需要逆时针旋转 ring "godding" 2步使它变成 "ddinggo"。
+   当然, 我们还需要1步进行拼写。
+   因此最终的输出是 4。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+ring 和 key 的字符串长度取值范围均为 1 至 100；
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+两个字符串中都只有小写字符，并且均可能存在重复字符；
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+字符串 key 一定可以由字符串 ring 旋转拼出。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

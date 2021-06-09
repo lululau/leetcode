@@ -1,0 +1,278 @@
+* [[https://leetcode-cn.com/problems/kth-largest-element-in-a-stream][703.
+数据流中的第 K 大元素]]
+  :PROPERTIES:
+  :CUSTOM_ID: 数据流中的第-k-大元素
+  :END:
+[[./solution/0700-0799/0703.Kth Largest Element in a Stream/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+设计一个找到数据流中第 k 大元素的类（class）。注意是排序后的第 k
+大元素，不是第 k 个不同的元素。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请实现 KthLargest 类：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+KthLargest(int k, int[] nums) 使用整数 k 和整数流 nums 初始化对象。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int add(int val) 将 val 插入数据流 nums 后，返回当前数据流中第 k
+大的元素。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>
+  ["KthLargest", "add", "add", "add", "add", "add"]
+  [[3, [4, 5, 8, 2]], [3], [5], [10], [9], [4]]
+  <strong>输出：</strong>
+  [null, 4, 5, 5, 8, 8]
+
+  <strong>解释：</strong>
+  KthLargest kthLargest = new KthLargest(3, [4, 5, 8, 2]);
+  kthLargest.add(3);   // return 4
+  kthLargest.add(5);   // return 5
+  kthLargest.add(10);  // return 5
+  kthLargest.add(9);   // return 8
+  kthLargest.add(4);   // return 8
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+提示：
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= k <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= nums.length <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-104 <= nums[i] <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-104 <= val <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+最多调用 add 方法 104 次
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+题目数据保证，在查找第 k 大元素时，数组中至少有 k 个元素
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+小根堆存放最大的 k 个元素，那么堆顶就是第 k 大的元素。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class KthLargest:
+
+      def __init__(self, k: int, nums: List[int]):
+          self.q = []
+          self.size = k
+          for num in nums:
+              self.add(num)
+
+      def add(self, val: int) -> int:
+          heapq.heappush(self.q, val)
+          if len(self.q) > self.size:
+              heapq.heappop(self.q)
+          return self.q[0]
+
+
+  # Your KthLargest object will be instantiated and called as such:
+  # obj = KthLargest(k, nums)
+  # param_1 = obj.add(val)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class KthLargest {
+      private PriorityQueue<Integer> q;
+      private int size;
+
+      public KthLargest(int k, int[] nums) {
+          q = new PriorityQueue<>(k);
+          size = k;
+          for (int num : nums) {
+              add(num);
+          }
+      }
+
+      public int add(int val) {
+          q.offer(val);
+          if (q.size() > size) {
+              q.poll();
+          }
+          return q.peek();
+      }
+  }
+
+  /**
+   * Your KthLargest object will be instantiated and called as such:
+   * KthLargest obj = new KthLargest(k, nums);
+   * int param_1 = obj.add(val);
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

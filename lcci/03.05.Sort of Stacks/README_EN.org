@@ -1,0 +1,201 @@
+* [[https://leetcode-cn.com/problems/sort-of-stacks-lcci][03.05. Sort of
+Stacks]]
+  :PROPERTIES:
+  :CUSTOM_ID: sort-of-stacks
+  :END:
+[[./lcci/03.05.Sort of Stacks/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Write a program to sort a stack such that the smallest items are on the
+top. You can use an additional temporary stack, but you may not copy the
+elements into any other data structure (such as an array). The stack
+supports the following operations: push, pop, peek, and isEmpty. When
+the stack is empty, peek should return -1.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong> Input</strong>: 
+
+  [&quot;SortedStack&quot;, &quot;push&quot;, &quot;push&quot;, &quot;peek&quot;, &quot;pop&quot;, &quot;peek&quot;]
+
+  [[], [1], [2], [], [], []]
+
+  <strong> Output</strong>: 
+
+  [null,null,null,1,null,2]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong> Input</strong>:  
+
+  [&quot;SortedStack&quot;, &quot;pop&quot;, &quot;pop&quot;, &quot;push&quot;, &quot;pop&quot;, &quot;isEmpty&quot;]
+
+  [[], [], [], [1], [], []]
+
+  <strong> Output</strong>: 
+
+  [null,null,null,null,null,true]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The total number of elements in the stack is within the range [0, 5000].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class SortedStack:
+
+      def __init__(self):
+          self.s = []
+
+      def push(self, val: int) -> None:
+          t = []
+          while not self.isEmpty() and self.s[-1] < val:
+              t.append(self.s.pop())
+          self.s.append(val)
+          while len(t) > 0:
+              self.s.append(t.pop())
+
+      def pop(self) -> None:
+          if not self.isEmpty():
+              self.s.pop()
+
+      def peek(self) -> int:
+          return -1 if self.isEmpty() else self.s[-1]
+
+      def isEmpty(self) -> bool:
+          return len(self.s) == 0
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class SortedStack {
+      private Stack<Integer> s;
+      public SortedStack() {
+          s = new Stack<>();
+      }
+
+      public void push(int val) {
+          Stack<Integer> t = new Stack<>();
+          while (!isEmpty() && s.peek() < val) {
+              t.push(s.pop());
+          }
+          s.push(val);
+          while (!t.isEmpty()) {
+              s.push(t.pop());
+          }
+      }
+
+      public void pop() {
+          if (!isEmpty()) {
+              s.pop();
+          }
+      }
+
+      public int peek() {
+          return isEmpty() ? -1 : s.peek();
+      }
+
+      public boolean isEmpty() {
+          return s.isEmpty();
+      }
+  }
+
+  /**
+   * Your SortedStack object will be instantiated and called as such:
+   * SortedStack obj = new SortedStack();
+   * obj.push(val);
+   * obj.pop();
+   * int param_3 = obj.peek();
+   * boolean param_4 = obj.isEmpty();
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

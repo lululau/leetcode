@@ -1,0 +1,198 @@
+* [[https://leetcode-cn.com/problems/excel-sheet-column-title][168.
+Excel 表列名称]]
+  :PROPERTIES:
+  :CUSTOM_ID: excel-表列名称
+  :END:
+[[./solution/0100-0199/0168.Excel Sheet Column Title/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个正整数，返回它在 Excel 表中相对应的列名称。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+例如，
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>    1 -&gt; A
+      2 -&gt; B
+      3 -&gt; C
+      ...
+      26 -&gt; Z
+      27 -&gt; AA
+      28 -&gt; AB 
+      ...
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong> 1
+  <strong>输出:</strong> &quot;A&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong> 28
+  <strong>输出:</strong> &quot;AB&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong> 701
+  <strong>输出:</strong> &quot;ZY&quot;
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def convertToTitle(self, columnNumber: int) -> str:
+          res = []
+          while columnNumber:
+              columnNumber -= 1
+              res.append(chr(ord('A') + columnNumber % 26))
+              columnNumber //= 26
+          return ''.join(res[::-1])
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public String convertToTitle(int columnNumber) {
+          StringBuilder res = new StringBuilder();
+          while (columnNumber != 0) {
+              --columnNumber;
+              res.append((char) ('A' + columnNumber % 26));
+              columnNumber /= 26;
+          }
+          return res.reverse().toString();
+      }
+  }
+#+end_src
+
+*** *TypeScript*
+    :PROPERTIES:
+    :CUSTOM_ID: typescript
+    :END:
+#+begin_example
+  function convertToTitle(columnNumber: number): string {
+      let res: string[] = [];
+      while (columnNumber > 0) {
+          --columnNumber;
+          let num: number = columnNumber % 26;
+          res.unshift(String.fromCharCode(num + 65));
+          columnNumber = Math.floor(columnNumber / 26);
+      }
+      return res.join('');
+  };
+#+end_example
+
+*** *C#*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_example
+  public class Solution {
+      public string ConvertToTitle(int columnNumber) {
+          StringBuilder res = new StringBuilder();
+          while (columnNumber != 0) {
+              --columnNumber;
+              res.Append((char) ('A' + columnNumber % 26));
+              columnNumber /= 26;
+          }
+          return new string(res.ToString().Reverse().ToArray());
+      }
+  }
+#+end_example
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

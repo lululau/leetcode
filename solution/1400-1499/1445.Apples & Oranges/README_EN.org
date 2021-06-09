@@ -1,0 +1,139 @@
+* [[https://leetcode.com/problems/apples-oranges][1445. Apples &
+Oranges]]
+  :PROPERTIES:
+  :CUSTOM_ID: apples-oranges
+  :END:
+[[./solution/1400-1499/1445.Apples %26 Oranges/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Sales
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +---------------+---------+
+  | Column Name   | Type    |
+  +---------------+---------+
+  | sale_date     | date    |
+  | fruit         | enum    | 
+  | sold_num      | int     | 
+  +---------------+---------+
+  (sale_date,fruit) is the primary key for this table.
+  This table contains the sales of &quot;apples&quot; and &quot;oranges&quot; sold each day.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an SQL query to report the difference between number of apples and
+oranges sold each day.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the result table ordered by sale_date in format ('YYYY-MM-DD').
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The query result format is in the following example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <code>Sales</code> table:
+  +------------+------------+-------------+
+  | sale_date  | fruit      | sold_num    |
+  +------------+------------+-------------+
+  | 2020-05-01 | apples     | 10          |
+  | 2020-05-01 | oranges    | 8           |
+  | 2020-05-02 | apples     | 15          |
+  | 2020-05-02 | oranges    | 15          |
+  | 2020-05-03 | apples     | 20          |
+  | 2020-05-03 | oranges    | 0           |
+  | 2020-05-04 | apples     | 15          |
+  | 2020-05-04 | oranges    | 16          |
+  +------------+------------+-------------+
+
+  Result table:
+  +------------+--------------+
+  | sale_date  | diff         |
+  +------------+--------------+
+  | 2020-05-01 | 2            |
+  | 2020-05-02 | 0            |
+  | 2020-05-03 | 20           |
+  | 2020-05-04 | -1           |
+  +------------+--------------+
+
+  Day 2020-05-01, 10 apples and 8 oranges were sold (Difference  10 - 8 = 2).
+  Day 2020-05-02, 15 apples and 15 oranges were sold (Difference 15 - 15 = 0).
+  Day 2020-05-03, 20 apples and 0 oranges were sold (Difference 20 - 0 = 20).
+  Day 2020-05-04, 15 apples and 16 oranges were sold (Difference 15 - 16 = -1).
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

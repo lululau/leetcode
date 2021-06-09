@@ -1,0 +1,169 @@
+* [[https://leetcode-cn.com/problems/beautiful-arrangement][526.
+优美的排列]]
+  :PROPERTIES:
+  :CUSTOM_ID: 优美的排列
+  :END:
+[[./solution/0500-0599/0526.Beautiful Arrangement/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+假设有从 1 到 N
+的 N 个整数，如果从这 N 个数字中成功构造出一个数组，使得数组的第 i 位 (1
+<= i <= N)
+满足如下两个条件中的一个，我们就称这个数组为一个优美的排列。条件：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+第 i 位的数字能被 i 整除
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+i 能被第 i 位上的数字整除
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+现在给定一个整数 N，请问可以构造多少个优美的排列？
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入:</strong> 2
+  <strong>输出:</strong> 2
+  <strong>解释:</strong> 
+
+  第 1 个优美的排列是 [1, 2]:
+    第 1 个位置（i=1）上的数字是1，1能被 i（i=1）整除
+    第 2 个位置（i=2）上的数字是2，2能被 i（i=2）整除
+
+  第 2 个优美的排列是 [2, 1]:
+    第 1 个位置（i=1）上的数字是2，2能被 i（i=1）整除
+    第 2 个位置（i=2）上的数字是1，i（i=2）能被 1 整除
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+说明:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+N 是一个正整数，并且不会超过15。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

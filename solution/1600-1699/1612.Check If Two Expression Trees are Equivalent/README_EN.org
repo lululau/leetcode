@@ -1,0 +1,231 @@
+* [[https://leetcode.com/problems/check-if-two-expression-trees-are-equivalent][1612.
+Check If Two Expression Trees are Equivalent]]
+  :PROPERTIES:
+  :CUSTOM_ID: check-if-two-expression-trees-are-equivalent
+  :END:
+[[./solution/1600-1699/1612.Check If Two Expression Trees are Equivalent/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+A binary expression tree is a kind of binary tree used to represent
+arithmetic expressions. Each node of a binary expression tree has either
+zero or two children. Leaf nodes (nodes with 0 children) correspond to
+operands (variables), and internal nodes (nodes with two children)
+correspond to the operators. In this problem, we only consider the '+'
+operator (i.e. addition).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given the roots of two binary expression trees, root1 and root2.
+Return true if the two binary expression trees are equivalent.
+Otherwise, return false.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Two binary expression trees are equivalent if they evaluate to the same
+value regardless of what the variables are set to.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow up: What will you change in your solution if the tree also
+supports the '-' operator (i.e. subtraction)?
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root1 = [x], root2 = [x]
+  <strong>Output:</strong> true
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root1 = [+,a,+,null,null,b,c], root2 = [+,+,a,b,c]
+  <strong>Output:</strong> true
+  <strong>Explaination:</strong> <code>a + (b + c) == (b + c) + a</code></pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root1 = [+,a,+,null,null,b,c], root2 = [+,+,a,b,d]
+  <strong>Output:</strong> false
+  <strong>Explaination:</strong> <code>a + (b + c) != (b + d) + a</code>
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of nodes in both trees are equal, odd and, in the range [1,
+4999].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Node.val is '+' or a lower-case English letter.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+It's guaranteed that the tree given is a valid binary expression tree.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

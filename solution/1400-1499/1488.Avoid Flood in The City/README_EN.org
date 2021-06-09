@@ -1,0 +1,326 @@
+* [[https://leetcode.com/problems/avoid-flood-in-the-city][1488. Avoid
+Flood in The City]]
+  :PROPERTIES:
+  :CUSTOM_ID: avoid-flood-in-the-city
+  :END:
+[[./solution/1400-1499/1488.Avoid Flood in The City/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Your country has an infinite number of lakes. Initially, all the lakes
+are empty, but when it rains over the nth lake, the nth lake becomes
+full of water. If it rains over a lake which is full of water, there
+will be a flood. Your goal is to avoid the flood in any lake.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an integer array rains where:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+rains[i] > 0 means there will be rains over the rains[i] lake.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+rains[i] == 0 means there are no rains this day and you can choose one
+lake this day and dry it.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return an array ans where:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+ans.length == rains.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+ans[i] == -1 if rains[i] > 0.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+ans[i] is the lake you choose to dry in the ith day if rains[i] == 0.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If there are multiple valid answers return any of them. If it is
+impossible to avoid flood return an empty array.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Notice that if you chose to dry a full lake, it becomes empty, but if
+you chose to dry an empty lake, nothing changes. (see example 4)
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> rains = [1,2,3,4]
+  <strong>Output:</strong> [-1,-1,-1,-1]
+  <strong>Explanation:</strong> After the first day full lakes are [1]
+  After the second day full lakes are [1,2]
+  After the third day full lakes are [1,2,3]
+  After the fourth day full lakes are [1,2,3,4]
+  There&#39;s no day to dry any lake and there is no flood in any lake.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> rains = [1,2,0,0,2,1]
+  <strong>Output:</strong> [-1,-1,2,1,-1,-1]
+  <strong>Explanation:</strong> After the first day full lakes are [1]
+  After the second day full lakes are [1,2]
+  After the third day, we dry lake 2. Full lakes are [1]
+  After the fourth day, we dry lake 1. There is no full lakes.
+  After the fifth day, full lakes are [2].
+  After the sixth day, full lakes are [1,2].
+  It is easy that this scenario is flood-free. [-1,-1,1,2,-1,-1] is another acceptable scenario.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> rains = [1,2,0,1,2]
+  <strong>Output:</strong> []
+  <strong>Explanation:</strong> After the second day, full lakes are  [1,2]. We have to dry one lake in the third day.
+  After that, it will rain over lakes [1,2]. It&#39;s easy to prove that no matter which lake you choose to dry in the 3rd day, the other one will flood.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> rains = [69,0,0,0,69]
+  <strong>Output:</strong> [-1,69,1,1,-1]
+  <strong>Explanation:</strong> Any solution on one of the forms [-1,69,x,y,-1], [-1,x,69,y,-1] or [-1,x,y,69,-1] is acceptable where 1 &lt;= x,y &lt;= 10^9
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> rains = [10,20,20]
+  <strong>Output:</strong> []
+  <strong>Explanation:</strong> It will rain over lake 20 two consecutive days. There is no chance to dry any lake.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= rains.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= rains[i] <= 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

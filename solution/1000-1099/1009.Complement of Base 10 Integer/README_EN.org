@@ -1,0 +1,206 @@
+* [[https://leetcode.com/problems/complement-of-base-10-integer][1009.
+Complement of Base 10 Integer]]
+  :PROPERTIES:
+  :CUSTOM_ID: complement-of-base-10-integer
+  :END:
+[[./solution/1000-1099/1009.Complement of Base 10 Integer/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Every non-negative integer N has a binary representation.  For
+example, 5 can be represented as "101" in binary, 11 as "1011" in
+binary, and so on.  Note that except for N = 0, there are no leading
+zeroes in any binary representation.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The complement of a binary representation is the number in binary you
+get when changing every 1 to a 0 and 0 to a 1.  For example, the
+complement of "101" in binary is "010" in binary.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For a given number N in base-10, return the complement of it's binary
+representation as a base-10 integer.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong><span id="example-input-1-1">5</span>
+  <strong>Output: </strong><span id="example-output-1">2</span>
+  <strong>Explanation: </strong>5 is &quot;101&quot; in binary, with complement &quot;010&quot; in binary, which is 2 in base-10.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong><span id="example-input-2-1">7</span>
+  <strong>Output: </strong><span id="example-output-2">0</span>
+  <span id="example-output-1"><strong>Explanation: </strong>7 is &quot;111&quot; in binary, with complement &quot;000&quot; in binary, which is 0 in base-10.
+  </span></pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong><span id="example-input-3-1">10</span>
+  <strong>Output: </strong><span id="example-output-3">5</span>
+  <strong>Explanation: </strong>10 is &quot;1010&quot; in binary, with complement &quot;0101&quot; in binary, which is 5 in base-10.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= N < 10^9
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+This question is the same as
+476: https://leetcode.com/problems/number-complement/
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

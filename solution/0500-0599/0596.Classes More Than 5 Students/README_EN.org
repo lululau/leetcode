@@ -1,0 +1,149 @@
+* [[https://leetcode.com/problems/classes-more-than-5-students][596.
+Classes More Than 5 Students]]
+  :PROPERTIES:
+  :CUSTOM_ID: classes-more-than-5-students
+  :END:
+[[./solution/0500-0599/0596.Classes More Than 5 Students/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+There is a table courses with columns: student and class
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Please list out all classes which have more than or equal to 5 students.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example, the table:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +---------+------------+
+
+  | student | class      |
+
+  +---------+------------+
+
+  | A       | Math       |
+
+  | B       | English    |
+
+  | C       | Math       |
+
+  | D       | Biology    |
+
+  | E       | Math       |
+
+  | F       | Computer   |
+
+  | G       | Math       |
+
+  | H       | Math       |
+
+  | I       | Math       |
+
+  +---------+------------+
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Should output:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +---------+
+
+  | class   |
+
+  +---------+
+
+  | Math    |
+
+  +---------+
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+The students should not be counted duplicate in each course.
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_example
+  select
+      c.class
+  from
+      (select distinct courses.student, courses.class from courses) c
+  group by
+      c.class
+  having
+      count(c.class)>=5
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

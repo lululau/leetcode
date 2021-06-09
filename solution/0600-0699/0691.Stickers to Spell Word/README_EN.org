@@ -1,0 +1,286 @@
+* [[https://leetcode.com/problems/stickers-to-spell-word][691. Stickers
+to Spell Word]]
+  :PROPERTIES:
+  :CUSTOM_ID: stickers-to-spell-word
+  :END:
+[[./solution/0600-0699/0691.Stickers to Spell Word/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+We are given N different types of stickers. Each sticker has a lowercase
+English word on it.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You would like to spell out the given target string by cutting
+individual letters from your collection of stickers and rearranging
+them.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You can use each sticker more than once if you want, and you have
+infinite quantities of each sticker.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+What is the minimum number of stickers that you need to spell out the
+target? If the task is impossible, return -1.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Input:
+
+#+begin_html
+  <pre>
+
+  ["with", "example", "science"], "thehat"
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Output:
+
+#+begin_html
+  <pre>
+
+  3
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Explanation:
+
+#+begin_html
+  <pre>
+
+  We can use 2 "with" stickers, and 1 "example" sticker.
+
+  After cutting and rearrange the letters of those stickers, we can form the target "thehat".
+
+  Also, this is the minimum number of stickers necessary to form the target string.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Input:
+
+#+begin_html
+  <pre>
+
+  ["notice", "possible"], "basicbasic"
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Output:
+
+#+begin_html
+  <pre>
+
+  -1
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Explanation:
+
+#+begin_html
+  <pre>
+
+  We can't form the target "basicbasic" from cutting letters from the given stickers.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  <li>
+#+end_html
+
+stickers has length in the range [1, 50].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+stickers consists of lowercase English words (without apostrophes).
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+target has length in the range [1, 15], and consists of lowercase
+English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+In all test cases, all words were chosen randomly from the 1000 most
+common US English words, and the target was chosen as a concatenation of
+two random words.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The time limit may be more challenging than usual. It is expected that a
+50 sticker test case can be solved within 35ms on average.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

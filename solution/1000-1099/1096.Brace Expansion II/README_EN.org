@@ -1,0 +1,291 @@
+* [[https://leetcode.com/problems/brace-expansion-ii][1096. Brace
+Expansion II]]
+  :PROPERTIES:
+  :CUSTOM_ID: brace-expansion-ii
+  :END:
+[[./solution/1000-1099/1096.Brace Expansion II/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Under a grammar given below, strings can represent a set of lowercase
+words.  Let's use R(expr) to denote the set of words the expression
+represents.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Grammar can best be understood through simple examples:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Single letters represent a singleton set containing that word.
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+R("a") = {"a"}
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+R("w") = {"w"}
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_example
+  </li>
+  <li>When we take a comma delimited list of 2 or more expressions, we take the union of possibilities.
+  <ul>
+      <li><code>R(&quot;{a,b,c}&quot;) = {&quot;a&quot;,&quot;b&quot;,&quot;c&quot;}</code></li>
+      <li><code>R(&quot;{{a,b},{b,c}}&quot;) = {&quot;a&quot;,&quot;b&quot;,&quot;c&quot;}</code>&nbsp;(notice the final set only contains each word at most once)</li>
+  </ul>
+  </li>
+  <li>When we concatenate two expressions, we take the set of possible concatenations between two words where the first word comes from the first expression and the second word comes from the second expression.
+  <ul>
+      <li><code>R(&quot;{a,b}{c,d}&quot;) = {&quot;ac&quot;,&quot;ad&quot;,&quot;bc&quot;,&quot;bd&quot;}</code></li>
+      <li><code>R(&quot;a{b,c}{d,e}f{g,h}&quot;)&nbsp;= {&quot;abdfg&quot;, &quot;abdfh&quot;, &quot;abefg&quot;, &quot;abefh&quot;, &quot;acdfg&quot;, &quot;acdfh&quot;, &quot;acefg&quot;, &quot;acefh&quot;}</code></li>
+  </ul>
+  </li>
+#+end_example
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Formally, the 3 rules for our grammar:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For every lowercase letter x, we have R(x) = {x}
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For expressions e_1, e_2, ... , e_k with k >= 2, we have
+R({e_1,e_2,...}) = R(e_1) ∪ R(e_2) ∪ ...
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For expressions e_1 and e_2, we have R(e_1 + e_2) = {a + b for (a, b)
+in R(e_1) × R(e_2)}, where + denotes concatenation, and × denotes the
+cartesian product.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an expression representing a set of words under the given grammar,
+return the sorted list of words that the expression represents.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong><span id="example-input-1-1">&quot;{a,b}{c,{d,e}}&quot;</span>
+  <strong>Output: </strong><span id="example-output-1">[&quot;ac&quot;,&quot;ad&quot;,&quot;ae&quot;,&quot;bc&quot;,&quot;bd&quot;,&quot;be&quot;]</span>
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong><span>&quot;{{a,z},a{b,c},{ab,z}}&quot;</span>
+  <strong>Output: </strong><span>[&quot;a&quot;,&quot;ab&quot;,&quot;ac&quot;,&quot;z&quot;]</span>
+  <strong>Explanation: </strong>Each distinct word is written only once in the final answer.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= expression.length <= 60
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+expression[i] consists of '{', '}', ','or lowercase English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The given expression represents a set of words based on the grammar
+given in the description.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,264 @@
+* [[https://leetcode.com/problems/lexicographically-smallest-equivalent-string][1061.
+Lexicographically Smallest Equivalent String]]
+  :PROPERTIES:
+  :CUSTOM_ID: lexicographically-smallest-equivalent-string
+  :END:
+[[./solution/1000-1099/1061.Lexicographically Smallest Equivalent String/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given strings A and B of the same length, we say A[i] and B[i] are
+equivalent characters. For example, if A = "abc" and B = "cde", then we
+have 'a' == 'c', 'b' == 'd', 'c' == 'e'.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Equivalent characters follow the usual rules of any equivalence
+relation:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Reflexivity: 'a' == 'a'
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Symmetry: 'a' == 'b' implies 'b' == 'a'
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Transitivity: 'a' == 'b' and 'b' == 'c' implies 'a' == 'c'
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example, given the equivalency information from A and B above, S =
+"eed", "acd", and "aab" are equivalent strings, and "aab" is the
+lexicographically smallest equivalent string of S.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the lexicographically smallest equivalent string of S by using
+the equivalency information from A and B.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>A = <span id="example-input-1-1">&quot;parker&quot;</span>, B = <span id="example-input-1-2">&quot;morris&quot;</span>, S = <span id="example-input-1-3">&quot;parser&quot;</span>
+
+  <strong>Output: </strong><span id="example-output-1">&quot;makkek&quot;</span>
+
+  <strong>Explanation:</strong> Based on the equivalency information in <code>A</code> and <code>B</code>, we can group their characters as <code>[m,p]</code>, <code>[a,o]</code>, <code>[k,r,s]</code>, <code>[e,i]</code>. The characters in each group are equivalent and sorted in lexicographical order. So the answer is <code>&quot;makkek&quot;</code>.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>A = <span id="example-input-2-1">&quot;hello&quot;</span>, B = <span id="example-input-2-2">&quot;world&quot;</span>, S = <span id="example-input-2-3">&quot;hold&quot;</span>
+
+  <strong>Output: </strong><span id="example-output-2">&quot;hdld&quot;</span>
+
+  <strong>Explanation: </strong> Based on the equivalency information in <code>A</code> and <code>B</code>, we can group their characters as <code>[h,w]</code>, <code>[d,e,o]</code>, <code>[l,r]</code>. So only the second letter <code>&#39;o&#39;</code> in <code>S</code> is changed to <code>&#39;d&#39;</code>, the answer is <code>&quot;hdld&quot;</code>.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>A = <span id="example-input-3-1">&quot;leetcode&quot;</span>, B = <span id="example-input-3-2">&quot;programs&quot;</span>, S = <span id="example-input-3-3">&quot;sourcecode&quot;</span>
+
+  <strong>Output: </strong><span id="example-output-3">&quot;aauaaaaada&quot;</span>
+
+  <strong>Explanation: </strong> We group the equivalent characters in <code>A</code> and <code>B</code> as <code>[a,o,e,r,s,c]</code>, <code>[l,p]</code>, <code>[g,t]</code> and <code>[d,m]</code>, thus all letters in <code>S</code> except <code>&#39;u&#39;</code> and <code>&#39;d&#39;</code> are transformed to <code>&#39;a&#39;</code>, the answer is <code>&quot;aauaaaaada&quot;</code>.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+String A, B and S consist of only lowercase English letters from 'a' -
+'z'.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The lengths of string A, B and S are between 1 and 1000.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+String A and B are of the same length.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

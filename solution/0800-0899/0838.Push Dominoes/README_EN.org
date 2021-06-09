@@ -1,0 +1,222 @@
+* [[https://leetcode.com/problems/push-dominoes][838. Push Dominoes]]
+  :PROPERTIES:
+  :CUSTOM_ID: push-dominoes
+  :END:
+[[./solution/0800-0899/0838.Push Dominoes/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+There are N dominoes in a line, and we place each domino vertically
+upright.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+In the beginning, we simultaneously push some of the dominoes either to
+the left or to the right.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+After each second, each domino that is falling to the left pushes the
+adjacent domino on the left.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Similarly, the dominoes falling to the right push their adjacent
+dominoes standing on the right.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+When a vertical domino has dominoes falling on it from both sides, it
+stays still due to the balance of the forces.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For the purposes of this question, we will consider that a falling
+domino expends no additional force to a falling or already fallen
+domino.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a string "S" representing the initial state. S[i] = 'L', if the
+i-th domino has been pushed to the left; S[i] = 'R', if the i-th domino
+has been pushed to the right; S[i] = '.', if the i-th domino has not
+been pushed.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return a string representing the final state. 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>&quot;.L.R...LR..L..&quot;
+
+  <strong>Output: </strong>&quot;LL.RR.LLRRLL..&quot;
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>&quot;RR.L&quot;
+
+  <strong>Output: </strong>&quot;RR.L&quot;
+
+  <strong>Explanation: </strong>The first domino expends no additional force on the second domino.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= N <= 10^5
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+String dominoes contains only 'L', 'R' and '.'
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

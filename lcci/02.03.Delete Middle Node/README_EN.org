@@ -1,0 +1,137 @@
+* [[https://leetcode-cn.com/problems/delete-middle-node-lcci][02.03.
+Delete Middle Node]]
+  :PROPERTIES:
+  :CUSTOM_ID: delete-middle-node
+  :END:
+[[./lcci/02.03.Delete Middle Node/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement an algorithm to delete a node in the middle (i.e., any node
+but the first and last node, not necessarily the exact middle) of a
+singly linked list, given only access to that node.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>the node c from the linked list a-&gt;b-&gt;c-&gt;d-&gt;e-&gt;f
+
+  <strong>Output: </strong>nothing is returned, but the new linked list looks like a-&gt;b-&gt;d-&gt;e-&gt;f
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  # Definition for singly-linked list.
+  # class ListNode:
+  #     def __init__(self, x):
+  #         self.val = x
+  #         self.next = None
+
+  class Solution:
+      def deleteNode(self, node):
+          """
+          :type node: ListNode
+          :rtype: void Do not return anything, modify node in-place instead.
+          """
+          node.val = node.next.val
+          node.next = node.next.next
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  /**
+   * Definition for singly-linked list.
+   * public class ListNode {
+   *     int val;
+   *     ListNode next;
+   *     ListNode(int x) { val = x; }
+   * }
+   */
+  class Solution {
+      public void deleteNode(ListNode node) {
+          node.val = node.next.val;
+          node.next = node.next.next;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * Definition for singly-linked list.
+   * function ListNode(val) {
+   *     this.val = val;
+   *     this.next = null;
+   * }
+   */
+  /**
+   * @param {ListNode} node
+   * @return {void} Do not return anything, modify node in-place instead.
+   */
+   var deleteNode = function(node) {
+      node.val = node.next.val
+      node.next = node.next.next
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

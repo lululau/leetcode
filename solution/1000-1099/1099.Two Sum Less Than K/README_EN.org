@@ -1,0 +1,216 @@
+* [[https://leetcode.com/problems/two-sum-less-than-k][1099. Two Sum
+Less Than K]]
+  :PROPERTIES:
+  :CUSTOM_ID: two-sum-less-than-k
+  :END:
+[[./solution/1000-1099/1099.Two Sum Less Than K/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array nums of integers and integer k, return the maximum sum
+such that there exists i < j with nums[i] + nums[j] = sum and sum < k.
+If no i, j exist satisfying this equation, return -1.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [34,23,1,24,75,33,54,8], k = 60
+  <strong>Output:</strong> 58
+  <strong>Explanation: </strong>We can use 34 and 24 to sum 58 which is less than 60.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [10,20,30], k = 15
+  <strong>Output:</strong> -1
+  <strong>Explanation: </strong>In this case it is not possible to get a pair sum less that 15.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums[i] <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= k <= 2000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def twoSumLessThanK(self, nums: List[int], k: int) -> int:
+          nums.sort()
+          low, high = 0, len(nums) - 1
+          res = -1
+          while low < high:
+              val = nums[low] + nums[high]
+              if val < k:
+                  res = max(res, val)
+                  low += 1
+              else:
+                  high -= 1
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int twoSumLessThanK(int[] nums, int k) {
+          Arrays.sort(nums);
+          int low = 0, high = nums.length - 1;
+          int res = -1;
+          while (low < high) {
+              int val = nums[low] + nums[high];
+              if (val < k) {
+                  res = Math.max(res, val);
+                  ++low;
+              } else {
+                  --high;
+              }
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      int twoSumLessThanK(vector<int>& nums, int k) {
+          sort(nums.begin(), nums.end());
+          int low = 0, high = nums.size() - 1;
+          int res = -1;
+          while (low < high) {
+              int val = nums[low] + nums[high];
+              if (val < k) {
+                  res = max(res, val);
+                  ++low;
+              } else {
+                  --high;
+              }
+          }
+          return res;
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

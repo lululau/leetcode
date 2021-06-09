@@ -1,0 +1,232 @@
+* [[https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree-ii][1644.
+二叉树的最近公共祖先 II]]
+  :PROPERTIES:
+  :CUSTOM_ID: 二叉树的最近公共祖先-ii
+  :END:
+[[./solution/1600-1699/1644.Lowest Common Ancestor of a Binary Tree II/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一棵二叉树的根节点 root，返回给定节点 p 和 q
+的最近公共祖先（LCA）节点。如果 p 或 q 之一不存在于该二叉树中，返回
+null。树中的每个节点值都是互不相同的。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+根据维基百科中对最近公共祖先节点的定义："两个节点 p 和 q 在二叉树 T
+中的最近公共祖先节点是后代节点中既包括
+p 又包括 q 的最深节点（我们允许一个节点为自身的一个后代节点）"。一个节点
+x 的后代节点是节点 x 到某一叶节点间的路径中的节点 y。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><b>输入：</b> root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1
+  <b>输出：</b> 3
+  <b>解释：</b> 节点 5 和 1 的共同祖先节点是 3。</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><b>输入：</b> root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4
+  <b>输出：</b> 5
+  <b>解释：</b> 节点 5 和 4 的共同祖先节点是 5。根据共同祖先节点的定义，一个节点可以是自身的后代节点。</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong> root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 10
+  <b>输出：</b> null
+  <b>解释：</b> 节点 10 不存在于树中，所以返回 null。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+树中节点个数的范围是 [1, 104]。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-109 <= Node.val <= 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+所有节点的值 Node.val 是互不相同的。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+p != q
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

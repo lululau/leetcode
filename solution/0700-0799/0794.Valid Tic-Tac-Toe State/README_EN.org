@@ -1,0 +1,228 @@
+* [[https://leetcode.com/problems/valid-tic-tac-toe-state][794. Valid
+Tic-Tac-Toe State]]
+  :PROPERTIES:
+  :CUSTOM_ID: valid-tic-tac-toe-state
+  :END:
+[[./solution/0700-0799/0794.Valid Tic-Tac-Toe State/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+A Tic-Tac-Toe board is given as a string array board. Return True if and
+only if it is possible to reach this board position during the course of
+a valid tic-tac-toe game.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The board is a 3 x 3 array, and consists of characters " ", "X", and
+"O".  The " " character represents an empty square.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Here are the rules of Tic-Tac-Toe:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Players take turns placing characters into empty squares (" ").
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The first player always places "X" characters, while the second player
+always places "O" characters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+"X" and "O" characters are always placed into empty squares, never
+filled ones.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The game ends when there are 3 of the same (non-empty) character filling
+any row, column, or diagonal.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The game also ends if all squares are non-empty.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+No more moves can be played if the game is over.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Example 1:</strong>
+
+  <strong>Input:</strong> board = [&quot;O&nbsp; &quot;, &quot;&nbsp; &nbsp;&quot;, &quot;&nbsp; &nbsp;&quot;]
+
+  <strong>Output:</strong> false
+
+  <strong>Explanation:</strong> The first player always plays &quot;X&quot;.
+
+
+
+  <strong>Example 2:</strong>
+
+  <strong>Input:</strong> board = [&quot;XOX&quot;, &quot; X &quot;, &quot;   &quot;]
+
+  <strong>Output:</strong> false
+
+  <strong>Explanation:</strong> Players take turns making moves.
+
+
+
+  <strong>Example 3:</strong>
+
+  <strong>Input:</strong> board = [&quot;XXX&quot;, &quot;   &quot;, &quot;OOO&quot;]
+
+  <strong>Output:</strong> false
+
+
+
+  <strong>Example 4:</strong>
+
+  <strong>Input:</strong> board = [&quot;XOX&quot;, &quot;O O&quot;, &quot;XOX&quot;]
+
+  <strong>Output:</strong> true
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+board is a length-3 array of strings, where each string board[i] has
+length 3.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Each board[i][j] is a character in the set {" ", "X", "O"}.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

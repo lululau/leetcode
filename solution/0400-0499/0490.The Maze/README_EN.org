@@ -1,0 +1,335 @@
+* [[https://leetcode.com/problems/the-maze][490. The Maze]]
+  :PROPERTIES:
+  :CUSTOM_ID: the-maze
+  :END:
+[[./solution/0400-0499/0490.The Maze/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+There is a ball in a maze with empty spaces (represented as 0) and walls
+(represented as 1). The ball can go through the empty spaces by rolling
+up, down, left or right, but it won't stop rolling until hitting a wall.
+When the ball stops, it could choose the next direction.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the m x n maze, the ball's start position and the destination,
+where start = [startrow, startcol] and destination = [destinationrow,
+destinationcol], return true if the ball can stop at the destination,
+otherwise return false.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You may assume that the borders of the maze are all walls (see
+examples).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> maze = [[0,0,1,0,0],[0,0,0,0,0],[0,0,0,1,0],[1,1,0,1,1],[0,0,0,0,0]], start = [0,4], destination = [4,4]
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> One possible way is : left -&gt; down -&gt; left -&gt; down -&gt; right -&gt; down -&gt; right.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> maze = [[0,0,1,0,0],[0,0,0,0,0],[0,0,0,1,0],[1,1,0,1,1],[0,0,0,0,0]], start = [0,4], destination = [3,2]
+  <strong>Output:</strong> false
+  <strong>Explanation:</strong> There is no way for the ball to stop at the destination. Notice that you can pass through the destination but you cannot stop there.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> maze = [[0,0,0,0,0],[1,1,0,0,1],[0,0,0,0,0],[0,1,0,0,1],[0,1,0,0,0]], start = [4,3], destination = [0,1]
+  <strong>Output:</strong> false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+m == maze.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n == maze[i].length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= m, n <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+maze[i][j] is 0 or 1.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+start.length == 2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+destination.length == 2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= startrow, destinationrow <= m
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= startcol, destinationcol <= n
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Both the ball and the destination exist in an empty space, and they will
+not be in the same position initially.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The maze contains at least 2 empty spaces.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+DFS.
+
+#+begin_src python
+  class Solution:
+      def hasPath(self, maze: List[List[int]], start: List[int], destination: List[int]) -> bool:
+          def dfs(maze, start, destination):
+              if visited[start[0]][start[1]]:
+                  return False
+              if start[0] == destination[0] and start[1] == destination[1]:
+                  return True
+              visited[start[0]][start[1]] = True
+              l, r, u, d = start[1] - 1, start[1] + 1, start[0] - 1, start[0] + 1
+              while l >= 0 and maze[start[0]][l] == 0:
+                  l -= 1
+              if dfs(maze, [start[0], l + 1], destination):
+                  return True
+              while r < len(maze[0]) and maze[start[0]][r] == 0:
+                  r += 1
+              if dfs(maze, [start[0], r - 1], destination):
+                  return True
+              while u >= 0 and maze[u][start[1]] == 0:
+                  u -= 1
+              if dfs(maze, [u + 1, start[1]], destination):
+                  return True
+              while d < len(maze) and maze[d][start[1]] == 0:
+                  d += 1
+              if dfs(maze, [d - 1, start[1]], destination):
+                  return True
+              return False
+
+          visited = [[False for _ in maze[0]] for _ in maze]
+          return dfs(maze, start, destination)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      private boolean[][] visited;
+
+      public boolean hasPath(int[][] maze, int[] start, int[] destination) {
+          int m = maze.length, n = maze[0].length;
+          visited = new boolean[m][n];
+          return dfs(maze, start, destination);
+      }
+
+      private boolean dfs(int[][] maze, int[] start, int[] destination) {
+          if (visited[start[0]][start[1]]) return false;
+          if (start[0] == destination[0] && start[1] == destination[1]) return true;
+          visited[start[0]][start[1]] = true;
+
+          int l = start[1] - 1, r = start[1] + 1, u = start[0] - 1, d = start[0] + 1;
+
+          while (l >= 0 && maze[start[0]][l] == 0) --l;
+          if (dfs(maze, new int[]{start[0], l + 1}, destination)) return true;
+
+          while (r < maze[0].length && maze[start[0]][r] == 0) ++r;
+          if (dfs(maze, new int[]{start[0], r - 1}, destination)) return true;
+
+          while (u >= 0 && maze[u][start[1]] == 0) --u;
+          if (dfs(maze, new int[]{u + 1, start[1]}, destination)) return true;
+
+          while (d < maze.length && maze[d][start[1]] == 0) ++d;
+          if (dfs(maze, new int[]{d - 1, start[1]}, destination)) return true;
+
+          return false;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

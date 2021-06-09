@@ -1,0 +1,215 @@
+* [[https://leetcode.com/problems/longest-common-prefix][14. Longest
+Common Prefix]]
+  :PROPERTIES:
+  :CUSTOM_ID: longest-common-prefix
+  :END:
+[[./solution/0000-0099/0014.Longest Common Prefix/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Write a function to find the longest common prefix string amongst an
+array of strings.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If there is no common prefix, return an empty string "".
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> strs = [&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;]
+  <strong>Output:</strong> &quot;fl&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> strs = [&quot;dog&quot;,&quot;racecar&quot;,&quot;car&quot;]
+  <strong>Output:</strong> &quot;&quot;
+  <strong>Explanation:</strong> There is no common prefix among the input strings.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= strs.length <= 200
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= strs[i].length <= 200
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+strs[i] consists of only lower-case English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def longestCommonPrefix(self, strs: List[str]) -> str:
+          n = len(strs)
+          if n == 0:
+              return ''
+          for i in range(len(strs[0])):
+              for j in range(1, n):
+                  if len(strs[j]) <= i or strs[j][i] != strs[0][i]:
+                      return strs[0][:i]
+          return strs[0]
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public String longestCommonPrefix(String[] strs) {
+          int n;
+          if ((n = strs.length) == 0) return "";
+          for (int i = 0; i < strs[0].length(); ++i) {
+              for (int j = 1; j < n; ++j) {
+                  if (strs[j].length() <= i || strs[j].charAt(i) != strs[0].charAt(i)) {
+                      return strs[0].substring(0, i);
+                  }
+              }
+          }
+          return strs[0];
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      string longestCommonPrefix(vector<string>& strs) {
+          int n;
+          if ((n = strs.size()) == 0) return "";
+          for (int i = 0; i < strs[0].size(); ++i) {
+              for (int j = 1; j < n; ++j) {
+                  if (strs[j].size() <= i || strs[j][i] != strs[0][i]) {
+                      return strs[0].substr(0, i);
+                  }
+              }
+          }
+          return strs[0];
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

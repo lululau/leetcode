@@ -1,0 +1,170 @@
+* [[https://leetcode-cn.com/problems/prime-number-of-set-bits-in-binary-representation][762.
+二进制表示中质数个计算置位]]
+  :PROPERTIES:
+  :CUSTOM_ID: 二进制表示中质数个计算置位
+  :END:
+[[./solution/0700-0799/0762.Prime Number of Set Bits in Binary Representation/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定两个整数 L 和 R ，找到闭区间 [L,
+R] 范围内，计算置位位数为质数的整数个数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+（注意，计算置位代表二进制表示中1的个数。例如 21 的二进制表示 10101 有 3
+个计算置位。还有，1 不是质数。）
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入:</strong> L = 6, R = 10
+  <strong>输出:</strong> 4
+  <strong>解释:</strong>
+  6 -&gt; 110 (2 个计算置位，2 是质数)
+  7 -&gt; 111 (3 个计算置位，3 是质数)
+  9 -&gt; 1001 (2 个计算置位，2 是质数)
+  10-&gt; 1010 (2 个计算置位，2 是质数)
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入:</strong> L = 10, R = 15
+  <strong>输出:</strong> 5
+  <strong>解释:</strong>
+  10 -&gt; 1010 (2 个计算置位, 2 是质数)
+  11 -&gt; 1011 (3 个计算置位, 3 是质数)
+  12 -&gt; 1100 (2 个计算置位, 2 是质数)
+  13 -&gt; 1101 (3 个计算置位, 3 是质数)
+  14 -&gt; 1110 (3 个计算置位, 3 是质数)
+  15 -&gt; 1111 (4 个计算置位, 4 不是质数)
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+L, R 是 L <= R 且在 [1, 10^6] 中的整数。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+R - L 的最大值为 10000。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

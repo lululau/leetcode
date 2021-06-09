@@ -1,0 +1,193 @@
+* [[https://leetcode.com/problems/generate-random-point-in-a-circle][478.
+Generate Random Point in a Circle]]
+  :PROPERTIES:
+  :CUSTOM_ID: generate-random-point-in-a-circle
+  :END:
+[[./solution/0400-0499/0478.Generate Random Point in a Circle/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the radius and the position of the center of a circle, implement
+the function randPoint which generates a uniform random point inside the
+circle.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement the Solution class:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Solution(double radius, double x_center, double y_center) initializes
+the object with the radius of the circle radius and the position of the
+center (x_center, y_center).
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+randPoint() returns a random point inside the circle. A point on the
+circumference of the circle is considered to be in the circle. The
+answer is returned as an array [x, y].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input</strong>
+  [&quot;Solution&quot;, &quot;randPoint&quot;, &quot;randPoint&quot;, &quot;randPoint&quot;]
+  [[1.0, 0.0, 0.0], [], [], []]
+  <strong>Output</strong>
+  [null, [-0.02493, -0.38077], [0.82314, 0.38945], [0.36572, 0.17248]]
+
+  <strong>Explanation</strong>
+  Solution solution = new Solution(1.0, 0.0, 0.0);
+  solution.randPoint(); // return [-0.02493, -0.38077]
+  solution.randPoint(); // return [0.82314, 0.38945]
+  solution.randPoint(); // return [0.36572, 0.17248]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 < radius <= 108
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-107 <= x_center, y_center <= 107
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+At most 3 * 104 calls will be made to randPoint.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

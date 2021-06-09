@@ -1,0 +1,187 @@
+* [[https://leetcode-cn.com/problems/print-zero-even-odd][1116.
+打印零与奇偶数]]
+  :PROPERTIES:
+  :CUSTOM_ID: 打印零与奇偶数
+  :END:
+[[./solution/1100-1199/1116.Print Zero Even Odd/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+假设有这么一个类：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>class ZeroEvenOdd {
+  &nbsp; public ZeroEvenOdd(int n) { ... }&nbsp;     // 构造函数
+    public void zero(printNumber) { ... }  // 仅打印出 0
+    public void even(printNumber) { ... }  // 仅打印出 偶数
+    public void odd(printNumber) { ... }   // 仅打印出 奇数
+  }
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+相同的一个 ZeroEvenOdd 类实例将会传递给三个不同的线程：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+线程 A 将调用 zero()，它只输出 0 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+线程 B 将调用 even()，它只输出偶数。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+线程 C 将调用 odd()，它只输出奇数。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+每个线程都有一个 printNumber
+方法来输出一个整数。请修改给出的代码以输出整数序列 010203040506...
+，其中序列的长度必须为 2n。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>n = 2
+  <strong>输出：</strong>&quot;0102&quot;
+  <strong>说明：</strong>三条线程异步执行，其中一个调用 zero()，另一个线程调用 even()，最后一个线程调用odd()。正确的输出为 &quot;0102&quot;。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>n = 5
+  <strong>输出：</strong>&quot;0102030405&quot;
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,293 @@
+* [[https://leetcode.com/problems/last-stone-weight-ii][1049. Last Stone
+Weight II]]
+  :PROPERTIES:
+  :CUSTOM_ID: last-stone-weight-ii
+  :END:
+[[./solution/1000-1099/1049.Last Stone Weight II/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given an array of integers stones where stones[i] is the weight
+of the ith stone.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+We are playing a game with the stones. On each turn, we choose any two
+stones and smash them together. Suppose the stones have weights x and y
+with x <= y. The result of this smash is:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If x == y, both stones are destroyed, and
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If x != y, the stone of weight x is destroyed, and the stone of weight y
+has new weight y - x.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+At the end of the game, there is at most one stone left.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the smallest possible weight of the left stone. If there are no
+stones left, return 0.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> stones = [2,7,4,1,8,1]
+  <strong>Output:</strong> 1
+  <strong>Explanation:</strong>
+  We can combine 2 and 4 to get 2, so the array converts to [2,7,1,8,1] then,
+  we can combine 7 and 8 to get 1, so the array converts to [2,1,1,1] then,
+  we can combine 2 and 1 to get 1, so the array converts to [1,1,1] then,
+  we can combine 1 and 1 to get 0, so the array converts to [1], then that&#39;s the optimal value.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> stones = [31,26,33,21,40]
+  <strong>Output:</strong> 5
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> stones = [1,2]
+  <strong>Output:</strong> 1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= stones.length <= 30
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= stones[i] <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+This question can be converted to calculate how many stones a backpack
+with a capacity of =sum / 2= can hold.
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def lastStoneWeightII(self, stones: List[int]) -> int:
+          s = sum(stones)
+          n = s // 2
+          dp = [False for i in range(n + 1)]
+          dp[0] = True
+          for stone in stones:
+              for j in range(n, stone - 1, -1):
+                  dp[j] = dp[j] or dp[j - stone]
+          for j in range(n, -1, -1):
+              if dp[j]:
+                  return s - j - j
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int lastStoneWeightII(int[] stones) {
+          int sum = 0;
+          for (int stone : stones) {
+              sum += stone;
+          }
+          int n = sum / 2;
+          boolean[] dp = new boolean[n + 1];
+          dp[0] = true;
+          for (int stone : stones) {
+              for (int j = n; j >= stone; j--) {
+                  dp[j] = dp[j] || dp[j - stone];
+              }
+          }
+          for (int j = n; ; j--) {
+              if (dp[j]) {
+                  return sum - j - j;
+              }
+          }
+      }
+  }
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  func lastStoneWeightII(stones []int) int {
+      sum := 0
+      for _, stone := range stones {
+          sum += stone
+      }
+      n := sum / 2
+      dp := make([]bool, n+1)
+      dp[0] = true
+      for _, stone := range stones {
+          for j := n; j >= stone; j-- {
+              dp[j] = dp[j] || dp[j-stone]
+          }
+      }
+      for j := n; ; j-- {
+          if dp[j] {
+              return sum - j - j
+          }
+      }
+  }
+#+end_example
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

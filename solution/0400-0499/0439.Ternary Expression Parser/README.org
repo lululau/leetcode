@@ -1,0 +1,248 @@
+* [[https://leetcode-cn.com/problems/ternary-expression-parser][439.
+三元表达式解析器]]
+  :PROPERTIES:
+  :CUSTOM_ID: 三元表达式解析器
+  :END:
+[[./solution/0400-0499/0439.Ternary Expression Parser/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个以字符串表示的任意嵌套的三元表达式，计算表达式的值。你可以假定给定的表达式始终都是有效的并且只包含数字
+0-9, ?, :, T 和 F (T 和 F 分别表示真和假）。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+给定的字符串长度 ≤ 10000。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+所包含的数字都只有一位数。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+条件表达式从右至左结合（和大多数程序设计语言类似）。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+条件是 T 和 F其一，即条件永远不会是数字。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+表达式的结果是数字 0-9, T 或者 F。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong> &quot;T?2:3&quot;
+
+  <strong>输出：</strong> &quot;2&quot;
+
+  <strong>解释：</strong> 如果条件为真，结果为 2；否则，结果为 3。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong> &quot;F?1:T?4:5&quot;
+
+  <strong>输出：</strong> &quot;4&quot;
+
+  <strong>解释：</strong> 条件表达式自右向左结合。使用括号的话，相当于：
+
+               &quot;(F ? 1 : (T ? 4 : 5))&quot;                   &quot;(F ? 1 : (T ? 4 : 5))&quot;
+            -&gt; &quot;(F ? 1 : 4)&quot;                 或者     -&gt; &quot;(T ? 4 : 5)&quot;
+            -&gt; &quot;4&quot;                                    -&gt; &quot;4&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong> &quot;T?T?F:5:3&quot;
+
+  <strong>输出：</strong> &quot;F&quot;
+
+  <strong>解释：</strong> 条件表达式自右向左结合。使用括号的话，相当于：
+
+               &quot;(T ? (T ? F : 5) : 3)&quot;                   &quot;(T ? (T ? F : 5) : 3)&quot;
+            -&gt; &quot;(T ? F : 3)&quot;                 或者       -&gt; &quot;(T ? F : 5)&quot;
+            -&gt; &quot;F&quot;                                     -&gt; &quot;F&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

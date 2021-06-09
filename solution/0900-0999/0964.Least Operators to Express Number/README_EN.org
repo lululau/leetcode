@@ -1,0 +1,247 @@
+* [[https://leetcode.com/problems/least-operators-to-express-number][964.
+Least Operators to Express Number]]
+  :PROPERTIES:
+  :CUSTOM_ID: least-operators-to-express-number
+  :END:
+[[./solution/0900-0999/0964.Least Operators to Express Number/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a single positive integer x, we will write an expression of the
+form x (op1) x (op2) x (op3) x ... where each operator op1, op2, etc. is
+either addition, subtraction, multiplication, or division (+, -, /, or
+/). For example, with x = 3, we might write 3 / 3 / 3 + 3 - 3 which is a
+value of 3.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+When writing such an expression, we adhere to the following conventions:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The division operator (/) returns rational numbers.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+There are no parentheses placed anywhere.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+We use the usual order of operations: multiplication and division happen
+before addition and subtraction.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+It is not allowed to use the unary negation operator (-). For example,
+"x - x" is a valid expression as it only uses subtraction, but "-x + x"
+is not because it uses negation.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+We would like to write an expression with the least number of operators
+such that the expression equals the given target. Return the least
+number of operators used.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> x = 3, target = 19
+  <strong>Output:</strong> 5
+  <strong>Explanation:</strong> 3 * 3 + 3 * 3 + 3 / 3.
+  The expression contains 5 operations.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> x = 5, target = 501
+  <strong>Output:</strong> 8
+  <strong>Explanation:</strong> 5 * 5 * 5 * 5 - 5 * 5 * 5 + 5 / 5.
+  The expression contains 8 operations.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> x = 100, target = 100000000
+  <strong>Output:</strong> 3
+  <strong>Explanation:</strong> 100 * 100 * 100 * 100.
+  The expression contains 3 operations.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+2 <= x <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= target <= 2 * 108
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

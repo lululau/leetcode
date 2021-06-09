@@ -1,0 +1,189 @@
+* [[https://leetcode.com/problems/ransom-note][383. Ransom Note]]
+  :PROPERTIES:
+  :CUSTOM_ID: ransom-note
+  :END:
+[[./solution/0300-0399/0383.Ransom Note/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an arbitrary ransom note string and another string containing
+letters from all the magazines, write a function that will return true
+if the ransom note can be constructed from the magazines ; otherwise, it
+will return false.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Each letter in the magazine string can only be used once in your ransom
+note.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>Input:</strong> ransomNote = "a", magazine = "b"
+  <strong>Output:</strong> false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>Input:</strong> ransomNote = "aa", magazine = "ab"
+  <strong>Output:</strong> false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>Input:</strong> ransomNote = "aa", magazine = "aab"
+  <strong>Output:</strong> true
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+You may assume that both strings contain only lowercase letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+          chars = {}
+          for i in magazine:
+              chars[i] = chars.get(i, 0) + 1
+          for i in ransomNote:
+              if not chars.get(i):
+                  return False
+              chars[i] -= 1
+          return True
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public boolean canConstruct(String ransomNote, String magazine) {
+          int[] chars = new int[26];
+          for (int i = 0, n = magazine.length(); i < n; ++i) {
+              int idx = magazine.charAt(i) - 'a';
+              ++chars[idx];
+          }
+          for (int i = 0, n = ransomNote.length(); i < n; ++i) {
+              int idx = ransomNote.charAt(i) - 'a';
+              if (chars[idx] == 0) return false;
+              --chars[idx];
+          }
+          return true;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

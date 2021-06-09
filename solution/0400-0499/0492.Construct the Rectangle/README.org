@@ -1,0 +1,179 @@
+* [[https://leetcode-cn.com/problems/construct-the-rectangle][492.
+构造矩形]]
+  :PROPERTIES:
+  :CUSTOM_ID: 构造矩形
+  :END:
+[[./solution/0400-0499/0492.Construct the Rectangle/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+作为一位web开发者， 懂得怎样去规划一个页面的尺寸是很重要的。
+现给定一个具体的矩形页面面积，你的任务是设计一个长度为 L 和宽度为 W
+且满足以下要求的矩形的页面。要求：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  1. 你设计的矩形页面必须等于给定的目标面积。
+
+  2. 宽度 W 不应大于长度 L，换言之，要求 L &gt;= W 。
+
+  3. 长度 L 和宽度 W 之间的差距应当尽可能小。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你需要按顺序输出你设计的页面的长度 L 和宽度 W。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入:</strong> 4
+  <strong>输出:</strong> [2, 2]
+  <strong>解释:</strong> 目标面积是 4， 所有可能的构造方案有 [1,4], [2,2], [4,1]。
+  但是根据要求2，[1,4] 不符合要求; 根据要求3，[2,2] 比 [4,1] 更能符合要求. 所以输出长度 L 为 2， 宽度 W 为 2。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+说明:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+给定的面积不大于 10,000,000 且为正整数。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+你设计的页面的长度和宽度必须都是正整数。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def constructRectangle(self, area: int) -> List[int]:
+          sr = int(math.sqrt(area))
+          l = w = sr
+          while l <= area and w >= 1:
+              s = l * w
+              if s == area:
+                  break
+              if s > area:
+                  w -= 1
+              else:
+                  l += 1
+          return [l, w]
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int[] constructRectangle(int area) {
+          int sr = (int) Math.sqrt(area);
+          int l = sr, w = sr;
+          while (l <= area && w >= 1) {
+              int s = l * w;
+              if (s == area) break;
+              if (s > area) --w;
+              else ++l;
+          }
+          return new int[]{l, w};
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

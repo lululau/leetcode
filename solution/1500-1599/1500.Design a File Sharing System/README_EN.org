@@ -1,0 +1,496 @@
+* [[https://leetcode.com/problems/design-a-file-sharing-system][1500.
+Design a File Sharing System]]
+  :PROPERTIES:
+  :CUSTOM_ID: design-a-file-sharing-system
+  :END:
+[[./solution/1500-1599/1500.Design a File Sharing System/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+We will use a file-sharing system to share a very large file which
+consists of m small chunks with IDs from 1 to m.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+When users join the system, the system should assign a unique ID to
+them. The unique ID should be used once for each user, but when a user
+leaves the system, the ID can be reused again.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Users can request a certain chunk of the file, the system should return
+a list of IDs of all the users who own this chunk. If the user receive a
+non-empty list of IDs, they receive the requested chunk successfully.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement the FileSharing class:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+FileSharing(int m) Initializes the object with a file of m chunks.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int join(int[] ownedChunks): A new user joined the system owning some
+chunks of the file, the system should assign an id to the user which is
+the smallest positive integer not taken by any other user. Return the
+assigned id.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void leave(int userID): The user with userID will leave the system, you
+cannot take file chunks from them anymore.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int[] request(int userID, int chunkID): The user userID requested the
+file chunk with chunkID. Return a list of the IDs of all users that own
+this chunk sorted in ascending order.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow-ups:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+What happens if the system identifies the user by their IP address
+instead of their unique ID and users disconnect and connect from the
+system with the same IP?
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If the users in the system join and leave the system frequently without
+requesting any chunks, will your solution still be efficient?
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If all each user join the system one time, request all files and then
+leave, will your solution still be efficient?
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If the system will be used to share n files where the ith file consists
+of m[i], what are the changes you have to do?
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b>
+
+  [&quot;FileSharing&quot;,&quot;join&quot;,&quot;join&quot;,&quot;join&quot;,&quot;request&quot;,&quot;request&quot;,&quot;leave&quot;,&quot;request&quot;,&quot;leave&quot;,&quot;join&quot;]
+
+  [[4],[[1,2]],[[2,3]],[[4]],[1,3],[2,2],[1],[2,1],[2],[[]]]
+
+  <b>Output:</b>
+
+  [null,1,2,3,[2],[1,2],null,[],null,1]
+
+  <b>Explanation:</b>
+
+  FileSharing fileSharing = new FileSharing(4); // We use the system to share a file of 4 chunks.
+
+
+
+  fileSharing.join([1, 2]);    // A user who has chunks [1,2] joined the system, assign id = 1 to them and return 1.
+
+
+
+  fileSharing.join([2, 3]);    // A user who has chunks [2,3] joined the system, assign id = 2 to them and return 2.
+
+
+
+  fileSharing.join([4]);       // A user who has chunk [4] joined the system, assign id = 3 to them and return 3.
+
+
+
+  fileSharing.request(1, 3);   // The user with id = 1 requested the third file chunk, as only the user with id = 2 has the file, return [2] . Notice that user 1 now has chunks [1,2,3].
+
+
+
+  fileSharing.request(2, 2);   // The user with id = 2 requested the second file chunk, users with ids [1,2] have this chunk, thus we return [1,2].
+
+
+
+  fileSharing.leave(1);        // The user with id = 1 left the system, all the file chunks with them are no longer available for other users.
+
+
+
+  fileSharing.request(2, 1);   // The user with id = 2 requested the first file chunk, no one in the system has this chunk, we return empty list [].
+
+
+
+  fileSharing.leave(2);        // The user with id = 2 left the system.
+
+
+
+  fileSharing.join([]);        // A user who doesn&#39;t have any chunks joined the system, assign id = 1 to them and return 1. Notice that ids 1 and 2 are free and we can reuse them.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= m <= 10^5
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= ownedChunks.length <= min(100, m)
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= ownedChunks[i] <= m
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Values of ownedChunks are unique.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= chunkID <= m
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+userID is guaranteed to be a user in the system if you assign the IDs
+correctly. 
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+At most 10^4 calls will be made to join, leave and request.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Each call to leave will have a matching call for join.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class FileSharing:
+
+      def __init__(self, m: int):
+          self.cur = 0
+          self.chunks = m
+          self.reused = []
+          self.user_chunks = collections.defaultdict(set)
+
+      def join(self, ownedChunks: List[int]) -> int:
+          if self.reused:
+              userID = heapq.heappop(self.reused)
+          else:
+              self.cur += 1
+              userID = self.cur
+          self.user_chunks[userID] = set(ownedChunks)
+          return userID
+
+      def leave(self, userID: int) -> None:
+          heapq.heappush(self.reused, userID)
+          self.user_chunks.pop(userID)
+
+      def request(self, userID: int, chunkID: int) -> List[int]:
+          if chunkID < 1 or chunkID > self.chunks:
+              return []
+          res = []
+          for k, v in self.user_chunks.items():
+              if chunkID in v:
+                  res.append(k)
+          if res:
+              self.user_chunks[userID].add(chunkID)
+          return sorted(res)
+
+  # Your FileSharing object will be instantiated and called as such:
+  # obj = FileSharing(m)
+  # param_1 = obj.join(ownedChunks)
+  # obj.leave(userID)
+  # param_3 = obj.request(userID,chunkID)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class FileSharing {
+      private int chunks;
+      private int cur;
+      private TreeSet<Integer> reused;
+      private TreeMap<Integer, Set<Integer>> userChunks;
+
+      public FileSharing(int m) {
+          cur = 0;
+          chunks = m;
+          reused = new TreeSet<>();
+          userChunks = new TreeMap<>();
+      }
+      
+      public int join(List<Integer> ownedChunks) {
+          int userID;
+          if (reused.isEmpty()) {
+              ++cur;
+              userID = cur;
+          } else {
+              userID = reused.pollFirst();
+          }
+          userChunks.put(userID, new HashSet<>(ownedChunks));
+          return userID;
+      }
+      
+      public void leave(int userID) {
+          reused.add(userID);
+          userChunks.remove(userID);
+      }
+      
+      public List<Integer> request(int userID, int chunkID) {
+          if (chunkID < 1 || chunkID > chunks) {
+              return Collections.emptyList();
+          }
+          List<Integer> res = new ArrayList<>();
+          for (Map.Entry<Integer, Set<Integer>> entry : userChunks.entrySet()) {
+              if (entry.getValue().contains(chunkID)) {
+                  res.add(entry.getKey());
+              }
+          }
+          if (!userChunks.containsKey(userID)) {
+              userChunks.put(userID, new HashSet<>());
+          }
+          if (!res.isEmpty()) {
+              userChunks.get(userID).add(chunkID);
+          }
+          return res;
+      }
+  }
+
+  /**
+   * Your FileSharing object will be instantiated and called as such:
+   * FileSharing obj = new FileSharing(m);
+   * int param_1 = obj.join(ownedChunks);
+   * obj.leave(userID);
+   * List<Integer> param_3 = obj.request(userID,chunkID);
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

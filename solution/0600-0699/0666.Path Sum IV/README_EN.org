@@ -1,0 +1,186 @@
+* [[https://leetcode.com/problems/path-sum-iv][666. Path Sum IV]]
+  :PROPERTIES:
+  :CUSTOM_ID: path-sum-iv
+  :END:
+[[./solution/0600-0699/0666.Path Sum IV/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+If the depth of a tree is smaller than 5, then this tree can be
+represented by a list of three-digits integers.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For each integer in this list:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The hundreds digit represents the depth D of this node, 1 <= D <= 4.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The tens digit represents the position P of this node in the level it
+belongs to, 1 <= P <= 8. The position is the same as that in a full
+binary tree.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The units digit represents the value V of this node, 0 <= V <= 9.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a list of ascending three-digits integers representing a binary
+tree with the depth smaller than 5, you need to return the sum of all
+paths from the root towards the leaves.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+It's guaranteed that the given list represents a valid connected binary
+tree.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <b>Input:</b> [113, 215, 221]
+  <b>Output:</b> 12
+  <b>Explanation:</b> 
+  The tree that the list represents is:
+      3
+     / \
+    5   1
+
+  The path sum is (3 + 5) + (3 + 1) = 12.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <b>Input:</b> [113, 221]
+  <b>Output:</b> 4
+  <b>Explanation:</b> 
+  The tree that the list represents is: 
+      3
+       \
+        1
+
+  The path sum is (3 + 1) = 4.
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,135 @@
+* 冒泡排序
+  :PROPERTIES:
+  :CUSTOM_ID: 冒泡排序
+  :END:
+定义一个布尔变量
+=hasChange=，用来标记每轮是否进行了交换。在每轮遍历开始时，将
+=hasChange= 设置为 false。
+
+若当轮没有发生交换，说明此时数组已经按照升序排列，=hashChange= 依然是为
+false。此时外层循环直接退出，排序结束。
+
+** 代码示例
+   :PROPERTIES:
+   :CUSTOM_ID: 代码示例
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  import java.util.Arrays;
+
+  public class BubbleSort {
+
+      private static void bubbleSort(int[] nums) {
+          boolean hasChange = true;
+          for (int i = 0, n = nums.length; i < n - 1 && hasChange; ++i) {
+              hasChange = false;
+              for (int j = 0; j < n - i - 1; ++j) {
+                  if (nums[j] > nums[j + 1]) {
+                      swap(nums, j, j + 1);
+                      hasChange = true;
+                  }
+              }
+          }
+      }
+
+      private static void swap(int[] nums, int i, int j) {
+          int t = nums[i];
+          nums[i] = nums[j];
+          nums[j] = t;
+      }
+
+      public static void main(String[] args) {
+          int[] nums = {1, 2, 7, 9, 5, 8};
+          bubbleSort(nums);
+          System.out.println(Arrays.toString(nums));
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  function bubbleSort(inputArr) {
+      let len = inputArr.length;
+      let swapped = false;
+      for (let i = 1; i <= len - 1; i++) {
+          swapped = false;
+          for (let j = 0; j < len - 1; j++) {
+              if (inputArr[j] > inputArr[j + 1]) {
+                  let temp = inputArr[j];
+                  inputArr[j] = inputArr[j + 1];
+                  inputArr[j + 1] = temp;
+                  swapped = true
+              }
+          }
+          if (swapped === false) break;
+      }
+      return (inputArr)
+  }
+
+  let arr = [6, 3, 2, 1, 5];
+  console.log(bubbleSort(arr))
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  package main
+
+  import "fmt"
+
+  func bubbleSort(nums []int) {
+      hasChange := true
+      for i, n := 0, len(nums); i < n-1 && hasChange; i++ {
+          hasChange = false
+          for j := 0; j < n-i-1; j++ {
+              if nums[j] > nums[j+1] {
+                  nums[j], nums[j+1] = nums[j+1], nums[j]
+                  hasChange = true
+              }
+          }
+      }
+  }
+
+  func main() {
+      nums := []int{1, 2, 7, 9, 5, 8}
+      bubbleSort(nums)
+      fmt.Println(nums)
+  }
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html
+
+** 算法分析
+   :PROPERTIES:
+   :CUSTOM_ID: 算法分析
+   :END:
+空间复杂度 O(1)、时间复杂度 O(n²)。
+
+分情况讨论：
+
+1. 给定的数组按照顺序已经排好：只需要进行 =n-1= 次比较，两两交换次数为
+   0，时间复杂度为 O(n)，这是最好的情况。
+2. 给定的数组按照逆序排列：需要进行 =n*(n-1)/2= 次比较，时间复杂度为
+   O(n²)，这是最坏的情况。
+3. 给定的数组杂乱无章。在这种情况下，平均时间复杂度 O(n²)。
+
+因此，时间复杂度是 O(n²)，这是一种稳定的排序算法。
+
+#+begin_quote
+  稳定是指，两个相等的数，在排序过后，相对位置保持不变。
+#+end_quote

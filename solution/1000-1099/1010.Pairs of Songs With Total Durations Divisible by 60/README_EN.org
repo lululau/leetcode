@@ -1,0 +1,169 @@
+* [[https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60][1010.
+Pairs of Songs With Total Durations Divisible by 60]]
+  :PROPERTIES:
+  :CUSTOM_ID: pairs-of-songs-with-total-durations-divisible-by-60
+  :END:
+[[./solution/1000-1099/1010.Pairs of Songs With Total Durations Divisible by 60/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given a list of songs where the ith song has a duration of
+time[i] seconds.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the number of pairs of songs for which their total duration in
+seconds is divisible by 60. Formally, we want the number of indices i, j
+such that i < j with (time[i] + time[j]) % 60 == 0.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> time = [30,20,150,100,40]
+  <strong>Output:</strong> 3
+  <strong>Explanation:</strong> Three pairs have a total duration divisible by 60:
+  (time[0] = 30, time[2] = 150): total duration 180
+  (time[1] = 20, time[3] = 100): total duration 120
+  (time[1] = 20, time[4] = 40): total duration 60
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> time = [60,60,60]
+  <strong>Output:</strong> 3
+  <strong>Explanation:</strong> All three pairs have a total duration of 120, which is divisible by 60.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= time.length <= 6 * 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= time[i] <= 500
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

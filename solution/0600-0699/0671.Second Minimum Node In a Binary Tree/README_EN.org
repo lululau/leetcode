@@ -1,0 +1,195 @@
+* [[https://leetcode.com/problems/second-minimum-node-in-a-binary-tree][671.
+Second Minimum Node In a Binary Tree]]
+  :PROPERTIES:
+  :CUSTOM_ID: second-minimum-node-in-a-binary-tree
+  :END:
+[[./solution/0600-0699/0671.Second Minimum Node In a Binary Tree/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a non-empty special binary tree consisting of nodes with the
+non-negative value, where each node in this tree has exactly two or zero
+sub-node. If the node has two sub-nodes, then this node's value is the
+smaller value among its two sub-nodes. More formally, the
+property root.val = min(root.left.val, root.right.val) always holds.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given such a binary tree, you need to output the second minimum value in
+the set made of all the nodes' value in the whole tree.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If no such second minimum value exists, output -1 instead.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [2,2,5,null,null,5,7]
+  <strong>Output:</strong> 5
+  <strong>Explanation:</strong> The smallest value is 2, the second smallest value is 5.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [2,2,2]
+  <strong>Output:</strong> -1
+  <strong>Explanation:</strong> The smallest value is 2, but there isn&#39;t any second smallest value.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of nodes in the tree is in the range [1, 25].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= Node.val <= 231 - 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+root.val == min(root.left.val, root.right.val) for each internal node of
+the tree.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

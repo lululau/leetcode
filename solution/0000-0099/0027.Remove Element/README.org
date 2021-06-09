@@ -1,0 +1,337 @@
+* [[https://leetcode-cn.com/problems/remove-element][27. 移除元素]]
+  :PROPERTIES:
+  :CUSTOM_ID: 移除元素
+  :END:
+[[./solution/0000-0099/0027.Remove Element/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个数组 nums 和一个值 val，你需要 原地
+移除所有数值等于 val 的元素，并返回移除后数组的新长度。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 原地 修改输入数组。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+说明:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+为什么返回数值是整数，但输出的答案是数组呢?
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请注意，输入数组是以「引用」方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你可以想象内部操作如下:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  // <strong>nums</strong> 是以“引用”方式传递的。也就是说，不对实参作任何拷贝
+  int len = removeElement(nums, val);
+
+  // 在函数里修改输入数组对于调用者是可见的。
+  // 根据你的函数返回的长度, 它会打印出数组中<strong> 该长度范围内</strong> 的所有元素。
+  for (int i = 0; i < len; i++) {
+      print(nums[i]);
+  }
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>nums = [3,2,2,3], val = 3
+  <strong>输出：</strong>2, nums = [2,2]
+  <strong>解释：</strong>函数应该返回新的长度 <strong>2</strong>, 并且 nums<em> </em>中的前两个元素均为 <strong>2</strong>。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = [2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>nums = [0,1,2,2,3,0,4,2], val = 2
+  <strong>输出：</strong>5, nums = [0,1,4,0,3]
+  <strong>解释：</strong>函数应该返回新的长度 <strong><code>5</code></strong>, 并且 nums 中的前五个元素为 <strong><code>0</code></strong>, <strong><code>1</code></strong>, <strong><code>3</code></strong>, <strong><code>0</code></strong>, <strong>4</strong>。注意这五个元素可为任意顺序。你不需要考虑数组中超出新长度后面的元素。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= nums.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= nums[i] <= 50
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= val <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def removeElement(self, nums: List[int], val: int) -> int:
+          cnt, n = 0, len(nums)
+          for i in range(n):
+              if nums[i] == val:
+                  cnt += 1
+              else:
+                  nums[i - cnt] = nums[i]
+          return n - cnt
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int removeElement(int[] nums, int val) {
+          int cnt = 0, n = nums.length;
+          for (int i = 0; i < n; ++i) {
+              if (nums[i] == val) ++cnt;
+              else nums[i - cnt] = nums[i];
+          }
+          return n - cnt;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      int removeElement(vector<int>& nums, int val) {
+          int cnt = 0, n = nums.size();
+          for (int i = 0; i < n; ++i) {
+              if (nums[i] == val) ++cnt;
+              else nums[i - cnt] = nums[i];
+          }
+          return n - cnt;
+      }
+  };
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number[]} nums
+   * @param {number} val
+   * @return {number}
+   */
+  var removeElement = function (nums, val) {
+    let cnt = 0;
+    const n = nums.length;
+    for (let i = 0; i < n; ++i) {
+      if (nums[i] == val) ++cnt;
+      else nums[i - cnt] = nums[i];
+    }
+    return n - cnt;
+  };
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  func removeElement(nums []int, val int) int {
+      cnt, n := 0, len(nums)
+      for i := 0; i < n; i++ {
+          if (nums[i] == val) {
+              cnt++
+          } else {
+              nums[i - cnt] = nums[i]
+          }
+      }
+      return n - cnt
+  }
+#+end_example
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,145 @@
+* [[https://leetcode.com/problems/subtree-of-another-tree][572. Subtree
+of Another Tree]]
+  :PROPERTIES:
+  :CUSTOM_ID: subtree-of-another-tree
+  :END:
+[[./solution/0500-0599/0572.Subtree of Another Tree/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given two non-empty binary trees s and t, check whether tree t has
+exactly the same structure and node values with a subtree of s. A
+subtree of s is a tree consists of a node in s and all of this node's
+descendants. The tree s could also be considered as a subtree of itself.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1: Given tree s:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+       3
+      / \
+     4   5
+    / \
+   1   2
+  </pre>
+#+end_html
+
+Given tree t:
+
+#+begin_html
+  <pre>
+     4 
+    / \
+   1   2
+  </pre>
+#+end_html
+
+Return true, because t has the same structure and node values with a
+subtree of s.
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2: Given tree s:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+       3
+      / \
+     4   5
+    / \
+   1   2
+      /
+     0
+  </pre>
+#+end_html
+
+Given tree t:
+
+#+begin_html
+  <pre>
+     4
+    / \
+   1   2
+  </pre>
+#+end_html
+
+Return false.
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

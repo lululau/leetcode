@@ -1,0 +1,112 @@
+* [[https://leetcode-cn.com/problems/eight-queens-lcci][08.12. Eight
+Queens]]
+  :PROPERTIES:
+  :CUSTOM_ID: eight-queens
+  :END:
+[[./lcci/08.12.Eight Queens/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an algorithm to print all ways of arranging n queens on an n x
+n chess board so that none of them share the same row, column, or
+diagonal. In this case, "diagonal" means all diagonals, not just the two
+that bisect the board.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Notes: This problem is a generalization of the original one in the book.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong> Input</strong>: 4
+
+  <strong> Output</strong>: [[&quot;.Q..&quot;,&quot;...Q&quot;,&quot;Q...&quot;,&quot;..Q.&quot;],[&quot;..Q.&quot;,&quot;Q...&quot;,&quot;...Q&quot;,&quot;.Q..&quot;]]
+
+  <strong> Explanation</strong>: 4 queens has following two solutions
+
+  [
+
+  &nbsp;[&quot;.Q..&quot;, &nbsp;// solution 1
+
+  &nbsp; &quot;...Q&quot;,
+
+  &nbsp; &quot;Q...&quot;,
+
+  &nbsp; &quot;..Q.&quot;],
+
+
+
+  &nbsp;[&quot;..Q.&quot;, &nbsp;// solution 2
+
+  &nbsp; &quot;Q...&quot;,
+
+  &nbsp; &quot;...Q&quot;,
+
+  &nbsp; &quot;.Q..&quot;]
+
+  ]
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

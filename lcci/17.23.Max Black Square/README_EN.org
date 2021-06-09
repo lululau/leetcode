@@ -1,0 +1,162 @@
+* [[https://leetcode-cn.com/problems/max-black-square-lcci][17.23. Max
+Black Square]]
+  :PROPERTIES:
+  :CUSTOM_ID: max-black-square
+  :END:
+[[./lcci/17.23.Max Black Square/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Imagine you have a square matrix, where each cell (pixel) is either
+black or white Design an algorithm to find the maximum subsquare such
+that all four borders are filled with black pixels.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return an array [r, c, size], where r, c are the row number and the
+column number of the subsquare's upper left corner respectively, and
+size is the side length of the subsquare. If there are more than one
+answers, return the one that has smallest r. If there are more than one
+answers that have the same r, return the one that has smallest c. If
+there's no answer, return an empty array.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:
+
+  </strong>[
+
+  &nbsp;  [1,0,1],
+
+  &nbsp;  [<strong>0,0</strong>,1],
+
+  &nbsp;  [<strong>0,0</strong>,1]
+
+  ]
+
+  <strong>Output: </strong>[1,0,2]
+
+  <strong>Explanation:</strong> 0 represents black, and 1 represents white, bold elements in the input is the answer.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:
+
+  </strong>[
+
+  &nbsp;  [<strong>0</strong>,1,1],
+
+  &nbsp;  [1,0,1],
+
+  &nbsp;  [1,1,0]
+
+  ]
+
+  <strong>Output: </strong>[0,0,1]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+matrix.length == matrix[0].length <= 200
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

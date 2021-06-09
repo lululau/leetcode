@@ -1,0 +1,144 @@
+* [[https://leetcode-cn.com/problems/max-submatrix-lcci][面试题 17.24.
+最大子矩阵]]
+  :PROPERTIES:
+  :CUSTOM_ID: 面试题-17.24.-最大子矩阵
+  :END:
+[[./lcci/17.24.Max Submatrix/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个正整数和负整数组成的 N ×
+M 矩阵，编写代码找出元素总和最大的子矩阵。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回一个数组 [r1, c1, r2, c2]，其中 r1, c1
+分别代表子矩阵左上角的行号和列号，r2, c2
+分别代表右下角的行号和列号。若有多个满足条件的子矩阵，返回任意一个均可。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意：本题相对书上原题稍作改动
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:
+  </strong><code>[
+  &nbsp;  [-1,<strong>0</strong>],
+  &nbsp;  [0,-1]
+  ]</code>
+  <strong>输出: </strong>[0,1,0,1]
+  <strong>解释: </strong>输入中标粗的元素即为输出所表示的矩阵</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+说明：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= matrix.length, matrix[0].length <= 200
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

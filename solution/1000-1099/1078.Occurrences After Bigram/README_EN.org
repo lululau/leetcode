@@ -1,0 +1,187 @@
+* [[https://leetcode.com/problems/occurrences-after-bigram][1078.
+Occurrences After Bigram]]
+  :PROPERTIES:
+  :CUSTOM_ID: occurrences-after-bigram
+  :END:
+[[./solution/1000-1099/1078.Occurrences After Bigram/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given words first and second, consider occurrences in some text of the
+form "first second third", where second comes immediately after first,
+and third comes immediately after second.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For each such occurrence, add "third" to the answer, and return the
+answer.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>text = <span id="example-input-1-1">&quot;alice is a good girl she is a good student&quot;</span>, first = <span id="example-input-1-2">&quot;a&quot;</span>, second = <span id="example-input-1-3">&quot;good&quot;</span>
+
+  <strong>Output: </strong><span id="example-output-1">[&quot;girl&quot;,&quot;student&quot;]</span>
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>text = <span id="example-input-2-1">&quot;we will we will rock you&quot;</span>, first = <span id="example-input-2-2">&quot;we&quot;</span>, second = <span id="example-input-2-3">&quot;will&quot;</span>
+
+  <strong>Output: </strong><span id="example-output-2">[&quot;we&quot;,&quot;rock&quot;]</span>
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= text.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+text consists of space separated words, where each word consists of
+lowercase English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= first.length, second.length <= 10
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+first and second consist of lowercase English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

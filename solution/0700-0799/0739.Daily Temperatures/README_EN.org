@@ -1,0 +1,159 @@
+* [[https://leetcode.com/problems/daily-temperatures][739. Daily
+Temperatures]]
+  :PROPERTIES:
+  :CUSTOM_ID: daily-temperatures
+  :END:
+[[./solution/0700-0799/0739.Daily Temperatures/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a list of daily temperatures T, return a list such that, for each
+day in the input, tells you how many days you would have to wait until a
+warmer temperature. If there is no future day for which this is
+possible, put 0 instead.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example, given the list of temperatures T = [73, 74, 75, 71, 69, 72,
+76, 73], your output should be [1, 1, 4, 2, 1, 1, 0, 0].
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+The length of temperatures will be in the range [1, 30000].
+
+Each temperature will be an integer in the range [30, 100].
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def dailyTemperatures(self, T: List[int]) -> List[int]:
+          n = len(T)
+          res = [0 for _ in range(n)]
+          s = []
+          for i in range(n):
+              while s and T[s[-1]] < T[i]:
+                  j = s.pop()
+                  res[j] = i - j
+              s.append(i)
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int[] dailyTemperatures(int[] T) {
+          int n = T.length;
+          int[] res = new int[n];
+          Deque<Integer> s = new ArrayDeque<>();
+          for (int i = 0; i < n; ++i) {
+              while (!s.isEmpty() && T[s.peek()] < T[i]) {
+                  int j = s.pop();
+                  res[j] = i - j;
+              }
+              s.push(i);
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src cpp
+  class Solution {
+  public:
+      vector<int> dailyTemperatures(vector<int>& T) {
+          int n = T.size();
+          vector<int> ans(n);
+          stack<int> s;
+          for(int i = 0; i < n; ++i) {
+              while(!s.empty() && T[s.top()] < T[i]) {
+                  int pre = s.top();
+                  s.pop();
+                  ans[pre] = i - pre;
+              }
+              s.push(i);
+          }
+          return ans;
+      }
+  };
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  func dailyTemperatures(T []int) []int {
+      n := len(T)
+      res := make([]int, n)
+      stack := make([]int, 0)
+      for i, v := range T {
+          for len(stack) != 0 && T[stack[len(stack)-1]] < v {
+              j := stack[len(stack)-1]
+              stack = stack[:len(stack)-1]
+              res[j] = i - j
+          }
+          stack = append(stack, i)
+      }
+      return res
+  }
+#+end_example
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

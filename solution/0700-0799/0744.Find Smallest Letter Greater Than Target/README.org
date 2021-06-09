@@ -1,0 +1,215 @@
+* [[https://leetcode-cn.com/problems/find-smallest-letter-greater-than-target][744.
+寻找比目标字母大的最小字母]]
+  :PROPERTIES:
+  :CUSTOM_ID: 寻找比目标字母大的最小字母
+  :END:
+[[./solution/0700-0799/0744.Find Smallest Letter Greater Than Target/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个排序后的字符列表 letters
+，列表中只包含小写英文字母。另给出一个目标字母 target，请你寻找在这一有序列表里比目标字母大的最小字母。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+在比较时，字母是依序循环出现的。举个例子：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+如果目标字母 target = 'z' 并且字符列表为 letters = ['a',
+'b']，则答案返回 'a'
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong>
+  letters = [&quot;c&quot;, &quot;f&quot;, &quot;j&quot;]
+  target = &quot;a&quot;
+  <strong>输出:</strong> &quot;c&quot;
+
+  <strong>输入:</strong>
+  letters = [&quot;c&quot;, &quot;f&quot;, &quot;j&quot;]
+  target = &quot;c&quot;
+  <strong>输出:</strong> &quot;f&quot;
+
+  <strong>输入:</strong>
+  letters = [&quot;c&quot;, &quot;f&quot;, &quot;j&quot;]
+  target = &quot;d&quot;
+  <strong>输出:</strong> &quot;f&quot;
+
+  <strong>输入:</strong>
+  letters = [&quot;c&quot;, &quot;f&quot;, &quot;j&quot;]
+  target = &quot;g&quot;
+  <strong>输出:</strong> &quot;j&quot;
+
+  <strong>输入:</strong>
+  letters = [&quot;c&quot;, &quot;f&quot;, &quot;j&quot;]
+  target = &quot;j&quot;
+  <strong>输出:</strong> &quot;c&quot;
+
+  <strong>输入:</strong>
+  letters = [&quot;c&quot;, &quot;f&quot;, &quot;j&quot;]
+  target = &quot;k&quot;
+  <strong>输出:</strong> &quot;c&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+letters长度范围在[2, 10000]区间内。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+letters 仅由小写字母组成，最少包含两个不同的字母。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+目标字母target 是一个小写字母。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

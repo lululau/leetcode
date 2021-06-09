@@ -1,0 +1,254 @@
+* [[https://leetcode-cn.com/problems/flipping-an-image][832. 翻转图像]]
+  :PROPERTIES:
+  :CUSTOM_ID: 翻转图像
+  :END:
+[[./solution/0800-0899/0832.Flipping an Image/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个二进制矩阵 A，我们想先水平翻转图像，然后反转图像并返回结果。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+水平翻转图片就是将图片的每一行都进行翻转，即逆序。例如，水平翻转 [1, 1,
+0] 的结果是 [0, 1, 1]。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+反转图片的意思是图片中的 0 全部被 1 替换， 1 全部被 0 替换。例如，反转 [0,
+1, 1] 的结果是 [1, 0, 0]。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>[[1,1,0],[1,0,1],[0,0,0]]
+  <strong>输出：</strong>[[1,0,0],[0,1,0],[1,1,1]]
+  <strong>解释：</strong>首先翻转每一行: [[0,1,1],[1,0,1],[0,0,0]]；
+       然后反转图片: [[1,0,0],[0,1,0],[1,1,1]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>[[1,1,0,0],[1,0,0,1],[0,1,1,1],[1,0,1,0]]
+  <strong>输出：</strong>[[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]
+  <strong>解释：</strong>首先翻转每一行: [[0,0,1,1],[1,0,0,1],[1,1,1,0],[0,1,0,1]]；
+       然后反转图片: [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= A.length = A[0].length <= 20
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= A[i][j] <= 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+遍历矩阵每一行，利用双指针 p, q 进行水平交换翻转，顺便反转图像（1 变
+0，0 变 1：=1 ^ 1= = 0，=0 ^ 1= = 1）。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def flipAndInvertImage(self, A: List[List[int]]) -> List[List[int]]:
+          m, n = len(A), len(A[0])
+          for i in range(m):
+              p, q = 0, n - 1
+              while p < q:
+                  t = A[i][p] ^ 1
+                  A[i][p] = A[i][q] ^ 1
+                  A[i][q] = t
+                  p += 1
+                  q -= 1
+              if p == q:
+                  A[i][p] ^= 1
+          return A
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int[][] flipAndInvertImage(int[][] A) {
+          int m = A.length, n = A[0].length;
+          for (int i = 0; i < m; ++i) {
+              int p = 0, q = n - 1;
+              while (p < q) {
+                  int t = A[i][p] ^ 1;
+                  A[i][p] = A[i][q] ^ 1;
+                  A[i][q] = t;
+                  ++p;
+                  --q;
+              }
+              if (p == q) {
+                  A[i][p] ^= 1;
+              }
+          }
+          return A;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      vector<vector<int>> flipAndInvertImage(vector<vector<int>>& A) {
+          int m = A.size(), n = A[0].size();
+          for (int i = 0; i < m; ++i) {
+              int p = 0, q = n - 1;
+              while (p < q) {
+                  int t = A[i][p] ^ 1;
+                  A[i][p] = A[i][q] ^ 1;
+                  A[i][q] = t;
+                  ++p;
+                  --q;
+              }
+              if (p == q) {
+                  A[i][p] ^= 1;
+              }
+          }
+          return A;
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

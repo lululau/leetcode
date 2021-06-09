@@ -1,0 +1,308 @@
+* [[https://leetcode.com/problems/scramble-string][87. Scramble String]]
+  :PROPERTIES:
+  :CUSTOM_ID: scramble-string
+  :END:
+[[./solution/0000-0099/0087.Scramble String/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+We can scramble a string s to get a string t using the following
+algorithm:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If the length of the string is 1, stop.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If the length of the string is > 1, do the following:
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Split the string into two non-empty substrings at a random index, i.e.,
+if the string is s, divide it to x and y where s = x + y.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Randomly decide to swap the two substrings or to keep them in the same
+order. i.e., after this step, s may become s = x + y or s = y + x.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Apply step 1 recursively on each of the two substrings x and y.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_example
+  </li>
+#+end_example
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given two strings s1 and s2 of the same length, return true if s2 is a
+scrambled string of s1, otherwise, return false.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s1 = &quot;great&quot;, s2 = &quot;rgeat&quot;
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> One possible scenario applied on s1 is:
+  &quot;great&quot; --&gt; &quot;gr/eat&quot; // divide at random index.
+  &quot;gr/eat&quot; --&gt; &quot;gr/eat&quot; // random decision is not to swap the two substrings and keep them in order.
+  &quot;gr/eat&quot; --&gt; &quot;g/r / e/at&quot; // apply the same algorithm recursively on both substrings. divide at ranom index each of them.
+  &quot;g/r / e/at&quot; --&gt; &quot;r/g / e/at&quot; // random decision was to swap the first substring and to keep the second substring in the same order.
+  &quot;r/g / e/at&quot; --&gt; &quot;r/g / e/ a/t&quot; // again apply the algorithm recursively, divide &quot;at&quot; to &quot;a/t&quot;.
+  &quot;r/g / e/ a/t&quot; --&gt; &quot;r/g / e/ a/t&quot; // random decision is to keep both substrings in the same order.
+  The algorithm stops now and the result string is &quot;rgeat&quot; which is s2.
+  As there is one possible scenario that led s1 to be scrambled to s2, we return true.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s1 = &quot;abcde&quot;, s2 = &quot;caebd&quot;
+  <strong>Output:</strong> false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s1 = &quot;a&quot;, s2 = &quot;a&quot;
+  <strong>Output:</strong> true
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s1.length == s2.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s1.length <= 30
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s1 and s2 consist of lower-case English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def isScramble(self, s1: str, s2: str) -> bool:
+          n = len(s1)
+          dp = [[[False] * (n + 1) for _ in range(n)] for _ in range(n)]
+          for i in range(n):
+              for j in range(n):
+                  dp[i][j][1] = s1[i] == s2[j]
+          for l in range(2, n + 1):
+              for i1 in range(n - l + 1):
+                  for i2 in range(n - l + 1):
+                      for i in range(1, l):
+                          if dp[i1][i2][i] and dp[i1 + i][i2 + i][l - i]:
+                              dp[i1][i2][l] = True
+                              break
+                          if dp[i1][i2 + l - i][i] and dp[i1 + i][i2][l - i]:
+                              dp[i1][i2][l] = True
+                              break
+          return dp[0][0][n]
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public boolean isScramble(String s1, String s2) {
+          int n = s1.length();
+          boolean[][][] dp = new boolean[n][n][n + 1];
+          for (int i = 0; i < n; ++i) {
+              for (int j = 0; j < n; ++j) {
+                  dp[i][j][1] = s1.charAt(i) == s2.charAt(j);
+              }
+          }
+          for (int len = 2; len <= n; ++len) {
+              for (int i1 = 0; i1 <= n - len; ++i1) {
+                  for (int i2 = 0; i2 <= n - len; ++i2) {
+                      for (int i = 1; i < len; ++i) {
+                          if (dp[i1][i2][i] && dp[i1 + i][i2 + i][len - i]) {
+                              dp[i1][i2][len] = true;
+                              break;
+                          }
+                          if (dp[i1][i2 + len - i][i] && dp[i1 + i][i2][len - i]) {
+                              dp[i1][i2][len] = true;
+                              break;
+                          }
+                      }
+                  }
+              }
+          }
+          return dp[0][0][n];
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,155 @@
+* [[https://leetcode-cn.com/problems/design-compressed-string-iterator][604.
+迭代压缩字符串]]
+  :PROPERTIES:
+  :CUSTOM_ID: 迭代压缩字符串
+  :END:
+[[./solution/0600-0699/0604.Design Compressed String Iterator/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+对于一个压缩字符串，设计一个数据结构，它支持如下两种操作： next 和 hasNext。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定的压缩字符串格式为：每个字母后面紧跟一个正整数，这个整数表示该字母在解压后的字符串里连续出现的次数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+next() -
+如果压缩字符串仍然有字母未被解压，则返回下一个字母，否则返回一个空格。
+hasNext() - 判断是否还有字母仍然没被解压。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请记得将你的类在 StringIterator
+中 初始化 ，因为静态变量或类变量在多组测试数据中不会被自动清空。更多细节请访问
+这里 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>StringIterator iterator = new StringIterator(&quot;L1e2t1C1o1d1e1&quot;);
+
+  iterator.next(); // 返回 &#39;L&#39;
+  iterator.next(); // 返回 &#39;e&#39;
+  iterator.next(); // 返回 &#39;e&#39;
+  iterator.next(); // 返回 &#39;t&#39;
+  iterator.next(); // 返回 &#39;C&#39;
+  iterator.next(); // 返回 &#39;o&#39;
+  iterator.next(); // 返回 &#39;d&#39;
+  iterator.hasNext(); // 返回 true
+  iterator.next(); // 返回 &#39;e&#39;
+  iterator.hasNext(); // 返回 false
+  iterator.next(); // 返回 &#39; &#39;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

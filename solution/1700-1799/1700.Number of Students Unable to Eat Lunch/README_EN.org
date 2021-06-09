@@ -1,0 +1,267 @@
+* [[https://leetcode.com/problems/number-of-students-unable-to-eat-lunch][1700.
+Number of Students Unable to Eat Lunch]]
+  :PROPERTIES:
+  :CUSTOM_ID: number-of-students-unable-to-eat-lunch
+  :END:
+[[./solution/1700-1799/1700.Number of Students Unable to Eat Lunch/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+The school cafeteria offers circular and square sandwiches at lunch
+break, referred to by numbers 0 and 1 respectively. All students stand
+in a queue. Each student either prefers square or circular sandwiches.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The number of sandwiches in the cafeteria is equal to the number of
+students. The sandwiches are placed in a stack. At each step:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If the student at the front of the queue prefers the sandwich on the top
+of the stack, they will take it and leave the queue.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Otherwise, they will leave it and go to the queue's end.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+This continues until none of the queue students want to take the top
+sandwich and are thus unable to eat.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given two integer arrays students and sandwiches where
+sandwiches[i] is the type of the i​​​​​​th sandwich in the stack (i = 0
+is the top of the stack) and students[j] is the preference of the
+j​​​​​​th student in the initial queue (j = 0 is the front of the
+queue). Return the number of students that are unable to eat.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> students = [1,1,0,0], sandwiches = [0,1,0,1]
+  <strong>Output:</strong> 0<strong> 
+  Explanation:</strong>
+  - Front student leaves the top sandwich and returns to the end of the line making students = [1,0,0,1].
+  - Front student leaves the top sandwich and returns to the end of the line making students = [0,0,1,1].
+  - Front student takes the top sandwich and leaves the line making students = [0,1,1] and sandwiches = [1,0,1].
+  - Front student leaves the top sandwich and returns to the end of the line making students = [1,1,0].
+  - Front student takes the top sandwich and leaves the line making students = [1,0] and sandwiches = [0,1].
+  - Front student leaves the top sandwich and returns to the end of the line making students = [0,1].
+  - Front student takes the top sandwich and leaves the line making students = [1] and sandwiches = [1].
+  - Front student takes the top sandwich and leaves the line making students = [] and sandwiches = [].
+  Hence all students are able to eat.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> students = [1,1,1,0,0,1], sandwiches = [1,0,0,0,1,1]
+  <strong>Output:</strong> 3
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= students.length, sandwiches.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+students.length == sandwiches.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+sandwiches[i] is 0 or 1.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+students[i] is 0 or 1.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def countStudents(self, students: List[int], sandwiches: List[int]) -> int:
+          counter = collections.Counter(students)
+          for i, sandwich in enumerate(sandwiches):
+              if counter[sandwich] == 0:
+                  return len(students) - i
+              counter[sandwich] -= 1
+          return 0
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int countStudents(int[] students, int[] sandwiches) {
+          int[] counter = new int[2];
+          for (int i : students) {
+              counter[i] += 1;
+          }
+          for (int i = 0; i < sandwiches.length; ++i) {
+              if (counter[sandwiches[i]] == 0) {
+                  return sandwiches.length - i;
+              }
+              counter[sandwiches[i]] -= 1;
+          }
+          return 0;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

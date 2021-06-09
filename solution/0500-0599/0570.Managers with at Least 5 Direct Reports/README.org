@@ -1,0 +1,95 @@
+* [[https://leetcode-cn.com/problems/managers-with-at-least-5-direct-reports][570.
+至少有5名直接下属的经理]]
+  :PROPERTIES:
+  :CUSTOM_ID: 至少有5名直接下属的经理
+  :END:
+[[./solution/0500-0599/0570.Managers with at Least 5 Direct Reports/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Employee 表包含所有员工和他们的经理。每个员工都有一个
+Id，并且还有一列是经理的 Id。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+------+----------+-----------+----------+
+  |Id    |Name      |Department |ManagerId |
+  +------+----------+-----------+----------+
+  |101   |John      |A          |null      |
+  |102   |Dan       |A          |101       |
+  |103   |James     |A          |101       |
+  |104   |Amy       |A          |101       |
+  |105   |Anne      |A          |101       |
+  |106   |Ron       |B          |101       |
+  +------+----------+-----------+----------+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定 Employee
+表，请编写一个SQL查询来查找至少有5名直接下属的经理。对于上表，您的SQL查询应该返回：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+-------+
+  | Name  |
+  +-------+
+  | John  |
+  +-------+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意: 没有人是自己的下属。
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

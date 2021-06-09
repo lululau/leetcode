@@ -1,0 +1,281 @@
+* [[https://leetcode.com/problems/basic-calculator-iv][770. Basic
+Calculator IV]]
+  :PROPERTIES:
+  :CUSTOM_ID: basic-calculator-iv
+  :END:
+[[./solution/0700-0799/0770.Basic Calculator IV/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an expression such as expression = "e + 8 - a + 5" and an
+evaluation map such as {"e": 1} (given in terms of evalvars = ["e"] and
+evalints = [1]), return a list of tokens representing the simplified
+expression, such as ["-1*a","14"]
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+An expression alternates chunks and symbols, with a space separating
+each chunk and symbol.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+A chunk is either an expression in parentheses, a variable, or a
+non-negative integer.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+A variable is a string of lowercase letters (not including digits.) Note
+that variables can be multiple letters, and note that variables never
+have a leading coefficient or unary operator like "2x" or "-x".
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Expressions are evaluated in the usual order: brackets first, then
+multiplication, then addition and subtraction. For example, expression =
+"1 + 2 * 3" has an answer of ["7"].
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The format of the output is as follows:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For each term of free variables with non-zero coefficient, we write the
+free variables within a term in sorted order lexicographically. For
+example, we would never write a term like "b/a/c", only "a/b/c".
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Terms have degree equal to the number of free variables being
+multiplied, counting multiplicity. (For example, "a/a/b*c" has degree
+4.) We write the largest degree terms of our answer first, breaking ties
+by lexicographic order ignoring the leading coefficient of the term.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The leading coefficient of the term is placed directly to the left with
+an asterisk separating it from the variables (if they exist.)  A leading
+coefficient of 1 is still printed.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+An example of a well formatted answer is ["-2/a/a/a", "3/a/a/b",
+"3/b/b", "4/a", "5/c", "-6"] 
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Terms (including constant terms) with coefficient 0 are not included. 
+For example, an expression of "0" has an output of [].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Examples:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> expression = &quot;e + 8 - a + 5&quot;, evalvars = [&quot;e&quot;], evalints = [1]
+
+  <strong>Output:</strong> [&quot;-1*a&quot;,&quot;14&quot;]
+
+
+
+  <strong>Input:</strong> expression = &quot;e - 8 + temperature - pressure&quot;,
+
+  evalvars = [&quot;e&quot;, &quot;temperature&quot;], evalints = [1, 12]
+
+  <strong>Output:</strong> [&quot;-1*pressure&quot;,&quot;5&quot;]
+
+
+
+  <strong>Input:</strong> expression = &quot;(e + 8) * (e - 8)&quot;, evalvars = [], evalints = []
+
+  <strong>Output:</strong> [&quot;1*e*e&quot;,&quot;-64&quot;]
+
+
+
+  <strong>Input:</strong> expression = &quot;7 - 7&quot;, evalvars = [], evalints = []
+
+  <strong>Output:</strong> []
+
+
+
+  <strong>Input:</strong> expression = &quot;a * b * c + b * a * c * 4&quot;, evalvars = [], evalints = []
+
+  <strong>Output:</strong> [&quot;5*a*b*c&quot;]
+
+
+
+  <strong>Input:</strong> expression = &quot;((a - b) * (b - c) + (c - a)) * ((a - b) + (b - c) * (c - a))&quot;,
+
+  evalvars = [], evalints = []
+
+  <strong>Output:</strong> [&quot;-1*a*a*b*b&quot;,&quot;2*a*a*b*c&quot;,&quot;-1*a*a*c*c&quot;,&quot;1*a*b*b*b&quot;,&quot;-1*a*b*b*c&quot;,&quot;-1*a*b*c*c&quot;,&quot;1*a*c*c*c&quot;,&quot;-1*b*b*b*c&quot;,&quot;2*b*b*c*c&quot;,&quot;-1*b*c*c*c&quot;,&quot;2*a*a*b&quot;,&quot;-2*a*a*c&quot;,&quot;-2*a*b*b&quot;,&quot;2*a*c*c&quot;,&quot;1*b*b*b&quot;,&quot;-1*b*b*c&quot;,&quot;1*b*c*c&quot;,&quot;-1*c*c*c&quot;,&quot;-1*a*a&quot;,&quot;1*a*b&quot;,&quot;1*a*c&quot;,&quot;-1*b*c&quot;]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+expression will have length in range [1, 250].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+evalvars, evalints will have equal lengths in range [0, 100].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,276 @@
+* [[https://leetcode-cn.com/problems/3sum-closest][16.
+最接近的三数之和]]
+  :PROPERTIES:
+  :CUSTOM_ID: 最接近的三数之和
+  :END:
+[[./solution/0000-0099/0016.3Sum Closest/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个包括 n 个整数的数组 nums 和
+一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>nums = [-1,2,1,-4], target = 1
+  <strong>输出：</strong>2
+  <strong>解释：</strong>与 target 最接近的和是 2 (-1 + 2 + 1 = 2) 。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+3 <= nums.length <= 10^3
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-10^3 <= nums[i] <= 10^3
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-10^4 <= target <= 10^4
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+双指针解决。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def threeSumClosest(self, nums: List[int], target: int) -> int:
+          def twoSumClosest(nums, start, end, target):
+              res = 0
+              diff = 10000
+              while start < end:
+                  val = nums[start] + nums[end]
+                  if val == target:
+                      return val
+                  if abs(val - target) < diff:
+                      res = val
+                      diff = abs(val - target)
+                  if val < target:
+                      start += 1
+                  else:
+                      end -= 1
+              return res
+
+          nums.sort()
+          res, n = 0, len(nums)
+          diff = 10000
+          for i in range(n - 2):
+              t = twoSumClosest(nums, i + 1, n - 1, target - nums[i])
+              if abs(nums[i] + t - target) < diff:
+                  res = nums[i] + t
+                  diff = abs(nums[i] + t - target)
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int threeSumClosest(int[] nums, int target) {
+          Arrays.sort(nums);
+          int res = 0;
+          int n = nums.length;
+          int diff = Integer.MAX_VALUE;
+          for (int i = 0; i < n - 2; ++i) {
+              int t = twoSumClosest(nums, i + 1, n - 1, target - nums[i]);
+              if (Math.abs(nums[i] + t - target) < diff) {
+                  res = nums[i] + t;
+                  diff = Math.abs(nums[i] + t - target);
+              }
+          }
+          return res;
+      }
+
+      private int twoSumClosest(int[] nums, int start, int end, int target) {
+          int res = 0;
+          int diff = Integer.MAX_VALUE;
+          while (start < end) {
+              int val = nums[start] + nums[end];
+              if (val == target) {
+                  return val;
+              }
+              if (Math.abs(val - target) < diff) {
+                  res = val;
+                  diff = Math.abs(val - target);
+              }
+              if (val < target) {
+                  ++start;
+              } else {
+                  --end;
+              }
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number[]} nums
+   * @param {number} target
+   * @return {number}
+   */
+  var threeSumClosest = function (nums, target) {
+      let len = nums.length;
+      nums.sort((a, b) => a - b);
+      let diff = Infinity;
+      let res;
+      for (let i = 0; i < len - 2; i++) {
+          if (i > 0 && nums[i] === nums[i - 1]) continue;
+          let left = i + 1, right = len - 1;
+          let cur = nums[i] + nums[i + 1] + nums[i + 2];
+          if (cur > target) {
+              let newDiff = Math.abs((cur - target))
+              if (newDiff < diff) {
+                  diff = newDiff;
+                  res = cur;
+              }
+              break;
+          }
+          while (left < right) {
+              cur = nums[i] + nums[left] + nums[right];
+              if (cur === target) return target;
+              let newDiff = Math.abs((cur - target))
+              if (newDiff < diff) {
+                  diff = newDiff;
+                  res = cur;
+              }
+              if (cur < target) {
+                  while (nums[left] === nums[left + 1]) left++;
+                  left++;
+                  continue;
+              } else {
+                  while (nums[right] === nums[right - 1]) right--;
+                  right--;
+                  continue;
+              }
+          }
+      }
+      return res;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

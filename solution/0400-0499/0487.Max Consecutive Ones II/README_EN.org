@@ -1,0 +1,255 @@
+* [[https://leetcode.com/problems/max-consecutive-ones-ii][487. Max
+Consecutive Ones II]]
+  :PROPERTIES:
+  :CUSTOM_ID: max-consecutive-ones-ii
+  :END:
+[[./solution/0400-0499/0487.Max Consecutive Ones II/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a binary array nums, return the maximum number of consecutive 1's
+in the array if you can flip at most one 0.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [1,0,1,1,0]
+  <strong>Output:</strong> 4
+  <strong>Explanation:</strong> Flip the first zero will get the maximum number of consecutive 1s. After flipping, the maximum number of consecutive 1s is 4.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [1,0,1,1,0,1]
+  <strong>Output:</strong> 4
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+nums[i] is either 0 or 1.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow up: What if the input numbers come in one by one as an infinite
+stream? In other words, you can't store all numbers coming from the
+stream as it's too large to hold in memory. Could you solve it
+efficiently?
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
+          n = len(nums)
+          prefix = [0] * n
+          suffix = [0] * n
+          res = 0
+          for i in range(n):
+              if i == 0:
+                  prefix[i] = nums[i]
+              else:
+                  prefix[i] = 0 if nums[i] == 0 else prefix[i - 1] + 1
+              res = max(res, prefix[i])
+
+          for i in range(n - 1, -1, -1):
+              if i == n - 1:
+                  suffix[i] = nums[i]
+              else:
+                  suffix[i] = 0 if nums[i] == 0 else suffix[i + 1] + 1
+
+          for i in range(n):
+              if nums[i] == 0:
+                  t = 1
+                  if i > 0:
+                      t += prefix[i - 1]
+                  if i < n - 1:
+                      t += suffix[i + 1]
+                  res = max(res, t)
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+- Two Pointers, time complexity: O(n²), memory complexity: O(1)
+
+#+begin_src java
+  class Solution {
+      public int findMaxConsecutiveOnes(int[] nums) {
+          int n = nums.length;
+          int res = 0;
+          for (int i = 0; i < n; ++i) {
+              int cnt = 1;
+              int j = i;
+              while (j < n && (cnt > 0 || nums[j] == 1)) {
+                  if (nums[j] == 0) --cnt;
+                  ++j;
+              }
+              res = Math.max(res, j - i);
+          }
+          return res;
+      }
+  }
+#+end_src
+
+- Prefix Array & Suffix Array, time complexity: O(n), memory complexity:
+  O(n)
+
+#+begin_src java
+  class Solution {
+      public int findMaxConsecutiveOnes(int[] nums) {
+          int n = nums.length;
+
+          int[] prefix = new int[n];
+          int[] suffix = new int[n];
+
+          int res = 0;
+          for (int i = 0; i < n; ++i) {
+              if (i == 0) prefix[0] = nums[0];
+              else prefix[i] = nums[i] == 0 ? 0 : prefix[i - 1] + 1;
+              res = Math.max(res, prefix[i]);
+          }
+
+          for (int i = n - 1; i >= 0; --i) {
+              if (i == n - 1) suffix[n - 1] = nums[n - 1];
+              else suffix[i] = nums[i] == 0 ? 0 : suffix[i + 1] + 1;
+          }
+
+          for (int i = 0; i < n; ++i) {
+              if (nums[i] == 0) {
+                  int t = 1;
+                  if (i > 0) t += prefix[i - 1];
+                  if (i < n - 1) t += suffix[i + 1];
+                  res = Math.max(res, t);
+              }
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

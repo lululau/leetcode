@@ -1,0 +1,161 @@
+* [[https://leetcode-cn.com/problems/palindrome-permutation-lcci][面试题
+01.04. 回文排列]]
+  :PROPERTIES:
+  :CUSTOM_ID: 面试题-01.04.-回文排列
+  :END:
+[[./lcci/01.04.Palindrome Permutation/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个字符串，编写一个函数判定其是否为某个回文串的排列之一。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+回文串是指正反两个方向都一样的单词或短语。排列是指字母的重新排列。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+回文串不一定是字典当中的单词。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：&quot;</strong>tactcoa&quot;
+  <strong>输出：</strong>true（排列有&quot;tacocat&quot;、&quot;atcocta&quot;，等等）
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+用哈希表存储每个字符出现的次数。若次数为奇数的字符超过 1
+个，则不是回文排列。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def canPermutePalindrome(self, s: str) -> bool:
+          counter = collections.Counter(s)
+          cnt = 0
+          for val in counter.values():
+              if (val & 1) == 1:
+                  cnt += 1
+              if cnt > 1:
+                  return False
+          return True
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public boolean canPermutePalindrome(String s) {
+          Map<Character, Integer> counter = new HashMap<>();
+          for (int i = 0, n = s.length(); i < n; ++i) {
+              char c = s.charAt(i);
+              counter.put(c, counter.getOrDefault(c, 0) + 1);
+          }
+          int cnt = 0;
+          for (int val : counter.values()) {
+              if ((val & 1) == 1) {
+                  ++cnt;
+              }
+              if (cnt > 1) {
+                  return false;
+              }
+          }
+          return true;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

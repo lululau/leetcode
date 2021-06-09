@@ -1,0 +1,158 @@
+- [LCCI Solutions]
+
+  - [[./lcci/01.01.Is Unique/README_EN.org][01.01. Is Unique]]
+  - [[./lcci/01.02.Check Permutation/README_EN.org][01.02. Check
+    Permutation]]
+  - [[./lcci/01.03.String to URL/README_EN.org][01.03. String to URL]]
+  - [[./lcci/01.04.Palindrome Permutation/README_EN.org][01.04.
+    Palindrome Permutation]]
+  - [[./lcci/01.05.One Away/README_EN.org][01.05. One Away]]
+  - [[./lcci/01.06.Compress String/README_EN.org][01.06. Compress
+    String]]
+  - [[./lcci/01.07.Rotate Matrix/README_EN.org][01.07. Rotate Matrix]]
+  - [[./lcci/01.08.Zero Matrix/README_EN.org][01.08. Zero Matrix]]
+  - [[./lcci/01.09.String Rotation/README_EN.org][01.09. String
+    Rotation]]
+  - [[./lcci/02.01.Remove Duplicate Node/README_EN.org][02.01. Remove
+    Duplicate Node]]
+  - [[./lcci/02.02.Kth Node From End of List/README_EN.org][02.02.
+    Kth Node From End of List]]
+  - [[./lcci/02.03.Delete Middle Node/README_EN.org][02.03. Delete
+    Middle Node]]
+  - [[./lcci/02.04.Partition List/README_EN.org][02.04. Partition List]]
+  - [[./lcci/02.05.Sum Lists/README_EN.org][02.05. Sum Lists]]
+  - [[./lcci/02.06.Palindrome Linked List/README_EN.org][02.06.
+    Palindrome Linked List]]
+  - [[./lcci/02.07.Intersection of Two Linked Lists/README_EN.org][02.07.
+    Intersection of Two Linked Lists]]
+  - [[./lcci/02.08.Linked List Cycle/README_EN.org][02.08. Linked List
+    Cycle]]
+  - [[./lcci/03.01.Three in One/README_EN.org][03.01. Three in One]]
+  - [[./lcci/03.02.Min Stack/README_EN.org][03.02. Min Stack]]
+  - [[./lcci/03.03.Stack of Plates/README_EN.org][03.03. Stack of
+    Plates]]
+  - [[./lcci/03.04.Implement Queue using Stacks/README_EN.org][03.04.
+    Implement Queue using Stacks]]
+  - [[./lcci/03.05.Sort of Stacks/README_EN.org][03.05. Sort of
+    Stacks]]
+  - [[./lcci/03.06.Animal Shelter/README_EN.org][03.06. Animal Shelter]]
+  - [[./lcci/04.01.Route Between Nodes/README_EN.org][04.01. Route
+    Between Nodes]]
+  - [[./lcci/04.02.Minimum Height Tree/README_EN.org][04.02. Minimum
+    Height Tree]]
+  - [[./lcci/04.03.List of Depth/README_EN.org][04.03. List of Depth]]
+  - [[./lcci/04.04.Check Balance/README_EN.org][04.04. Check Balance]]
+  - [[./lcci/04.05.Legal Binary Search Tree/README_EN.org][04.05.
+    Legal Binary Search Tree]]
+  - [[./lcci/04.06.Successor/README_EN.org][04.06. Successor]]
+  - [[./lcci/04.08.First Common Ancestor/README_EN.org][04.08. First
+    Common Ancestor]]
+  - [[./lcci/04.09.BST Sequences/README_EN.org][04.09. BST Sequences]]
+  - [[./lcci/04.10.Check SubTree/README_EN.org][04.10. Check SubTree]]
+  - [[./lcci/04.12.Paths with Sum/README_EN.org][04.12. Paths with
+    Sum]]
+  - [[./lcci/05.01.Insert Into Bits/README_EN.org][05.01. Insert Into
+    Bits]]
+  - [[./lcci/05.02.Bianry Number to String/README_EN.org][05.02.
+    Bianry Number to String]]
+  - [[./lcci/05.03.Reverse Bits/README_EN.org][05.03. Reverse Bits]]
+  - [[./lcci/05.04.Closed Number/README_EN.org][05.04. Closed Number]]
+  - [[./lcci/05.06.Convert Integer/README_EN.org][05.06. Convert
+    Integer]]
+  - [[./lcci/05.07.Exchange/README_EN.org][05.07. Exchange]]
+  - [[./lcci/05.08.Draw Line/README_EN.org][05.08. Draw Line]]
+  - [[./lcci/08.01.Three Steps Problem/README_EN.org][08.01. Three
+    Steps Problem]]
+  - [[./lcci/08.02.Robot in a Grid/README_EN.org][08.02. Robot in a
+    Grid]]
+  - [[./lcci/08.03.Magic Index/README_EN.org][08.03. Magic Index]]
+  - [[./lcci/08.04.Power Set/README_EN.org][08.04. Power Set]]
+  - [[./lcci/08.05.Recursive Mulitply/README_EN.org][08.05. Recursive
+    Mulitply]]
+  - [[./lcci/08.06.Hanota/README_EN.org][08.06. Hanota]]
+  - [[./lcci/08.07.Permutation I/README_EN.org][08.07. Permutation I]]
+  - [[./lcci/08.08.Permutation II/README_EN.org][08.08. Permutation II]]
+  - [[./lcci/08.09.Bracket/README_EN.org][08.09. Bracket]]
+  - [[./lcci/08.10.Color Fill/README_EN.org][08.10. Color Fill]]
+  - [[./lcci/08.11.Coin/README_EN.org][08.11. Coin]]
+  - [[./lcci/08.12.Eight Queens/README_EN.org][08.12. Eight Queens]]
+  - [[./lcci/08.13.Pile Box/README_EN.org][08.13. Pile Box]]
+  - [[./lcci/08.14.Boolean Evaluation/README_EN.org][08.14. Boolean
+    Evaluation]]
+  - [[./lcci/10.01.Sorted Merge/README_EN.org][10.01. Sorted Merge]]
+  - [[./lcci/10.02.Group Anagrams/README_EN.org][10.02. Group Anagrams]]
+  - [[./lcci/10.03.Search Rotate Array/README_EN.org][10.03. Search
+    Rotate Array]]
+  - [[./lcci/10.05.Sparse Array Search/README_EN.org][10.05. Sparse
+    Array Search]]
+  - [[./lcci/10.09.Sorted Matrix Search/README_EN.org][10.09. Sorted
+    Matrix Search]]
+  - [[./lcci/10.10.Rank from Stream/README_EN.org][10.10. Rank from
+    Stream]]
+  - [[./lcci/10.11.Peaks and Valleys/README_EN.org][10.11. Peaks and
+    Valleys]]
+  - [[./lcci/16.01.Swap Numbers/README_EN.org][16.01. Swap Numbers]]
+  - [[./lcci/16.02.Words Frequency/README_EN.org][16.02. Words
+    Frequency]]
+  - [[./lcci/16.03.Intersection/README_EN.org][16.03. Intersection]]
+  - [[./lcci/16.04.Tic-Tac-Toe/README_EN.org][16.04. Tic-Tac-Toe]]
+  - [[./lcci/16.05.Factorial Zeros/README_EN.org][16.05. Factorial
+    Zeros]]
+  - [[./lcci/16.06.Smallest Difference/README_EN.org][16.06. Smallest
+    Difference]]
+  - [[./lcci/16.07.Maximum/README_EN.org][16.07. Maximum]]
+  - [[./lcci/16.08.English Int/README_EN.org][16.08. English Int]]
+  - [[./lcci/16.09.Operations/README_EN.org][16.09. Operations]]
+  - [[./lcci/16.10.Living People/README_EN.org][16.10. Living People]]
+  - [[./lcci/16.11.Diving Board/README_EN.org][16.11. Diving Board]]
+  - [[./lcci/16.13.Bisect Squares/README_EN.org][16.13. Bisect Squares]]
+  - [[./lcci/16.14.Best Line/README_EN.org][16.14. Best Line]]
+  - [[./lcci/16.15.Master Mind/README_EN.org][16.15. Master Mind]]
+  - [[./lcci/16.16.Sub Sort/README_EN.org][16.16. Sub Sort]]
+  - [[./lcci/16.17.Contiguous Sequence/README_EN.org][16.17. Contiguous
+    Sequence]]
+  - [[./lcci/16.18.Pattern Matching/README_EN.org][16.18. Pattern
+    Matching]]
+  - [[./lcci/16.19.Pond Sizes/README_EN.org][16.19. Pond Sizes]]
+  - [[./lcci/16.20.T9/README_EN.org][16.20. T9]]
+  - [[./lcci/16.21.Sum Swap/README_EN.org][16.21. Sum Swap]]
+  - [[./lcci/16.22.Langtons Ant/README_EN.org][16.22. Langtons Ant]]
+  - [[./lcci/16.24.Pairs With Sum/README_EN.org][16.24. Pairs With
+    Sum]]
+  - [[./lcci/16.25.LRU Cache/README_EN.org][16.25. LRU Cache]]
+  - [[./lcci/16.26.Calculator/README_EN.org][16.26. Calculator]]
+  - [[./lcci/17.01.Add Without Plus/README_EN.org][17.01. Add Without
+    Plus]]
+  - [[./lcci/17.04.Missing Number/README_EN.org][17.04. Missing Number]]
+  - [[./lcci/17.05.Find Longest Subarray/README_EN.org][17.05. Find
+    Longest Subarray]]
+  - [[./lcci/17.06.Number Of 2s In Range/README_EN.org][17.06.
+    Number Of 2s In Range]]
+  - [[./lcci/17.07.Baby Names/README_EN.org][17.07. Baby Names]]
+  - [[./lcci/17.08.Circus Tower/README_EN.org][17.08. Circus Tower]]
+  - [[./lcci/17.09.Get Kth Magic Number/README_EN.org][17.09. Get
+    Kth Magic Number]]
+  - [[./lcci/17.10.Find Majority Element/README_EN.org][17.10. Find
+    Majority Element]]
+  - [[./lcci/17.11.Find Closest/README_EN.org][17.11. Find Closest]]
+  - [[./lcci/17.12.BiNode/README_EN.org][17.12. BiNode]]
+  - [[./lcci/17.13.Re-Space/README_EN.org][17.13. Re-Space]]
+  - [[./lcci/17.14.Smallest K/README_EN.org][17.14. Smallest K]]
+  - [[./lcci/17.15.Longest Word/README_EN.org][17.15. Longest Word]]
+  - [[./lcci/17.16.The Masseuse/README_EN.org][17.16. The Masseuse]]
+  - [[./lcci/17.17.Multi Search/README_EN.org][17.17. Multi Search]]
+  - [[./lcci/17.18.Shortest Supersequence/README_EN.org][17.18. Shortest
+    Supersequence]]
+  - [[./lcci/17.19.Missing Two/README_EN.org][17.19. Missing Two]]
+  - [[./lcci/17.20.Continuous Median/README_EN.org][17.20. Continuous
+    Median]]
+  - [[./lcci/17.21.Volume of Histogram/README_EN.org][17.21. Volume of
+    Histogram]]
+  - [[./lcci/17.22.Word Transformer/README_EN.org][17.22. Word
+    Transformer]]
+  - [[./lcci/17.23.Max Black Square/README_EN.org][17.23. Max Black
+    Square]]
+  - [[./lcci/17.24.Max Submatrix/README_EN.org][17.24. Max Submatrix]]
+  - [[./lcci/17.25.Word Rectangle/README_EN.org][17.25. Word Rectangle]]
+  - [[./lcci/17.26.Sparse Similarity/README_EN.org][17.26. Sparse
+    Similarity]]

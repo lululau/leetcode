@@ -1,0 +1,257 @@
+* [[https://leetcode.com/problems/toeplitz-matrix][766. Toeplitz
+Matrix]]
+  :PROPERTIES:
+  :CUSTOM_ID: toeplitz-matrix
+  :END:
+[[./solution/0700-0799/0766.Toeplitz Matrix/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an m x n matrix, return true if the matrix is Toeplitz. Otherwise,
+return false.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A matrix is Toeplitz if every diagonal from top-left to bottom-right has
+the same elements.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> matrix = [[1,2,3,4],[5,1,2,3],[9,5,1,2]]
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong>
+  In the above grid, the&nbsp;diagonals are:
+  &quot;[9]&quot;, &quot;[5, 5]&quot;, &quot;[1, 1, 1]&quot;, &quot;[2, 2, 2]&quot;, &quot;[3, 3]&quot;, &quot;[4]&quot;.
+  In each diagonal all elements are the same, so the answer is True.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> matrix = [[1,2],[2,2]]
+  <strong>Output:</strong> false
+  <strong>Explanation:</strong>
+  The diagonal &quot;[1, 2]&quot; has different elements.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+m == matrix.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n == matrix[i].length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= m, n <= 20
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= matrix[i][j] <= 99
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow up:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+What if the matrix is stored on disk, and the memory is limited such
+that you can only load at most one row of the matrix into the memory at
+once?
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+What if the matrix is so large that you can only load up a partial row
+into the memory at once?
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def isToeplitzMatrix(self, matrix: List[List[int]]) -> bool:
+          m, n = len(matrix), len(matrix[0])
+          for i in range(1, m):
+              for j in range(1, n):
+                  if matrix[i][j] != matrix[i - 1][j - 1]:
+                      return False
+          return True
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public boolean isToeplitzMatrix(int[][] matrix) {
+          int m = matrix.length, n = matrix[0].length;
+          for (int i = 1; i < m; ++i) {
+              for (int j = 1; j < n; ++j) {
+                  if (matrix[i][j] != matrix[i - 1][j - 1]) {
+                      return false;
+                  }
+              }
+          }
+          return true;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,130 @@
+* [[https://leetcode-cn.com/problems/pond-sizes-lcci][16.19. Pond
+Sizes]]
+  :PROPERTIES:
+  :CUSTOM_ID: pond-sizes
+  :END:
+[[./lcci/16.19.Pond Sizes/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You have an integer matrix representing a plot of land, where the value
+at that loca­tion represents the height above sea level. A value of zero
+indicates water. A pond is a region of water connected vertically,
+horizontally, or diagonally. The size of the pond is the total number of
+connected water cells. Write a method to compute the sizes of all ponds
+in the matrix.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>
+
+  [
+
+    [0,2,1,0],
+
+    [0,1,0,1],
+
+    [1,1,0,1],
+
+    [0,1,0,1]
+
+  ]
+
+  <strong>Output: </strong> [1,2,4]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 < len(land) <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 < len(land[i]) <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

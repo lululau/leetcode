@@ -1,0 +1,284 @@
+* [[https://leetcode-cn.com/problems/number-of-distinct-islands-ii][711.
+不同岛屿的数量 II]]
+  :PROPERTIES:
+  :CUSTOM_ID: 不同岛屿的数量-ii
+  :END:
+[[./solution/0700-0799/0711.Number of Distinct Islands II/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个非空01二维数组表示的网格，一个岛屿由四连通（上、下、左、右四个方向）的
+1 组成，你可以认为网格的四周被海水包围。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你计算这个网格中共有多少个形状不同的岛屿。如果两个岛屿的形状相同，或者通过旋转（顺时针旋转
+90°，180°，270°）、翻转（左右翻转、上下翻转）后形状相同，那么就认为这两个岛屿是相同的。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+样例 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>11000
+  10000
+  00001
+  00011
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定上图，返回结果 1。 注意 ：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>11
+  1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+和
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre> 1
+  11</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+是相同的岛屿。因为我们通过 180° 旋转第一个岛屿，两个岛屿的形状相同。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+样例 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>11100
+  10001
+  01001
+  01110</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定上图，返回结果 2。 下面是两个不同的岛屿：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>111
+  1</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+和
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>1
+  1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意 ：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>111
+  1</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+和
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>1
+  111
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+相同的岛屿。因为我们通过上下翻转第一个岛屿，两个岛屿的形状相同。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注释 :  二维数组每维的大小都不会超过50。
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

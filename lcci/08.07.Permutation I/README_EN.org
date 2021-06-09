@@ -1,0 +1,171 @@
+* [[https://leetcode-cn.com/problems/permutation-i-lcci][08.07.
+Permutation I]]
+  :PROPERTIES:
+  :CUSTOM_ID: permutation-i
+  :END:
+[[./lcci/08.07.Permutation I/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Write a method to compute all permutations of a string of unique
+characters.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong> Input</strong>: S = &quot;qwe&quot;
+
+  <strong> Output</strong>: [&quot;qwe&quot;, &quot;qew&quot;, &quot;wqe&quot;, &quot;weq&quot;, &quot;ewq&quot;, &quot;eqw&quot;]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong> Input</strong>: S = &quot;ab&quot;
+
+  <strong> Output</strong>: [&quot;ab&quot;, &quot;ba&quot;]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All charaters are English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= S.length <= 9
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+Backtracking
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *JavaSript*
+    :PROPERTIES:
+    :CUSTOM_ID: javasript
+    :END:
+#+begin_src js
+  /**
+   * @param {string} S
+   * @return {string[]}
+   */
+  var permutation = function(S) {
+      let res = [];
+      let arr = [...S];
+      let prev = [];
+      let record = new Array(S.length).fill(false);
+      dfs(arr, 0, prev, record, res);
+      return res;
+  };
+
+  function dfs(arr, depth, prev, record, res) {
+      if (depth == arr.length) {
+          res.push(prev.join(''));
+          return;
+      }
+      for (let i = 0; i < arr.length; i++) {
+          if (record[i]) {
+              continue;
+          }
+          prev.push(arr[i]);
+          record[i] = true;
+          dfs(arr, depth + 1, prev, record, res);
+          prev.pop();
+          record[i] = false;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

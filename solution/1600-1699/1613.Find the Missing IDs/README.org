@@ -1,0 +1,145 @@
+* [[https://leetcode-cn.com/problems/find-the-missing-ids][1613.
+找到遗失的ID]]
+  :PROPERTIES:
+  :CUSTOM_ID: 找到遗失的id
+  :END:
+[[./solution/1600-1699/1613.Find the Missing IDs/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+表: Customers
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +---------------+---------+
+  | Column Name   | Type    |
+  +---------------+---------+
+  | customer_id   | int     |
+  | customer_name | varchar |
+  +---------------+---------+
+  customer_id 是该表主键.
+  该表第一行包含了顾客的名字和id.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+写一个 SQL
+语句, 找到所有遗失的顾客id. 遗失的顾客id是指那些不在 Customers 表中, 值却处于 1 和表中最大 customer_id 之间的id.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意: 最大的 customer_id 值不会超过 100.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回结果按 ids 升序排列
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+查询结果格式如下例所示.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <code>Customers</code> 表:
+  +-------------+---------------+
+  | customer_id | customer_name |
+  +-------------+---------------+
+  | 1           | Alice         |
+  | 4           | Bob           |
+  | 5           | Charlie       |
+  +-------------+---------------+
+
+  Result 表:
+  +-----+
+  | <code>ids </code>|
+  +-----+
+  | 2   |
+  | 3   |
+  +-----+
+  表中最大的customer_id是5, 所以在范围[1,5]内, ID2和3从表中遗失.</pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

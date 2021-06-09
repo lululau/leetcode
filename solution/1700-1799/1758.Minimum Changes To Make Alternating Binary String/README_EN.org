@@ -1,0 +1,222 @@
+* [[https://leetcode.com/problems/minimum-changes-to-make-alternating-binary-string][1758.
+Minimum Changes To Make Alternating Binary String]]
+  :PROPERTIES:
+  :CUSTOM_ID: minimum-changes-to-make-alternating-binary-string
+  :END:
+[[./solution/1700-1799/1758.Minimum Changes To Make Alternating Binary String/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given a string s consisting only of the characters '0' and '1'.
+In one operation, you can change any '0' to '1' or vice versa.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The string is called alternating if no two adjacent characters are
+equal. For example, the string "010" is alternating, while the string
+"0100" is not.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the minimum number of operations needed to make s alternating.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;0100&quot;
+  <strong>Output:</strong> 1
+  <strong>Explanation:</strong> If you change the last character to &#39;1&#39;, s will be &quot;0101&quot;, which is alternating.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;10&quot;
+  <strong>Output:</strong> 0
+  <strong>Explanation:</strong> s is already alternating.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;1111&quot;
+  <strong>Output:</strong> 2
+  <strong>Explanation:</strong> You need two operations to reach &quot;0101&quot; or &quot;1010&quot;.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s.length <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s[i] is either '0' or '1'.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def minOperations(self, s: str) -> int:
+          cnt = 0
+          for i, c in enumerate(s):
+              cnt += c == '01'[i & 1]
+          return min(cnt, len(s) - cnt)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int minOperations(String s) {
+          int cnt = 0, n = s.length();
+          for (int i = 0; i < n; ++i) {
+              cnt += (s.charAt(i) == "01".charAt(i & 1) ? 1 : 0);
+          }
+          return Math.min(cnt, n - cnt);
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      int minOperations(string s) {
+          int cnt = 0, n = s.size();
+          for (int i = 0; i < n; ++i) {
+              cnt += s[i] == "01"[i & 1];
+          }
+          return min(cnt, n - cnt);
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

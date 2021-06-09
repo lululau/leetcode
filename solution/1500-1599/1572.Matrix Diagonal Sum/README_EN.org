@@ -1,0 +1,193 @@
+* [[https://leetcode.com/problems/matrix-diagonal-sum][1572. Matrix
+Diagonal Sum]]
+  :PROPERTIES:
+  :CUSTOM_ID: matrix-diagonal-sum
+  :END:
+[[./solution/1500-1599/1572.Matrix Diagonal Sum/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a square matrix mat, return the sum of the matrix diagonals.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Only include the sum of all the elements on the primary diagonal and all
+the elements on the secondary diagonal that are not part of the primary
+diagonal.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> mat = [[<strong>1</strong>,2,<strong>3</strong>],
+  &nbsp;             [4,<strong>5</strong>,6],
+  &nbsp;             [<strong>7</strong>,8,<strong>9</strong>]]
+  <strong>Output:</strong> 25
+  <strong>Explanation: </strong>Diagonals sum: 1 + 5 + 9 + 3 + 7 = 25
+  Notice that element mat[1][1] = 5 is counted only once.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> mat = [[<strong>1</strong>,1,1,<strong>1</strong>],
+  &nbsp;             [1,<strong>1</strong>,<strong>1</strong>,1],
+  &nbsp;             [1,<strong>1</strong>,<strong>1</strong>,1],
+  &nbsp;             [<strong>1</strong>,1,1,<strong>1</strong>]]
+  <strong>Output:</strong> 8
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> mat = [[<strong>5</strong>]]
+  <strong>Output:</strong> 5
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n == mat.length == mat[i].length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= mat[i][j] <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

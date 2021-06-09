@@ -1,0 +1,241 @@
+* [[https://leetcode.com/problems/moving-average-from-data-stream][346.
+Moving Average from Data Stream]]
+  :PROPERTIES:
+  :CUSTOM_ID: moving-average-from-data-stream
+  :END:
+[[./solution/0300-0399/0346.Moving Average from Data Stream/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a stream of integers and a window size, calculate the moving
+average of all integers in the sliding window.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement the MovingAverage class:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+MovingAverage(int size) Initializes the object with the size of the
+window size.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+double next(int val) Returns the moving average of the last size values
+of the stream.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input</strong>
+  [&quot;MovingAverage&quot;, &quot;next&quot;, &quot;next&quot;, &quot;next&quot;, &quot;next&quot;]
+  [[3], [1], [10], [3], [5]]
+  <strong>Output</strong>
+  [null, 1.0, 5.5, 4.66667, 6.0]
+
+  <strong>Explanation</strong>
+  MovingAverage movingAverage = new MovingAverage(3);
+  movingAverage.next(1); // return 1.0 = 1 / 1
+  movingAverage.next(10); // return 5.5 = (1 + 10) / 2
+  movingAverage.next(3); // return 4.66667 = (1 + 10 + 3) / 3
+  movingAverage.next(5); // return 6.0 = (10 + 3 + 5) / 3
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= size <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-105 <= val <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+At most 104 calls will be made to next.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class MovingAverage:
+
+      def __init__(self, size: int):
+          """
+          Initialize your data structure here.
+          """
+          self.size = size
+          self.data = [0] * size
+          self.count = 0
+          self.s = 0
+
+      def next(self, val: int) -> float:
+          idx = self.count % self.size
+          old_val = self.data[idx]
+          self.data[idx] = val
+          self.s += (val - old_val)
+          self.count += 1
+          return self.s / min(self.size, self.count)
+
+
+  # Your MovingAverage object will be instantiated and called as such:
+  # obj = MovingAverage(size)
+  # param_1 = obj.next(val)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class MovingAverage {
+      private int size;
+      private int[] data;
+      private int count;
+      private int s;
+
+      /** Initialize your data structure here. */
+      public MovingAverage(int size) {
+          this.size = size;
+          this.data = new int[size];
+      }
+      
+      public double next(int val) {
+          int idx = count % size;
+          int oldVal = data[idx];
+          data[idx] = val;
+          s += (val - oldVal);
+          ++count;
+          return s * 1.0 / Math.min(size, count);
+      }
+  }
+
+  /**
+   * Your MovingAverage object will be instantiated and called as such:
+   * MovingAverage obj = new MovingAverage(size);
+   * double param_1 = obj.next(val);
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

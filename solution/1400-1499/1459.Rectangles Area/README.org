@@ -1,0 +1,169 @@
+* [[https://leetcode-cn.com/problems/rectangles-area][1459. 矩形面积]]
+  :PROPERTIES:
+  :CUSTOM_ID: 矩形面积
+  :END:
+[[./solution/1400-1499/1459.Rectangles Area/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+表: Points
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +---------------+---------+
+  | Column Name   | Type    |
+  +---------------+---------+
+  | id            | int     |
+  | x_value       | int     |
+  | y_value       | int     |
+  +---------------+---------+
+  id 是该表主键
+  每个点都用二维坐标 (x_value, y_value) 表示</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+写一个 SQL 语句，报告由表中任意两点可以形成的所有 边与坐标轴平行 且
+面积不为零 的矩形。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+结果表中的每一行包含三列 (p1, p2, area) 如下:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+p1 和 p2 是矩形两个对角的 id
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+矩形的面积由列 area 表示
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请按照面积 area 大小降序排列；如果面积相同的话,
+则按照 p1 升序排序；若仍相同，则按 p2 升序排列。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+查询结果如下例所示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  Points 表:
+  +----------+-------------+-------------+
+  | id       | x_value     | y_value     |
+  +----------+-------------+-------------+
+  | 1        | 2           | 7           |
+  | 2        | 4           | 8           |
+  | 3        | 2           | 10          |
+  +----------+-------------+-------------+
+
+  Result 表:
+  +----------+-------------+-------------+
+  | p1       | p2          | area        |
+  +----------+-------------+-------------+
+  | 2        | 3           | 4           |
+  | 1        | 2           | 2           |
+  +----------+-------------+-------------+
+
+  <img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/1400-1499/1459.Rectangles Area/images/rect.png" style="width: 200px; height: 330px;" />
+
+  p1 = 2 且 p2 = 3 时, 面积等于 |4-2| * |8-10| = 4
+  p1 = 1 且 p2 = 2 时, 面积等于 ||2-4| * |7-8| = 2 
+  p1 = 1 且 p2 = 3 时, 是不可能为矩形的, 面积等于 0
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

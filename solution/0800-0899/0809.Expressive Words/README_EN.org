@@ -1,0 +1,189 @@
+* [[https://leetcode.com/problems/expressive-words][809. Expressive
+Words]]
+  :PROPERTIES:
+  :CUSTOM_ID: expressive-words
+  :END:
+[[./solution/0800-0899/0809.Expressive Words/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Sometimes people repeat letters to represent extra feeling, such as
+"hello" -> "heeellooo", "hi" -> "hiiii".  In these strings like
+"heeellooo", we have groups of adjacent letters that are all the same: 
+"h", "eee", "ll", "ooo".
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For some given string S, a query word is stretchy if it can be made to
+be equal to S by any number of applications of the following extension
+operation: choose a group consisting of characters c, and add some
+number of characters c to the group so that the size of the group is 3
+or more.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example, starting with "hello", we could do an extension on the
+group "o" to get "hellooo", but we cannot get "helloo" since the group
+"oo" has size less than 3.  Also, we could do another extension like
+"ll" -> "lllll" to get "helllllooo".  If S = "helllllooo", then the
+query word "hello" would be stretchy because of these two extension
+operations: query = "hello" -> "hellooo" -> "helllllooo" = S.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a list of query words, return the number of words that are
+stretchy. 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Example:</strong>
+  <strong>Input:</strong> 
+  S = &quot;heeellooo&quot;
+  words = [&quot;hello&quot;, &quot;hi&quot;, &quot;helo&quot;]
+  <strong>Output:</strong> 1
+  <strong>Explanation:</strong> 
+  We can extend &quot;e&quot; and &quot;o&quot; in the word &quot;hello&quot; to get &quot;heeellooo&quot;.
+  We can&#39;t extend &quot;helo&quot; to get &quot;heeellooo&quot; because the group &quot;ll&quot; is not size 3 or more.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= len(S) <= 100.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= len(words) <= 100.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= len(words[i]) <= 100.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+S and all words in words consist only of lowercase letters
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

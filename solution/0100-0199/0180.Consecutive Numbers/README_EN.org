@@ -1,0 +1,132 @@
+* [[https://leetcode.com/problems/consecutive-numbers][180. Consecutive
+Numbers]]
+  :PROPERTIES:
+  :CUSTOM_ID: consecutive-numbers
+  :END:
+[[./solution/0100-0199/0180.Consecutive Numbers/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Logs
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +-------------+---------+
+  | Column Name | Type    |
+  +-------------+---------+
+  | id          | int     |
+  | num         | varchar |
+  +-------------+---------+
+  id is the primary key for this table.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an SQL query to find all numbers that appear at least three times
+consecutively.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the result table in any order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The query result format is in the following example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  Logs table:
+  +----+-----+
+  | Id | Num |
+  +----+-----+
+  | 1  | 1   |
+  | 2  | 1   |
+  | 3  | 1   |
+  | 4  | 2   |
+  | 5  | 1   |
+  | 6  | 2   |
+  | 7  | 2   |
+  +----+-----+
+
+  Result table:
+  +-----------------+
+  | ConsecutiveNums |
+  +-----------------+
+  | 1               |
+  +-----------------+
+  1 is the only number that appears consecutively for at least three times.
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_example
+  select distinct(Num) as ConsecutiveNums from Logs Curr where
+      Num = (select Num from Logs where id = Curr.id - 1) and
+      Num = (select Num from Logs where id = Curr.id - 2)
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

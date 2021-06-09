@@ -1,0 +1,162 @@
+* [[https://leetcode.com/problems/sum-of-digits-in-the-minimum-number][1085.
+Sum of Digits in the Minimum Number]]
+  :PROPERTIES:
+  :CUSTOM_ID: sum-of-digits-in-the-minimum-number
+  :END:
+[[./solution/1000-1099/1085.Sum of Digits in the Minimum Number/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array A of positive integers, let S be the sum of the digits of
+the minimal element of A.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return 0 if S is odd, otherwise return 1.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong><span id="example-input-1-1">[34,23,1,24,75,33,54,8]</span>
+  <strong>Output: </strong><span id="example-output-1">0</span>
+  <strong>Explanation: </strong>
+  The minimal element is 1, and the sum of those digits is S = 1 which is odd, so the answer is 0.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong><span id="example-input-2-1">[99,77,33,66,55]</span>
+  <strong>Output: </strong><span id="example-output-2">1</span>
+  <strong>Explanation: </strong>
+  The minimal element is 33, and the sum of those digits is S = 3 + 3 = 6 which is even, so the answer is 1.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= A.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= A[i] <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

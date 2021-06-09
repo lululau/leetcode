@@ -1,0 +1,220 @@
+* [[https://leetcode.com/problems/the-most-recent-orders-for-each-product][1549.
+The Most Recent Orders for Each Product]]
+  :PROPERTIES:
+  :CUSTOM_ID: the-most-recent-orders-for-each-product
+  :END:
+[[./solution/1500-1599/1549.The Most Recent Orders for Each Product/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Customers
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +---------------+---------+
+  | Column Name   | Type    |
+  +---------------+---------+
+  | customer_id   | int     |
+  | name          | varchar |
+  +---------------+---------+
+  customer_id is the primary key for this table.
+  This table contains information about the customers.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Orders
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +---------------+---------+
+  | Column Name   | Type    |
+  +---------------+---------+
+  | order_id      | int     |
+  | order_date    | date    |
+  | customer_id   | int     |
+  | product_id    | int     |
+  +---------------+---------+
+  order_id is the primary key for this table.
+  This table contains information about the orders made by customer_id.
+  There will be no product ordered by the same user <strong>more than once</strong> in one day.</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Products
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +---------------+---------+
+  | Column Name   | Type    |
+  +---------------+---------+
+  | product_id    | int     |
+  | product_name  | varchar |
+  | price         | int     |
+  +---------------+---------+
+  product_id is the primary key for this table.
+  This table contains information about the Products.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an SQL query to find the most recent order(s) of each product.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the result table sorted by product_name in ascending order and in
+case of a tie by the product_id in ascending order. If there still a
+tie, order them by the order_id in ascending order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The query result format is in the following example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <code>Customers</code>
+  +-------------+-----------+
+  | customer_id | name      |
+  +-------------+-----------+
+  | 1           | Winston   |
+  | 2           | Jonathan  |
+  | 3           | Annabelle |
+  | 4           | Marwan    |
+  | 5           | Khaled    |
+  +-------------+-----------+
+
+  <code>Orders</code>
+  +----------+------------+-------------+------------+
+  | order_id | order_date | customer_id | product_id |
+  +----------+------------+-------------+------------+
+  | 1        | 2020-07-31 | 1           | 1          |
+  | 2        | 2020-07-30 | 2           | 2          |
+  | 3        | 2020-08-29 | 3           | 3          |
+  | 4        | 2020-07-29 | 4           | 1          |
+  | 5        | 2020-06-10 | 1           | 2          |
+  | 6        | 2020-08-01 | 2           | 1          |
+  | 7        | 2020-08-01 | 3           | 1          |
+  | 8        | 2020-08-03 | 1           | 2          |
+  | 9        | 2020-08-07 | 2           | 3          |
+  | 10       | 2020-07-15 | 1           | 2          |
+  +----------+------------+-------------+------------+
+
+  <code>Products</code>
+  +------------+--------------+-------+
+  | product_id | product_name | price |
+  +------------+--------------+-------+
+  | 1          | keyboard     | 120   |
+  | 2          | mouse        | 80    |
+  | 3          | screen       | 600   |
+  | 4          | hard disk    | 450   |
+  +------------+--------------+-------+
+
+  Result table:
+  +--------------+------------+----------+------------+
+  | product_name | product_id | order_id | order_date |
+  +--------------+------------+----------+------------+
+  | keyboard     | 1          | 6        | 2020-08-01 |
+  | keyboard     | 1          | 7        | 2020-08-01 |
+  | mouse        | 2          | 8        | 2020-08-03 |
+  | screen       | 3          | 3        | 2020-08-29 |
+  +--------------+------------+----------+------------+
+  keyboard&#39;s most recent order is in 2020-08-01, it was ordered two times this day.
+  mouse&#39;s most recent order is in 2020-08-03, it was ordered only once this day.
+  screen&#39;s most recent order is in 2020-08-29, it was ordered only once this day.
+  The hard disk was never ordered and we don&#39;t include it in the result table.
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

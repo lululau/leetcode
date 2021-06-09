@@ -1,0 +1,165 @@
+* [[https://leetcode-cn.com/problems/binary-tree-upside-down][156.
+上下翻转二叉树]]
+  :PROPERTIES:
+  :CUSTOM_ID: 上下翻转二叉树
+  :END:
+[[./solution/0100-0199/0156.Binary Tree Upside Down/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个二叉树，其中所有的右节点要么是具有兄弟节点（拥有相同父节点的左节点）的叶节点，要么为空，将此二叉树上下翻转并将它变成一棵树，
+原来的右节点将转换成左叶节点。返回新的根。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+例子:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入: </strong>[1,2,3,4,5]
+
+      1
+     / \
+    2   3
+   / \
+  4   5
+
+  <strong>输出:</strong> 返回二叉树的根 [4,5,2,#,#,3,1]
+
+     4
+    / \
+   5   2
+      / \
+     3   1  
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+说明:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+对 [4,5,2,#,#,3,1] 感到困惑? 下面详细介绍请查看 二叉树是如何被序列化的。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+二叉树的序列化遵循层次遍历规则，当没有节点存在时，'#' 表示路径终止符。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+这里有一个例子:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>   1
+    / \
+   2   3
+      /
+     4
+      \
+       5
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+上面的二叉树则被序列化为 [1,2,3,#,#,4,#,#,5].
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

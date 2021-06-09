@@ -1,0 +1,179 @@
+* [[https://leetcode-cn.com/problems/similar-rgb-color][800. 相似 RGB
+颜色]]
+  :PROPERTIES:
+  :CUSTOM_ID: 相似-rgb-颜色
+  :END:
+[[./solution/0800-0899/0800.Similar RGB Color/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+RGB 颜色用十六进制来表示的话，每个大写字母都代表了某个从 0 到 f 的 16
+进制数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+RGB 颜色 "#AABBCC" 可以简写成 "#ABC" 。例如，"#15c" 其实是 "#1155cc"
+的简写。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+现在，假如我们分别定义两个颜色
+"#ABCDEF" 和 "#UVWXYZ"，则他们的相似度可以通过这个表达式 -(AB - UV)^2
+- (CD - WX)^2 - (EF - YZ)^2 来计算。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+那么给定颜色 "#ABCDEF"，请你返回一个与 #ABCDEF 最相似的 7
+个字符代表的颜色，并且它是可以被简写形式表达的。（比如，可以表示成类似
+"#XYZ" 的形式）
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>示例 1：</strong>
+  <strong>输入：</strong>color = &quot;#09f166&quot;
+  <strong>输出：</strong>&quot;#11ee66&quot;
+  <strong>解释：</strong> 
+  因为相似度计算得出 -(0x09 - 0x11)^2 -(0xf1 - 0xee)^2 - (0x66 - 0x66)^2 = -64 -9 -0 = -73
+  这已经是所有可以简写的颜色中最相似的了
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+color 是一个长度为 7 的字符串
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+color 是一个有效的 RGB 颜色：对于仍和 i >
+0，color[i] 都是一个在 0 到 f 范围的 16 进制数
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+假如答案具有相同的（最大）相似度的话，都是可以被接受的
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+所有输入、输出都必须使用小写字母，并且输出为 7 个字符
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

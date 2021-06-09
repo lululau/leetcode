@@ -1,0 +1,176 @@
+* [[https://leetcode.com/problems/search-in-a-sorted-array-of-unknown-size][702.
+Search in a Sorted Array of Unknown Size]]
+  :PROPERTIES:
+  :CUSTOM_ID: search-in-a-sorted-array-of-unknown-size
+  :END:
+[[./solution/0700-0799/0702.Search in a Sorted Array of Unknown Size/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an integer array sorted in ascending order, write a function to
+search target in nums.  If target exists, then return its index,
+otherwise return -1. However, the array size is unknown to you. You may
+only access the array using an ArrayReader interface,
+where ArrayReader.get(k) returns the element of the array at index
+k (0-indexed).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You may assume all integers in the array are less than 10000, and if you
+access the array out of bounds, ArrayReader.get will return 2147483647.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> <code>array</code> = [-1,0,3,5,9,12], <code>target</code> = 9
+  <strong>Output:</strong> 4
+  <strong>Explanation:</strong> 9 exists in <code>nums</code> and its index is 4
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> <code>array</code> = [-1,0,3,5,9,12], <code>target</code> = 2
+  <strong>Output:</strong> -1
+  <strong>Explanation:</strong> 2 does not exist in <code>nums</code> so return -1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+You may assume that all elements in the array are unique.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The value of each element in the array will be in the range [-9999,
+9999].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The length of the array will be in the range [1, 10^4].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

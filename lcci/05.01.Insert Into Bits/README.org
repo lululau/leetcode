@@ -1,0 +1,117 @@
+* [[https://leetcode-cn.com/problems/insert-into-bits-lcci][面试题
+05.01. 插入]]
+  :PROPERTIES:
+  :CUSTOM_ID: 面试题-05.01.-插入
+  :END:
+[[./lcci/05.01.Insert Into Bits/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+插入。给定两个32位的整数N与M，以及表示比特位置的i与j。编写一种方法，将M插入N，使得M从N的第j位开始，到第i位结束。假定从j位到i位足以容纳M，也即若M
+= 10 011，那么j和i之间至少可容纳5个位。例如，不可能出现j = 3和i =
+2的情况，因为第3位和第2位之间放不下M。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong> 输入</strong>：N = 10000000000, M = 10011, i = 2, j = 6
+  <strong> 输出</strong>：N = 10001001100
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong> 输入</strong>： N = 0, M = 11111, i = 0, j = 4
+  <strong> 输出</strong>：N = 11111
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int insertBits(int N, int M, int i, int j) {
+          for (int k = i; k <= j; k++) {
+              N &= ~(1 << k);
+          }
+          return N ^ (M << i);
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

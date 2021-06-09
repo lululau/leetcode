@@ -1,0 +1,132 @@
+* [[https://leetcode.com/problems/patients-with-a-condition][1527.
+Patients With a Condition]]
+  :PROPERTIES:
+  :CUSTOM_ID: patients-with-a-condition
+  :END:
+[[./solution/1500-1599/1527.Patients With a Condition/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Patients
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +--------------+---------+
+  | Column Name  | Type    |
+  +--------------+---------+
+  | patient_id   | int     |
+  | patient_name | varchar |
+  | conditions   | varchar |
+  +--------------+---------+
+  patient_id is the primary key for this table.
+  &#39;conditions&#39; contains 0 or more code separated by spaces. 
+  This table contains information of the patients in the hospital.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an SQL query to report the patient_id, patient_name all conditions
+of patients who have Type I Diabetes. Type I Diabetes always starts with
+DIAB1 prefix
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the result table in any order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The query result format is in the following example.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <code>Patients</code>
+  +------------+--------------+--------------+
+  | patient_id | patient_name | conditions   |
+  +------------+--------------+--------------+
+  | 1          | Daniel      &nbsp;| YFEV COUGH   |
+  | 2    &nbsp;     | Alice        |            &nbsp; |
+  | 3    &nbsp;     | Bob         &nbsp;| DIAB100 MYOP&nbsp;|
+  | 4 &nbsp;        | George      &nbsp;| ACNE DIAB100&nbsp;|
+  | 5 &nbsp;        | Alain       &nbsp;| DIAB201     &nbsp;|
+  +------------+--------------+--------------+
+
+  Result table:
+  +------------+--------------+--------------+
+  | patient_id | patient_name | conditions   |
+  +------------+--------------+--------------+
+  | 3    &nbsp;     | Bob         &nbsp;| DIAB100 MYOP&nbsp;|
+  | 4 &nbsp;        | George   &nbsp;   | ACNE DIAB100&nbsp;| 
+  +------------+--------------+--------------+
+  Bob and George both have a condition that starts with DIAB1.
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

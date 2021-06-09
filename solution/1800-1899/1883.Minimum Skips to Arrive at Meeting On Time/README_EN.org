@@ -1,0 +1,330 @@
+* [[https://leetcode.com/problems/minimum-skips-to-arrive-at-meeting-on-time][1883.
+Minimum Skips to Arrive at Meeting On Time]]
+  :PROPERTIES:
+  :CUSTOM_ID: minimum-skips-to-arrive-at-meeting-on-time
+  :END:
+[[./solution/1800-1899/1883.Minimum Skips to Arrive at Meeting On Time/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given an integer hoursBefore, the number of hours you have to
+travel to your meeting. To arrive at your meeting, you have to travel
+through n roads. The road lengths are given as an integer array dist of
+length n, where dist[i] describes the length of the ith road in
+kilometers. In addition, you are given an integer speed, which is the
+speed (in km/h) you will travel at.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+After you travel road i, you must rest and wait for the next integer
+hour before you can begin traveling on the next road. Note that you do
+not have to rest after traveling the last road because you are already
+at the meeting.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For example, if traveling a road takes 1.4 hours, you must wait until
+the 2 hour mark before traveling the next road. If traveling a road
+takes exactly 2 hours, you do not need to wait.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+However, you are allowed to skip some rests to be able to arrive on
+time, meaning you do not need to wait for the next integer hour. Note
+that this means you may finish traveling future roads at different hour
+marks.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For example, suppose traveling the first road takes 1.4 hours and
+traveling the second road takes 0.6 hours. Skipping the rest after the
+first road will mean you finish traveling the second road right at the 2
+hour mark, letting you start traveling the third road immediately.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the minimum number of skips required to arrive at the meeting on
+time, or -1 if it is impossible.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> dist = [1,3,2], speed = 4, hoursBefore = 2
+  <strong>Output:</strong> 1
+  <strong>Explanation:</strong>
+  Without skipping any rests, you will arrive in (1/4 + 3/4) + (3/4 + 1/4) + (2/4) = 2.5 hours.
+  You can skip the first rest to arrive in ((1/4 + <u>0</u>) + (3/4 + 0)) + (2/4) = 1.5 hours.
+  Note that the second rest is shortened because you finish traveling the second road at an integer hour due to skipping the first rest.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> dist = [7,3,5,5], speed = 2, hoursBefore = 10
+  <strong>Output:</strong> 2
+  <strong>Explanation:</strong>
+  Without skipping any rests, you will arrive in (7/2 + 1/2) + (3/2 + 1/2) + (5/2 + 1/2) + (5/2) = 11.5 hours.
+  You can skip the first and third rest to arrive in ((7/2 + <u>0</u>) + (3/2 + 0)) + ((5/2 + <u>0</u>) + (5/2)) = 10 hours.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> dist = [7,3,5,5], speed = 1, hoursBefore = 10
+  <strong>Output:</strong> -1
+  <strong>Explanation:</strong> It is impossible to arrive at the meeting on time even if you skip all the rests.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n == dist.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= dist[i] <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= speed <= 106
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= hoursBefore <= 107
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def minSkips(self, dist: List[int], speed: int, hoursBefore: int) -> int:
+          n = len(dist)
+          dp = [[float('inf')] * (n + 1) for _ in range(n + 1)]
+          dp[0][0] = 0
+          for i in range(1, n + 1):
+              for j in range(i + 1):
+                  if i != j:
+                      dp[i][j] = min(dp[i][j], ((dp[i - 1][j] + dist[i - 1] - 1) // speed + 1) * speed)
+                  if j > 0:
+                      dp[i][j] = min(dp[i][j], dp[i - 1][j - 1] + dist[i - 1])
+          for i in range(n + 1):
+              if dp[n][i] <= hoursBefore * speed:
+                  return i
+          return -1
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int minSkips(int[] dist, int speed, int hoursBefore) {
+          int n = dist.length;
+          int[][] dp = new int[n + 1][n + 1];
+          for (int i = 0; i <= n; ++i) {
+              for (int j = 0; j <= n; ++j) {
+                  dp[i][j] = Integer.MAX_VALUE;
+              }
+          }
+          dp[0][0] = 0;
+          for (int i = 1; i <= n; ++i) {
+              for (int j = 0; j <= i; ++j) {
+                  if (i != j) {
+                      // 没有跳过
+                      dp[i][j] = Math.min(dp[i][j], ((dp[i - 1][j] + dist[i - 1] - 1) / speed + 1) * speed);
+                  }
+                  if (j > 0) {
+                      // 跳过
+                      dp[i][j] = Math.min(dp[i][j], dp[i - 1][j - 1] + dist[i - 1]);
+                  }
+              }
+          }
+          for (int i = 0; i <= n; ++i) {
+              if (dp[n][i] <= hoursBefore * speed) {
+                  return i;
+              }
+          }
+          return -1;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

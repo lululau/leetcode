@@ -1,0 +1,173 @@
+* [[https://leetcode-cn.com/problems/evaluate-boolean-expression][1440.
+计算布尔表达式的值]]
+  :PROPERTIES:
+  :CUSTOM_ID: 计算布尔表达式的值
+  :END:
+[[./solution/1400-1499/1440.Evaluate Boolean Expression/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+表 Variables:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+---------------+---------+
+  | Column Name   | Type    |
+  +---------------+---------+
+  | name          | varchar |
+  | value         | int     |
+  +---------------+---------+
+  name 是该表主键.
+  该表包含了存储的变量及其对应的值.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+表 Expressions:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+---------------+---------+
+  | Column Name   | Type    |
+  +---------------+---------+
+  | left_operand  | varchar |
+  | operator      | enum    |
+  | right_operand | varchar |
+  +---------------+---------+
+  (left_operand, operator, right_operand) 是该表主键.
+  该表包含了需要计算的布尔表达式.
+  operator 是枚举类型, 取值于(&#39;&lt;&#39;, &#39;&gt;&#39;, &#39;=&#39;)
+  left_operand 和 right_operand 的值保证存在于 Variables 表单中.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+写一个 SQL 查询,  以计算表 Expressions 中的布尔表达式.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回的结果表没有顺序要求.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+查询结果格式如下例所示.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>Variables 表:
+  +------+-------+
+  | name | value |
+  +------+-------+
+  | x    | 66    |
+  | y    | 77    |
+  +------+-------+
+
+  Expressions 表:
+  +--------------+----------+---------------+
+  | left_operand | operator | right_operand |
+  +--------------+----------+---------------+
+  | x            | &gt;        | y             |
+  | x            | &lt;        | y             |
+  | x            | =        | y             |
+  | y            | &gt;        | x             |
+  | y            | &lt;        | x             |
+  | x            | =        | x             |
+  +--------------+----------+---------------+
+
+  Result 表:
+  +--------------+----------+---------------+-------+
+  | left_operand | operator | right_operand | value |
+  +--------------+----------+---------------+-------+
+  | x            | &gt;        | y             | false |
+  | x            | &lt;        | y             | true  |
+  | x            | =        | y             | false |
+  | y            | &gt;        | x             | true  |
+  | y            | &lt;        | x             | false |
+  | x            | =        | x             | true  |
+  +--------------+----------+---------------+-------+
+  如上所示, 你需要通过使用 Variables 表来找到 Expressions 表中的每一个布尔表达式的值.
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

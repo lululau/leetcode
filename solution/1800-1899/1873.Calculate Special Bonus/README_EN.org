@@ -1,0 +1,174 @@
+* [[https://leetcode.com/problems/calculate-special-bonus][1873.
+Calculate Special Bonus]]
+  :PROPERTIES:
+  :CUSTOM_ID: calculate-special-bonus
+  :END:
+[[./solution/1800-1899/1873.Calculate Special Bonus/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Employees
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +-------------+---------+
+
+  | Column Name | Type    |
+
+  +-------------+---------+
+
+  | employee_id | int     |
+
+  | name        | varchar |
+
+  | salary      | int     |
+
+  +-------------+---------+
+
+  employee_id is the primary key for this table.
+
+  Each row of this table indicates the employee ID, employee name, and salary.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an SQL query to calculate the bonus of each employee. The bonus of
+an employee is 100% of their salary if the ID of the employee is an odd
+number and the employee name does not start with the character 'M'. The
+bonus of an employee is 0 otherwise.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the result table ordered by employee_id.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The query result format is in the following example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  Employees table:
+
+  +-------------+---------+--------+
+
+  | employee_id | name    | salary |
+
+  +-------------+---------+--------+
+
+  | 2           | Meir    | 3000   |
+
+  | 3           | Michael | 3800   |
+
+  | 7           | Addilyn | 7400   |
+
+  | 8           | Juan    | 6100   |
+
+  | 9           | Kannon  | 7700   |
+
+  +-------------+---------+--------+
+
+
+
+  Result table:
+
+  +-------------+-------+
+
+  | employee_id | bonus |
+
+  +-------------+-------+
+
+  | 2           | 0     |
+
+  | 3           | 0     |
+
+  | 7           | 7400  |
+
+  | 8           | 0     |
+
+  | 9           | 7700  |
+
+  +-------------+-------+
+
+
+
+  The employees with IDs 2 and 8 get 0 bonus because they have an even employee_id.
+
+  The employee with ID 3 gets 0 bonus because their name starts with &#39;M&#39;.
+
+  The rest of the employees get a 100% bonus.
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

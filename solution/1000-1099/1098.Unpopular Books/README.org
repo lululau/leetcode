@@ -1,0 +1,196 @@
+* [[https://leetcode-cn.com/problems/unpopular-books][1098. 小众书籍]]
+  :PROPERTIES:
+  :CUSTOM_ID: 小众书籍
+  :END:
+[[./solution/1000-1099/1098.Unpopular Books/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+书籍表 Books：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+----------------+---------+
+  | Column Name    | Type    |
+  +----------------+---------+
+  | book_id        | int     |
+  | name           | varchar |
+  | available_from | date    |
+  +----------------+---------+
+  book_id 是这个表的主键。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+订单表 Orders：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+----------------+---------+
+  | Column Name    | Type    |
+  +----------------+---------+
+  | order_id       | int     |
+  | book_id        | int     |
+  | quantity       | int     |
+  | dispatch_date  | date    |
+  +----------------+---------+
+  order_id 是这个表的主键。
+  book_id  是 Books 表的外键。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你需要写一段 SQL 命令，筛选出过去一年中订单总量 少于10本 的 书籍 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意：不考虑 上架（available from）距今 不满一个月
+的书籍。并且 假设今天是 2019-06-23 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+下面是样例输出结果：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>Books 表：
+  +---------+--------------------+----------------+
+  | book_id | name               | available_from |
+  +---------+--------------------+----------------+
+  | 1       | &quot;Kalila And Demna&quot; | 2010-01-01     |
+  | 2       | &quot;28 Letters&quot;       | 2012-05-12     |
+  | 3       | &quot;The Hobbit&quot;       | 2019-06-10     |
+  | 4       | &quot;13 Reasons Why&quot;   | 2019-06-01     |
+  | 5       | &quot;The Hunger Games&quot; | 2008-09-21     |
+  +---------+--------------------+----------------+
+
+  Orders 表：
+  +----------+---------+----------+---------------+
+  | order_id | book_id | quantity | dispatch_date |
+  +----------+---------+----------+---------------+
+  | 1        | 1       | 2        | 2018-07-26    |
+  | 2        | 1       | 1        | 2018-11-05    |
+  | 3        | 3       | 8        | 2019-06-11    |
+  | 4        | 4       | 6        | 2019-06-05    |
+  | 5        | 4       | 5        | 2019-06-20    |
+  | 6        | 5       | 9        | 2009-02-02    |
+  | 7        | 5       | 8        | 2010-04-13    |
+  +----------+---------+----------+---------------+
+
+  Result 表：
+  +-----------+--------------------+
+  | book_id   | name               |
+  +-----------+--------------------+
+  | 1         | &quot;Kalila And Demna&quot; |
+  | 2         | &quot;28 Letters&quot;       |
+  | 5         | &quot;The Hunger Games&quot; |
+  +-----------+--------------------+
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

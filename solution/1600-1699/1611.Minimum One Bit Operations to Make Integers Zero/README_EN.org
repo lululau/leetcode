@@ -1,0 +1,236 @@
+* [[https://leetcode.com/problems/minimum-one-bit-operations-to-make-integers-zero][1611.
+Minimum One Bit Operations to Make Integers Zero]]
+  :PROPERTIES:
+  :CUSTOM_ID: minimum-one-bit-operations-to-make-integers-zero
+  :END:
+[[./solution/1600-1699/1611.Minimum One Bit Operations to Make Integers Zero/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an integer n, you must transform it into 0 using the following
+operations any number of times:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Change the rightmost (0th) bit in the binary representation of n.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Change the ith bit in the binary representation of n if the (i-1)th bit
+is set to 1 and the (i-2)th through 0th bits are set to 0.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the minimum number of operations to transform n into 0.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> n = 0
+  <strong>Output:</strong> 0
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> n = 3
+  <strong>Output:</strong> 2
+  <strong>Explanation:</strong> The binary representation of 3 is &quot;11&quot;.
+  &quot;<u>1</u>1&quot; -&gt; &quot;<u>0</u>1&quot; with the 2nd operation since the 0th bit is 1.
+  &quot;0<u>1</u>&quot; -&gt; &quot;0<u>0</u>&quot; with the 1st operation.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> n = 6
+  <strong>Output:</strong> 4
+  <strong>Explanation:</strong> The binary representation of 6 is &quot;110&quot;.
+  &quot;<u>1</u>10&quot; -&gt; &quot;<u>0</u>10&quot; with the 2nd operation since the 1st bit is 1 and 0th through 0th bits are 0.
+  &quot;01<u>0</u>&quot; -&gt; &quot;01<u>1</u>&quot; with the 1st operation.
+  &quot;0<u>1</u>1&quot; -&gt; &quot;0<u>0</u>1&quot; with the 2nd operation since the 0th bit is 1.
+  &quot;00<u>1</u>&quot; -&gt; &quot;00<u>0</u>&quot; with the 1st operation.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> n = 9
+  <strong>Output:</strong> 14
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> n = 333
+  <strong>Output:</strong> 393
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= n <= 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

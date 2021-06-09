@@ -1,0 +1,314 @@
+* [[https://leetcode-cn.com/problems/design-a-stack-with-increment-operation][1381.
+设计一个支持增量操作的栈]]
+  :PROPERTIES:
+  :CUSTOM_ID: 设计一个支持增量操作的栈
+  :END:
+[[./solution/1300-1399/1381.Design a Stack With Increment Operation/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你设计一个支持下述操作的栈。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+实现自定义栈类 CustomStack ：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+CustomStack(int maxSize)：用 maxSize 初始化对象，maxSize
+是栈中最多能容纳的元素数量，栈在增长到 maxSize 之后则不支持 push 操作。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void push(int x)：如果栈还未增长到 maxSize ，就将 x 添加到栈顶。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int pop()：弹出栈顶元素，并返回栈顶的值，或栈为空时返回 -1 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void inc(int k, int val)：栈底的 k 个元素的值都增加 val
+。如果栈中元素总数小于 k ，则栈中的所有元素都增加 val 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>
+  [&quot;CustomStack&quot;,&quot;push&quot;,&quot;push&quot;,&quot;pop&quot;,&quot;push&quot;,&quot;push&quot;,&quot;push&quot;,&quot;increment&quot;,&quot;increment&quot;,&quot;pop&quot;,&quot;pop&quot;,&quot;pop&quot;,&quot;pop&quot;]
+  [[3],[1],[2],[],[2],[3],[4],[5,100],[2,100],[],[],[],[]]
+  <strong>输出：</strong>
+  [null,null,null,2,null,null,null,null,null,103,202,201,-1]
+  <strong>解释：</strong>
+  CustomStack customStack = new CustomStack(3); // 栈是空的 []
+  customStack.push(1);                          // 栈变为 [1]
+  customStack.push(2);                          // 栈变为 [1, 2]
+  customStack.pop();                            // 返回 2 --&gt; 返回栈顶值 2，栈变为 [1]
+  customStack.push(2);                          // 栈变为 [1, 2]
+  customStack.push(3);                          // 栈变为 [1, 2, 3]
+  customStack.push(4);                          // 栈仍然是 [1, 2, 3]，不能添加其他元素使栈大小变为 4
+  customStack.increment(5, 100);                // 栈变为 [101, 102, 103]
+  customStack.increment(2, 100);                // 栈变为 [201, 202, 103]
+  customStack.pop();                            // 返回 103 --&gt; 返回栈顶值 103，栈变为 [201, 202]
+  customStack.pop();                            // 返回 202 --&gt; 返回栈顶值 202，栈变为 [201]
+  customStack.pop();                            // 返回 201 --&gt; 返回栈顶值 201，栈变为 []
+  customStack.pop();                            // 返回 -1 --&gt; 栈为空，返回 -1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= maxSize <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= x <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= k <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= val <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+每种方法 increment，push 以及 pop 分别最多调用 1000 次
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class CustomStack:
+
+      def __init__(self, maxSize: int):
+          self.s = [0] * maxSize
+          self.tail = 0
+
+      def push(self, x: int) -> None:
+          if self.tail < len(self.s):
+              self.s[self.tail] = x
+              self.tail += 1
+
+      def pop(self) -> int:
+          if self.tail == 0:
+              return -1
+          self.tail -= 1
+          return self.s[self.tail]
+
+      def increment(self, k: int, val: int) -> None:
+          for i in range(min(k, self.tail)):
+              self.s[i] += val
+
+
+  # Your CustomStack object will be instantiated and called as such:
+  # obj = CustomStack(maxSize)
+  # obj.push(x)
+  # param_2 = obj.pop()
+  # obj.increment(k,val)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class CustomStack {
+      private int[] s;
+      private int tail;
+
+      public CustomStack(int maxSize) {
+          s = new int[maxSize];
+      }
+      
+      public void push(int x) {
+          if (tail < s.length) {
+              s[tail++] = x;
+          }
+      }
+      
+      public int pop() {
+          return tail == 0 ? -1 : s[--tail];
+      }
+      
+      public void increment(int k, int val) {
+          for (int i = 0; i < Math.min(k, tail); ++i) {
+              s[i] += val;
+          }
+      }
+  }
+
+  /**
+   * Your CustomStack object will be instantiated and called as such:
+   * CustomStack obj = new CustomStack(maxSize);
+   * obj.push(x);
+   * int param_2 = obj.pop();
+   * obj.increment(k,val);
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

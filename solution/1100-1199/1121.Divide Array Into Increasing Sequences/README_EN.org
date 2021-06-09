@@ -1,0 +1,173 @@
+* [[https://leetcode.com/problems/divide-array-into-increasing-sequences][1121.
+Divide Array Into Increasing Sequences]]
+  :PROPERTIES:
+  :CUSTOM_ID: divide-array-into-increasing-sequences
+  :END:
+[[./solution/1100-1199/1121.Divide Array Into Increasing Sequences/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a non-decreasing array of positive integers nums and an integer K,
+find out if this array can be divided into one or more disjoint
+increasing subsequences of length at least K.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>nums = <span id="example-input-1-1">[1,2,2,3,3,4,4]</span>, K = <span id="example-input-1-2">3</span>
+
+  <strong>Output: </strong><span id="example-output-1">true</span>
+
+  <strong>Explanation: </strong>
+
+  The array can be divided into the two subsequences [1,2,3,4] and [2,3,4] with lengths at least 3 each.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>nums = <span id="example-input-2-1">[5,6,6,7,8]</span>, K = <span id="example-input-2-2">3</span>
+
+  <strong>Output: </strong><span id="example-output-2">false</span>
+
+  <strong>Explanation: </strong>
+
+  There is no way to divide the array using the conditions required.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 10^5
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= K <= nums.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums[i] <= 10^5
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

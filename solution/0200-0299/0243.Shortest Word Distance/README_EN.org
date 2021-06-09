@@ -1,0 +1,208 @@
+* [[https://leetcode.com/problems/shortest-word-distance][243. Shortest
+Word Distance]]
+  :PROPERTIES:
+  :CUSTOM_ID: shortest-word-distance
+  :END:
+[[./solution/0200-0299/0243.Shortest Word Distance/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array of strings wordsDict and two different strings that
+already exist in the array word1 and word2, return the shortest distance
+between these two words in the list.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> wordsDict = [&quot;practice&quot;, &quot;makes&quot;, &quot;perfect&quot;, &quot;coding&quot;, &quot;makes&quot;], word1 = &quot;coding&quot;, word2 = &quot;practice&quot;
+  <strong>Output:</strong> 3
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> wordsDict = [&quot;practice&quot;, &quot;makes&quot;, &quot;perfect&quot;, &quot;coding&quot;, &quot;makes&quot;], word1 = &quot;makes&quot;, word2 = &quot;coding&quot;
+  <strong>Output:</strong> 1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= wordsDict.length <= 3 * 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= wordsDict[i].length <= 10
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+wordsDict[i] consists of lowercase English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+word1 and word2 are in wordsDict.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+word1 != word2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def shortestDistance(self, wordsDict: List[str], word1: str, word2: str) -> int:
+          i1 = i2 = -1
+          shortest_distance = len(wordsDict)
+          for i in range(len(wordsDict)):
+              if wordsDict[i] == word1:
+                  i1 = i
+              elif wordsDict[i] == word2:
+                  i2 = i
+              if i1 != -1 and i2 != -1:
+                  shortest_distance = min(shortest_distance, abs(i1 - i2))
+          return shortest_distance
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int shortestDistance(String[] wordsDict, String word1, String word2) {
+          int i1 = -1, i2 = -1;
+          int shortestDistance = wordsDict.length;
+          for (int i = 0; i < wordsDict.length; ++i) {
+              if (word1.equals(wordsDict[i])) {
+                  i1 = i;
+              } else if (word2.equals(wordsDict[i])) {
+                  i2 = i;
+              }
+              if (i1 != -1 && i2 != -1) {
+                  shortestDistance = Math.min(shortestDistance, Math.abs(i1 - i2));
+              }
+          }
+          return shortestDistance;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

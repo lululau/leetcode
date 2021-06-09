@@ -1,0 +1,149 @@
+* [[https://leetcode-cn.com/problems/bisect-squares-lcci][16.13. Bisect
+Squares]]
+  :PROPERTIES:
+  :CUSTOM_ID: bisect-squares
+  :END:
+[[./lcci/16.13.Bisect Squares/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given two squares on a two-dimensional plane, find a line that would cut
+these two squares in half. Assume that the top and the bottom sides of
+the square run parallel to the x-axis.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Each square consists of three values, the coordinate of bottom left
+corner [X,Y] = [square[0],square[1]], and the side length of the square
+square[2]. The line will intersect to the two squares in four points.
+Return the coordinates of two intersection points
+[X1,Y1] and [X2,Y2] that the forming segment covers the other two
+intersection points in format of {X1,Y1,X2,Y2}. If X1 != X2, there
+should be X1 < X2, otherwise there should be Y1 <= Y2.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If there are more than one line that can cut these two squares in half,
+return the one that has biggest slope (slope of a line parallel to the
+y-axis is considered as infinity).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>
+
+  square1 = {-1, -1, 2}
+
+  square2 = {0, -1, 2}
+
+  <strong>Output:</strong> {-1,0,2,0}
+
+  <strong>Explanation:</strong> y = 0 is the line that can cut these two squares in half.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+square.length == 3
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+square[2] > 0
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

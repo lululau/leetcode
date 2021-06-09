@@ -1,0 +1,159 @@
+* [[https://leetcode.com/problems/rabbits-in-forest][781. Rabbits in
+Forest]]
+  :PROPERTIES:
+  :CUSTOM_ID: rabbits-in-forest
+  :END:
+[[./solution/0700-0799/0781.Rabbits in Forest/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+In a forest, each rabbit has some color. Some subset of rabbits
+(possibly all of them) tell you how many other rabbits have the same
+color as them. Those answers are placed in an array.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the minimum number of rabbits that could be in the forest.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Examples:</strong>
+
+  <strong>Input:</strong> answers = [1, 1, 2]
+
+  <strong>Output:</strong> 5
+
+  <strong>Explanation:</strong>
+
+  The two rabbits that answered &quot;1&quot; could both be the same color, say red.
+
+  The rabbit than answered &quot;2&quot; can&#39;t be red or the answers would be inconsistent.
+
+  Say the rabbit that answered &quot;2&quot; was blue.
+
+  Then there should be 2 other blue rabbits in the forest that didn&#39;t answer into the array.
+
+  The smallest possible number of rabbits in the forest is therefore 5: 3 that answered plus 2 that didn&#39;t.
+
+
+
+  <strong>Input:</strong> answers = [10, 10, 10]
+
+  <strong>Output:</strong> 11
+
+
+
+  <strong>Input:</strong> answers = []
+
+  <strong>Output:</strong> 0
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+answers will have length at most 1000.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Each answers[i] will be an integer in the range [0, 999].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def numRabbits(self, answers: List[int]) -> int:
+          counter = collections.Counter(answers)
+          return sum([math.ceil(v / (k + 1)) * (k + 1) for k, v in counter.items()])
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int numRabbits(int[] answers) {
+          Map<Integer, Integer> counter = new HashMap<>();
+          for (int e : answers) {
+              counter.put(e, counter.getOrDefault(e, 0) + 1);
+          }
+          int res = 0;
+          for (Map.Entry<Integer, Integer> entry : counter.entrySet()) {
+              int answer = entry.getKey(), count = entry.getValue();
+              res += (int) Math.ceil(count / ((answer + 1) * 1.0)) * (answer + 1);
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

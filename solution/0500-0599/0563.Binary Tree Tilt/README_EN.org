@@ -1,0 +1,192 @@
+* [[https://leetcode.com/problems/binary-tree-tilt][563. Binary Tree
+Tilt]]
+  :PROPERTIES:
+  :CUSTOM_ID: binary-tree-tilt
+  :END:
+[[./solution/0500-0599/0563.Binary Tree Tilt/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the root of a binary tree, return the sum of every tree node's
+tilt.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The tilt of a tree node is the absolute difference between the sum of
+all left subtree node values and all right subtree node values. If a
+node does not have a left child, then the sum of the left subtree node
+values is treated as 0. The rule is similar if there the node does not
+have a right child.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [1,2,3]
+  <strong>Output:</strong> 1
+  <strong>Explanation:</strong> 
+  Tilt of node 2 : |0-0| = 0 (no children)
+  Tilt of node 3 : |0-0| = 0 (no children)
+  Tilt of node 1 : |2-3| = 1 (left subtree is just left child, so sum is 2; right subtree is just right child, so sum is 3)
+  Sum of every tilt : 0 + 0 + 1 = 1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [4,2,9,3,5,null,7]
+  <strong>Output:</strong> 15
+  <strong>Explanation:</strong> 
+  Tilt of node 3 : |0-0| = 0 (no children)
+  Tilt of node 5 : |0-0| = 0 (no children)
+  Tilt of node 7 : |0-0| = 0 (no children)
+  Tilt of node 2 : |3-5| = 2 (left subtree is just left child, so sum is 3; right subtree is just right child, so sum is 5)
+  Tilt of node 9 : |0-7| = 7 (no left child, so sum is 0; right subtree is just right child, so sum is 7)
+  Tilt of node 4 : |(3+5+2)-(9+7)| = |10-16| = 6 (left subtree values are 3, 5, and 2, which sums to 10; right subtree values are 9 and 7, which sums to 16)
+  Sum of every tilt : 0 + 0 + 0 + 2 + 7 + 6 = 15
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [21,7,14,1,1,2,2,3,3]
+  <strong>Output:</strong> 9
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of nodes in the tree is in the range [0, 104].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-1000 <= Node.val <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

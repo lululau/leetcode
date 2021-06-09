@@ -1,0 +1,147 @@
+* [[https://leetcode.com/problems/exchange-seats][626. Exchange Seats]]
+  :PROPERTIES:
+  :CUSTOM_ID: exchange-seats
+  :END:
+[[./solution/0600-0699/0626.Exchange Seats/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Mary is a teacher in a middle school and she has a table seat storing
+students' names and their corresponding seat ids.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The column id is continuous increment.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Mary wants to change seats for the adjacent students.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Can you write a SQL query to output the result for Mary?
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +---------+---------+
+  |    id   | student |
+  +---------+---------+
+  |    1    | Abbot   |
+  |    2    | Doris   |
+  |    3    | Emerson |
+  |    4    | Green   |
+  |    5    | Jeames  |
+  +---------+---------+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For the sample input, the output is:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +---------+---------+
+  |    id   | student |
+  +---------+---------+
+  |    1    | Doris   |
+  |    2    | Abbot   |
+  |    3    | Green   |
+  |    4    | Emerson |
+  |    5    | Jeames  |
+  +---------+---------+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If the number of students is odd, there is no need to change the last
+one's seat.
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_example
+  SELECT
+      s1.id, COALESCE(s2.student, s1.student) AS student
+  FROM
+      seat s1
+          LEFT JOIN
+      seat s2 ON (s1.id+1)^1-1 = s2.id
+  ORDER BY s1.id;
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

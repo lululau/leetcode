@@ -1,0 +1,137 @@
+* [[https://leetcode.com/problems/construct-string-from-binary-tree][606.
+Construct String from Binary Tree]]
+  :PROPERTIES:
+  :CUSTOM_ID: construct-string-from-binary-tree
+  :END:
+[[./solution/0600-0699/0606.Construct String from Binary Tree/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You need to construct a string consists of parenthesis and integers from
+a binary tree with the preorder traversing way.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The null node needs to be represented by empty parenthesis pair "()".
+And you need to omit all the empty parenthesis pairs that don't affect
+the one-to-one mapping relationship between the string and the original
+binary tree.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> Binary tree: [1,2,3,4]
+
+         1
+
+       /   \
+
+      2     3
+
+     /    
+
+    4     
+
+
+
+  <b>Output:</b> "1(2(4))(3)"
+
+  <br/><b>Explanation:</b> Originallay it needs to be "1(2(4)())(3()())", <br/>but you need to omit all the unnecessary empty parenthesis pairs. <br/>And it will be "1(2(4))(3)".
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> Binary tree: [1,2,3,null,4]
+
+         1
+
+       /   \
+
+      2     3
+
+       \  
+
+        4 
+
+
+
+  <b>Output:</b> "1(2()(4))(3)"
+
+  <br/><b>Explanation:</b> Almost the same as the first example, <br/>except we can't omit the first parenthesis pair to break the one-to-one mapping relationship between the input and the output.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

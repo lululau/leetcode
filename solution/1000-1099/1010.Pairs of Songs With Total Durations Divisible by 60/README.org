@@ -1,0 +1,185 @@
+* [[https://leetcode-cn.com/problems/pairs-of-songs-with-total-durations-divisible-by-60][1010.
+总持续时间可被 60 整除的歌曲]]
+  :PROPERTIES:
+  :CUSTOM_ID: 总持续时间可被-60-整除的歌曲
+  :END:
+[[./solution/1000-1099/1010.Pairs of Songs With Total Durations Divisible by 60/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+在歌曲列表中，第 i 首歌曲的持续时间为 time[i] 秒。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回其总持续时间（以秒为单位）可被 60
+整除的歌曲对的数量。形式上，我们希望索引的数字 i 和 j 满足  i < j
+且有 (time[i] + time[j]) % 60 == 0。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>[30,20,150,100,40]
+  <strong>输出：</strong>3
+  <strong>解释：</strong>这三对的总持续时间可被 60 整数：
+  (time[0] = 30, time[2] = 150): 总持续时间 180
+  (time[1] = 20, time[3] = 100): 总持续时间 120
+  (time[1] = 20, time[4] = 40): 总持续时间 60
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>[60,60,60]
+  <strong>输出：</strong>3
+  <strong>解释：</strong>所有三对的总持续时间都是 120，可以被 60 整数。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= time.length <= 60000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= time[i] <= 500
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

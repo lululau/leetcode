@@ -1,0 +1,301 @@
+* [[https://leetcode.com/problems/design-hit-counter][362. Design Hit
+Counter]]
+  :PROPERTIES:
+  :CUSTOM_ID: design-hit-counter
+  :END:
+[[./solution/0300-0399/0362.Design Hit Counter/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Design a hit counter which counts the number of hits received in the
+past 5 minutes (i.e., the past 300 seconds).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Your system should accept a timestamp parameter (in seconds
+granularity), and you may assume that calls are being made to the system
+in chronological order (i.e., timestamp is monotonically increasing).
+Several hits may arrive roughly at the same time.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement the HitCounter class:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+HitCounter() Initializes the object of the hit counter system.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void hit(int timestamp) Records a hit that happened at timestamp (in
+seconds). Several hits may happen at the same timestamp.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int getHits(int timestamp) Returns the number of hits in the past 5
+minutes from timestamp (i.e., the past 300 seconds).
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input</strong>
+  [&quot;HitCounter&quot;, &quot;hit&quot;, &quot;hit&quot;, &quot;hit&quot;, &quot;getHits&quot;, &quot;hit&quot;, &quot;getHits&quot;, &quot;getHits&quot;]
+  [[], [1], [2], [3], [4], [300], [300], [301]]
+  <strong>Output</strong>
+  [null, null, null, null, 3, null, 4, 3]
+
+  <strong>Explanation</strong>
+  HitCounter hitCounter = new HitCounter();
+  hitCounter.hit(1);       // hit at timestamp 1.
+  hitCounter.hit(2);       // hit at timestamp 2.
+  hitCounter.hit(3);       // hit at timestamp 3.
+  hitCounter.getHits(4);   // get hits at timestamp 4, return 3.
+  hitCounter.hit(300);     // hit at timestamp 300.
+  hitCounter.getHits(300); // get hits at timestamp 300, return 4.
+  hitCounter.getHits(301); // get hits at timestamp 301, return 3.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= timestamp <= 2 * 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All the calls are being made to the system in chronological order (i.e.,
+timestamp is monotonically increasing).
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+At most 300 calls will be made to hit and getHits.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow up: What if the number of hits per second could be huge? Does
+your design scale?
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class HitCounter:
+
+      def __init__(self):
+          """
+          Initialize your data structure here.
+          """
+          self.counter = collections.Counter()
+
+      def hit(self, timestamp: int) -> None:
+          """
+          Record a hit.
+          @param timestamp - The current timestamp (in seconds granularity).
+          """
+          self.counter[timestamp] += 1
+
+
+      def getHits(self, timestamp: int) -> int:
+          """
+          Return the number of hits in the past 5 minutes.
+          @param timestamp - The current timestamp (in seconds granularity).
+          """
+          return sum([v for t, v in self.counter.items() if t + 300 > timestamp])
+
+
+  # Your HitCounter object will be instantiated and called as such:
+  # obj = HitCounter()
+  # obj.hit(timestamp)
+  # param_2 = obj.getHits(timestamp)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class HitCounter {
+
+      private Map<Integer, Integer> counter;
+
+      /** Initialize your data structure here. */
+      public HitCounter() {
+          counter = new HashMap<>();
+      }
+
+      /** Record a hit.
+          @param timestamp - The current timestamp (in seconds granularity). */
+      public void hit(int timestamp) {
+          counter.put(timestamp, counter.getOrDefault(timestamp, 0) + 1);
+      }
+
+      /** Return the number of hits in the past 5 minutes.
+          @param timestamp - The current timestamp (in seconds granularity). */
+      public int getHits(int timestamp) {
+          int hits = 0;
+          for (Map.Entry<Integer, Integer> entry : counter.entrySet()) {
+              if (entry.getKey() + 300 > timestamp) {
+                  hits += entry.getValue();
+              }
+          }
+          return hits;
+      }
+  }
+
+  /**
+   * Your HitCounter object will be instantiated and called as such:
+   * HitCounter obj = new HitCounter();
+   * obj.hit(timestamp);
+   * int param_2 = obj.getHits(timestamp);
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

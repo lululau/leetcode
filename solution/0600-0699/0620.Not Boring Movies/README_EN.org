@@ -1,0 +1,124 @@
+* [[https://leetcode.com/problems/not-boring-movies][620. Not Boring
+Movies]]
+  :PROPERTIES:
+  :CUSTOM_ID: not-boring-movies
+  :END:
+[[./solution/0600-0699/0620.Not Boring Movies/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+X city opened a new cinema, many people would like to go to this cinema.
+The cinema also gives out a poster indicating the movies' ratings and
+descriptions.
+
+#+begin_html
+  <p>
+#+end_html
+
+Please write a SQL query to output movies with an odd numbered ID and a
+description that is not 'boring'. Order the result by rating.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example, table cinema:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +---------+-----------+--------------+-----------+
+
+  |   id    | movie     |  description |  rating   |
+
+  +---------+-----------+--------------+-----------+
+
+  |   1     | War       |   great 3D   |   8.9     |
+
+  |   2     | Science   |   fiction    |   8.5     |
+
+  |   3     | irish     |   boring     |   6.2     |
+
+  |   4     | Ice song  |   Fantacy    |   8.6     |
+
+  |   5     | House card|   Interesting|   9.1     |
+
+  +---------+-----------+--------------+-----------+
+
+  </pre>
+#+end_html
+
+For the example above, the output should be:
+
+#+begin_html
+  <pre>
+
+  +---------+-----------+--------------+-----------+
+
+  |   id    | movie     |  description |  rating   |
+
+  +---------+-----------+--------------+-----------+
+
+  |   5     | House card|   Interesting|   9.1     |
+
+  |   1     | War       |   great 3D   |   8.9     |
+
+  +---------+-----------+--------------+-----------+
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_example
+  SELECT *
+  FROM cinema
+  WHERE description NOT LIKE '%boring%'
+          AND mod(id,2)=1
+  ORDER BY  rating desc;
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

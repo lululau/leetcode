@@ -1,0 +1,276 @@
+* [[https://leetcode-cn.com/problems/binary-search-tree-iterator-ii][1586.
+二叉搜索树迭代器 II]]
+  :PROPERTIES:
+  :CUSTOM_ID: 二叉搜索树迭代器-ii
+  :END:
+[[./solution/1500-1599/1586.Binary Search Tree Iterator II/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+实现二叉搜索树（BST）的中序遍历迭代器 BSTIterator 类：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+BSTIterator(TreeNode
+root) 初始化 BSTIterator 类的实例。二叉搜索树的根节点 root 作为构造函数的参数传入。内部指针使用一个不存在于树中且小于树中任意值的数值来初始化。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+boolean hasNext() 如果当前指针在中序遍历序列中，存在右侧数值，返回 true
+，否则返回 false 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int next() 将指针在中序遍历序列中向右移动，然后返回移动后指针所指数值。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+boolean
+hasPrev() 如果当前指针在中序遍历序列中，存在左侧数值，返回 true ，否则返回 false 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int prev() 将指针在中序遍历序列中向左移动，然后返回移动后指针所指数值。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意，虽然我们使用树中不存在的最小值来初始化内部指针，第一次调用 next() 需要返回二叉搜索树中最小的元素。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你可以假设 next() 和 prev() 的调用总是有效的。即，当 next()/prev() 被调用的时候，在中序遍历序列中一定存在下一个/上一个元素。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+进阶：你可以不提前遍历树中的值来解决问题吗？
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入</strong>
+  [&quot;BSTIterator&quot;, &quot;next&quot;, &quot;next&quot;, &quot;prev&quot;, &quot;next&quot;, &quot;hasNext&quot;, &quot;next&quot;, &quot;next&quot;, &quot;next&quot;, &quot;hasNext&quot;, &quot;hasPrev&quot;, &quot;prev&quot;, &quot;prev&quot;]
+  [[[7, 3, 15, null, null, 9, 20]], [null], [null], [null], [null], [null], [null], [null], [null], [null], [null], [null], [null]]
+  <strong>输出</strong>
+  [null, 3, 7, 3, 7, true, 9, 15, 20, false, true, 15, 9]
+
+  <strong>解释</strong>
+  // 划线的元素表示指针当前的位置。
+  BSTIterator bSTIterator = new BSTIterator([7, 3, 15, null, null, 9, 20]); // 当前状态为 &lt;u&gt; &lt;/u&gt; [3, 7, 9, 15, 20]
+  bSTIterator.next(); // 状态变为 [&lt;u&gt;3&lt;/u&gt;, 7, 9, 15, 20], 返回 3
+  bSTIterator.next(); // 状态变为 [3, &lt;u&gt;7&lt;/u&gt;, 9, 15, 20], 返回 7
+  bSTIterator.prev(); // 状态变为 [&lt;u&gt;3&lt;/u&gt;, 7, 9, 15, 20], 返回 3
+  bSTIterator.next(); // 状态变为 [3, &lt;u&gt;7&lt;/u&gt;, 9, 15, 20], 返回 7
+  bSTIterator.hasNext(); // 返回 true
+  bSTIterator.next(); // 状态变为 [3, 7, &lt;u&gt;9&lt;/u&gt;, 15, 20], 返回 9
+  bSTIterator.next(); // 状态变为 [3, 7, 9, &lt;u&gt;15&lt;/u&gt;, 20], 返回 15
+  bSTIterator.next(); // 状态变为 [3, 7, 9, 15, &lt;u&gt;20&lt;/u&gt;], 返回 20
+  bSTIterator.hasNext(); // 返回 false
+  bSTIterator.hasPrev(); // 返回 true
+  bSTIterator.prev(); // 状态变为 [3, 7, 9, &lt;u&gt;15&lt;/u&gt;, 20], 返回 15
+  bSTIterator.prev(); // 状态变为 [3, 7, &lt;u&gt;9&lt;/u&gt;, 15, 20], 返回 9
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+树中节点个数的范围是 [1, 105] 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= Node.val <= 106
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+最多调用 105 次 hasNext、 next、 hasPrev 和 prev 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

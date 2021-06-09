@@ -1,0 +1,218 @@
+* [[https://leetcode-cn.com/problems/intersection-of-two-arrays][349.
+两个数组的交集]]
+  :PROPERTIES:
+  :CUSTOM_ID: 两个数组的交集
+  :END:
+[[./solution/0300-0399/0349.Intersection of Two Arrays/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定两个数组，编写一个函数来计算它们的交集。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>nums1 = [1,2,2,1], nums2 = [2,2]
+  <strong>输出：</strong>[2]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+  <strong>输出：</strong>[9,4]</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+说明：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+输出结果中的每个元素一定是唯一的。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+我们可以不考虑输出结果的顺序。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+"哈希表"实现。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+          s = set(nums1)
+          res = set()
+          for num in nums2:
+              if num in s:
+                  res.add(num)
+          return list(res)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int[] intersection(int[] nums1, int[] nums2) {
+          Set<Integer> s = new HashSet<>();
+          for (int num : nums1) {
+              s.add(num);
+          }
+          Set<Integer> res = new HashSet<>();
+          for (int num : nums2) {
+              if (s.contains(num)) {
+                  res.add(num);
+              }
+          }
+          int[] output = new int[res.size()];
+          int i = 0;
+          for (int num : res) {
+              output[i++] = num;
+          }
+          return output;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number[]} nums1
+   * @param {number[]} nums2
+   * @return {number[]}
+   */
+  var intersection = function(nums1, nums2) {
+      const s = new Set();
+      for (const num of nums1) {
+          s.add(num);
+      }
+      let res = new Set();
+      for (const num of nums2) {
+          if (s.has(num)) {
+              res.add(num);
+          }
+      }
+      return [...res];
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

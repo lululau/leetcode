@@ -1,0 +1,128 @@
+* [[https://leetcode-cn.com/problems/combine-two-tables][175.
+组合两个表]]
+  :PROPERTIES:
+  :CUSTOM_ID: 组合两个表
+  :END:
+[[./solution/0100-0199/0175.Combine Two Tables/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+表1: Person
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+-------------+---------+
+  | 列名         | 类型     |
+  +-------------+---------+
+  | PersonId    | int     |
+  | FirstName   | varchar |
+  | LastName    | varchar |
+  +-------------+---------+
+  PersonId 是上表主键
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+表2: Address
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+-------------+---------+
+  | 列名         | 类型    |
+  +-------------+---------+
+  | AddressId   | int     |
+  | PersonId    | int     |
+  | City        | varchar |
+  | State       | varchar |
+  +-------------+---------+
+  AddressId 是上表主键
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+编写一个 SQL 查询，满足条件：无论 person
+是否有地址信息，都需要基于上述两表提供 person 的以下信息：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>FirstName, LastName, City, State
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+左连接。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+  # Write your MySQL query statement below
+  SELECT p.FirstName, p.LastName, a.City, a.State
+  FROM Person p
+  LEFT JOIN Address a
+  ON p.PersonId = a.PersonId;
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

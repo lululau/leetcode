@@ -1,0 +1,217 @@
+* [[https://leetcode.com/problems/data-stream-as-disjoint-intervals][352.
+Data Stream as Disjoint Intervals]]
+  :PROPERTIES:
+  :CUSTOM_ID: data-stream-as-disjoint-intervals
+  :END:
+[[./solution/0300-0399/0352.Data Stream as Disjoint Intervals/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a data stream input of non-negative integers a1, a2, ..., an,
+summarize the numbers seen so far as a list of disjoint intervals.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement the SummaryRanges class:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+SummaryRanges() Initializes the object with an empty stream.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void addNum(int val) Adds the integer val to the stream.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int[][] getIntervals() Returns a summary of the integers in the stream
+currently as a list of disjoint intervals [starti, endi].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input</strong>
+  [&quot;SummaryRanges&quot;, &quot;addNum&quot;, &quot;getIntervals&quot;, &quot;addNum&quot;, &quot;getIntervals&quot;, &quot;addNum&quot;, &quot;getIntervals&quot;, &quot;addNum&quot;, &quot;getIntervals&quot;, &quot;addNum&quot;, &quot;getIntervals&quot;]
+  [[], [1], [], [3], [], [7], [], [2], [], [6], []]
+  <strong>Output</strong>
+  [null, null, [[1, 1]], null, [[1, 1], [3, 3]], null, [[1, 1], [3, 3], [7, 7]], null, [[1, 3], [7, 7]], null, [[1, 3], [6, 7]]]
+
+  <strong>Explanation</strong>
+  SummaryRanges summaryRanges = new SummaryRanges();
+  summaryRanges.addNum(1);      // arr = [1]
+  summaryRanges.getIntervals(); // return [[1, 1]]
+  summaryRanges.addNum(3);      // arr = [1, 3]
+  summaryRanges.getIntervals(); // return [[1, 1], [3, 3]]
+  summaryRanges.addNum(7);      // arr = [1, 3, 7]
+  summaryRanges.getIntervals(); // return [[1, 1], [3, 3], [7, 7]]
+  summaryRanges.addNum(2);      // arr = [1, 2, 3, 7]
+  summaryRanges.getIntervals(); // return [[1, 3], [7, 7]]
+  summaryRanges.addNum(6);      // arr = [1, 2, 3, 6, 7]
+  summaryRanges.getIntervals(); // return [[1, 3], [6, 7]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= val <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+At most 3 * 104 calls will be made to addNum and getIntervals.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow up: What if there are lots of merges and the number of disjoint
+intervals is small compared to the size of the data stream?
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

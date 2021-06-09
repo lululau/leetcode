@@ -1,0 +1,306 @@
+* [[https://leetcode.com/problems/circular-array-loop][457. Circular
+Array Loop]]
+  :PROPERTIES:
+  :CUSTOM_ID: circular-array-loop
+  :END:
+[[./solution/0400-0499/0457.Circular Array Loop/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are playing a game involving a circular array of non-zero integers
+nums. Each nums[i] denotes the number of indices forward/backward you
+must move if you are located at index i:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If nums[i] is positive, move nums[i] steps forward, and
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If nums[i] is negative, move nums[i] steps backward.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Since the array is circular, you may assume that moving forward from the
+last element puts you on the first element, and moving backwards from
+the first element puts you on the last element.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A cycle in the array consists of a sequence of indices seq of length k
+where:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Following the movement rules above results in the repeating index
+sequence seq[0] -> seq[1] -> ... -> seq[k - 1] -> seq[0] -> ...
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Every nums[seq[j]] is either all positive or all negative.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+k > 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return true if there is a cycle in nums, or false otherwise.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [2,-1,1,2,2]
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong>
+  There is a cycle from index 0 -&gt; 2 -&gt; 3 -&gt; 0 -&gt; ...
+  The cycle&#39;s length is 3.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [-1,2]
+  <strong>Output:</strong> false
+  <strong>Explanation:</strong>
+  The sequence from index 1 -&gt; 1 -&gt; 1 -&gt; ... is not a cycle because the sequence&#39;s length is 1.
+  By definition the sequence&#39;s length must be strictly greater than 1 to be a cycle.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [-2,1,-1,-2,-2]
+  <strong>Output:</strong> false
+  <strong>Explanation:</strong>
+  The sequence from index 1 -&gt; 2 -&gt; 1 -&gt; ... is not a cycle because nums[1] is positive, but nums[2] is negative.
+  Every nums[seq[j]] must be either all positive or all negative.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 5000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-1000 <= nums[i] <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+nums[i] != 0
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow up: Could you solve it in O(n) time complexity and O(1) extra
+space complexity?
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

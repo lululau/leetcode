@@ -1,0 +1,233 @@
+* [[https://leetcode.com/problems/maximum-depth-of-n-ary-tree][559.
+Maximum Depth of N-ary Tree]]
+  :PROPERTIES:
+  :CUSTOM_ID: maximum-depth-of-n-ary-tree
+  :END:
+[[./solution/0500-0599/0559.Maximum Depth of N-ary Tree/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a n-ary tree, find its maximum depth.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The maximum depth is the number of nodes along the longest path from the
+root node down to the farthest leaf node.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Nary-Tree input serialization is represented in their level order
+traversal, each group of children is separated by the null value (See
+examples).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [1,null,3,2,4,null,5,6]
+  <strong>Output:</strong> 3
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [1,null,2,3,4,5,null,null,6,7,null,8,null,9,10,null,null,11,null,12,null,13,null,null,14]
+  <strong>Output:</strong> 5
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The depth of the n-ary tree is less than or equal to 1000.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The total number of nodes is between [0, 104].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  """
+  # Definition for a Node.
+  class Node:
+      def __init__(self, val=None, children=None):
+          self.val = val
+          self.children = children
+  """
+
+  class Solution:
+      def maxDepth(self, root: 'Node') -> int:
+          if not root:
+              return 0
+          max_depth = 1
+          for child in root.children:
+              max_depth = max(max_depth, 1 + self.maxDepth(child))
+          return max_depth
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  /*
+  // Definition for a Node.
+  class Node {
+      public int val;
+      public List<Node> children;
+
+      public Node() {}
+
+      public Node(int _val) {
+          val = _val;
+      }
+
+      public Node(int _val, List<Node> _children) {
+          val = _val;
+          children = _children;
+      }
+  };
+  */
+
+  class Solution {
+      public int maxDepth(Node root) {
+          if (root == null) {
+              return 0;
+          }
+          int maxDepth = 1;
+          for (Node child : root.children) {
+              maxDepth = Math.max(maxDepth, 1 + maxDepth(child));
+          }
+          return maxDepth;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

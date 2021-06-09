@@ -1,0 +1,151 @@
+* [[https://leetcode-cn.com/problems/project-employees-iii][1077.
+项目员工 III]]
+  :PROPERTIES:
+  :CUSTOM_ID: 项目员工-iii
+  :END:
+[[./solution/1000-1099/1077.Project Employees III/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+项目表 Project：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +-------------+---------+
+  | Column Name | Type    |
+  +-------------+---------+
+  | project_id  | int     |
+  | employee_id | int     |
+  +-------------+---------+
+  (project_id, employee_id) 是这个表的主键
+  employee_id 是员工表 Employee 的外键
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+员工表 Employee：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +------------------+---------+
+  | Column Name      | Type    |
+  +------------------+---------+
+  | employee_id      | int     |
+  | name             | varchar |
+  | experience_years | int     |
+  +------------------+---------+
+  employee_id 是这个表的主键
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+写 一个 SQL
+查询语句，报告在每一个项目中经验最丰富的雇员是谁。如果出现经验年数相同的情况，请报告所有具有最大经验年数的员工。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+查询结果格式在以下示例中：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  Project 表：
+  +-------------+-------------+
+  | project_id  | employee_id |
+  +-------------+-------------+
+  | 1           | 1           |
+  | 1           | 2           |
+  | 1           | 3           |
+  | 2           | 1           |
+  | 2           | 4           |
+  +-------------+-------------+
+
+  Employee 表：
+  +-------------+--------+------------------+
+  | employee_id | name   | experience_years |
+  +-------------+--------+------------------+
+  | 1           | Khaled | 3                |
+  | 2           | Ali    | 2                |
+  | 3           | John   | 3                |
+  | 4           | Doe    | 2                |
+  +-------------+--------+------------------+
+
+  Result 表：
+  +-------------+---------------+
+  | project_id  | employee_id   |
+  +-------------+---------------+
+  | 1           | 1             |
+  | 1           | 3             |
+  | 2           | 1             |
+  +-------------+---------------+
+  employee_id 为 1 和 3 的员工在 project_id 为 1 的项目中拥有最丰富的经验。在 project_id 为 2 的项目中，employee_id 为 1 的员工拥有最丰富的经验。</pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

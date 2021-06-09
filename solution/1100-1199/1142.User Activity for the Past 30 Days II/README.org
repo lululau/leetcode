@@ -1,0 +1,137 @@
+* [[https://leetcode-cn.com/problems/user-activity-for-the-past-30-days-ii][1142.
+过去30天的用户活动 II]]
+  :PROPERTIES:
+  :CUSTOM_ID: 过去30天的用户活动-ii
+  :END:
+[[./solution/1100-1199/1142.User Activity for the Past 30 Days II/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Activity
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +---------------+---------+
+  | Column Name   | Type    |
+  +---------------+---------+
+  | user_id       | int     |
+  | session_id    | int     |
+  | activity_date | date    |
+  | activity_type | enum    |
+  +---------------+---------+
+  该表没有主键，它可能有重复的行。
+  activity_type 列是 ENUM（“ open_session”，“ end_session”，“ scroll_down”，“ send_message”）中的某一类型。
+  该表显示了社交媒体网站的用户活动。
+  请注意，每个会话完全属于一个用户。</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+编写SQL查询以查找截至2019年7月27日（含）的30天内每个用户的平均会话数，四舍五入到小数点后两位。我们只统计那些会话期间用户至少进行一项活动的有效会话。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+查询结果格式如下例所示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  Activity table:
+  +---------+------------+---------------+---------------+
+  | user_id | session_id | activity_date | activity_type |
+  +---------+------------+---------------+---------------+
+  | 1       | 1          | 2019-07-20    | open_session  |
+  | 1       | 1          | 2019-07-20    | scroll_down   |
+  | 1       | 1          | 2019-07-20    | end_session   |
+  | 2       | 4          | 2019-07-20    | open_session  |
+  | 2       | 4          | 2019-07-21    | send_message  |
+  | 2       | 4          | 2019-07-21    | end_session   |
+  | 3       | 2          | 2019-07-21    | open_session  |
+  | 3       | 2          | 2019-07-21    | send_message  |
+  | 3       | 2          | 2019-07-21    | end_session   |
+  | 3       | 5          | 2019-07-21    | open_session  |
+  | 3       | 5          | 2019-07-21    | scroll_down   |
+  | 3       | 5          | 2019-07-21    | end_session   |
+  | 4       | 3          | 2019-06-25    | open_session  |
+  | 4       | 3          | 2019-06-25    | end_session   |
+  +---------+------------+---------------+---------------+
+
+  Result table:
+  +---------------------------+ 
+  | average_sessions_per_user |
+  +---------------------------+ 
+  | 1.33                      |
+  +---------------------------+ 
+  User 1 和 2 在过去30天内各自进行了1次会话，而用户3进行了2次会话，因此平均值为（1 +1 + 2）/ 3 = 1.33。</pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

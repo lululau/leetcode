@@ -1,0 +1,316 @@
+* [[https://leetcode.com/problems/delete-node-in-a-linked-list][237.
+Delete Node in a Linked List]]
+  :PROPERTIES:
+  :CUSTOM_ID: delete-node-in-a-linked-list
+  :END:
+[[./solution/0200-0299/0237.Delete Node in a Linked List/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Write a function to delete a node in a singly-linked list. You will not
+be given access to the head of the list, instead you will be given
+access to the node to be deleted directly.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+It is guaranteed that the node to be deleted is not a tail node in the
+list.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> head = [4,5,1,9], node = 5
+  <strong>Output:</strong> [4,1,9]
+  <strong>Explanation: </strong>You are given the second node with value 5, the linked list should become 4 -&gt; 1 -&gt; 9 after calling your function.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> head = [4,5,1,9], node = 1
+  <strong>Output:</strong> [4,5,9]
+  <strong>Explanation: </strong>You are given the third node with value 1, the linked list should become 4 -&gt; 5 -&gt; 9 after calling your function.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> head = [1,2,3,4], node = 3
+  <strong>Output:</strong> [1,2,4]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> head = [0,1], node = 0
+  <strong>Output:</strong> [1]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> head = [-3,5,-99], node = -3
+  <strong>Output:</strong> [5,-99]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of the nodes in the given list is in the range [2, 1000].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-1000 <= Node.val <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The value of each node in the list is unique.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The node to be deleted is in the list and is not a tail node
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  # Definition for singly-linked list.
+  # class ListNode:
+  #     def __init__(self, x):
+  #         self.val = x
+  #         self.next = None
+
+  class Solution:
+      def deleteNode(self, node):
+          """
+          :type node: ListNode
+          :rtype: void Do not return anything, modify node in-place instead.
+          """
+          node.val = node.next.val
+          node.next = node.next.next
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  /**
+   * Definition for singly-linked list.
+   * public class ListNode {
+   *     int val;
+   *     ListNode next;
+   *     ListNode(int x) { val = x; }
+   * }
+   */
+  class Solution {
+      public void deleteNode(ListNode node) {
+          node.val = node.next.val;
+          node.next = node.next.next;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * Definition for singly-linked list.
+   * function ListNode(val) {
+   *     this.val = val;
+   *     this.next = null;
+   * }
+   */
+  /**
+   * @param {ListNode} node
+   * @return {void} Do not return anything, modify node in-place instead.
+   */
+  var deleteNode = function (node) {
+    node.val = node.next.val;
+    node.next = node.next.next;
+  };
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  /**
+   * Definition for singly-linked list.
+   * type ListNode struct {
+   *     Val int
+   *     Next *ListNode
+   * }
+   */
+  func deleteNode(node *ListNode) {
+      node.Val = node.Next.Val
+      node.Next = node.Next.Next
+  }
+#+end_example
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  /**
+   * Definition for singly-linked list.
+   * struct ListNode {
+   *     int val;
+   *     ListNode *next;
+   *     ListNode(int x) : val(x), next(NULL) {}
+   * };
+   */
+  class Solution {
+  public:
+      void deleteNode(ListNode* node) {
+          node->val = node->next->val;
+          node->next = node->next->next;
+      }
+  };
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

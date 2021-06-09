@@ -1,0 +1,233 @@
+* [[https://leetcode-cn.com/problems/largest-number][179. 最大数]]
+  :PROPERTIES:
+  :CUSTOM_ID: 最大数
+  :END:
+[[./solution/0100-0199/0179.Largest Number/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一组非负整数
+nums，重新排列每个数的顺序（每个数不可拆分）使之组成一个最大的整数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意：输出结果可能非常大，所以你需要返回一个字符串而不是整数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入<code>：</code></strong><code>nums = [10,2]</code>
+  <strong>输出：</strong><code>"210"</code></pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入<code>：</code></strong><code>nums = [3,30,34,5,9]</code>
+  <strong>输出：</strong><code>"9534330"</code>
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入<code>：</code></strong>nums = [1]
+  <strong>输出：</strong>"1"
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 4：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入<code>：</code></strong>nums = [10]
+  <strong>输出：</strong>"10"
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= nums[i] <= 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+先转成字符串列表，再对字符串列表进行字典序降序排列。最后将列表所有字符串拼接即可。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  from functools import cmp_to_key
+
+  class Solution:
+      def largestNumber(self, nums: List[int]) -> str:
+          num_list = list(map(str, nums))
+          num_list.sort(key=cmp_to_key(lambda x, y: int(y + x) - int(x + y)))
+          return '0' if num_list[0] == '0' else ''.join(num_list)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public String largestNumber(int[] nums) {
+          List<String> numList = new ArrayList<>();
+          for (int num : nums) {
+              numList.add(String.valueOf(num));
+          }
+          numList.sort((a, b) -> (b + a).compareTo(a + b));
+          if ("0".equals(numList.get(0))) return "0";
+          StringBuilder sb = new StringBuilder();
+          for (String s : numList) {
+              sb.append(s);
+          }
+          return sb.toString();
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

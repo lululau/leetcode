@@ -1,0 +1,277 @@
+* [[https://leetcode.com/problems/jump-game-vii][1871. Jump Game VII]]
+  :PROPERTIES:
+  :CUSTOM_ID: jump-game-vii
+  :END:
+[[./solution/1800-1899/1871.Jump Game VII/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given a 0-indexed binary string s and two integers minJump and
+maxJump. In the beginning, you are standing at index 0, which is equal
+to '0'. You can move from index i to index j if the following conditions
+are fulfilled:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+i + minJump <= j <= min(i + maxJump, s.length - 1), and
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s[j] == '0'.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return true if you can reach index s.length - 1 in s, or false
+otherwise.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;<u>0</u>11<u>0</u>1<u>0</u>&quot;, minJump = 2, maxJump = 3
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong>
+  In the first step, move from index 0 to index 3. 
+  In the second step, move from index 3 to index 5.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;01101110&quot;, minJump = 2, maxJump = 3
+  <strong>Output:</strong> false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+2 <= s.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s[i] is either '0' or '1'.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s[0] == '0'
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= minJump <= maxJump < s.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def canReach(self, s: str, minJump: int, maxJump: int) -> bool:
+          n = len(s)
+          dp = [False] * n
+          dp[0] = True
+          pre_sum = [0] * (n + 1)
+          pre_sum[1] = 1
+          for i in range(1, n):
+              if s[i] == '0':
+                  l = max(0, i - maxJump)
+                  r = i - minJump
+                  if r >= l and pre_sum[r + 1] - pre_sum[l] > 0:
+                      dp[i] = True
+              pre_sum[i + 1] = pre_sum[i] + dp[i]
+          return dp[n - 1]
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public boolean canReach(String s, int minJump, int maxJump) {
+          int n = s.length();
+          boolean[] dp = new boolean[n];
+          dp[0] = true;
+          int[] preSum = new int[n + 1];
+          preSum[1] = 1;
+          for (int i = 1; i < n; ++i) {
+              if (s.charAt(i) == '0') {
+                  int l = Math.max(0, i - maxJump);
+                  int r = i - minJump;
+                  if (r >= l && preSum[r + 1] - preSum[l] > 0) {
+                      dp[i] = true;
+                  }
+              }
+              preSum[i + 1] = preSum[i] + (dp[i] ? 1 : 0);
+          }
+          return dp[n - 1];
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {string} s
+   * @param {number} minJump
+   * @param {number} maxJump
+   * @return {boolean}
+   */
+  var canReach = function(s, minJump, maxJump) {
+      let n = s.length;
+      let dp = new Array(n).fill(0);
+      let sum = new Array(n + 1).fill(0);
+      dp[0] = 1;
+      sum[1] = 1;
+      for (let i = 1; i < n; i++) {
+          if (s.charAt(i) == '0') {
+              let left = Math.max(0, i - maxJump);
+              let right = i - minJump;
+              if (left <= right && sum[right + 1] - sum[left] > 0) {
+                  dp[i] = 1;
+              }
+          }
+          sum[i + 1] = sum[i] + dp[i];
+      }
+      return dp.pop();
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

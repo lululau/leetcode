@@ -1,0 +1,226 @@
+* [[https://leetcode.com/problems/special-positions-in-a-binary-matrix][1582.
+Special Positions in a Binary Matrix]]
+  :PROPERTIES:
+  :CUSTOM_ID: special-positions-in-a-binary-matrix
+  :END:
+[[./solution/1500-1599/1582.Special Positions in a Binary Matrix/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a rows x cols matrix mat, where mat[i][j] is either 0 or 1, return
+the number of special positions in mat.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A position (i,j) is called special if mat[i][j] == 1 and all other
+elements in row i and column j are 0 (rows and columns are 0-indexed).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> mat = [[1,0,0],
+  &nbsp;             [0,0,<strong>1</strong>],
+  &nbsp;             [1,0,0]]
+  <strong>Output:</strong> 1
+  <strong>Explanation:</strong> (1,2) is a special position because mat[1][2] == 1 and all other elements in row 1 and column 2 are 0.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> mat = [[<strong>1</strong>,0,0],
+  &nbsp;             [0,<strong>1</strong>,0],
+  &nbsp;             [0,0,<strong>1</strong>]]
+  <strong>Output:</strong> 3
+  <strong>Explanation:</strong> (0,0), (1,1) and (2,2) are special positions. 
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> mat = [[0,0,0,<strong>1</strong>],
+  &nbsp;             [<strong>1</strong>,0,0,0],
+  &nbsp;             [0,1,1,0],
+  &nbsp;             [0,0,0,0]]
+  <strong>Output:</strong> 2
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> mat = [[0,0,0,0,0],
+  &nbsp;             [<strong>1</strong>,0,0,0,0],
+  &nbsp;             [0,<strong>1</strong>,0,0,0],
+  &nbsp;             [0,0,<strong>1</strong>,0,0],
+  &nbsp;             [0,0,0,1,1]]
+  <strong>Output:</strong> 3
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+rows == mat.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+cols == mat[i].length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= rows, cols <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+mat[i][j] is 0 or 1.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

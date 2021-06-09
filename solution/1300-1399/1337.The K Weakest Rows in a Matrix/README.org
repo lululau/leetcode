@@ -1,0 +1,254 @@
+* [[https://leetcode-cn.com/problems/the-k-weakest-rows-in-a-matrix][1337.
+矩阵中战斗力最弱的 K 行]]
+  :PROPERTIES:
+  :CUSTOM_ID: 矩阵中战斗力最弱的-k-行
+  :END:
+[[./solution/1300-1399/1337.The K Weakest Rows in a Matrix/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个大小为 m * n 的矩阵 mat，矩阵由若干军人和平民组成，分别用 1 和 0
+表示。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你返回矩阵中战斗力最弱的 k 行的索引，按从最弱到最强排序。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+如果第 i 行的军人数量少于第 j 行，或者两行军人数量相同但 i 小于
+j，那么我们认为第 i 行的战斗力比第 j 行弱。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+军人 总是 排在一行中的靠前位置，也就是说 1 总是出现在 0 之前。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>mat = 
+  [[1,1,0,0,0],
+   [1,1,1,1,0],
+   [1,0,0,0,0],
+   [1,1,0,0,0],
+   [1,1,1,1,1]], 
+  k = 3
+  <strong>输出：</strong>[2,0,3]
+  <strong>解释：</strong>
+  每行中的军人数目：
+  行 0 -> 2 
+  行 1 -> 4 
+  行 2 -> 1 
+  行 3 -> 2 
+  行 4 -> 5 
+  从最弱到最强对这些行排序后得到 [2,0,3,1,4]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>mat = 
+  [[1,0,0,0],
+   [1,1,1,1],
+   [1,0,0,0],
+   [1,0,0,0]], 
+  k = 2
+  <strong>输出：</strong>[0,2]
+  <strong>解释：</strong> 
+  每行中的军人数目：
+  行 0 -> 1 
+  行 1 -> 4 
+  行 2 -> 1 
+  行 3 -> 1 
+  从最弱到最强对这些行排序后得到 [0,2,3,1]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+m == mat.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n == mat[i].length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+2 <= n, m <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= k <= m
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+matrix[i][j] 不是 0 就是 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

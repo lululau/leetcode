@@ -1,0 +1,142 @@
+* [[https://leetcode.com/problems/customer-placing-the-largest-number-of-orders][586.
+Customer Placing the Largest Number of Orders]]
+  :PROPERTIES:
+  :CUSTOM_ID: customer-placing-the-largest-number-of-orders
+  :END:
+[[./solution/0500-0599/0586.Customer Placing the Largest Number of Orders/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Orders
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +-----------------+----------+
+  | Column Name     | Type     |
+  +-----------------+----------+
+  | order_number    | int      |
+  | customer_number | int      |
+  +-----------------+----------+
+  order_number is the primary key for this table.
+  This table contains information about the order ID and the customer ID.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an SQL query to find the customer_number for the customer who has
+placed the largest number of orders.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+It is guaranteed that exactly one customer will have placed more orders
+than any other customer.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The query result format is in the following example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  Orders table:
+  +--------------+-----------------+
+  | order_number | customer_number |
+  +--------------+-----------------+
+  | 1            | 1               |
+  | 2            | 2               |
+  | 3            | 3               |
+  | 4            | 3               |
+  +--------------+-----------------+
+
+  Result table:
+  +-----------------+
+  | customer_number |
+  +-----------------+
+  | 3               |
+  +-----------------+
+  The customer with number 3 has two orders, which is greater than either customer 1 or 2 because each of them only has one order. 
+  So the result is customer_number 3.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+Follow up: What if more than one customer have the largest number of
+orders, can you find all the customer_number in this case?
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

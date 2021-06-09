@@ -1,0 +1,115 @@
+* [[https://leetcode.com/problems/find-median-given-frequency-of-numbers][571.
+Find Median Given Frequency of Numbers]]
+  :PROPERTIES:
+  :CUSTOM_ID: find-median-given-frequency-of-numbers
+  :END:
+[[./solution/0500-0599/0571.Find Median Given Frequency of Numbers/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+The Numbers table keeps the value of number and its frequency.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +----------+-------------+
+
+  |  Number  |  Frequency  |
+
+  +----------+-------------|
+
+  |  0       |  7          |
+
+  |  1       |  1          |
+
+  |  2       |  3          |
+
+  |  3       |  1          |
+
+  +----------+-------------+
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+In this table, the numbers are 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 3, so
+the median is (0 + 0) / 2 = 0.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +--------+
+
+  | median |
+
+  +--------|
+
+  | 0.0000 |
+
+  +--------+
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write a query to find the median of all numbers and name the result as
+median.
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

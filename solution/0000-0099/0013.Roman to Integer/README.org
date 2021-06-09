@@ -1,0 +1,424 @@
+* [[https://leetcode-cn.com/problems/roman-to-integer][13.
+罗马数字转整数]]
+  :PROPERTIES:
+  :CUSTOM_ID: 罗马数字转整数
+  :END:
+[[./solution/0000-0099/0013.Roman to Integer/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>字符</strong>          <strong>数值</strong>
+  I             1
+  V             5
+  X             10
+  L             50
+  C             100
+  D             500
+  M             1000</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+例如， 罗马数字 2 写做 II ，即为两个并列的 1。12
+写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4
+不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5
+减小数 1 得到的数值 4 。同样地，数字 9
+表示为 IX。这个特殊的规则只适用于以下六种情况：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。 
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入:</strong> "III"
+  <strong>输出:</strong> 3</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入:</strong> "IV"
+  <strong>输出:</strong> 4</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入:</strong> "IX"
+  <strong>输出:</strong> 9</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入:</strong> "LVIII"
+  <strong>输出:</strong> 58
+  <strong>解释:</strong> L = 50, V= 5, III = 3.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入:</strong> "MCMXCIV"
+  <strong>输出:</strong> 1994
+  <strong>解释:</strong> M = 1000, CM = 900, XC = 90, IV = 4.</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s.length <= 15
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s 仅含字符 ('I', 'V', 'X', 'L', 'C', 'D', 'M')
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+题目数据保证 s 是一个有效的罗马数字，且表示整数在范围 [1, 3999] 内
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+题目所给测试用例皆符合罗马数字书写规则，不会出现跨位等情况。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+IL 和 IM 这样的例子并不符合题目要求，49 应该写作 XLIX，999 应该写作
+CMXCIX 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+关于罗马数字的详尽书写规则，可以参考 罗马数字 - Mathematics 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def romanToInt(self, s: str) -> int:
+          nums = {
+              'M': 1000,
+              'CM': 900,
+              'D': 500,
+              'CD': 400,
+              'C': 100,
+              'XC': 90,
+              'L': 50,
+              'XL': 40,
+              'X': 10,
+              'IX': 9,
+              'V': 5,
+              'IV': 4,
+              'I': 1
+          }
+          i = res = 0
+          while i < len(s):
+              if i + 1 < len(s) and s[i:i + 2] in nums:
+                  res += nums[s[i: i + 2]]
+                  i += 2
+              else:
+                  res += nums[s[i: i + 1]]
+                  i += 1
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int romanToInt(String s) {
+          Map<String, Integer> nums = new HashMap<>();
+          nums.put("M", 1000);
+          nums.put("CM", 900);
+          nums.put("D", 500);
+          nums.put("CD", 400);
+          nums.put("C", 100);
+          nums.put("XC", 90);
+          nums.put("L", 50);
+          nums.put("XL", 40);
+          nums.put("X", 10);
+          nums.put("IX", 9);
+          nums.put("V", 5);
+          nums.put("IV", 4);
+          nums.put("I", 1);
+          int res = 0;
+          for (int i = 0; i < s.length();) {
+              if (i + 1 < s.length() && nums.get(s.substring(i, i + 2)) != null) {
+                  res += nums.get(s.substring(i, i + 2));
+                  i += 2;
+              } else {
+                  res += nums.get(s.substring(i, i + 1));
+                  i += 1;
+              }
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+     public:
+      int romanToInt(string s) {
+          unordered_map<char, int> nums{
+              {'I', 1},
+              {'V', 5},
+              {'X', 10},
+              {'L', 50},
+              {'C', 100},
+              {'D', 500},
+              {'M', 1000},
+          };
+          int ans = 0;
+          for (int i = 0; i < s.size() - 1; ++i) {
+              if (nums[s[i]] < nums[s[i + 1]])
+                  ans -= nums[s[i]];
+              else
+                  ans += nums[s[i]];
+          }
+          return ans + nums[s.back()];
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

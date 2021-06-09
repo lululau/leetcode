@@ -1,0 +1,244 @@
+* [[https://leetcode.com/problems/count-submatrices-with-all-ones][1504.
+Count Submatrices With All Ones]]
+  :PROPERTIES:
+  :CUSTOM_ID: count-submatrices-with-all-ones
+  :END:
+[[./solution/1500-1599/1504.Count Submatrices With All Ones/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a rows * columns matrix mat of ones and zeros, return how
+many submatrices have all ones.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> mat = [[1,0,1],
+
+  &nbsp;             [1,1,0],
+
+  &nbsp;             [1,1,0]]
+
+  <strong>Output:</strong> 13
+
+  <strong>Explanation:
+
+  </strong>There are <b>6</b> rectangles of side 1x1.
+
+  There are <b>2</b> rectangles of side 1x2.
+
+  There are <b>3</b> rectangles of side 2x1.
+
+  There is <b>1</b> rectangle of side 2x2. 
+
+  There is <b>1</b> rectangle of side 3x1.
+
+  Total number of rectangles = 6 + 2 + 3 + 1 + 1 = <strong>13.</strong>
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> mat = [[0,1,1,0],
+
+  &nbsp;             [0,1,1,1],
+
+  &nbsp;             [1,1,1,0]]
+
+  <strong>Output:</strong> 24
+
+  <strong>Explanation:</strong>
+
+  There are <b>8</b> rectangles of side 1x1.
+
+  There are <b>5</b> rectangles of side 1x2.
+
+  There are <b>2</b> rectangles of side 1x3. 
+
+  There are <b>4</b> rectangles of side 2x1.
+
+  There are <b>2</b> rectangles of side 2x2. 
+
+  There are <b>2</b> rectangles of side 3x1. 
+
+  There is <b>1</b> rectangle of side 3x2. 
+
+  Total number of rectangles = 8 + 5 + 2 + 4 + 2 + 2 + 1 = 24<strong>.</strong>
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> mat = [[1,1,1,1,1,1]]
+
+  <strong>Output:</strong> 21
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> mat = [[1,0,1],[0,1,0],[1,0,1]]
+
+  <strong>Output:</strong> 5
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= rows <= 150
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= columns <= 150
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= mat[i][j] <= 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

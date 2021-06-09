@@ -1,0 +1,293 @@
+* [[https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses][1190.
+Reverse Substrings Between Each Pair of Parentheses]]
+  :PROPERTIES:
+  :CUSTOM_ID: reverse-substrings-between-each-pair-of-parentheses
+  :END:
+[[./solution/1100-1199/1190.Reverse Substrings Between Each Pair of Parentheses/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given a string s that consists of lower case English letters and
+brackets. 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Reverse the strings in each pair of matching parentheses, starting from
+the innermost one.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Your result should not contain any brackets.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;(abcd)&quot;
+  <strong>Output:</strong> &quot;dcba&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;(u(love)i)&quot;
+  <strong>Output:</strong> &quot;iloveu&quot;
+  <strong>Explanation:</strong>&nbsp;The substring &quot;love&quot; is reversed first, then the whole string is reversed.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;(ed(et(oc))el)&quot;
+  <strong>Output:</strong> &quot;leetcode&quot;
+  <strong>Explanation:</strong>&nbsp;First, we reverse the substring &quot;oc&quot;, then &quot;etco&quot;, and finally, the whole string.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;a(bcdefghijkl(mno)p)q&quot;
+  <strong>Output:</strong> &quot;apmnolkjihgfedcbq&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= s.length <= 2000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s only contains lower case English characters and parentheses.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+It's guaranteed that all parentheses are balanced.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+Use deque or stack to simulate the reversal process.
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def reverseParentheses(self, s: str) -> str:
+          stack = []
+          for c in s:
+              if c == ")":
+                  tmp = []
+                  while stack[-1] != "(":
+                      tmp += stack.pop()
+                  stack.pop()
+                  stack += tmp
+              else:
+                  stack.append(c)
+          return "".join(stack)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public String reverseParentheses(String s) {
+          Deque<Character> deque = new ArrayDeque<>();
+          for (char c : s.toCharArray()) {
+              if (c == ')') {
+                  StringBuilder sb = new StringBuilder();
+                  while (deque.peekLast() != '(') {
+                      sb.append(deque.pollLast());
+                  }
+                  deque.pollLast();
+                  for (int i = 0, n = sb.length(); i < n; i++) {
+                      deque.offerLast(sb.charAt(i));
+                  }
+              } else {
+                  deque.offerLast(c);
+              }
+          }
+          StringBuilder sb = new StringBuilder();
+          while (!deque.isEmpty()) {
+              sb.append(deque.pollFirst());
+          }
+          return sb.toString();
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {string} s
+   * @return {string}
+   */
+  var reverseParentheses = function(s) {
+      let stack = [];
+      let hashMap = {};
+      const n = s.length;
+      for (let i = 0; i < n; i++) {
+          let cur = s.charAt(i);
+          if (cur == '(') {
+              stack.push(i);
+          } else if (cur == ')') {
+              let left = stack.pop();
+              hashMap[left] = i;
+              hashMap[i] = left;
+          }
+      }
+      let res = [];
+      let i = 0;
+      let step = 1; // 1向右，-1向左
+      while (i > -1 && i < n) {
+          let cur = s.charAt(i);
+          if (cur == '(' || cur == ')') {
+              step = -step;
+              i = hashMap[i];
+          } else {
+              res.push(cur);
+          }
+          i += step;
+      }
+      return res.join('');
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

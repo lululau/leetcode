@@ -1,0 +1,277 @@
+* [[https://leetcode.com/problems/longest-absolute-file-path][388.
+Longest Absolute File Path]]
+  :PROPERTIES:
+  :CUSTOM_ID: longest-absolute-file-path
+  :END:
+[[./solution/0300-0399/0388.Longest Absolute File Path/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Suppose we have a file system that stores both files and directories. An
+example of one system is represented in the following picture:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Here, we have dir as the only directory in the root. dir contains two
+subdirectories, subdir1 and subdir2. subdir1 contains a file file1.ext
+and subdirectory subsubdir1. subdir2 contains a subdirectory subsubdir2,
+which contains a file file2.ext.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+In text form, it looks like this (with ⟶ representing the tab
+character):
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  dir
+  ⟶ subdir1
+  ⟶ ⟶ file1.ext
+  ⟶ ⟶ subsubdir1
+  ⟶ subdir2
+  ⟶ ⟶ subsubdir2
+  ⟶ ⟶ ⟶ file2.ext
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If we were to write this representation in code, it will look like this:
+"dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext".
+Note that the '\n' and '\t' are the new-line and tab characters.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Every file and directory has a unique absolute path in the file system,
+which is the order of directories that must be opened to reach the
+file/directory itself, all concatenated by '/'s. Using the above
+example, the absolute path to file2.ext is
+"dir/subdir2/subsubdir2/file2.ext". Each directory name consists of
+letters, digits, and/or spaces. Each file name is of the form
+name.extension, where name and extension consist of letters, digits,
+and/or spaces.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a string input representing the file system in the explained
+format, return the length of the longest absolute path to a file in the
+abstracted file system. If there is no file in the system, return 0.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> input = &quot;dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext&quot;
+  <strong>Output:</strong> 20
+  <strong>Explanation:</strong> We have only one file, and the absolute path is &quot;dir/subdir2/file.ext&quot; of length 20.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> input = &quot;dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext&quot;
+  <strong>Output:</strong> 32
+  <strong>Explanation:</strong> We have two files:
+  &quot;dir/subdir1/file1.ext&quot; of length 21
+  &quot;dir/subdir2/subsubdir2/file2.ext&quot; of length 32.
+  We return 32 since it is the longest absolute path to a file.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> input = &quot;a&quot;
+  <strong>Output:</strong> 0
+  <strong>Explanation:</strong> We do not have any files, just a single directory named &quot;a&quot;.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> input = &quot;file1.txt\nfile2.txt\nlongfile.txt&quot;
+  <strong>Output:</strong> 12
+  <strong>Explanation:</strong> There are 3 files at the root directory.
+  Since the absolute path for anything at the root directory is just the name itself, the answer is &quot;longfile.txt&quot; with length 12.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= input.length <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+input may contain lowercase or uppercase English letters, a new line
+character '\n', a tab character '\t', a dot '.', a space ' ', and
+digits.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,237 @@
+* [[https://leetcode.com/problems/robot-return-to-origin][657. Robot
+Return to Origin]]
+  :PROPERTIES:
+  :CUSTOM_ID: robot-return-to-origin
+  :END:
+[[./solution/0600-0699/0657.Robot Return to Origin/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+There is a robot starting at position (0, 0), the origin, on a 2D plane.
+Given a sequence of its moves, judge if this robot ends up at (0, 0)
+after it completes its moves.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The move sequence is represented by a string, and the character moves[i]
+represents its ith move. Valid moves are R (right), L (left), U (up),
+and D (down). If the robot returns to the origin after it finishes all
+of its moves, return true. Otherwise, return false.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note: The way that the robot is "facing" is irrelevant. "R" will always
+make the robot move to the right once, "L" will always make it move
+left, etc. Also, assume that the magnitude of the robot's movement is
+the same for each move.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> moves = &quot;UD&quot;
+  <strong>Output:</strong> true
+  <strong>Explanation</strong>: The robot moves up once, and then down once. All moves have the same magnitude, so it ended up at the origin where it started. Therefore, we return true.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> moves = &quot;LL&quot;
+  <strong>Output:</strong> false
+  <strong>Explanation</strong>: The robot moves left twice. It ends up two &quot;moves&quot; to the left of the origin. We return false because it is not at the origin at the end of its moves.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> moves = &quot;RRDD&quot;
+  <strong>Output:</strong> false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> moves = &quot;LDRRLRUULR&quot;
+  <strong>Output:</strong> false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= moves.length <= 2 * 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+moves only contains the characters 'U', 'D', 'L' and 'R'.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def judgeCircle(self, moves: str) -> bool:
+          x = y = 0
+          for c in moves:
+              if c == 'R':
+                  x += 1
+              elif c == 'L':
+                  x -= 1
+              elif c == 'U':
+                  y += 1
+              elif c == 'D':
+                  y -= 1
+          return x == 0 and y == 0
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public boolean judgeCircle(String moves) {
+          int x = 0, y = 0;
+          for (int i = 0; i < moves.length(); ++i) {
+              char c = moves.charAt(i);
+              if (c == 'R') ++x;
+              else if (c == 'L') --x;
+              else if (c == 'U') ++y;
+              else if (c == 'D') --y;
+          }
+          return x == 0 && y == 0;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,216 @@
+* [[https://leetcode.com/problems/stream-of-characters][1032. Stream of
+Characters]]
+  :PROPERTIES:
+  :CUSTOM_ID: stream-of-characters
+  :END:
+[[./solution/1000-1099/1032.Stream of Characters/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement the StreamChecker class as follows:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+StreamChecker(words): Constructor, init the data structure with the
+given words.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+query(letter): returns true if and only if for some k >= 1, the last
+k characters queried (in order from oldest to newest, including this
+letter just queried) spell one of the words in the given list.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  StreamChecker streamChecker = new StreamChecker([&quot;cd&quot;,&quot;f&quot;,&quot;kl&quot;]); // init the dictionary.
+
+  streamChecker.query(&#39;a&#39;);          // return false
+
+  streamChecker.query(&#39;b&#39;);          // return false
+
+  streamChecker.query(&#39;c&#39;);          // return false
+
+  streamChecker.query(&#39;d&#39;);          // return true, because &#39;cd&#39; is in the wordlist
+
+  streamChecker.query(&#39;e&#39;);          // return false
+
+  streamChecker.query(&#39;f&#39;);          // return true, because &#39;f&#39; is in the wordlist
+
+  streamChecker.query(&#39;g&#39;);          // return false
+
+  streamChecker.query(&#39;h&#39;);          // return false
+
+  streamChecker.query(&#39;i&#39;);          // return false
+
+  streamChecker.query(&#39;j&#39;);          // return false
+
+  streamChecker.query(&#39;k&#39;);          // return false
+
+  streamChecker.query(&#39;l&#39;);          // return true, because &#39;kl&#39; is in the wordlist
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= words.length <= 2000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= words[i].length <= 2000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Words will only consist of lowercase English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Queries will only consist of lowercase English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of queries is at most 40000.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,252 @@
+* [[https://leetcode.com/problems/group-employees-of-the-same-salary][1875.
+Group Employees of the Same Salary]]
+  :PROPERTIES:
+  :CUSTOM_ID: group-employees-of-the-same-salary
+  :END:
+[[./solution/1800-1899/1875.Group Employees of the Same Salary/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Employees
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +-------------+---------+
+
+  | Column Name | Type    |
+
+  +-------------+---------+
+
+  | employee_id | int     |
+
+  | name        | varchar |
+
+  | salary      | int     |
+
+  +-------------+---------+
+
+  employee_id is the primary key for this table.
+
+  Each row of this table indicates the employee ID, employee name, and salary.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A company wants to divide the employees into teams such that all the
+members on each team have the same salary. The teams should follow these
+criteria:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Each team should consist of at least two employees.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All the employees on a team should have the same salary.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All the employees of the same salary should be assigned to the same
+team.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If the salary of an employee is unique, we do not assign this employee
+to any team.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+A team's ID is assigned based on the rank of the team's salary relative
+to the other teams' salaries, where the team with the lowest salary has
+team_id = 1. Note that the salaries for employees not on a team are not
+included in this ranking.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an SQL query to get the team_id of each employee that is in a
+team.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the result table ordered by team_id in ascending order. In case
+of a tie, order it by employee_id in ascending order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The query result format is in the following example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  Employees table:
+
+  +-------------+---------+--------+
+
+  | employee_id | name    | salary |
+
+  +-------------+---------+--------+
+
+  | 2           | Meir    | 3000   |
+
+  | 3           | Michael | 3000   |
+
+  | 7           | Addilyn | 7400   |
+
+  | 8           | Juan    | 6100   |
+
+  | 9           | Kannon  | 7400   |
+
+  +-------------+---------+--------+
+
+
+
+  Result table:
+
+  +-------------+---------+--------+---------+
+
+  | employee_id | name    | salary | team_id |
+
+  +-------------+---------+--------+---------+
+
+  | 2           | Meir    | 3000   | 1       |
+
+  | 3           | Michael | 3000   | 1       |
+
+  | 7           | Addilyn | 7400   | 2       |
+
+  | 9           | Kannon  | 7400   | 2       |
+
+  +-------------+---------+--------+---------+
+
+
+
+  Meir (employee_id=2) and Michael (employee_id=3) are in the same team because they have the same salary of 3000.
+
+  Addilyn (employee_id=7) and Kannon (employee_id=9) are in the same team because they have the same salary of 7400.
+
+  Juan (employee_id=8) is not included in any team because their salary of 6100 is unique (i.e. no other employee has the same salary).
+
+  The team IDs are assigned as follows (based on salary ranking, lowest first):
+
+  - team_id=1: Meir and Michael, salary of 3000
+
+  - team_id=2: Addilyn and Kannon, salary of 7400
+
+  Juan&#39;s salary of 6100 is not included in the ranking because they are not on a team.</pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

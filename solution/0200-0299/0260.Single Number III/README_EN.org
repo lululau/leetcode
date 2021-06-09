@@ -1,0 +1,218 @@
+* [[https://leetcode.com/problems/single-number-iii][260. Single Number
+III]]
+  :PROPERTIES:
+  :CUSTOM_ID: single-number-iii
+  :END:
+[[./solution/0200-0299/0260.Single Number III/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an integer array nums, in which exactly two elements appear only
+once and all the other elements appear exactly twice. Find the two
+elements that appear only once. You can return the answer in any order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow up: Your algorithm should run in linear runtime complexity. Could
+you implement it using only constant space complexity?
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [1,2,1,3,2,5]
+  <strong>Output:</strong> [3,5]
+  <strong>Explanation: </strong> [5, 3] is also a valid answer.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [-1,0]
+  <strong>Output:</strong> [-1,0]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [0,1]
+  <strong>Output:</strong> [1,0]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+2 <= nums.length <= 3 * 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-231 <= nums[i] <= 231 - 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Each integer in nums will appear twice, only two integers will appear
+once.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def singleNumber(self, nums: List[int]) -> List[int]:
+          eor = 0
+          for num in nums:
+              eor ^= num
+          diff = eor & (~eor + 1)
+          a = 0
+          for num in nums:
+              if (num & diff) == 0:
+                  a ^= num
+          b = eor ^ a
+          return [a, b]
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int[] singleNumber(int[] nums) {
+          int eor = 0;
+          for (int num : nums) {
+              eor ^= num;
+          }
+          int diff = eor & (~eor + 1);
+          int a = 0;
+          for (int num : nums) {
+              if ((num & diff) == 0) {
+                  a ^= num;
+              }
+          }
+          int b = eor ^ a;
+          return new int[]{a, b};
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

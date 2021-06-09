@@ -1,0 +1,365 @@
+* [[https://leetcode.com/problems/masking-personal-information][831.
+Masking Personal Information]]
+  :PROPERTIES:
+  :CUSTOM_ID: masking-personal-information
+  :END:
+[[./solution/0800-0899/0831.Masking Personal Information/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+We are given a personal information string S, which may represent either
+an email address or a phone number.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+We would like to mask this personal information according to
+the following rules:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+1. Email address:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+We define a name to be a string of length ≥ 2 consisting of only
+lowercase letters a-z or uppercase letters A-Z.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+An email address starts with a name, followed by the symbol '@',
+followed by a name, followed by the dot '.' and followed by a name. 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+All email addresses are guaranteed to be valid and in the format
+of "name1@name2.name3".
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+To mask an email, all names must be converted to lowercase and all
+letters between the first and last letter of the first name must be
+replaced by 5 asterisks '*'.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+2. Phone number:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A phone number is a string consisting of only the digits 0-9 or the
+characters from the set {'+', '-', '(', ')', ' '}. You may assume a
+phone number contains 10 to 13 digits.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The last 10 digits make up the local number, while the digits before
+those make up the country code. Note that the country code is optional.
+We want to expose only the last 4 digits and mask all other digits.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The local number should be formatted and masked as "*/-/*-1111", where 1
+represents the exposed digits.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+To mask a phone number with country code like "+111 111 111 1111", we
+write it in the form "+*/-/*-**-1111".  The '+' sign and the first
+'-' sign before the local number should only exist if there is a country
+code.  For example, a 12 digit phone number mask should start with
+"+*-".
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note that extraneous characters like "(", ")", " ", as well as extra
+dashes or plus signs not part of the above formatting scheme should be
+removed.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the correct "mask" of the information provided.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>&quot;LeetCode@LeetCode.com&quot;
+
+  <strong>Output: </strong>&quot;l*****e@leetcode.com&quot;
+
+  <strong>Explanation:&nbsp;</strong>All names are converted to lowercase, and the letters between the
+
+  &nbsp;            first and last letter of the first name is replaced by 5 asterisks.
+
+  &nbsp;            Therefore, &quot;leetcode&quot; -&gt; &quot;l*****e&quot;.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>&quot;AB@qq.com&quot;
+
+  <strong>Output: </strong>&quot;a*****b@qq.com&quot;
+
+  <strong>Explanation:&nbsp;</strong>There must be 5 asterisks between the first and last letter 
+
+  &nbsp;            of the first name &quot;ab&quot;. Therefore, &quot;ab&quot; -&gt; &quot;a*****b&quot;.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>&quot;1(234)567-890&quot;
+
+  <strong>Output: </strong>&quot;***-***-7890&quot;
+
+  <strong>Explanation:</strong>&nbsp;10 digits in the phone number, which means all digits make up the local number.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>&quot;86-(10)12345678&quot;
+
+  <strong>Output: </strong>&quot;+**-***-***-5678&quot;
+
+  <strong>Explanation:</strong>&nbsp;12 digits, 2 digits for country code and 10 digits for local number. 
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Notes:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+S.length <= 40.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Emails have length at least 8.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Phone numbers have length at least 10.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

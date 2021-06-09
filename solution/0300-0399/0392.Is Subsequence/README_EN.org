@@ -1,0 +1,203 @@
+* [[https://leetcode.com/problems/is-subsequence][392. Is Subsequence]]
+  :PROPERTIES:
+  :CUSTOM_ID: is-subsequence
+  :END:
+[[./solution/0300-0399/0392.Is Subsequence/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given two strings s and t, check if s is a subsequence of t.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A subsequence of a string is a new string that is formed from the
+original string by deleting some (can be none) of the characters without
+disturbing the relative positions of the remaining characters. (i.e.,
+"ace" is a subsequence of "abcde" while "aec" is not).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>Input:</strong> s = "abc", t = "ahbgdc"
+  <strong>Output:</strong> true
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>Input:</strong> s = "axc", t = "ahbgdc"
+  <strong>Output:</strong> false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= s.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= t.length <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s and t consist only of lowercase English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+Follow up: If there are lots of incoming s, say s1, s2, ..., sk where k
+>= 109, and you want to check one by one to see if t has its
+subsequence. In this scenario, how would you change your code?
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def isSubsequence(self, s: str, t: str) -> bool:
+          m, n = len(s), len(t)
+          i = j = 0
+          while i < m and j < n:
+              if s[i] == t[j]:
+                  i += 1
+              j += 1
+          return i == m
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public boolean isSubsequence(String s, String t) {
+          int m = s.length(), n = t.length();
+          int i = 0, j = 0;
+          while (i < m && j < n) {
+              if (s.charAt(i) == t.charAt(j)) {
+                  ++i;
+              }
+              ++j;
+          }
+          return i == m;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

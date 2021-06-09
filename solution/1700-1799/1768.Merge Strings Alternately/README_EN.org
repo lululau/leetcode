@@ -1,0 +1,259 @@
+* [[https://leetcode.com/problems/merge-strings-alternately][1768. Merge
+Strings Alternately]]
+  :PROPERTIES:
+  :CUSTOM_ID: merge-strings-alternately
+  :END:
+[[./solution/1700-1799/1768.Merge Strings Alternately/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given two strings word1 and word2. Merge the strings by adding
+letters in alternating order, starting with word1. If a string is longer
+than the other, append the additional letters onto the end of the merged
+string.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the merged string.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> word1 = &quot;abc&quot;, word2 = &quot;pqr&quot;
+
+  <strong>Output:</strong> &quot;apbqcr&quot;
+
+  <strong>Explanation:</strong>&nbsp;The merged string will be merged as so:
+
+  word1:  a   b   c
+
+  word2:    p   q   r
+
+  merged: a p b q c r
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> word1 = &quot;ab&quot;, word2 = &quot;pqrs&quot;
+
+  <strong>Output:</strong> &quot;apbqrs&quot;
+
+  <strong>Explanation:</strong>&nbsp;Notice that as word2 is longer, &quot;rs&quot; is appended to the end.
+
+  word1:  a   b 
+
+  word2:    p   q   r   s
+
+  merged: a p b q   r   s
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> word1 = &quot;abcd&quot;, word2 = &quot;pq&quot;
+
+  <strong>Output:</strong> &quot;apbqcd&quot;
+
+  <strong>Explanation:</strong>&nbsp;Notice that as word1 is longer, &quot;cd&quot; is appended to the end.
+
+  word1:  a   b   c   d
+
+  word2:    p   q 
+
+  merged: a p b q c   d
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= word1.length, word2.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+word1 and word2 consist of lowercase English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def mergeAlternately(self, word1: str, word2: str) -> str:
+          i, m, n = 0, len(word1), len(word2)
+          res = []
+          while i < m or i < n:
+              if i < m:
+                  res.append(word1[i])
+              if i < n:
+                  res.append(word2[i])
+              i += 1
+          return ''.join(res)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public String mergeAlternately(String word1, String word2) {
+          int m = word1.length(), n = word2.length();
+          StringBuilder res = new StringBuilder();
+          for (int i = 0; i < m || i < n; ++i) {
+              if (i < m) {
+                  res.append(word1.charAt(i));
+              }
+              if (i < n) {
+                  res.append(word2.charAt(i));
+              }
+          }
+          return res.toString();
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      string mergeAlternately(string word1, string word2) {
+          int m = word1.size(), n = word2.size();
+          string res;
+          for (int i = 0; i < m || i < n; ++i) {
+              if (i < m) {
+                  res.push_back(word1[i]);
+              }
+              if (i < n) {
+                  res.push_back(word2[i]);
+              }
+          }
+          return res;
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

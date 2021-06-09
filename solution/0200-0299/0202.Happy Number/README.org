@@ -1,0 +1,252 @@
+* [[https://leetcode-cn.com/problems/happy-number][202. 快乐数]]
+  :PROPERTIES:
+  :CUSTOM_ID: 快乐数
+  :END:
+[[./solution/0200-0299/0202.Happy Number/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+编写一个算法来判断一个数 n 是不是快乐数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+「快乐数」定义为：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+然后重复这个过程直到这个数变为 1，也可能是 无限循环 但始终变不到 1。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+如果 可以变为  1，那么这个数就是快乐数。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+如果 n 是快乐数就返回 true ；不是，则返回 false 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>19
+  <strong>输出：</strong>true
+  <strong>解释：
+  </strong>1<sup>2</sup> + 9<sup>2</sup> = 82
+  8<sup>2</sup> + 2<sup>2</sup> = 68
+  6<sup>2</sup> + 8<sup>2</sup> = 100
+  1<sup>2</sup> + 0<sup>2</sup> + 0<sup>2</sup> = 1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>n = 2
+  <strong>输出：</strong>false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 231 - 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def isHappy(self, n: int) -> bool:
+          def get_next(n):
+              s = 0
+              while n > 0:
+                  n, digit = divmod(n, 10)
+                  s += digit ** 2
+              return s
+
+          visited = set()
+          while n != 1 and n not in visited:
+              visited.add(n)
+              n = get_next(n)
+          return n == 1
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public boolean isHappy(int n) {
+          Set<Integer> visited = new HashSet<>();
+          while (n != 1 && !visited.contains(n)) {
+              visited.add(n);
+              n = getNext(n);
+          }
+          return n == 1;
+      }
+
+      private int getNext(int n) {
+          int s = 0;
+          while (n > 0) {
+              int digit = n % 10;
+              s += digit * digit;
+              n /= 10;
+          }
+          return s;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

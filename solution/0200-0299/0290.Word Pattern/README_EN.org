@@ -1,0 +1,269 @@
+* [[https://leetcode.com/problems/word-pattern][290. Word Pattern]]
+  :PROPERTIES:
+  :CUSTOM_ID: word-pattern
+  :END:
+[[./solution/0200-0299/0290.Word Pattern/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a pattern and a string s, find if s follows the same pattern.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Here follow means a full match, such that there is a bijection between a
+letter in pattern and a non-empty word in s.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> pattern = &quot;abba&quot;, s = &quot;dog cat cat dog&quot;
+  <strong>Output:</strong> true
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> pattern = &quot;abba&quot;, s = &quot;dog cat cat fish&quot;
+  <strong>Output:</strong> false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> pattern = &quot;aaaa&quot;, s = &quot;dog cat cat dog&quot;
+  <strong>Output:</strong> false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> pattern = &quot;abba&quot;, s = &quot;dog dog dog dog&quot;
+  <strong>Output:</strong> false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= pattern.length <= 300
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+pattern contains only lower-case English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s.length <= 3000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s contains only lower-case English letters and spaces ' '.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s does not contain any leading or trailing spaces.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All the words in s are separated by a single space.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def wordPattern(self, pattern: str, s: str) -> bool:
+          ch2str, str2ch = {}, {}
+          ss = s.split(' ')
+          n = len(pattern)
+          if n != len(ss):
+              return False
+          for i in range(n):
+              if ch2str.get(pattern[i]) is not None and ch2str.get(pattern[i]) != ss[i]:
+                  return False
+              if str2ch.get(ss[i]) is not None and str2ch.get(ss[i]) != pattern[i]:
+                  return False
+              ch2str[pattern[i]] = ss[i]
+              str2ch[ss[i]] = pattern[i]
+          return True
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public boolean wordPattern(String pattern, String s) {
+          Map<Character, String> ch2str = new HashMap<>();
+          Map<String, Character> str2ch = new HashMap<>();
+          String[] ss = s.split(" ");
+          int n = pattern.length();
+          if (n != ss.length) {
+              return false;
+          }
+          for (int i = 0; i < n; ++i) {
+              char ch = pattern.charAt(i);
+              if (ch2str.containsKey(ch) && !ch2str.get(ch).equals(ss[i])) {
+                  return false;
+              }
+              if (str2ch.containsKey(ss[i]) && !str2ch.get(ss[i]).equals(ch)) {
+                  return false;
+              }
+              ch2str.put(ch, ss[i]);
+              str2ch.put(ss[i], ch);
+          }
+          return true;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

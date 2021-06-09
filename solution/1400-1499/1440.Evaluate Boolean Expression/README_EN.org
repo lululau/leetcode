@@ -1,0 +1,222 @@
+* [[https://leetcode.com/problems/evaluate-boolean-expression][1440.
+Evaluate Boolean Expression]]
+  :PROPERTIES:
+  :CUSTOM_ID: evaluate-boolean-expression
+  :END:
+[[./solution/1400-1499/1440.Evaluate Boolean Expression/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Table Variables:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +---------------+---------+
+
+  | Column Name   | Type    |
+
+  +---------------+---------+
+
+  | name          | varchar |
+
+  | value         | int     |
+
+  +---------------+---------+
+
+  name is the primary key for this table.
+
+  This table contains the stored variables and their values.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Table Expressions:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +---------------+---------+
+
+  | Column Name   | Type    |
+
+  +---------------+---------+
+
+  | left_operand  | varchar |
+
+  | operator      | enum    |
+
+  | right_operand | varchar |
+
+  +---------------+---------+
+
+  (left_operand, operator, right_operand) is the primary key for this table.
+
+  This table contains a boolean expression that should be evaluated.
+
+  operator is an enum that takes one of the values (&#39;&lt;&#39;, &#39;&gt;&#39;, &#39;=&#39;)
+
+  The values of left_operand and right_operand are guaranteed to be in the Variables table.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an SQL query to evaluate the boolean expressions in Expressions
+table.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the result table in any order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The query result format is in the following example.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  Variables table:
+
+  +------+-------+
+
+  | name | value |
+
+  +------+-------+
+
+  | x    | 66    |
+
+  | y    | 77    |
+
+  +------+-------+
+
+
+
+  Expressions table:
+
+  +--------------+----------+---------------+
+
+  | left_operand | operator | right_operand |
+
+  +--------------+----------+---------------+
+
+  | x            | &gt;        | y             |
+
+  | x            | &lt;        | y             |
+
+  | x            | =        | y             |
+
+  | y            | &gt;        | x             |
+
+  | y            | &lt;        | x             |
+
+  | x            | =        | x             |
+
+  +--------------+----------+---------------+
+
+
+
+  Result table:
+
+  +--------------+----------+---------------+-------+
+
+  | left_operand | operator | right_operand | value |
+
+  +--------------+----------+---------------+-------+
+
+  | x            | &gt;        | y             | false |
+
+  | x            | &lt;        | y             | true  |
+
+  | x            | =        | y             | false |
+
+  | y            | &gt;        | x             | true  |
+
+  | y            | &lt;        | x             | false |
+
+  | x            | =        | x             | true  |
+
+  +--------------+----------+---------------+-------+
+
+  As shown, you need find the value of each boolean exprssion in the table using the variables table.
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

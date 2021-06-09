@@ -1,0 +1,380 @@
+* [[https://leetcode-cn.com/problems/throne-inheritance][1600.
+皇位继承顺序]]
+  :PROPERTIES:
+  :CUSTOM_ID: 皇位继承顺序
+  :END:
+[[./solution/1600-1699/1600.Throne Inheritance/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+一个王国里住着国王、他的孩子们、他的孙子们等等。每一个时间点，这个家庭里有人出生也有人死亡。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+这个王国有一个明确规定的皇位继承顺序，第一继承人总是国王自己。我们定义递归函数 Successor(x,
+curOrder) ，给定一个人 x 和当前的继承顺序，该函数返回 x 的下一继承人。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>Successor(x, curOrder):
+      如果 x 没有孩子或者所有 x 的孩子都在 curOrder 中：
+          如果 x 是国王，那么返回 null
+          否则，返回 Successor(x 的父亲, curOrder)
+      否则，返回 x 不在 curOrder 中最年长的孩子
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+比方说，假设王国由国王，他的孩子 Alice 和 Bob （Alice 比 Bob 年长）和
+Alice 的孩子 Jack 组成。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+一开始， curOrder 为 ["king"].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+调用 Successor(king, curOrder) ，返回 Alice ，所以我们将 Alice 放入
+curOrder 中，得到 ["king", "Alice"] 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+调用 Successor(Alice, curOrder) ，返回 Jack ，所以我们将 Jack
+放入 curOrder 中，得到 ["king", "Alice", "Jack"] 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+调用 Successor(Jack, curOrder) ，返回 Bob ，所以我们将 Bob
+放入 curOrder 中，得到 ["king", "Alice", "Jack", "Bob"] 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+调用 Successor(Bob, curOrder) ，返回 null 。最终得到继承顺序为 ["king",
+"Alice", "Jack", "Bob"] 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+通过以上的函数，我们总是能得到一个唯一的继承顺序。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你实现 ThroneInheritance 类：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+ThroneInheritance(string kingName)
+初始化一个 ThroneInheritance 类的对象。国王的名字作为构造函数的参数传入。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void birth(string parentName, string
+childName) 表示 parentName 新拥有了一个名为 childName 的孩子。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void death(string
+name) 表示名为 name 的人死亡。一个人的死亡不会影响 Successor 函数，也不会影响当前的继承顺序。你可以只将这个人标记为死亡状态。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+string[] getInheritanceOrder() 返回 除去 死亡人员的当前继承顺序列表。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>
+  [&quot;ThroneInheritance&quot;, &quot;birth&quot;, &quot;birth&quot;, &quot;birth&quot;, &quot;birth&quot;, &quot;birth&quot;, &quot;birth&quot;, &quot;getInheritanceOrder&quot;, &quot;death&quot;, &quot;getInheritanceOrder&quot;]
+  [[&quot;king&quot;], [&quot;king&quot;, &quot;andy&quot;], [&quot;king&quot;, &quot;bob&quot;], [&quot;king&quot;, &quot;catherine&quot;], [&quot;andy&quot;, &quot;matthew&quot;], [&quot;bob&quot;, &quot;alex&quot;], [&quot;bob&quot;, &quot;asha&quot;], [null], [&quot;bob&quot;], [null]]
+  <strong>输出：</strong>
+  [null, null, null, null, null, null, null, [&quot;king&quot;, &quot;andy&quot;, &quot;matthew&quot;, &quot;bob&quot;, &quot;alex&quot;, &quot;asha&quot;, &quot;catherine&quot;], null, [&quot;king&quot;, &quot;andy&quot;, &quot;matthew&quot;, &quot;alex&quot;, &quot;asha&quot;, &quot;catherine&quot;]]
+
+  <strong>解释：</strong>
+  ThroneInheritance t= new ThroneInheritance(&quot;king&quot;); // 继承顺序：<strong>king</strong>
+  t.birth(&quot;king&quot;, &quot;andy&quot;); // 继承顺序：king &gt; <strong>andy</strong>
+  t.birth(&quot;king&quot;, &quot;bob&quot;); // 继承顺序：king &gt; andy &gt; <strong>bob</strong>
+  t.birth(&quot;king&quot;, &quot;catherine&quot;); // 继承顺序：king &gt; andy &gt; bob &gt; <strong>catherine</strong>
+  t.birth(&quot;andy&quot;, &quot;matthew&quot;); // 继承顺序：king &gt; andy &gt; <strong>matthew</strong> &gt; bob &gt; catherine
+  t.birth(&quot;bob&quot;, &quot;alex&quot;); // 继承顺序：king &gt; andy &gt; matthew &gt; bob &gt; <strong>alex</strong> &gt; catherine
+  t.birth(&quot;bob&quot;, &quot;asha&quot;); // 继承顺序：king &gt; andy &gt; matthew &gt; bob &gt; alex &gt; <strong>asha</strong> &gt; catherine
+  t.getInheritanceOrder(); // 返回 [&quot;king&quot;, &quot;andy&quot;, &quot;matthew&quot;, &quot;bob&quot;, &quot;alex&quot;, &quot;asha&quot;, &quot;catherine&quot;]
+  t.death(&quot;bob&quot;); // 继承顺序：king &gt; andy &gt; matthew &gt; <strong>bob（已经去世）</strong>&gt; alex &gt; asha &gt; catherine
+  t.getInheritanceOrder(); // 返回 [&quot;king&quot;, &quot;andy&quot;, &quot;matthew&quot;, &quot;alex&quot;, &quot;asha&quot;, &quot;catherine&quot;]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= kingName.length, parentName.length, childName.length, name.length
+<= 15
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+kingName，parentName， childName 和 name 仅包含小写英文字母。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+所有的参数 childName 和 kingName 互不相同。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+所有 death 函数中的死亡名字
+name 要么是国王，要么是已经出生了的人员名字。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+每次调用 birth(parentName, childName) 时，测试用例都保证 parentName
+对应的人员是活着的。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+最多调用 105 次birth 和 death 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+最多调用 10 次 getInheritanceOrder 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

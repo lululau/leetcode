@@ -1,0 +1,160 @@
+* [[https://leetcode.com/problems/arranging-coins][441. Arranging
+Coins]]
+  :PROPERTIES:
+  :CUSTOM_ID: arranging-coins
+  :END:
+[[./solution/0400-0499/0441.Arranging Coins/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You have n coins and you want to build a staircase with these coins. The
+staircase consists of k rows where the ith row has exactly i coins. The
+last row of the staircase may be incomplete.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the integer n, return the number of complete rows of the staircase
+you will build.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> n = 5
+  <strong>Output:</strong> 2
+  <strong>Explanation:</strong> Because the 3<sup>rd</sup> row is incomplete, we return 2.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> n = 8
+  <strong>Output:</strong> 3
+  <strong>Explanation:</strong> Because the 4<sup>th</sup> row is incomplete, we return 3.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 231 - 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def arrangeCoins(self, n: int) -> int:
+          return int(math.sqrt(2) * math.sqrt(n + 0.125) - 0.5)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int arrangeCoins(int n) {
+          return (int) (Math.sqrt(2) * Math.sqrt(n + 0.125) - 0.5);
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

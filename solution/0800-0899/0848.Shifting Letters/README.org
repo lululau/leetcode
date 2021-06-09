@@ -1,0 +1,173 @@
+* [[https://leetcode-cn.com/problems/shifting-letters][848. 字母移位]]
+  :PROPERTIES:
+  :CUSTOM_ID: 字母移位
+  :END:
+[[./solution/0800-0899/0848.Shifting Letters/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+有一个由小写字母组成的字符串 S，和一个整数数组 shifts。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+我们将字母表中的下一个字母称为原字母的 移位（由于字母表是环绕的，
+'z' 将会变成 'a'）。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+例如·，shift('a') = 'b'， shift('t') = 'u',， 以及 shift('z') = 'a'。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+对于每个 shifts[i] = x ， 我们会将 S 中的前 i+1 个字母移位 x 次。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回将所有这些移位都应用到 S 后最终得到的字符串。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>S = &quot;abc&quot;, shifts = [3,5,9]
+  <strong>输出：</strong>&quot;rpl&quot;
+  <strong>解释： </strong>
+  我们以 &quot;abc&quot; 开始。
+  将 S 中的第 1 个字母移位 3 次后，我们得到 &quot;dbc&quot;。
+  再将 S 中的前 2 个字母移位 5 次后，我们得到 &quot;igc&quot;。
+  最后将 S 中的这 3 个字母移位 9 次后，我们得到答案 &quot;rpl&quot;。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= S.length = shifts.length <= 20000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= shifts[i] <= 10 ^ 9
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

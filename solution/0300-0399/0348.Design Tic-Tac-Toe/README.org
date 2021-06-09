@@ -1,0 +1,275 @@
+* [[https://leetcode-cn.com/problems/design-tic-tac-toe][348.
+设计井字棋]]
+  :PROPERTIES:
+  :CUSTOM_ID: 设计井字棋
+  :END:
+[[./solution/0300-0399/0348.Design Tic-Tac-Toe/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请在 n × n
+的棋盘上，实现一个判定井字棋（Tic-Tac-Toe）胜负的神器，判断每一次玩家落子后，是否有胜出的玩家。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+在这个井字棋游戏中，会有 2 名玩家，他们将轮流在棋盘上放置自己的棋子。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+在实现这个判定器的过程中，你可以假设以下这些规则一定成立：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+      1. 每一步棋都是在棋盘内的，并且只能被放置在一个空的格子里；
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+      2. 一旦游戏中有一名玩家胜出的话，游戏将不能再继续；
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+      3.
+一个玩家如果在同一行、同一列或者同一斜对角线上都放置了自己的棋子，那么他便获得胜利。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>给定棋盘边长 <em>n</em> = 3, 玩家 1 的棋子符号是 &quot;X&quot;，玩家 2 的棋子符号是 &quot;O&quot;。
+
+  TicTacToe toe = new TicTacToe(3);
+
+  toe.move(0, 0, 1); -&gt; 函数返回 0 (此时，暂时没有玩家赢得这场对决)
+  |X| | |
+  | | | |    // 玩家 1 在 (0, 0) 落子。
+  | | | |
+
+  toe.move(0, 2, 2); -&gt; 函数返回 0 (暂时没有玩家赢得本场比赛)
+  |X| |O|
+  | | | |    // 玩家 2 在 (0, 2) 落子。
+  | | | |
+
+  toe.move(2, 2, 1); -&gt; 函数返回 0 (暂时没有玩家赢得比赛)
+  |X| |O|
+  | | | |    // 玩家 1 在 (2, 2) 落子。
+  | | |X|
+
+  toe.move(1, 1, 2); -&gt; 函数返回 0 (暂没有玩家赢得比赛)
+  |X| |O|
+  | |O| |    // 玩家 2 在 (1, 1) 落子。
+  | | |X|
+
+  toe.move(2, 0, 1); -&gt; 函数返回 0 (暂无玩家赢得比赛)
+  |X| |O|
+  | |O| |    // 玩家 1 在 (2, 0) 落子。
+  |X| |X|
+
+  toe.move(1, 0, 2); -&gt; 函数返回 0 (没有玩家赢得比赛)
+  |X| |O|
+  |O|O| |    // 玩家 2 在 (1, 0) 落子.
+  |X| |X|
+
+  toe.move(2, 1, 1); -&gt; 函数返回 1 (此时，玩家 1 赢得了该场比赛)
+  |X| |O|
+  |O|O| |    // 玩家 1 在 (2, 1) 落子。
+  |X|X|X|
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+进阶: 您有没有可能将每一步的 move() 操作优化到比 O(n2) 更快吗?
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+思路同[[file:solution/1200-1299/1275.Find Winner on a Tic Tac Toe Game/README][1275.
+找出井字棋的获胜者]]。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class TicTacToe:
+
+      def __init__(self, n: int):
+          """
+          Initialize your data structure here.
+          """
+          self.n = n
+          self.counter = [[0] * ((n << 1) + 2) for _ in range(2)]
+
+      def move(self, row: int, col: int, player: int) -> int:
+          """
+          Player {player} makes a move at ({row}, {col}).
+          @param row The row of the board.
+          @param col The column of the board.
+          @param player The player, can be either 1 or 2.
+          @return The current winning condition, can be either:
+                  0: No one wins.
+                  1: Player 1 wins.
+                  2: Player 2 wins.
+          """
+          n = self.n
+          self.counter[player - 1][row] += 1
+          self.counter[player - 1][col + n] += 1
+          if row == col:
+              self.counter[player - 1][n << 1] += 1
+          if row + col == n - 1:
+              self.counter[player - 1][(n << 1) + 1] += 1
+          if self.counter[player - 1][row] == n or self.counter[player - 1][col + n] == n or self.counter[player - 1][n << 1] == n or self.counter[player - 1][(n << 1) + 1] == n:
+              return player
+          return 0
+
+
+  # Your TicTacToe object will be instantiated and called as such:
+  # obj = TicTacToe(n)
+  # param_1 = obj.move(row,col,player)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class TicTacToe {
+      private int n;
+      private int[][] counter;
+
+      /** Initialize your data structure here. */
+      public TicTacToe(int n) {
+          counter = new int[2][(n << 1) + 2];
+          this.n = n;
+      }
+
+      /** Player {player} makes a move at ({row}, {col}).
+          @param row The row of the board.
+          @param col The column of the board.
+          @param player The player, can be either 1 or 2.
+          @return The current winning condition, can be either:
+                  0: No one wins.
+                  1: Player 1 wins.
+                  2: Player 2 wins. */
+      public int move(int row, int col, int player) {
+          counter[player - 1][row] += 1;
+          counter[player - 1][col + n] += 1;
+          if (row == col) {
+              counter[player - 1][n << 1] += 1;
+          }
+          if (row + col == n - 1) {
+              counter[player - 1][(n << 1) + 1] += 1;
+          }
+          if (counter[player - 1][row] == n || counter[player - 1][col + n] == n || counter[player - 1][n << 1] == n || counter[player - 1][(n << 1) + 1] == n) {
+              return player;
+          }
+          return 0;
+      }
+  }
+
+  /**
+   * Your TicTacToe object will be instantiated and called as such:
+   * TicTacToe obj = new TicTacToe(n);
+   * int param_1 = obj.move(row,col,player);
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

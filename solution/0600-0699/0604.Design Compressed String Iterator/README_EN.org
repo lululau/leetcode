@@ -1,0 +1,210 @@
+* [[https://leetcode.com/problems/design-compressed-string-iterator][604.
+Design Compressed String Iterator]]
+  :PROPERTIES:
+  :CUSTOM_ID: design-compressed-string-iterator
+  :END:
+[[./solution/0600-0699/0604.Design Compressed String Iterator/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Design and implement a data structure for a compressed string iterator.
+The given compressed string will be in the form of each letter followed
+by a positive integer representing the number of this letter existing in
+the original uncompressed string.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement the StringIterator class:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+next() Returns the next character if the original string still has
+uncompressed characters, otherwise returns a white space.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+hasNext() Returns true if there is any letter needs to be uncompressed
+in the original string, otherwise returns false.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input</strong>
+  [&quot;StringIterator&quot;, &quot;next&quot;, &quot;next&quot;, &quot;next&quot;, &quot;next&quot;, &quot;next&quot;, &quot;next&quot;, &quot;hasNext&quot;, &quot;next&quot;, &quot;hasNext&quot;]
+  [[&quot;L1e2t1C1o1d1e1&quot;], [], [], [], [], [], [], [], [], []]
+  <strong>Output</strong>
+  [null, &quot;L&quot;, &quot;e&quot;, &quot;e&quot;, &quot;t&quot;, &quot;C&quot;, &quot;o&quot;, true, &quot;d&quot;, true]
+
+  <strong>Explanation</strong>
+  StringIterator stringIterator = new StringIterator(&quot;L1e2t1C1o1d1e1&quot;);
+  stringIterator.next(); // return &quot;L&quot;
+  stringIterator.next(); // return &quot;e&quot;
+  stringIterator.next(); // return &quot;e&quot;
+  stringIterator.next(); // return &quot;t&quot;
+  stringIterator.next(); // return &quot;C&quot;
+  stringIterator.next(); // return &quot;o&quot;
+  stringIterator.hasNext(); // return True
+  stringIterator.next(); // return &quot;d&quot;
+  stringIterator.hasNext(); // return True
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= compressedString.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+compressedString consists of lower-case an upper-case English letters
+and digits.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of a single character repetitions in compressedString is in
+the range [1, 10^9]
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+At most 100 calls will be made to next and hasNext.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

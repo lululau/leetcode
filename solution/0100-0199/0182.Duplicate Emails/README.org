@@ -1,0 +1,101 @@
+* [[https://leetcode-cn.com/problems/duplicate-emails][182.
+查找重复的电子邮箱]]
+  :PROPERTIES:
+  :CUSTOM_ID: 查找重复的电子邮箱
+  :END:
+[[./solution/0100-0199/0182.Duplicate Emails/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+编写一个 SQL 查询，查找 Person 表中所有重复的电子邮箱。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+----+---------+
+  | Id | Email   |
+  +----+---------+
+  | 1  | a@b.com |
+  | 2  | c@d.com |
+  | 3  | a@b.com |
+  +----+---------+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+根据以上输入，你的查询应返回以下结果：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+---------+
+  | Email   |
+  +---------+
+  | a@b.com |
+  +---------+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+说明：所有电子邮箱都是小写字母。
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_example
+  select Email from Person group by Email having count(Email) > 1
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

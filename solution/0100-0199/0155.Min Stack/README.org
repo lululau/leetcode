@@ -1,0 +1,366 @@
+* [[https://leetcode-cn.com/problems/min-stack][155. 最小栈]]
+  :PROPERTIES:
+  :CUSTOM_ID: 最小栈
+  :END:
+[[./solution/0100-0199/0155.Min Stack/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+push(x) ------ 将元素 x 推入栈中。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+pop() ------ 删除栈顶的元素。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+top() ------ 获取栈顶元素。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+getMin() ------ 检索栈中的最小元素。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>
+  [&quot;MinStack&quot;,&quot;push&quot;,&quot;push&quot;,&quot;push&quot;,&quot;getMin&quot;,&quot;pop&quot;,&quot;top&quot;,&quot;getMin&quot;]
+  [[],[-2],[0],[-3],[],[],[],[]]
+
+  <strong>输出：</strong>
+  [null,null,null,null,-3,null,0,-2]
+
+  <strong>解释：</strong>
+  MinStack minStack = new MinStack();
+  minStack.push(-2);
+  minStack.push(0);
+  minStack.push(-3);
+  minStack.getMin();   --&gt; 返回 -3.
+  minStack.pop();
+  minStack.top();      --&gt; 返回 0.
+  minStack.getMin();   --&gt; 返回 -2.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+pop、top 和 getMin 操作总是在 非空栈 上调用。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+"辅助栈"实现。
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class MinStack:
+
+      def __init__(self):
+          """
+          initialize your data structure here.
+          """
+          self.s = []
+          self.mins = [float('inf')]
+
+      def push(self, val: int) -> None:
+          self.s.append(val)
+          self.mins.append(min(self.mins[-1], val))
+
+      def pop(self) -> None:
+          self.s.pop()
+          self.mins.pop()
+
+      def top(self) -> int:
+          return self.s[-1]
+
+      def getMin(self) -> int:
+          return self.mins[-1]
+
+
+  # Your MinStack object will be instantiated and called as such:
+  # obj = MinStack()
+  # obj.push(val)
+  # obj.pop()
+  # param_3 = obj.top()
+  # param_4 = obj.getMin()
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class MinStack {
+      private Deque<Integer> s;
+      private Deque<Integer> mins;
+
+      /** initialize your data structure here. */
+      public MinStack() {
+          s = new ArrayDeque<>();
+          mins = new ArrayDeque<>();
+          mins.push(Integer.MAX_VALUE);
+      }
+
+      public void push(int val) {
+          s.push(val);
+          mins.push(Math.min(mins.peek(), val));
+      }
+
+      public void pop() {
+          s.pop();
+          mins.pop();
+      }
+
+      public int top() {
+          return s.peek();
+      }
+
+      public int getMin() {
+          return mins.peek();
+      }
+  }
+
+  /**
+   * Your MinStack object will be instantiated and called as such:
+   * MinStack obj = new MinStack();
+   * obj.push(val);
+   * obj.pop();
+   * int param_3 = obj.top();
+   * int param_4 = obj.getMin();
+   */
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class MinStack {
+  private:
+      stack<int> s;
+      stack<int> mins;
+
+  public:
+      /** initialize your data structure here. */
+      MinStack() {
+          mins.push(INT_MAX);
+      }
+
+      void push(int val) {
+          s.push(val);
+          mins.push(min(mins.top(), val));
+      }
+
+      void pop() {
+          s.pop();
+          mins.pop();
+      }
+
+      int top() {
+          return s.top();
+      }
+
+      int getMin() {
+          return mins.top();
+      }
+  };
+
+  /**
+   * Your MinStack object will be instantiated and called as such:
+   * MinStack* obj = new MinStack();
+   * obj->push(val);
+   * obj->pop();
+   * int param_3 = obj->top();
+   * int param_4 = obj->getMin();
+   */
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * initialize your data structure here.
+   */
+  var MinStack = function() {
+      this.s = [];
+      this.mins = [Infinity];
+  };
+
+  /** 
+   * @param {number} val
+   * @return {void}
+   */
+  MinStack.prototype.push = function(val) {
+      this.s.push(val);
+      this.mins.push(Math.min(this.mins[this.mins.length - 1], val));
+  };
+
+  /**
+   * @return {void}
+   */
+  MinStack.prototype.pop = function() {
+      this.s.pop();
+      this.mins.pop();
+  };
+
+  /**
+   * @return {number}
+   */
+  MinStack.prototype.top = function() {
+      return this.s[this.s.length - 1];
+  };
+
+  /**
+   * @return {number}
+   */
+  MinStack.prototype.getMin = function() {
+      return this.mins[this.mins.length - 1];
+  };
+
+  /**
+   * Your MinStack object will be instantiated and called as such:
+   * var obj = new MinStack()
+   * obj.push(val)
+   * obj.pop()
+   * var param_3 = obj.top()
+   * var param_4 = obj.getMin()
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

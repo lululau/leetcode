@@ -1,0 +1,303 @@
+* [[https://leetcode.com/problems/design-snake-game][353. Design Snake
+Game]]
+  :PROPERTIES:
+  :CUSTOM_ID: design-snake-game
+  :END:
+[[./solution/0300-0399/0353.Design Snake Game/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Design a Snake game that is played on a device with screen size height x
+width. Play the game online if you are not familiar with the game.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The snake is initially positioned at the top left corner (0, 0) with a
+length of 1 unit.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given an array food where food[i] = (ri, ci) is the row and
+column position of a piece of food that the snake can eat. When a snake
+eats a piece of food, its length and the game's score both increase by
+1.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Each piece of food appears one by one on the screen, meaning the second
+piece of food will not appear until the snake eats the first piece of
+food.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+When a piece of food appears on the screen, it is guaranteed that it
+will not appear on a block occupied by the snake.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The game is over if the snake goes out of bounds (hits a wall) or if its
+head occupies a space that its body occupies after moving (i.e. a snake
+of length 4 cannot run into itself).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement the SnakeGame class:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+SnakeGame(int width, int height, int[][] food) Initializes the object
+with a screen of size height x width and the positions of the food.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int move(String direction) Returns the score of the game after applying
+one direction move by the snake. If the game is over, return -1.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input</strong>
+  [&quot;SnakeGame&quot;, &quot;move&quot;, &quot;move&quot;, &quot;move&quot;, &quot;move&quot;, &quot;move&quot;, &quot;move&quot;]
+  [[3, 2, [[1, 2], [0, 1]]], [&quot;R&quot;], [&quot;D&quot;], [&quot;R&quot;], [&quot;U&quot;], [&quot;L&quot;], [&quot;U&quot;]]
+  <strong>Output</strong>
+  [null, 0, 0, 1, 1, 2, -1]
+
+  <strong>Explanation</strong>
+  SnakeGame snakeGame = new SnakeGame(3, 2, [[1, 2], [0, 1]]);
+  snakeGame.move(&quot;R&quot;); // return 0
+  snakeGame.move(&quot;D&quot;); // return 0
+  snakeGame.move(&quot;R&quot;); // return 1, snake eats the first piece of food. The second piece of food appears
+                       // at (0, 1).
+  snakeGame.move(&quot;U&quot;); // return 1
+  snakeGame.move(&quot;L&quot;); // return 2, snake eats the second food. No more food appears.
+  snakeGame.move(&quot;U&quot;); // return -1, game over because snake collides with border
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= width, height <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= food.length <= 50
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+food[i].length == 2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= ri < height
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= ci < width
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+direction.length == 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+direction is 'U', 'D', 'L', or 'R'.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+At most 104 calls will be made to move.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

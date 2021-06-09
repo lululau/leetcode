@@ -1,0 +1,262 @@
+* [[https://leetcode.com/problems/add-to-array-form-of-integer][989. Add
+to Array-Form of Integer]]
+  :PROPERTIES:
+  :CUSTOM_ID: add-to-array-form-of-integer
+  :END:
+[[./solution/0900-0999/0989.Add to Array-Form of Integer/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+The array-form of an integer num is an array representing its digits in
+left to right order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For example, for num = 1321, the array form is [1,3,2,1].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given num, the array-form of an integer, and an integer k, return the
+array-form of the integer num + k.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> num = [1,2,0,0], k = 34
+  <strong>Output:</strong> [1,2,3,4]
+  <strong>Explanation:</strong> 1200 + 34 = 1234
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> num = [2,7,4], k = 181
+  <strong>Output:</strong> [4,5,5]
+  <strong>Explanation:</strong> 274 + 181 = 455
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> num = [2,1,5], k = 806
+  <strong>Output:</strong> [1,0,2,1]
+  <strong>Explanation:</strong> 215 + 806 = 1021
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> num = [9,9,9,9,9,9,9,9,9,9], k = 1
+  <strong>Output:</strong> [1,0,0,0,0,0,0,0,0,0,0]
+  <strong>Explanation:</strong> 9999999999 + 1 = 10000000000
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= num.length <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= num[i] <= 9
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+num does not contain any leading zeros except for the zero itself.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= k <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def addToArrayForm(self, A: List[int], K: int) -> List[int]:
+          n = len(A) - 1
+          carry, res = 0, []
+          while n >= 0 or K != 0 or carry != 0:
+              carry += (0 if n < 0 else A[n]) + (K % 10)
+              res.append(carry % 10)
+              K //= 10
+              carry //= 10
+              n -= 1
+          return res[::-1]
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public List<Integer> addToArrayForm(int[] A, int K) {
+          int n = A.length - 1;
+          List<Integer> res = new ArrayList<>();
+          int carry = 0;
+          while (n >= 0 || K != 0 || carry != 0) {
+              carry += (n < 0 ? 0 : A[n]) + (K % 10);
+              res.add(carry % 10);
+              K /= 10;
+              carry /= 10;
+              --n;
+          }
+          Collections.reverse(res);
+          return res;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

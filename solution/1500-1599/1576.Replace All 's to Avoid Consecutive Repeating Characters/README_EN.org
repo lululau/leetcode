@@ -1,0 +1,254 @@
+* [[https://leetcode.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters][1576.
+Replace All 's to Avoid Consecutive Repeating Characters]]
+  :PROPERTIES:
+  :CUSTOM_ID: replace-all-s-to-avoid-consecutive-repeating-characters
+  :END:
+[[./solution/1500-1599/1576.Replace All %27s to Avoid Consecutive Repeating Characters/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a string s containing only lower case English letters and the
+'?' character, convert all the '?' characters into lower case letters
+such that the final string does not contain any consecutive
+repeating characters. You cannot modify the non '?' characters.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+It is guaranteed that there are no consecutive repeating characters in
+the given string except for '?'.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the final string after all the conversions (possibly zero) have
+been made. If there is more than one solution, return any of them. It
+can be shown that an answer is always possible with the given
+constraints.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;?zs&quot;
+  <strong>Output:</strong> &quot;azs&quot;
+  <strong>Explanation</strong>: There are 25 solutions for this problem. From &quot;azs&quot; to &quot;yzs&quot;, all are valid. Only &quot;z&quot; is an invalid modification as the string will consist of consecutive repeating characters in &quot;zzs&quot;.</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;ubv?w&quot;
+  <strong>Output:</strong> &quot;ubvaw&quot;
+  <strong>Explanation</strong>: There are 24 solutions for this problem. Only &quot;v&quot; and &quot;w&quot; are invalid modifications as the strings will consist of consecutive repeating characters in &quot;ubvvw&quot; and &quot;ubvww&quot;.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;j?qg??b&quot;
+  <strong>Output:</strong> &quot;jaqgacb&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;??yw?ipkj?&quot;
+  <strong>Output:</strong> &quot;acywaipkja&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s contains only lower case English letters and '?'.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def modifyString(self, s: str) -> str:
+          s = list(s)
+          for i in range(len(s)):
+              if s[i] == '?':
+                  ahead = ' ' if i == 0 else s[i - 1]
+                  behind = ' ' if i == len(s) - 1 else s[i + 1]
+                  for c in string.ascii_lowercase:
+                      if c != ahead and c != behind:
+                          s[i] = c
+                          break
+          return "".join(s)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public String modifyString(String s) {
+          char[] chars = s.toCharArray();
+          for (int i = 0; i < chars.length; i++) {
+              if (chars[i] == '?') {
+                  // 前面的字符
+                  char ahead = i == 0 ? ' ' : chars[i - 1];
+                  // 后面的字符
+                  char behind = i == chars.length - 1 ? ' ' : chars[i + 1];
+                  char temp = 'a';
+                  while (temp == ahead || temp == behind) {
+                      temp++;
+                  }
+                  chars[i] = temp;
+              }
+          }
+          return new String(chars);
+      }
+  }
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  func modifyString(s string) string {
+      data := []byte(" " + s + " ")
+      for i, c := range data {
+          if c == byte('?') {
+              ahead, behind := data[i-1], data[i+1]
+              for t := byte('a'); t <= byte('z'); t++ {
+                  if t != ahead && t != behind {
+                      data[i] = t
+                  }
+              }
+          }
+      }
+      return string(data[1 : len(data)-1])
+  }
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

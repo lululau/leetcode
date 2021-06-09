@@ -1,0 +1,114 @@
+* [[https://leetcode.com/problems/find-the-derangement-of-an-array][634.
+Find the Derangement of An Array]]
+  :PROPERTIES:
+  :CUSTOM_ID: find-the-derangement-of-an-array
+  :END:
+[[./solution/0600-0699/0634.Find the Derangement of An Array/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+In combinatorial mathematics, a derangement is a permutation of the
+elements of a set, such that no element appears in its original
+position.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+There's originally an array consisting of n integers from 1 to n in
+ascending order, you need to find the number of derangement it can
+generate.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Also, since the answer may be very large, you should return the output
+mod 109 + 7.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> 3
+
+  <b>Output:</b> 2
+
+  <b>Explanation:</b> The original array is [1,2,3]. The two derangements are [2,3,1] and [3,1,2].
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+n is in the range of [1, 106].
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

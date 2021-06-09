@@ -1,0 +1,261 @@
+* [[https://leetcode-cn.com/problems/maximum-frequency-stack][895.
+最大频率栈]]
+  :PROPERTIES:
+  :CUSTOM_ID: 最大频率栈
+  :END:
+[[./solution/0800-0899/0895.Maximum Frequency Stack/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+实现 FreqStack，模拟类似栈的数据结构的操作的一个类。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+FreqStack 有两个函数：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+push(int x)，将整数 x 推入栈中。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+pop()，它移除并返回栈中出现最频繁的元素。
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+如果最频繁的元素不只一个，则移除并返回最接近栈顶的元素。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_example
+  </li>
+#+end_example
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>
+  [&quot;FreqStack&quot;,&quot;push&quot;,&quot;push&quot;,&quot;push&quot;,&quot;push&quot;,&quot;push&quot;,&quot;push&quot;,&quot;pop&quot;,&quot;pop&quot;,&quot;pop&quot;,&quot;pop&quot;],
+  [[],[5],[7],[5],[7],[4],[5],[],[],[],[]]
+  <strong>输出：</strong>[null,null,null,null,null,null,null,5,7,5,4]
+  <strong>解释：</strong>
+  执行六次 .push 操作后，栈自底向上为 [5,7,5,7,4,5]。然后：
+
+  pop() -&gt; 返回 5，因为 5 是出现频率最高的。
+  栈变成 [5,7,5,7,4]。
+
+  pop() -&gt; 返回 7，因为 5 和 7 都是频率最高的，但 7 最接近栈顶。
+  栈变成 [5,7,5,4]。
+
+  pop() -&gt; 返回 5 。
+  栈变成 [5,7,4]。
+
+  pop() -&gt; 返回 4 。
+  栈变成 [5,7]。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+对 FreqStack.push(int x) 的调用中 0 <= x <= 10^9。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+如果栈的元素数目为零，则保证不会调用  FreqStack.pop()。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+单个测试样例中，对 FreqStack.push 的总调用次数不会超过 10000。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+单个测试样例中，对 FreqStack.pop 的总调用次数不会超过 10000。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+所有测试样例中，对 FreqStack.push 和
+FreqStack.pop 的总调用次数不会超过 150000。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

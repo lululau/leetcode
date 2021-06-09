@@ -1,0 +1,190 @@
+* [[https://leetcode-cn.com/problems/reorder-list][143. 重排链表]]
+  :PROPERTIES:
+  :CUSTOM_ID: 重排链表
+  :END:
+[[./solution/0100-0199/0143.Reorder List/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个单链表 L：L0→L1→...→Ln-1→Ln ， 将其重新排列后变为：
+L0→Ln→L1→Ln-1→L2→Ln-2→...
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>给定链表 1-&gt;2-&gt;3-&gt;4, 重新排列为 1-&gt;4-&gt;2-&gt;3.</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>给定链表 1-&gt;2-&gt;3-&gt;4-&gt;5, 重新排列为 1-&gt;5-&gt;2-&gt;4-&gt;3.</pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+先通过快慢指针找到链表中点，将链表划分为左右两部分。之后反转右半部分的链表，然后将左右两个链接依次连接即可。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  # Definition for singly-linked list.
+  # class ListNode:
+  #     def __init__(self, val=0, next=None):
+  #         self.val = val
+  #         self.next = next
+  class Solution:
+      def reorderList(self, head: ListNode) -> None:
+          """
+          Do not return anything, modify head in-place instead.
+          """
+          if head is None or head.next is None:
+              return
+          slow, fast = head, head.next
+          # 快慢指针找到链表中点
+          while fast and fast.next:
+              slow, fast = slow.next, fast.next.next
+          cur = slow.next
+          slow.next = None
+          pre = None
+          # cur 指向右半部分的链表，反转
+          while cur:
+              t = cur.next
+              cur.next = pre
+              pre = cur
+              cur = t
+          cur = head
+
+          # 将左右链表依次连接
+          while pre:
+              t1 = cur.next
+              cur.next = pre
+              cur = t1
+              t2 = pre.next
+              pre.next = t1
+              pre = t2
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  /**
+   * Definition for singly-linked list.
+   * public class ListNode {
+   *     int val;
+   *     ListNode next;
+   *     ListNode() {}
+   *     ListNode(int val) { this.val = val; }
+   *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+   * }
+   */
+  class Solution {
+      public void reorderList(ListNode head) {
+          if (head == null || head.next == null) {
+              return;
+          }
+          ListNode slow = head;
+          ListNode fast = head.next;
+          while (fast != null && fast.next != null) {
+              slow = slow.next;
+              fast = fast.next.next;
+          }
+          ListNode cur = slow.next;
+          slow.next = null;
+          ListNode pre = null;
+          while (cur != null) {
+              ListNode t = cur.next;
+              cur.next = pre;
+              pre = cur;
+              cur = t;
+          }
+          cur = head;
+          while (pre != null) {
+              ListNode t1 = cur.next;
+              cur.next = pre;
+              cur = t1;
+              ListNode t2 = pre.next;
+              pre.next = cur;
+              pre = t2;
+          }
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

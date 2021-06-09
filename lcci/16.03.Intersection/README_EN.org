@@ -1,0 +1,172 @@
+* [[https://leetcode-cn.com/problems/intersection-lcci][16.03.
+Intersection]]
+  :PROPERTIES:
+  :CUSTOM_ID: intersection
+  :END:
+[[./lcci/16.03.Intersection/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given two straight line segments (represented as a start point and an
+end point), compute the point of intersection, if any. If there's no
+intersection, return an empty array.
+
+#+begin_html
+  </p>
+#+end_html
+
+The absolute error should not exceed 10^-6. If there are more than one
+intersections, return the one with smallest X axis value. If there are
+more than one intersections that have same X axis value, return the one
+with smallest Y axis value.
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>
+
+  line1 = {0, 0}, {1, 0}
+
+  line2 = {1, 1}, {0, -1}
+
+  <strong>Output: </strong> {0.5, 0}
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>
+
+  line1 = {0, 0}, {3, 3}
+
+  line2 = {1, 1}, {2, 2}
+
+  <strong>Output: </strong> {1, 1}
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>
+
+  line1 = {0, 0}, {1, 1}
+
+  line2 = {1, 0}, {2, 1}
+
+  <strong>Output: </strong> {}  (no intersection)
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The absolute value of coordinate value will not exceed 2^7.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All coordinates are valid 2D coordinates.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

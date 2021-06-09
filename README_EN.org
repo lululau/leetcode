@@ -1,0 +1,391 @@
+#+begin_html
+  <p align="center">
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p align="center">
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+** Introduction
+   :PROPERTIES:
+   :CUSTOM_ID: introduction
+   :END:
+Complete solutions to
+[[https://leetcode-cn.com/problemset/all/][LeetCode]],
+[[https://leetcode-cn.com/problemset/lcof/][LCOF]] and
+[[https://leetcode-cn.com/problemset/lcci/][LCCI]] problems, updated
+daily. Please give me a [[https://github.com/doocs/leetcode][star]] 🌟 if
+you like it.
+
+[[./README.org][中文文档]]
+
+** Sites
+   :PROPERTIES:
+   :CUSTOM_ID: sites
+   :END:
+
+- Netlify: https://lc.netlify.app
+- Gitee Pages: https://doocs.gitee.io/leetcode
+- GitHub Pages: https://doocs.github.io/leetcode
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+- [[./solution/README_EN.org][LeetCode]]
+- [[./lcof/README_EN.org][LCOF: Coding Interviews, 2nd Edition]]
+- [[./lcci/README_EN.org][LCCI: Cracking the Coding Interview, 6th
+  Edition]]
+
+** Basic Algorithms
+   :PROPERTIES:
+   :CUSTOM_ID: basic-algorithms
+   :END:
+*** Sorting
+    :PROPERTIES:
+    :CUSTOM_ID: sorting
+    :END:
+
+- [[./basic/sorting/BubbleSort/README.org][Bubble Sort]]
+- [[./basic/sorting/InsertionSort/README.org][Insertion Sort]]
+- [[./basic/sorting/SelectionSort/README.org][Selection Sort]]
+- [[./basic/sorting/MergeSort/README.org][Merge Sort]]
+- [[./basic/sorting/QuickSort/README.org][Quick Sort]]
+- [[./basic/sorting/ShellSort/README.org][Shell Sort]]
+
+*** Searching
+    :PROPERTIES:
+    :CUSTOM_ID: searching
+    :END:
+
+- [[./basic/searching/BinarySearch/README.org][Binary Search]]
+- [[./basic/searching/BinarySearch-II/README.org][Binary Search II]]
+
+** High Frequency Interview Questions
+   :PROPERTIES:
+   :CUSTOM_ID: high-frequency-interview-questions
+   :END:
+*** Arrays
+    :PROPERTIES:
+    :CUSTOM_ID: arrays
+    :END:
+
+- [[./solution/0000-0099/0026.Remove Duplicates from Sorted Array/README_EN.org][Remove
+  Duplicates from Sorted Array]]
+- [[./solution/0000-0099/0080.Remove Duplicates from Sorted Array II/README_EN.org][Remove
+  Duplicates from Sorted Array II]]
+- [[./solution/0000-0099/0027.Remove Element/README_EN.org][Remove
+  Element]]
+- [[./solution/0200-0299/0283.Move Zeroes/README_EN.org][Move Zeroes]]
+- [[./solution/0100-0199/0189.Rotate Array/README_EN.org][Rotate Array]]
+- [[./solution/0000-0099/0054.Spiral Matrix/README_EN.org][Spiral
+  Matrix]]
+- [[./solution/0000-0099/0001.Two Sum/README_EN.org][Two Sum]]
+- [[./solution/0000-0099/0015.3Sum/README_EN.org][3Sum]]
+- [[./solution/0000-0099/0018.4Sum/README_EN.org][4Sum]]
+- [[./solution/0200-0299/0259.3Sum Smaller/README_EN.org][3Sum Smaller]]
+- [[./solution/0000-0099/0016.3Sum Closest/README_EN.org][3Sum Closest]]
+- [[./solution/0000-0099/0088.Merge Sorted Array/README_EN.org][Merge
+  Sorted Array]]
+- [[./solution/0100-0199/0153.Find Minimum in Rotated Sorted Array/README_EN.org][Find
+  Minimum in Rotated Sorted Array]]
+- [[./solution/0100-0199/0154.Find Minimum in Rotated Sorted Array II/README_EN.org][Find
+  Minimum in Rotated Sorted Array II]]
+- [[./solution/0200-0299/0238.Product of Array Except Self/README_EN.org][Product
+  of Array Except Self]]
+
+*** Strings
+    :PROPERTIES:
+    :CUSTOM_ID: strings
+    :END:
+
+- [[./solution/0000-0099/0003.Longest Substring Without Repeating Characters/README_EN.org][Longest
+  Substring Without Repeating Characters]]
+- [[./solution/0000-0099/0014.Longest Common Prefix/README_EN.org][Longest
+  Common Prefix]]
+- [[./solution/0300-0399/0345.Reverse Vowels of a String/README_EN.org][Reverse
+  Vowels of a String]]
+- [[./solution/0000-0099/0008.String to Integer %28atoi%29/README_EN.org][String
+  to Integer (atoi)]]
+- [[./solution/0300-0399/0383.Ransom Note/README_EN.org][Ransom Note]]
+
+*** Linked List
+    :PROPERTIES:
+    :CUSTOM_ID: linked-list
+    :END:
+
+- [[./solution/0000-0099/0002.Add Two Numbers/README_EN.org][Add Two
+  Numbers]]
+- [[./solution/0400-0499/0445.Add Two Numbers II/README_EN.org][Add
+  Two Numbers II]]
+- [[./solution/0200-0299/0237.Delete Node in a Linked List/README_EN.org][Delete
+  Node in a Linked List]]
+- [[./solution/0000-0099/0083.Remove Duplicates from Sorted List/README_EN.org][Remove
+  Duplicates from Sorted List]]
+- [[./solution/0000-0099/0082.Remove Duplicates from Sorted List II/README_EN.org][Remove
+  Duplicates from Sorted List II]]
+- [[./solution/0200-0299/0203.Remove Linked List Elements/README_EN.org][Remove
+  Linked List Elements]]
+- [[./lcci/02.02.Kth Node From End of List/README_EN.org][Kth
+  Node From End of List]]
+- [[./solution/0000-0099/0024.Swap Nodes in Pairs/README_EN.org][Swap
+  Nodes in Pairs]]
+- [[./solution/0000-0099/0021.Merge Two Sorted Lists/README_EN.org][Merge
+  Two Sorted Lists]]
+- [[./solution/0000-0099/0023.Merge k Sorted Lists/README_EN.org][Merge
+  k Sorted Lists]]
+- [[./solution/0100-0199/0147.Insertion Sort List/README_EN.org][Insertion
+  Sort List]]
+- [[./solution/0100-0199/0148.Sort List/README_EN.org][Sort List]]
+- [[./solution/0200-0299/0206.Reverse Linked List/README_EN.org][Reverse
+  Linked List]]
+- [[./solution/0000-0099/0092.Reverse Linked List II/README_EN.org][Reverse
+  Linked List II]]
+- [[./solution/0100-0199/0143.Reorder List/README_EN.org][Reorder List]]
+- [[./solution/0000-0099/0061.Rotate List/README_EN.org][Rotate List]]
+- [[./solution/0200-0299/0234.Palindrome Linked List/README_EN.org][Palindrome
+  Linked List]]
+- [[./solution/0100-0199/0160.Intersection of Two Linked Lists/README_EN.org][Intersection
+  of Two Linked Lists]]
+- [[./solution/0300-0399/0328.Odd Even Linked List/README_EN.org][Odd
+  Even Linked List]]
+- [[./solution/0100-0199/0141.Linked List Cycle/README_EN.org][Linked
+  List Cycle]]
+- [[./solution/0100-0199/0142.Linked List Cycle II/README_EN.org][Linked
+  List Cycle II]]
+- [[./solution/0700-0799/0707.Design Linked List/README_EN.org][Design
+  Linked List]]
+
+*** Binary Tree
+    :PROPERTIES:
+    :CUSTOM_ID: binary-tree
+    :END:
+
+- [[./solution/0100-0199/0144.Binary Tree Preorder Traversal/README_EN.org][Binary
+  Tree Preorder Traversal]]
+- [[./solution/0100-0199/0145.Binary Tree Postorder Traversal/README_EN.org][Binary
+  Tree Postorder Traversal]]
+- [[./solution/0000-0099/0094.Binary Tree Inorder Traversal/README_EN.org][Binary
+  Tree Inorder Traversal]]
+- [[./solution/0100-0199/0101.Symmetric Tree/README_EN.org][Symmetric
+  Tree]]
+- [[./solution/0200-0299/0226.Invert Binary Tree/README_EN.org][Invert
+  Binary Tree]]
+- [[./solution/0100-0199/0102.Binary Tree Level Order Traversal/README_EN.org][Binary
+  Tree Level Order Traversal]]
+- [[./solution/0100-0199/0107.Binary Tree Level Order Traversal II/README_EN.org][Binary
+  Tree Level Order Traversal II]]
+- [[./solution/0100-0199/0199.Binary Tree Right Side View/README_EN.org][Binary
+  Tree Right Side View]]
+- [[./solution/0100-0199/0104.Maximum Depth of Binary Tree/README_EN.org][Maximum
+  Depth of Binary Tree]]
+- [[./solution/0100-0199/0111.Minimum Depth of Binary Tree/README_EN.org][Minimum
+  Depth of Binary Tree]]
+- [[./solution/0200-0299/0257.Binary Tree Paths/README_EN.org][Binary
+  Tree Paths]]
+- [[./solution/0100-0199/0112.Path Sum/README_EN.org][Path Sum]]
+- [[./solution/0100-0199/0113.Path Sum II/README_EN.org][Path Sum II]]
+- [[./solution/0100-0199/0105.Construct Binary Tree from Preorder and Inorder Traversal/README_EN.org][Construct
+  Binary Tree from Preorder and Inorder Traversal]]
+- [[./solution/0100-0199/0106.Construct Binary Tree from Inorder and Postorder Traversal/README_EN.org][Construct
+  Binary Tree from Inorder and Postorder Traversal]]
+- [[./solution/0100-0199/0173.Binary Search Tree Iterator/README_EN.org][Binary
+  Search Tree Iterator]]
+- [[./solution/0200-0299/0236.Lowest Common Ancestor of a Binary Tree/README_EN.org][Lowest
+  Common Ancestor of a Binary Tree]]
+- [[./solution/0200-0299/0235.Lowest Common Ancestor of a Binary Search Tree/README_EN.org][Lowest
+  Common Ancestor of a Binary Search Tree]]
+- [[./lcci/17.12.BiNode/README_EN.org][BiNode]]
+- [[./solution/0400-0499/0426.Convert Binary Search Tree to Sorted Doubly Linked List/README_EN.org][Convert
+  Binary Search Tree to Sorted Doubly Linked List]]
+- [[./solution/0500-0599/0545.Boundary of Binary Tree/README_EN.org][Boundary
+  of Binary Tree]]
+- [[./solution/0100-0199/0116.Populating Next Right Pointers in Each Node/README_EN.org][Populating
+  Next Right Pointers in Each Node]]
+- [[./solution/0100-0199/0117.Populating Next Right Pointers in Each Node II/README_EN.org][Populating
+  Next Right Pointers in Each Node II]]
+
+*** Math
+    :PROPERTIES:
+    :CUSTOM_ID: math
+    :END:
+
+- [[./solution/0000-0099/0012.Integer to Roman/README_EN.org][Integer
+  to Roman]]
+- [[./solution/0000-0099/0013.Roman to Integer/README_EN.org][Roman to
+  Integer]]
+- [[./solution/0100-0199/0136.Single Number/README_EN.org][Single
+  Number]]
+- [[./solution/0100-0199/0137.Single Number II/README_EN.org][Single
+  Number II]]
+- [[./solution/0200-0299/0260.Single Number III/README_EN.org][Single
+  Number III]]
+- [[./solution/0600-0699/0645.Set Mismatch/README_EN.org][Set Mismatch]]
+- [[./solution/0100-0199/0191.Number of 1 Bits/README_EN.org][Number
+  of 1 Bits]]
+- [[./solution/0200-0299/0204.Count Primes/README_EN.org][Count Primes]]
+- [[./solution/0200-0299/0268.Missing Number/README_EN.org][Missing
+  Number]]
+
+*** Stack & Queue
+    :PROPERTIES:
+    :CUSTOM_ID: stack-queue
+    :END:
+
+- [[./solution/0000-0099/0020.Valid Parentheses/README_EN.org][Valid
+  Parentheses]]
+- [[./solution/0100-0199/0155.Min Stack/README_EN.org][Min Stack]]
+- [[./solution/0200-0299/0232.Implement Queue using Stacks/README_EN.org][Implement
+  Queue using Stacks]]
+- [[./solution/0200-0299/0225.Implement Stack using Queues/README_EN.org][Implement
+  Stack using Queues]]
+- [[./solution/0100-0199/0150.Evaluate Reverse Polish Notation/README_EN.org][Evaluate
+  Reverse Polish Notation]]
+- [[./solution/0900-0999/0933.Number of Recent Calls/README_EN.org][Number
+  of Recent Calls]]
+- [[./solution/0700-0799/0739.Daily Temperatures/README_EN.org][Daily
+  Temperatures]]
+- [[./solution/0200-0299/0227.Basic Calculator II/README_EN.org][Basic
+  Calculator II]]
+- [[./solution/0400-0499/0496.Next Greater Element I/README_EN.org][Next
+  Greater Element I]]
+- [[./solution/0500-0599/0503.Next Greater Element II/README_EN.org][Next
+  Greater Element II]]
+
+*** Dynamic Programming
+    :PROPERTIES:
+    :CUSTOM_ID: dynamic-programming
+    :END:
+
+- [[./solution/0000-0099/0070.Climbing Stairs/README_EN.org][Climbing
+  Stairs]]
+- [[./solution/0000-0099/0042.Trapping Rain Water/README_EN.org][Trapping
+  Rain Water]]
+- [[./solution/0000-0099/0053.Maximum Subarray/README_EN.org][Maximum
+  Subarray]]
+- [[./solution/0000-0099/0064.Minimum Path Sum/README_EN.org][Minimum
+  Path Sum]]
+- [[./solution/0000-0099/0091.Decode Ways/README_EN.org][Decode Ways]]
+- [[./solution/0100-0199/0152.Maximum Product Subarray/README_EN.org][Maximum
+  Product Subarray]]
+- [[./solution/0100-0199/0198.House Robber/README_EN.org][House Robber]]
+- [[./solution/0200-0299/0213.House Robber II/README_EN.org][House
+  Robber II]]
+- [[./solution/0300-0399/0300.Longest Increasing Subsequence/README_EN.org][Longest
+  Increasing Subsequence]]
+- [[./solution/0300-0399/0354.Russian Doll Envelopes/README_EN.org][Russian
+  Doll Envelopes]]
+- [[./solution/1100-1199/1143.Longest Common Subsequence/README_EN.org][Longest
+  Common Subsequence]]
+
+*** Backtracking
+    :PROPERTIES:
+    :CUSTOM_ID: backtracking
+    :END:
+
+- [[./solution/0000-0099/0078.Subsets/README_EN.org][Subsets]]
+- [[./solution/0000-0099/0090.Subsets II/README_EN.org][Subsets II]]
+
+*** Design
+    :PROPERTIES:
+    :CUSTOM_ID: design
+    :END:
+
+- [[./solution/0100-0199/0146.Lru Cache/README_EN.org][LRU Cache]]
+- [[file:solution/0200-0299/0208.Implement Trie (Prefix Tree)/README_EN.org][Implement
+  Trie (Prefix Tree)]]
+- [[./solution/1800-1899/1804.Implement Trie II %28Prefix Tree%29/README_EN.org][Implement
+  Trie II (Prefix Tree)]]
+- [[./solution/0600-0699/0622.Design Circular Queue/README_EN.org][Design
+  Circular Queue]]
+- [[./solution/0600-0699/0641.Design Circular Deque/README_EN.org][Design
+  Circular Deque]]
+- [[./solution/0700-0799/0705.Design HashSet/README_EN.org][Design
+  HashSet]]
+- [[./solution/0700-0799/0706.Design HashMap/README_EN.org][Design
+  HashMap]]
+
+*** Database
+    :PROPERTIES:
+    :CUSTOM_ID: database
+    :END:
+
+- [[./solution/0100-0199/0175.Combine Two Tables/README_EN.org][Combine
+  Two Tables]]
+- [[./solution/0100-0199/0176.Second Highest Salary/README_EN.org][Second
+  Highest Salary]]
+- [[./solution/0100-0199/0177.Nth Highest Salary/README_EN.org][Nth
+  Highest Salary]]
+- [[./solution/0100-0199/0178.Rank Scores/README_EN.org][Rank Scores]]
+
+** Maintainer
+   :PROPERTIES:
+   :CUSTOM_ID: maintainer
+   :END:
+
+- [[https://github.com/yanglbme][Yang Libin]]
+- [[https://github.com/MaoLongLong][Mao Longlong]]
+
+** Contributions
+   :PROPERTIES:
+   :CUSTOM_ID: contributions
+   :END:
+I'm looking for long-term contributors/partners to this repo! Send me
+[[https://github.com/doocs/leetcode/pulls][PRs]] if you're interested!
+See the following:
+
+1. Fork [[https://github.com/doocs/leetcode][this repository]] to your
+   own GitHub account and then clone it to your local machine.
+2. Make some changes to your leetcode repository, then push the changes
+   to your remote GitHub repository.
+3. Create a pull request with your changes!
+4. See
+   [[https://github.com/doocs/.github/blob/main/CONTRIBUTING.org][CONTRIBUTING]]
+   or [[https://help.github.com/en][GitHub Help]] for more details.
+
+#+begin_html
+  <p align="center">
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+You can also contribute to
+[[https://github.com/doocs/leetcode][doocs/leetcode]] using
+[[https://www.gitpod.io][Gitpod.io]], a free online dev environment with
+a single click.
+
+** Contributors
+   :PROPERTIES:
+   :CUSTOM_ID: contributors
+   :END:
+This project exists thanks to all the people who contribute.
+
+** Backers & Sponsors
+   :PROPERTIES:
+   :CUSTOM_ID: backers-sponsors
+   :END:
+Thank you to all our backers and sponsors!
+
+#+begin_quote
+  "/You help the developer community practice for interviews, and there
+  is nothing better we could ask for./" --
+  [[https://opencollective.com/alan-yessenbayev][Alan Yessenbayev]]
+#+end_quote
+
+** License
+   :PROPERTIES:
+   :CUSTOM_ID: license
+   :END:
+This work is licensed under a Creative Commons Attribution-ShareAlike
+4.0 International License.

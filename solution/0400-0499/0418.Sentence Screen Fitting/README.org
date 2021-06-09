@@ -1,0 +1,271 @@
+* [[https://leetcode-cn.com/problems/sentence-screen-fitting][418.
+屏幕可显示句子的数量]]
+  :PROPERTIES:
+  :CUSTOM_ID: 屏幕可显示句子的数量
+  :END:
+[[./solution/0400-0499/0418.Sentence Screen Fitting/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个 rows x cols 的屏幕和一个用 非空
+的单词列表组成的句子，请你计算出给定句子可以在屏幕上完整显示的次数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+一个单词不能拆分成两行。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+单词在句子中的顺序必须保持不变。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+在一行中 的两个连续单词必须用一个空格符分隔。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+句子中的单词总量不会超过 100。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+每个单词的长度大于 0 且不会超过 10。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 ≤ rows, cols ≤ 20,000.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>
+  rows = 2, cols = 8, 句子 sentence = [&quot;hello&quot;, &quot;world&quot;]
+
+  <strong>输出：</strong>
+  1
+
+  <strong>解释：</strong>
+  hello---
+  world---
+
+  <strong>字符 &#39;-&#39; 表示屏幕上的一个空白位置。</strong>
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>
+  rows = 3, cols = 6, 句子 sentence = [&quot;a&quot;, &quot;bcd&quot;, &quot;e&quot;]
+
+  <strong>输出：</strong>
+  2
+
+  <strong>解释：</strong>
+  a-bcd- 
+  e-a---
+  bcd-e-
+
+  <strong>字符 &#39;-&#39; 表示屏幕上的一个空白位置。</strong>
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>
+  rows = 4, cols = 5, 句子 sentence = [&quot;I&quot;, &quot;had&quot;, &quot;apple&quot;, &quot;pie&quot;]
+
+  <strong>输出：</strong>
+  1
+
+  <strong>解释：</strong>
+  I-had
+  apple
+  pie-I
+  had--
+
+  <strong>字符 &#39;-&#39; 表示屏幕上的一个空白位置。</strong>
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

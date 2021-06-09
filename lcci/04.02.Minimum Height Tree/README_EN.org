@@ -1,0 +1,90 @@
+* [[https://leetcode-cn.com/problems/minimum-height-tree-lcci][04.02.
+Minimum Height Tree]]
+  :PROPERTIES:
+  :CUSTOM_ID: minimum-height-tree
+  :END:
+[[./lcci/04.02.Minimum Height Tree/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a sorted (increasing order) array with unique integer elements,
+write an algo­rithm to create a binary search tree with minimal height.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  Given sorted array: [-10,-3,0,5,9],
+
+
+
+  One possible answer is: [0,-3,9,-10,null,5]，which represents the following tree: 
+
+
+
+            0 
+
+           / \ 
+
+         -3   9 
+
+         /   / 
+
+       -10  5 
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,159 @@
+* [[https://leetcode.com/problems/custom-sort-string][791. Custom Sort
+String]]
+  :PROPERTIES:
+  :CUSTOM_ID: custom-sort-string
+  :END:
+[[./solution/0700-0799/0791.Custom Sort String/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+S and T are strings composed of lowercase letters. In S, no letter
+occurs more than once.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+S was sorted in some custom order previously. We want to permute the
+characters of T so that they match the order that S was sorted. More
+specifically, if x occurs before y in S, then x should occur before y in
+the returned string.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return any permutation of T (as a string) that satisfies this property.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Example :</strong>
+
+  <strong>Input:</strong> 
+
+  S = &quot;cba&quot;
+
+  T = &quot;abcd&quot;
+
+  <strong>Output:</strong> &quot;cbad&quot;
+
+  <strong>Explanation:</strong> 
+
+  &quot;a&quot;, &quot;b&quot;, &quot;c&quot; appear in S, so the order of &quot;a&quot;, &quot;b&quot;, &quot;c&quot; should be &quot;c&quot;, &quot;b&quot;, and &quot;a&quot;. 
+
+  Since &quot;d&quot; does not appear in S, it can be at any position in T. &quot;dcba&quot;, &quot;cdba&quot;, &quot;cbda&quot; are also valid outputs.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+S has length at most 26, and no character is repeated in S.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+T has length at most 200.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+S and T consist of lowercase letters only.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

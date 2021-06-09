@@ -1,0 +1,204 @@
+* [[https://leetcode.com/problems/iterator-for-combination][1286.
+Iterator for Combination]]
+  :PROPERTIES:
+  :CUSTOM_ID: iterator-for-combination
+  :END:
+[[./solution/1200-1299/1286.Iterator for Combination/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Design the CombinationIterator class:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+CombinationIterator(string characters, int
+combinationLength) Initializes the object with a string characters of
+sorted distinct lowercase English letters and a number combinationLength
+as arguments.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+next() Returns the next combination of length combinationLength in
+lexicographical order.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+hasNext() Returns true if and only if there exists a next combination.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input</strong>
+  [&quot;CombinationIterator&quot;, &quot;next&quot;, &quot;hasNext&quot;, &quot;next&quot;, &quot;hasNext&quot;, &quot;next&quot;, &quot;hasNext&quot;]
+  [[&quot;abc&quot;, 2], [], [], [], [], [], []]
+  <strong>Output</strong>
+  [null, &quot;ab&quot;, true, &quot;ac&quot;, true, &quot;bc&quot;, false]
+
+  <strong>Explanation</strong>
+  CombinationIterator itr = new CombinationIterator(&quot;abc&quot;, 2);
+  itr.next();    // return &quot;ab&quot;
+  itr.hasNext(); // return True
+  itr.next();    // return &quot;ac&quot;
+  itr.hasNext(); // return True
+  itr.next();    // return &quot;bc&quot;
+  itr.hasNext(); // return False
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= combinationLength <= characters.length <= 15
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All the characters of characters are unique.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+At most 104 calls will be made to next and hasNext.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+It's guaranteed that all calls of the function next are valid.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

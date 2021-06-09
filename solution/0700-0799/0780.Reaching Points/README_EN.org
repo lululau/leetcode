@@ -1,0 +1,132 @@
+* [[https://leetcode.com/problems/reaching-points][780. Reaching
+Points]]
+  :PROPERTIES:
+  :CUSTOM_ID: reaching-points
+  :END:
+[[./solution/0700-0799/0780.Reaching Points/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+A move consists of taking a point (x, y) and transforming it to either
+(x, x+y) or (x+y, y).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a starting point (sx, sy) and a target point (tx, ty), return True
+if and only if a sequence of moves exists to transform the point (sx,
+sy) to (tx, ty). Otherwise, return False.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Examples:</strong>
+
+  <strong>Input:</strong> sx = 1, sy = 1, tx = 3, ty = 5
+
+  <strong>Output:</strong> True
+
+  <strong>Explanation:</strong>
+
+  One series of moves that transforms the starting point to the target is:
+
+  (1, 1) -&gt; (1, 2)
+
+  (1, 2) -&gt; (3, 2)
+
+  (3, 2) -&gt; (3, 5)
+
+
+
+  <strong>Input:</strong> sx = 1, sy = 1, tx = 2, ty = 2
+
+  <strong>Output:</strong> False
+
+
+
+  <strong>Input:</strong> sx = 1, sy = 1, tx = 1, ty = 1
+
+  <strong>Output:</strong> True
+
+
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+sx, sy, tx, ty will all be integers in the range [1, 10^9].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

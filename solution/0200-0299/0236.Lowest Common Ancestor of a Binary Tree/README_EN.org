@@ -1,0 +1,275 @@
+* [[https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree][236.
+Lowest Common Ancestor of a Binary Tree]]
+  :PROPERTIES:
+  :CUSTOM_ID: lowest-common-ancestor-of-a-binary-tree
+  :END:
+[[./solution/0200-0299/0236.Lowest Common Ancestor of a Binary Tree/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a binary tree, find the lowest common ancestor (LCA) of two given
+nodes in the tree.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+According to the definition of LCA on Wikipedia: “The lowest common
+ancestor is defined between two nodes p and q as the lowest node in T
+that has both p and q as descendants (where we allow a node to be a
+descendant of itself).”
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1
+  <strong>Output:</strong> 3
+  <strong>Explanation:</strong> The LCA of nodes 5 and 1 is 3.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4
+  <strong>Output:</strong> 5
+  <strong>Explanation:</strong> The LCA of nodes 5 and 4 is 5, since a node can be a descendant of itself according to the LCA definition.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [1,2], p = 1, q = 2
+  <strong>Output:</strong> 1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of nodes in the tree is in the range [2, 105].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-109 <= Node.val <= 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All Node.val are unique.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+p != q
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+p and q will exist in the tree.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  # Definition for a binary tree node.
+  # class TreeNode:
+  #     def __init__(self, x):
+  #         self.val = x
+  #         self.left = None
+  #         self.right = None
+
+  class Solution:
+      def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+          if root is None or root == p or root == q:
+              return root
+          left = self.lowestCommonAncestor(root.left, p, q)
+          right = self.lowestCommonAncestor(root.right, p, q)
+          if left is None:
+              return right
+          if right is None:
+              return left
+          return root
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  /**
+   * Definition for a binary tree node.
+   * public class TreeNode {
+   *     int val;
+   *     TreeNode left;
+   *     TreeNode right;
+   *     TreeNode(int x) { val = x; }
+   * }
+   */
+  class Solution {
+      public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+          if (root == null || root == p || root == q) return root;
+          TreeNode left = lowestCommonAncestor(root.left, p, q);
+          TreeNode right = lowestCommonAncestor(root.right, p, q);
+          if (left == null) return right;
+          if (right == null) return left;
+          return root;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * Definition for a binary tree node.
+   * function TreeNode(val) {
+   *     this.val = val;
+   *     this.left = this.right = null;
+   * }
+   */
+  /**
+   * @param {TreeNode} root
+   * @param {TreeNode} p
+   * @param {TreeNode} q
+   * @return {TreeNode}
+   */
+  var lowestCommonAncestor = function (root, p, q) {
+    if (!root || root == p || root == q) return root;
+    const left = lowestCommonAncestor(root.left, p, q);
+    const right = lowestCommonAncestor(root.right, p, q);
+    if (!left) return right;
+    if (!right) return left;
+    return root;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

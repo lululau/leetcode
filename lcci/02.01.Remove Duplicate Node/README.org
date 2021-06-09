@@ -1,0 +1,281 @@
+* [[https://leetcode-cn.com/problems/remove-duplicate-node-lcci][面试题
+02.01. 移除重复节点]]
+  :PROPERTIES:
+  :CUSTOM_ID: 面试题-02.01.-移除重复节点
+  :END:
+[[./lcci/02.01.Remove Duplicate Node/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+编写代码，移除未排序链表中的重复节点。保留最开始出现的节点。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong> 输入</strong>：[1, 2, 3, 3, 2, 1]
+  <strong> 输出</strong>：[1, 2, 3]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong> 输入</strong>：[1, 1, 1, 1, 2]
+  <strong> 输出</strong>：[1, 2]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+链表长度在[0, 20000]范围内。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+链表元素在[0, 20000]范围内。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+进阶：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+如果不得使用临时缓冲区，该怎么解决？
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  # Definition for singly-linked list.
+  # class ListNode:
+  #     def __init__(self, x):
+  #         self.val = x
+  #         self.next = None
+
+  class Solution:
+      def removeDuplicateNodes(self, head: ListNode) -> ListNode:
+          if head is None or head.next is None:
+              return head
+          cache = set()
+          cache.add(head.val)
+          cur, p = head, head.next
+          while p:
+              if p.val not in cache:
+                  cur.next = p
+                  cur = cur.next
+                  cache.add(p.val)
+              p = p.next
+          cur.next = None
+          return head
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  /**
+   * Definition for singly-linked list.
+   * public class ListNode {
+   *     int val;
+   *     ListNode next;
+   *     ListNode(int x) { val = x; }
+   * }
+   */
+  class Solution {
+      public ListNode removeDuplicateNodes(ListNode head) {
+          if (head == null || head.next == null) {
+              return head;
+          }
+          Set<Integer> s = new HashSet<>();
+          s.add(head.val);
+          ListNode cur = head;
+          for (ListNode p = head.next; p != null; p = p.next) {
+              if (!s.contains(p.val)) {
+                  cur.next = p;
+                  cur = cur.next;
+                  s.add(p.val);
+              }
+          }
+          cur.next = null;
+          return head;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * Definition for singly-linked list.
+   * function ListNode(val) {
+   *     this.val = val;
+   *     this.next = null;
+   * }
+   */
+  /**
+   * @param {ListNode} head
+   * @return {ListNode}
+   */
+   var removeDuplicateNodes = function(head) {
+      if (head == null || head.next == null) return head;
+      const cache = new Set([]);
+      cache.add(head.val);
+      let cur = head, fast = head.next;
+      while (fast !== null) {
+          if (!cache.has(fast.val)) {
+              cur.next = fast;
+              cur = cur.next;
+              cache.add(fast.val);
+          }
+          fast = fast.next;
+      }
+      cur.next = null;
+      return head;
+  };
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  /**
+   * Definition for singly-linked list.
+   * struct ListNode {
+   *     int val;
+   *     ListNode *next;
+   *     ListNode(int x) : val(x), next(NULL) {}
+   * };
+   */
+  class Solution {
+  public:
+      ListNode* removeDuplicateNodes(ListNode* head) {
+          if (head == nullptr || head->next == nullptr) {
+              return head;
+          }
+          unordered_set<int> cache = {head->val};
+          ListNode *cur = head;
+          for (ListNode *p = head->next; p != nullptr; p = p->next) {
+              if (!cache.count(p->val)) {
+                  cur->next = p;
+                  cur = cur->next;
+                  cache.insert(p->val);
+              }
+          }
+          cur->next = nullptr;
+          return head;
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

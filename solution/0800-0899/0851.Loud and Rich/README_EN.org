@@ -1,0 +1,241 @@
+* [[https://leetcode.com/problems/loud-and-rich][851. Loud and Rich]]
+  :PROPERTIES:
+  :CUSTOM_ID: loud-and-rich
+  :END:
+[[./solution/0800-0899/0851.Loud and Rich/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+In a group of N people (labelled 0, 1, 2, ..., N-1), each person has
+different amounts of money, and different levels of quietness.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For convenience, we'll call the person with label x, simply "person x".
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+We'll say that richer[i] = [x, y] if person x definitely has more money
+than person y.  Note that richer may only be a subset of valid
+observations.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Also, we'll say quiet[x] = q if person x has quietness q.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Now, return answer, where answer[x] = y if y is the least quiet person
+(that is, the person y with the smallest value of quiet[y]), among all
+people who definitely have equal to or more money than person x.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>richer = <span id="example-input-1-1">[[1,0],[2,1],[3,1],[3,7],[4,3],[5,3],[6,3]]</span>, quiet = <span id="example-input-1-2">[3,2,5,4,6,1,7,0]</span>
+
+  <strong>Output: </strong><span id="example-output-1">[5,5,2,5,4,5,6,7]</span>
+
+  <strong>Explanation: </strong>
+
+  answer[0] = 5.
+
+  Person 5 has more money than 3, which has more money than 1, which has more money than 0.
+
+  The only person who is quieter (has lower quiet[x]) is person 7, but
+
+  it isn&#39;t clear if they have more money than person 0.
+
+
+
+  answer[7] = 7.
+
+  Among all people that definitely have equal to or more money than person 7
+
+  (which could be persons 3, 4, 5, 6, or 7), the person who is the quietest (has lower quiet[x])
+
+  is person 7.
+
+
+
+  The other answers can be filled out with similar reasoning.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= quiet.length = N <= 500
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= quiet[i] < N, all quiet[i] are different.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= richer.length <= N * (N-1) / 2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= richer[i][j] < N
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+richer[i][0] != richer[i][1]
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+richer[i]'s are all different.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The observations in richer are all logically consistent.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,176 @@
+* [[https://leetcode.com/problems/primary-department-for-each-employee][1789.
+Primary Department for Each Employee]]
+  :PROPERTIES:
+  :CUSTOM_ID: primary-department-for-each-employee
+  :END:
+[[./solution/1700-1799/1789.Primary Department for Each Employee/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Employee
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +---------------+---------+
+  | Column Name   |  Type   |
+  +---------------+---------+
+  | employee_id   | int     |
+  | department_id | int     |
+  | primary_flag  | varchar |
+  +---------------+---------+
+  (employee_id, department_id) is the primary key for this table.
+  employee_id is the id of the employee.
+  department_id is the id of the department to which the employee belongs.
+  primary_flag is an ENUM of type (&#39;Y&#39;, &#39;N&#39;). If the flag is &#39;Y&#39;, the department is the primary department for the employee. If the flag is &#39;N&#39;, the department is not the primary.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Employees can belong to multiple departments. When the employee joins
+other departments, they need to decide which department is their primary
+department. Note that when an employee belongs to only one department,
+their primary column is 'N'.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an SQL query to report all the employees with their primary
+department. For employees who belong to one department, report their
+only department.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the result table in any order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The query result format is in the following example.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  Employee table:
+  +-------------+---------------+--------------+
+  | employee_id | department_id | primary_flag |
+  +-------------+---------------+--------------+
+  | 1           | 1             | N            |
+  | 2           | 1             | Y            |
+  | 2           | 2             | N            |
+  | 3           | 3             | N            |
+  | 4           | 2             | N            |
+  | 4           | 3             | Y            |
+  | 4           | 4             | N            |
+  +-------------+---------------+--------------+
+
+  Result table:
+  +-------------+---------------+
+  | employee_id | department_id |
+  +-------------+---------------+
+  | 1           | 1             |
+  | 2           | 1             |
+  | 3           | 3             |
+  | 4           | 3             |
+  +-------------+---------------+
+  - The Primary department for employee 1 is 1.
+  - The Primary department for employee 2 is 1.
+  - The Primary department for employee 3 is 3.
+  - The Primary department for employee 4 is 3.</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

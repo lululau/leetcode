@@ -1,0 +1,234 @@
+* [[https://leetcode.com/problems/determine-color-of-a-chessboard-square][1812.
+Determine Color of a Chessboard Square]]
+  :PROPERTIES:
+  :CUSTOM_ID: determine-color-of-a-chessboard-square
+  :END:
+[[./solution/1800-1899/1812.Determine Color of a Chessboard Square/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given coordinates, a string that represents the coordinates of a
+square of the chessboard. Below is a chessboard for your reference.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return true if the square is white, and false if the square is black.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The coordinate will always represent a valid chessboard square. The
+coordinate will always have the letter first, and the number second.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> coordinates = &quot;a1&quot;
+  <strong>Output:</strong> false
+  <strong>Explanation:</strong> From the chessboard above, the square with coordinates &quot;a1&quot; is black, so return false.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> coordinates = &quot;h3&quot;
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> From the chessboard above, the square with coordinates &quot;h3&quot; is white, so return true.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> coordinates = &quot;c7&quot;
+  <strong>Output:</strong> false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+coordinates.length == 2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+'a' <= coordinates[0] <= 'h'
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+'1' <= coordinates[1] <= '8'
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def squareIsWhite(self, coordinates: str) -> bool:
+          x = ord(coordinates[0]) - ord('a') + 1
+          y = int(coordinates[1])
+          return ((x + y) & 1) == 1
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public boolean squareIsWhite(String coordinates) {
+          int x = coordinates.charAt(0) - 'a' + 1;
+          int y = coordinates.charAt(1) - '0';
+          return ((x + y) & 1) == 1;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {string} coordinates
+   * @return {boolean}
+   */
+   var squareIsWhite = function(coordinates) {
+      let x = coordinates.charAt(0).charCodeAt() - 'a'.charCodeAt() + 1;
+      let y = Number(coordinates.charAt(1));
+      return ((x + y) & 1) == 1;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

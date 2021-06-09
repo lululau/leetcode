@@ -1,0 +1,119 @@
+* [[https://leetcode-cn.com/problems/product-price-at-a-given-date][1164.
+指定日期的产品价格]]
+  :PROPERTIES:
+  :CUSTOM_ID: 指定日期的产品价格
+  :END:
+[[./solution/1100-1199/1164.Product Price at a Given Date/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+产品数据表: Products
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +---------------+---------+
+  | Column Name   | Type    |
+  +---------------+---------+
+  | product_id    | int     |
+  | new_price     | int     |
+  | change_date   | date    |
+  +---------------+---------+
+  这张表的主键是 (product_id, change_date)。
+  这张表的每一行分别记录了 某产品 在某个日期 更改后 的新价格。</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+写一段 SQL来查找在 2019-08-16
+时全部产品的价格，假设所有产品在修改前的价格都是 10。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+查询结果格式如下例所示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <code>Products</code> table:
+  +------------+-----------+-------------+
+  | product_id | new_price | change_date |
+  +------------+-----------+-------------+
+  | 1          | 20        | 2019-08-14  |
+  | 2          | 50        | 2019-08-14  |
+  | 1          | 30        | 2019-08-15  |
+  | 1          | 35        | 2019-08-16  |
+  | 2          | 65        | 2019-08-17  |
+  | 3          | 20        | 2019-08-18  |
+  +------------+-----------+-------------+
+
+  Result table:
+  +------------+-------+
+  | product_id | price |
+  +------------+-------+
+  | 2          | 50    |
+  | 1          | 35    |
+  | 3          | 10    |
+  +------------+-------+
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

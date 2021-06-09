@@ -1,0 +1,165 @@
+* [[https://leetcode-cn.com/problems/smallest-difference-lcci][面试题
+16.06. 最小差]]
+  :PROPERTIES:
+  :CUSTOM_ID: 面试题-16.06.-最小差
+  :END:
+[[./lcci/16.06.Smallest Difference/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定两个整数数组a和b，计算具有最小差绝对值的一对数值（每个数组中取一个值），并返回该对数值的差
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>{1, 3, 15, 11, 2}, {23, 127, 235, 19, 8}
+  <strong>输出：</strong> 3，即数值对(11, 8)
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= a.length, b.length <= 100000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-2147483648 <= a[i], b[i] <= 2147483647
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+正确结果在区间[-2147483648, 2147483647]内
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def smallestDifference(self, a: List[int], b: List[int]) -> int:
+          a.sort()
+          b.sort()
+          i, j, res = 0, 0, 2147483647
+          m, n = len(a), len(b)
+          while i < m and j < n:
+              if a[i] == b[j]: return 0
+              res = min(res, abs(a[i] - b[j]))
+              if a[i] > b[j]: j += 1
+              else: i += 1
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int smallestDifference(int[] a, int[] b) {
+          Arrays.sort(a);
+          Arrays.sort(b);
+          int m = a.length, n = b.length;
+          int i = 0, j = 0;
+          long res = Long.MAX_VALUE;
+          while (i < m && j < n) {
+              if (a[i] == b[j]) return 0;
+              res = Math.min(res, Math.abs((long) a[i] - (long) b[j]));
+              if (a[i] > b[j]) ++j;
+              else ++i;
+          }
+          return (int) res;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

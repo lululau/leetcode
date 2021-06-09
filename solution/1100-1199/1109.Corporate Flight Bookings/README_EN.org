@@ -1,0 +1,319 @@
+* [[https://leetcode.com/problems/corporate-flight-bookings][1109.
+Corporate Flight Bookings]]
+  :PROPERTIES:
+  :CUSTOM_ID: corporate-flight-bookings
+  :END:
+[[./solution/1100-1199/1109.Corporate Flight Bookings/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+There are n flights that are labeled from 1 to n.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given an array of flight bookings bookings, where bookings[i] =
+[firsti, lasti, seatsi] represents a booking for flights firsti through
+lasti (inclusive) with seatsi seats reserved for each flight in the
+range.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return an array answer of length n, where answer[i] is the total number
+of seats reserved for flight i.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
+  <strong>Output:</strong> [10,55,45,25,25]
+  <strong>Explanation:</strong>
+  Flight labels:        1   2   3   4   5
+  Booking 1 reserved:  10  10
+  Booking 2 reserved:      20  20
+  Booking 3 reserved:      25  25  25  25
+  Total seats:         10  55  45  25  25
+  Hence, answer = [10,55,45,25,25]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> bookings = [[1,2,10],[2,2,15]], n = 2
+  <strong>Output:</strong> [10,25]
+  <strong>Explanation:</strong>
+  Flight labels:        1   2
+  Booking 1 reserved:  10  10
+  Booking 2 reserved:      15
+  Total seats:         10  25
+  Hence, answer = [10,25]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 2 * 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= bookings.length <= 2 * 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+bookings[i].length == 3
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= firsti <= lasti <= n
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= seatsi <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def corpFlightBookings(self, bookings: List[List[int]], n: int) -> List[int]:
+          delta = [0] * n
+          for first, last, seats in bookings:
+              delta[first - 1] += seats
+              if last < n:
+                  delta[last] -= seats
+          for i in range(n - 1):
+              delta[i + 1] += delta[i]
+          return delta
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int[] corpFlightBookings(int[][] bookings, int n) {
+          int[] delta = new int[n];
+          for (int[] booking : bookings) {
+              int first = booking[0], last = booking[1], seats = booking[2];
+              delta[first - 1] += seats;
+              if (last < n) {
+                  delta[last] -= seats;
+              }
+          }
+          for (int i = 0; i < n - 1; ++i) {
+              delta[i + 1] += delta[i];
+          }
+          return delta;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number[][]} bookings
+   * @param {number} n
+   * @return {number[]}
+   */
+  var corpFlightBookings = function(bookings, n) {
+      let delta = new Array(n).fill(0);
+      for (let book of bookings) {
+          let [start, end, num] = book;
+          start -= 1;
+          delta[start] += num;
+          if (end != n) {
+              delta[end] -= num;
+          }
+      }
+      for (let i = 1; i < n; i++) {
+          delta[i] += delta[i - 1];
+      }
+      return delta;
+  };
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      vector<int> corpFlightBookings(vector<vector<int>>& bookings, int n) {
+          vector<int> delta(n);
+          for (auto &booking : bookings) {
+              int first = booking[0], last = booking[1], seats = booking[2];
+              delta[first - 1] += seats;
+              if (last < n) {
+                  delta[last] -= seats;
+              }
+          }
+          for (int i = 0; i < n - 1; ++i) {
+              delta[i + 1] += delta[i];
+          }
+          return delta;
+      }
+  };
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript-1
+    :END:
+#+begin_src js
+  /**
+   * @param {number[][]} bookings
+   * @param {number} n
+   * @return {number[]}
+   */
+  var corpFlightBookings = function(bookings, n) {
+      let delta = new Array(n).fill(0);
+      for (let book of bookings) {
+          let [start, end, num] = book;
+          start -= 1;
+          delta[start] += num;
+          if (end != n) {
+              delta[end] -= num;
+          }
+      }
+      for (let i = 1; i < n; i++) {
+          delta[i] += delta[i - 1];
+      }
+      return delta;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

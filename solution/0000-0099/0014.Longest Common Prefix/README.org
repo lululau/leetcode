@@ -1,0 +1,232 @@
+* [[https://leetcode-cn.com/problems/longest-common-prefix][14.
+最长公共前缀]]
+  :PROPERTIES:
+  :CUSTOM_ID: 最长公共前缀
+  :END:
+[[./solution/0000-0099/0014.Longest Common Prefix/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+编写一个函数来查找字符串数组中的最长公共前缀。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+如果不存在公共前缀，返回空字符串 ““。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>strs = ["flower","flow","flight"]
+  <strong>输出：</strong>"fl"
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>strs = ["dog","racecar","car"]
+  <strong>输出：</strong>""
+  <strong>解释：</strong>输入不存在公共前缀。</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= strs.length <= 200
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= strs[i].length <= 200
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+strs[i] 仅由小写英文字母组成
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def longestCommonPrefix(self, strs: List[str]) -> str:
+          n = len(strs)
+          if n == 0:
+              return ''
+          for i in range(len(strs[0])):
+              for j in range(1, n):
+                  if len(strs[j]) <= i or strs[j][i] != strs[0][i]:
+                      return strs[0][:i]
+          return strs[0]
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public String longestCommonPrefix(String[] strs) {
+          int n;
+          if ((n = strs.length) == 0) return "";
+          for (int i = 0; i < strs[0].length(); ++i) {
+              for (int j = 1; j < n; ++j) {
+                  if (strs[j].length() <= i || strs[j].charAt(i) != strs[0].charAt(i)) {
+                      return strs[0].substring(0, i);
+                  }
+              }
+          }
+          return strs[0];
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      string longestCommonPrefix(vector<string>& strs) {
+          int n;
+          if ((n = strs.size()) == 0) return "";
+          for (int i = 0; i < strs[0].size(); ++i) {
+              for (int j = 1; j < n; ++j) {
+                  if (strs[j].size() <= i || strs[j][i] != strs[0][i]) {
+                      return strs[0].substr(0, i);
+                  }
+              }
+          }
+          return strs[0];
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

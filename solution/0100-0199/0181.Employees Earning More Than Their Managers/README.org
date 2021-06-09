@@ -1,0 +1,86 @@
+* [[https://leetcode-cn.com/problems/employees-earning-more-than-their-managers][181.
+超过经理收入的员工]]
+  :PROPERTIES:
+  :CUSTOM_ID: 超过经理收入的员工
+  :END:
+[[./solution/0100-0199/0181.Employees Earning More Than Their Managers/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Employee 表包含所有员工，他们的经理也属于员工。每个员工都有一个
+Id，此外还有一列对应员工的经理的 Id。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+----+-------+--------+-----------+
+  | Id | Name  | Salary | ManagerId |
+  +----+-------+--------+-----------+
+  | 1  | Joe   | 70000  | 3         |
+  | 2  | Henry | 80000  | 4         |
+  | 3  | Sam   | 60000  | NULL      |
+  | 4  | Max   | 90000  | NULL      |
+  +----+-------+--------+-----------+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定 Employee 表，编写一个 SQL
+查询，该查询可以获取收入超过他们经理的员工的姓名。在上面的表格中，Joe
+是唯一一个收入超过他的经理的员工。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+----------+
+  | Employee |
+  +----------+
+  | Joe      |
+  +----------+
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_example
+  select Name as Employee from Employee Curr where
+      Salary > (select Salary from Employee where Id = Curr.ManagerId)
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

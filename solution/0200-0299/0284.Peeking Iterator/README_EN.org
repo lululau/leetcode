@@ -1,0 +1,340 @@
+* [[https://leetcode.com/problems/peeking-iterator][284. Peeking
+Iterator]]
+  :PROPERTIES:
+  :CUSTOM_ID: peeking-iterator
+  :END:
+[[./solution/0200-0299/0284.Peeking Iterator/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Design an iterator that supports the peek operation on a list in
+addition to the hasNext and the next operations.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement the PeekingIterator class:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+PeekingIterator(int[] nums) Initializes the object with the given
+integer array nums.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int next() Returns the next element in the array and moves the pointer
+to the next element.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+bool hasNext() Returns true if there are still elements in the array.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int peek() Returns the next element in the array without moving the
+pointer.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input</strong>
+  [&quot;PeekingIterator&quot;, &quot;next&quot;, &quot;peek&quot;, &quot;next&quot;, &quot;next&quot;, &quot;hasNext&quot;]
+  [[[1, 2, 3]], [], [], [], [], []]
+  <strong>Output</strong>
+  [null, 1, 2, 2, 3, false]
+
+  <strong>Explanation</strong>
+  PeekingIterator peekingIterator = new PeekingIterator([1, 2, 3]); // [<u><strong>1</strong></u>,2,3]
+  peekingIterator.next();    // return 1, the pointer moves to the next element [1,<u><strong>2</strong></u>,3].
+  peekingIterator.peek();    // return 2, the pointer does not move [1,<u><strong>2</strong></u>,3].
+  peekingIterator.next();    // return 2, the pointer moves to the next element [1,2,<u><strong>3</strong></u>]
+  peekingIterator.next();    // return 3, the pointer moves to the next element [1,2,3]
+  peekingIterator.hasNext(); // return False
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums[i] <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All the calls to next and peek are valid.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+At most 1000 calls will be made to next, hasNext, and peek.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+Follow up: How would you extend your design to be generic and work with
+all types, not just integer?
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  # Below is the interface for Iterator, which is already defined for you.
+  #
+  # class Iterator:
+  #     def __init__(self, nums):
+  #         """
+  #         Initializes an iterator object to the beginning of a list.
+  #         :type nums: List[int]
+  #         """
+  #
+  #     def hasNext(self):
+  #         """
+  #         Returns true if the iteration has more elements.
+  #         :rtype: bool
+  #         """
+  #
+  #     def next(self):
+  #         """
+  #         Returns the next element in the iteration.
+  #         :rtype: int
+  #         """
+
+  class PeekingIterator:
+      def __init__(self, iterator):
+          """
+          Initialize your data structure here.
+          :type iterator: Iterator
+          """
+          self.iterator = iterator
+          self.has_peeked = False
+          self.peeked_element = None
+
+      def peek(self):
+          """
+          Returns the next element in the iteration without advancing the iterator.
+          :rtype: int
+          """
+          if not self.has_peeked:
+              self.peeked_element = self.iterator.next()
+              self.has_peeked = True
+          return self.peeked_element
+
+      def next(self):
+          """
+          :rtype: int
+          """
+          if not self.has_peeked:
+              return self.iterator.next()
+          result = self.peeked_element
+          self.has_peeked = False
+          self.peeked_element = None
+          return result
+
+      def hasNext(self):
+          """
+          :rtype: bool
+          """
+          return self.has_peeked or self.iterator.hasNext()
+
+
+  # Your PeekingIterator object will be instantiated and called as such:
+  # iter = PeekingIterator(Iterator(nums))
+  # while iter.hasNext():
+  #     val = iter.peek()   # Get the next element but not advance the iterator.
+  #     iter.next()         # Should return the same value as [val].
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  // Java Iterator interface reference:
+  // https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html
+
+  class PeekingIterator implements Iterator<Integer> {
+      private Iterator<Integer> iterator;
+      private boolean hasPeeked;
+      private Integer peekedElement;
+
+      public PeekingIterator(Iterator<Integer> iterator) {
+          // initialize any member here.
+          this.iterator = iterator;
+      }
+
+      // Returns the next element in the iteration without advancing the iterator.
+      public Integer peek() {
+          if (!hasPeeked) {
+              peekedElement = iterator.next();
+              hasPeeked = true;
+          }
+          return peekedElement;
+      }
+
+      // hasNext() and next() should behave the same as in the Iterator interface.
+      // Override them if needed.
+      @Override
+      public Integer next() {
+          if (!hasPeeked) {
+              return iterator.next();
+          }
+          Integer result = peekedElement;
+          hasPeeked = false;
+          peekedElement = null;
+          return result;
+      }
+
+      @Override
+      public boolean hasNext() {
+          return hasPeeked || iterator.hasNext();
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

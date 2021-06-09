@@ -1,0 +1,253 @@
+* [[https://leetcode-cn.com/problems/find-the-difference][389. 找不同]]
+  :PROPERTIES:
+  :CUSTOM_ID: 找不同
+  :END:
+[[./solution/0300-0399/0389.Find the Difference/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定两个字符串 s 和 t，它们只包含小写字母。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+字符串 t 由字符串 s 随机重排，然后在随机位置添加一个字母。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请找出在 t 中被添加的字母。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>s = &quot;abcd&quot;, t = &quot;abcde&quot;
+  <strong>输出：</strong>&quot;e&quot;
+  <strong>解释：</strong>&#39;e&#39; 是那个被添加的字母。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>s = &quot;&quot;, t = &quot;y&quot;
+  <strong>输出：</strong>&quot;y&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>s = &quot;a&quot;, t = &quot;aa&quot;
+  <strong>输出：</strong>&quot;a&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 4：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>s = &quot;ae&quot;, t = &quot;aea&quot;
+  <strong>输出：</strong>&quot;a&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= s.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+t.length == s.length + 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s 和 t 只包含小写字母
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+计数器实现。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def findTheDifference(self, s: str, t: str) -> str:
+          counter = collections.Counter(s)
+          for c in t:
+              if counter[c] <= 0:
+                  return c
+              counter[c] -= 1
+          return None
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public char findTheDifference(String s, String t) {
+          int[] counter = new int[26];
+          for (int i = 0; i < s.length(); ++i) {
+              int index = s.charAt(i) - 'a';
+              ++counter[index];
+          }
+          for (int i = 0; i < t.length(); ++i) {
+              int index = t.charAt(i) - 'a';
+              if (counter[index] <= 0) {
+                  return t.charAt(i);
+              }
+              --counter[index];
+          }
+          return ' ';
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

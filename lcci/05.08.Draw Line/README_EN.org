@@ -1,0 +1,113 @@
+* [[https://leetcode-cn.com/problems/draw-line-lcci][05.08. Draw Line]]
+  :PROPERTIES:
+  :CUSTOM_ID: draw-line
+  :END:
+[[./lcci/05.08.Draw Line/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+A monochrome screen is stored as a single array of int, allowing 32
+consecutive pixels to be stored in one int. The screen has width w,
+where w is divisible by 32 (that is, no byte will be split across rows).
+The height of the screen, of course, can be derived from the length of
+the array and the width. Implement a function that draws a horizontal
+line from (x1, y) to (x2, y).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the length of the array, the width of the array (in bit), start
+position x1 (in bit) of the line, end position x2 (in bit) of the line
+and the row number y of the line, return the array after drawing.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong> Input</strong>: length = 1, w = 32, x1 = 30, x2 = 31, y = 0
+
+  <strong> Output</strong>: [3]
+
+  <strong> Explanation</strong>: After drawing a line from (30, 0) to (31, 0), the screen becomes [0b000000000000000000000000000000011].
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong> Input</strong>: length = 3, w = 96, x1 = 0, x2 = 95, y = 0
+
+  <strong> Output</strong>: [-1, -1, -1]
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

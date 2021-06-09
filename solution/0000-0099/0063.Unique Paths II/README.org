@@ -1,0 +1,250 @@
+* [[https://leetcode-cn.com/problems/unique-paths-ii][63. 不同路径 II]]
+  :PROPERTIES:
+  :CUSTOM_ID: 不同路径-ii
+  :END:
+[[./solution/0000-0099/0063.Unique Paths II/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+网格中的障碍物和空位置分别用 1 和 0 来表示。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>obstacleGrid = [[0,0,0],[0,1,0],[0,0,0]]
+  <strong>输出：</strong>2
+  <strong>解释：</strong>
+  3x3 网格的正中间有一个障碍物。
+  从左上角到右下角一共有 <code>2</code> 条不同的路径：
+  1. 向右 -> 向右 -> 向下 -> 向下
+  2. 向下 -> 向下 -> 向右 -> 向右
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>obstacleGrid = [[0,1],[0,0]]
+  <strong>输出：</strong>1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+m == obstacleGrid.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n == obstacleGrid[i].length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= m, n <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+obstacleGrid[i][j] 为 0 或 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  func uniquePathsWithObstacles(obstacleGrid [][]int) int {
+      m,n := len(obstacleGrid),len(obstacleGrid[0])
+      dp := make([][]int,m)
+      for i:=0; i < m;i++ {
+          dp[i] = make([]int,n)
+      }
+      for i := 0; i < m; i++ {
+          for j := 0; j < n; j++ {
+              if obstacleGrid[i][j] == 0 {
+                  if i == 0 && j == 0 {
+                      dp[i][j] = 1
+                  } else if i > 0 && j >0 {
+                      dp[i][j] = dp[i][j-1]+dp[i-1][j]
+                  } else if i > 0 {
+                      dp[i][j] = dp[i-1][j]
+                  } else {
+                      dp[i][j] = dp[i][j-1]
+                  }
+              }
+          }
+      }
+      return dp[m-1][n-1]
+  }
+
+
+  <!-- tabs:start -->
+
+  ### **Python3**
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+
+  ```python
+#+end_example
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,254 @@
+* [[https://leetcode.com/problems/decoded-string-at-index][880. Decoded
+String at Index]]
+  :PROPERTIES:
+  :CUSTOM_ID: decoded-string-at-index
+  :END:
+[[./solution/0800-0899/0880.Decoded String at Index/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+An encoded string S is given.  To find and write the decoded string to a
+tape, the encoded string is read one character at a time and the
+following steps are taken:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If the character read is a letter, that letter is written onto the tape.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If the character read is a digit (say d), the entire current tape is
+repeatedly written d-1 more times in total.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Now for some encoded string S, and an index K, find and return the K-th
+letter (1 indexed) in the decoded string.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong>S = <span id="example-input-1-1">&quot;leet2code3&quot;</span>, K = <span id="example-input-1-2">10</span>
+  <strong>Output: </strong><span id="example-output-1">&quot;o&quot;</span>
+  <strong>Explanation: </strong>
+  The decoded string is &quot;leetleetcodeleetleetcodeleetleetcode&quot;.
+  The 10th letter in the string is &quot;o&quot;.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong>S = <span id="example-input-2-1">&quot;ha22&quot;</span>, K = <span id="example-input-2-2">5</span>
+  <strong>Output: </strong><span id="example-output-2">&quot;h&quot;</span>
+  <strong>Explanation: </strong>
+  The decoded string is &quot;hahahaha&quot;.  The 5th letter is &quot;h&quot;.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong>S = <span id="example-input-3-1">&quot;a2345678999999999999999&quot;</span>, K = <span id="example-input-3-2">1</span>
+  <strong>Output: </strong><span id="example-output-3">&quot;a&quot;</span>
+  <strong>Explanation: </strong>
+  The decoded string is &quot;a&quot; repeated 8301530446056247680 times.  The 1st letter is &quot;a&quot;.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+2 <= S.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+S will only contain lowercase letters and digits 2 through 9.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+S starts with a letter.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= K <= 10^9
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+It's guaranteed that K is less than or equal to the length of the
+decoded string.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The decoded string is guaranteed to have less than 2^63 letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

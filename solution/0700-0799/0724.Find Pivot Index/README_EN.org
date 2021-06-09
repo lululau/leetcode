@@ -1,0 +1,234 @@
+* [[https://leetcode.com/problems/find-pivot-index][724. Find Pivot
+Index]]
+  :PROPERTIES:
+  :CUSTOM_ID: find-pivot-index
+  :END:
+[[./solution/0700-0799/0724.Find Pivot Index/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array of integers nums, calculate the pivot index of this
+array.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The pivot index is the index where the sum of all the numbers strictly
+to the left of the index is equal to the sum of all the numbers strictly
+to the index's right.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If the index is on the left edge of the array, then the left sum is 0
+because there are no elements to the left. This also applies to the
+right edge of the array.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the leftmost pivot index. If no such index exists, return -1.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [1,7,3,6,5,6]
+  <strong>Output:</strong> 3
+  <strong>Explanation:</strong>
+  The pivot index is 3.
+  Left sum = nums[0] + nums[1] + nums[2] = 1 + 7 + 3 = 11
+  Right sum = nums[4] + nums[5] = 5 + 6 = 11
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [1,2,3]
+  <strong>Output:</strong> -1
+  <strong>Explanation:</strong>
+  There is no index that satisfies the conditions in the problem statement.</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [2,1,-1]
+  <strong>Output:</strong> 0
+  <strong>Explanation:</strong>
+  The pivot index is 0.
+  Left sum = 0 (no elements to the left of index 0)
+  Right sum = nums[1] + nums[2] = 1 + -1 = 0
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-1000 <= nums[i] <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def pivotIndex(self, nums: List[int]) -> int:
+          sums = sum(nums)
+          pre_sum = 0
+          for i, v in enumerate(nums):
+              if (pre_sum << 1) == sums - v:
+                  return i
+              pre_sum += v
+          return -1
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int pivotIndex(int[] nums) {
+          int sums = 0;
+          for (int e : nums) {
+              sums += e;
+          }
+          int preSum = 0;
+          for (int i = 0; i < nums.length; ++i) {
+              // preSum == sums - nums[i] - preSum
+              if (preSum << 1 == sums - nums[i]) {
+                  return i;
+              }
+              preSum += nums[i];
+          }
+          return -1;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

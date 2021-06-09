@@ -1,0 +1,142 @@
+* [[https://leetcode-cn.com/problems/can-i-win][464. 我能赢吗]]
+  :PROPERTIES:
+  :CUSTOM_ID: 我能赢吗
+  :END:
+[[./solution/0400-0499/0464.Can I Win/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+在 "100 game" 这个游戏中，两名玩家轮流选择从 1 到 10
+的任意整数，累计整数和，先使得累计整数和达到或超过 100
+的玩家，即为胜者。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+如果我们将游戏规则改为 “玩家不能重复使用整数” 呢？
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+例如，两个玩家可以轮流从公共整数池中抽取从 1 到 15
+的整数（不放回），直到累计整数和 >= 100。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个整数 maxChoosableInteger （整数池中可选择的最大数）和另一个整数 desiredTotal（累计和），判断先出手的玩家是否能稳赢（假设两位玩家游戏时都表现最佳）？
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你可以假设 maxChoosableInteger 不会大于 20， desiredTotal 不会大于 300。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>
+  maxChoosableInteger = 10
+  desiredTotal = 11
+
+  <strong>输出：</strong>
+  false
+
+  <strong>解释：
+  </strong>无论第一个玩家选择哪个整数，他都会失败。
+  第一个玩家可以选择从 1 到 10 的整数。
+  如果第一个玩家选择 1，那么第二个玩家只能选择从 2 到 10 的整数。
+  第二个玩家可以通过选择整数 10（那么累积和为 11 &gt;= desiredTotal），从而取得胜利.
+  同样地，第一个玩家选择任意其他整数，第二个玩家都会赢。
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

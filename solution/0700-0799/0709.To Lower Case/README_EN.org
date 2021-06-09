@@ -1,0 +1,149 @@
+* [[https://leetcode.com/problems/to-lower-case][709. To Lower Case]]
+  :PROPERTIES:
+  :CUSTOM_ID: to-lower-case
+  :END:
+[[./solution/0700-0799/0709.To Lower Case/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement function ToLowerCase() that has a string parameter str, and
+returns the same string in lowercase.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-1-1">&quot;Hello&quot;</span>
+
+  <strong>Output: </strong><span id="example-output-1">&quot;hello&quot;</span>
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-2-1">&quot;here&quot;</span>
+
+  <strong>Output: </strong><span id="example-output-2">&quot;here&quot;</span>
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-3-1">&quot;LOVELY&quot;</span>
+
+  <strong>Output: </strong><span id="example-output-3">&quot;lovely&quot;</span>
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def toLowerCase(self, str: str) -> str:
+          if not str:
+              return str
+          n = len(str)
+          res = []
+          for i in range(n):
+              c = ord(str[i])
+              if c >= 65 and c <= 90:
+                 c += 32
+              res.append(chr(c))
+          return ''.join(res)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public String toLowerCase(String str) {
+          int n;
+          if (str == null || (n = str.length()) == 0) return str;
+          char[] chars = str.toCharArray();
+          for (int i = 0; i < chars.length; ++i) {
+              boolean isUpper = chars[i] >= 'A' && chars[i] <= 'Z';
+              if (isUpper) chars[i] += 32;
+          }
+          return new String(chars);
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

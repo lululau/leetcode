@@ -1,0 +1,289 @@
+* [[https://leetcode.com/problems/rank-teams-by-votes][1366. Rank Teams
+by Votes]]
+  :PROPERTIES:
+  :CUSTOM_ID: rank-teams-by-votes
+  :END:
+[[./solution/1300-1399/1366.Rank Teams by Votes/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+In a special ranking system, each voter gives a rank from highest to
+lowest to all teams participated in the competition.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The ordering of teams is decided by who received the most position-one
+votes. If two or more teams tie in the first position, we consider the
+second position to resolve the conflict, if they tie again, we continue
+this process until the ties are resolved. If two or more teams are still
+tied after considering all positions, we rank them alphabetically based
+on their team letter.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array of strings votes which is the votes of all voters in the
+ranking systems. Sort all teams according to the ranking system
+described above.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return a string of all teams sorted by the ranking system.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> votes = [&quot;ABC&quot;,&quot;ACB&quot;,&quot;ABC&quot;,&quot;ACB&quot;,&quot;ACB&quot;]
+  <strong>Output:</strong> &quot;ACB&quot;
+  <strong>Explanation:</strong> Team A was ranked first place by 5 voters. No other team was voted as first place so team A is the first team.
+  Team B was ranked second by 2 voters and was ranked third by 3 voters.
+  Team C was ranked second by 3 voters and was ranked third by 2 voters.
+  As most of the voters ranked C second, team C is the second team and team B is the third.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> votes = [&quot;WXYZ&quot;,&quot;XYZW&quot;]
+  <strong>Output:</strong> &quot;XWYZ&quot;
+  <strong>Explanation:</strong> X is the winner due to tie-breaking rule. X has same votes as W for the first position but X has one vote as second position while W doesn&#39;t have any votes as second position. 
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> votes = [&quot;ZMNAGUEDSJYLBOPHRQICWFXTVK&quot;]
+  <strong>Output:</strong> &quot;ZMNAGUEDSJYLBOPHRQICWFXTVK&quot;
+  <strong>Explanation:</strong> Only one voter so his votes are used for the ranking.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> votes = [&quot;BCA&quot;,&quot;CAB&quot;,&quot;CBA&quot;,&quot;ABC&quot;,&quot;ACB&quot;,&quot;BAC&quot;]
+  <strong>Output:</strong> &quot;ABC&quot;
+  <strong>Explanation:</strong> 
+  Team A was ranked first by 2 voters, second by 2 voters and third by 2 voters.
+  Team B was ranked first by 2 voters, second by 2 voters and third by 2 voters.
+  Team C was ranked first by 2 voters, second by 2 voters and third by 2 voters.
+  There is a tie and we rank teams ascending by their IDs.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> votes = [&quot;M&quot;,&quot;M&quot;,&quot;M&quot;,&quot;M&quot;]
+  <strong>Output:</strong> &quot;M&quot;
+  <strong>Explanation:</strong> Only team M in the competition so it has the first rank.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= votes.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= votes[i].length <= 26
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+votes[i].length == votes[j].length for 0 <= i, j < votes.length.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+votes[i][j] is an English upper-case letter.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All characters of votes[i] are unique.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All the characters that occur in votes[0] also occur in votes[j] where 1
+<= j < votes.length.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

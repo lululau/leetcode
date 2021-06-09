@@ -1,0 +1,259 @@
+* [[https://leetcode.com/problems/bulb-switcher-iv][1529. Bulb Switcher
+IV]]
+  :PROPERTIES:
+  :CUSTOM_ID: bulb-switcher-iv
+  :END:
+[[./solution/1500-1599/1529.Bulb Switcher IV/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+There is a room with n bulbs, numbered from 0 to n-1, arranged in a row
+from left to right. Initially all the bulbs are turned off.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Your task is to obtain the configuration represented by target
+where target[i] is '1' if the i-th bulb is turned on and is '0' if it is
+turned off.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You have a switch to flip the state of the bulb, a flip operation is
+defined as follows:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Choose any bulb (index i) of your current configuration.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Flip each bulb from index i to n-1.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+When any bulb is flipped it means that if it is 0 it changes to 1 and if
+it is 1 it changes to 0.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the minimum number of flips required to form target.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> target = &quot;10111&quot;
+  <strong>Output:</strong> 3
+  <strong>Explanation: </strong>Initial configuration &quot;00000&quot;.
+  flip from the third bulb:  &quot;00000&quot; -&gt; &quot;00111&quot;
+  flip from the first bulb:  &quot;00111&quot; -&gt; &quot;11000&quot;
+  flip from the second bulb:  &quot;11000&quot; -&gt; &quot;10111&quot;
+  We need at least 3 flip operations to form target.</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> target = &quot;101&quot;
+  <strong>Output:</strong> 3
+  <strong>Explanation: </strong>&quot;000&quot; -&gt; &quot;111&quot; -&gt; &quot;100&quot; -&gt; &quot;101&quot;.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> target = &quot;00000&quot;
+  <strong>Output:</strong> 0
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> target = &quot;001011101&quot;
+  <strong>Output:</strong> 5
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= target.length <= 10^5
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+target[i] == '0' or target[i] == '1'
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

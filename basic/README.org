@@ -1,0 +1,22 @@
+* 基础算法通关
+  :PROPERTIES:
+  :CUSTOM_ID: 基础算法通关
+  :END:
+** 排序算法
+   :PROPERTIES:
+   :CUSTOM_ID: 排序算法
+   :END:
+
+- [[./sorting/BubbleSort/README.org][冒泡排序]]
+- [[./sorting/InsertionSort/README.org][插入排序]]
+- [[./sorting/SelectionSort/README.org][选择排序]]
+- [[./sorting/MergeSort/README.org][归并排序]]
+- [[./sorting/QuickSort/README.org][快速排序]]
+
+** 查找算法
+   :PROPERTIES:
+   :CUSTOM_ID: 查找算法
+   :END:
+
+- [[./searching/BinarySearch/README.org][二分查找]]
+- [[./searching/BinarySearch-II/README.org][二分查找 II]]

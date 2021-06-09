@@ -1,0 +1,248 @@
+* [[https://leetcode.com/problems/minimize-hamming-distance-after-swap-operations][1722.
+Minimize Hamming Distance After Swap Operations]]
+  :PROPERTIES:
+  :CUSTOM_ID: minimize-hamming-distance-after-swap-operations
+  :END:
+[[./solution/1700-1799/1722.Minimize Hamming Distance After Swap Operations/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given two integer arrays, source and target, both of length n.
+You are also given an array allowedSwaps where each allowedSwaps[i] =
+[ai, bi] indicates that you are allowed to swap the elements at index ai
+and index bi (0-indexed) of array source. Note that you can swap
+elements at a specific pair of indices multiple times and in any order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The Hamming distance of two arrays of the same length, source and
+target, is the number of positions where the elements are different.
+Formally, it is the number of indices i for 0 <= i <= n-1 where
+source[i] != target[i] (0-indexed).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the minimum Hamming distance of source and target after
+performing any amount of swap operations on array source.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> source = [1,2,3,4], target = [2,1,4,5], allowedSwaps = [[0,1],[2,3]]
+  <strong>Output:</strong> 1
+  <strong>Explanation:</strong> source can be transformed the following way:
+  - Swap indices 0 and 1: source = [<u>2</u>,<u>1</u>,3,4]
+  - Swap indices 2 and 3: source = [2,1,<u>4</u>,<u>3</u>]
+  The Hamming distance of source and target is 1 as they differ in 1 position: index 3.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> source = [1,2,3,4], target = [1,3,2,4], allowedSwaps = []
+  <strong>Output:</strong> 2
+  <strong>Explanation:</strong> There are no allowed swaps.
+  The Hamming distance of source and target is 2 as they differ in 2 positions: index 1 and index 2.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> source = [5,1,2,4,3], target = [1,5,4,2,3], allowedSwaps = [[0,4],[4,2],[1,3],[1,4]]
+  <strong>Output:</strong> 0
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n == source.length == target.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= source[i], target[i] <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= allowedSwaps.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+allowedSwaps[i].length == 2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= ai, bi <= n - 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+ai != bi
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

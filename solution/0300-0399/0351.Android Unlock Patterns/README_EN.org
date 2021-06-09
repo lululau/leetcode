@@ -1,0 +1,270 @@
+* [[https://leetcode.com/problems/android-unlock-patterns][351. Android
+Unlock Patterns]]
+  :PROPERTIES:
+  :CUSTOM_ID: android-unlock-patterns
+  :END:
+[[./solution/0300-0399/0351.Android Unlock Patterns/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Android devices have a special lock screen with a 3 x 3 grid of dots.
+Users can set an "unlock pattern" by connecting the dots in a specific
+sequence, forming a series of joined line segments where each segment's
+endpoints are two consecutive dots in the sequence. A sequence of k dots
+is a valid unlock pattern if both of the following are true:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All the dots in the sequence are distinct.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If the line segment connecting two consecutive dots in the sequence
+passes through any other dot, the other dot must have previously
+appeared in the sequence. No jumps through non-selected dots are
+allowed.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Here are some example valid and invalid unlock patterns:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The 1st pattern [4,1,3,6] is invalid because the line connecting dots 1
+and 3 pass through dot 2, but dot 2 did not previously appear in the
+sequence.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The 2nd pattern [4,1,9,2] is invalid because the line connecting dots 1
+and 9 pass through dot 5, but dot 5 did not previously appear in the
+sequence.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The 3rd pattern [2,4,1,3,6] is valid because it follows the conditions.
+The line connecting dots 1 and 3 meets the condition because dot 2
+previously appeared in the sequence.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The 4th pattern [6,5,4,1,9,2] is valid because it follows the
+conditions. The line connecting dots 1 and 9 meets the condition because
+dot 5 previously appeared in the sequence.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given two integers m and n, return the number of unique and valid unlock
+patterns of the Android grid lock screen that consist of at least m keys
+and at most n keys.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Two unlock patterns are considered unique if there is a dot in one
+sequence that is not in the other, or the order of the dots is
+different.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> m = 1, n = 1
+  <strong>Output:</strong> 9
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> m = 1, n = 2
+  <strong>Output:</strong> 65
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= m, n <= 9
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

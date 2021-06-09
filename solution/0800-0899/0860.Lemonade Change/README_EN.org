@@ -1,0 +1,257 @@
+* [[https://leetcode.com/problems/lemonade-change][860. Lemonade
+Change]]
+  :PROPERTIES:
+  :CUSTOM_ID: lemonade-change
+  :END:
+[[./solution/0800-0899/0860.Lemonade Change/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+At a lemonade stand, each lemonade costs $5. 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Customers are standing in a queue to buy from you, and order one at a
+time (in the order specified by bills).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Each customer will only buy one lemonade and pay with either a $5, $10,
+or $20 bill.  You must provide the correct change to each customer, so
+that the net transaction is that the customer pays $5.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note that you don't have any change in hand at first.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return true if and only if you can provide every customer with correct
+change.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-1-1">[5,5,5,10,20]</span>
+
+  <strong>Output: </strong><span id="example-output-1">true</span>
+
+  <strong>Explanation: </strong>
+
+  From the first 3 customers, we collect three $5 bills in order.
+
+  From the fourth customer, we collect a $10 bill and give back a $5.
+
+  From the fifth customer, we give a $10 bill and a $5 bill.
+
+  Since all customers got correct change, we output true.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-2-1">[5,5,10]</span>
+
+  <strong>Output: </strong><span id="example-output-2">true</span>
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-3-1">[10,10]</span>
+
+  <strong>Output: </strong><span id="example-output-3">false</span>
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-4-1">[5,5,10,10,20]</span>
+
+  <strong>Output: </strong><span id="example-output-4">false</span>
+
+  <strong>Explanation: </strong>
+
+  From the first two customers in order, we collect two $5 bills.
+
+  For the next two customers in order, we collect a $10 bill and give back a $5 bill.
+
+  For the last customer, we can't give change of $15 back because we only have two $10 bills.
+
+  Since not every customer received correct change, the answer is false.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= bills.length <= 10000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+bills[i] will be either 5, 10, or 20.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

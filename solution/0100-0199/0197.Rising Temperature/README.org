@@ -1,0 +1,134 @@
+* [[https://leetcode-cn.com/problems/rising-temperature][197.
+上升的温度]]
+  :PROPERTIES:
+  :CUSTOM_ID: 上升的温度
+  :END:
+[[./solution/0100-0199/0197.Rising Temperature/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+表 Weather
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +---------------+---------+
+  | Column Name   | Type    |
+  +---------------+---------+
+  | id            | int     |
+  | recordDate    | date    |
+  | temperature   | int     |
+  +---------------+---------+
+  id 是这个表的主键
+  该表包含特定日期的温度信息</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+编写一个 SQL 查询，来查找与之前（昨天的）日期相比温度更高的所有日期的 id
+。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回结果 不要求顺序 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+查询结果格式如下例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <code>Weather</code>
+  +----+------------+-------------+
+  | id | recordDate | Temperature |
+  +----+------------+-------------+
+  | 1  | 2015-01-01 | 10          |
+  | 2  | 2015-01-02 | 25          |
+  | 3  | 2015-01-03 | 20          |
+  | 4  | 2015-01-04 | 30          |
+  +----+------------+-------------+
+
+  Result table:
+  +----+
+  | id |
+  +----+
+  | 2  |
+  | 4  |
+  +----+
+  2015-01-02 的温度比前一天高（10 -> 25）
+  2015-01-04 的温度比前一天高（20 -> 30）
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_example
+  select w1.Id
+  from
+      Weather w1,
+      Weather w2
+  where
+      DATEDIFF(w1.RecordDate, w2.RecordDate) = 1 and w1.Temperature > w2.Temperature
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

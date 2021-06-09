@@ -1,0 +1,337 @@
+* [[https://leetcode.com/problems/binary-tree-preorder-traversal][144.
+Binary Tree Preorder Traversal]]
+  :PROPERTIES:
+  :CUSTOM_ID: binary-tree-preorder-traversal
+  :END:
+[[./solution/0100-0199/0144.Binary Tree Preorder Traversal/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the root of a binary tree, return the preorder traversal of its
+nodes' values.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [1,null,2,3]
+  <strong>Output:</strong> [1,2,3]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = []
+  <strong>Output:</strong> []
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [1]
+  <strong>Output:</strong> [1]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [1,2]
+  <strong>Output:</strong> [1,2]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [1,null,2]
+  <strong>Output:</strong> [1,2]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of nodes in the tree is in the range [0, 100].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-100 <= Node.val <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow up: Recursive solution is trivial, could you do it iteratively?
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+Recursive:
+
+#+begin_src python
+  # Definition for a binary tree node.
+  # class TreeNode:
+  #     def __init__(self, val=0, left=None, right=None):
+  #         self.val = val
+  #         self.left = left
+  #         self.right = right
+  class Solution:
+      def preorderTraversal(self, root: TreeNode) -> List[int]:
+          def preorder(root):
+              if root:
+                  res.append(root.val)
+                  preorder(root.left)
+                  preorder(root.right)
+          res = []
+          preorder(root)
+          return res
+#+end_src
+
+Non-recursive:
+
+#+begin_src python
+  # Definition for a binary tree node.
+  # class TreeNode:
+  #     def __init__(self, val=0, left=None, right=None):
+  #         self.val = val
+  #         self.left = left
+  #         self.right = right
+  class Solution:
+      def preorderTraversal(self, root: TreeNode) -> List[int]:
+          res = []
+          if root:
+              s = [root]
+              while s:
+                  node = s.pop()
+                  res.append(node.val)
+                  if node.right:
+                      s.append(node.right)
+                  if node.left:
+                      s.append(node.left)
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+Recursive:
+
+#+begin_src java
+  /**
+   * Definition for a binary tree node.
+   * public class TreeNode {
+   *     int val;
+   *     TreeNode left;
+   *     TreeNode right;
+   *     TreeNode() {}
+   *     TreeNode(int val) { this.val = val; }
+   *     TreeNode(int val, TreeNode left, TreeNode right) {
+   *         this.val = val;
+   *         this.left = left;
+   *         this.right = right;
+   *     }
+   * }
+   */
+  class Solution {
+
+      private List<Integer> res;
+
+      public List<Integer> preorderTraversal(TreeNode root) {
+          res = new ArrayList<>();
+          preorder(root);
+          return res;
+      }
+
+      private void preorder(TreeNode root) {
+          if (root != null) {
+              res.add(root.val);
+              preorder(root.left);
+              preorder(root.right);
+          }
+      }
+  }
+#+end_src
+
+Non-recursive:
+
+#+begin_src java
+  /**
+   * Definition for a binary tree node.
+   * public class TreeNode {
+   *     int val;
+   *     TreeNode left;
+   *     TreeNode right;
+   *     TreeNode() {}
+   *     TreeNode(int val) { this.val = val; }
+   *     TreeNode(int val, TreeNode left, TreeNode right) {
+   *         this.val = val;
+   *         this.left = left;
+   *         this.right = right;
+   *     }
+   * }
+   */
+  class Solution {
+      public List<Integer> preorderTraversal(TreeNode root) {
+          if (root == null) {
+              return Collections.emptyList();
+          }
+          List<Integer> res = new ArrayList<>();
+          Deque<TreeNode> s = new ArrayDeque<>();
+          s.push(root);
+          while (!s.isEmpty()) {
+              TreeNode node = s.pop();
+              res.add(node.val);
+              if (node.right != null) {
+                  s.push(node.right);
+              }
+              if (node.left != null) {
+                  s.push(node.left);
+              }
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

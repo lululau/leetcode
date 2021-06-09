@@ -1,0 +1,222 @@
+* [[https://leetcode-cn.com/problems/second-largest-digit-in-a-string][1796.
+字符串中第二大的数字]]
+  :PROPERTIES:
+  :CUSTOM_ID: 字符串中第二大的数字
+  :END:
+[[./solution/1700-1799/1796.Second Largest Digit in a String/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个混合字符串 s ，请你返回 s 中 第二大
+的数字，如果不存在第二大的数字，请你返回 -1 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+混合字符串 由小写英文字母和数字组成。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <b>输入：</b>s = "dfa12321afd"
+  <b>输出：</b>2
+  <b>解释：</b>出现在 s 中的数字包括 [1, 2, 3] 。第二大的数字是 2 。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <b>输入：</b>s = "abc1111"
+  <b>输出：</b>-1
+  <b>解释：</b>出现在 s 中的数字只包含 [1] 。没有第二大的数字。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s.length <= 500
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s 只包含小写英文字母和（或）数字。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+假设字符串最大的数为 =largestDigit=，第二大的数为
+=secondLargestDigit=，初始化均为 -1。
+
+遍历字符串，判断当前字符是否为数字型字符。若是，先转为数字
+=num=。然后判断数字与 =largestDigit=、=secondLargestDigit= 的大小关系：
+
+- 若 =num > largestDigit=，将 =secondLargestDigit= 更新为
+  =largestDigit=，而 =largestDigit= 更新为 num；
+- 若 =num > secondLargestDigit=，并且 =num < largestDigit=，将
+  =secondLargestDigit= 更新为 num；
+- 其他情况不做处理。
+
+最后返回 =secondLargestDigit= 即可。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def secondHighest(self, s: str) -> int:
+          largest_digit = second_largest_digit = -1
+          for c in s:
+              if c.isdigit():
+                  num = int(c)
+                  if num > largest_digit:
+                      second_largest_digit, largest_digit = largest_digit, num
+                  elif num > second_largest_digit and num < largest_digit:
+                      second_largest_digit = num
+          return second_largest_digit
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int secondHighest(String s) {
+          int largestDigit = -1, secondLargestDigit = -1;
+          for (int i = 0; i < s.length(); ++i) {
+              char c = s.charAt(i);
+              if (c >= '0' && c <= '9') {
+                  int num = c - '0';
+                  if (num > largestDigit) {
+                      secondLargestDigit = largestDigit;
+                      largestDigit = num;
+                  } else if (num > secondLargestDigit && num < largestDigit) {
+                      secondLargestDigit = num;
+                  }
+              }
+          }
+          return secondLargestDigit;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

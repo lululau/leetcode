@@ -1,0 +1,126 @@
+* [[https://leetcode.com/problems/convert-date-format][1853. Convert
+Date Format]]
+  :PROPERTIES:
+  :CUSTOM_ID: convert-date-format
+  :END:
+[[./solution/1800-1899/1853.Convert Date Format/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Days
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +-------------+------+
+  | Column Name | Type |
+  +-------------+------+
+  | day         | date |
+  +-------------+------+
+  day is the primary key for this table.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an SQL query to convert each date in Days into a string formatted
+as "day_name, month_name day, year".
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the result table in any order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The query result format is in the following example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  Days table:
+  +------------+
+  | day        |
+  +------------+
+  | 2022-04-12 |
+  | 2021-08-09 |
+  | 2020-06-26 |
+  +------------+
+
+  Result table:
+  +-------------------------+
+  | day                     |
+  +-------------------------+
+  | Tuesday, April 12, 2022 |
+  | Monday, August 9, 2021  |
+  | Friday, June 26, 2020   |
+  +-------------------------+
+  Please note that the output is case-sensitive.
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

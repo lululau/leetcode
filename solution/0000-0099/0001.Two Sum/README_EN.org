@@ -1,0 +1,244 @@
+* [[https://leetcode.com/problems/two-sum][1. Two Sum]]
+  :PROPERTIES:
+  :CUSTOM_ID: two-sum
+  :END:
+[[./solution/0000-0099/0001.Two Sum/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array of integers nums and an integer target, return indices of
+the two numbers such that they add up to target.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You may assume that each input would have exactly one solution, and you
+may not use the same element twice.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You can return the answer in any order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [2,7,11,15], target = 9
+  <strong>Output:</strong> [0,1]
+  <strong>Output:</strong> Because nums[0] + nums[1] == 9, we return [0, 1].
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [3,2,4], target = 6
+  <strong>Output:</strong> [1,2]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [3,3], target = 6
+  <strong>Output:</strong> [0,1]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+2 <= nums.length <= 103
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-109 <= nums[i] <= 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-109 <= target <= 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Only one valid answer exists.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def twoSum(self, nums: List[int], target: int) -> List[int]:
+          helper = {}
+          for i, v in enumerate(nums):
+              num = target - v
+              if num in helper:
+                  return [helper[num], i]
+              helper[v] = i
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int[] twoSum(int[] nums, int target) {
+          Map<Integer, Integer> map = new HashMap<>();
+          for (int i = 0, n = nums.length; i < n; ++i) {
+              int num = target - nums[i];
+              if (map.containsKey(num)) {
+                  return new int[]{map.get(num), i};
+              }
+              map.put(nums[i], i);
+          }
+          return null;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  var twoSum = function (nums, target) {
+    const map = new Map();
+    for (let i = 0; i < nums.length; i++) {
+      if (map.has(target - nums[i])) {
+        return [map.get(target - nums[i]), i];
+      }
+      map.set(nums[i], i);
+    }
+    return [];
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

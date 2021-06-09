@@ -1,0 +1,203 @@
+* [[https://leetcode-cn.com/problems/number-of-distinct-islands][694.
+不同岛屿的数量]]
+  :PROPERTIES:
+  :CUSTOM_ID: 不同岛屿的数量
+  :END:
+[[./solution/0600-0699/0694.Number of Distinct Islands/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个非空 01
+二维数组表示的网格，一个岛屿由四连通（上、下、左、右四个方向）的 1
+组成，你可以认为网格的四周被海水包围。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你计算这个网格中共有多少个形状不同的岛屿。两个岛屿被认为是相同的，当且仅当一个岛屿可以通过平移变换（不可以旋转、翻转）和另一个岛屿重合。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>11000
+  11000
+  00011
+  00011
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定上图，返回结果 1 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>11011
+  10000
+  00001
+  11011</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定上图，返回结果 3 。 注意：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>11
+  1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+和
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre> 1
+  11
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+是不同的岛屿，因为我们不考虑旋转、翻转操作。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：二维数组每维的大小都不会超过 50 。
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

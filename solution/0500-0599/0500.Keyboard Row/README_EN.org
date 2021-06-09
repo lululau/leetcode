@@ -1,0 +1,259 @@
+* [[https://leetcode.com/problems/keyboard-row][500. Keyboard Row]]
+  :PROPERTIES:
+  :CUSTOM_ID: keyboard-row
+  :END:
+[[./solution/0500-0599/0500.Keyboard Row/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array of strings words, return the words that can be typed
+using letters of the alphabet on only one row of American keyboard like
+the image below.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+In the American keyboard:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+the first row consists of the characters "qwertyuiop",
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+the second row consists of the characters "asdfghjkl", and
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+the third row consists of the characters "zxcvbnm".
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> words = [&quot;Hello&quot;,&quot;Alaska&quot;,&quot;Dad&quot;,&quot;Peace&quot;]
+  <strong>Output:</strong> [&quot;Alaska&quot;,&quot;Dad&quot;]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> words = [&quot;omk&quot;]
+  <strong>Output:</strong> []
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> words = [&quot;adsdf&quot;,&quot;sfd&quot;]
+  <strong>Output:</strong> [&quot;adsdf&quot;,&quot;sfd&quot;]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= words.length <= 20
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= words[i].length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+words[i] consists of English letters (both lowercase and uppercase). 
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def findWords(self, words: List[str]) -> List[str]:
+          s1 = set('qwertyuiop')
+          s2 = set('asdfghjkl')
+          s3 = set('zxcvbnm')
+          res = []
+          for word in words:
+              t = set(word.lower())
+              if t <= s1 or t <= s2 or t <= s3:
+                  res.append(word)
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public String[] findWords(String[] words) {
+          String s1 = "qwertyuiopQWERTYUIOP";
+          String s2 = "asdfghjklASDFGHJKL";
+          String s3 = "zxcvbnmZXCVBNM";
+          List<String> res = new ArrayList<>();
+          for (String word : words) {
+              int n1 = 0, n2 = 0, n3 = 0;
+              int n = word.length();
+              for (int i = 0; i < n; ++i) {
+                  if (s1.contains(String.valueOf(word.charAt(i)))) {
+                      ++n1;
+                  } else if (s2.contains(String.valueOf(word.charAt(i)))) {
+                      ++n2;
+                  } else {
+                      ++n3;
+                  }
+              }
+              if (n1 == n || n2 == n || n3 == n) {
+                  res.add(word);
+              }
+          }
+          return res.toArray(new String[0]);
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

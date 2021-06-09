@@ -1,0 +1,160 @@
+* [[https://leetcode-cn.com/problems/to-lower-case][709.
+转换成小写字母]]
+  :PROPERTIES:
+  :CUSTOM_ID: 转换成小写字母
+  :END:
+[[./solution/0700-0799/0709.To Lower Case/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+实现函数 ToLowerCase()，该函数接收一个字符串参数
+str，并将该字符串中的大写字母转换成小写字母，之后返回新的字符串。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入: </strong>&quot;Hello&quot;
+  <strong>输出: </strong>&quot;hello&quot;</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入: </strong>&quot;here&quot;
+  <strong>输出: </strong>&quot;here&quot;</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入: </strong>&quot;LOVELY&quot;
+  <strong>输出: </strong>&quot;lovely&quot;
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+遍历字符串，遇到大写的字符，转小写。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def toLowerCase(self, str: str) -> str:
+          if not str:
+              return str
+          n = len(str)
+          res = []
+          for i in range(n):
+              c = ord(str[i])
+              if c >= 65 and c <= 90:
+                 c += 32
+              res.append(chr(c))
+          return ''.join(res)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public String toLowerCase(String str) {
+          int n;
+          if (str == null || (n = str.length()) == 0) return str;
+          char[] chars = str.toCharArray();
+          for (int i = 0; i < chars.length; ++i) {
+              boolean isUpper = chars[i] >= 'A' && chars[i] <= 'Z';
+              if (isUpper) chars[i] += 32;
+          }
+          return new String(chars);
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

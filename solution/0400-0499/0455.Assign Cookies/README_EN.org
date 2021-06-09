@@ -1,0 +1,204 @@
+* [[https://leetcode.com/problems/assign-cookies][455. Assign Cookies]]
+  :PROPERTIES:
+  :CUSTOM_ID: assign-cookies
+  :END:
+[[./solution/0400-0499/0455.Assign Cookies/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Assume you are an awesome parent and want to give your children some
+cookies. But, you should give each child at most one cookie.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Each child i has a greed factor g[i], which is the minimum size of a
+cookie that the child will be content with; and each cookie j has a size
+s[j]. If s[j] >= g[i], we can assign the cookie j to the child i, and
+the child i will be content. Your goal is to maximize the number of your
+content children and output the maximum number.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> g = [1,2,3], s = [1,1]
+  <strong>Output:</strong> 1
+  <strong>Explanation:</strong> You have 3 children and 2 cookies. The greed factors of 3 children are 1, 2, 3. 
+  And even though you have 2 cookies, since their size is both 1, you could only make the child whose greed factor is 1 content.
+  You need to output 1.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> g = [1,2], s = [1,2,3]
+  <strong>Output:</strong> 2
+  <strong>Explanation:</strong> You have 2 children and 3 cookies. The greed factors of 2 children are 1, 2. 
+  You have 3 cookies and their sizes are big enough to gratify all of the children, 
+  You need to output 2.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= g.length <= 3 * 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= s.length <= 3 * 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= g[i], s[j] <= 231 - 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number[]} g
+   * @param {number[]} s
+   * @return {number}
+   */
+  var findContentChildren = function (g, s) {
+      let len1 = g.length, len2 = s.length;
+      if (len2 === 0) return 0;
+      g.sort((a, b) => a - b);
+      s.sort((a, b) => a - b);
+      let i = 0, j = 0;
+      while (i < len1 && j < len2) {
+          while (s[j] < g[i]) j++;
+          if (s[j] >= g[i]) {
+              i++;
+              j++;
+          } else break;
+      }
+      return i;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

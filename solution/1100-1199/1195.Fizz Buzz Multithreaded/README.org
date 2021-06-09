@@ -1,0 +1,313 @@
+* [[https://leetcode-cn.com/problems/fizz-buzz-multithreaded][1195.
+交替打印字符串]]
+  :PROPERTIES:
+  :CUSTOM_ID: 交替打印字符串
+  :END:
+[[./solution/1100-1199/1195.Fizz Buzz Multithreaded/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+编写一个可以从 1 到 n 输出代表这个数字的字符串的程序，但是：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+如果这个数字可以被 3 整除，输出 "fizz"。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+如果这个数字可以被 5 整除，输出 "buzz"。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+如果这个数字可以同时被 3 和 5 整除，输出 "fizzbuzz"。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+例如，当 n = 15，输出： 1, 2, fizz, 4, buzz, fizz, 7, 8, fizz, buzz, 11,
+fizz, 13, 14, fizzbuzz。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+假设有这么一个类：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  class FizzBuzz {
+    public FizzBuzz(int n) { ... }               // constructor
+    public void fizz(printFizz) { ... }          // only output "fizz"
+    public void buzz(printBuzz) { ... }          // only output "buzz"
+    public void fizzbuzz(printFizzBuzz) { ... }  // only output "fizzbuzz"
+    public void number(printNumber) { ... }      // only output the numbers
+  }</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你实现一个有四个线程的多线程版  FizzBuzz， 同一个 FizzBuzz 实例会被如下四个线程使用：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+线程A将调用 fizz() 来判断是否能被 3 整除，如果可以，则输出 fizz。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+线程B将调用 buzz() 来判断是否能被 5 整除，如果可以，则输出 buzz。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+线程C将调用 fizzbuzz() 来判断是否同时能被 3 和 5
+整除，如果可以，则输出 fizzbuzz。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+线程D将调用 number() 来实现输出既不能被 3 整除也不能被 5 整除的数字。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+本题已经提供了打印字符串的相关方法，如 printFizz()
+等，具体方法名请参考答题模板中的注释部分。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class FizzBuzz {
+  private:
+      std::mutex mtx;
+      atomic<int> index;
+      int n;
+
+  // 这里主要运用到了C++11中的RAII锁(lock_guard)的知识。
+  // 需要强调的一点是，在进入循环后，要时刻不忘加入index <= n的逻辑
+  public:
+      FizzBuzz(int n) {
+          this->n = n;
+          index = 1;
+      }
+
+      void fizz(function<void()> printFizz) {
+          while (index <= n) {
+              std::lock_guard<std::mutex> lk(mtx);
+              if (0 == index % 3 && 0 != index % 5 && index <= n) {
+                  printFizz();
+                  index++;
+              }
+          }
+      }
+
+      void buzz(function<void()> printBuzz) {
+          while (index <= n) {
+              std::lock_guard<std::mutex> lk(mtx);
+              if (0 == index % 5 && 0 != index % 3 && index <= n){
+                  printBuzz();
+                  index++;
+              }
+          }
+      }
+
+      void fizzbuzz(function<void()> printFizzBuzz) {
+          while (index <= n) {
+              std::lock_guard<std::mutex> lk(mtx);
+              if (0 == index % 15 && index <= n) {
+                  printFizzBuzz();
+                  index++;
+              }
+          }
+      }
+
+      void number(function<void(int)> printNumber) {
+          while (index <= n) {
+              std::lock_guard<std::mutex> lk(mtx);
+              if (0 != index % 3 && 0 != index % 5 && index <= n) {
+                  printNumber(index);
+                  index++;
+              }
+          }
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

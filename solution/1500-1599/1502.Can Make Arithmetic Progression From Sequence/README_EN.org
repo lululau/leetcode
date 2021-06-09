@@ -1,0 +1,198 @@
+* [[https://leetcode.com/problems/can-make-arithmetic-progression-from-sequence][1502.
+Can Make Arithmetic Progression From Sequence]]
+  :PROPERTIES:
+  :CUSTOM_ID: can-make-arithmetic-progression-from-sequence
+  :END:
+[[./solution/1500-1599/1502.Can Make Arithmetic Progression From Sequence/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array of numbers arr. A sequence of numbers is called an
+arithmetic progression if the difference between any two consecutive
+elements is the same.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return true if the array can be rearranged to form an arithmetic
+progression, otherwise, return false.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> arr = [3,5,1]
+  <strong>Output:</strong> true
+  <strong>Explanation: </strong>We can reorder the elements as [1,3,5] or [5,3,1] with differences 2 and -2 respectively, between each consecutive elements.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> arr = [1,2,4]
+  <strong>Output:</strong> false
+  <strong>Explanation: </strong>There is no way to reorder the elements to obtain an arithmetic progression.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+2 <= arr.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-10^6 <= arr[i] <= 10^6
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def canMakeArithmeticProgression(self, arr: List[int]) -> bool:
+          arr.sort()
+          for i in range(1, len(arr) - 1):
+              if (arr[i] << 1) != arr[i - 1] + arr[i + 1]:
+                  return False
+          return True
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public boolean canMakeArithmeticProgression(int[] arr) {
+          Arrays.sort(arr);
+          for (int i = 1; i < arr.length - 1; ++i) {
+              if ((arr[i] << 1) != arr[i - 1] + arr[i + 1]) {
+                  return false;
+              }
+          }
+          return true;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number[]} arr
+   * @return {boolean}
+   */
+  var canMakeArithmeticProgression = function(arr) {
+      arr.sort((a, b) => a - b);
+      for (let i = 1; i < arr.length - 1; i++) {
+          if ((arr[i] << 1) != (arr[i - 1] + arr[i + 1])) return false;
+      }
+      return true;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

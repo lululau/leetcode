@@ -1,0 +1,183 @@
+* [[https://leetcode.com/problems/all-people-report-to-the-given-manager][1270.
+All People Report to the Given Manager]]
+  :PROPERTIES:
+  :CUSTOM_ID: all-people-report-to-the-given-manager
+  :END:
+[[./solution/1200-1299/1270.All People Report to the Given Manager/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Employees
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +---------------+---------+
+
+  | Column Name   | Type    |
+
+  +---------------+---------+
+
+  | employee_id   | int     |
+
+  | employee_name | varchar |
+
+  | manager_id    | int     |
+
+  +---------------+---------+
+
+  employee_id is the primary key for this table.
+
+  Each row of this table indicates that the employee with ID employee_id and name employee_name reports his work to his/her direct manager with manager_id
+
+  The head of the company is the employee with employee_id = 1.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an SQL query to find employee_id of all employees that directly or
+indirectly report their work to the head of the company.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The indirect relation between managers will not exceed 3 managers as the
+company is small.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return result table in any order without duplicates.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The query result format is in the following example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <code>Employees </code>table:
+
+  +-------------+---------------+------------+
+
+  | employee_id | employee_name | manager_id |
+
+  +-------------+---------------+------------+
+
+  | 1           | Boss          | 1          |
+
+  | 3           | Alice         | 3          |
+
+  | 2           | Bob           | 1          |
+
+  | 4           | Daniel        | 2          |
+
+  | 7           | Luis          | 4          |
+
+  | 8           | Jhon          | 3          |
+
+  | 9           | Angela        | 8          |
+
+  | 77          | Robert        | 1          |
+
+  +-------------+---------------+------------+
+
+
+
+  <code>Result </code>table:
+
+  +-------------+
+
+  | employee_id |
+
+  +-------------+
+
+  | 2           |
+
+  | 77          |
+
+  | 4           |
+
+  | 7           |
+
+  +-------------+
+
+
+
+  The head of the company is the employee with employee_id 1.
+
+  The employees with employee_id 2 and 77 report their work directly to the head of the company.
+
+  The employee with employee_id 4 report his work indirectly to the head of the company 4 --&gt; 2 --&gt; 1. 
+
+  The employee with employee_id 7 report his work indirectly to the head of the company 7 --&gt; 4 --&gt; 2 --&gt; 1.
+
+  The employees with employee_id 3, 8 and 9 don&#39;t report their work to head of company directly or indirectly. 
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

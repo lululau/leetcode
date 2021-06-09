@@ -1,0 +1,231 @@
+* [[https://leetcode.com/problems/check-if-array-is-sorted-and-rotated][1752.
+Check if Array Is Sorted and Rotated]]
+  :PROPERTIES:
+  :CUSTOM_ID: check-if-array-is-sorted-and-rotated
+  :END:
+[[./solution/1700-1799/1752.Check if Array Is Sorted and Rotated/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array nums, return true if the array was originally sorted in
+non-decreasing order, then rotated some number of positions (including
+zero). Otherwise, return false.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+There may be duplicates in the original array.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note: An array A rotated by x positions results in an array B of the
+same length such that A[i] == B[(i+x) % A.length], where % is the modulo
+operation.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [3,4,5,1,2]
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> [1,2,3,4,5] is the original sorted array.
+  You can rotate the array by x = 3 positions to begin on the the element of value 3: [3,4,5,1,2].
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [2,1,3,4]
+  <strong>Output:</strong> false
+  <strong>Explanation:</strong> There is no sorted array once rotated that can make nums.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [1,2,3]
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> [1,2,3] is the original sorted array.
+  You can rotate the array by x = 0 positions (i.e. no rotation) to make nums.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [1,1,1]
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> [1,1,1] is the original sorted array.
+  You can rotate any number of positions to make nums.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [2,1]
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> [1,2] is the original sorted array.
+  You can rotate the array by x = 5 positions to begin on the element of value 2: [2,1].
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums[i] <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

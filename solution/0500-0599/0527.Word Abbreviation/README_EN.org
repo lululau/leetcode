@@ -1,0 +1,170 @@
+* [[https://leetcode.com/problems/word-abbreviation][527. Word
+Abbreviation]]
+  :PROPERTIES:
+  :CUSTOM_ID: word-abbreviation
+  :END:
+[[./solution/0500-0599/0527.Word Abbreviation/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array of n distinct non-empty strings, you need to generate
+minimal possible abbreviations for every word following rules below.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Begin with the first character and then the number of characters
+abbreviated, which followed by the last character.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If there are any conflict, that is more than one words share the same
+abbreviation, a longer prefix is used instead of only the first
+character until making the map from word to abbreviation become unique.
+In other words, a final abbreviation cannot map to more than one
+original words.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If the abbreviation doesn't make the word shorter, then keep it as
+original.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> ["like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"]
+
+  <b>Output:</b> ["l2e","god","internal","me","i6t","interval","inte4n","f2e","intr4n"]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+Note:
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Both n and the length of each word will not exceed 400.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The length of each word is greater than 1.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The words consist of lowercase English letters only.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The return answers should be in the same order as the original array.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

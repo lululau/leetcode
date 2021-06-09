@@ -1,0 +1,168 @@
+* [[https://leetcode-cn.com/problems/pascals-triangle][118. 杨辉三角]]
+  :PROPERTIES:
+  :CUSTOM_ID: 杨辉三角
+  :END:
+[[./solution/0100-0199/0118.Pascal%27s Triangle/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个非负整数 numRows，生成杨辉三角的前 numRows 行。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+在杨辉三角中，每个数是它左上方和右上方的数的和。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong> 5
+  <strong>输出:</strong>
+  [
+       [1],
+      [1,1],
+     [1,2,1],
+    [1,3,3,1],
+   [1,4,6,4,1]
+  ]</pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+先设置每一行首尾元素为 1，其它元素为
+0。然后根据杨辉三角，设置每一行其它元素即可。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def generate(self, numRows: int) -> List[List[int]]:
+          if numRows == 0:
+              return []
+          res = []
+          for i in range(numRows):
+              t = [1 if j == 0 or j == i else 0 for j in range(i + 1)]
+              for j in range(1, i):
+                  t[j] = res[i - 1][j - 1] + res[i - 1][j]
+              res.append(t)
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public List<List<Integer>> generate(int numRows) {
+          List<List<Integer>> res = new ArrayList<>();
+          if (numRows == 0) return res;
+          for (int i = 0; i < numRows; ++i) {
+              // 每一行
+              List<Integer> t = new ArrayList<>();
+              for (int j = 0; j < i + 1; ++j) {
+                  boolean firstOrLast = j == 0 || j == i;
+                  // 设置每一行首尾元素为1，其它元素为0
+                  t.add(firstOrLast ? 1 : 0);
+              }
+              for (int j = 1; j < i; ++j) {
+                  int val = res.get(i - 1).get(j - 1) + res.get(i - 1).get(j);
+                  t.set(j, val);
+              }
+              res.add(t);
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  const generate = function (numRows) {
+    let arr = [];
+    for (let i = 0; i < numRows; i++) {
+      let row = [];
+      row[0] = 1;
+      row[i] = 1;
+      for (let j = 1; j < row.length - 1; j++) {
+        row[j] = arr[i - 1][j - 1] + arr[i - 1][j];
+      }
+      arr.push(row);
+    }
+    return arr;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

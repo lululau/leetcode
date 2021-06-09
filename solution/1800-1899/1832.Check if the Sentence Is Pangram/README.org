@@ -1,0 +1,238 @@
+* [[https://leetcode-cn.com/problems/check-if-the-sentence-is-pangram][1832.
+判断句子是否为全字母句]]
+  :PROPERTIES:
+  :CUSTOM_ID: 判断句子是否为全字母句
+  :END:
+[[./solution/1800-1899/1832.Check if the Sentence Is Pangram/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+全字母句 指包含英语字母表中每个字母至少一次的句子。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个仅由小写英文字母组成的字符串 sentence ，请你判断 sentence 是否为
+全字母句 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+如果是，返回 true ；否则，返回 false 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>sentence = "thequickbrownfoxjumpsoverthelazydog"
+  <strong>输出：</strong>true
+  <strong>解释：</strong><code>sentence</code> 包含英语字母表中每个字母至少一次。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>sentence = "leetcode"
+  <strong>输出：</strong>false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= sentence.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+sentence 由小写英语字母组成
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+转为 Set，判断 Set 长度是否等于
+26。若是，说明是全字母句。也可以使用位运算。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+集合去重并计数：
+
+#+begin_src python
+  class Solution:
+      def checkIfPangram(self, sentence: str) -> bool:
+          return len(set(sentence)) == 26
+#+end_src
+
+位运算：
+
+#+begin_src python
+  class Solution:
+      def checkIfPangram(self, sentence: str) -> bool:
+          res = 0
+          for c in sentence:
+              diff = ord(c) - ord('a')
+              res |= (1 << diff)
+              if res == 0x3ffffff:
+                  return True
+          return False
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+集合去重并计数：
+
+#+begin_src java
+  class Solution {
+      public boolean checkIfPangram(String sentence) {
+          Set<Character> s = new HashSet<>();
+          for (int i = 0; i < sentence.length(); ++i) {
+              s.add(sentence.charAt(i));
+              if (s.size() == 26) return true;
+          }
+          return false;
+      }
+  }
+#+end_src
+
+位运算：
+
+#+begin_src java
+  class Solution {
+      public boolean checkIfPangram(String sentence) {
+          int res = 0;
+          for (int i = 0; i < sentence.length(); ++i) {
+              int diff = sentence.charAt(i) - 'a';
+              res |= (1 << diff);
+              if (res == 0x3ffffff) return true;
+          }
+          return false;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

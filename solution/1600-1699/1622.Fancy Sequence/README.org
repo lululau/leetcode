@@ -1,0 +1,245 @@
+* [[https://leetcode-cn.com/problems/fancy-sequence][1622. 奇妙序列]]
+  :PROPERTIES:
+  :CUSTOM_ID: 奇妙序列
+  :END:
+[[./solution/1600-1699/1622.Fancy Sequence/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你实现三个 API append，addAll 和 multAll 来实现奇妙序列。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请实现 Fancy 类 ：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Fancy() 初始化一个空序列对象。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void append(val) 将整数 val 添加在序列末尾。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void addAll(inc) 将所有序列中的现有数值都增加 inc 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void multAll(m) 将序列中的所有现有数值都乘以整数 m 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int getIndex(idx) 得到下标为 idx 处的数值（下标从 0
+开始），并将结果对 109 +
+7 取余。如果下标大于等于序列的长度，请返回 -1 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>
+  ["Fancy", "append", "addAll", "append", "multAll", "getIndex", "addAll", "append", "multAll", "getIndex", "getIndex", "getIndex"]
+  [[], [2], [3], [7], [2], [0], [3], [10], [2], [0], [1], [2]]
+  <strong>输出：</strong>
+  [null, null, null, null, null, 10, null, null, null, 26, 34, 20]
+
+  <strong>解释：</strong>
+  Fancy fancy = new Fancy();
+  fancy.append(2);   // 奇妙序列：[2]
+  fancy.addAll(3);   // 奇妙序列：[2+3] -> [5]
+  fancy.append(7);   // 奇妙序列：[5, 7]
+  fancy.multAll(2);  // 奇妙序列：[5*2, 7*2] -> [10, 14]
+  fancy.getIndex(0); // 返回 10
+  fancy.addAll(3);   // 奇妙序列：[10+3, 14+3] -> [13, 17]
+  fancy.append(10);  // 奇妙序列：[13, 17, 10]
+  fancy.multAll(2);  // 奇妙序列：[13*2, 17*2, 10*2] -> [26, 34, 20]
+  fancy.getIndex(0); // 返回 26
+  fancy.getIndex(1); // 返回 34
+  fancy.getIndex(2); // 返回 20
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= val, inc, m <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= idx <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+总共最多会有 105 次对 append，addAll，multAll 和 getIndex 的调用。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

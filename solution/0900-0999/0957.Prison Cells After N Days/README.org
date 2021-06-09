@@ -1,0 +1,262 @@
+* [[https://leetcode-cn.com/problems/prison-cells-after-n-days][957. N
+天后的牢房]]
+  :PROPERTIES:
+  :CUSTOM_ID: n-天后的牢房
+  :END:
+[[./solution/0900-0999/0957.Prison Cells After N Days/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+8 间牢房排成一排，每间牢房不是有人住就是空着。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+每天，无论牢房是被占用或空置，都会根据以下规则进行更改：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+如果一间牢房的两个相邻的房间都被占用或都是空的，那么该牢房就会被占用。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+否则，它就会被空置。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+（请注意，由于监狱中的牢房排成一行，所以行中的第一个和最后一个房间无法有两个相邻的房间。）
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+我们用以下方式描述监狱的当前状态：如果第 i 间牢房被占用，则
+cell[i]==1，否则 cell[i]==0。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+根据监狱的初始状态，在 N 天后返回监狱的状况（和上述 N 种变化）。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>cells = [0,1,0,1,1,0,0,1], N = 7
+  <strong>输出：</strong>[0,0,1,1,0,0,0,0]
+  <strong>解释：
+  </strong>下表概述了监狱每天的状况：
+  Day 0: [0, 1, 0, 1, 1, 0, 0, 1]
+  Day 1: [0, 1, 1, 0, 0, 0, 0, 0]
+  Day 2: [0, 0, 0, 0, 1, 1, 1, 0]
+  Day 3: [0, 1, 1, 0, 0, 1, 0, 0]
+  Day 4: [0, 0, 0, 0, 0, 1, 0, 0]
+  Day 5: [0, 1, 1, 1, 0, 1, 0, 0]
+  Day 6: [0, 0, 1, 0, 1, 1, 0, 0]
+  Day 7: [0, 0, 1, 1, 0, 0, 0, 0]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>cells = [1,0,0,1,0,0,1,0], N = 1000000000
+  <strong>输出：</strong>[0,0,1,1,1,1,1,0]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+cells.length == 8
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+cells[i] 的值为 0 或 1 
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= N <= 10^9
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

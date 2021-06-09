@@ -1,0 +1,252 @@
+* [[https://leetcode-cn.com/problems/words-frequency-lcci][面试题 16.02.
+单词频率]]
+  :PROPERTIES:
+  :CUSTOM_ID: 面试题-16.02.-单词频率
+  :END:
+[[./lcci/16.02.Words Frequency/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+设计一个方法，找出任意指定单词在一本书中的出现频率。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你的实现应该支持如下操作：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+WordsFrequency(book)构造函数，参数为字符串数组构成的一本书
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+get(word)查询指定单词在数中出现的频率
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>WordsFrequency wordsFrequency = new WordsFrequency({"i", "have", "an", "apple", "he", "have", "a", "pen"});
+  wordsFrequency.get("you"); //返回0，"you"没有出现过
+  wordsFrequency.get("have"); //返回2，"have"出现2次
+  wordsFrequency.get("an"); //返回1
+  wordsFrequency.get("apple"); //返回1
+  wordsFrequency.get("pen"); //返回1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+book[i]中只包含小写字母
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= book.length <= 100000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= book[i].length <= 10
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+get函数的调用次数不会超过100000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+计数器实现。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class WordsFrequency:
+
+      def __init__(self, book: List[str]):
+          self.counter = collections.Counter(book)
+
+      def get(self, word: str) -> int:
+          return self.counter[word]
+
+  # Your WordsFrequency object will be instantiated and called as such:
+  # obj = WordsFrequency(book)
+  # param_1 = obj.get(word)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class WordsFrequency {
+
+      private Map<String, Integer> counter = new HashMap<>();
+
+      public WordsFrequency(String[] book) {
+          for (String word : book) {
+              counter.put(word, counter.getOrDefault(word, 0) + 1);
+          }
+      }
+
+      public int get(String word) {
+          return counter.containsKey(word) ? counter.get(word) : 0;
+      }
+  }
+
+  /**
+   * Your WordsFrequency object will be instantiated and called as such:
+   * WordsFrequency obj = new WordsFrequency(book);
+   * int param_1 = obj.get(word);
+   */
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {string[]} book
+   */
+  var WordsFrequency = function (book) {
+    this.counter = {};
+    for (const word of book) {
+      this.counter[word] = (this.counter[word] || 0) + 1;
+    }
+  };
+
+  /**
+   * @param {string} word
+   * @return {number}
+   */
+  WordsFrequency.prototype.get = function (word) {
+    return this.counter[word] || 0;
+  };
+
+  /**
+   * Your WordsFrequency object will be instantiated and called as such:
+   * var obj = new WordsFrequency(book)
+   * var param_1 = obj.get(word)
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

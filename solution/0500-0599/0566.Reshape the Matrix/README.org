@@ -1,0 +1,211 @@
+* [[https://leetcode-cn.com/problems/reshape-the-matrix][566. 重塑矩阵]]
+  :PROPERTIES:
+  :CUSTOM_ID: 重塑矩阵
+  :END:
+[[./solution/0500-0599/0566.Reshape the Matrix/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+在MATLAB中，有一个非常有用的函数
+reshape，它可以将一个矩阵重塑为另一个大小不同的新矩阵，但保留其原始数据。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给出一个由二维数组表示的矩阵，以及两个正整数r和c，分别表示想要的重构的矩阵的行数和列数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+重构后的矩阵需要将原始矩阵的所有元素以相同的行遍历顺序填充。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+如果具有给定参数的reshape操作是可行且合理的，则输出新的重塑矩阵；否则，输出原始矩阵。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入:</strong> 
+  nums = 
+  [[1,2],
+   [3,4]]
+  r = 1, c = 4
+  <strong>输出:</strong> 
+  [[1,2,3,4]]
+  <strong>解释:</strong>
+  行遍历nums的结果是 [1,2,3,4]。新的矩阵是 1 * 4 矩阵, 用之前的元素值一行一行填充新矩阵。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入:</strong> 
+  nums = 
+  [[1,2],
+   [3,4]]
+  r = 2, c = 4
+  <strong>输出:</strong> 
+  [[1,2],
+   [3,4]]
+  <strong>解释:</strong>
+  没有办法将 2 * 2 矩阵转化为 2 * 4 矩阵。 所以输出原矩阵。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+给定矩阵的宽和高范围在 [1, 100]。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+给定的 r 和 c 都是正数。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def matrixReshape(self, nums: List[List[int]], r: int, c: int) -> List[List[int]]:
+          m, n = len(nums), len(nums[0])
+          if m * n != r * c:
+              return nums
+          res = [[0] * c for _ in range(r)]
+          for x in range(m * n):
+              res[x // c][x % c] = nums[x // n][x % n]
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int[][] matrixReshape(int[][] nums, int r, int c) {
+          int m = nums.length, n = nums[0].length;
+          if (m * n != r * c) return nums;
+          int[][] res = new int[r][c];
+          for (int i = 0; i < m * n; ++i) {
+              res[i / c][i % c] = nums[i / n][i % n];
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

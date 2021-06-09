@@ -1,0 +1,206 @@
+* [[https://leetcode-cn.com/problems/count-of-matches-in-tournament][1688.
+比赛中的配对次数]]
+  :PROPERTIES:
+  :CUSTOM_ID: 比赛中的配对次数
+  :END:
+[[./solution/1600-1699/1688.Count of Matches in Tournament/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个整数 n ，表示比赛中的队伍数。比赛遵循一种独特的赛制：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+如果当前队伍数是 偶数 ，那么每支队伍都会与另一支队伍配对。总共进行 n / 2
+场比赛，且产生 n / 2 支队伍进入下一轮。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+如果当前队伍数为 奇数
+，那么将会随机轮空并晋级一支队伍，其余的队伍配对。总共进行 (n - 1) / 2
+场比赛，且产生 (n - 1) / 2 + 1 支队伍进入下一轮。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回在比赛中进行的配对次数，直到决出获胜队伍为止。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>n = 7
+  <strong>输出：</strong>6
+  <strong>解释：</strong>比赛详情：
+  - 第 1 轮：队伍数 = 7 ，配对次数 = 3 ，4 支队伍晋级。
+  - 第 2 轮：队伍数 = 4 ，配对次数 = 2 ，2 支队伍晋级。
+  - 第 3 轮：队伍数 = 2 ，配对次数 = 1 ，决出 1 支获胜队伍。
+  总配对次数 = 3 + 2 + 1 = 6
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>n = 14
+  <strong>输出：</strong>13
+  <strong>解释：</strong>比赛详情：
+  - 第 1 轮：队伍数 = 14 ，配对次数 = 7 ，7 支队伍晋级。
+  - 第 2 轮：队伍数 = 7 ，配对次数 = 3 ，4 支队伍晋级。 
+  - 第 3 轮：队伍数 = 4 ，配对次数 = 2 ，2 支队伍晋级。
+  - 第 4 轮：队伍数 = 2 ，配对次数 = 1 ，决出 1 支获胜队伍。
+  总配对次数 = 7 + 3 + 2 + 1 = 13
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 200
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,110 @@
+* [[https://leetcode-cn.com/problems/baby-names-lcci][17.07. Baby
+Names]]
+  :PROPERTIES:
+  :CUSTOM_ID: baby-names
+  :END:
+[[./lcci/17.07.Baby Names/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Each year, the government releases a list of the 10000 most common baby
+names and their frequencies (the number of babies with that name). The
+only problem with this is that some names have multiple spellings. For
+example,"John" and ''Jon" are essentially the same name but would be
+listed separately in the list. Given two lists, one of names/frequencies
+and the other of pairs of equivalent names, write an algorithm to print
+a new list of the true frequency of each name. Note that if John and Jon
+are synonyms, and Jon and Johnny are synonyms, then John and Johnny are
+synonyms. (It is both transitive and symmetric.) In the final list,
+choose the name that are lexicographically smallest as the "real" name.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>names = [&quot;John(15)&quot;,&quot;Jon(12)&quot;,&quot;Chris(13)&quot;,&quot;Kris(4)&quot;,&quot;Christopher(19)&quot;], synonyms = [&quot;(Jon,John)&quot;,&quot;(John,Johnny)&quot;,&quot;(Chris,Kris)&quot;,&quot;(Chris,Christopher)&quot;]
+
+  <strong>Output: </strong>[&quot;John(27)&quot;,&quot;Chris(36)&quot;]</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+names.length <= 100000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

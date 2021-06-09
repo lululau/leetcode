@@ -1,0 +1,350 @@
+* [[https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array-ii][80.
+删除有序数组中的重复项 II]]
+  :PROPERTIES:
+  :CUSTOM_ID: 删除有序数组中的重复项-ii
+  :END:
+[[./solution/0000-0099/0080.Remove Duplicates from Sorted Array II/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个有序数组 nums ，请你 原地 删除重复出现的元素，使每个元素
+最多出现两次 ，返回删除后数组的新长度。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1)
+额外空间的条件下完成。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+说明：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+为什么返回数值是整数，但输出的答案是数组呢？
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请注意，输入数组是以「引用」方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你可以想象内部操作如下:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  // <strong>nums</strong> 是以“引用”方式传递的。也就是说，不对实参做任何拷贝
+  int len = removeDuplicates(nums);
+
+  // 在函数里修改输入数组对于调用者是可见的。
+  // 根据你的函数返回的长度, 它会打印出数组中<strong> 该长度范围内</strong> 的所有元素。
+  for (int i = 0; i < len; i++) {
+      print(nums[i]);
+  }
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>nums = [1,1,1,2,2,3]
+  <strong>输出：</strong>5, nums = [1,1,2,2,3]
+  <strong>解释：</strong>函数应返回新长度 length = <strong><code>5</code></strong>, 并且原数组的前五个元素被修改为 <strong><code>1, 1, 2, 2,</code></strong> <strong>3 </strong>。 不需要考虑数组中超出新长度后面的元素。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>nums = [0,0,1,1,1,1,2,3,3]
+  <strong>输出：</strong>7, nums = [0,0,1,1,2,3,3]
+  <strong>解释：</strong>函数应返回新长度 length = <strong><code>7</code></strong>, 并且原数组的前五个元素被修改为 <strong><code>0</code></strong>, <strong>0</strong>, <strong>1</strong>, <strong>1</strong>, <strong>2</strong>, <strong>3</strong>, <strong>3 。</strong> 不需要考虑数组中超出新长度后面的元素。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 3 * 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-104 <= nums[i] <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+nums 已按升序排列
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+从数组下标 1 开始遍历数组。
+
+用计数器 =cnt= 记录当前数字重复出现的次数，=cnt= 的最小计数为 0；用
+=cur= 记录新数组下个待覆盖的元素位置。
+
+遍历时，若当前元素 =nums[i]= 与上个元素 =nums[i-1]= 相同，则计数器
++1，否则计数器重置为 0。如果计数器小于 2，说明当前元素 =nums[i]=
+可以添加到新数组中，即：=nums[cur] = nums[i]=，同时 =cur++=。
+
+遍历结果，返回 =cur= 值即可。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def removeDuplicates(self, nums: List[int]) -> int:
+          n = len(nums)
+          cnt, cur = 0, 1
+          for i in range(1, n):
+              if nums[i] == nums[i - 1]:
+                  cnt += 1
+              else:
+                  cnt = 0
+              if cnt < 2:
+                  nums[cur] = nums[i]
+                  cur += 1
+          return cur
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int removeDuplicates(int[] nums) {
+          int cnt = 0, cur = 1;
+          for (int i = 1; i < nums.length; ++i) {
+              if (nums[i] == nums[i - 1]) ++cnt;
+              else cnt = 0;
+              if (cnt < 2) nums[cur++] = nums[i];
+          }
+          return cur;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      int removeDuplicates(vector<int>& nums) {
+          int n = nums.size();
+          int cnt = 0, cur = 1;
+          for (int i = 1; i < n; ++i) {
+              if (nums[i] == nums[i - 1]) ++cnt;
+              else cnt = 0;
+              if (cnt < 2) nums[cur++] = nums[i];
+          }
+          return cur;
+      }
+  };
+#+end_src
+
+*** *C#*
+    :PROPERTIES:
+    :CUSTOM_ID: c-1
+    :END:
+#+begin_example
+  public class Solution {
+      public int RemoveDuplicates(int[] nums) {
+          int cnt = 0, cur = 1;
+          for (int i = 1; i < nums.Length; ++i)
+          {
+              if (nums[i] == nums[i - 1]) ++cnt;
+              else cnt = 0;
+              if (cnt < 2) nums[cur++] = nums[i];
+          }
+          return cur;
+      }
+  }
+#+end_example
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number[]} nums
+   * @return {number}
+   */
+  var removeDuplicates = function (nums) {
+      if (nums.length == 0) return 0;
+      let len = nums.length;
+      let j = 0;
+      for (let i = 0; i < nums.length - 1; i++) {
+          if (nums[i] != nums[i - 1] || nums[i] != nums[i + 1]) {
+              nums[j++] = nums[i];
+          }
+      }
+      nums[j] = nums[len - 1];
+      return j + 1;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

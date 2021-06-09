@@ -1,0 +1,291 @@
+* [[https://leetcode.com/problems/coin-change][322. Coin Change]]
+  :PROPERTIES:
+  :CUSTOM_ID: coin-change
+  :END:
+[[./solution/0300-0399/0322.Coin Change/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given an integer array coins representing coins of different
+denominations and an integer amount representing a total amount of
+money.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the fewest number of coins that you need to make up that amount.
+If that amount of money cannot be made up by any combination of the
+coins, return -1.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You may assume that you have an infinite number of each kind of coin.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> coins = [1,2,5], amount = 11
+  <strong>Output:</strong> 3
+  <strong>Explanation:</strong> 11 = 5 + 5 + 1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> coins = [2], amount = 3
+  <strong>Output:</strong> -1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> coins = [1], amount = 0
+  <strong>Output:</strong> 0
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> coins = [1], amount = 1
+  <strong>Output:</strong> 1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> coins = [1], amount = 2
+  <strong>Output:</strong> 2
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= coins.length <= 12
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= coins[i] <= 231 - 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= amount <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+Similar to the idea of ​​a complete backpack, there is no limit to the
+number of coins. Find the minimum number of coins required to make up
+the total amount.
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def coinChange(self, coins: List[int], amount: int) -> int:
+          dp = [amount + 1] * (amount + 1)
+          dp[0] = 0
+          for coin in coins:
+              for j in range(coin, amount + 1):
+                  dp[j] = min(dp[j], dp[j - coin] + 1)
+          return -1 if dp[amount] > amount else dp[amount]
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int coinChange(int[] coins, int amount) {
+          int[] dp = new int[amount + 1];
+          Arrays.fill(dp, amount + 1);
+          dp[0] = 0;
+          for (int coin : coins) {
+              for (int j = coin; j <= amount; j++) {
+                  dp[j] = Math.min(dp[j], dp[j - coin] + 1);
+              }
+          }
+          return dp[amount] > amount ? -1 : dp[amount];
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number[]} coins
+   * @param {number} amount
+   * @return {number}
+   */
+  var coinChange = function (coins, amount) {
+    let dp = Array(amount + 1).fill(amount + 1);
+    dp[0] = 0;
+    for (const coin of coins) {
+      for (let j = coin; j <= amount; ++j) {
+        dp[j] = Math.min(dp[j], dp[j - coin] + 1);
+      }
+    }
+    return dp[amount] > amount ? -1 : dp[amount];
+  };
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      int coinChange(vector<int>& coins, int amount) {
+          vector<int> dp(amount + 1, amount + 1);
+          dp[0] = 0;
+          for (auto coin : coins) {
+              for (int j = coin; j <= amount; ++j) {
+                  dp[j] = min(dp[j], dp[j - coin] + 1);
+              }
+          }
+          return dp[amount] > amount ? -1 : dp[amount];
+      }
+  };
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,147 @@
+* [[https://leetcode.com/problems/second-degree-follower][614. Second
+Degree Follower]]
+  :PROPERTIES:
+  :CUSTOM_ID: second-degree-follower
+  :END:
+[[./solution/0600-0699/0614.Second Degree Follower/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+In facebook, there is a follow table with two columns: followee,
+follower.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Please write a sql query to get the amount of each follower's follower
+if he/she has one.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +-------------+------------+
+
+  | followee    | follower   |
+
+  +-------------+------------+
+
+  |     A       |     B      |
+
+  |     B       |     C      |
+
+  |     B       |     D      |
+
+  |     D       |     E      |
+
+  +-------------+------------+
+
+  </pre>
+#+end_html
+
+should output:
+
+#+begin_html
+  <pre>
+
+  +-------------+------------+
+
+  | follower    | num        |
+
+  +-------------+------------+
+
+  |     B       |  2         |
+
+  |     D       |  1         |
+
+  +-------------+------------+
+
+  </pre>
+#+end_html
+
+Explaination:
+
+Both B and D exist in the follower list, when as a followee, B's
+follower is C and D, and D's follower is E. A does not exist in follower
+list.
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+Note:
+
+Followee would not follow himself/herself in all cases.
+
+Please display the result in follower's alphabet order.
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

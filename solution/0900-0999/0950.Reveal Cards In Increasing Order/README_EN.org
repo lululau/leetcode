@@ -1,0 +1,248 @@
+* [[https://leetcode.com/problems/reveal-cards-in-increasing-order][950.
+Reveal Cards In Increasing Order]]
+  :PROPERTIES:
+  :CUSTOM_ID: reveal-cards-in-increasing-order
+  :END:
+[[./solution/0900-0999/0950.Reveal Cards In Increasing Order/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+In a deck of cards, every card has a unique integer.  You can order the
+deck in any order you want.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Initially, all the cards start face down (unrevealed) in one deck.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Now, you do the following steps repeatedly, until all cards are
+revealed:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Take the top card of the deck, reveal it, and take it out of the deck.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If there are still cards in the deck, put the next top card of the deck
+at the bottom of the deck.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If there are still unrevealed cards, go back to step 1.  Otherwise,
+stop.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return an ordering of the deck that would reveal the cards in increasing
+order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The first entry in the answer is considered to be the top of the deck.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-1-1">[17,13,11,2,3,5,7]</span>
+
+  <strong>Output: </strong><span id="example-output-1">[2,13,3,11,5,17,7]</span>
+
+  <strong>Explanation: </strong>
+
+  We get the deck in the order [17,13,11,2,3,5,7] (this order doesn't matter), and reorder it.
+
+  After reordering, the deck starts as [2,13,3,11,5,17,7], where 2 is the top of the deck.
+
+  We reveal 2, and move 13 to the bottom.  The deck is now [3,11,5,17,7,13].
+
+  We reveal 3, and move 11 to the bottom.  The deck is now [5,17,7,13,11].
+
+  We reveal 5, and move 17 to the bottom.  The deck is now [7,13,11,17].
+
+  We reveal 7, and move 13 to the bottom.  The deck is now [11,17,13].
+
+  We reveal 11, and move 17 to the bottom.  The deck is now [13,17].
+
+  We reveal 13, and move 17 to the bottom.  The deck is now [17].
+
+  We reveal 17.
+
+  Since all the cards revealed are in increasing order, the answer is correct.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= A.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= A[i] <= 10^6
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+A[i] != A[j] for all i != j
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,285 @@
+* [[https://leetcode.com/problems/minimum-adjacent-swaps-to-reach-the-kth-smallest-number][1850.
+Minimum Adjacent Swaps to Reach the Kth Smallest Number]]
+  :PROPERTIES:
+  :CUSTOM_ID: minimum-adjacent-swaps-to-reach-the-kth-smallest-number
+  :END:
+[[./solution/1800-1899/1850.Minimum Adjacent Swaps to Reach the Kth Smallest Number/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given a string num, representing a large integer, and an integer
+k.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+We call some integer wonderful if it is a permutation of the digits in
+num and is greater in value than num. There can be many wonderful
+integers. However, we only care about the smallest-valued ones.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For example, when num = "5489355142":
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The 1st smallest wonderful integer is "5489355214".
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The 2nd smallest wonderful integer is "5489355241".
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The 3rd smallest wonderful integer is "5489355412".
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The 4th smallest wonderful integer is "5489355421".
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_example
+  </li>
+#+end_example
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the minimum number of adjacent digit swaps that needs to be
+applied to num to reach the kth smallest wonderful integer.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The tests are generated in such a way that kth smallest wonderful
+integer exists.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> num = &quot;5489355142&quot;, k = 4
+  <strong>Output:</strong> 2
+  <strong>Explanation:</strong> The 4<sup>th</sup> smallest wonderful number is &quot;5489355421&quot;. To get this number:
+  - Swap index 7 with index 8: &quot;5489355<u>14</u>2&quot; -&gt; &quot;5489355<u>41</u>2&quot;
+  - Swap index 8 with index 9: &quot;54893554<u>12</u>&quot; -&gt; &quot;54893554<u>21</u>&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> num = &quot;11112&quot;, k = 4
+  <strong>Output:</strong> 4
+  <strong>Explanation:</strong> The 4<sup>th</sup> smallest wonderful number is &quot;21111&quot;. To get this number:
+  - Swap index 3 with index 4: &quot;111<u>12</u>&quot; -&gt; &quot;111<u>21</u>&quot;
+  - Swap index 2 with index 3: &quot;11<u>12</u>1&quot; -&gt; &quot;11<u>21</u>1&quot;
+  - Swap index 1 with index 2: &quot;1<u>12</u>11&quot; -&gt; &quot;1<u>21</u>11&quot;
+  - Swap index 0 with index 1: &quot;<u>12</u>111&quot; -&gt; &quot;<u>21</u>111&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> num = &quot;00123&quot;, k = 1
+  <strong>Output:</strong> 1
+  <strong>Explanation:</strong> The 1<sup>st</sup> smallest wonderful number is &quot;00132&quot;. To get this number:
+  - Swap index 3 with index 4: &quot;001<u>23</u>&quot; -&gt; &quot;001<u>32</u>&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+2 <= num.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= k <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+num only consists of digits.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

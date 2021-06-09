@@ -1,0 +1,361 @@
+* [[https://leetcode.com/problems/nested-list-weight-sum][339. Nested
+List Weight Sum]]
+  :PROPERTIES:
+  :CUSTOM_ID: nested-list-weight-sum
+  :END:
+[[./solution/0300-0399/0339.Nested List Weight Sum/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given a nested list of integers nestedList. Each element is
+either an integer or a list whose elements may also be integers or other
+lists.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The depth of an integer is the number of lists that it is inside of. For
+example, the nested list [1,[2,2],[[3],2],1] has each integer's value
+set to its depth.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the sum of each integer in nestedList multiplied by its depth.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nestedList = [[1,1],2,[1,1]]
+  <strong>Output:</strong> 10
+  <strong>Explanation:</strong> Four 1&#39;s at depth 2, one 2 at depth 1. 1*2 + 1*2 + 2*1 + 1*2 + 1*2 = 10.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nestedList = [1,[4,[6]]]
+  <strong>Output:</strong> 27
+  <strong>Explanation:</strong> One 1 at depth 1, one 4 at depth 2, and one 6 at depth 3. 1*1 + 4*2 + 6*3 = 27.</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nestedList = [0]
+  <strong>Output:</strong> 0
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nestedList.length <= 50
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The values of the integers in the nested list is in the range [-100,
+100].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The maximum depth of any integer is less than or equal to 50.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  # """
+  # This is the interface that allows for creating nested lists.
+  # You should not implement it, or speculate about its implementation
+  # """
+  #class NestedInteger:
+  #    def __init__(self, value=None):
+  #        """
+  #        If value is not specified, initializes an empty list.
+  #        Otherwise initializes a single integer equal to value.
+  #        """
+  #
+  #    def isInteger(self):
+  #        """
+  #        @return True if this NestedInteger holds a single integer, rather than a nested list.
+  #        :rtype bool
+  #        """
+  #
+  #    def add(self, elem):
+  #        """
+  #        Set this NestedInteger to hold a nested list and adds a nested integer elem to it.
+  #        :rtype void
+  #        """
+  #
+  #    def setInteger(self, value):
+  #        """
+  #        Set this NestedInteger to hold a single integer equal to value.
+  #        :rtype void
+  #        """
+  #
+  #    def getInteger(self):
+  #        """
+  #        @return the single integer that this NestedInteger holds, if it holds a single integer
+  #        Return None if this NestedInteger holds a nested list
+  #        :rtype int
+  #        """
+  #
+  #    def getList(self):
+  #        """
+  #        @return the nested list that this NestedInteger holds, if it holds a nested list
+  #        Return None if this NestedInteger holds a single integer
+  #        :rtype List[NestedInteger]
+  #        """
+  class Solution:
+      def depthSum(self, nestedList: List[NestedInteger]) -> int:
+          def dfs(nestedList, depth):
+              depth_sum = 0
+              for item in nestedList:
+                  if item.isInteger():
+                      depth_sum += item.getInteger() * depth
+                  else:
+                      depth_sum += dfs(item.getList(), depth + 1)
+              return depth_sum
+          return dfs(nestedList, 1)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  /**
+   * // This is the interface that allows for creating nested lists.
+   * // You should not implement it, or speculate about its implementation
+   * public interface NestedInteger {
+   *     // Constructor initializes an empty nested list.
+   *     public NestedInteger();
+   *
+   *     // Constructor initializes a single integer.
+   *     public NestedInteger(int value);
+   *
+   *     // @return true if this NestedInteger holds a single integer, rather than a nested list.
+   *     public boolean isInteger();
+   *
+   *     // @return the single integer that this NestedInteger holds, if it holds a single integer
+   *     // Return null if this NestedInteger holds a nested list
+   *     public Integer getInteger();
+   *
+   *     // Set this NestedInteger to hold a single integer.
+   *     public void setInteger(int value);
+   *
+   *     // Set this NestedInteger to hold a nested list and adds a nested integer to it.
+   *     public void add(NestedInteger ni);
+   *
+   *     // @return the nested list that this NestedInteger holds, if it holds a nested list
+   *     // Return empty list if this NestedInteger holds a single integer
+   *     public List<NestedInteger> getList();
+   * }
+   */
+  class Solution {
+      public int depthSum(List<NestedInteger> nestedList) {
+          return dfs(nestedList, 1);
+      }
+
+      private int dfs(List<NestedInteger> nestedList, int depth) {
+          int depthSum = 0;
+          for (NestedInteger item : nestedList) {
+              if (item.isInteger()) {
+                  depthSum += item.getInteger() * depth;
+              } else {
+                  depthSum += dfs(item.getList(), depth + 1);
+              }
+          }
+          return depthSum;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * // This is the interface that allows for creating nested lists.
+   * // You should not implement it, or speculate about its implementation
+   * function NestedInteger() {
+   *
+   *     Return true if this NestedInteger holds a single integer, rather than a nested list.
+   *     @return {boolean}
+   *     this.isInteger = function() {
+   *         ...
+   *     };
+   *
+   *     Return the single integer that this NestedInteger holds, if it holds a single integer
+   *     Return null if this NestedInteger holds a nested list
+   *     @return {integer}
+   *     this.getInteger = function() {
+   *         ...
+   *     };
+   *
+   *     Set this NestedInteger to hold a single integer equal to value.
+   *     @return {void}
+   *     this.setInteger = function(value) {
+   *         ...
+   *     };
+   *
+   *     Set this NestedInteger to hold a nested list and adds a nested integer elem to it.
+   *     @return {void}
+   *     this.add = function(elem) {
+   *         ...
+   *     };
+   *
+   *     Return the nested list that this NestedInteger holds, if it holds a nested list
+   *     Return null if this NestedInteger holds a single integer
+   *     @return {NestedInteger[]}
+   *     this.getList = function() {
+   *         ...
+   *     };
+   * };
+   */
+  /**
+   * @param {NestedInteger[]} nestedList
+   * @return {number}
+   */
+  var depthSum = function (nestedList) {
+    const dfs = (nestedList, depth) => {
+      let depthSum = 0;
+      for (const item of nestedList) {
+        if (item.isInteger()) {
+          depthSum += item.getInteger() * depth;
+        } else {
+          depthSum += dfs(item.getList(), depth + 1);
+        }
+      }
+      return depthSum;
+    };
+    return dfs(nestedList, 1);
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,167 @@
+* [[https://leetcode-cn.com/problems/sparse-similarity-lcci][17.26.
+Sparse Similarity]]
+  :PROPERTIES:
+  :CUSTOM_ID: sparse-similarity
+  :END:
+[[./lcci/17.26.Sparse Similarity/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+The similarity of two documents (each with distinct words) is defined to
+be the size of the intersection divided by the size of the union. For
+example, if the documents consist of integers, the similarity of {1, 5,
+3} and {1, 7, 2, 3} is 0.4, because the intersection has size 2 and the
+union has size 5. We have a long list of documents (with distinct values
+and each with an associated ID) where the similarity is believed to be
+"sparse". That is, any two arbitrarily selected documents are very
+likely to have similarity 0. Design an algorithm that returns a list of
+pairs of document IDs and the associated similarity.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Input is a 2D array docs, where docs[i] is the document with id i.
+Return an array of strings, where each string represents a pair of
+documents with similarity greater than 0. The string should be formatted
+as  {id1},{id2}: {similarity}, where id1 is the smaller id in the two
+documents, and similarity is the similarity rounded to four decimal
+places. You can return the array in any order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> 
+
+  <code>[
+
+  &nbsp; [14, 15, 100, 9, 3],
+
+  &nbsp; [32, 1, 9, 3, 5],
+
+  &nbsp; [15, 29, 2, 6, 8, 7],
+
+  &nbsp; [7, 10]
+
+  ]</code>
+
+  <strong>Output:</strong>
+
+  [
+
+  &nbsp; &quot;0,1: 0.2500&quot;,
+
+  &nbsp; &quot;0,2: 0.1000&quot;,
+
+  &nbsp; &quot;2,3: 0.1429&quot;
+
+  ]</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+docs.length <= 500
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+docs[i].length <= 500
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of document pairs with similarity greater than 0 will not
+exceed 1000.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

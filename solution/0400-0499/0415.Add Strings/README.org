@@ -1,0 +1,165 @@
+* [[https://leetcode-cn.com/problems/add-strings][415. 字符串相加]]
+  :PROPERTIES:
+  :CUSTOM_ID: 字符串相加
+  :END:
+[[./solution/0400-0499/0415.Add Strings/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+num1 和num2 的长度都小于 5100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+num1 和num2 都只包含数字 0-9
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+num1 和num2 都不包含任何前导零
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+你不能使用任何內建 BigInteger
+库， 也不能直接将输入的字符串转换为整数形式
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def addStrings(self, num1: str, num2: str) -> str:
+          n1, n2 = len(num1) - 1, len(num2) - 1
+          carry = 0
+          res = []
+          while n1 >= 0 or n2 >= 0 or carry > 0:
+              carry += (0 if n1 < 0 else int(num1[n1])) + (0 if n2 < 0 else int(num2[n2]))
+              res.append(str(carry % 10))
+              carry //= 10
+              n1, n2 = n1 - 1, n2 - 1
+          return ''.join(res[::-1])
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public String addStrings(String num1, String num2) {
+          int n1 = num1.length() - 1, n2 = num2.length() - 1;
+          int carry = 0;
+          StringBuilder sb = new StringBuilder();
+          while (n1 >= 0 || n2 >= 0 || carry > 0) {
+              carry += (n1 < 0 ? 0 : num1.charAt(n1--) - '0') + (n2 < 0 ? 0 : num2.charAt(n2--) - '0');
+              sb.append(carry % 10);
+              carry /= 10;
+          }
+          return sb.reverse().toString();
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

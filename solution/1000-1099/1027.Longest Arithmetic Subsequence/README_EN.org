@@ -1,0 +1,184 @@
+* [[https://leetcode.com/problems/longest-arithmetic-subsequence][1027.
+Longest Arithmetic Subsequence]]
+  :PROPERTIES:
+  :CUSTOM_ID: longest-arithmetic-subsequence
+  :END:
+[[./solution/1000-1099/1027.Longest Arithmetic Subsequence/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array A of integers, return the length of the longest
+arithmetic subsequence in A.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Recall that a subsequence of A is a list A[i_1], A[i_2], ..., A[i_k]
+with 0 <= i_1 < i_2 < ... < i_k <= A.length - 1, and that a sequence
+B is arithmetic if B[i+1] - B[i] are all the same value (for 0 <= i <
+B.length - 1).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> A = [3,6,9,12]
+  <strong>Output:</strong> 4
+  <strong>Explanation: </strong>
+  The whole array is an arithmetic sequence with steps of length = 3.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> A = [9,4,7,2,10]
+  <strong>Output:</strong> 3
+  <strong>Explanation: </strong>
+  The longest arithmetic subsequence is [4,7,10].
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> A = [20,1,15,3,10,5,8]
+  <strong>Output:</strong> 4
+  <strong>Explanation: </strong>
+  The longest arithmetic subsequence is [20,15,10,5].
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+2 <= A.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= A[i] <= 500
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,195 @@
+* [[https://leetcode-cn.com/problems/lonely-pixel-ii][533. 孤独像素 II]]
+  :PROPERTIES:
+  :CUSTOM_ID: 孤独像素-ii
+  :END:
+[[./solution/0500-0599/0533.Lonely Pixel II/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一幅由黑色像素和白色像素组成的图像， 与一个正整数N,
+找到位于某行 R 和某列 C 中且符合下列规则的黑色像素的数量:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+行R 和列C都恰好包括N个黑色像素。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+列C中所有黑色像素所在的行必须和行R完全相同。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+图像由一个由‘B'和‘W'组成二维字符数组表示,
+‘B'和‘W'分别代表黑色像素和白色像素。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong>                                            
+  [[&#39;W&#39;, &#39;B&#39;, &#39;W&#39;, &#39;B&#39;, &#39;B&#39;, &#39;W&#39;],    
+   [&#39;W&#39;, &#39;B&#39;, &#39;W&#39;, &#39;B&#39;, &#39;B&#39;, &#39;W&#39;],    
+   [&#39;W&#39;, &#39;B&#39;, &#39;W&#39;, &#39;B&#39;, &#39;B&#39;, &#39;W&#39;],    
+   [&#39;W&#39;, &#39;W&#39;, &#39;B&#39;, &#39;W&#39;, &#39;B&#39;, &#39;W&#39;]] 
+
+  N = 3
+  <strong>输出:</strong> 6
+  <strong>解析:</strong> 所有粗体的&#39;B&#39;都是我们所求的像素(第1列和第3列的所有&#39;B&#39;).
+          0    1    2    3    4    5         列号                                          
+  0    [[&#39;W&#39;, <strong>&#39;B&#39;</strong>, &#39;W&#39;, <strong>&#39;B&#39;</strong>, &#39;B&#39;, &#39;W&#39;],    
+  1     [&#39;W&#39;, <strong>&#39;B&#39;</strong>, &#39;W&#39;, <strong>&#39;B&#39;</strong>, &#39;B&#39;, &#39;W&#39;],    
+  2     [&#39;W&#39;, <strong>&#39;B&#39;</strong>, &#39;W&#39;, <strong>&#39;B&#39;</strong>, &#39;B&#39;, &#39;W&#39;],    
+  3     [&#39;W&#39;, &#39;W&#39;, &#39;B&#39;, &#39;W&#39;, &#39;B&#39;, &#39;W&#39;]]    
+  行号
+
+  以R = 0行和C = 1列的&#39;B&#39;为例:
+  规则 1，R = 0行和C = 1列都恰好有N = 3个黑色像素. 
+  规则 2，在C = 1列的黑色像素分别位于0，1和2行。它们都和R = 0行完全相同。
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+输入二维数组行和列的范围是 [1,200]。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,221 @@
+* [[https://leetcode-cn.com/problems/langtons-ant-lcci][16.22. Langtons
+Ant]]
+  :PROPERTIES:
+  :CUSTOM_ID: langtons-ant
+  :END:
+[[./lcci/16.22.Langtons Ant/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+An ant is sitting on an infinite grid of white and black squares. It
+initially faces right. All squares are white initially.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+At each step, it does the following:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+1) At a white square, flip the color of the square, turn 90 degrees
+   right (clockwise), and move forward one unit.
+
+   #+begin_html
+     </p>
+   #+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+2) At a black square, flip the color of the square, turn 90 degrees left
+   (counter-clockwise), and move forward one unit.
+
+   #+begin_html
+     </p>
+   #+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write a program to simulate the first K moves that the ant makes and
+print the final board as a grid.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The grid should be represented as an array of strings, where each
+element represents one row in the grid. The black square is represented
+as 'X', and the white square is represented as '_', the square which is
+occupied by the ant is represented as 'L', 'U', 'R', 'D', which means
+the left, up, right and down orientations respectively. You only need to
+return the minimum matrix that is able to contain all squares that are
+passed through by the ant.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> 0
+
+  <strong>Output: </strong>[&quot;R&quot;]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> 2
+
+  <strong>Output:
+
+  </strong>[
+
+  &nbsp; &quot;_X&quot;,
+
+  &nbsp; &quot;LX&quot;
+
+  ]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> 5
+
+  <strong>Output:
+
+  </strong>[
+
+  &nbsp; &quot;_U&quot;,
+
+  &nbsp; &quot;X_&quot;,
+
+  &nbsp; &quot;XX&quot;
+
+  ]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+K <= 100000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

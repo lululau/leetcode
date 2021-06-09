@@ -1,0 +1,261 @@
+* [[https://leetcode.com/problems/number-of-provinces][547. Number of
+Provinces]]
+  :PROPERTIES:
+  :CUSTOM_ID: number-of-provinces
+  :END:
+[[./solution/0500-0599/0547.Number of Provinces/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+There are n cities. Some of them are connected, while some are not. If
+city a is connected directly with city b, and city b is connected
+directly with city c, then city a is connected indirectly with city c.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A province is a group of directly or indirectly connected cities and no
+other cities outside of the group.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given an n x n matrix isConnected where isConnected[i][j] = 1 if
+the ith city and the jth city are directly connected, and
+isConnected[i][j] = 0 otherwise.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the total number of provinces.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> isConnected = [[1,1,0],[1,1,0],[0,0,1]]
+  <strong>Output:</strong> 2
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> isConnected = [[1,0,0],[0,1,0],[0,0,1]]
+  <strong>Output:</strong> 3
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 200
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n == isConnected.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n == isConnected[i].length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+isConnected[i][j] is 1 or 0.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+isConnected[i][i] == 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+isConnected[i][j] == isConnected[j][i]
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def findCircleNum(self, isConnected: List[List[int]]) -> int:
+          def dfs(i):
+              for j in range(n):
+                  if not visited[j] and isConnected[i][j] == 1:
+                      visited[j] = True
+                      dfs(j)
+
+          n = len(isConnected)
+          visited = [False] * n
+          num = 0
+          for i in range(n):
+              if not visited[i]:
+                  dfs(i)
+                  num += 1
+          return num
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int findCircleNum(int[][] isConnected) {
+          int n = isConnected.length;
+          boolean[] visited = new boolean[n];
+          int num = 0;
+          for (int i = 0; i < n; ++i) {
+              if (!visited[i]) {
+                  dfs(isConnected, visited, i, n);
+                  ++num;
+              }
+          }
+          return num;
+      }
+
+      private void dfs(int[][] isConnected, boolean[] visited, int i, int n) {
+          for (int j = 0; j < n; ++j) {
+              if (!visited[j] && isConnected[i][j] == 1) {
+                  visited[j] = true;
+                  dfs(isConnected, visited, j, n);
+              }
+          }
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

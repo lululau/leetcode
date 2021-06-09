@@ -1,0 +1,158 @@
+* [[https://leetcode-cn.com/problems/magic-index-lcci][面试题 08.03.
+魔术索引]]
+  :PROPERTIES:
+  :CUSTOM_ID: 面试题-08.03.-魔术索引
+  :END:
+[[./lcci/08.03.Magic Index/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+魔术索引。 在数组A[0...n-1]中，有所谓的魔术索引，满足条件A[i] =
+i。给定一个有序整数数组，编写一种方法找出魔术索引，若有的话，在数组A中找出一个魔术索引，如果没有，则返回-1。若有多个魔术索引，返回索引值最小的一个。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong> 输入</strong>：nums = [0, 2, 3, 4, 5]
+  <strong> 输出</strong>：0
+  <strong> 说明</strong>: 0下标的元素为0
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong> 输入</strong>：nums = [1, 1, 1]
+  <strong> 输出</strong>：1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+nums长度在[1, 1000000]之间
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number[]} nums
+   * @return {number}
+   */
+  var findMagicIndex = function(nums) {
+      return helper(nums, 0, nums.length - 1);
+  };
+
+  function helper(nums, left, right) {
+      if (left > right) return -1;
+      let mid = Math.floor((left + right) / 2);
+      let leftIndex = helper(nums, left, mid - 1);
+      if (leftIndex != -1) return leftIndex;
+      if (nums[mid] == mid) return mid;
+      return helper(nums, mid + 1, right);
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

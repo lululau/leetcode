@@ -1,0 +1,186 @@
+* [[https://leetcode.com/problems/queries-quality-and-percentage][1211.
+Queries Quality and Percentage]]
+  :PROPERTIES:
+  :CUSTOM_ID: queries-quality-and-percentage
+  :END:
+[[./solution/1200-1299/1211.Queries Quality and Percentage/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Queries
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +-------------+---------+
+  | Column Name | Type    |
+  +-------------+---------+
+  | query_name  | varchar |
+  | result      | varchar |
+  | position    | int     |
+  | rating      | int     |
+  +-------------+---------+
+  There is no primary key for this table, it may have duplicate rows.
+  This table contains information collected from some queries on a database.
+  The <code>position</code> column has a value from <strong>1</strong> to <strong>500</strong>.
+  The <code>rating</code> column has a value from <strong>1</strong> to <strong>5</strong>. Query with <code>rating</code> less than 3 is a poor query.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+We define query quality as:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <blockquote>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The average of the ratio between query rating and its position.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  </blockquote>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+We also define poor query percentage as:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <blockquote>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The percentage of all queries with rating less than 3.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  </blockquote>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an SQL query to find each query_name, the quality and
+poor_query_percentage.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Both quality and poor_query_percentage should be rounded to 2 decimal
+places.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The query result format is in the following example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  Queries table:
+  +------------+-------------------+----------+--------+
+  | query_name | result            | position | rating |
+  +------------+-------------------+----------+--------+
+  | Dog        | Golden Retriever  | 1        | 5      |
+  | Dog        | German Shepherd   | 2        | 5      |
+  | Dog        | Mule              | 200      | 1      |
+  | Cat        | Shirazi           | 5        | 2      |
+  | Cat        | Siamese           | 3        | 3      |
+  | Cat        | Sphynx            | 7        | 4      |
+  +------------+-------------------+----------+--------+
+
+  Result table:
+  +------------+---------+-----------------------+
+  | query_name | quality | poor_query_percentage |
+  +------------+---------+-----------------------+
+  | Dog        | 2.50    | 33.33                 |
+  | Cat        | 0.66    | 33.33                 |
+  +------------+---------+-----------------------+
+
+  Dog queries quality is ((5 / 1) + (5 / 2) + (1 / 200)) / 3 = 2.50
+  Dog queries poor_ query_percentage is (1 / 3) * 100 = 33.33
+
+  Cat queries quality equals ((2 / 5) + (3 / 3) + (4 / 7)) / 3 = 0.66
+  Cat queries poor_ query_percentage is (1 / 3) * 100 = 33.33
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

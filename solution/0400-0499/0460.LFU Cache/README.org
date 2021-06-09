@@ -1,0 +1,273 @@
+* [[https://leetcode-cn.com/problems/lfu-cache][460. LFU 缓存]]
+  :PROPERTIES:
+  :CUSTOM_ID: lfu-缓存
+  :END:
+[[./solution/0400-0499/0460.LFU Cache/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你为 最不经常使用（LFU）缓存算法设计并实现数据结构。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+实现 LFUCache 类：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+LFUCache(int capacity) - 用数据结构的容量 capacity 初始化对象
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int get(int key) - 如果键存在于缓存中，则获取键的值，否则返回 -1。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void put(int key, int value) -
+如果键已存在，则变更其值；如果键不存在，请插入键值对。当缓存达到其容量时，则应该在插入新项之前，使最不经常使用的项无效。在此问题中，当存在平局（即两个或更多个键具有相同使用频率）时，应该去除
+最近最久未使用 的键。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意「项的使用次数」就是自插入该项以来对其调用 get 和 put
+函数的次数之和。使用次数会在对应项被移除后置为 0 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+为了确定最不常使用的键，可以为缓存中的每个键维护一个 使用计数器
+。使用计数最小的键是最久未使用的键。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+当一个键首次插入到缓存中时，它的使用计数器被设置为 1 (由于 put
+操作)。对缓存中的键执行 get 或 put 操作，使用计数器的值将会递增。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>
+  ["LFUCache", "put", "put", "get", "put", "get", "get", "put", "get", "get", "get"]
+  [[2], [1, 1], [2, 2], [1], [3, 3], [2], [3], [4, 4], [1], [3], [4]]
+  <strong>输出：</strong>
+  [null, null, null, 1, null, -1, 3, null, -1, 3, 4]
+
+  <strong>解释：</strong>
+  // cnt(x) = 键 x 的使用计数
+  // cache=[] 将显示最后一次使用的顺序（最左边的元素是最近的）
+  LFUCache lFUCache = new LFUCache(2);
+  lFUCache.put(1, 1);   // cache=[1,_], cnt(1)=1
+  lFUCache.put(2, 2);   // cache=[2,1], cnt(2)=1, cnt(1)=1
+  lFUCache.get(1);      // 返回 1
+                        // cache=[1,2], cnt(2)=1, cnt(1)=2
+  lFUCache.put(3, 3);   // 去除键 2 ，因为 cnt(2)=1 ，使用计数最小
+                        // cache=[3,1], cnt(3)=1, cnt(1)=2
+  lFUCache.get(2);      // 返回 -1（未找到）
+  lFUCache.get(3);      // 返回 3
+                        // cache=[3,1], cnt(3)=2, cnt(1)=2
+  lFUCache.put(4, 4);   // 去除键 1 ，1 和 3 的 cnt 相同，但 1 最久未使用
+                        // cache=[4,3], cnt(4)=1, cnt(3)=2
+  lFUCache.get(1);      // 返回 -1（未找到）
+  lFUCache.get(3);      // 返回 3
+                        // cache=[3,4], cnt(4)=1, cnt(3)=3
+  lFUCache.get(4);      // 返回 4
+                        // cache=[3,4], cnt(4)=2, cnt(3)=3</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= capacity, key, value <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+最多调用 105 次 get 和 put 方法
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+进阶：你可以为这两种操作设计时间复杂度为 O(1) 的实现吗？
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

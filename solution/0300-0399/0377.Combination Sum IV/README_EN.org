@@ -1,0 +1,234 @@
+* [[https://leetcode.com/problems/combination-sum-iv][377. Combination
+Sum IV]]
+  :PROPERTIES:
+  :CUSTOM_ID: combination-sum-iv
+  :END:
+[[./solution/0300-0399/0377.Combination Sum IV/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array of distinct integers nums and a target integer target,
+return the number of possible combinations that add up to target.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The answer is guaranteed to fit in a 32-bit integer.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [1,2,3], target = 4
+  <strong>Output:</strong> 7
+  <strong>Explanation:</strong>
+  The possible combination ways are:
+  (1, 1, 1, 1)
+  (1, 1, 2)
+  (1, 2, 1)
+  (1, 3)
+  (2, 1, 1)
+  (2, 2)
+  (3, 1)
+  Note that different sequences are counted as different combinations.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [9], target = 3
+  <strong>Output:</strong> 0
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 200
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums[i] <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All the elements of nums are unique.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= target <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow up: What if negative numbers are allowed in the given array? How
+does it change the problem? What limitation we need to add to the
+question to allow negative numbers?
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+=dp[i]= represents the number of element combinations whose sum is =i=.
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def combinationSum4(self, nums: List[int], target: int) -> int:
+          dp = [0 for i in range(target + 1)]
+          dp[0] = 1
+          for i in range(1, target + 1):
+              for num in nums:
+                  if i - num >= 0:
+                      dp[i] += dp[i - num]
+          return dp[target]
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int combinationSum4(int[] nums, int target) {
+          int[] dp = new int[target + 1];
+          dp[0] = 1;
+          for (int i = 1; i <= target; i++) {
+              for (int num : nums) {
+                  if (i - num >= 0) {
+                      dp[i] += dp[i - num];
+                  }
+              }
+          }
+          return dp[target];
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,230 @@
+* [[https://leetcode.com/problems/fancy-sequence][1622. Fancy Sequence]]
+  :PROPERTIES:
+  :CUSTOM_ID: fancy-sequence
+  :END:
+[[./solution/1600-1699/1622.Fancy Sequence/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an API that generates fancy sequences using the append, addAll,
+and multAll operations.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement the Fancy class:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Fancy() Initializes the object with an empty sequence.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void append(val) Appends an integer val to the end of the sequence.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void addAll(inc) Increments all existing values in the sequence by an
+integer inc.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void multAll(m) Multiplies all existing values in the sequence by an
+integer m.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int getIndex(idx) Gets the current value at index idx (0-indexed) of the
+sequence modulo 109 + 7. If the index is greater or equal than the
+length of the sequence, return -1.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input</strong>
+  [&quot;Fancy&quot;, &quot;append&quot;, &quot;addAll&quot;, &quot;append&quot;, &quot;multAll&quot;, &quot;getIndex&quot;, &quot;addAll&quot;, &quot;append&quot;, &quot;multAll&quot;, &quot;getIndex&quot;, &quot;getIndex&quot;, &quot;getIndex&quot;]
+  [[], [2], [3], [7], [2], [0], [3], [10], [2], [0], [1], [2]]
+  <strong>Output</strong>
+  [null, null, null, null, null, 10, null, null, null, 26, 34, 20]
+
+  <strong>Explanation</strong>
+  Fancy fancy = new Fancy();
+  fancy.append(2);   // fancy sequence: [2]
+  fancy.addAll(3);   // fancy sequence: [2+3] -&gt; [5]
+  fancy.append(7);   // fancy sequence: [5, 7]
+  fancy.multAll(2);  // fancy sequence: [5*2, 7*2] -&gt; [10, 14]
+  fancy.getIndex(0); // return 10
+  fancy.addAll(3);   // fancy sequence: [10+3, 14+3] -&gt; [13, 17]
+  fancy.append(10);  // fancy sequence: [13, 17, 10]
+  fancy.multAll(2);  // fancy sequence: [13*2, 17*2, 10*2] -&gt; [26, 34, 20]
+  fancy.getIndex(0); // return 26
+  fancy.getIndex(1); // return 34
+  fancy.getIndex(2); // return 20
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= val, inc, m <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= idx <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+At most 105 calls total will be made to append, addAll, multAll, and
+getIndex.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

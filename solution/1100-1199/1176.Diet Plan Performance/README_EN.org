@@ -1,0 +1,255 @@
+* [[https://leetcode.com/problems/diet-plan-performance][1176. Diet Plan
+Performance]]
+  :PROPERTIES:
+  :CUSTOM_ID: diet-plan-performance
+  :END:
+[[./solution/1100-1199/1176.Diet Plan Performance/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+A dieter consumes calories[i] calories on the i-th day. 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an integer k, for every consecutive sequence of k days
+(calories[i], calories[i+1], ..., calories[i+k-1] for all 0 <= i <=
+n-k), they look at T, the total calories consumed during that sequence
+of k days (calories[i] + calories[i+1] + ... + calories[i+k-1]):
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If T < lower, they performed poorly on their diet and lose 1 point; 
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If T > upper, they performed well on their diet and gain 1 point;
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Otherwise, they performed normally and there is no change in points.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Initially, the dieter has zero points. Return the total number of points
+the dieter has after dieting for calories.length days.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note that the total points can be negative.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> calories = [1,2,3,4,5], k = 1, lower = 3, upper = 3
+  <strong>Output:</strong> 0
+  <strong>Explanation</strong>: Since k = 1, we consider each element of the array separately and compare it to lower and upper.
+  calories[0] and calories[1] are less than lower so 2 points are lost.
+  calories[3] and calories[4] are greater than upper so 2 points are gained.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> calories = [3,2], k = 2, lower = 0, upper = 1
+  <strong>Output:</strong> 1
+  <strong>Explanation</strong>: Since k = 2, we consider subarrays of length 2.
+  calories[0] + calories[1] &gt; upper so 1 point is gained.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> calories = [6,5,0,0], k = 2, lower = 1, upper = 5
+  <strong>Output:</strong> 0
+  <strong>Explanation</strong>:
+  calories[0] + calories[1] &gt; upper so 1 point is gained.
+  lower &lt;= calories[1] + calories[2] &lt;= upper so no change in points.
+  calories[2] + calories[3] &lt; lower so 1 point is lost.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= k <= calories.length <= 10^5
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= calories[i] <= 20000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= lower <= upper
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

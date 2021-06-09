@@ -1,0 +1,347 @@
+* [[https://leetcode.com/problems/linked-list-cycle][141. Linked List
+Cycle]]
+  :PROPERTIES:
+  :CUSTOM_ID: linked-list-cycle
+  :END:
+[[./solution/0100-0199/0141.Linked List Cycle/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given head, the head of a linked list, determine if the linked list has
+a cycle in it.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+There is a cycle in a linked list if there is some node in the list that
+can be reached again by continuously following the next pointer.
+Internally, pos is used to denote the index of the node
+that tail's next pointer is connected to. Note that pos is not passed as
+a parameter.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return true if there is a cycle in the linked list. Otherwise, return
+false.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> head = [3,2,0,-4], pos = 1
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> head = [1,2], pos = 0
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> There is a cycle in the linked list, where the tail connects to the 0th node.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> head = [1], pos = -1
+  <strong>Output:</strong> false
+  <strong>Explanation:</strong> There is no cycle in the linked list.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of the nodes in the list is in the range [0, 104].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-105 <= Node.val <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+pos is -1 or a valid index in the linked-list.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow up: Can you solve it using O(1) (i.e. constant) memory?
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  # Definition for singly-linked list.
+  # class ListNode:
+  #     def __init__(self, x):
+  #         self.val = x
+  #         self.next = None
+
+  class Solution:
+      def hasCycle(self, head: ListNode) -> bool:
+          slow = fast = head
+          while fast and fast.next:
+              slow, fast = slow.next, fast.next.next
+              if slow == fast:
+                  return True
+          return False
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  /**
+   * Definition for singly-linked list.
+   * class ListNode {
+   *     int val;
+   *     ListNode next;
+   *     ListNode(int x) {
+   *         val = x;
+   *         next = null;
+   *     }
+   * }
+   */
+  public class Solution {
+      public boolean hasCycle(ListNode head) {
+          ListNode slow = head;
+          ListNode fast = head;
+          while (fast != null && fast.next != null) {
+              slow = slow.next;
+              fast = fast.next.next;
+              if (slow == fast) {
+                  return true;
+              }
+          }
+          return false;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  /**
+   * Definition for singly-linked list.
+   * struct ListNode {
+   *     int val;
+   *     ListNode *next;
+   *     ListNode(int x) : val(x), next(NULL) {}
+   * };
+   */
+  class Solution {
+  public:
+      bool hasCycle(ListNode *head) {
+          ListNode* slow = head;
+          ListNode* fast = head;
+          while (fast && fast->next) {
+              slow = slow->next;
+              fast = fast->next->next;
+              if (slow == fast) {
+                  return true;
+              }
+          }
+          return false;
+      }
+  };
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * Definition for singly-linked list.
+   * function ListNode(val) {
+   *     this.val = val;
+   *     this.next = null;
+   * }
+   */
+
+  /**
+   * @param {ListNode} head
+   * @return {boolean}
+   */
+  var hasCycle = function(head) {
+      let slow = head;
+      let fast = head;
+      while (fast && fast.next) {
+          slow = slow.next;
+          fast = fast.next.next;
+          if (slow == fast) {
+              return true;
+          }
+      }
+      return false;
+  };
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  /**
+   * Definition for singly-linked list.
+   * type ListNode struct {
+   *     Val int
+   *     Next *ListNode
+   * }
+   */
+  func hasCycle(head *ListNode) bool {
+      slow, fast := head, head
+      for fast != nil && fast.Next != nil {
+          slow, fast = slow.Next, fast.Next.Next
+          if slow == fast {
+              return true
+          }
+      }
+      return false
+  }
+#+end_example
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

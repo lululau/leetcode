@@ -1,0 +1,263 @@
+* [[https://leetcode-cn.com/problems/powerful-integers][970. 强整数]]
+  :PROPERTIES:
+  :CUSTOM_ID: 强整数
+  :END:
+[[./solution/0900-0999/0970.Powerful Integers/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定两个正整数 x 和 y，如果某一整数等于 x^i + y^j，其中整数 i >= 0 且 j
+>= 0，那么我们认为该整数是一个强整数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回值小于或等于 bound 的所有强整数组成的列表。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你可以按任何顺序返回答案。在你的回答中，每个值最多出现一次。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>x = 2, y = 3, bound = 10
+  <strong>输出：</strong>[2,3,4,5,7,9,10]
+  <strong>解释： </strong>
+  2 = 2^0 + 3^0
+  3 = 2^1 + 3^0
+  4 = 2^0 + 3^1
+  5 = 2^1 + 3^1
+  7 = 2^2 + 3^1
+  9 = 2^3 + 3^0
+  10 = 2^0 + 3^2
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>x = 3, y = 5, bound = 15
+  <strong>输出：</strong>[2,4,6,8,10,14]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= x <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= y <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= bound <= 10^6
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def powerfulIntegers(self, x: int, y: int, bound: int) -> List[int]:
+          s = set()
+          i = 1
+          while i < bound:
+              j = 1
+              while j < bound:
+                  if i + j <= bound:
+                      s.add(i + j)
+                  if y == 1:
+                      break
+                  j *= y
+              if x == 1:
+                  break
+              i *= x
+          return list(s)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public List<Integer> powerfulIntegers(int x, int y, int bound) {
+          Set<Integer> s = new HashSet<>();
+          for (int i = 1; i < bound; i *= x) {
+              for (int j = 1; j < bound; j *= y) {
+                  if (i + j <= bound) {
+                      s.add(i + j);
+                  }
+                  if (y == 1) {
+                      break;
+                  }
+              }
+              if (x == 1) {
+                  break;
+              }
+          }
+          return new ArrayList<>(s);
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number} x
+   * @param {number} y
+   * @param {number} bound
+   * @return {number[]}
+   */
+  var powerfulIntegers = function(x, y, bound) {
+      let res = new Set();
+      for (let i = 1; i < bound; i *= x) {
+          for (let j = 1; j < bound; j *= y) {
+              if ((i + j) <= bound) {
+                  res.add(i + j);
+              }
+              if (y == 1) break;
+          }
+          if (x == 1) break;
+      }
+      return [...res];
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

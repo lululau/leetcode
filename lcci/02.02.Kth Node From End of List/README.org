@@ -1,0 +1,219 @@
+* [[https://leetcode-cn.com/problems/kth-node-from-end-of-list-lcci][面试题
+02.02. 返回倒数第 k 个节点]]
+  :PROPERTIES:
+  :CUSTOM_ID: 面试题-02.02.-返回倒数第-k-个节点
+  :END:
+[[./lcci/02.02.Kth Node From End of List/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+实现一种算法，找出单向链表中倒数第 k 个节点。返回该节点的值。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意：本题相对原题稍作改动
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong> 1-&gt;2-&gt;3-&gt;4-&gt;5 和 <em>k</em> = 2
+  <strong>输出： </strong>4</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+说明：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定的 k 保证是有效的。
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+定义 =p=、=q= 指针指向 =head=。
+
+=p= 先向前走 =k= 步，接着 =p=、=q= 同时向前走，当 =p= 指向 =null=
+时，=q= 指向的节点即为链表的倒数第 =k= 个节点。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  # Definition for singly-linked list.
+  # class ListNode:
+  #     def __init__(self, x):
+  #         self.val = x
+  #         self.next = None
+
+  class Solution:
+      def kthToLast(self, head: ListNode, k: int) -> int:
+          slow = fast = head
+          for _ in range(k):
+              fast = fast.next
+          while fast:
+              slow, fast = slow.next, fast.next
+          return slow.val
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  /**
+   * Definition for singly-linked list.
+   * public class ListNode {
+   *     int val;
+   *     ListNode next;
+   *     ListNode(int x) { val = x; }
+   * }
+   */
+  class Solution {
+      public int kthToLast(ListNode head, int k) {
+          ListNode slow = head, fast = head;
+          while (k-- > 0) {
+              fast = fast.next;
+          }
+          while (fast != null) {
+              slow = slow.next;
+              fast = fast.next;
+          }
+          return slow.val;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * Definition for singly-linked list.
+   * function ListNode(val) {
+   *     this.val = val;
+   *     this.next = null;
+   * }
+   */
+  /**
+   * @param {ListNode} head
+   * @param {number} k
+   * @return {number}
+   */
+  var kthToLast = function(head, k) {
+      let fast = head, slow = head;
+      for (let i = 0; i < k; i++) {
+          fast = fast.next;
+      }
+      while (fast != null) {
+          fast = fast.next;
+          slow = slow.next;
+      }
+      return slow.val;
+  };
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  /**
+   * Definition for singly-linked list.
+   * struct ListNode {
+   *     int val;
+   *     ListNode *next;
+   *     ListNode(int x) : val(x), next(NULL) {}
+   * };
+   */
+  class Solution {
+  public:
+      int kthToLast(ListNode* head, int k) {
+          ListNode* fast = head;
+          ListNode* slow = head;
+          while (k-- > 0) {
+              fast = fast->next;
+          }
+          while (fast) {
+              slow = slow->next;
+              fast = fast->next;
+          }
+          return slow->val;
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

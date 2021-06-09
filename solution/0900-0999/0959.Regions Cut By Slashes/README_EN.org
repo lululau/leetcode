@@ -1,0 +1,308 @@
+* [[https://leetcode.com/problems/regions-cut-by-slashes][959. Regions
+Cut By Slashes]]
+  :PROPERTIES:
+  :CUSTOM_ID: regions-cut-by-slashes
+  :END:
+[[./solution/0900-0999/0959.Regions Cut By Slashes/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+In a N x N grid composed of 1 x 1 squares, each 1 x 1 square consists of
+a /, </code>, or blank space.  These characters divide the square into
+contiguous regions.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+(Note that backslash characters are escaped, so a </code> is represented
+as "\".)
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the number of regions.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:
+
+  </strong><span id="example-input-1-1">[
+
+  &nbsp; &quot; /&quot;,
+
+  &nbsp; &quot;/ &quot;
+
+  ]</span>
+
+  <strong>Output: </strong><span id="example-output-1">2</span>
+
+  <strong>Explanation: </strong>The 2x2 grid is as follows:
+
+  <img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0900-0999/0959.Regions Cut By Slashes/images/1.png" style="width: 82px; height: 82px;" />
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:
+
+  </strong><span id="example-input-2-1">[
+
+  &nbsp; &quot; /&quot;,
+
+  &nbsp; &quot;  &quot;
+
+  ]</span>
+
+  <strong>Output: </strong><span id="example-output-2">1</span>
+
+  <strong>Explanation: </strong>The 2x2 grid is as follows:
+
+  <img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0900-0999/0959.Regions Cut By Slashes/images/2.png" style="width: 82px; height: 82px;" />
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:
+
+  </strong><span id="example-input-3-1">[
+
+  &nbsp; &quot;\\/&quot;,
+
+  &nbsp; &quot;/\\&quot;
+
+  ]</span>
+
+  <strong>Output: </strong><span id="example-output-3">4</span>
+
+  <strong>Explanation: </strong>(Recall that because \ characters are escaped, &quot;\\/&quot; refers to \/, and &quot;/\\&quot; refers to /\.)
+
+  The 2x2 grid is as follows:
+
+  <img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0900-0999/0959.Regions Cut By Slashes/images/3.png" style="width: 82px; height: 82px;" />
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:
+
+  </strong><span id="example-input-4-1">[
+
+  &nbsp; &quot;/\\&quot;,
+
+  &nbsp; &quot;\\/&quot;
+
+  ]</span>
+
+  <strong>Output: </strong><span id="example-output-4">5</span>
+
+  <strong>Explanation: </strong>(Recall that because \ characters are escaped, &quot;/\\&quot; refers to /\, and &quot;\\/&quot; refers to \/.)
+
+  The 2x2 grid is as follows:
+
+  <img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0900-0999/0959.Regions Cut By Slashes/images/4.png" style="width: 82px; height: 82px;" />
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:
+
+  </strong><span id="example-input-5-1">[
+
+  &nbsp; &quot;//&quot;,
+
+  &nbsp; &quot;/ &quot;
+
+  ]</span>
+
+  <strong>Output: </strong><span id="example-output-5">3</span>
+
+  <strong>Explanation: </strong>The 2x2 grid is as follows:
+
+  <img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0900-0999/0959.Regions Cut By Slashes/images/5.png" style="width: 82px; height: 82px;" />
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= grid.length == grid[0].length <= 30
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+grid[i][j] is either '/', '&#39;, or ' '.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

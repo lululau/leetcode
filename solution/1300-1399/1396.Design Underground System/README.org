@@ -1,0 +1,395 @@
+* [[https://leetcode-cn.com/problems/design-underground-system][1396.
+设计地铁系统]]
+  :PROPERTIES:
+  :CUSTOM_ID: 设计地铁系统
+  :END:
+[[./solution/1300-1399/1396.Design Underground System/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你实现一个类 UndergroundSystem ，它支持以下 3 种方法：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+1. checkIn(int id, string stationName, int t)
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+编号为 id 的乘客在 t 时刻进入地铁站 stationName 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+一个乘客在同一时间只能在一个地铁站进入或者离开。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+2. checkOut(int id, string stationName, int t)
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+编号为 id 的乘客在 t 时刻离开地铁站 stationName 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+3. getAverageTime(string startStation, string endStation) 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+返回从地铁站 startStation 到地铁站 endStation 的平均花费时间。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+平均时间计算的行程包括当前为止所有从 startStation 直接到达 endStation 的行程。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+调用 getAverageTime 时，询问的路线至少包含一趟行程。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你可以假设所有对 checkIn 和 checkOut 的调用都是符合逻辑的。也就是说，如果一个顾客在
+t1 时刻到达某个地铁站，那么他离开的时间 t2 一定满足 t2 >
+t1 。所有的事件都按时间顺序给出。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>
+  [&quot;UndergroundSystem&quot;,&quot;checkIn&quot;,&quot;checkIn&quot;,&quot;checkIn&quot;,&quot;checkOut&quot;,&quot;checkOut&quot;,&quot;checkOut&quot;,&quot;getAverageTime&quot;,&quot;getAverageTime&quot;,&quot;checkIn&quot;,&quot;getAverageTime&quot;,&quot;checkOut&quot;,&quot;getAverageTime&quot;]
+  [[],[45,&quot;Leyton&quot;,3],[32,&quot;Paradise&quot;,8],[27,&quot;Leyton&quot;,10],[45,&quot;Waterloo&quot;,15],[27,&quot;Waterloo&quot;,20],[32,&quot;Cambridge&quot;,22],[&quot;Paradise&quot;,&quot;Cambridge&quot;],[&quot;Leyton&quot;,&quot;Waterloo&quot;],[10,&quot;Leyton&quot;,24],[&quot;Leyton&quot;,&quot;Waterloo&quot;],[10,&quot;Waterloo&quot;,38],[&quot;Leyton&quot;,&quot;Waterloo&quot;]]
+
+  <strong>输出：</strong>
+  [null,null,null,null,null,null,null,14.0,11.0,null,11.0,null,12.0]
+
+  <strong>解释：</strong>
+  UndergroundSystem undergroundSystem = new UndergroundSystem();
+  undergroundSystem.checkIn(45, &quot;Leyton&quot;, 3);
+  undergroundSystem.checkIn(32, &quot;Paradise&quot;, 8);
+  undergroundSystem.checkIn(27, &quot;Leyton&quot;, 10);
+  undergroundSystem.checkOut(45, &quot;Waterloo&quot;, 15);
+  undergroundSystem.checkOut(27, &quot;Waterloo&quot;, 20);
+  undergroundSystem.checkOut(32, &quot;Cambridge&quot;, 22);
+  undergroundSystem.getAverageTime(&quot;Paradise&quot;, &quot;Cambridge&quot;);       // 返回 14.0。从 &quot;Paradise&quot;（时刻 8）到 &quot;Cambridge&quot;(时刻 22)的行程只有一趟
+  undergroundSystem.getAverageTime(&quot;Leyton&quot;, &quot;Waterloo&quot;);          // 返回 11.0。总共有 2 躺从 &quot;Leyton&quot; 到 &quot;Waterloo&quot; 的行程，编号为 id=45 的乘客出发于 time=3 到达于 time=15，编号为 id=27 的乘客于 time=10 出发于 time=20 到达。所以平均时间为 ( (15-3) + (20-10) ) / 2 = 11.0
+  undergroundSystem.checkIn(10, &quot;Leyton&quot;, 24);
+  undergroundSystem.getAverageTime(&quot;Leyton&quot;, &quot;Waterloo&quot;);          // 返回 11.0
+  undergroundSystem.checkOut(10, &quot;Waterloo&quot;, 38);
+  undergroundSystem.getAverageTime(&quot;Leyton&quot;, &quot;Waterloo&quot;);          // 返回 12.0</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+总共最多有 20000 次操作。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= id, t <= 10^6
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+所有的字符串包含大写字母，小写字母和数字。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= stationName.length <= 10
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+与标准答案误差在 10^-5 以内的结果都视为正确结果。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+"哈希表"实现。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class UndergroundSystem:
+
+      def __init__(self):
+          self.check_in_station = {}
+          self.check_in_time = {}
+          self.total_time = {}
+
+      def checkIn(self, id: int, stationName: str, t: int) -> None:
+          self.check_in_station[id] = stationName
+          self.check_in_time[id] = t
+
+      def checkOut(self, id: int, stationName: str, t: int) -> None:
+          cost = t - self.check_in_time.pop(id)
+          start_station = self.check_in_station.pop(id)
+          stations = start_station + '.' + stationName
+          times = self.total_time.get(stations, [0, 0])
+          times[0] += cost
+          times[1] += 1
+          self.total_time[stations] = times
+
+      def getAverageTime(self, startStation: str, endStation: str) -> float:
+          stations = startStation + '.' + endStation
+          times = self.total_time[stations]
+          return times[0] / times[1]
+
+
+  # Your UndergroundSystem object will be instantiated and called as such:
+  # obj = UndergroundSystem()
+  # obj.checkIn(id,stationName,t)
+  # obj.checkOut(id,stationName,t)
+  # param_3 = obj.getAverageTime(startStation,endStation)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class UndergroundSystem {
+      private Map<Integer, String> checkInStation;
+      private Map<Integer, Integer> checkInTime;
+      private Map<String, int[]> totalTime;
+
+      public UndergroundSystem() {
+          checkInStation = new HashMap<>();
+          checkInTime = new HashMap<>();
+          totalTime = new HashMap<>();
+      }
+
+      public void checkIn(int id, String stationName, int t) {
+          checkInStation.put(id, stationName);
+          checkInTime.put(id, t);
+      }
+
+      public void checkOut(int id, String stationName, int t) {
+          int cost = t - checkInTime.remove(id);
+          String startStation = checkInStation.remove(id);
+          String stations = startStation + "." + stationName;
+          int[] times = totalTime.getOrDefault(stations, new int[2]);
+          times[0] += cost;
+          ++times[1];
+          totalTime.put(stations, times);
+      }
+
+      public double getAverageTime(String startStation, String endStation) {
+          String stations = startStation + "." + endStation;
+          int[] times = totalTime.get(stations);
+          return times[0] * 1.0 / times[1];
+      }
+  }
+
+  /**
+   * Your UndergroundSystem object will be instantiated and called as such:
+   * UndergroundSystem obj = new UndergroundSystem();
+   * obj.checkIn(id,stationName,t);
+   * obj.checkOut(id,stationName,t);
+   * double param_3 = obj.getAverageTime(startStation,endStation);
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

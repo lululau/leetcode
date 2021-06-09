@@ -1,0 +1,238 @@
+* [[https://leetcode.com/problems/reverse-linked-list-ii][92. Reverse
+Linked List II]]
+  :PROPERTIES:
+  :CUSTOM_ID: reverse-linked-list-ii
+  :END:
+[[./solution/0000-0099/0092.Reverse Linked List II/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the head of a singly linked list and two integers left and right
+where left <= right, reverse the nodes of the list from position left to
+position right, and return the reversed list.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> head = [1,2,3,4,5], left = 2, right = 4
+  <strong>Output:</strong> [1,4,3,2,5]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> head = [5], left = 1, right = 1
+  <strong>Output:</strong> [5]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of nodes in the list is n.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 500
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-500 <= Node.val <= 500
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= left <= right <= n
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+Follow up: Could you do it in one pass?
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  # Definition for singly-linked list.
+  # class ListNode:
+  #     def __init__(self, x):
+  #         self.val = x
+  #         self.next = None
+
+  class Solution:
+      def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
+          if head is None or head.next is None or m == n:
+              return head
+          dummy = ListNode(0)
+          dummy.next = head
+          pre, cur = dummy, head
+          for _ in range(m - 1):
+              pre = cur
+              cur = cur.next
+          p, q = pre, cur
+          for _ in range(n - m + 1):
+              t = cur.next
+              cur.next = pre
+              pre = cur
+              cur = t
+          p.next = pre
+          q.next = cur
+          return dummy.next
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  /**
+   * Definition for singly-linked list.
+   * public class ListNode {
+   *     int val;
+   *     ListNode next;
+   *     ListNode(int x) { val = x; }
+   * }
+   */
+  class Solution {
+      public ListNode reverseBetween(ListNode head, int m, int n) {
+          if (head == null || head.next == null || m == n) {
+              return head;
+          }
+          ListNode dummy = new ListNode(0);
+          dummy.next = head;
+          ListNode pre = dummy, cur = head;
+          for (int i = 0; i < m - 1; ++i) {
+              pre = cur;
+              cur = cur.next;
+          }
+          ListNode p = pre, q = cur;
+          for (int i = 0; i < n - m + 1; ++i) {
+              ListNode t = cur.next;
+              cur.next = pre;
+              pre = cur;
+              cur = t;
+          }
+          p.next = pre;
+          q.next = cur;
+          return dummy.next;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

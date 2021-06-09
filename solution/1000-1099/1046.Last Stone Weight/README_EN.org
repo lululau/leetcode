@@ -1,0 +1,187 @@
+* [[https://leetcode.com/problems/last-stone-weight][1046. Last Stone
+Weight]]
+  :PROPERTIES:
+  :CUSTOM_ID: last-stone-weight
+  :END:
+[[./solution/1000-1099/1046.Last Stone Weight/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+We have a collection of stones, each stone has a positive integer
+weight.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Each turn, we choose the two heaviest stones and smash them together. 
+Suppose the stones have weights x and y with x <= y.  The result of this
+smash is:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If x == y, both stones are totally destroyed;
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If x != y, the stone of weight x is totally destroyed, and the stone of
+weight y has new weight y-x.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+At the end, there is at most 1 stone left.  Return the weight of this
+stone (or 0 if there are no stones left.)
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong>[2,7,4,1,8,1]
+  <strong>Output: </strong>1
+  <strong>Explanation: </strong>
+  We combine 7 and 8 to get 1 so the array converts to [2,4,1,1,1] then,
+  we combine 2 and 4 to get 2 so the array converts to [2,1,1,1] then,
+  we combine 2 and 1 to get 1 so the array converts to [1,1,1] then,
+  we combine 1 and 1 to get 0 so the array converts to [1] then that&#39;s the value of last stone.</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= stones.length <= 30
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= stones[i] <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

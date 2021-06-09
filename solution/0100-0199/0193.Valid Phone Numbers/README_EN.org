@@ -1,0 +1,124 @@
+* [[https://leetcode.com/problems/valid-phone-numbers][193. Valid Phone
+Numbers]]
+  :PROPERTIES:
+  :CUSTOM_ID: valid-phone-numbers
+  :END:
+[[./solution/0100-0199/0193.Valid Phone Numbers/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a text file file.txt that contains a list of phone numbers (one
+per line), write a one-liner bash script to print all valid phone
+numbers.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You may assume that a valid phone number must appear in one of the
+following two formats: (xxx) xxx-xxxx or xxx-xxx-xxxx. (x means a digit)
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You may also assume each line in the text file must not contain leading
+or trailing white spaces.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Assume that file.txt has the following content:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  987-123-4567
+  123 456 7890
+  (123) 456-7890
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Your script should output the following valid phone numbers:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  987-123-4567
+  (123) 456-7890
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

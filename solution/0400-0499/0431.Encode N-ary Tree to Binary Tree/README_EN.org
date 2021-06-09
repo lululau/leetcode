@@ -1,0 +1,178 @@
+* [[https://leetcode.com/problems/encode-n-ary-tree-to-binary-tree][431.
+Encode N-ary Tree to Binary Tree]]
+  :PROPERTIES:
+  :CUSTOM_ID: encode-n-ary-tree-to-binary-tree
+  :END:
+[[./solution/0400-0499/0431.Encode N-ary Tree to Binary Tree/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Design an algorithm to encode an N-ary tree into a binary tree and
+decode the binary tree to get the original N-ary tree. An N-ary tree is
+a rooted tree in which each node has no more than N children. Similarly,
+a binary tree is a rooted tree in which each node has no more than 2
+children. There is no restriction on how your encode/decode algorithm
+should work. You just need to ensure that an N-ary tree can be encoded
+to a binary tree and this binary tree can be decoded to the original
+N-nary tree structure.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Nary-Tree input serialization is represented in their level order
+traversal, each group of children is separated by the null value (See
+following example).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example, you may encode the following 3-ary tree to a binary tree in
+this way:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [1,null,3,2,4,null,5,6]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note that the above is just an example which might or might not work.
+You do not necessarily need to follow this format, so please be creative
+and come up with different approaches yourself.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The height of the n-ary tree is less than or equal to 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The total number of nodes is between [0, 10^4]
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Do not use class member/global/static variables to store states. Your
+encode and decode algorithms should be stateless.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

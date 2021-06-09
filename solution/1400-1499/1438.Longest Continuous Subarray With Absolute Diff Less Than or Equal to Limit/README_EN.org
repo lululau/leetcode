@@ -1,0 +1,190 @@
+* [[https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit][1438.
+Longest Continuous Subarray With Absolute Diff Less Than or Equal to
+Limit]]
+  :PROPERTIES:
+  :CUSTOM_ID: longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit
+  :END:
+[[./solution/1400-1499/1438.Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array of integers nums and an integer limit, return the size of
+the longest non-empty subarray such that the absolute difference between
+any two elements of this subarray is less than or equal to limit.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [8,2,4,7], limit = 4
+  <strong>Output:</strong> 2 
+  <strong>Explanation:</strong> All subarrays are: 
+  [8] with maximum absolute diff |8-8| = 0 &lt;= 4.
+  [8,2] with maximum absolute diff |8-2| = 6 &gt; 4. 
+  [8,2,4] with maximum absolute diff |8-2| = 6 &gt; 4.
+  [8,2,4,7] with maximum absolute diff |8-2| = 6 &gt; 4.
+  [2] with maximum absolute diff |2-2| = 0 &lt;= 4.
+  [2,4] with maximum absolute diff |2-4| = 2 &lt;= 4.
+  [2,4,7] with maximum absolute diff |2-7| = 5 &gt; 4.
+  [4] with maximum absolute diff |4-4| = 0 &lt;= 4.
+  [4,7] with maximum absolute diff |4-7| = 3 &lt;= 4.
+  [7] with maximum absolute diff |7-7| = 0 &lt;= 4. 
+  Therefore, the size of the longest subarray is 2.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [10,1,2,4,7,2], limit = 5
+  <strong>Output:</strong> 4 
+  <strong>Explanation:</strong> The subarray [2,4,7,2] is the longest since the maximum absolute diff is |2-7| = 5 &lt;= 5.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [4,2,2,2,4,4,2,2], limit = 0
+  <strong>Output:</strong> 3
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums[i] <= 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= limit <= 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

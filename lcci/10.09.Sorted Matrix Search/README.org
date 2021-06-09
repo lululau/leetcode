@@ -1,0 +1,160 @@
+* [[https://leetcode-cn.com/problems/sorted-matrix-search-lcci][面试题
+10.09. 排序矩阵查找]]
+  :PROPERTIES:
+  :CUSTOM_ID: 面试题-10.09.-排序矩阵查找
+  :END:
+[[./lcci/10.09.Sorted Matrix Search/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定M×N矩阵，每一行、每一列都按升序排列，请编写代码找出某元素。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+现有矩阵 matrix 如下：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>[
+    [1,   4,  7, 11, 15],
+    [2,   5,  8, 12, 19],
+    [3,   6,  9, 16, 22],
+    [10, 13, 14, 17, 24],
+    [18, 21, 23, 26, 30]
+  ]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定 target = 5，返回 true。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定 target = 20，返回 false。
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+从左下角（或右上角）开始查找即可。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+          if not matrix or not matrix[0]:
+              return False
+          rows, cols = len(matrix), len(matrix[0])
+          i, j = rows - 1, 0
+          while i >= 0 and j < cols:
+              if matrix[i][j] == target:
+                  return True
+              if matrix[i][j] > target:
+                  i -= 1
+              else:
+                  j += 1
+          return False
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public boolean searchMatrix(int[][] matrix, int target) {
+          if (matrix == null || matrix.length == 0 || matrix[0] == null || matrix[0].length == 0) {
+              return false;
+          }
+          int rows = matrix.length, cols = matrix[0].length;
+          int i = rows - 1, j = 0;
+          while (i >= 0 && j < cols) {
+              if (matrix[i][j] == target) {
+                  return true;
+              }
+              if (matrix[i][j] > target) {
+                  --i;
+              } else {
+                  ++j;
+              }
+          }
+          return false;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

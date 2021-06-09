@@ -1,0 +1,267 @@
+* [[https://leetcode.com/problems/maximum-number-of-visible-points][1610.
+Maximum Number of Visible Points]]
+  :PROPERTIES:
+  :CUSTOM_ID: maximum-number-of-visible-points
+  :END:
+[[./solution/1600-1699/1610.Maximum Number of Visible Points/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given an array points, an integer angle, and your location,
+where location = [posx, posy] and points[i] = [xi, yi] both denote
+integral coordinates on the X-Y plane.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Initially, you are facing directly east from your position. You cannot
+move from your position, but you can rotate. In other words, posx and
+posy cannot be changed. Your field of view in degrees is represented by
+angle, determining how wide you can see from any given view direction.
+Let d be the amount in degrees that you rotate counterclockwise. Then,
+your field of view is the inclusive range of angles [d - angle/2, d +
+angle/2].
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  <video autoplay="" controls="" height="360" muted="" style="max-width:100%;height:auto;" width="480">
+#+end_html
+
+#+begin_html
+  <source src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/1600-1699/1610.Maximum Number of Visible Points/images/angle.mp4" type="video/mp4" />
+#+end_html
+
+Your browser does not support the video tag or this video format.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You can see some set of points if, for each point, the angle formed by
+the point, your position, and the immediate east direction from your
+position is in your field of view.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+There can be multiple points at one coordinate. There may be points at
+your location, and you can always see these points regardless of your
+rotation. Points do not obstruct your vision to other points.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the maximum number of points you can see.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> points = [[2,1],[2,2],[3,3]], angle = 90, location = [1,1]
+  <strong>Output:</strong> 3
+  <strong>Explanation:</strong> The shaded region represents your field of view. All points can be made visible in your field of view, including [3,3] even though [2,2] is in front and in the same line of sight.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> points = [[2,1],[2,2],[3,4],[1,1]], angle = 90, location = [1,1]
+  <strong>Output:</strong> 4
+  <strong>Explanation:</strong> All points can be made visible in your field of view, including the one at your location.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> points = [[1,0],[2,1]], angle = 13, location = [1,1]
+  <strong>Output:</strong> 1
+  <strong>Explanation:</strong> You can only see one of the two points, as shown above.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= points.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+points[i].length == 2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+location.length == 2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= angle < 360
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= posx, posy, xi, yi <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

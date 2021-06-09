@@ -1,0 +1,258 @@
+* [[https://leetcode-cn.com/problems/minimum-operations-to-make-the-array-increasing][1827.
+最少操作使数组递增]]
+  :PROPERTIES:
+  :CUSTOM_ID: 最少操作使数组递增
+  :END:
+[[./solution/1800-1899/1827.Minimum Operations to Make the Array Increasing/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个整数数组 nums （下标从 0
+开始）。每一次操作中，你可以选择数组中一个元素，并将它增加 1 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+比方说，如果 nums = [1,2,3] ，你可以选择增加 nums[1] 得到 nums =
+[1,3,3] 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你返回使 nums 严格递增 的 最少 操作次数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+我们称数组 nums 是 严格递增的 ，当它满足对于所有的 0 <= i <
+nums.length - 1 都有 nums[i] < nums[i+1] 。一个长度为
+1 的数组是严格递增的一种特殊情况。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><b>输入：</b>nums = [1,1,1]
+  <b>输出：</b>3
+  <b>解释：</b>你可以进行如下操作：
+  1) 增加 nums[2] ，数组变为 [1,1,<strong>2</strong>] 。
+  2) 增加 nums[1] ，数组变为 [1,<strong>2</strong>,2] 。
+  3) 增加 nums[2] ，数组变为 [1,2,<strong>3</strong>] 。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><b>输入：</b>nums = [1,5,2,4,1]
+  <b>输出：</b>14
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><b>输入：</b>nums = [8]
+  <b>输出：</b>0
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 5000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums[i] <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+遍历数组，维护一个 preMax 变量。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def minOperations(self, nums: List[int]) -> int:
+          n = len(nums)
+          pre_max = nums[0]
+          times = 0
+          for i in range(1, n):
+              if nums[i] <= pre_max:
+                  steps = pre_max - nums[i] + 1
+                  times += steps
+                  pre_max = nums[i] + steps
+              else:
+                  pre_max = nums[i]
+          return times
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int minOperations(int[] nums) {
+          int n = nums.length;
+          int preMax = nums[0];
+          int times = 0;
+          for (int i = 1; i < n; ++i) {
+              if (nums[i] <= preMax) {
+                  int steps = preMax - nums[i] + 1;
+                  times += steps;
+                  preMax = nums[i] + steps;
+              } else {
+                  preMax = nums[i];
+              }
+          }
+          return times;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

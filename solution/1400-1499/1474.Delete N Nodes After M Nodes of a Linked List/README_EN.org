@@ -1,0 +1,347 @@
+* [[https://leetcode.com/problems/delete-n-nodes-after-m-nodes-of-a-linked-list][1474.
+Delete N Nodes After M Nodes of a Linked List]]
+  :PROPERTIES:
+  :CUSTOM_ID: delete-n-nodes-after-m-nodes-of-a-linked-list
+  :END:
+[[./solution/1400-1499/1474.Delete N Nodes After M Nodes of a Linked List/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the head of a linked list and two integers m and n. Traverse the
+linked list and remove some nodes in the following way:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Start with the head as the current node.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Keep the first m nodes starting with the current node.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Remove the next n nodes
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Keep repeating steps 2 and 3 until you reach the end of the list.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the head of the modified list after removing the mentioned nodes.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow up question: How can you solve this problem by modifying the list
+in-place?
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> head = [1,2,3,4,5,6,7,8,9,10,11,12,13], m = 2, n = 3
+
+  <strong>Output:</strong> [1,2,6,7,11,12]
+
+  <strong>Explanation: </strong>Keep the first (m = 2) nodes starting from the head of the linked List  (1 -&gt;2) show in black nodes.
+
+  Delete the next (n = 3) nodes (3 -&gt; 4 -&gt; 5) show in read nodes.
+
+  Continue with the same procedure until reaching the tail of the Linked List.
+
+  Head of linked list after removing nodes is returned.</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> head = [1,2,3,4,5,6,7,8,9,10,11], m = 1, n = 3
+
+  <strong>Output:</strong> [1,5,9]
+
+  <strong>Explanation:</strong> Head of linked list after removing nodes is returned.</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> head = [1,2,3,4,5,6,7,8,9,10,11], m = 3, n = 1
+
+  <strong>Output:</strong> [1,2,3,5,6,7,9,10,11]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> head = [9,3,7,7,9,10,8,2], m = 1, n = 2
+
+  <strong>Output:</strong> [9,7,8]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The given linked list will contain between 1 and 10^4 nodes.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The value of each node in the linked list will be in the range [1,
+10^6].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= m,n <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  # Definition for singly-linked list.
+  # class ListNode:
+  #     def __init__(self, val=0, next=None):
+  #         self.val = val
+  #         self.next = next
+  class Solution:
+      def deleteNodes(self, head: ListNode, m: int, n: int) -> ListNode:
+          pre = head
+          while pre:
+              for i in range(m - 1):
+                  if pre:
+                      pre = pre.next
+              if pre is None:
+                  return head
+              cur = pre
+              for i in range(n):
+                  if cur:
+                      cur = cur.next
+              pre.next = None if cur is None else cur.next
+              pre = pre.next
+          return head
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  /**
+   * Definition for singly-linked list.
+   * public class ListNode {
+   *     int val;
+   *     ListNode next;
+   *     ListNode() {}
+   *     ListNode(int val) { this.val = val; }
+   *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+   * }
+   */
+  class Solution {
+      public ListNode deleteNodes(ListNode head, int m, int n) {
+          ListNode pre = head;
+          while (pre != null) {
+              for (int i = 0; i < m - 1 && pre != null; ++i) {
+                  pre = pre.next;
+              }
+              if (pre == null) {
+                  return head;
+              }
+              ListNode cur = pre;
+              for (int i = 0; i < n && cur != null; ++i) {
+                  cur = cur.next;
+              }
+              pre.next = cur == null ? null : cur.next;
+              pre = pre.next;
+          }
+          return head;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

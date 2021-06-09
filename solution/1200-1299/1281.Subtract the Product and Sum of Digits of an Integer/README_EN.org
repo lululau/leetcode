@@ -1,0 +1,137 @@
+* [[https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer][1281.
+Subtract the Product and Sum of Digits of an Integer]]
+  :PROPERTIES:
+  :CUSTOM_ID: subtract-the-product-and-sum-of-digits-of-an-integer
+  :END:
+[[./solution/1200-1299/1281.Subtract the Product and Sum of Digits of an Integer/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+Given an integer number n, return the difference between the product of
+its digits and the sum of its digits.
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> n = 234
+  <strong>Output:</strong> 15 
+  <b>Explanation:</b> 
+  Product of digits = 2 * 3 * 4 = 24 
+  Sum of digits = 2 + 3 + 4 = 9 
+  Result = 24 - 9 = 15
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> n = 4421
+  <strong>Output:</strong> 21
+  <b>Explanation: 
+  </b>Product of digits = 4 * 4 * 2 * 1 = 32 
+  Sum of digits = 4 + 4 + 2 + 1 = 11 
+  Result = 32 - 11 = 21
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 10^5
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

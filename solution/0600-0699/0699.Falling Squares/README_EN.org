@@ -1,0 +1,267 @@
+* [[https://leetcode.com/problems/falling-squares][699. Falling
+Squares]]
+  :PROPERTIES:
+  :CUSTOM_ID: falling-squares
+  :END:
+[[./solution/0600-0699/0699.Falling Squares/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+On an infinite number line (x-axis), we drop given squares in the order
+they are given.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The i-th square dropped (positions[i] = (left, side_length)) is a square
+with the left-most point being positions[i][0] and sidelength
+positions[i][1].
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The square is dropped with the bottom edge parallel to the number line,
+and from a higher height than all currently landed squares. We wait for
+each square to stick before dropping the next.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The squares are infinitely sticky on their bottom edge, and will remain
+fixed to any positive length surface they touch (either the number line
+or another square). Squares dropped adjacent to each other will not
+stick together prematurely.
+
+#+begin_html
+  </p>
+#+end_html
+
+ 
+
+#+begin_html
+  <p>
+#+end_html
+
+Return a list ans of heights. Each height ans[i] represents the current
+highest height of any square we have dropped, after dropping squares
+represented by positions[0], positions[1], ..., positions[i].
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> [[1, 2], [2, 3], [6, 1]]
+
+  <b>Output:</b> [2, 5, 5]
+
+  <b>Explanation:</b>
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+After the first drop of positions[0] = [1, 2]: _aa _aa ------- The
+maximum height of any square is 2.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+After the second drop of positions[1] = [2, 3]: __aaa __aaa __aaa _aa__
+_aa__ -------------- The maximum height of any square is 5. The larger
+square stays on top of the smaller square despite where its center of
+gravity is, because squares are infinitely sticky on their bottom edge.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+After the third drop of positions[1] = [6, 1]: __aaa __aaa __aaa _aa
+_aa___a -------------- The maximum height of any square is still 5.
+Thus, we return an answer of [2, 5, 5].
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+ 
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> [[100, 100], [200, 100]]
+
+  <b>Output:</b> [100, 100]
+
+  <b>Explanation:</b> Adjacent squares don&#39;t get stuck prematurely - only their bottom edge can stick to surfaces.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= positions.length <= 1000.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= positions[i][0] <= 10^8.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= positions[i][1] <= 10^6.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

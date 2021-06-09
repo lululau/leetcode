@@ -1,0 +1,174 @@
+* [[https://leetcode-cn.com/problems/hamming-distance][461. 汉明距离]]
+  :PROPERTIES:
+  :CUSTOM_ID: 汉明距离
+  :END:
+[[./solution/0400-0499/0461.Hamming Distance/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给出两个整数 x 和 y，计算它们之间的汉明距离。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意： 0 ≤ x, y < 231.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入:</strong> x = 1, y = 4
+
+  <strong>输出:</strong> 2
+
+  <strong>解释:</strong>
+  1   (0 0 0 1)
+  4   (0 1 0 0)
+         &uarr;   &uarr;
+
+  上面的箭头指出了对应二进制位不同的位置。
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+利用异或运算的规律找出不同的位
+
+- 0 ^ 0 = 0
+- 1 ^ 1 = 0
+- 0 ^ 1 = 1
+- 1 ^ 0 = 1
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def hammingDistance(self, x: int, y: int) -> int:
+          num, count = x ^ y, 0
+          while num != 0:
+              num &= num - 1
+              count += 1
+          return count
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int hammingDistance(int x, int y) {
+          int num = x ^ y;
+          int count = 0;
+          while (num != 0) {
+              num &= num - 1;
+              count++;
+          }
+          return count;
+      }
+  }
+#+end_src
+
+或者利用库函数 =Integer.bitCount()=
+
+#+begin_src java
+  class Solution {
+      public int hammingDistance(int x, int y) {
+          return Integer.bitCount(x ^ y);
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number} x
+   * @param {number} y
+   * @return {number}
+   */
+  var hammingDistance = function(x, y) {
+      let distance = x ^ y;
+      let count = 0;
+      while (distance != 0) {
+          count++;
+          distance &= (distance - 1);
+      }
+      return count;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

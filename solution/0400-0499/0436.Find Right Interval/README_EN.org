@@ -1,0 +1,213 @@
+* [[https://leetcode.com/problems/find-right-interval][436. Find Right
+Interval]]
+  :PROPERTIES:
+  :CUSTOM_ID: find-right-interval
+  :END:
+[[./solution/0400-0499/0436.Find Right Interval/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given an array of intervals, where intervals[i] = [starti,
+endi] and each starti is unique.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The right interval for an interval i is an interval j such that
+startj >= endi and startj is minimized.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return an array of right interval indices for each interval i. If
+no right interval exists for interval i, then put -1 at index i.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> intervals = [[1,2]]
+  <strong>Output:</strong> [-1]
+  <strong>Explanation:</strong> There is only one interval in the collection, so it outputs -1.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> intervals = [[3,4],[2,3],[1,2]]
+  <strong>Output:</strong> [-1,0,1]
+  <strong>Explanation:</strong> There is no right interval for [3,4].
+  The right interval for [2,3] is [3,4] since start<sub>0</sub>&nbsp;= 3 is the smallest start that is &gt;= end<sub>1</sub>&nbsp;= 3.
+  The right interval for [1,2] is [2,3] since start<sub>1</sub>&nbsp;= 2 is the smallest start that is &gt;= end<sub>2</sub>&nbsp;= 2.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> intervals = [[1,4],[2,3],[3,4]]
+  <strong>Output:</strong> [-1,2,-1]
+  <strong>Explanation:</strong> There is no right interval for [1,4] and [3,4].
+  The right interval for [2,3] is [3,4] since start<sub>2</sub> = 3 is the smallest start that is &gt;= end<sub>1</sub>&nbsp;= 3.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= intervals.length <= 2 * 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+intervals[i].length == 2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-106 <= starti <= endi <= 106
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The start point of each interval is unique.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

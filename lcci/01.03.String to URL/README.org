@@ -1,0 +1,176 @@
+* [[https://leetcode-cn.com/problems/string-to-url-lcci][面试题 01.03.
+URL 化]]
+  :PROPERTIES:
+  :CUSTOM_ID: 面试题-01.03.-url-化
+  :END:
+[[./lcci/01.03.String to URL/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+URL化。编写一种方法，将字符串中的空格全部替换为 。假定该字符串尾部有足够的空间存放新增字符，并且知道字符串的“真实”长度。（注：用Java实现的话，请使用字符数组实现，以便直接在数组上操作。）
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong> 输入</strong>：&quot;Mr John Smith    &quot;, 13
+  <strong> 输出</strong>：&quot;Mr John Smith&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong> 输入</strong>：&quot;               &quot;, 5
+  <strong> 输出</strong>：&quot;     &quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+字符串长度在[0, 500000]范围内。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+直接利用 =replace= 将所有 == 替换为 = =：
+
+#+begin_src python
+  class Solution:
+      def replaceSpaces(self, S: str, length: int) -> str:
+          return S[:length].replace(' ', ' ')
+#+end_src
+
+初始化一个空列表 =chars=，遍历字符串中每个字符 =c=，遇到空格字符时，往
+=chars= 中追加元素 = =，否则追加 =c=。最后返回 =''.join(chars)= 即可。
+
+#+begin_src python
+  class Solution:
+      def replaceSpaces(self, S: str, length: int) -> str:
+          chars = []
+          for c in S[:length]:
+              chars.append(' ' if c == ' ' else c)
+          return ''.join(chars)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public String replaceSpaces(String S, int length) {
+          char[] chars = S.toCharArray();
+          int j = chars.length;
+          for (int i = length - 1; i >= 0; --i) {
+              if (chars[i] == ' ') {
+                  chars[--j] = '0';
+                  chars[--j] = '2';
+                  chars[--j] = '%';
+              } else {
+                  chars[--j] = chars[i];
+              }
+          }
+          return new String(chars, j, chars.length - j);
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {string} S
+   * @param {number} length
+   * @return {string}
+   */
+  var replaceSpaces = function(S, length) {
+      return encodeURI(S.substring(0,length));
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

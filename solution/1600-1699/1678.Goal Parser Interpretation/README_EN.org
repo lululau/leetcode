@@ -1,0 +1,184 @@
+* [[https://leetcode.com/problems/goal-parser-interpretation][1678. Goal
+Parser Interpretation]]
+  :PROPERTIES:
+  :CUSTOM_ID: goal-parser-interpretation
+  :END:
+[[./solution/1600-1699/1678.Goal Parser Interpretation/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You own a Goal Parser that can interpret a string command. The command
+consists of an alphabet of "G", "()" and/or "(al)" in some order. The
+Goal Parser will interpret "G" as the string "G", "()" as the string
+"o", and "(al)" as the string "al". The interpreted strings are then
+concatenated in the original order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the string command, return the Goal Parser's interpretation of
+command.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> command = &quot;G()(al)&quot;
+  <strong>Output:</strong> &quot;Goal&quot;
+  <strong>Explanation:</strong>&nbsp;The Goal Parser interprets the command as follows:
+  G -&gt; G
+  () -&gt; o
+  (al) -&gt; al
+  The final concatenated result is &quot;Goal&quot;.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> command = &quot;G()()()()(al)&quot;
+  <strong>Output:</strong> &quot;Gooooal&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> command = &quot;(al)G(al)()()G&quot;
+  <strong>Output:</strong> &quot;alGalooG&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= command.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+command consists of "G", "()", and/or "(al)" in some order.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

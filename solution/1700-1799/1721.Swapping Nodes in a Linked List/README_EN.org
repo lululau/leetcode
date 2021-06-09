@@ -1,0 +1,266 @@
+* [[https://leetcode.com/problems/swapping-nodes-in-a-linked-list][1721.
+Swapping Nodes in a Linked List]]
+  :PROPERTIES:
+  :CUSTOM_ID: swapping-nodes-in-a-linked-list
+  :END:
+[[./solution/1700-1799/1721.Swapping Nodes in a Linked List/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given the head of a linked list, and an integer k.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the head of the linked list after swapping the values of the kth
+node from the beginning and the kth node from the end (the list is
+1-indexed).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> head = [1,2,3,4,5], k = 2
+  <strong>Output:</strong> [1,4,3,2,5]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> head = [7,9,6,6,7,8,3,0,9,5], k = 5
+  <strong>Output:</strong> [7,9,6,6,8,7,3,0,9,5]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> head = [1], k = 1
+  <strong>Output:</strong> [1]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> head = [1,2], k = 1
+  <strong>Output:</strong> [2,1]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> head = [1,2,3], k = 2
+  <strong>Output:</strong> [1,2,3]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of nodes in the list is n.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= k <= n <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= Node.val <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  # Definition for singly-linked list.
+  # class ListNode:
+  #     def __init__(self, val=0, next=None):
+  #         self.val = val
+  #         self.next = next
+  class Solution:
+      def swapNodes(self, head: ListNode, k: int) -> ListNode:
+          fast = head
+          for _ in range(k - 1):
+              fast = fast.next
+          p = fast
+          slow = head
+          while fast.next:
+              slow, fast = slow.next, fast.next
+          q = slow
+          p.val, q.val = q.val, p.val
+          return head
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  /**
+   * Definition for singly-linked list.
+   * public class ListNode {
+   *     int val;
+   *     ListNode next;
+   *     ListNode() {}
+   *     ListNode(int val) { this.val = val; }
+   *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+   * }
+   */
+  class Solution {
+      public ListNode swapNodes(ListNode head, int k) {
+          ListNode fast = head;
+          while (--k > 0) {
+              fast = fast.next;
+          }
+          ListNode p = fast;
+          ListNode slow = head;
+          while (fast.next != null) {
+              slow = slow.next;
+              fast = fast.next;
+          }
+          ListNode q = slow;
+          int t = p.val;
+          p.val = q.val;
+          q.val = t;
+          return head;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

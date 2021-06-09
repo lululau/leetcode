@@ -1,0 +1,338 @@
+* [[https://leetcode-cn.com/problems/time-based-key-value-store][981.
+基于时间的键值存储]]
+  :PROPERTIES:
+  :CUSTOM_ID: 基于时间的键值存储
+  :END:
+[[./solution/0900-0999/0981.Time Based Key-Value Store/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+创建一个基于时间的键值存储类 TimeMap，它支持下面两个操作：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+1. set(string key, string value, int timestamp)
+
+   #+begin_html
+     </p>
+   #+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+存储键 key、值 value，以及给定的时间戳 timestamp。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+2. get(string key, int timestamp)
+
+   #+begin_html
+     </p>
+   #+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+返回先前调用 set(key, value,
+timestamp_prev) 所存储的值，其中 timestamp_prev <= timestamp。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+如果有多个这样的值，则返回对应最大的  timestamp_prev 的那个值。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+如果没有值，则返回空字符串（""）。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>inputs = [&quot;TimeMap&quot;,&quot;set&quot;,&quot;get&quot;,&quot;get&quot;,&quot;set&quot;,&quot;get&quot;,&quot;get&quot;], inputs = [[],[&quot;foo&quot;,&quot;bar&quot;,1],[&quot;foo&quot;,1],[&quot;foo&quot;,3],[&quot;foo&quot;,&quot;bar2&quot;,4],[&quot;foo&quot;,4],[&quot;foo&quot;,5]]
+  <strong>输出：</strong>[null,null,&quot;bar&quot;,&quot;bar&quot;,null,&quot;bar2&quot;,&quot;bar2&quot;]
+  <strong>解释：</strong>&nbsp; 
+  TimeMap kv; &nbsp; 
+  kv.set(&quot;foo&quot;, &quot;bar&quot;, 1); // 存储键 &quot;foo&quot; 和值 &quot;bar&quot; 以及时间戳 timestamp = 1 &nbsp; 
+  kv.get(&quot;foo&quot;, 1);  // 输出 &quot;bar&quot; &nbsp; 
+  kv.get(&quot;foo&quot;, 3); // 输出 &quot;bar&quot; 因为在时间戳 3 和时间戳 2 处没有对应 &quot;foo&quot; 的值，所以唯一的值位于时间戳 1 处（即 &quot;bar&quot;） &nbsp; 
+  kv.set(&quot;foo&quot;, &quot;bar2&quot;, 4); &nbsp; 
+  kv.get(&quot;foo&quot;, 4); // 输出 &quot;bar2&quot; &nbsp; 
+  kv.get(&quot;foo&quot;, 5); // 输出 &quot;bar2&quot; &nbsp; 
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>inputs = [&quot;TimeMap&quot;,&quot;set&quot;,&quot;set&quot;,&quot;get&quot;,&quot;get&quot;,&quot;get&quot;,&quot;get&quot;,&quot;get&quot;], inputs = [[],[&quot;love&quot;,&quot;high&quot;,10],[&quot;love&quot;,&quot;low&quot;,20],[&quot;love&quot;,5],[&quot;love&quot;,10],[&quot;love&quot;,15],[&quot;love&quot;,20],[&quot;love&quot;,25]]
+  <strong>输出：</strong>[null,null,null,&quot;&quot;,&quot;high&quot;,&quot;high&quot;,&quot;low&quot;,&quot;low&quot;]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+所有的键/值字符串都是小写的。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+所有的键/值字符串长度都在 [1, 100] 范围内。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+所有 TimeMap.set 操作中的时间戳 timestamps 都是严格递增的。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= timestamp <= 10^7
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+TimeMap.set 和 TimeMap.get 函数在每个测试用例中将（组合）调用总计 120000
+次。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+嵌套哈希表实现。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class TimeMap:
+
+      def __init__(self):
+          """
+          Initialize your data structure here.
+          """
+          self.ktv = collections.defaultdict(list)
+
+      def set(self, key: str, value: str, timestamp: int) -> None:
+          self.ktv[key].append((timestamp, value))
+
+      def get(self, key: str, timestamp: int) -> str:
+          if key not in self.ktv:
+              return ''
+          tv = self.ktv[key]
+          # #查找第一个大于timestamp的
+          i = bisect.bisect_right(tv, (timestamp, chr(127)))
+          return tv[i - 1][1] if i else ''
+
+
+
+  # Your TimeMap object will be instantiated and called as such:
+  # obj = TimeMap()
+  # obj.set(key,value,timestamp)
+  # param_2 = obj.get(key,timestamp)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class TimeMap {
+      private Map<String, TreeMap<Integer, String>> ktv;
+
+      /** Initialize your data structure here. */
+      public TimeMap() {
+          ktv = new HashMap<>();
+      }
+
+      public void set(String key, String value, int timestamp) {
+          TreeMap<Integer, String> tv = ktv.getOrDefault(key, new TreeMap<>());
+          tv.put(timestamp, value);
+          ktv.put(key, tv);
+      }
+
+      public String get(String key, int timestamp) {
+          if (!ktv.containsKey(key)) {
+              return "";
+          }
+          TreeMap<Integer, String> tv = ktv.get(key);
+          Integer t = tv.floorKey(timestamp);
+          return t == null ? "" : tv.get(t);
+      }
+  }
+
+  /**
+   * Your TimeMap object will be instantiated and called as such:
+   * TimeMap obj = new TimeMap();
+   * obj.set(key,value,timestamp);
+   * String param_2 = obj.get(key,timestamp);
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

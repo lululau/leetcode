@@ -1,0 +1,300 @@
+* [[https://leetcode.com/problems/reverse-words-in-a-string][151.
+Reverse Words in a String]]
+  :PROPERTIES:
+  :CUSTOM_ID: reverse-words-in-a-string
+  :END:
+[[./solution/0100-0199/0151.Reverse Words in a String/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an input string s, reverse the order of the words.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A word is defined as a sequence of non-space characters. The words in s
+will be separated by at least one space.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return a string of the words in reverse order concatenated by a single
+space.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note that s may contain leading or trailing spaces or multiple spaces
+between two words. The returned string should only have a single space
+separating the words. Do not include any extra spaces.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;the sky is blue&quot;
+  <strong>Output:</strong> &quot;blue is sky the&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;  hello world  &quot;
+  <strong>Output:</strong> &quot;world hello&quot;
+  <strong>Explanation:</strong> Your reversed string should not contain leading or trailing spaces.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;a good   example&quot;
+  <strong>Output:</strong> &quot;example good a&quot;
+  <strong>Explanation:</strong> You need to reduce multiple spaces between two words to a single space in the reversed string.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;  Bob    Loves  Alice   &quot;
+  <strong>Output:</strong> &quot;Alice Loves Bob&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;Alice does not even like bob&quot;
+  <strong>Output:</strong> &quot;bob like even not does Alice&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s.length <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s contains English letters (upper-case and lower-case), digits, and
+spaces ' '.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+There is at least one word in s.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow up: Could you solve it in-place with O(1) extra space?
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def reverseWords(self, s: str) -> str:
+          words = s.strip().split()
+          return ' '.join(words[::-1])
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public String reverseWords(String s) {
+          List<String> words = Arrays.asList(s.trim().split("\\s+"));
+          Collections.reverse(words);
+          return String.join(" ", words);
+      }
+  }
+#+end_src
+
+*** *C#*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_example
+  public class Solution {
+      public string ReverseWords(string s) {
+           return string.Join(" ", s.Trim().Split(" ").Where(word => !string.IsNullOrEmpty(word) && !string.IsNullOrEmpty(word.Trim())).Reverse());
+      }
+  }
+#+end_example
+
+*** *TypeScript*
+    :PROPERTIES:
+    :CUSTOM_ID: typescript
+    :END:
+#+begin_example
+  function reverseWords(s: string): string {
+      let words: string[] = s.trim().split(/\s+/g);
+      words.reverse();
+      return words.join(' ');
+  };
+#+end_example
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

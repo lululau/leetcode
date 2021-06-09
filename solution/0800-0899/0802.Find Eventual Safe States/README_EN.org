@@ -1,0 +1,227 @@
+* [[https://leetcode.com/problems/find-eventual-safe-states][802. Find
+Eventual Safe States]]
+  :PROPERTIES:
+  :CUSTOM_ID: find-eventual-safe-states
+  :END:
+[[./solution/0800-0899/0802.Find Eventual Safe States/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+We start at some node in a directed graph, and every turn, we walk along
+a directed edge of the graph. If we reach a terminal node (that is, it
+has no outgoing directed edges), we stop.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+We define a starting node to be safe if we must eventually walk to a
+terminal node. More specifically, there is a natural number k, so that
+we must have stopped at a terminal node in less than k steps for any
+choice of where to walk.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return an array containing all the safe nodes of the graph. The answer
+should be sorted in ascending order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The directed graph has n nodes with labels from 0 to n - 1, where n is
+the length of graph. The graph is given in the following form: graph[i]
+is a list of labels j such that (i, j) is a directed edge of the graph,
+going from node i to node j.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> graph = [[1,2],[2,3],[5],[0],[5],[],[]]
+  <strong>Output:</strong> [2,4,5,6]
+  <strong>Explanation:</strong> The given graph is shown above.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> graph = [[1,2,3,4],[1,2],[3,4],[0,4],[]]
+  <strong>Output:</strong> [4]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n == graph.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= graph[i].legnth <= n
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+graph[i] is sorted in a strictly increasing order.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The graph may contain self-loops.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of edges in the graph will be in the range [1, 4 * 104].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

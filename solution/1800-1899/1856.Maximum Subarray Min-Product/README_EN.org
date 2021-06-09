@@ -1,0 +1,286 @@
+* [[https://leetcode.com/problems/maximum-subarray-min-product][1856.
+Maximum Subarray Min-Product]]
+  :PROPERTIES:
+  :CUSTOM_ID: maximum-subarray-min-product
+  :END:
+[[./solution/1800-1899/1856.Maximum Subarray Min-Product/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+The min-product of an array is equal to the minimum value in the array
+multiplied by the array's sum.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For example, the array [3,2,5] (minimum value is 2) has a min-product of
+2 * (3+2+5) = 2 * 10 = 20.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array of integers nums, return the maximum min-product of any
+non-empty subarray of nums. Since the answer may be large, return it
+modulo 109 + 7.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note that the min-product should be maximized before performing the
+modulo operation. Testcases are generated such that the maximum
+min-product without modulo will fit in a 64-bit signed integer.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A subarray is a contiguous part of an array.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [1,<u>2,3,2</u>]
+  <strong>Output:</strong> 14
+  <strong>Explanation:</strong> The maximum min-product is achieved with the subarray [2,3,2] (minimum value is 2).
+  2 * (2+3+2) = 2 * 7 = 14.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [2,<u>3,3</u>,1,2]
+  <strong>Output:</strong> 18
+  <strong>Explanation:</strong> The maximum min-product is achieved with the subarray [3,3] (minimum value is 3).
+  3 * (3+3) = 3 * 6 = 18.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [3,1,<u>5,6,4</u>,2]
+  <strong>Output:</strong> 60
+  <strong>Explanation:</strong> The maximum min-product is achieved with the subarray [5,6,4] (minimum value is 4).
+  4 * (5+6+4) = 4 * 15 = 60.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums[i] <= 107
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def maxSumMinProduct(self, nums: List[int]) -> int:
+          n = len(nums)
+          pre_sum = [0] * (n + 1)
+          for i in range(1, n + 1):
+              pre_sum[i] = pre_sum[i - 1] + nums[i - 1]
+
+          stack = []
+          next_lesser = [n] * n
+          for i in range(n):
+              while stack and nums[stack[-1]] > nums[i]:
+                  next_lesser[stack.pop()] = i
+              stack.append(i)
+
+          stack = []
+          prev_lesser = [-1] * n
+          for i in range(n - 1, -1, -1):
+              while stack and nums[stack[-1]] > nums[i]:
+                  prev_lesser[stack.pop()] = i
+              stack.append(i)
+
+          res = 0
+          for i in range(n):
+              start, end = prev_lesser[i], next_lesser[i]
+              t = nums[i] * (pre_sum[end] - pre_sum[start + 1])
+              res = max(res, t)
+          return res % (10 ** 9 + 7)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int maxSumMinProduct(int[] nums) {
+          int n = nums.length;
+          long[] preSum = new long[n + 1];
+          for (int i = 1; i < n + 1; ++i) {
+              preSum[i] = preSum[i - 1] + nums[i - 1];
+          }
+          Deque<Integer> stack = new ArrayDeque<>();
+          int[] nextLesser = new int[n];
+          Arrays.fill(nextLesser, n);
+          for (int i = 0; i < n; ++i) {
+              while (!stack.isEmpty() && nums[stack.peek()] > nums[i]) {
+                  nextLesser[stack.pop()] = i;
+              }
+              stack.push(i);
+          }
+
+          stack = new ArrayDeque<>();
+          int[] prevLesser = new int[n];
+          Arrays.fill(prevLesser, -1);
+          for (int i = n - 1; i >= 0; --i) {
+              while (!stack.isEmpty() && nums[stack.peek()] > nums[i]) {
+                  prevLesser[stack.pop()] = i;
+              }
+              stack.push(i);
+          }
+          long res = 0;
+          for (int i = 0; i < n; ++i) {
+              int start = prevLesser[i], end = nextLesser[i];
+              long t = nums[i] * (preSum[end] - preSum[start + 1]);
+              res = Math.max(res, t);
+          }
+          return (int) (res % 1000000007);
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,322 @@
+* [[https://leetcode-cn.com/problems/logger-rate-limiter][359.
+日志速率限制器]]
+  :PROPERTIES:
+  :CUSTOM_ID: 日志速率限制器
+  :END:
+[[./solution/0300-0399/0359.Logger Rate Limiter/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你设计一个日志系统，可以流式接收消息以及它的时间戳。每条 不重复
+的消息最多只能每 10 秒打印一次。也就是说，如果在时间戳 t
+打印某条消息，那么相同内容的消息直到时间戳变为 t + 10 之前都不会被打印。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+所有消息都按时间顺序发送。多条消息可能到达同一时间戳。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+实现 Logger 类：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Logger() 初始化 logger 对象
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+bool shouldPrintMessage(int timestamp, string message) 如果这条消息
+message 在给定的时间戳 timestamp 应该被打印出来，则返回 true
+，否则请返回 false 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>
+  ["Logger", "shouldPrintMessage", "shouldPrintMessage", "shouldPrintMessage", "shouldPrintMessage", "shouldPrintMessage", "shouldPrintMessage"]
+  [[], [1, "foo"], [2, "bar"], [3, "foo"], [8, "bar"], [10, "foo"], [11, "foo"]]
+  <strong>输出：</strong>
+  [null, true, true, false, false, false, true]
+
+  <strong>解释：</strong>
+  Logger logger = new Logger();
+  logger.shouldPrintMessage(1, "foo");  // 返回 true ，下一次 "foo" 可以打印的时间戳是 1 + 10 = 11
+  logger.shouldPrintMessage(2, "bar");  // 返回 true ，下一次 "bar" 可以打印的时间戳是 2 + 10 = 12
+  logger.shouldPrintMessage(3, "foo");  // 3 < 11 ，返回 false
+  logger.shouldPrintMessage(8, "bar");  // 8 < 12 ，返回 false
+  logger.shouldPrintMessage(10, "foo"); // 10 < 11 ，返回 false
+  logger.shouldPrintMessage(11, "foo"); // 11 >= 11 ，返回 true ，下一次 "foo" 可以打印的时间戳是 11 + 10 = 21
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= timestamp <= 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+每个 timestamp 都将按非递减顺序（时间顺序）传递
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= message.length <= 30
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+最多调用 104 次 shouldPrintMessage 方法
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+哈希表实现。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Logger:
+
+      def __init__(self):
+          """
+          Initialize your data structure here.
+          """
+          self.limiter = {}
+
+      def shouldPrintMessage(self, timestamp: int, message: str) -> bool:
+          """
+          Returns true if the message should be printed in the given timestamp, otherwise returns false.
+          If this method returns false, the message will not be printed.
+          The timestamp is in seconds granularity.
+          """
+          t = self.limiter.get(message, 0)
+          if t > timestamp:
+              return False
+          self.limiter[message] = timestamp + 10
+          return True
+
+
+  # Your Logger object will be instantiated and called as such:
+  # obj = Logger()
+  # param_1 = obj.shouldPrintMessage(timestamp,message)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Logger {
+
+      private Map<String, Integer> limiter;
+
+      /** Initialize your data structure here. */
+      public Logger() {
+          limiter = new HashMap<>();
+      }
+
+      /** Returns true if the message should be printed in the given timestamp, otherwise returns false.
+          If this method returns false, the message will not be printed.
+          The timestamp is in seconds granularity. */
+      public boolean shouldPrintMessage(int timestamp, String message) {
+          int t = limiter.getOrDefault(message, 0);
+          if (t > timestamp) {
+              return false;
+          }
+          limiter.put(message, timestamp + 10);
+          return true;
+      }
+  }
+
+  /**
+   * Your Logger object will be instantiated and called as such:
+   * Logger obj = new Logger();
+   * boolean param_1 = obj.shouldPrintMessage(timestamp,message);
+   */
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * Initialize your data structure here.
+   */
+  var Logger = function () {
+    this.limiter = {};
+  };
+
+  /**
+   * Returns true if the message should be printed in the given timestamp, otherwise returns false.
+          If this method returns false, the message will not be printed.
+          The timestamp is in seconds granularity. 
+   * @param {number} timestamp 
+   * @param {string} message
+   * @return {boolean}
+   */
+  Logger.prototype.shouldPrintMessage = function (timestamp, message) {
+    const t = this.limiter[message] || 0;
+    if (t > timestamp) {
+      return false;
+    }
+    this.limiter[message] = timestamp + 10;
+    return true;
+  };
+
+  /**
+   * Your Logger object will be instantiated and called as such:
+   * var obj = new Logger()
+   * var param_1 = obj.shouldPrintMessage(timestamp,message)
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

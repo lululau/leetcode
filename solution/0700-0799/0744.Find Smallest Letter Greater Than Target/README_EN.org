@@ -1,0 +1,191 @@
+* [[https://leetcode.com/problems/find-smallest-letter-greater-than-target][744.
+Find Smallest Letter Greater Than Target]]
+  :PROPERTIES:
+  :CUSTOM_ID: find-smallest-letter-greater-than-target
+  :END:
+[[./solution/0700-0799/0744.Find Smallest Letter Greater Than Target/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a list of sorted characters letters containing only lowercase
+letters, and given a target letter target, find the smallest element in
+the list that is larger than the given target.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Letters also wrap around. For example, if the target is target = 'z' and
+letters = ['a', 'b'], the answer is 'a'.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Examples:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b>
+
+  letters = ["c", "f", "j"]
+
+  target = "a"
+
+  <b>Output:</b> "c"
+
+
+
+  <b>Input:</b>
+
+  letters = ["c", "f", "j"]
+
+  target = "c"
+
+  <b>Output:</b> "f"
+
+
+
+  <b>Input:</b>
+
+  letters = ["c", "f", "j"]
+
+  target = "d"
+
+  <b>Output:</b> "f"
+
+
+
+  <b>Input:</b>
+
+  letters = ["c", "f", "j"]
+
+  target = "g"
+
+  <b>Output:</b> "j"
+
+
+
+  <b>Input:</b>
+
+  letters = ["c", "f", "j"]
+
+  target = "j"
+
+  <b>Output:</b> "c"
+
+
+
+  <b>Input:</b>
+
+  letters = ["c", "f", "j"]
+
+  target = "k"
+
+  <b>Output:</b> "c"
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+letters has a length in range [2, 10000].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+letters consists of lowercase letters, and contains at least 2 unique
+letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+target is a lowercase letter.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

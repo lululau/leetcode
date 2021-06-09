@@ -1,0 +1,203 @@
+* [[https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string][1047.
+删除字符串中的所有相邻重复项]]
+  :PROPERTIES:
+  :CUSTOM_ID: 删除字符串中的所有相邻重复项
+  :END:
+[[./solution/1000-1099/1047.Remove All Adjacent Duplicates In String/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给出由小写字母组成的字符串 S，重复项删除操作会选择两个相邻且相同的字母，并删除它们。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+在 S 上反复执行重复项删除操作，直到无法继续删除。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+在完成所有重复项删除操作后返回最终的字符串。答案保证唯一。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>&quot;abbaca&quot;
+  <strong>输出：</strong>&quot;ca&quot;
+  <strong>解释：</strong>
+  例如，在 &quot;abbaca&quot; 中，我们可以删除 &quot;bb&quot; 由于两字母相邻且相同，这是此时唯一可以执行删除操作的重复项。之后我们得到字符串 &quot;aaca&quot;，其中又只有 &quot;aa&quot; 可以执行重复项删除操作，所以最后的字符串为 &quot;ca&quot;。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= S.length <= 20000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+S 仅由小写英文字母组成。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+栈实现。
+
+遍历字符串 S 中的每个字符 s，若栈为空或者栈顶值不等于字符 s，s
+入栈，否则栈顶元素出栈。
+
+最后返回栈中元素所组成的字符串。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def removeDuplicates(self, S: str) -> str:
+          res = []
+          for s in S:
+              if not res or res[-1] != s:
+                  res.append(s)
+              else:
+                  res.pop()
+          return ''.join(res)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public String removeDuplicates(String S) {
+          StringBuilder sb = new StringBuilder();
+          int top = -1;
+          for (int i = 0, n = S.length(); i < n; ++i) {
+              char s = S.charAt(i);
+              if (top == -1 || sb.charAt(top) != s) {
+                  sb.append(s);
+                  ++top;
+              } else {
+                  sb.deleteCharAt(top);
+                  --top;
+              }
+          }
+          return sb.toString();
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

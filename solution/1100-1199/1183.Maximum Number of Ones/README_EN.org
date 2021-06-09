@@ -1,0 +1,179 @@
+* [[https://leetcode.com/problems/maximum-number-of-ones][1183. Maximum
+Number of Ones]]
+  :PROPERTIES:
+  :CUSTOM_ID: maximum-number-of-ones
+  :END:
+[[./solution/1100-1199/1183.Maximum Number of Ones/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Consider a matrix M with dimensions width * height, such that every cell
+has value 0 or 1, and any square sub-matrix of M of size sideLength *
+sideLength has at most maxOnes ones.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the maximum possible number of ones that the matrix M can have.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> width = 3, height = 3, sideLength = 2, maxOnes = 1
+  <strong>Output:</strong> 4
+  <strong>Explanation:</strong>
+  In a 3*3 matrix, no 2*2 sub-matrix can have more than 1 one.
+  The best solution that has 4 ones is:
+  [1,0,1]
+  [0,0,0]
+  [1,0,1]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> width = 3, height = 3, sideLength = 2, maxOnes = 2
+  <strong>Output:</strong> 6
+  <strong>Explanation:</strong>
+  [1,0,1]
+  [1,0,1]
+  [1,0,1]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= width, height <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= sideLength <= width, height
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= maxOnes <= sideLength * sideLength
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

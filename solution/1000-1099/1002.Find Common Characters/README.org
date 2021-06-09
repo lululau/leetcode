@@ -1,0 +1,228 @@
+* [[https://leetcode-cn.com/problems/find-common-characters][1002.
+查找常用字符]]
+  :PROPERTIES:
+  :CUSTOM_ID: 查找常用字符
+  :END:
+[[./solution/1000-1099/1002.Find Common Characters/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定仅有小写字母组成的字符串数组
+A，返回列表中的每个字符串中都显示的全部字符（包括重复字符）组成的列表。例如，如果一个字符在每个字符串中出现
+3 次，但不是 4 次，则需要在最终答案中包含该字符 3 次。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你可以按任意顺序返回答案。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>[&quot;bella&quot;,&quot;label&quot;,&quot;roller&quot;]
+  <strong>输出：</strong>[&quot;e&quot;,&quot;l&quot;,&quot;l&quot;]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>[&quot;cool&quot;,&quot;lock&quot;,&quot;cook&quot;]
+  <strong>输出：</strong>[&quot;c&quot;,&quot;o&quot;]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= A.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= A[i].length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+A[i][j] 是小写字母
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  func commonChars(A []string) []string {
+      if len(A) == 0 {
+          return []string{}
+      }
+      res := make([]int, 26)
+      //以第一个字符串为基准，先统计出现次数
+      for _, c := range A[0] {
+          res[c - 'a']++
+      }
+      for i := 1; i < len(A); i++ {
+          tmp := make([]int, 26)
+          //统计后续每个字符串的字符出现次数
+          for _, c := range A[i] {
+              tmp[c - 'a']++
+          }
+          //比较，取小
+          for j := 0; j < 26; j++ {
+              res[j] = getMin(res[j], tmp[j])
+          }
+      }
+      //遍历res,取出字符转换为string数组元素
+      result := make([]string,0)
+      for i := 0; i < len(res); i++ {
+          if res[i] > 0 {
+              for j := 0; j < res[i]; j++ {
+                  result = append(result, string('a' + i))
+              }
+          }
+      }
+      return result
+  }
+
+  func getMin(a,b int) int {
+      if a > b{
+          return b
+      }
+      return a
+  }
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

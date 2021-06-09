@@ -1,0 +1,285 @@
+* [[https://leetcode-cn.com/problems/minimum-number-of-flips-to-make-the-binary-string-alternating][1888.
+使二进制字符串字符交替的最少反转次数]]
+  :PROPERTIES:
+  :CUSTOM_ID: 使二进制字符串字符交替的最少反转次数
+  :END:
+[[./solution/1800-1899/1888.Minimum Number of Flips to Make the Binary String Alternating/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个二进制字符串 s 。你可以按任意顺序执行以下两种操作任意次：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+类型 1 ：删除 字符串 s 的第一个字符并将它 添加 到字符串结尾。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+类型 2 ：选择
+字符串 s 中任意一个字符并将该字符 反转 ，也就是如果值为 '0' ，则反转得到 '1' ，反之亦然。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你返回使 s 变成 交替 字符串的前提下， 类型 2 的 最少 操作次数 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+我们称一个字符串是 交替 的，需要满足任意相邻字符都不同。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+比方说，字符串 "010" 和 "1010" 都是交替的，但是字符串 "0100" 不是。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><b>输入：</b>s = "111000"
+  <b>输出：</b>2
+  <b>解释：</b>执行第一种操作两次，得到 s = "100011" 。
+  然后对第三个和第六个字符执行第二种操作，得到 s = "10<strong>1</strong>01<strong>0</strong>" 。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><b>输入：</b>s = "010"
+  <b>输出：</b>0
+  <strong>解释：</strong>字符串已经是交替的。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><b>输入：</b>s = "1110"
+  <b>输出：</b>1
+  <b>解释：</b>对第二个字符执行第二种操作，得到 s = "1<strong>0</strong>10" 。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s[i] 要么是 '0' ，要么是 '1' 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+"双倍字符串 + 滑动窗口"实现。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def minFlips(self, s: str) -> int:
+          n = len(s)
+          target = '01'
+          cnt = 0
+          for i, c in enumerate(s):
+              cnt += c != target[i & 1]
+          res = min(cnt, n - cnt)
+          s *= 2
+          for i in range(n):
+              cnt -= s[i] != target[i & 1]
+              cnt += s[i + n] != target[(i + n) & 1]
+              res = min(res, cnt, n - cnt)
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int minFlips(String s) {
+          int n = s.length();
+          String target = "01";
+          int cnt = 0;
+          for (int i = 0; i < n; ++i) {
+              cnt += (s.charAt(i) == target.charAt(i & 1) ? 0 : 1);
+          }
+          int res = Math.min(cnt, n - cnt);
+          s += s;
+          for (int i = 0; i < n; ++i) {
+              cnt -= (s.charAt(i) == target.charAt(i & 1) ? 0 : 1);
+              cnt += (s.charAt(i + n) == target.charAt((i + n) & 1) ? 0 : 1);
+              res = Math.min(res, Math.min(cnt, n - cnt));
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

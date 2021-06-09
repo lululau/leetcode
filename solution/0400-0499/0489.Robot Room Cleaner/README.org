@@ -1,0 +1,217 @@
+* [[https://leetcode-cn.com/problems/robot-room-cleaner][489.
+扫地机器人]]
+  :PROPERTIES:
+  :CUSTOM_ID: 扫地机器人
+  :END:
+[[./solution/0400-0499/0489.Robot Room Cleaner/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+房间（用格栅表示）中有一个扫地机器人。格栅中的每一个格子有空和障碍物两种可能。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+扫地机器人提供4个API，可以向前进，向左转或者向右转。每次转弯90度。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+当扫地机器人试图进入障碍物格子时，它的碰撞传感器会探测出障碍物，使它停留在原地。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请利用提供的4个API编写让机器人清理整个房间的算法。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>interface Robot {
+  &nbsp; // 若下一个方格为空，则返回true，并移动至该方格
+  &nbsp; // 若下一个方格为障碍物，则返回false，并停留在原地
+  &nbsp; boolean move();
+
+    // 在调用turnLeft/turnRight后机器人会停留在原位置
+  &nbsp; // 每次转弯90度
+  &nbsp; void turnLeft();
+  &nbsp; void turnRight();
+
+    // 清理所在方格
+    void clean();
+  }
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong>
+  room = [
+    [1,1,1,1,1,0,1,1],
+    [1,1,1,1,1,0,1,1],
+    [1,0,1,1,1,1,1,1],
+    [0,0,0,1,0,0,0,0],
+    [1,1,1,1,1,1,1,1]
+  ],
+  row = 1,
+  col = 3
+
+  <strong>解析:</strong>
+  房间格栅用0或1填充。0表示障碍物，1表示可以通过。
+  机器人从row=1，col=3的初始位置出发。在左上角的一行以下，三列以右。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+输入只用于初始化房间和机器人的位置。你需要“盲解”这个问题。换而言之，你必须在对房间和机器人位置一无所知的情况下，只使用4个给出的API解决问题。 
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+扫地机器人的初始位置一定是空地。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+扫地机器人的初始方向向上。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+所有可抵达的格子都是相连的，亦即所有标记为1的格子机器人都可以抵达。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+可以假定格栅的四周都被墙包围。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

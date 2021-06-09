@@ -1,0 +1,125 @@
+* [[https://leetcode.com/problems/fix-names-in-a-table][1667. Fix Names
+in a Table]]
+  :PROPERTIES:
+  :CUSTOM_ID: fix-names-in-a-table
+  :END:
+[[./solution/1600-1699/1667.Fix Names in a Table/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Users
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +----------------+---------+
+  | Column Name    | Type    |
+  +----------------+---------+
+  | user_id        | int     |
+  | name           | varchar |
+  +----------------+---------+
+  user_id is the primary key for this table.
+  This table contains the ID and the name of the user. The name consists of only lowercase and uppercase characters.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an SQL query to fix the names so that only the first character is
+uppercase and the rest are lowercase.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the result table ordered by user_id.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The query result format is in the following example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  Users table:
+  +---------+-------+
+  | user_id | name  |
+  +---------+-------+
+  | 1       | aLice |
+  | 2       | bOB   |
+  +---------+-------+
+
+  Result table:
+  +---------+-------+
+  | user_id | name  |
+  +---------+-------+
+  | 1       | Alice |
+  | 2       | Bob   |
+  +---------+-------+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

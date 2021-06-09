@@ -1,0 +1,133 @@
+* [[https://leetcode.com/problems/tenth-line][195. Tenth Line]]
+  :PROPERTIES:
+  :CUSTOM_ID: tenth-line
+  :END:
+[[./solution/0100-0199/0195.Tenth Line/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a text file file.txt, print just the 10th line of the file.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Assume that file.txt has the following content:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  Line 1
+
+  Line 2
+
+  Line 3
+
+  Line 4
+
+  Line 5
+
+  Line 6
+
+  Line 7
+
+  Line 8
+
+  Line 9
+
+  Line 10
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Your script should output the tenth line, which is:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  Line 10
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <div class="spoilers">
+#+end_html
+
+Note:
+
+1. If the file contains less than 10 lines, what should you output?
+
+2. There's at least three different solutions. Try to explore all
+   possibilities.
+
+   #+begin_html
+     </div>
+   #+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

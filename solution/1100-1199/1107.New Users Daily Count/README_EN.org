@@ -1,0 +1,122 @@
+* [[https://leetcode.com/problems/new-users-daily-count][1107. New Users
+Daily Count]]
+  :PROPERTIES:
+  :CUSTOM_ID: new-users-daily-count
+  :END:
+[[./solution/1100-1199/1107.New Users Daily Count/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Traffic
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +---------------+---------+
+  | Column Name   | Type    |
+  +---------------+---------+
+  | user_id       | int     |
+  | activity      | enum    |
+  | activity_date | date    |
+  +---------------+---------+
+  There is no primary key for this table, it may have duplicate rows.
+  The activity column is an ENUM type of (&#39;login&#39;, &#39;logout&#39;, &#39;jobs&#39;, &#39;groups&#39;, &#39;homepage&#39;).
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an SQL query that reports for every date within at most 90 days
+from today, the number of users that logged in for the first time on
+that date. Assume today is 2019-06-30.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The query result format is in the following example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  Traffic table:
+  +---------+----------+---------------+
+  | user_id | activity | activity_date |
+  +---------+----------+---------------+
+  | 1       | login    | 2019-05-01    |
+  | 1       | homepage | 2019-05-01    |
+  | 1       | logout   | 2019-05-01    |
+  | 2       | login    | 2019-06-21    |
+  | 2       | logout   | 2019-06-21    |
+  | 3       | login    | 2019-01-01    |
+  | 3       | jobs     | 2019-01-01    |
+  | 3       | logout   | 2019-01-01    |
+  | 4       | login    | 2019-06-21    |
+  | 4       | groups   | 2019-06-21    |
+  | 4       | logout   | 2019-06-21    |
+  | 5       | login    | 2019-03-01    |
+  | 5       | logout   | 2019-03-01    |
+  | 5       | login    | 2019-06-21    |
+  | 5       | logout   | 2019-06-21    |
+  +---------+----------+---------------+
+
+  Result table:
+  +------------+-------------+
+  | login_date | user_count  |
+  +------------+-------------+
+  | 2019-05-01 | 1           |
+  | 2019-06-21 | 2           |
+  +------------+-------------+
+  Note that we only care about dates with non zero user count.
+  The user with id 5 first logged in on 2019-03-01 so he&#39;s not counted on 2019-06-21.
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

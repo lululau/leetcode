@@ -1,0 +1,189 @@
+* [[https://leetcode.com/problems/solve-the-equation][640. Solve the
+Equation]]
+  :PROPERTIES:
+  :CUSTOM_ID: solve-the-equation
+  :END:
+[[./solution/0600-0699/0640.Solve the Equation/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Solve a given equation and return the value of x in the form of string
+"x=#value". The equation contains only '+', '-' operation, the variable
+x and its coefficient.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If there is no solution for the equation, return "No solution".
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If there are infinite solutions for the equation, return "Infinite
+solutions".
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If there is exactly one solution for the equation, we ensure that the
+value of x is an integer.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> "x+5-3+x=6+x-2"
+
+  <b>Output:</b> "x=2"
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> "x=x"
+
+  <b>Output:</b> "Infinite solutions"
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> "2x=x"
+
+  <b>Output:</b> "x=0"
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> "2x+3x-6x=x+2"
+
+  <b>Output:</b> "x=-1"
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> "x=x+2"
+
+  <b>Output:</b> "No solution"
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

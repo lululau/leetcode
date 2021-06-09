@@ -1,0 +1,165 @@
+* [[https://leetcode.com/problems/shifting-letters][848. Shifting
+Letters]]
+  :PROPERTIES:
+  :CUSTOM_ID: shifting-letters
+  :END:
+[[./solution/0800-0899/0848.Shifting Letters/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+We have a string S of lowercase letters, and an integer array shifts.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Call the shift of a letter, the next letter in the alphabet, (wrapping
+around so that 'z' becomes 'a'). 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example, shift('a') = 'b', shift('t') = 'u', and shift('z') = 'a'.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Now for each shifts[i] = x, we want to shift the first i+1 letters of S,
+x times.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the final string after all such shifts to S are applied.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>S = &quot;abc&quot;, shifts = [3,5,9]
+
+  <strong>Output: </strong>&quot;rpl&quot;
+
+  <strong>Explanation: </strong>
+
+  We start with &quot;abc&quot;.
+
+  After shifting the first 1 letters of S by 3, we have &quot;dbc&quot;.
+
+  After shifting the first 2 letters of S by 5, we have &quot;igc&quot;.
+
+  After shifting the first 3 letters of S by 9, we have &quot;rpl&quot;, the answer.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= S.length = shifts.length <= 20000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= shifts[i] <= 10 ^ 9
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

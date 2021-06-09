@@ -1,0 +1,117 @@
+* [[https://leetcode-cn.com/problems/palindrome-permutation-lcci][01.04.
+Palindrome Permutation]]
+  :PROPERTIES:
+  :CUSTOM_ID: palindrome-permutation
+  :END:
+[[./lcci/01.04.Palindrome Permutation/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a string, write a function to check if it is a permutation of a
+palin­ drome. A palindrome is a word or phrase that is the same forwards
+and backwards. A permutation is a rearrangement of letters. The
+palindrome does not need to be limited to just dictionary words.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: &quot;</strong>tactcoa&quot;
+
+  <strong>Output: </strong>true（permutations: &quot;tacocat&quot;、&quot;atcocta&quot;, etc.）
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def canPermutePalindrome(self, s: str) -> bool:
+          counter = collections.Counter(s)
+          cnt = 0
+          for val in counter.values():
+              if (val & 1) == 1:
+                  cnt += 1
+              if cnt > 1:
+                  return False
+          return True
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public boolean canPermutePalindrome(String s) {
+          Map<Character, Integer> counter = new HashMap<>();
+          for (int i = 0, n = s.length(); i < n; ++i) {
+              char c = s.charAt(i);
+              counter.put(c, counter.getOrDefault(c, 0) + 1);
+          }
+          int cnt = 0;
+          for (int val : counter.values()) {
+              if ((val & 1) == 1) {
+                  ++cnt;
+              }
+              if (cnt > 1) {
+                  return false;
+              }
+          }
+          return true;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,274 @@
+* [[https://leetcode-cn.com/problems/high-five][1086. 前五科的均分]]
+  :PROPERTIES:
+  :CUSTOM_ID: 前五科的均分
+  :END:
+[[./solution/1000-1099/1086.High Five/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个不同学生的分数列表 items，其中 items[i] = [IDi, scorei] 表示 IDi
+的学生的一科分数，你需要计算每个学生 最高的五科 成绩的 平均分。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回答案 result 以数对数组形式给出，其中 result[j] = [IDj,
+topFiveAveragej] 表示 IDj 的学生和他 最高的五科 成绩的 平均分。result
+需要按 IDj  递增的 顺序排列 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+学生 最高的五科 成绩的 平均分 的计算方法是将最高的五科分数相加，然后用
+整数除法 除以 5 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>items = [[1,91],[1,92],[2,93],[2,97],[1,60],[2,77],[1,65],[1,87],[1,100],[2,100],[2,76]]
+  <strong>输出：</strong>[[1,87],[2,88]]
+  <strong>解释：</strong>
+  ID = 1 的学生分数为 91、92、60、65、87 和 100 。前五科的平均分 (100 + 92 + 91 + 87 + 65) / 5 = 87
+  ID = 2 的学生分数为 93、97、77、100 和 76 。前五科的平均分 (100 + 97 + 93 + 77 + 76) / 5 = 88.6，但是由于使用整数除法，结果转换为 88
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>items = [[1,100],[7,100],[1,100],[7,100],[1,100],[7,100],[1,100],[7,100],[1,100],[7,100]]
+  <strong>输出：</strong>[[1,100],[7,100]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= items.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+items[i].length == 2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= IDi <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= scorei <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+对于每个 IDi，至少 存在五个分数
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+"桶排序 + 小根堆"实现。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def highFive(self, items: List[List[int]]) -> List[List[int]]:
+          s = [None] * 101
+          for i, score in items:
+              if s[i] is None:
+                  s[i] = []
+              s[i].append(score)
+          res = []
+          for i, scores in enumerate(s):
+              if scores is None:
+                  continue
+              avg = sum(heapq.nlargest(5, scores)) // 5
+              res.append([i, avg])
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int[][] highFive(int[][] items) {
+          int size = 0;
+          PriorityQueue[] s = new PriorityQueue[101];
+          int n = 5;
+          for (int[] item : items) {
+              int i = item[0], score = item[1];
+              if (s[i] == null) {
+                  ++size;
+                  s[i] = new PriorityQueue<>(n);
+              }
+              s[i].offer(score);
+              if (s[i].size() > n) {
+                  s[i].poll();
+              }
+          }
+          int[][] res = new int[size][2];
+          int j = 0;
+          for (int i = 0; i < 101; ++i) {
+              if (s[i] == null) {
+                  continue;
+              }
+              int avg = sum(s[i]) / n;
+              res[j][0] = i;
+              res[j++][1] = avg;
+          }
+          return res;
+      }
+
+      private int sum(PriorityQueue<Integer> q) {
+          int s = 0;
+          while (!q.isEmpty()) {
+              s += q.poll();
+          }
+          return s;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

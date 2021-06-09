@@ -1,0 +1,136 @@
+* [[https://leetcode.com/problems/students-report-by-geography][618.
+Students Report By Geography]]
+  :PROPERTIES:
+  :CUSTOM_ID: students-report-by-geography
+  :END:
+[[./solution/0600-0699/0618.Students Report By Geography/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+A U.S graduate school has students from Asia, Europe and America. The
+students' location information are stored in table student as below.
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  | name   | continent |
+
+  |--------|-----------|
+
+  | Jack   | America   |
+
+  | Pascal | Europe    |
+
+  | Xi     | Asia      |
+
+  | Jane   | America   |
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+Pivot the continent column in this table so that each name is sorted
+alphabetically and displayed underneath its corresponding continent. The
+output headers should be America, Asia and Europe respectively. It is
+guaranteed that the student number from America is no less than either
+Asia or Europe.
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+For the sample input, the output is:
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  | America | Asia | Europe |
+
+  |---------|------|--------|
+
+  | Jack    | Xi   | Pascal |
+
+  | Jane    |      |        |
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+Follow-up: If it is unknown which continent has the most students, can
+you write a query to generate the student report?
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

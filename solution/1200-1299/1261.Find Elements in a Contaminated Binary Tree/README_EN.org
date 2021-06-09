@@ -1,0 +1,332 @@
+* [[https://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree][1261.
+Find Elements in a Contaminated Binary Tree]]
+  :PROPERTIES:
+  :CUSTOM_ID: find-elements-in-a-contaminated-binary-tree
+  :END:
+[[./solution/1200-1299/1261.Find Elements in a Contaminated Binary Tree/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a binary tree with the following rules:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+root.val == 0
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If treeNode.val == x and treeNode.left != null, then treeNode.left.val
+== 2 * x + 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If treeNode.val == x and treeNode.right != null, then treeNode.right.val
+== 2 * x + 2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Now the binary tree is contaminated, which means
+all treeNode.val have been changed to -1.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You need to first recover the binary tree and then implement the
+FindElements class:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+FindElements(TreeNode* root) Initializes the object with a contamined
+binary tree, you need to recover it first.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+bool find(int target) Return if the target value exists in the recovered
+binary tree.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input</strong>
+  [&quot;FindElements&quot;,&quot;find&quot;,&quot;find&quot;]
+  [[[-1,null,-1]],[1],[2]]
+  <strong>Output</strong>
+  [null,false,true]
+  <strong>Explanation</strong>
+  FindElements findElements = new FindElements([-1,null,-1]); 
+  findElements.find(1); // return False 
+  findElements.find(2); // return True </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input</strong>
+  [&quot;FindElements&quot;,&quot;find&quot;,&quot;find&quot;,&quot;find&quot;]
+  [[[-1,-1,-1,-1,-1]],[1],[3],[5]]
+  <strong>Output</strong>
+  [null,true,true,false]
+  <strong>Explanation</strong>
+  FindElements findElements = new FindElements([-1,-1,-1,-1,-1]);
+  findElements.find(1); // return True
+  findElements.find(3); // return True
+  findElements.find(5); // return False</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input</strong>
+  [&quot;FindElements&quot;,&quot;find&quot;,&quot;find&quot;,&quot;find&quot;,&quot;find&quot;]
+  [[[-1,null,-1,-1,null,-1]],[2],[3],[4],[5]]
+  <strong>Output</strong>
+  [null,true,false,false,true]
+  <strong>Explanation</strong>
+  FindElements findElements = new FindElements([-1,null,-1,-1,null,-1]);
+  findElements.find(2); // return True
+  findElements.find(3); // return False
+  findElements.find(4); // return False
+  findElements.find(5); // return True
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+TreeNode.val == -1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The height of the binary tree is less than or equal to 20
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The total number of nodes is between [1, 10^4]
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Total calls of find() is between [1, 10^4]
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= target <= 10^6
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

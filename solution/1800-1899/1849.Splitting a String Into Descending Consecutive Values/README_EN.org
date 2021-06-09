@@ -1,0 +1,254 @@
+* [[https://leetcode.com/problems/splitting-a-string-into-descending-consecutive-values][1849.
+Splitting a String Into Descending Consecutive Values]]
+  :PROPERTIES:
+  :CUSTOM_ID: splitting-a-string-into-descending-consecutive-values
+  :END:
+[[./solution/1800-1899/1849.Splitting a String Into Descending Consecutive Values/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given a string s that consists of only digits.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Check if we can split s into two or more non-empty substrings such that
+the numerical values of the substrings are in descending order and the
+difference between numerical values of every two adjacent substrings is
+equal to 1.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For example, the string s = "0090089" can be split into ["0090", "089"]
+with numerical values [90,89]. The values are in descending order and
+adjacent values differ by 1, so this way is valid.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Another example, the string s = "001" can be split into ["0", "01"],
+["00", "1"], or ["0", "0", "1"]. However all the ways are invalid
+because they have numerical values [0,1], [0,1], and [0,0,1]
+respectively, all of which are not in descending order.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return true if it is possible to split s​​​​​​ as described above, or
+false otherwise.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A substring is a contiguous sequence of characters in a string.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;1234&quot;
+  <strong>Output:</strong> false
+  <strong>Explanation:</strong> There is no valid way to split s.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;050043&quot;
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> s can be split into [&quot;05&quot;, &quot;004&quot;, &quot;3&quot;] with numerical values [5,4,3].
+  The values are in descending order with adjacent values differing by 1.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;9080701&quot;
+  <strong>Output:</strong> false
+  <strong>Explanation:</strong> There is no valid way to split s.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;10009998&quot;
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> s can be split into [&quot;100&quot;, &quot;099&quot;, &quot;98&quot;] with numerical values [100,99,98].
+  The values are in descending order with adjacent values differing by 1.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s.length <= 20
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s only consists of digits.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,203 @@
+* [[https://leetcode.com/problems/word-pattern-ii][291. Word Pattern
+II]]
+  :PROPERTIES:
+  :CUSTOM_ID: word-pattern-ii
+  :END:
+[[./solution/0200-0299/0291.Word Pattern II/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a pattern and a string s, return true if s matches the pattern.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A string s matches a pattern if there is some bijective mapping of
+single characters to strings such that if each character in pattern is
+replaced by the string it maps to, then the resulting string is s. A
+bijective mapping means that no two characters map to the same string,
+and no character maps to two different strings.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> pattern = &quot;abab&quot;, s = &quot;redblueredblue&quot;
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> One possible mapping is as follows:
+  &#39;a&#39; -&gt; &quot;red&quot;
+  &#39;b&#39; -&gt; &quot;blue&quot;</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> pattern = &quot;aaaa&quot;, s = &quot;asdasdasdasd&quot;
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> One possible mapping is as follows:
+  &#39;a&#39; -&gt; &quot;asd&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> pattern = &quot;abab&quot;, s = &quot;asdasdasdasd&quot;
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> One possible mapping is as follows:
+  &#39;a&#39; -&gt; &quot;a&quot;
+  &#39;b&#39; -&gt; &quot;sdasd&quot;
+  Note that &#39;a&#39; and &#39;b&#39; cannot both map to &quot;asd&quot; since the mapping is a bijection.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> pattern = &quot;aabb&quot;, s = &quot;xyzabcxzyabc&quot;
+  <strong>Output:</strong> false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= pattern.length, s.length <= 20
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+pattern and s consist of only lower-case English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

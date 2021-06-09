@@ -1,0 +1,218 @@
+* [[https://leetcode.com/problems/kth-ancestor-of-a-tree-node][1483. Kth
+Ancestor of a Tree Node]]
+  :PROPERTIES:
+  :CUSTOM_ID: kth-ancestor-of-a-tree-node
+  :END:
+[[./solution/1400-1499/1483.Kth Ancestor of a Tree Node/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given a tree with n nodes numbered from 0 to n-1 in the form of
+a parent array where parent[i] is the parent of node i. The root of the
+tree is node 0.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement the function getKthAncestor(int node, int k) to return the
+k-th ancestor of the given node. If there is no such ancestor,
+return -1.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The k-th ancestor of a tree node is the k-th node in the path from that
+node to the root.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b>
+
+  [&quot;TreeAncestor&quot;,&quot;getKthAncestor&quot;,&quot;getKthAncestor&quot;,&quot;getKthAncestor&quot;]
+
+  [[7,[-1,0,0,1,1,2,2]],[3,1],[5,2],[6,3]]
+
+
+
+  <b>Output:</b>
+
+  [null,1,0,-1]
+
+
+
+  <b>Explanation:</b>
+
+  TreeAncestor treeAncestor = new TreeAncestor(7, [-1, 0, 0, 1, 1, 2, 2]);
+
+
+
+  treeAncestor.getKthAncestor(3, 1);  // returns 1 which is the parent of 3
+
+  treeAncestor.getKthAncestor(5, 2);  // returns 0 which is the grandparent of 5
+
+  treeAncestor.getKthAncestor(6, 3);  // returns -1 because there is no such ancestor
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= k <= n <= 5*10^4
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+parent[0] == -1 indicating that 0 is the root node.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= parent[i] < n for all 0 < i < n
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= node < n
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+There will be at most 5*10^4 queries.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,231 @@
+* [[https://leetcode-cn.com/problems/smallest-string-with-swaps][1202.
+交换字符串中的元素]]
+  :PROPERTIES:
+  :CUSTOM_ID: 交换字符串中的元素
+  :END:
+[[./solution/1200-1299/1202.Smallest String With Swaps/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个字符串 s，以及该字符串中的一些「索引对」数组 pairs，其中 pairs[i]
+= [a, b] 表示字符串中的两个索引（编号从 0 开始）。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你可以 任意多次交换 在 pairs 中任意一对索引处的字符。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回在经过若干次交换后，s 可以变成的按字典序最小的字符串。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>s = &quot;dcab&quot;, pairs = [[0,3],[1,2]]
+  <strong>输出：</strong>&quot;bacd&quot;
+  <strong>解释：</strong> 
+  交换 s[0] 和 s[3], s = &quot;bcad&quot;
+  交换 s[1] 和 s[2], s = &quot;bacd&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>s = &quot;dcab&quot;, pairs = [[0,3],[1,2],[0,2]]
+  <strong>输出：</strong>&quot;abcd&quot;
+  <strong>解释：</strong>
+  交换 s[0] 和 s[3], s = &quot;bcad&quot;
+  交换 s[0] 和 s[2], s = &quot;acbd&quot;
+  交换 s[1] 和 s[2], s = &quot;abcd&quot;</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>s = &quot;cba&quot;, pairs = [[0,1],[1,2]]
+  <strong>输出：</strong>&quot;abc&quot;
+  <strong>解释：</strong>
+  交换 s[0] 和 s[1], s = &quot;bca&quot;
+  交换 s[1] 和 s[2], s = &quot;bac&quot;
+  交换 s[0] 和 s[1], s = &quot;abc&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s.length <= 10^5
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= pairs.length <= 10^5
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= pairs[i][0], pairs[i][1] < s.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s 中只含有小写英文字母
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,436 @@
+* [[https://leetcode-cn.com/problems/implement-trie-prefix-tree][208.
+实现 Trie (前缀树)]]
+  :PROPERTIES:
+  :CUSTOM_ID: 实现-trie-前缀树
+  :END:
+[[./solution/0200-0299/0208.Implement Trie %28Prefix Tree%29/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Trie（发音类似 "try"）或者说 前缀树
+是一种树形数据结构，用于高效地存储和检索字符串数据集中的键。这一数据结构有相当多的应用情景，例如自动补完和拼写检查。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你实现 Trie 类：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Trie() 初始化前缀树对象。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void insert(String word) 向前缀树中插入字符串 word 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+boolean search(String word) 如果字符串 word 在前缀树中，返回
+true（即，在检索之前已经插入）；否则，返回 false 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+boolean startsWith(String prefix) 如果之前已经插入的字符串 word
+的前缀之一为 prefix ，返回 true ；否则，返回 false 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入</strong>
+  ["Trie", "insert", "search", "search", "startsWith", "insert", "search"]
+  [[], ["apple"], ["apple"], ["app"], ["app"], ["app"], ["app"]]
+  <strong>输出</strong>
+  [null, null, true, false, true, null, true]
+
+  <strong>解释</strong>
+  Trie trie = new Trie();
+  trie.insert("apple");
+  trie.search("apple");   // 返回 True
+  trie.search("app");     // 返回 False
+  trie.startsWith("app"); // 返回 True
+  trie.insert("app");
+  trie.search("app");     // 返回 True
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= word.length, prefix.length <= 2000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+word 和 prefix 仅由小写英文字母组成
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+insert、search 和 startsWith 调用次数 总计 不超过 3 * 104 次
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+前缀树每个节点包括两部分：
+
+1. 指向子节点的指针数组 children，对于本题而言，数组长度为
+   26，即小写英文字母的数量。=children[0]= 对应小写字母
+   a，...，=children[25]= 对应小写字母 z。
+2. 布尔字段 =isEnd=，表示该节点是否为字符串的结尾。
+
+*** 1. 插入字符串
+    :PROPERTIES:
+    :CUSTOM_ID: 插入字符串
+    :END:
+我们从字典树的根开始，插入字符串。对于当前字符对应的子节点，有两种情况：
+
+- 子节点存在。沿着指针移动到子节点，继续处理下一个字符。
+- 子节点不存在。创建一个新的子节点，记录在 =children=
+  数组的对应位置上，然后沿着指针移动到子节点，继续搜索下一个字符。
+
+重复以上步骤，直到处理字符串的最后一个字符，然后将当前节点标记为字符串的结尾。
+
+*** 2. 查找前缀
+    :PROPERTIES:
+    :CUSTOM_ID: 查找前缀
+    :END:
+我们从字典树的根开始，查找前缀。对于当前字符对应的子节点，有两种情况：
+
+- 子节点存在。沿着指针移动到子节点，继续搜索下一个字符。
+- 子节点不存在。说明字典树中不包含该前缀，返回空指针。
+
+重复以上步骤，直到返回空指针或搜索完前缀的最后一个字符。
+
+若搜索到了前缀的末尾，就说明字典树中存在该前缀。此外，若前缀末尾对应节点的
+=isEnd= 为真，则说明字典树中存在该字符串。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Trie:
+
+      def __init__(self):
+          """
+          Initialize your data structure here.
+          """
+          self.children = [None] * 26
+          self.is_end = False
+
+      def insert(self, word: str) -> None:
+          """
+          Inserts a word into the trie.
+          """
+          node = self
+          for c in word:
+              index = ord(c) - ord("a")
+              if node.children[index] is None:
+                  node.children[index] = Trie()
+              node = node.children[index]
+          node.is_end = True
+
+      def search(self, word: str) -> bool:
+          """
+          Returns if the word is in the trie.
+          """
+          node = self._search_prefix(word)
+          return node is not None and node.is_end
+
+      def startsWith(self, prefix: str) -> bool:
+          """
+          Returns if there is any word in the trie that starts with the given prefix.
+          """
+          node = self._search_prefix(prefix)
+          return node is not None
+
+      def _search_prefix(self, prefix: str):
+          node = self
+          for c in prefix:
+              index = ord(c) - ord("a")
+              if node.children[index] is None:
+                  return None
+              node = node.children[index]
+          return node
+
+  # Your Trie object will be instantiated and called as such:
+  # obj = Trie()
+  # obj.insert(word)
+  # param_2 = obj.search(word)
+  # param_3 = obj.startsWith(prefix)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Trie {
+      private Trie[] children;
+      private boolean isEnd;
+
+      /** Initialize your data structure here. */
+      public Trie() {
+          children = new Trie[26];
+          isEnd = false;
+      }
+
+      /** Inserts a word into the trie. */
+      public void insert(String word) {
+          Trie node = this;
+          for (int i = 0; i < word.length(); ++i) {
+              char c = word.charAt(i);
+              int index = c - 'a';
+              if (node.children[index] == null) {
+                  node.children[index] = new Trie();
+              }
+              node = node.children[index];
+          }
+          node.isEnd = true;
+      }
+
+      /** Returns if the word is in the trie. */
+      public boolean search(String word) {
+          Trie node = searchPrefix(word);
+          return node != null && node.isEnd;
+      }
+
+      /** Returns if there is any word in the trie that starts with the given prefix. */
+      public boolean startsWith(String prefix) {
+          Trie node = searchPrefix(prefix);
+          return node != null;
+      }
+
+      private Trie searchPrefix(String prefix) {
+          Trie node = this;
+          for (int i = 0; i < prefix.length(); ++i) {
+              char c = prefix.charAt(i);
+              int index = c - 'a';
+              if (node.children[index] == null) {
+                  return null;
+              }
+              node = node.children[index];
+          }
+          return node;
+      }
+  }
+
+  /**
+   * Your Trie object will be instantiated and called as such:
+   * Trie obj = new Trie();
+   * obj.insert(word);
+   * boolean param_2 = obj.search(word);
+   * boolean param_3 = obj.startsWith(prefix);
+   */
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * Initialize your data structure here.
+   */
+  var Trie = function() {
+      this.children = {};
+  };
+
+  /**
+   * Inserts a word into the trie. 
+   * @param {string} word
+   * @return {void}
+   */
+  Trie.prototype.insert = function(word) {
+      let node = this.children;
+      for (let char of word) {
+          if (!node[char]) {
+              node[char] = {};
+          }
+          node = node[char];
+      }
+      node.isEnd = true;
+  };
+
+  /**
+   * Returns if the word is in the trie. 
+   * @param {string} word
+   * @return {boolean}
+   */
+  Trie.prototype.search = function(word) {
+      let node = this.searchPrefix(word);
+      return node != undefined && node.isEnd != undefined;
+  };
+
+  Trie.prototype.searchPrefix = function (prefix) {
+      let node = this.children;
+      for (let char of prefix) {
+          if (!node[char]) return false;
+          node = node[char];
+      }
+      return node;
+  }
+
+  /**
+   * Returns if there is any word in the trie that starts with the given prefix. 
+   * @param {string} prefix
+   * @return {boolean}
+   */
+  Trie.prototype.startsWith = function(prefix) {
+      return this.searchPrefix(prefix);
+  };
+
+  /**
+   * Your Trie object will be instantiated and called as such:
+   * var obj = new Trie()
+   * obj.insert(word)
+   * var param_2 = obj.search(word)
+   * var param_3 = obj.startsWith(prefix)
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

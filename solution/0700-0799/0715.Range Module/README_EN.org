@@ -1,0 +1,207 @@
+* [[https://leetcode.com/problems/range-module][715. Range Module]]
+  :PROPERTIES:
+  :CUSTOM_ID: range-module
+  :END:
+[[./solution/0700-0799/0715.Range Module/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+A Range Module is a module that tracks ranges of numbers. Your task is
+to design and implement the following interfaces in an efficient manner.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+addRange(int left, int right) Adds the half-open interval [left, right),
+tracking every real number in that interval. Adding an interval that
+partially overlaps with currently tracked numbers should add any numbers
+in the interval [left, right) that are not already tracked.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+queryRange(int left, int right) Returns true if and only if every real
+number in the interval [left, right)
+
+is currently being tracked.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+removeRange(int left, int right) Stops tracking every real number
+currently being tracked in the interval [left, right).
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  <pre>
+
+  <b>addRange(10, 20)</b>: null
+
+  <b>removeRange(14, 16)</b>: null
+
+  <b>queryRange(10, 14)</b>: true (Every number in [10, 14) is being tracked)
+
+  <b>queryRange(13, 15)</b>: false (Numbers like 14, 14.03, 14.17 in [13, 15) are not being tracked)
+
+  <b>queryRange(16, 17)</b>: true (The number 16 in [16, 17) is still being tracked, despite the remove operation)
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  <li>
+#+end_html
+
+A half open interval [left, right) denotes all real numbers left <= x <
+right.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 < left < right < 10^9 in all calls to addRange, queryRange,
+removeRange.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The total number of calls to addRange in a single test case is at most
+1000.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The total number of calls to queryRange in a single test case is at most
+5000.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The total number of calls to removeRange in a single test case is at
+most 1000.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,168 @@
+* [[https://leetcode-cn.com/problems/binary-tree-pruning][814.
+二叉树剪枝]]
+  :PROPERTIES:
+  :CUSTOM_ID: 二叉树剪枝
+  :END:
+[[./solution/0800-0899/0814.Binary Tree Pruning/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定二叉树根结点 root ，此外树的每个结点的值要么是 0，要么是 1。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回移除了所有不包含 1 的子树的原二叉树。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+( 节点 X 的子树为 X 本身，以及所有 X 的后代。)
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>示例1:</strong>
+  <strong>输入:</strong> [1,null,0,0,1]
+  <strong>输出: </strong>[1,null,0,null,1]
+   
+  <strong>解释:</strong> 
+  只有红色节点满足条件&ldquo;所有不包含 1 的子树&rdquo;。
+  右图为返回的答案。
+
+  <img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0800-0899/0814.Binary Tree Pruning/images/1028_2.png" style="width:450px" />
+  </pre>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>示例2:</strong>
+  <strong>输入:</strong> [1,0,1,0,0,0,1]
+  <strong>输出: </strong>[1,null,1,null,1]
+
+
+  <img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0800-0899/0814.Binary Tree Pruning/images/1028_1.png" style="width:450px" />
+  </pre>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>示例3:</strong>
+  <strong>输入:</strong> [1,1,0,1,1,0,1,0]
+  <strong>输出: </strong>[1,1,0,1,1,null,1]
+
+
+  <img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0800-0899/0814.Binary Tree Pruning/images/1028.png" style="width:450px" />
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+说明:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+给定的二叉树最多有 100 个节点。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+每个节点的值只会为 0 或 1 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

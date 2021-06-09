@@ -1,0 +1,164 @@
+* [[https://leetcode-cn.com/problems/bracket-lcci][08.09. Bracket]]
+  :PROPERTIES:
+  :CUSTOM_ID: bracket
+  :END:
+[[./lcci/08.09.Bracket/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement an algorithm to print all valid (e.g., properly opened and
+closed) combinations of n pairs of parentheses.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note: The result set should not contain duplicated subsets.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example, given n = 3, the result should be:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  [
+
+    &quot;((()))&quot;,
+
+    &quot;(()())&quot;,
+
+    &quot;(())()&quot;,
+
+    &quot;()(())&quot;,
+
+    &quot;()()()&quot;
+
+  ]
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def generateParenthesis(self, n: int) -> List[str]:
+          res = []
+          def generate(state, left, right):
+              if left > right:
+                  return
+              if right == 0:
+                  res.append(state)
+                  return
+              if left > 0:
+                  generate(state + '(', left - 1, right)
+              if right > 0:
+                  generate(state + ')', left, right - 1)
+          generate('', n, n)
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      List<String> res;
+
+      public List<String> generateParenthesis(int n) {
+          res = new ArrayList<>();
+          generate("", n, n);
+          return res;
+      }
+
+      private void generate(String state, int left, int right) {
+          if (left > right) {
+              return;
+          }
+          if (right == 0) {
+              res.add(state);
+              return;
+          }
+          if (left > 0) {
+              generate(state + "(", left - 1, right);
+          }
+          if (right > 0) {
+              generate(state + ")", left, right - 1);
+          }
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number} n
+   * @return {string[]}
+   */
+   var generateParenthesis = function(n) {
+      let res = [];
+      dfs(n, 0, 0, '', res);
+      return res;
+  };
+
+  function dfs(n, left, right, prev, res) {
+      if (left == n && right == n) {
+          res.push(prev);
+          return;
+      }
+      if (left < n) {
+          dfs(n, left + 1, right, prev + '(', res);
+      }
+      if (right < left) {
+          dfs(n, left, right + 1, prev + ')', res);
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

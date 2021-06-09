@@ -1,0 +1,181 @@
+* [[https://leetcode-cn.com/problems/find-users-with-valid-e-mails][1517.
+查找拥有有效邮箱的用户]]
+  :PROPERTIES:
+  :CUSTOM_ID: 查找拥有有效邮箱的用户
+  :END:
+[[./solution/1500-1599/1517.Find Users With Valid E-Mails/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+用户表： Users
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +---------------+---------+
+  | Column Name   | Type    |
+  +---------------+---------+
+  | user_id       | int     |
+  | name          | varchar |
+  | mail          | varchar | 
+  +---------------+---------+
+  user_id （用户 ID）是该表的主键。
+  这个表包含用户在某网站上注册的信息。有些邮箱是无效的。</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+写一条 SQL 语句，查询拥有有效邮箱的用户。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+有效的邮箱包含符合下列条件的前缀名和域名：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+前缀名是包含字母（大写或小写）、数字、下划线 '_'、句点 '.' 和/或横杠 '-' 的字符串。前缀名必须以字母开头。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+域名是 '@leetcode.com' 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+按任意顺序返回结果表。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+查询格式如下所示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <code>Users</code>
+  +---------+-----------+-------------------------+
+  | user_id | name      | mail                    |
+  +---------+-----------+-------------------------+
+  | 1       | Winston   | winston@leetcode.com    |
+  | 2       | Jonathan  | jonathanisgreat         |
+  | 3       | Annabelle | bella-@leetcode.com     |
+  | 4       | Sally     | sally.come@leetcode.com |
+  | 5       | Marwan    | quarz#2020@leetcode.com |
+  | 6       | David     | david69@gmail.com       |
+  | 7       | Shapiro   | .shapo@leetcode.com     |
+  +---------+-----------+-------------------------+
+
+  结果表：
+  +---------+-----------+-------------------------+
+  | user_id | name      | mail                    |
+  +---------+-----------+-------------------------+
+  | 1       | Winston   | winston@leetcode.com    |
+  | 3       | Annabelle | bella-@leetcode.com     |
+  | 4       | Sally     | sally.come@leetcode.com |
+  +---------+-----------+-------------------------+
+  2 号用户的邮箱没有域名。
+  5 号用户的邮箱包含非法字符 #。
+  6 号用户的邮箱的域名不是 leetcode。
+  7 号用户的邮箱以句点（.）开头。
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

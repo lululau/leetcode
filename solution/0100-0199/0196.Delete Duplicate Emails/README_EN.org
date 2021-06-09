@@ -1,0 +1,115 @@
+* [[https://leetcode.com/problems/delete-duplicate-emails][196. Delete
+Duplicate Emails]]
+  :PROPERTIES:
+  :CUSTOM_ID: delete-duplicate-emails
+  :END:
+[[./solution/0100-0199/0196.Delete Duplicate Emails/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Write a SQL query to delete all duplicate email entries in a table named
+Person, keeping only unique emails based on its smallest Id.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +----+------------------+
+
+  | Id | Email            |
+
+  +----+------------------+
+
+  | 1  | john@example.com |
+
+  | 2  | bob@example.com  |
+
+  | 3  | john@example.com |
+
+  +----+------------------+
+
+  Id is the primary key column for this table.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example, after running your query, the above Person table should
+have the following rows:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +----+------------------+
+
+  | Id | Email            |
+
+  +----+------------------+
+
+  | 1  | john@example.com |
+
+  | 2  | bob@example.com  |
+
+  +----+------------------+
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Your output is the whole Person table after executing your sql. Use
+delete statement.
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_example
+  delete from Person where Id not in (select min(Id) from (select * from Person) as p group by p.Email)
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

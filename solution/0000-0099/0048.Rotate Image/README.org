@@ -1,0 +1,262 @@
+* [[https://leetcode-cn.com/problems/rotate-image][48. 旋转图像]]
+  :PROPERTIES:
+  :CUSTOM_ID: 旋转图像
+  :END:
+[[./solution/0000-0099/0048.Rotate Image/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个 n × n 的二维矩阵 matrix 表示一个图像。请你将图像顺时针旋转 90
+度。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你必须在 原地 旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要
+使用另一个矩阵来旋转图像。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>matrix = [[1,2,3],[4,5,6],[7,8,9]]
+  <strong>输出：</strong>[[7,4,1],[8,5,2],[9,6,3]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
+  <strong>输出：</strong>[[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>matrix = [[1]]
+  <strong>输出：</strong>[[1]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 4：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>matrix = [[1,2],[3,4]]
+  <strong>输出：</strong>[[3,1],[4,2]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+matrix.length == n
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+matrix[i].length == n
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 20
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-1000 <= matrix[i][j] <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def rotate(self, matrix: List[List[int]]) -> None:
+          """
+          Do not return anything, modify matrix in-place instead.
+          """
+          s, n = 0, len(matrix)
+          while s < (n >> 1):
+              e = n - s - 1
+              for i in range(s, e):
+                  t = matrix[i][e]
+                  matrix[i][e] = matrix[s][i]
+                  matrix[s][i] = matrix[n - i - 1][s]
+                  matrix[n - i - 1][s] = matrix[e][n - i - 1]
+                  matrix[e][n - i - 1] = t
+              s += 1
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public void rotate(int[][] matrix) {
+          int s = 0, n = matrix.length;
+          while (s < (n >> 1)) {
+              int e = n - s - 1;
+              for (int i = s; i < e; ++i) {
+                  int t = matrix[i][e];
+                  matrix[i][e] = matrix[s][i];
+                  matrix[s][i] = matrix[n - i - 1][s];
+                  matrix[n - i - 1][s] = matrix[e][n - i - 1];
+                  matrix[e][n - i - 1] = t;
+              }
+              ++s;
+          }
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

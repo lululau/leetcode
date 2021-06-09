@@ -1,0 +1,252 @@
+* [[https://leetcode.com/problems/clumsy-factorial][1006. Clumsy
+Factorial]]
+  :PROPERTIES:
+  :CUSTOM_ID: clumsy-factorial
+  :END:
+[[./solution/1000-1099/1006.Clumsy Factorial/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Normally, the factorial of a positive integer n is the product of all
+positive integers less than or equal to n.  For example, factorial(10) =
+10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+We instead make a clumsy factorial: using the integers in decreasing
+order, we swap out the multiply operations for a fixed rotation of
+operations: multiply (*), divide (/), add (+) and subtract (-) in this
+order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example, clumsy(10) = 10 * 9 / 8 + 7 - 6 * 5 / 4 + 3 - 2 * 1. 
+However, these operations are still applied using the usual order of
+operations of arithmetic: we do all multiplication and division steps
+before any addition or subtraction steps, and multiplication and
+division steps are processed left to right.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Additionally, the division that we use is floor division such that 10 *
+9 / 8 equals 11.  This guarantees the result is an integer.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement the clumsy function as defined above: given an integer N, it
+returns the clumsy factorial of N.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>4
+
+  <strong>Output:</strong>&nbsp;7
+
+  <strong>Explanation:</strong> 7 = 4 * 3 / 2 + 1
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-1-1">10
+
+  </span><strong>Output: </strong><span id="example-output-1">12
+
+  </span><strong>Explanation: </strong>12 = 10 * 9 / 8 + 7 - 6 * 5 / 4 + 3 - 2 * 1
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= N <= 10000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-2^31 <= answer <= 2^31 - 1  (The answer is guaranteed to fit within a
+32-bit integer.)
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def clumsy(self, N: int) -> int:
+          op = 0
+          s = [N]
+          for i in range(N - 1, 0, -1):
+              if op == 0:
+                  s.append(s.pop() * i)
+              elif op == 1:
+                  s.append(int(s.pop() / i))
+              elif op == 2:
+                  s.append(i)
+              else:
+                  s.append(-i)
+              op = (op + 1) % 4
+          return sum(s)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int clumsy(int N) {
+          Deque<Integer> s = new ArrayDeque<>();
+          s.offerLast(N);
+          int op = 0;
+          for (int i = N - 1; i > 0; --i) {
+              if (op == 0) {
+                  s.offerLast(s.pollLast() * i);
+              } else if (op == 1) {
+                  s.offerLast(s.pollLast() / i);
+              } else if (op == 2) {
+                  s.offerLast(i);
+              } else {
+                  s.offerLast(-i);
+              }
+              op = (op + 1) % 4;
+          }
+          int res = 0;
+          while (!s.isEmpty()) {
+              res += s.pollLast();
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

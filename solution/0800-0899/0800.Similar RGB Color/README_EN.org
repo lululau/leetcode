@@ -1,0 +1,169 @@
+* [[https://leetcode.com/problems/similar-rgb-color][800. Similar RGB
+Color]]
+  :PROPERTIES:
+  :CUSTOM_ID: similar-rgb-color
+  :END:
+[[./solution/0800-0899/0800.Similar RGB Color/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+In the following, every capital letter represents some hexadecimal digit
+from 0 to f.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The red-green-blue color "#AABBCC" can be written as "#ABC"
+in shorthand.  For example, "#15c" is shorthand for the color "#1155cc".
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Now, say the similarity between two colors "#ABCDEF" and "#UVWXYZ" is
+-(AB - UV)^2 - (CD - WX)^2 - (EF - YZ)^2.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the color "#ABCDEF", return a 7 character color that is most
+similar to #ABCDEF, and has a shorthand (that is, it can be represented
+as some "#XYZ"
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Example 1:</strong>
+
+  <strong>Input:</strong> color = &quot;#09f166&quot;
+
+  <strong>Output:</strong> &quot;#11ee66&quot;
+
+  <strong>Explanation: </strong> 
+
+  The similarity is -(0x09 - 0x11)^2 -(0xf1 - 0xee)^2 - (0x66 - 0x66)^2 = -64 -9 -0 = -73.
+
+  This is the highest among any shorthand color.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+color is a string of length 7.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+color is a valid RGB color: for i > 0, color[i] is a hexadecimal digit
+from 0 to f
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Any answer which has the same (highest) similarity as the best answer
+will be accepted.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All inputs and outputs should use lowercase letters, and the output is 7
+characters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

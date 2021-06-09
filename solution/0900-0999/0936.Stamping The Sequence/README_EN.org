@@ -1,0 +1,227 @@
+* [[https://leetcode.com/problems/stamping-the-sequence][936. Stamping
+The Sequence]]
+  :PROPERTIES:
+  :CUSTOM_ID: stamping-the-sequence
+  :END:
+[[./solution/0900-0999/0936.Stamping The Sequence/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You want to form a target string of lowercase letters.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+At the beginning, your sequence is target.length '?' marks.  You also
+have a stamp of lowercase letters.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+On each turn, you may place the stamp over the sequence, and replace
+every letter in the sequence with the corresponding letter from the
+stamp.  You can make up to 10 * target.length turns.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example, if the initial sequence is "?????", and your stamp is
+"abc",  then you may make "abc??", "?abc?", "??abc" in the first turn. 
+(Note that the stamp must be fully contained in the boundaries of the
+sequence in order to stamp.)
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If the sequence is possible to stamp, then return an array of the index
+of the left-most letter being stamped at each turn.  If the sequence is
+not possible to stamp, return an empty array.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example, if the sequence is "ababc", and the stamp is "abc", then we
+could return the answer [0, 2], corresponding to the moves "?????" ->
+"abc??" -> "ababc".
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Also, if the sequence is possible to stamp, it is guaranteed it is
+possible to stamp within 10 * target.length moves.  Any answers
+specifying more than this number of moves will not be accepted.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>stamp = <span id="example-input-1-1">&quot;abc&quot;</span>, target = <span id="example-input-1-2">&quot;ababc&quot;</span>
+
+  <strong>Output: </strong><span id="example-output-1">[0,2]</span>
+
+  ([1,0,2] would also be accepted as an answer, as well as some other answers.)
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>stamp = <span id="example-input-2-1">&quot;</span><span id="example-input-2-2">abca</span><span>&quot;</span>, target = <span id="example-input-2-2">&quot;</span><span>aabcaca&quot;</span>
+
+  <strong>Output: </strong><span id="example-output-2">[3,0,1]</span>
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= stamp.length <= target.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+stamp and target only contain lowercase letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

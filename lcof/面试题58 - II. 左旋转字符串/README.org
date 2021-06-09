@@ -1,0 +1,96 @@
+* [[https://leetcode-cn.com/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/][面试题
+58 - II. 左旋转字符串]]
+  :PROPERTIES:
+  :CUSTOM_ID: 面试题-58---ii.-左旋转字符串
+  :END:
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+字符串的左旋转操作是把字符串前面的若干个字符转移到字符串的尾部。请定义一个函数实现字符串左旋转操作的功能。比如，输入字符串”abcdefg”和数字
+2，该函数将返回左旋转两位得到的结果”cdefgab”。
+
+*示例 1：*
+
+#+begin_example
+  输入: s = "abcdefg", k = 2
+  输出: "cdefgab"
+#+end_example
+
+*示例 2：*
+
+#+begin_example
+  输入: s = "lrloseumgh", k = 6
+  输出: "umghlrlose"
+#+end_example
+
+*限制：*
+
+- =1 <= k < s.length <= 10000=
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def reverseLeftWords(self, s: str, n: int) -> str:
+          return s[n:] + s[:n]
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public String reverseLeftWords(String s, int n) {
+          return s.substring(n, s.length()) + s.substring(0, n);
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {string} s
+   * @param {number} n
+   * @return {string}
+   */
+  var reverseLeftWords = function (s, n) {
+    return s.substring(n) + s.substr(0, n);
+  };
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  func reverseLeftWords(s string, n int) string {
+      return s[n:] + s[:n]
+  }
+#+end_example
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

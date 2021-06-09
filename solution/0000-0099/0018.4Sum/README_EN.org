@@ -1,0 +1,322 @@
+* [[https://leetcode.com/problems/4sum][18. 4Sum]]
+  :PROPERTIES:
+  :CUSTOM_ID: sum
+  :END:
+[[./solution/0000-0099/0018.4Sum/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array nums of n integers, return an array of all the unique
+quadruplets [nums[a], nums[b], nums[c], nums[d]] such that:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= a, b, c, d < n
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+a, b, c, and d are distinct.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+nums[a] + nums[b] + nums[c] + nums[d] == target
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You may return the answer in any order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [1,0,-1,0,-2,2], target = 0
+  <strong>Output:</strong> [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [2,2,2,2,2], target = 8
+  <strong>Output:</strong> [[2,2,2,2]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 200
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-109 <= nums[i] <= 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-109 <= target <= 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+          res = []
+          if nums is None or len(nums) < 4:
+              return res
+          n = len(nums)
+          nums.sort()
+          for i in range(n - 3):
+              if i > 0 and nums[i] == nums[i - 1]:
+                  continue
+              for j in range(i + 1, n - 2):
+                  if j > i + 1 and nums[j] == nums[j - 1]:
+                      continue
+                  p, q = j + 1, n - 1
+                  while p < q:
+                      if p > j + 1 and nums[p] == nums[p - 1]:
+                          p += 1
+                          continue
+                      if q < n - 1 and nums[q] == nums[q + 1]:
+                          q -= 1
+                          continue
+                      t = nums[i] + nums[j] + nums[p] + nums[q]
+                      if t == target:
+                          res.append([nums[i], nums[j], nums[p], nums[q]])
+                          p += 1
+                          q -= 1
+                      elif t < target:
+                          p += 1
+                      else:
+                          q -= 1
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public List<List<Integer>> fourSum(int[] nums, int target) {
+          int n;
+          if (nums == null || (n = (nums.length)) < 4) {
+              return Collections.emptyList();
+          }
+          Arrays.sort(nums);
+          List<List<Integer>> res = new ArrayList<>();
+          for (int i = 0; i < n - 3; ++i) {
+              if (i > 0 && nums[i] == nums[i - 1]) {
+                  continue;
+              }
+              for (int j = i + 1; j < n - 2; ++j) {
+                  if (j > i + 1 && nums[j] == nums[j - 1]) {
+                      continue;
+                  }
+                  int p = j + 1, q = n - 1;
+                  while (p < q) {
+                      if (p > j + 1 && nums[p] == nums[p - 1]) {
+                          ++p;
+                          continue;
+                      }
+                      if (q < n - 1 && nums[q] == nums[q + 1]) {
+                          --q;
+                          continue;
+                      }
+                      int t = nums[i] + nums[j] + nums[p] + nums[q];
+                      if (t == target) {
+                          res.add(Arrays.asList(nums[i], nums[j], nums[p], nums[q]));
+                          ++p;
+                          --q;
+                      } else if (t < target) {
+                          ++p;
+                      } else {
+                          --q;
+                      }
+                  }
+              }
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number[]} nums
+   * @param {number} target
+   * @return {number[][]}
+   */
+  var fourSum = function (nums, target) {
+      let len = nums.length;
+      let res = [];
+      if (len < 4) return [];
+      nums.sort((a, b) => a - b);
+      for (i = 0; i < len - 3; i++) {
+          if (i > 0 && nums[i] === nums[i - 1]) continue;
+          if (nums[i] + nums[len - 1] + nums[len - 2] + nums[len - 3] < target) continue;
+          if (nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] > target) break;
+          for (j = i + 1; j < len - 2; j++) {
+              if (j > i + 1 && nums[j] === nums[j - 1]) continue;
+              let left = j + 1, right = len - 1;
+              while (left < right) {
+                  if (nums[i] + nums[j] + nums[left] + nums[right] === target) {
+                      res.push([nums[i], nums[j], nums[left], nums[right]]);
+                      while (nums[left] === nums[left + 1]) left++;
+                      left++;
+                      while (nums[right] === nums[right - 1]) right--;
+                      right--;
+                      continue;
+                  } else if (nums[i] + nums[j] + nums[left] + nums[right] > target) {
+                      right--;
+                      continue;
+                  } else {
+                      left++;
+                      continue;
+                  }
+              }
+          }
+      }
+      return res;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

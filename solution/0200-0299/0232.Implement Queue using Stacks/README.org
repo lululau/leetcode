@@ -1,0 +1,429 @@
+* [[https://leetcode-cn.com/problems/implement-queue-using-stacks][232.
+用栈实现队列]]
+  :PROPERTIES:
+  :CUSTOM_ID: 用栈实现队列
+  :END:
+[[./solution/0200-0299/0232.Implement Queue using Stacks/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你仅使用两个栈实现先入先出队列。队列应当支持一般队列支持的所有操作（push、pop、peek、empty）：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+实现 MyQueue 类：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void push(int x) 将元素 x 推到队列的末尾
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int pop() 从队列的开头移除并返回元素
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int peek() 返回队列开头的元素
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+boolean empty() 如果队列为空，返回 true ；否则，返回 false
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+说明：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+你只能使用标准的栈操作 ------ 也就是只有 push to top, peek/pop from
+top, size, 和 is empty 操作是合法的。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+你所使用的语言也许不支持栈。你可以使用 list 或者
+deque（双端队列）来模拟一个栈，只要是标准的栈操作即可。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+进阶：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+你能否实现每个操作均摊时间复杂度为 O(1) 的队列？换句话说，执行 n
+个操作的总时间复杂度为 O(n) ，即使其中一个操作可能花费较长时间。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>
+  ["MyQueue", "push", "push", "peek", "pop", "empty"]
+  [[], [1], [2], [], [], []]
+  <strong>输出：</strong>
+  [null, null, null, 1, 1, false]
+
+  <strong>解释：</strong>
+  MyQueue myQueue = new MyQueue();
+  myQueue.push(1); // queue is: [1]
+  myQueue.push(2); // queue is: [1, 2] (leftmost is front of the queue)
+  myQueue.peek(); // return 1
+  myQueue.pop(); // return 1, queue is [2]
+  myQueue.empty(); // return false
+  </pre>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= x <= 9
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+最多调用 100 次 push、pop、peek 和 empty
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+假设所有操作都是有效的 （例如，一个空的队列不会调用 pop 或者 peek 操作）
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class MyQueue:
+
+      def __init__(self):
+          """
+          Initialize your data structure here.
+          """
+          self.s1 = []
+          self.s2 = []
+
+
+      def push(self, x: int) -> None:
+          """
+          Push element x to the back of queue.
+          """
+          self.s1.append(x)
+
+
+      def pop(self) -> int:
+          """
+          Removes the element from in front of queue and returns that element.
+          """
+          self._move()
+          return self.s2.pop()
+
+      def peek(self) -> int:
+          """
+          Get the front element.
+          """
+          self._move()
+          return self.s2[-1]
+
+
+      def empty(self) -> bool:
+          """
+          Returns whether the queue is empty.
+          """
+          return len(self.s1) + len(self.s2) == 0
+
+
+      def _move(self):
+          """
+          Move elements from s1 to s2.
+          """
+          if len(self.s2) == 0:
+              while len(self.s1) > 0:
+                  self.s2.append(self.s1.pop())
+
+
+  # Your MyQueue object will be instantiated and called as such:
+  # obj = MyQueue()
+  # obj.push(x)
+  # param_2 = obj.pop()
+  # param_3 = obj.peek()
+  # param_4 = obj.empty()
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class MyQueue {
+
+      private Deque<Integer> s1 = new ArrayDeque<>();
+      private Deque<Integer> s2 = new ArrayDeque<>();
+
+      /** Initialize your data structure here. */
+      public MyQueue() {
+
+      }
+
+      /** Push element x to the back of queue. */
+      public void push(int x) {
+          s1.push(x);
+      }
+
+      /** Removes the element from in front of queue and returns that element. */
+      public int pop() {
+          move();
+          return s2.pop();
+      }
+
+      /** Get the front element. */
+      public int peek() {
+          move();
+          return s2.peek();
+      }
+
+      /** Returns whether the queue is empty. */
+      public boolean empty() {
+          return s1.isEmpty() && s2.isEmpty();
+      }
+
+      /** Move elements from s1 to s2. */
+      private void move() {
+          if (s2.isEmpty()) {
+              while (!s1.isEmpty()) {
+                  s2.push(s1.pop());
+              }
+          }
+      }
+  }
+
+  /**
+   * Your MyQueue object will be instantiated and called as such:
+   * MyQueue obj = new MyQueue();
+   * obj.push(x);
+   * int param_2 = obj.pop();
+   * int param_3 = obj.peek();
+   * boolean param_4 = obj.empty();
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

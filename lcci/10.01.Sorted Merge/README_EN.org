@@ -1,0 +1,118 @@
+* [[https://leetcode-cn.com/problems/sorted-merge-lcci][10.01. Sorted
+Merge]]
+  :PROPERTIES:
+  :CUSTOM_ID: sorted-merge
+  :END:
+[[./lcci/10.01.Sorted Merge/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given two sorted arrays, A and B, where A has a large enough
+buffer at the end to hold B. Write a method to merge B into A in sorted
+order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Initially the number of elements in A and B are m and n respectively.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong>
+
+  A = [1,2,3,0,0,0], m = 3
+
+  B = [2,5,6],       n = 3
+
+
+
+  <strong>Output:</strong>&nbsp;[1,2,2,3,5,6]</pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number[]} A
+   * @param {number} m
+   * @param {number[]} B
+   * @param {number} n
+   * @return {void} Do not return anything, modify A in-place instead.
+   */
+  var merge = function(A, m, B, n) {
+      let i = m - 1, j = n - 1;
+      for (let k = A.length - 1; k >= 0; k--) {
+          if (k == i) return;
+          if (i < 0 || A[i] <= B[j]) {
+              A[k] = B[j];
+              j--;
+          } else {
+              A[k] = A[i];
+              i--;
+          }
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

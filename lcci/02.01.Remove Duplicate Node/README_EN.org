@@ -1,0 +1,269 @@
+* [[https://leetcode-cn.com/problems/remove-duplicate-node-lcci][02.01.
+Remove Duplicate Node]]
+  :PROPERTIES:
+  :CUSTOM_ID: remove-duplicate-node
+  :END:
+[[./lcci/02.01.Remove Duplicate Node/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Write code to remove duplicates from an unsorted linked list.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong> Input</strong>: [1, 2, 3, 3, 2, 1]
+
+  <strong> Output</strong>: [1, 2, 3]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong> Input</strong>: [1, 1, 1, 1, 2]
+
+  <strong> Output</strong>: [1, 2]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The length of the list is within the range[0, 20000].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The values of the list elements are within the range [0, 20000].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow Up:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+How would you solve this problem if a temporary buffer is not allowed?
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  # Definition for singly-linked list.
+  # class ListNode:
+  #     def __init__(self, x):
+  #         self.val = x
+  #         self.next = None
+
+  class Solution:
+      def removeDuplicateNodes(self, head: ListNode) -> ListNode:
+          if head is None or head.next is None:
+              return head
+          cache = set()
+          cache.add(head.val)
+          cur, p = head, head.next
+          while p:
+              if p.val not in cache:
+                  cur.next = p
+                  cur = cur.next
+                  cache.add(p.val)
+              p = p.next
+          cur.next = None
+          return head
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  /**
+   * Definition for singly-linked list.
+   * public class ListNode {
+   *     int val;
+   *     ListNode next;
+   *     ListNode(int x) { val = x; }
+   * }
+   */
+  class Solution {
+      public ListNode removeDuplicateNodes(ListNode head) {
+          if (head == null || head.next == null) {
+              return head;
+          }
+          Set<Integer> s = new HashSet<>();
+          s.add(head.val);
+          ListNode cur = head;
+          for (ListNode p = head.next; p != null; p = p.next) {
+              if (!s.contains(p.val)) {
+                  cur.next = p;
+                  cur = cur.next;
+                  s.add(p.val);
+              }
+          }
+          cur.next = null;
+          return head;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * Definition for singly-linked list.
+   * function ListNode(val) {
+   *     this.val = val;
+   *     this.next = null;
+   * }
+   */
+  /**
+   * @param {ListNode} head
+   * @return {ListNode}
+   */
+   var removeDuplicateNodes = function(head) {
+      if (head == null || head.next == null) return head;
+      const cache = new Set([]);
+      cache.add(head.val);
+      let cur = head, fast = head.next;
+      while (fast !== null) {
+          if (!cache.has(fast.val)) {
+              cur.next = fast;
+              cur = cur.next;
+              cache.add(fast.val);
+          }
+          fast = fast.next;
+      }
+      cur.next = null;
+      return head;
+  };
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  /**
+   * Definition for singly-linked list.
+   * struct ListNode {
+   *     int val;
+   *     ListNode *next;
+   *     ListNode(int x) : val(x), next(NULL) {}
+   * };
+   */
+  class Solution {
+  public:
+      ListNode* removeDuplicateNodes(ListNode* head) {
+          if (head == nullptr || head->next == nullptr) {
+              return head;
+          }
+          unordered_set<int> cache = {head->val};
+          ListNode *cur = head;
+          for (ListNode *p = head->next; p != nullptr; p = p->next) {
+              if (!cache.count(p->val)) {
+                  cur->next = p;
+                  cur = cur->next;
+                  cache.insert(p->val);
+              }
+          }
+          cur->next = nullptr;
+          return head;
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

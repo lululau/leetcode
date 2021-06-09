@@ -1,0 +1,205 @@
+* [[https://leetcode.com/problems/can-i-win][464. Can I Win]]
+  :PROPERTIES:
+  :CUSTOM_ID: can-i-win
+  :END:
+[[./solution/0400-0499/0464.Can I Win/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+In the "100 game" two players take turns adding, to a running total, any
+integer from 1 to 10. The player who first causes the running total to
+reach or exceed 100 wins.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+What if we change the game so that players cannot re-use integers?
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example, two players might take turns drawing from a common pool of
+numbers from 1 to 15 without replacement until they reach a total
+>= 100.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given two integers maxChoosableInteger and desiredTotal, return true if
+the first player to move can force a win, otherwise, return false.
+Assume both players play optimally.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> maxChoosableInteger = 10, desiredTotal = 11
+  <strong>Output:</strong> false
+  <strong>Explanation:</strong>
+  No matter which integer the first player choose, the first player will lose.
+  The first player can choose an integer from 1 up to 10.
+  If the first player choose 1, the second player can only choose integers from 2 up to 10.
+  The second player will win by choosing 10 and get a total = 11, which is &gt;= desiredTotal.
+  Same with other integers chosen by the first player, the second player will always win.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> maxChoosableInteger = 10, desiredTotal = 0
+  <strong>Output:</strong> true
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> maxChoosableInteger = 10, desiredTotal = 1
+  <strong>Output:</strong> true
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= maxChoosableInteger <= 20
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= desiredTotal <= 300
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

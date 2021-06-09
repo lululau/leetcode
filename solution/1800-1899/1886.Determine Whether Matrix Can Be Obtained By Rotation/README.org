@@ -1,0 +1,263 @@
+* [[https://leetcode-cn.com/problems/determine-whether-matrix-can-be-obtained-by-rotation][1886.
+判断矩阵经轮转后是否一致]]
+  :PROPERTIES:
+  :CUSTOM_ID: 判断矩阵经轮转后是否一致
+  :END:
+[[./solution/1800-1899/1886.Determine Whether Matrix Can Be Obtained By Rotation/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你两个大小为 n x n 的二进制矩阵 mat 和 target 。现 以 90 度顺时针轮转
+矩阵 mat 中的元素 若干次 ，如果能够使 mat 与 target 一致，返回 true
+；否则，返回 false 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>mat = [[0,1],[1,0]], target = [[1,0],[0,1]]
+  <strong>输出：</strong>true
+  <strong>解释：</strong>顺时针轮转 90 度一次可以使 mat 和 target 一致。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>mat = [[0,1],[1,1]], target = [[1,0],[0,1]]
+  <strong>输出：</strong>false
+  <strong>解释：</strong>无法通过轮转矩阵中的元素使 equal 与 target 一致。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>mat = [[0,0,0],[0,1,0],[1,1,1]], target = [[1,1,1],[0,1,0],[0,0,0]]
+  <strong>输出：</strong>true
+  <strong>解释：</strong>顺时针轮转 90 度两次可以使 mat 和 target 一致。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n == mat.length == target.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n == mat[i].length == target[i].length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 10
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+mat[i][j] 和 target[i][j] 不是 0 就是 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+旋转矩阵，判断矩阵是否一致。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def findRotation(self, mat: List[List[int]], target: List[List[int]]) -> bool:
+          def rotate(matrix):
+              n = len(matrix)
+              for i in range(n // 2):
+                  for j in range(i, n - 1 - i):
+                      t = matrix[i][j]
+                      matrix[i][j] = matrix[n - j - 1][i]
+                      matrix[n - j - 1][i] = matrix[n - i - 1][n - j - 1]
+                      matrix[n - i - 1][n - j - 1] = matrix[j][n - i - 1]
+                      matrix[j][n - i - 1] = t
+          for _ in range(4):
+              if mat == target:
+                  return True
+              rotate(mat)
+          return False
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public boolean findRotation(int[][] mat, int[][] target) {
+          int times = 4;
+          while (times-- > 0) {
+              if (equals(mat, target)) {
+                  return true;
+              }
+              rotate(mat);
+          }
+          return false;
+      }
+      
+      private void rotate(int[][] matrix) {
+          int n = matrix.length;
+          for (int i = 0; i < n / 2; ++i) {
+              for (int j = i; j < n - 1 - i; ++j) {
+                  int t = matrix[i][j];
+                  matrix[i][j] = matrix[n - j - 1][i];
+                  matrix[n - j - 1][i] = matrix[n - i - 1][n - j - 1];
+                  matrix[n - i - 1][n - j - 1] = matrix[j][n - i - 1];
+                  matrix[j][n - i - 1] = t;
+              }
+          }
+      }
+      
+      private boolean equals(int[][] nums1, int[][] nums2) {
+          int n = nums1.length;
+          for (int i = 0; i < n; ++i) {
+              for (int j = 0; j < n; ++j) {
+                  if (nums1[i][j] != nums2[i][j]) {
+                      return false;
+                  }
+              }
+          }
+          return true;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

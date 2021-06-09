@@ -1,0 +1,141 @@
+* [[https://leetcode-cn.com/problemset/lcci/][《程序员面试金典（第 6
+版）》系列]]
+  :PROPERTIES:
+  :CUSTOM_ID: 程序员面试金典第-6-版系列
+  :END:
+本书是原谷歌资深面试官的经验之作，帮助了许多想要加入脸书、苹果、谷歌等
+IT 名企的求职者拿到 Dream offer。本专题的 100+
+编程面试题是在原书基础上精心挑选出来的，帮助你轻松应战 IT 名企技术面试。
+
+[[./lcci/README_EN.org][English Version]]
+
+** 题解
+   :PROPERTIES:
+   :CUSTOM_ID: 题解
+   :END:
+以下所有题目均来源 [[https://leetcode-cn.com/problemset/lcci/][LeetCode
+中国官网]]，题解由
+[[https://github.com/doocs/leetcode/graphs/contributors][doocs/leetcode
+贡献者]] 提供，正在完善中，欢迎贡献你的题解！
+
+快速搜索题号、题解、标签等，请善用 Control+F（或者 Command+F）。
+
+| 题号                                                                              | 题解                                                                               | 标签                                          | 难度 |
+|-----------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-----------------------------------------------+------|
+| [[https://leetcode-cn.com/problems/is-unique-lcci][01.01]]                        | [[./lcci/01.01.Is Unique/README.org][判定字符是否唯一]]                            | =数组=                                        | 简单 |
+| [[https://leetcode-cn.com/problems/check-permutation-lcci][01.02]]                | [[./lcci/01.02.Check Permutation/README.org][判定是否互为字符重排]]                | =数组=,=字符串=                               | 简单 |
+| [[https://leetcode-cn.com/problems/string-to-url-lcci][01.03]]                    | [[./lcci/01.03.String to URL/README.org][URL 化]]                                | =字符串=                                      | 简单 |
+| [[https://leetcode-cn.com/problems/palindrome-permutation-lcci][01.04]]           | [[./lcci/01.04.Palindrome Permutation/README.org][回文排列]]                       | =哈希表=,=字符串=                             | 简单 |
+| [[https://leetcode-cn.com/problems/one-away-lcci][01.05]]                         | [[./lcci/01.05.One Away/README.org][一次编辑]]                                     | =字符串=,=动态规划=                           | 中等 |
+| [[https://leetcode-cn.com/problems/compress-string-lcci][01.06]]                  | [[./lcci/01.06.Compress String/README.org][字符串压缩]]                            | =字符串=                                      | 简单 |
+| [[https://leetcode-cn.com/problems/rotate-matrix-lcci][01.07]]                    | [[./lcci/01.07.Rotate Matrix/README.org][旋转矩阵]]                                | =数组=                                        | 中等 |
+| [[https://leetcode-cn.com/problems/zero-matrix-lcci][01.08]]                      | [[./lcci/01.08.Zero Matrix/README.org][零矩阵]]                                    | =数组=                                        | 中等 |
+| [[https://leetcode-cn.com/problems/string-rotation-lcci][01.09]]                  | [[./lcci/01.09.String Rotation/README.org][字符串轮转]]                            | =字符串=                                      | 简单 |
+| [[https://leetcode-cn.com/problems/remove-duplicate-node-lcci][02.01]]            | [[./lcci/02.01.Remove Duplicate Node/README.org][移除重复节点]]                  | =链表=                                        | 简单 |
+| [[https://leetcode-cn.com/problems/kth-node-from-end-of-list-lcci][02.02]]        | [[./lcci/02.02.Kth Node From End of List/README.org][返回倒数第 k 个节点]] | =链表=,=双指针=                               | 简单 |
+| [[https://leetcode-cn.com/problems/delete-middle-node-lcci][02.03]]               | [[./lcci/02.03.Delete Middle Node/README.org][删除中间节点]]                     | =链表=                                        | 简单 |
+| [[https://leetcode-cn.com/problems/partition-list-lcci][02.04]]                   | [[./lcci/02.04.Partition List/README.org][分割链表]]                               | =链表=,=双指针=                               | 中等 |
+| [[https://leetcode-cn.com/problems/sum-lists-lcci][02.05]]                        | [[./lcci/02.05.Sum Lists/README.org][链表求和]]                                    | =链表=,=数学=                                 | 中等 |
+| [[https://leetcode-cn.com/problems/palindrome-linked-list-lcci][02.06]]           | [[./lcci/02.06.Palindrome Linked List/README.org][回文链表]]                     | =链表=                                        | 简单 |
+| [[https://leetcode-cn.com/problems/intersection-of-two-linked-lists-lcci][02.07]] | [[./lcci/02.07.Intersection of Two Linked Lists/README.org][链表相交]]       | =链表=                                        | 简单 |
+| [[https://leetcode-cn.com/problems/linked-list-cycle-lcci][02.08]]                | [[./lcci/02.08.Linked List Cycle/README.org][环路检测]]                          | =链表=                                        | 中等 |
+| [[https://leetcode-cn.com/problems/three-in-one-lcci][03.01]]                     | [[./lcci/03.01.Three in One/README.org][三合一]]                                 | =设计=                                        | 简单 |
+| [[https://leetcode-cn.com/problems/min-stack-lcci][03.02]]                        | [[./lcci/03.02.Min Stack/README.org][栈的最小值]]                                  | =栈=                                          | 简单 |
+| [[https://leetcode-cn.com/problems/stack-of-plates-lcci][03.03]]                  | [[./lcci/03.03.Stack of Plates/README.org][堆盘子]]                              | =设计=                                        | 中等 |
+| [[https://leetcode-cn.com/problems/implement-queue-using-stacks-lcci][03.04]]     | [[./lcci/03.04.Implement Queue using Stacks/README.org][化栈为队]]             | =栈=                                          | 简单 |
+| [[https://leetcode-cn.com/problems/sort-of-stacks-lcci][03.05]]                   | [[./lcci/03.05.Sort of Stacks/README.org][栈排序]]                               | =设计=                                        | 中等 |
+| [[https://leetcode-cn.com/problems/animal-shelter-lcci][03.06]]                   | [[./lcci/03.06.Animal Shelter/README.org][动物收容所]]                             | =设计=                                        | 简单 |
+| [[https://leetcode-cn.com/problems/route-between-nodes-lcci][04.01]]              | [[./lcci/04.01.Route Between Nodes/README.org][节点间通路]]                      | =图=                                          | 中等 |
+| [[https://leetcode-cn.com/problems/minimum-height-tree-lcci][04.02]]              | [[./lcci/04.02.Minimum Height Tree/README.org][最小高度树]]                      | =树=,=深度优先搜索=                           | 简单 |
+| [[https://leetcode-cn.com/problems/list-of-depth-lcci][04.03]]                    | [[./lcci/04.03.List of Depth/README.org][特定深度节点链表]]                      | =树=,=广度优先搜索=                           | 中等 |
+| [[https://leetcode-cn.com/problems/check-balance-lcci][04.04]]                    | [[./lcci/04.04.Check Balance/README.org][检查平衡性]]                              | =树=,=深度优先搜索=                           | 简单 |
+| [[https://leetcode-cn.com/problems/legal-binary-search-tree-lcci][04.05]]         | [[./lcci/04.05.Legal Binary Search Tree/README.org][合法二叉搜索树]]           | =树=,=深度优先搜索=                           | 中等 |
+| [[https://leetcode-cn.com/problems/successor-lcci][04.06]]                        | [[./lcci/04.06.Successor/README.org][后继者]]                                        | =树=,=深度优先搜索=                           | 中等 |
+| [[https://leetcode-cn.com/problems/first-common-ancestor-lcci][04.08]]            | [[./lcci/04.08.First Common Ancestor/README.org][首个共同祖先]]                  | =树=                                          | 中等 |
+| [[https://leetcode-cn.com/problems/bst-sequences-lcci][04.09]]                    | [[./lcci/04.09.BST Sequences/README.org][二叉搜索树序列]]                          | =树=,=动态规划=                               | 困难 |
+| [[https://leetcode-cn.com/problems/check-subtree-lcci][04.10]]                    | [[./lcci/04.10.Check SubTree/README.org][检查子树]]                                | =树=                                          | 中等 |
+| [[https://leetcode-cn.com/problems/paths-with-sum-lcci][04.12]]                   | [[./lcci/04.12.Paths with Sum/README.org][求和路径]]                             | =树=,=深度优先搜索=                           | 中等 |
+| [[https://leetcode-cn.com/problems/insert-into-bits-lcci][05.01]]                 | [[./lcci/05.01.Insert Into Bits/README.org][插入]]                               | =位运算=                                      | 简单 |
+| [[https://leetcode-cn.com/problems/bianry-number-to-string-lcci][05.02]]          | [[./lcci/05.02.Bianry Number to String/README.org][二进制数转字符串]]          | =字符串=                                      | 中等 |
+| [[https://leetcode-cn.com/problems/reverse-bits-lcci][05.03]]                     | [[./lcci/05.03.Reverse Bits/README.org][翻转数位]]                                 | =位运算=                                      | 简单 |
+| [[https://leetcode-cn.com/problems/closed-number-lcci][05.04]]                    | [[./lcci/05.04.Closed Number/README.org][下一个数]]                                | =位运算=                                      | 中等 |
+| [[https://leetcode-cn.com/problems/convert-integer-lcci][05.06]]                  | [[./lcci/05.06.Convert Integer/README.org][整数转换]]                              | =位运算=                                      | 简单 |
+| [[https://leetcode-cn.com/problems/exchange-lcci][05.07]]                         | [[./lcci/05.07.Exchange/README.org][配对交换]]                                       | =位运算=                                      | 简单 |
+| [[https://leetcode-cn.com/problems/draw-line-lcci][05.08]]                        | [[./lcci/05.08.Draw Line/README.org][绘制直线]]                                    | =数组=                                        | 中等 |
+| [[https://leetcode-cn.com/problems/three-steps-problem-lcci][08.01]]              | [[./lcci/08.01.Three Steps Problem/README.org][三步问题]]                        | =动态规划=                                    | 简单 |
+| [[https://leetcode-cn.com/problems/robot-in-a-grid-lcci][08.02]]                  | [[./lcci/08.02.Robot in a Grid/README.org][迷路的机器人]]                      | =动态规划=                                    | 中等 |
+| [[https://leetcode-cn.com/problems/magic-index-lcci][08.03]]                      | [[./lcci/08.03.Magic Index/README.org][魔术索引]]                                  | =数组=,=二分查找=                             | 简单 |
+| [[https://leetcode-cn.com/problems/power-set-lcci][08.04]]                        | [[./lcci/08.04.Power Set/README.org][幂集]]                                        | =位运算=,=数组=,=回溯算法=                    | 中等 |
+| [[https://leetcode-cn.com/problems/recursive-mulitply-lcci][08.05]]               | [[./lcci/08.05.Recursive Mulitply/README.org][递归乘法]]                           | =递归=                                        | 中等 |
+| [[https://leetcode-cn.com/problems/hanota-lcci][08.06]]                           | [[./lcci/08.06.Hanota/README.org][汉诺塔问题]]                                       | =递归=                                        | 简单 |
+| [[https://leetcode-cn.com/problems/permutation-i-lcci][08.07]]                    | [[./lcci/08.07.Permutation I/README.org][无重复字符串的排列组合]]                  | =回溯算法=                                    | 中等 |
+| [[https://leetcode-cn.com/problems/permutation-ii-lcci][08.08]]                   | [[./lcci/08.08.Permutation II/README.org][有重复字符串的排列组合]]                 | =回溯算法=                                    | 中等 |
+| [[https://leetcode-cn.com/problems/bracket-lcci][08.09]]                          | [[./lcci/08.09.Bracket/README.org][括号]]                                            | =字符串=,=回溯算法=                           | 中等 |
+| [[https://leetcode-cn.com/problems/color-fill-lcci][08.10]]                       | [[./lcci/08.10.Color Fill/README.org][颜色填充]]                                   | =深度优先搜索=                                | 简单 |
+| [[https://leetcode-cn.com/problems/coin-lcci][08.11]]                             | [[./lcci/08.11.Coin/README.org][硬币]]                                               | =动态规划=                                    | 中等 |
+| [[https://leetcode-cn.com/problems/eight-queens-lcci][08.12]]                     | [[./lcci/08.12.Eight Queens/README.org][八皇后]]                                   | =回溯算法=                                    | 困难 |
+| [[https://leetcode-cn.com/problems/pile-box-lcci][08.13]]                         | [[./lcci/08.13.Pile Box/README.org][堆箱子]]                                       | =动态规划=,=回溯算法=                         | 困难 |
+| [[https://leetcode-cn.com/problems/boolean-evaluation-lcci][08.14]]               | [[./lcci/08.14.Boolean Evaluation/README.org][布尔运算]]                           | =栈=,=字符串=                                 | 中等 |
+| [[https://leetcode-cn.com/problems/sorted-merge-lcci][10.01]]                     | [[./lcci/10.01.Sorted Merge/README.org][合并排序的数组]]                           | =数组=,=双指针=                               | 简单 |
+| [[https://leetcode-cn.com/problems/group-anagrams-lcci][10.02]]                   | [[./lcci/10.02.Group Anagrams/README.org][变位词组]]                               | =哈希表=,=字符串=                             | 中等 |
+| [[https://leetcode-cn.com/problems/search-rotate-array-lcci][10.03]]              | [[./lcci/10.03.Search Rotate Array/README.org][搜索旋转数组]]                    | =数组=,=二分查找=                             | 中等 |
+| [[https://leetcode-cn.com/problems/sparse-array-search-lcci][10.05]]              | [[./lcci/10.05.Sparse Array Search/README.org][稀疏数组搜索]]                    | =二分查找=                                    | 简单 |
+| [[https://leetcode-cn.com/problems/sorted-matrix-search-lcci][10.09]]             | [[./lcci/10.09.Sorted Matrix Search/README.org][排序矩阵查找]]                   | =双指针=,=二分查找=,=分治算法=                | 中等 |
+| [[https://leetcode-cn.com/problems/rank-from-stream-lcci][10.10]]                 | [[./lcci/10.10.Rank from Stream/README.org][数字流的秩]]                         |                                               | 中等 |
+| [[https://leetcode-cn.com/problems/peaks-and-valleys-lcci][10.11]]                | [[./lcci/10.11.Peaks and Valleys/README.org][峰与谷]]                            |                                               | 中等 |
+| [[https://leetcode-cn.com/problems/swap-numbers-lcci][16.01]]                     | [[./lcci/16.01.Swap Numbers/README.org][交换数字]]                                 | =位运算=,=数学=                               | 中等 |
+| [[https://leetcode-cn.com/problems/words-frequency-lcci][16.02]]                  | [[./lcci/16.02.Words Frequency/README.org][单词频率]]                              | =设计=,=哈希表=                               | 中等 |
+| [[https://leetcode-cn.com/problems/intersection-lcci][16.03]]                     | [[./lcci/16.03.Intersection/README.org][交点]]                                       | =几何=,=数学=                                 | 困难 |
+| [[https://leetcode-cn.com/problems/tic-tac-toe-lcci][16.04]]                      | [[./lcci/16.04.Tic-Tac-Toe/README.org][井字游戏]]                                    | =数组=                                        | 中等 |
+| [[https://leetcode-cn.com/problems/factorial-zeros-lcci][16.05]]                  | [[./lcci/16.05.Factorial Zeros/README.org][阶乘尾数]]                              | =数学=                                        | 简单 |
+| [[https://leetcode-cn.com/problems/smallest-difference-lcci][16.06]]              | [[./lcci/16.06.Smallest Difference/README.org][最小差]]                            | =数组=,=双指针=                               | 中等 |
+| [[https://leetcode-cn.com/problems/maximum-lcci][16.07]]                          | [[./lcci/16.07.Maximum/README.org][最大数值]]                                        | =位运算=,=数学=                               | 简单 |
+| [[https://leetcode-cn.com/problems/english-int-lcci][16.08]]                      | [[./lcci/16.08.English Int/README.org][整数的英语表示]]                            | =数学=,=字符串=                               | 困难 |
+| [[https://leetcode-cn.com/problems/operations-lcci][16.09]]                       | [[./lcci/16.09.Operations/README.org][运算]]                                         | =设计=                                        | 中等 |
+| [[https://leetcode-cn.com/problems/living-people-lcci][16.10]]                    | [[./lcci/16.10.Living People/README.org][生存人数]]                                | =数组=                                        | 中等 |
+| [[https://leetcode-cn.com/problems/diving-board-lcci][16.11]]                     | [[./lcci/16.11.Diving Board/README.org][跳水板]]                                   | =递归=,=记忆化=                               | 简单 |
+| [[https://leetcode-cn.com/problems/bisect-squares-lcci][16.13]]                   | [[./lcci/16.13.Bisect Squares/README.org][平分正方形]]                             | =几何=                                        | 中等 |
+| [[https://leetcode-cn.com/problems/best-line-lcci][16.14]]                        | [[./lcci/16.14.Best Line/README.org][最佳直线]]                                    | =几何=,=哈希表=                               | 中等 |
+| [[https://leetcode-cn.com/problems/master-mind-lcci][16.15]]                      | [[./lcci/16.15.Master Mind/README.org][珠玑妙算]]                                  | =数组=                                        | 简单 |
+| [[https://leetcode-cn.com/problems/sub-sort-lcci][16.16]]                         | [[./lcci/16.16.Sub Sort/README.org][部分排序]]                                     | =排序=,=数组=                                 | 中等 |
+| [[https://leetcode-cn.com/problems/contiguous-sequence-lcci][16.17]]              | [[./lcci/16.17.Contiguous Sequence/README.org][连续数列]]                          | =数组=,=分治算法=,=动态规划=                  | 简单 |
+| [[https://leetcode-cn.com/problems/pattern-matching-lcci][16.18]]                 | [[./lcci/16.18.Pattern Matching/README.org][模式匹配]]                             | =字符串=                                      | 中等 |
+| [[https://leetcode-cn.com/problems/pond-sizes-lcci][16.19]]                       | [[./lcci/16.19.Pond Sizes/README.org][水域大小]]                                   | =深度优先搜索=,=广度优先搜索=                 | 中等 |
+| [[https://leetcode-cn.com/problems/t9-lcci][16.20]]                               | [[./lcci/16.20.T9/README.org][T9 键盘]]                                              | =数组=                                        | 中等 |
+| [[https://leetcode-cn.com/problems/sum-swap-lcci][16.21]]                         | [[./lcci/16.21.Sum Swap/README.org][交换和]]                                       | =排序=,=数组=                                 | 中等 |
+| [[https://leetcode-cn.com/problems/langtons-ant-lcci][16.22]]                     | [[./lcci/16.22.Langtons Ant/README.org][兰顿蚂蚁]]                                 | =数组=                                        | 中等 |
+| [[https://leetcode-cn.com/problems/pairs-with-sum-lcci][16.24]]                   | [[./lcci/16.24.Pairs With Sum/README.org][数对和]]                               | =数组=,=哈希表=                               | 中等 |
+| [[https://leetcode-cn.com/problems/lru-cache-lcci][16.25]]                        | [[./lcci/16.25.LRU Cache/README.org][LRU 缓存]]                                    | =设计=                                        | 中等 |
+| [[https://leetcode-cn.com/problems/calculator-lcci][16.26]]                       | [[./lcci/16.26.Calculator/README.org][计算器]]                                       | =字符串=                                      | 中等 |
+| [[https://leetcode-cn.com/problems/add-without-plus-lcci][17.01]]                 | [[./lcci/17.01.Add Without Plus/README.org][不用加号的加法]]                     | =位运算=                                      | 简单 |
+| [[https://leetcode-cn.com/problems/missing-number-lcci][17.04]]                   | [[./lcci/17.04.Missing Number/README.org][消失的数字]]                             | =位运算=,=数组=,=数学=                        | 简单 |
+| [[https://leetcode-cn.com/problems/find-longest-subarray-lcci][17.05]]            | [[./lcci/17.05.Find Longest Subarray/README.org][字母与数字]]                    | =数组=                                        | 中等 |
+| [[https://leetcode-cn.com/problems/number-of-2s-in-range-lcci][17.06]]            | [[./lcci/17.06.Number Of 2s In Range/README.org][2 出现的次数]]              | =数学=,=动态规划=                             | 中等 |
+| [[https://leetcode-cn.com/problems/baby-names-lcci][17.07]]                       | [[./lcci/17.07.Baby Names/README.org][婴儿名字]]                                   | =深度优先搜索=,=广度优先搜索=,=并查集=        | 中等 |
+| [[https://leetcode-cn.com/problems/circus-tower-lcci][17.08]]                     | [[./lcci/17.08.Circus Tower/README.org][马戏团人塔]]                               | =排序=,=二分查找=,=动态规划=                  | 中等 |
+| [[https://leetcode-cn.com/problems/get-kth-magic-number-lcci][17.09]]             | [[./lcci/17.09.Get Kth Magic Number/README.org][第 k 个数]]                    | =堆=,=队列=,=数学=                            | 中等 |
+| [[https://leetcode-cn.com/problems/find-majority-element-lcci][17.10]]            | [[./lcci/17.10.Find Majority Element/README.org][主要元素]]                      | =位运算=,=数组=,=分治算法=                    | 简单 |
+| [[https://leetcode-cn.com/problems/find-closest-lcci][17.11]]                     | [[./lcci/17.11.Find Closest/README.org][单词距离]]                                 | =双指针=,=字符串=                             | 中等 |
+| [[https://leetcode-cn.com/problems/binode-lcci][17.12]]                           | [[./lcci/17.12.BiNode/README.org][BiNode]]                                           | =树=,=二叉搜索树=,=递归=                      | 简单 |
+| [[https://leetcode-cn.com/problems/re-space-lcci][17.13]]                         | [[./lcci/17.13.Re-Space/README.org][恢复空格]]                                       | =记忆化=,=字符串=                             | 中等 |
+| [[https://leetcode-cn.com/problems/smallest-k-lcci][17.14]]                       | [[./lcci/17.14.Smallest K/README.org][最小 K 个数]]                                | =堆=,=排序=,=分治算法=                        | 中等 |
+| [[https://leetcode-cn.com/problems/longest-word-lcci][17.15]]                     | [[./lcci/17.15.Longest Word/README.org][最长单词]]                                 | =字符串=                                      | 中等 |
+| [[https://leetcode-cn.com/problems/the-masseuse-lcci][17.16]]                     | [[./lcci/17.16.The Masseuse/README.org][按摩师]]                                   | =动态规划=                                    | 简单 |
+| [[https://leetcode-cn.com/problems/multi-search-lcci][17.17]]                     | [[./lcci/17.17.Multi Search/README.org][多次搜索]]                                 | =字典树=,=字符串=                             | 中等 |
+| [[https://leetcode-cn.com/problems/shortest-supersequence-lcci][17.18]]           | [[./lcci/17.18.Shortest Supersequence/README.org][最短超串]]                       | =None=                                        | 中等 |
+| [[https://leetcode-cn.com/problems/missing-two-lcci][17.19]]                      | [[./lcci/17.19.Missing Two/README.org][消失的两个数字]]                            | =数组=,=数学=                                 | 困难 |
+| [[https://leetcode-cn.com/problems/continuous-median-lcci][17.20]]                | [[./lcci/17.20.Continuous Median/README.org][连续中值]]                            | =堆=                                          | 困难 |
+| [[https://leetcode-cn.com/problems/volume-of-histogram-lcci][17.21]]              | [[./lcci/17.21.Volume of Histogram/README.org][直方图的水量]]                    | =栈=,=数组=,=双指针=                          | 困难 |
+| [[https://leetcode-cn.com/problems/word-transformer-lcci][17.22]]                 | [[./lcci/17.22.Word Transformer/README.org][单词转换]]                             | =深度优先搜索=,=广度优先搜索=,=数组=,=字符串= | 中等 |
+| [[https://leetcode-cn.com/problems/max-black-square-lcci][17.23]]                 | [[./lcci/17.23.Max Black Square/README.org][最大黑方阵]]                         | =动态规划=                                    | 中等 |
+| [[https://leetcode-cn.com/problems/max-submatrix-lcci][17.24]]                    | [[./lcci/17.24.Max Submatrix/README.org][最大子矩阵]]                              | =动态规划=                                    | 困难 |
+| [[https://leetcode-cn.com/problems/word-rectangle-lcci][17.25]]                   | [[./lcci/17.25.Word Rectangle/README.org][单词矩阵]]                               |                                               | 困难 |
+| [[https://leetcode-cn.com/problems/sparse-similarity-lcci][17.26]]                | [[./lcci/17.26.Sparse Similarity/README.org][稀疏相似度]]                          | =哈希表=                                      | 困难 |
+
+** 版权
+   :PROPERTIES:
+   :CUSTOM_ID: 版权
+   :END:
+著作权归 [[https://github.com/doocs][GitHub 开源社区 Doocs]]
+所有，商业转载请联系 [@yanglbme](mailto:contact@yanglibin.info)
+授权，非商业转载请注明出处。

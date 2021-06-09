@@ -1,0 +1,291 @@
+* [[https://leetcode-cn.com/problems/max-stack][716. 最大栈]]
+  :PROPERTIES:
+  :CUSTOM_ID: 最大栈
+  :END:
+[[./solution/0700-0799/0716.Max Stack/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+设计一个最大栈数据结构，既支持栈操作，又支持查找栈中最大元素。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+实现 MaxStack 类：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+MaxStack() 初始化栈对象
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void push(int x) 将元素 x 压入栈中。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int pop() 移除栈顶元素并返回这个元素。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int top() 返回栈顶元素，无需移除。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int peekMax() 检索并返回栈中最大元素，无需移除。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int
+popMax() 检索并返回栈中最大元素，并将其移除。如果有多个最大元素，只要移除
+最靠近栈顶 的那个。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入</strong>
+  ["MaxStack", "push", "push", "push", "top", "popMax", "top", "peekMax", "pop", "top"]
+  [[], [5], [1], [5], [], [], [], [], [], []]
+  <strong>输出</strong>
+  [null, null, null, null, 5, 5, 1, 5, 1, 5]
+
+  <strong>解释</strong>
+  MaxStack stk = new MaxStack();
+  stk.push(5);   // [<strong>5</strong>] - 5 既是栈顶元素，也是最大元素
+  stk.push(1);   // [<strong>5</strong>, <strong>1</strong>] - 栈顶元素是 1，最大元素是 5
+  stk.push(5);   // [5, 1, <strong>5</strong>] - 5 既是栈顶元素，也是最大元素
+  stk.top();     // 返回 5，[5, 1, <strong>5</strong>] - 栈没有改变
+  stk.popMax();  // 返回 5，[<strong>5</strong>, <strong>1</strong>] - 栈发生改变，栈顶元素不再是最大元素
+  stk.top();     // 返回 1，[<strong>5</strong>, <strong>1</strong>] - 栈没有改变
+  stk.peekMax(); // 返回 5，[<strong>5</strong>, <strong>1</strong>] - 栈没有改变
+  stk.pop();     // 返回 1，[<strong>5</strong>] - 此操作后，5 既是栈顶元素，也是最大元素
+  stk.top();     // 返回 5，[<strong>5</strong>] - 栈没有改变
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-107 <= x <= 107
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+最多调用 104 次 push、pop、top、peekMax 和 popMax
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+调用 pop、top、peekMax 或 popMax 时，栈中 至少存在一个元素
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+进阶： 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+试着设计解决方案：调用 top
+方法的时间复杂度为 O(1) ，调用其他方法的时间复杂度为 O(logn) 。 
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

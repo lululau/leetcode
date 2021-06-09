@@ -1,0 +1,133 @@
+* [[https://leetcode-cn.com/problems/power-set-lcci][08.04. Power Set]]
+  :PROPERTIES:
+  :CUSTOM_ID: power-set
+  :END:
+[[./lcci/08.04.Power Set/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Write a method to return all subsets of a set. The elements in a set
+are pairwise distinct.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note: The result set should not contain duplicated subsets.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong> Input</strong>:  nums = [1,2,3]
+
+  <strong> Output</strong>: 
+
+  [
+
+    [3],
+
+  &nbsp; [1],
+
+  &nbsp; [2],
+
+  &nbsp; [1,2,3],
+
+  &nbsp; [1,3],
+
+  &nbsp; [2,3],
+
+  &nbsp; [1,2],
+
+  &nbsp; []
+
+  ]
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+Backtracking
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number[]} nums
+   * @return {number[][]}
+   */
+  var subsets = function(nums) {
+      let prev = [];
+      let res = [];
+      dfs(nums, 0, prev, res);
+      return res;
+  };
+
+  function dfs (nums, depth, prev, res) {
+      res.push(prev.slice());
+      for (let i = depth; i < nums.length; i++) {
+          prev.push(nums[i]);
+          depth++;
+          dfs(nums, depth, prev, res);
+          prev.pop();
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

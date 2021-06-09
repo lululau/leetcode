@@ -1,0 +1,112 @@
+* [[https://leetcode.com/problems/second-highest-salary][176. Second
+Highest Salary]]
+  :PROPERTIES:
+  :CUSTOM_ID: second-highest-salary
+  :END:
+[[./solution/0100-0199/0176.Second Highest Salary/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Write a SQL query to get the second highest salary from the Employee
+table.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +----+--------+
+
+  | Id | Salary |
+
+  +----+--------+
+
+  | 1  | 100    |
+
+  | 2  | 200    |
+
+  | 3  | 300    |
+
+  +----+--------+
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example, given the above Employee table, the query should return 200
+as the second highest salary. If there is no second highest salary, then
+the query should return null.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +---------------------+
+
+  | SecondHighestSalary |
+
+  +---------------------+
+
+  | 200                 |
+
+  +---------------------+
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+Solution 1: Use Sub Query and LIMIT.
+
+#+begin_src sql
+  # Write your MySQL query statement below
+  SELECT
+  (
+      SELECT DISTINCT Salary
+      FROM Employee
+      ORDER BY Salary DESC
+      LIMIT 1 OFFSET 1
+  ) AS SecondHighestSalary;
+#+end_src
+
+Solution 2: Use =MAX()= function.
+
+#+begin_src sql
+  # Write your MySQL query statement below
+  SELECT MAX(Salary) AS SecondHighestSalary
+  FROM Employee
+  WHERE Salary < (
+      SELECT MAX(Salary)
+      FROM Employee
+  );
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

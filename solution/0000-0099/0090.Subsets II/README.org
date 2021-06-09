@@ -1,0 +1,210 @@
+* [[https://leetcode-cn.com/problems/subsets-ii][90. 子集 II]]
+  :PROPERTIES:
+  :CUSTOM_ID: 子集-ii
+  :END:
+[[./solution/0000-0099/0090.Subsets II/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个整数数组 nums
+，其中可能包含重复元素，请你返回该数组所有可能的子集（幂集）。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+解集 不能 包含重复的子集。返回的解集中，子集可以按 任意顺序 排列。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>nums = [1,2,2]
+  <strong>输出：</strong>[[],[1],[1,2],[1,2,2],[2],[2,2]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>nums = [0]
+  <strong>输出：</strong>[[],[0]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 10
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-10 <= nums[i] <= 10
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+          def dfs(nums, i, res, path):
+              res.append(copy.deepcopy(path))
+              for j in range(i, len(nums)):
+                  if j != i and nums[j] == nums[j - 1]:
+                      continue
+                  path.append(nums[j])
+                  dfs(nums, j + 1, res, path)
+                  path.pop()
+          res, path = [], []
+          nums.sort()
+          dfs(nums, 0, res, path)
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public List<List<Integer>> subsetsWithDup(int[] nums) {
+          List<Integer> path = new ArrayList<>();
+          List<List<Integer>> res = new ArrayList<>();
+          Arrays.sort(nums);
+          dfs(nums, 0, res, path);
+          return res;
+      }
+
+      private void dfs(int[] nums, int i, List<List<Integer>> res, List<Integer> path) {
+          res.add(new ArrayList<>(path));
+          for (int j = i; j < nums.length; ++j) {
+              if (j != i && nums[j] == nums[j - 1]) {
+                  continue;
+              }
+              path.add(nums[j]);
+              dfs(nums, i + 1, res, path);
+              path.remove(path.size() - 1);
+          }
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,171 @@
+* [[https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof/][面试题 05.
+替换空格]]
+  :PROPERTIES:
+  :CUSTOM_ID: 面试题-05.-替换空格
+  :END:
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+请实现一个函数，把字符串 =s= 中的每个空格替换成” ”。
+
+*示例 1：*
+
+#+begin_example
+  输入：s = "We are happy."
+  输出："We are happy."
+#+end_example
+
+*限制：*
+
+- =0 <= s 的长度 <= 10000=
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+使用 replace 替换即可。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def replaceSpace(self, s: str) -> str:
+          return s.replace(' ', ' ')
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+- 使用 replace：
+
+#+begin_src java
+  class Solution {
+      public String replaceSpace(String s) {
+          return s.replaceAll(" ", " ");
+      }
+  }
+#+end_src
+
+- 使用 StringBuilder：
+
+#+begin_src java
+  class Solution {
+      public String replaceSpace(String s) {
+          StringBuilder sb = new StringBuilder();
+          char[] chars = s.toCharArray();
+          for (char c : chars) {
+              sb.append(c == ' ' ? " " : c);
+          }
+          return sb.toString();
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+
+- 使用字符串内置方法
+
+#+begin_src js
+  /**
+   * @param {string} s
+   * @return {string}
+   */
+  var replaceSpace = function (s) {
+    return s.split(" ").join(" ");
+  };
+#+end_src
+
+- 使用两个指针
+
+#+begin_src js
+  /**
+   * @param {string}
+   * @return {string}
+   */
+  var replaceSpace = function(s) {
+    s = s.split("");
+    let emptyNum = 0;
+    for (let i = 0; i < s.length; i++) {
+      if (s[i] === " ") {
+        emptyNum++;
+      }
+    }
+    let p1 = s.length - 1;
+    let p2 = p1 + 2 * emptyNum;
+    while (p1 >= 0 && p2 > p1) {
+      if (s[p1] === " ") {
+        s[p2] = "0";
+        s[--p2] = "2";
+        s[--p2] = "%";
+      } else {
+        s[p2] = s[p1];
+      }
+      p1--;
+      p2--;
+    }
+    return s.join("");
+  };
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  func replaceSpace(s string) string {
+      return strings.Replace(s, " ", " ", -1 )
+  }
+#+end_example
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      string replaceSpace(string s) {
+          string ans;
+          for (char ch : s) {
+              if (ch == ' ')
+                  ans += " ";
+              else
+                  ans += ch;
+          }
+          return ans;
+      }
+  };
+#+end_src
+
+*** *TypeScript*
+    :PROPERTIES:
+    :CUSTOM_ID: typescript
+    :END:
+#+begin_example
+  function replaceSpace(s: string): string {
+      return s.replace(/\s/g, ' ');
+  };
+#+end_example
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,104 @@
+* [[https://leetcode.com/problems/biggest-single-number][619. Biggest
+Single Number]]
+  :PROPERTIES:
+  :CUSTOM_ID: biggest-single-number
+  :END:
+[[./solution/0600-0699/0619.Biggest Single Number/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Table my_numbers contains many numbers in column num including
+duplicated ones.
+
+Can you write a SQL query to find the biggest number, which only appears
+once.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +---+
+
+  |num|
+
+  +---+
+
+  | 8 |
+
+  | 8 |
+
+  | 3 |
+
+  | 3 |
+
+  | 1 |
+
+  | 4 |
+
+  | 5 |
+
+  | 6 | 
+
+  </pre>
+#+end_html
+
+For the sample data above, your query should return the following
+result:
+
+#+begin_html
+  <pre>
+
+  +---+
+
+  |num|
+
+  +---+
+
+  | 6 |
+
+  </pre>
+#+end_html
+
+Note:
+
+If there is no such number, just output null.
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

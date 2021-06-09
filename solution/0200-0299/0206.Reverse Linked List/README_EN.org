@@ -1,0 +1,297 @@
+* [[https://leetcode.com/problems/reverse-linked-list][206. Reverse
+Linked List]]
+  :PROPERTIES:
+  :CUSTOM_ID: reverse-linked-list
+  :END:
+[[./solution/0200-0299/0206.Reverse Linked List/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the head of a singly linked list, reverse the list, and return the
+reversed list.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> head = [1,2,3,4,5]
+  <strong>Output:</strong> [5,4,3,2,1]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> head = [1,2]
+  <strong>Output:</strong> [2,1]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> head = []
+  <strong>Output:</strong> []
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of nodes in the list is the range [0, 5000].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-5000 <= Node.val <= 5000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow up: A linked list can be reversed either iteratively or
+recursively. Could you implement both?
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  # Definition for singly-linked list.
+  # class ListNode:
+  #     def __init__(self, x):
+  #         self.val = x
+  #         self.next = None
+
+  class Solution:
+      def reverseList(self, head: ListNode) -> ListNode:
+          pre, p = None, head
+          while p:
+              q = p.next
+              p.next = pre
+              pre = p
+              p = q
+          return pre
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+Iterative version:
+
+#+begin_src java
+  /**
+   * Definition for singly-linked list.
+   * public class ListNode {
+   *     int val;
+   *     ListNode next;
+   *     ListNode(int x) { val = x; }
+   * }
+   */
+  class Solution {
+      public ListNode reverseList(ListNode head) {
+          ListNode pre = null, p = head;
+          while (p != null) {
+              ListNode q = p.next;
+              p.next = pre;
+              pre = p;
+              p = q;
+          }
+          return pre;
+      }
+  }
+#+end_src
+
+Recursive version:
+
+#+begin_src java
+  /**
+   * Definition for singly-linked list.
+   * public class ListNode {
+   *     int val;
+   *     ListNode next;
+   *     ListNode(int x) { val = x; }
+   * }
+   */
+  class Solution {
+      public ListNode reverseList(ListNode head) {
+          if (head == null || head.next == null) {
+              return head;
+          }
+          ListNode res = reverseList(head.next);
+          head.next.next = head;
+          head.next = null;
+          return res;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * Definition for singly-linked list.
+   * function ListNode(val) {
+   *     this.val = val;
+   *     this.next = null;
+   * }
+   */
+  /**
+   * @param {ListNode} head
+   * @return {ListNode}
+   */
+  var reverseList = function (head) {
+    let node = head;
+    let pre = null;
+    while (node) {
+      let cur = node;
+      node = cur.next;
+      cur.next = pre;
+      pre = cur;
+    }
+    return pre;
+  };
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  func reverseList(head *ListNode) *ListNode {
+      if head == nil ||head.Next == nil {
+          return head
+      }
+      dummyHead := &ListNode{}
+      cur := head
+      for cur != nil {
+          tmp := cur.Next
+          cur.Next = dummyHead.Next
+          dummyHead.Next = cur
+          cur = tmp
+      }
+      return dummyHead.Next
+  }
+#+end_example
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

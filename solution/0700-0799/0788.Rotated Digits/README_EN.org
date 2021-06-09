@@ -1,0 +1,119 @@
+* [[https://leetcode.com/problems/rotated-digits][788. Rotated Digits]]
+  :PROPERTIES:
+  :CUSTOM_ID: rotated-digits
+  :END:
+[[./solution/0700-0799/0788.Rotated Digits/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+X is a good number if after rotating each digit individually by 180
+degrees, we get a valid number that is different from X.  Each digit
+must be rotated - we cannot choose to leave it alone.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A number is valid if each digit remains a digit after rotation. 0, 1,
+and 8 rotate to themselves; 2 and 5 rotate to each other (on this case
+they are rotated in a different direction, in other words 2 or 5 gets
+mirrored); 6 and 9 rotate to each other, and the rest of the numbers do
+not rotate to any other number and become invalid.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Now given a positive number N, how many numbers X from 1 to N are good?
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Example:</strong>
+  <strong>Input:</strong> 10
+  <strong>Output:</strong> 4
+  <strong>Explanation:</strong> 
+  There are four good numbers in the range [1, 10] : 2, 5, 6, 9.
+  Note that 1 and 10 are not good numbers, since they remain unchanged after rotating.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+N  will be in range [1, 10000].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

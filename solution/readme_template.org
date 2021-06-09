@@ -1,0 +1,26 @@
+* LeetCode
+  :PROPERTIES:
+  :CUSTOM_ID: leetcode
+  :END:
+[[./solution/README_EN.org][English Version]]
+
+** 题解
+   :PROPERTIES:
+   :CUSTOM_ID: 题解
+   :END:
+以下所有题目均来源 [[https://leetcode-cn.com/problemset/all][LeetCode
+中国官网]]，题解由
+[[https://github.com/doocs/leetcode/graphs/contributors][doocs/leetcode
+贡献者]] 提供，正在完善中，欢迎贡献你的题解！
+
+快速搜索题号、题解、标签等，请善用 Control+F（或者 Command+F）。
+
+{}
+
+** 版权
+   :PROPERTIES:
+   :CUSTOM_ID: 版权
+   :END:
+著作权归 [[https://github.com/doocs][GitHub 开源社区 Doocs]]
+所有，商业转载请联系 [@yanglbme](mailto:contact@yanglibin.info)
+授权，非商业转载请注明出处。

@@ -1,0 +1,208 @@
+* [[https://leetcode.com/problems/largest-merge-of-two-strings][1754.
+Largest Merge Of Two Strings]]
+  :PROPERTIES:
+  :CUSTOM_ID: largest-merge-of-two-strings
+  :END:
+[[./solution/1700-1799/1754.Largest Merge Of Two Strings/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given two strings word1 and word2. You want to construct a
+string merge in the following way: while either word1 or word2 are
+non-empty, choose one of the following options:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If word1 is non-empty, append the first character in word1 to merge and
+delete it from word1.
+
+#+begin_example
+  <ul>
+      <li>For example, if <code>word1 = &quot;abc&quot; </code>and <code>merge = &quot;dv&quot;</code>, then after choosing this operation, <code>word1 = &quot;bc&quot;</code> and <code>merge = &quot;dva&quot;</code>.</li>
+  </ul>
+  </li>
+  <li>If <code>word2</code> is non-empty, append the <strong>first</strong> character in <code>word2</code> to <code>merge</code> and delete it from <code>word2</code>.
+  <ul>
+      <li>For example, if <code>word2 = &quot;abc&quot; </code>and <code>merge = &quot;&quot;</code>, then after choosing this operation, <code>word2 = &quot;bc&quot;</code> and <code>merge = &quot;a&quot;</code>.</li>
+  </ul>
+  </li>
+#+end_example
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the lexicographically largest merge you can construct.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A string a is lexicographically larger than a string b (of the same
+length) if in the first position where a and b differ, a has a character
+strictly larger than the corresponding character in b. For example,
+"abcd" is lexicographically larger than "abcc" because the first
+position they differ is at the fourth character, and d is greater than
+c.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> word1 = &quot;cabaa&quot;, word2 = &quot;bcaaa&quot;
+  <strong>Output:</strong> &quot;cbcabaaaaa&quot;
+  <strong>Explanation:</strong> One way to get the lexicographically largest merge is:
+  - Take from word1: merge = &quot;c&quot;, word1 = &quot;abaa&quot;, word2 = &quot;bcaaa&quot;
+  - Take from word2: merge = &quot;cb&quot;, word1 = &quot;abaa&quot;, word2 = &quot;caaa&quot;
+  - Take from word2: merge = &quot;cbc&quot;, word1 = &quot;abaa&quot;, word2 = &quot;aaa&quot;
+  - Take from word1: merge = &quot;cbca&quot;, word1 = &quot;baa&quot;, word2 = &quot;aaa&quot;
+  - Take from word1: merge = &quot;cbcab&quot;, word1 = &quot;aa&quot;, word2 = &quot;aaa&quot;
+  - Append the remaining 5 a&#39;s from word1 and word2 at the end of merge.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> word1 = &quot;abcabc&quot;, word2 = &quot;abdcaba&quot;
+  <strong>Output:</strong> &quot;abdcabcabcaba&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= word1.length, word2.length <= 3000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+word1 and word2 consist only of lowercase English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

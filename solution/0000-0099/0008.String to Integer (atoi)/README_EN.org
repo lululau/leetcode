@@ -1,0 +1,423 @@
+* [[https://leetcode.com/problems/string-to-integer-atoi][8. String to
+Integer (atoi)]]
+  :PROPERTIES:
+  :CUSTOM_ID: string-to-integer-atoi
+  :END:
+[[./solution/0000-0099/0008.String to Integer %28atoi%29/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement the myAtoi(string s) function, which converts a string to a
+32-bit signed integer (similar to C/C++'s atoi function).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The algorithm for myAtoi(string s) is as follows:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Read in and ignore any leading whitespace.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Check if the next character (if not already at the end of the string) is
+'-' or '+'. Read this character in if it is either. This determines if
+the final result is negative or positive respectively. Assume the result
+is positive if neither is present.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Read in next the characters until the next non-digit charcter or the end
+of the input is reached. The rest of the string is ignored.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Convert these digits into an integer (i.e. "123" -> 123, "0032" -> 32).
+If no digits were read, then the integer is 0. Change the sign as
+necessary (from step 2).
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If the integer is out of the 32-bit signed integer range [-231, 231 -
+1], then clamp the integer so that it remains in the range.
+Specifically, integers less than -231 should be clamped to -231, and
+integers greater than 231 - 1 should be clamped to 231 - 1.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Return the integer as the final result.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Only the space character ' ' is considered a whitespace character.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Do not ignore any characters other than the leading whitespace or the
+rest of the string after the digits.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;42&quot;
+  <strong>Output:</strong> 42
+  <strong>Explanation:</strong> The underlined characters are what is read in, the caret is the current reader position.
+  Step 1: &quot;42&quot; (no characters read because there is no leading whitespace)
+           ^
+  Step 2: &quot;42&quot; (no characters read because there is neither a &#39;-&#39; nor &#39;+&#39;)
+           ^
+  Step 3: &quot;<u>42</u>&quot; (&quot;42&quot; is read in)
+             ^
+  The parsed integer is 42.
+  Since 42 is in the range [-2<sup>31</sup>, 2<sup>31</sup> - 1], the final result is 42.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;   -42&quot;
+  <strong>Output:</strong> -42
+  <strong>Explanation:</strong>
+  Step 1: &quot;<u>   </u>-42&quot; (leading whitespace is read and ignored)
+              ^
+  Step 2: &quot;   <u>-</u>42&quot; (&#39;-&#39; is read, so the result should be negative)
+               ^
+  Step 3: &quot;   -<u>42</u>&quot; (&quot;42&quot; is read in)
+                 ^
+  The parsed integer is -42.
+  Since -42 is in the range [-2<sup>31</sup>, 2<sup>31</sup> - 1], the final result is -42.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;4193 with words&quot;
+  <strong>Output:</strong> 4193
+  <strong>Explanation:</strong>
+  Step 1: &quot;4193 with words&quot; (no characters read because there is no leading whitespace)
+           ^
+  Step 2: &quot;4193 with words&quot; (no characters read because there is neither a &#39;-&#39; nor &#39;+&#39;)
+           ^
+  Step 3: &quot;<u>4193</u> with words&quot; (&quot;4193&quot; is read in; reading stops because the next character is a non-digit)
+               ^
+  The parsed integer is 4193.
+  Since 4193 is in the range [-2<sup>31</sup>, 2<sup>31</sup> - 1], the final result is 4193.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;words and 987&quot;
+  <strong>Output:</strong> 0
+  <strong>Explanation:
+  </strong>Step 1: &quot;words and 987&quot; (no characters read because there is no leading whitespace)
+           ^
+  Step 2: &quot;words and 987&quot; (no characters read because there is neither a &#39;-&#39; nor &#39;+&#39;)
+           ^
+  Step 3: &quot;words and 987&quot; (reading stops immediately because there is a non-digit &#39;w&#39;)
+           ^
+  The parsed integer is 0 because no digits were read.
+  Since 0 is in the range [-2<sup>31</sup>, 2<sup>31</sup> - 1], the final result is 0.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;-91283472332&quot;
+  <strong>Output:</strong> -2147483648
+  <strong>Explanation:
+  </strong>Step 1: &quot;-91283472332&quot; (no characters read because there is no leading whitespace)
+           ^
+  Step 2: &quot;<u>-</u>91283472332&quot; (&#39;-&#39; is read, so the result should be negative)
+            ^
+  Step 3: &quot;-<u>91283472332</u>&quot; (&quot;91283472332&quot; is read in)
+                       ^
+  The parsed integer is -91283472332.
+  Since -91283472332 is less than the lower bound of the range [-2<sup>31</sup>, 2<sup>31</sup> - 1], the final result is clamped to -2<sup>31</sup> = -2147483648.<strong><span style="display: none;"> </span></strong>
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= s.length <= 200
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s consists of English letters (lower-case and upper-case), digits (0-9),
+' ', '+', '-', and '.'.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def myAtoi(self, s: str) -> int:
+          if not s:
+              return 0
+          n = len(s)
+          if n == 0:
+              return 0
+          i = 0
+          while s[i] == ' ':
+              i += 1
+              # only contains blank space
+              if i == n:
+                  return 0
+          sign = -1 if s[i] == '-' else 1
+          if s[i] in ['-', '+']:
+              i += 1
+          res, flag = 0, (2 ** 31 - 1) // 10
+          while i < n:
+              # not a number, exit the loop
+              if not s[i].isdigit():
+                  break
+              c = int(s[i])
+              # if overflows
+              if res > flag or (res == flag and c > 7):
+                  return 2 ** 31 - 1 if sign > 0 else -2 ** 31
+              res = res * 10 + c
+              i += 1
+          return sign * res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int myAtoi(String s) {
+          if (s == null) return 0;
+          int n = s.length();
+          if (n == 0) return 0;
+          int i = 0;
+          while (s.charAt(i) == ' ') {
+              // only contains blank space
+              if (++i == n) return 0;
+          }
+          int sign = 1;
+          if (s.charAt(i) == '-') sign = -1;
+          if (s.charAt(i) == '-' || s.charAt(i) == '+') ++i;
+          int res = 0, flag = Integer.MAX_VALUE / 10;
+          for (; i < n; ++i) {
+              // not a number, exit the loop
+              if (s.charAt(i) < '0' || s.charAt(i) > '9') break;
+              // if overflows
+              if (res > flag || (res == flag && s.charAt(i) > '7')) return sign > 0 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+              res = res * 10 + (s.charAt(i) - '0');
+          }
+          return sign * res;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

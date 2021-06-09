@@ -1,0 +1,220 @@
+* [[https://leetcode-cn.com/problems/continuous-median-lcci][17.20.
+Continuous Median]]
+  :PROPERTIES:
+  :CUSTOM_ID: continuous-median
+  :END:
+[[./lcci/17.20.Continuous Median/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Numbers are randomly generated and passed to a method. Write a program
+to find and maintain the median value as new values are generated.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Median is the middle value in an ordered integer list. If the size of
+the list is even, there is no middle value. So the median is the mean of
+the two middle value.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example,
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+[2,3,4], the median is 3
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+[2,3], the median is (2 + 3) / 2 = 2.5
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Design a data structure that supports the following two operations:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void addNum(int num) - Add a integer number from the data stream to the
+data structure.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+double findMedian() - Return the median of all elements so far.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  addNum(1)
+
+  addNum(2)
+
+  findMedian() -&gt; 1.5
+
+  addNum(3) 
+
+  findMedian() -&gt; 2
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class MedianFinder:
+
+      def __init__(self):
+          """
+          initialize your data structure here.
+          """
+          self.min_heap = []
+          self.max_heap = []
+
+      def addNum(self, num: int) -> None:
+          heapq.heappush(self.min_heap, num)
+          heapq.heappush(self.max_heap, -heapq.heappop(self.min_heap))
+          if len(self.max_heap) - len(self.min_heap) > 1:
+              heapq.heappush(self.min_heap, -heapq.heappop(self.max_heap))
+
+      def findMedian(self) -> float:
+          if len(self.max_heap) > len(self.min_heap):
+              return -self.max_heap[0]
+          return (self.min_heap[0] - self.max_heap[0]) / 2
+
+
+  # Your MedianFinder object will be instantiated and called as such:
+  # obj = MedianFinder()
+  # obj.addNum(num)
+  # param_2 = obj.findMedian()
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class MedianFinder {
+      private PriorityQueue<Integer> minHeap;
+      private PriorityQueue<Integer> maxHeap;
+
+      /** initialize your data structure here. */
+      public MedianFinder() {
+          minHeap = new PriorityQueue<>();
+          maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+      }
+
+      public void addNum(int num) {
+          minHeap.offer(num);
+          maxHeap.offer(minHeap.poll());
+          if (maxHeap.size() - minHeap.size() > 1) {
+              minHeap.offer(maxHeap.poll());
+          }
+      }
+
+      public double findMedian() {
+          if (maxHeap.size() > minHeap.size()) {
+              return maxHeap.peek();
+          }
+          return (minHeap.peek() + maxHeap.peek()) * 1.0 / 2;
+      }
+  }
+
+  /**
+   * Your MedianFinder object will be instantiated and called as such:
+   * MedianFinder obj = new MedianFinder();
+   * obj.addNum(num);
+   * double param_2 = obj.findMedian();
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

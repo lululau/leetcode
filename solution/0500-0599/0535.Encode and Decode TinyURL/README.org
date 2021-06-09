@@ -1,0 +1,133 @@
+* [[https://leetcode-cn.com/problems/encode-and-decode-tinyurl][535.
+TinyURL 的加密与解密]]
+  :PROPERTIES:
+  :CUSTOM_ID: tinyurl-的加密与解密
+  :END:
+[[./solution/0500-0599/0535.Encode and Decode TinyURL/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+TinyURL是一种URL简化服务，
+比如：当你输入一个URL https://leetcode.com/problems/design-tinyurl 时，它将返回一个简化的URL http://tinyurl.com/4e9iAk.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+要求：设计一个 TinyURL
+的加密 encode 和解密 decode 的方法。你的加密和解密算法如何设计和运作是没有限制的，你只需要保证一个URL可以被加密成一个TinyURL，并且这个TinyURL可以用解密方法恢复成原本的URL。
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+哈希表实现。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Codec:
+      def __init__(self):
+          self.code_url = {}
+          self.count = 0
+          self.prefix_url = 'http://tinyurl.com/'
+
+      def encode(self, longUrl: str) -> str:
+          """Encodes a URL to a shortened URL.
+          """
+          self.count += 1
+          code = str(hex(self.count))[2:]
+          self.code_url[code] = longUrl
+          return self.prefix_url + code
+
+      def decode(self, shortUrl: str) -> str:
+          """Decodes a shortened URL to its original URL.
+          """
+          code = shortUrl.replace(self.prefix_url, '')
+          return self.code_url[code]
+
+  # Your Codec object will be instantiated and called as such:
+  # codec = Codec()
+  # codec.decode(codec.encode(url))
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  public class Codec {
+      private Map<String, String> code2Url = new HashMap<>();
+      private int count = 0;
+      private static final String prefixUrl = "http://tinyurl.com/";
+
+      // Encodes a URL to a shortened URL.
+      public String encode(String longUrl) {
+          String code = Integer.toHexString(++count);
+          code2Url.put(code, longUrl);
+          return prefixUrl + code;
+      }
+
+      // Decodes a shortened URL to its original URL.
+      public String decode(String shortUrl) {
+          String code = shortUrl.replace(prefixUrl, "");
+          return code2Url.get(code);
+      }
+  }
+
+  // Your Codec object will be instantiated and called as such:
+  // Codec codec = new Codec();
+  // codec.decode(codec.encode(url));
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

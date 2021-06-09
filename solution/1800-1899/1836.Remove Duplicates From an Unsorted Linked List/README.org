@@ -1,0 +1,153 @@
+* [[https://leetcode-cn.com/problems/remove-duplicates-from-an-unsorted-linked-list][1836.]]
+  :PROPERTIES:
+  :CUSTOM_ID: section
+  :END:
+[[./solution/1800-1899/1836.Remove Duplicates From an Unsorted Linked List/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+None
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+"哈希表"实现。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  # Definition for singly-linked list.
+  # class ListNode:
+  #     def __init__(self, val=0, next=None):
+  #         self.val = val
+  #         self.next = next
+  class Solution:
+      def deleteDuplicatesUnsorted(self, head: ListNode) -> ListNode:
+          cur = head
+          counter = collections.Counter()
+          while cur:
+              counter[cur.val] += 1
+              cur = cur.next
+
+          dummy = ListNode(0, head)
+          pre, cur = dummy, head
+          while cur:
+              if counter[cur.val] > 1:
+                  pre.next = cur.next
+              else:
+                  pre = cur
+              cur = cur.next
+          return dummy.next
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  /**
+   * Definition for singly-linked list.
+   * public class ListNode {
+   *     int val;
+   *     ListNode next;
+   *     ListNode() {}
+   *     ListNode(int val) { this.val = val; }
+   *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+   * }
+   */
+  class Solution {
+      public ListNode deleteDuplicatesUnsorted(ListNode head) {
+          Map<Integer, Integer> counter = new HashMap<>();
+          for (ListNode cur = head; cur != null; cur = cur.next) {
+              counter.put(cur.val, counter.getOrDefault(cur.val, 0) + 1);
+          }
+
+          ListNode dummy = new ListNode(0, head);
+          for (ListNode pre = dummy, cur = head; cur != null; cur = cur.next) {
+              if (counter.get(cur.val) > 1) {
+                  pre.next = cur.next;
+              } else {
+                  pre = cur;
+              }
+          }
+          return dummy.next;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  /**
+   * Definition for singly-linked list.
+   * struct ListNode {
+   *     int val;
+   *     ListNode *next;
+   *     ListNode() : val(0), next(nullptr) {}
+   *     ListNode(int x) : val(x), next(nullptr) {}
+   *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+   * };
+   */
+  class Solution {
+  public:
+      ListNode* deleteDuplicatesUnsorted(ListNode* head) {
+          unordered_map<int, int> counter;
+          for (ListNode* cur = head; cur != nullptr; cur = cur->next) {
+              ++counter[cur->val];
+          }
+
+          ListNode* dummy = new ListNode(0, head);
+          for (ListNode* pre = dummy, *cur = head; cur != nullptr; cur = cur->next) {
+              if (counter[cur->val] > 1) {
+                  pre->next = cur->next;
+              } else {
+                  pre = cur;
+              }
+          }
+          return dummy->next;
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section-1
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

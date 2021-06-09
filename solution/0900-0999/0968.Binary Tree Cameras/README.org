@@ -1,0 +1,231 @@
+* [[https://leetcode-cn.com/problems/binary-tree-cameras][968.
+监控二叉树]]
+  :PROPERTIES:
+  :CUSTOM_ID: 监控二叉树
+  :END:
+[[./solution/0900-0999/0968.Binary Tree Cameras/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个二叉树，我们在树的节点上安装摄像头。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+节点上的每个摄影头都可以监视其父对象、自身及其直接子对象。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+计算监控树的所有节点所需的最小摄像头数量。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>[0,0,null,0,0]
+  <strong>输出：</strong>1
+  <strong>解释：</strong>如图所示，一台摄像头足以监控所有节点。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>[0,0,null,0,null,0,null,null,0]
+  <strong>输出：</strong>2
+  <strong>解释：</strong>需要至少两个摄像头来监视树的所有节点。 上图显示了摄像头放置的有效位置之一。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+给定树的节点数的范围是 [1, 1000]。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+每个节点的值都是 0。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  /**
+   * Definition for a binary tree node.
+   * type TreeNode struct {
+   *     Val int
+   *     Left *TreeNode
+   *     Right *TreeNode
+   * }
+   */
+
+  var res int
+  func minCameraCover(root *TreeNode) int {
+      res = 0
+      //三种状态，后序遍历
+      if root == nil {
+          return 0
+      }
+      if dfs(root) == 0 {
+          res++
+      }
+      return res
+  }
+  //0:待覆盖，1：已覆盖，2：安装
+
+  func dfs(root *TreeNode) int {
+      if root == nil {
+          return 1
+      }
+      l := dfs(root.Left)
+      r := dfs(root.Right)
+      //左右子节点存在待覆盖状态，当前节点要安装
+      if l == 0 || r == 0 {
+          res++
+          return 2
+      } else if l == 1 && r == 1 { //左右节点均为已覆盖，则当前节点为待覆盖
+          return 0
+      }
+      //除上述情况外，左右子节点中至少有一个安装了监控，当前节点为已覆盖
+      return 1
+  }
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

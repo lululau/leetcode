@@ -1,0 +1,330 @@
+* [[https://leetcode-cn.com/problems/subrectangle-queries][1476.
+子矩形查询]]
+  :PROPERTIES:
+  :CUSTOM_ID: 子矩形查询
+  :END:
+[[./solution/1400-1499/1476.Subrectangle Queries/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你实现一个类 SubrectangleQueries ，它的构造函数的参数是一个 rows x
+cols 的矩形（这里用整数矩阵表示），并支持以下两种操作：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+1. updateSubrectangle(int row1, int col1, int row2, int col2, int
+newValue)
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+用 newValue 更新以 (row1,col1) 为左上角且以 (row2,col2) 为右下角的子矩形。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+2. getValue(int row, int col)
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+返回矩形中坐标 (row,col) 的当前值。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>
+  [&quot;SubrectangleQueries&quot;,&quot;getValue&quot;,&quot;updateSubrectangle&quot;,&quot;getValue&quot;,&quot;getValue&quot;,&quot;updateSubrectangle&quot;,&quot;getValue&quot;,&quot;getValue&quot;]
+  [[[[1,2,1],[4,3,4],[3,2,1],[1,1,1]]],[0,2],[0,0,3,2,5],[0,2],[3,1],[3,0,3,2,10],[3,1],[0,2]]
+  <strong>输出：</strong>
+  [null,1,null,5,5,null,10,5]
+  <strong>解释：</strong>
+  SubrectangleQueries subrectangleQueries = new SubrectangleQueries([[1,2,1],[4,3,4],[3,2,1],[1,1,1]]);  
+  // 初始的 (4x3) 矩形如下：
+  // 1 2 1
+  // 4 3 4
+  // 3 2 1
+  // 1 1 1
+  subrectangleQueries.getValue(0, 2); // 返回 1
+  subrectangleQueries.updateSubrectangle(0, 0, 3, 2, 5);
+  // 此次更新后矩形变为：
+  // 5 5 5
+  // 5 5 5
+  // 5 5 5
+  // 5 5 5 
+  subrectangleQueries.getValue(0, 2); // 返回 5
+  subrectangleQueries.getValue(3, 1); // 返回 5
+  subrectangleQueries.updateSubrectangle(3, 0, 3, 2, 10);
+  // 此次更新后矩形变为：
+  // 5   5   5
+  // 5   5   5
+  // 5   5   5
+  // 10  10  10 
+  subrectangleQueries.getValue(3, 1); // 返回 10
+  subrectangleQueries.getValue(0, 2); // 返回 5
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>
+  [&quot;SubrectangleQueries&quot;,&quot;getValue&quot;,&quot;updateSubrectangle&quot;,&quot;getValue&quot;,&quot;getValue&quot;,&quot;updateSubrectangle&quot;,&quot;getValue&quot;]
+  [[[[1,1,1],[2,2,2],[3,3,3]]],[0,0],[0,0,2,2,100],[0,0],[2,2],[1,1,2,2,20],[2,2]]
+  <strong>输出：</strong>
+  [null,1,null,100,100,null,20]
+  <strong>解释：</strong>
+  SubrectangleQueries subrectangleQueries = new SubrectangleQueries([[1,1,1],[2,2,2],[3,3,3]]);
+  subrectangleQueries.getValue(0, 0); // 返回 1
+  subrectangleQueries.updateSubrectangle(0, 0, 2, 2, 100);
+  subrectangleQueries.getValue(0, 0); // 返回 100
+  subrectangleQueries.getValue(2, 2); // 返回 100
+  subrectangleQueries.updateSubrectangle(1, 1, 2, 2, 20);
+  subrectangleQueries.getValue(2, 2); // 返回 20
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+最多有 500 次updateSubrectangle 和 getValue 操作。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= rows, cols <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+rows == rectangle.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+cols == rectangle[i].length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= row1 <= row2 < rows
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= col1 <= col2 < cols
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= newValue, rectangle[i][j] <= 10^9
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= row < rows
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= col < cols
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,302 @@
+* [[https://leetcode.com/problems/the-k-strongest-values-in-an-array][1471.
+The k Strongest Values in an Array]]
+  :PROPERTIES:
+  :CUSTOM_ID: the-k-strongest-values-in-an-array
+  :END:
+[[./solution/1400-1499/1471.The k Strongest Values in an Array/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array of integers arr and an integer k.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A value arr[i] is said to be stronger than a value arr[j] if |arr[i] -
+m| > |arr[j] - m| where m is the median of the array.
+
+If |arr[i] - m| == |arr[j] - m|, then arr[i] is said to be stronger than
+arr[j] if arr[i] > arr[j].
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return a list of the strongest k values in the array. return the answer
+in any arbitrary order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Median is the middle value in an ordered integer list. More formally, if
+the length of the list is n, the median is the element in position
+((n - 1) / 2) in the sorted list (0-indexed).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For arr = [6, -3, 7, 2, 11], n = 5 and the median is obtained by sorting
+the array arr = [-3, 2, 6, 7, 11] and the median is arr[m] where m =
+((5 - 1) / 2) = 2. The median is 6.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For arr = [-7, 22, 17, 3], n = 4 and the median is obtained by sorting
+the array arr = [-7, 3, 17, 22] and the median is arr[m] where m =
+((4 - 1) / 2) = 1. The median is 3.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> arr = [1,2,3,4,5], k = 2
+
+  <strong>Output:</strong> [5,1]
+
+  <strong>Explanation:</strong> Median is 3, the elements of the array sorted by the strongest are [5,1,4,2,3]. The strongest 2 elements are [5, 1]. [1, 5] is also <strong>accepted</strong> answer.
+
+  Please note that although |5 - 3| == |1 - 3| but 5 is stronger than 1 because 5 &gt; 1.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> arr = [1,1,3,5,5], k = 2
+
+  <strong>Output:</strong> [5,5]
+
+  <strong>Explanation:</strong> Median is 3, the elements of the array sorted by the strongest are [5,5,1,1,3]. The strongest 2 elements are [5, 5].
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> arr = [6,7,11,7,6,8], k = 5
+
+  <strong>Output:</strong> [11,8,6,6,7]
+
+  <strong>Explanation:</strong> Median is 7, the elements of the array sorted by the strongest are [11,8,6,6,7,7].
+
+  Any permutation of [11,8,6,6,7] is <strong>accepted</strong>.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> arr = [6,-3,7,2,11], k = 3
+
+  <strong>Output:</strong> [-3,11,2]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> arr = [-7,22,17,3], k = 2
+
+  <strong>Output:</strong> [22,17]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= arr.length <= 10^5
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-10^5 <= arr[i] <= 10^5
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= k <= arr.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

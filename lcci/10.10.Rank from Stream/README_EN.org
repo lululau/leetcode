@@ -1,0 +1,137 @@
+* [[https://leetcode-cn.com/problems/rank-from-stream-lcci][10.10. Rank
+from Stream]]
+  :PROPERTIES:
+  :CUSTOM_ID: rank-from-stream
+  :END:
+[[./lcci/10.10.Rank from Stream/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Imagine you are reading in a stream of integers. Periodically, you wish
+to be able to look up the rank of a number x (the number of values less
+than or equal to x). lmplement the data structures and algorithms to
+support these operations. That is, implement the method track (int x),
+which is called when each number is generated, and the method
+getRankOfNumber(int x), which returns the number of values less than or
+equal to x.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note: This problem is slightly different from the original one in the
+book.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong>
+
+  [&quot;StreamRank&quot;, &quot;getRankOfNumber&quot;, &quot;track&quot;, &quot;getRankOfNumber&quot;]
+
+  [[], [1], [0], [0]]
+
+  <strong>Output:
+
+  </strong>[null,0,null,1]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+x <= 50000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of calls of both track and getRankOfNumber methods are less
+than or equal to 2000.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

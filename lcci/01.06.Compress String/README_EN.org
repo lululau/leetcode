@@ -1,0 +1,173 @@
+* [[https://leetcode-cn.com/problems/compress-string-lcci][01.06.
+Compress String]]
+  :PROPERTIES:
+  :CUSTOM_ID: compress-string
+  :END:
+[[./lcci/01.06.Compress String/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement a method to perform basic string compression using the counts
+of repeated characters. For example, the string aabcccccaaa would become
+a2blc5a3. If the "compressed" string would not become smaller than the
+original string, your method should return the original string. You can
+assume the string has only uppercase and lowercase letters (a - z).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>&quot;aabcccccaaa&quot;
+
+  <strong>Output: </strong>&quot;a2b1c5a3&quot;
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>&quot;abbccd&quot;
+
+  <strong>Output: </strong>&quot;abbccd&quot;
+
+  <strong>Explanation: </strong>
+
+  The compressed string is &quot;a1b2c2d1&quot;, which is longer than the original string.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+- =0 <= S.length <= 50000=
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def compressString(self, S: str) -> str:
+          if len(S) < 2:
+              return S
+          p, q = 0, 1
+          res = ''
+          while q < len(S):
+              if S[p] != S[q]:
+                  res += (S[p] + str(q - p))
+                  p = q
+              q += 1
+          res += (S[p] + str(q - p))
+          return res if len(res) < len(S) else S
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public String compressString(String S) {
+          int n;
+          if (S == null || (n = S.length()) < 2) {
+              return S;
+          }
+          int p = 0, q = 1;
+          StringBuilder sb = new StringBuilder();
+          while (q < n) {
+              if (S.charAt(p) != S.charAt(q)) {
+                  sb.append(S.charAt(p)).append(q - p);
+                  p = q;
+              }
+              ++q;
+          }
+          sb.append(S.charAt(p)).append(q - p);
+          String res = sb.toString();
+          return res.length() < n ? res : S;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {string} S
+   * @return {string}
+   */
+  var compressString = function(S) {
+      if (!S) return S;
+      let p = 0, q = 1;
+      let res = '';
+      while (q < S.length) {
+          if (S[p] != S[q]) {
+              res += (S[p] + (q - p));
+              p = q;
+          }
+          ++q;
+      }
+      res += (S[p] + (q - p));
+      return res.length < S.length ? res : S;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

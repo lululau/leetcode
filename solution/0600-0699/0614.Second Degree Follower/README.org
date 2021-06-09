@@ -1,0 +1,182 @@
+* [[https://leetcode-cn.com/problems/second-degree-follower][614.
+二级关注者]]
+  :PROPERTIES:
+  :CUSTOM_ID: 二级关注者
+  :END:
+[[./solution/0600-0699/0614.Second Degree Follower/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+在 facebook 中，表 follow 会有 2 个字段： followee,
+follower ，分别表示被关注者和关注者。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请写一个 sql 查询语句，对每一个关注者，查询关注他的关注者的数目。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+比方说：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+-------------+------------+
+  | followee    | follower   |
+  +-------------+------------+
+  |     A       |     B      |
+  |     B       |     C      |
+  |     B       |     D      |
+  |     D       |     E      |
+  +-------------+------------+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+应该输出：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+-------------+------------+
+  | follower    | num        |
+  +-------------+------------+
+  |     B       |  2         |
+  |     D       |  1         |
+  +-------------+------------+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+解释：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+B 和 D 都在在 follower 字段中出现，作为被关注者，B 被 C 和 D 关注，D 被
+E 关注。A 不在 follower 字段内，所以A不在输出列表中。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+被关注者永远不会被他 / 她自己关注。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+将结果按照字典序返回。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

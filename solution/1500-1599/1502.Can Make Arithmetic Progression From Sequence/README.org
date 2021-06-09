@@ -1,0 +1,223 @@
+* [[https://leetcode-cn.com/problems/can-make-arithmetic-progression-from-sequence][1502.
+判断能否形成等差数列]]
+  :PROPERTIES:
+  :CUSTOM_ID: 判断能否形成等差数列
+  :END:
+[[./solution/1500-1599/1502.Can Make Arithmetic Progression From Sequence/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个数字数组 arr 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+如果一个数列中，任意相邻两项的差总等于同一个常数，那么这个数列就称为
+等差数列 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+如果可以重新排列数组形成等差数列，请返回 true ；否则，返回 false 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>arr = [3,5,1]
+  <strong>输出：</strong>true
+  <strong>解释：</strong>对数组重新排序得到 [1,3,5] 或者 [5,3,1] ，任意相邻两项的差分别为 2 或 -2 ，可以形成等差数列。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>arr = [1,2,4]
+  <strong>输出：</strong>false
+  <strong>解释：</strong>无法通过重新排序得到等差数列。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+2 <= arr.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-10^6 <= arr[i] <= 10^6
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def canMakeArithmeticProgression(self, arr: List[int]) -> bool:
+          arr.sort()
+          for i in range(1, len(arr) - 1):
+              if (arr[i] << 1) != arr[i - 1] + arr[i + 1]:
+                  return False
+          return True
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public boolean canMakeArithmeticProgression(int[] arr) {
+          Arrays.sort(arr);
+          for (int i = 1; i < arr.length - 1; ++i) {
+              if ((arr[i] << 1) != arr[i - 1] + arr[i + 1]) {
+                  return false;
+              }
+          }
+          return true;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number[]} arr
+   * @return {boolean}
+   */
+  var canMakeArithmeticProgression = function(arr) {
+      arr.sort((a, b) => a - b);
+      for (let i = 1; i < arr.length - 1; i++) {
+          if ((arr[i] << 1) != (arr[i - 1] + arr[i + 1])) return false;
+      }
+      return true;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

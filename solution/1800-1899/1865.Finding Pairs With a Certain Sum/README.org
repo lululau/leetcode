@@ -1,0 +1,361 @@
+* [[https://leetcode-cn.com/problems/finding-pairs-with-a-certain-sum][1865.
+找出和为指定值的下标对]]
+  :PROPERTIES:
+  :CUSTOM_ID: 找出和为指定值的下标对
+  :END:
+[[./solution/1800-1899/1865.Finding Pairs With a Certain Sum/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你两个整数数组 nums1 和 nums2
+，请你实现一个支持下述两类查询的数据结构：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+累加 ，将一个正整数加到 nums2 中指定下标对应元素上。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+计数 ，统计满足 nums1[i] + nums2[j] 等于指定值的下标对 (i, j) 数目（0 <=
+i < nums1.length 且 0 <= j < nums2.length）。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+实现 FindSumPairs 类：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+FindSumPairs(int[] nums1, int[] nums2) 使用整数数组 nums1 和 nums2
+初始化 FindSumPairs 对象。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void add(int index, int val) 将 val 加到 nums2[index] 上，即，执行
+nums2[index] += val 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int count(int tot) 返回满足 nums1[i] + nums2[j] == tot 的下标对 (i, j)
+数目。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>
+  ["FindSumPairs", "count", "add", "count", "count", "add", "add", "count"]
+  [[[1, 1, 2, 2, 2, 3], [1, 4, 5, 2, 5, 4]], [7], [3, 2], [8], [4], [0, 1], [1, 1], [7]]
+  <strong>输出：</strong>
+  [null, 8, null, 2, 1, null, null, 11]
+
+  <strong>解释：</strong>
+  FindSumPairs findSumPairs = new FindSumPairs([1, 1, 2, 2, 2, 3], [1, 4, 5, 2, 5, 4]);
+  findSumPairs.count(7);  // 返回 8 ; 下标对 (2,2), (3,2), (4,2), (2,4), (3,4), (4,4) 满足 2 + 5 = 7 ，下标对 (5,1), (5,5) 满足 3 + 4 = 7
+  findSumPairs.add(3, 2); // 此时 nums2 = [1,4,5,<em><strong>4</strong></em><code>,5,4</code>]
+  findSumPairs.count(8);  // 返回 2 ；下标对 (5,2), (5,4) 满足 3 + 5 = 8
+  findSumPairs.count(4);  // 返回 1 ；下标对 (5,0) 满足 3 + 1 = 4
+  findSumPairs.add(0, 1); // 此时 nums2 = [<em><strong><code>2</code></strong></em>,4,5,4<code>,5,4</code>]
+  findSumPairs.add(1, 1); // 此时 nums2 = [<code>2</code>,<em><strong>5</strong></em>,5,4<code>,5,4</code>]
+  findSumPairs.count(7);  // 返回 11 ；下标对 (2,1), (2,2), (2,4), (3,1), (3,2), (3,4), (4,1), (4,2), (4,4) 满足 2 + 5 = 7 ，下标对 (5,3), (5,5) 满足 3 + 4 = 7
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums1.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums2.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums1[i] <= 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums2[i] <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= index < nums2.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= val <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= tot <= 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+最多调用 add 和 count 函数各 1000 次
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+"哈希表"实现。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class FindSumPairs:
+
+      def __init__(self, nums1: List[int], nums2: List[int]):
+          self.nums1 = nums1
+          self.nums2 = nums2
+          self.counter = collections.Counter(nums2)
+
+      def add(self, index: int, val: int) -> None:
+          old_val = self.nums2[index]
+          self.counter[old_val] -= 1
+          self.nums2[index] += val
+          self.counter[old_val + val] += 1
+
+      def count(self, tot: int) -> int:
+          return sum([self.counter[tot - num] for num in self.nums1])
+
+  # Your FindSumPairs object will be instantiated and called as such:
+  # obj = FindSumPairs(nums1, nums2)
+  # obj.add(index,val)
+  # param_2 = obj.count(tot)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class FindSumPairs {
+      private int[] nums1;
+      private int[] nums2;
+      private Map<Integer, Integer> counter;
+
+      public FindSumPairs(int[] nums1, int[] nums2) {
+          this.nums1 = nums1;
+          this.nums2 = nums2;
+          counter = new HashMap<>();
+          for (int num : nums2) {
+              counter.put(num, counter.getOrDefault(num, 0) + 1);
+          }
+      }
+
+      public void add(int index, int val) {
+          int oldVal = nums2[index];
+          counter.put(oldVal, counter.get(oldVal) - 1);
+          nums2[index] += val;
+          counter.put(oldVal + val, counter.getOrDefault(oldVal + val, 0) + 1);
+      }
+
+      public int count(int tot) {
+          int res = 0;
+          for (int num : nums1) {
+              res += counter.getOrDefault(tot - num, 0);
+          }
+          return res;
+      }
+  }
+
+  /**
+   * Your FindSumPairs object will be instantiated and called as such:
+   * FindSumPairs obj = new FindSumPairs(nums1, nums2);
+   * obj.add(index,val);
+   * int param_2 = obj.count(tot);
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

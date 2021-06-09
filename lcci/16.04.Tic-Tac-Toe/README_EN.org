@@ -1,0 +1,252 @@
+* [[https://leetcode-cn.com/problems/tic-tac-toe-lcci][16.04.
+Tic-Tac-Toe]]
+  :PROPERTIES:
+  :CUSTOM_ID: tic-tac-toe
+  :END:
+[[./lcci/16.04.Tic-Tac-Toe/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Design an algorithm to figure out if someone has won a game of
+tic-tac-toe. Input is a string array of size N x N, including characters
+" ", "X" and "O", where " " represents a empty grid.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The rules of tic-tac-toe are as follows:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Players place characters into an empty grid(" ") in turn.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The first player always place character "O", and the second one place
+"X".
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Players are only allowed to place characters in empty grid. Replacing a
+character is not allowed.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If there is any row, column or diagonal filled with N same characters,
+the game ends. The player who place the last charater wins.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+When there is no empty grid, the game ends.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If the game ends, players cannot place any character further.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If there is any winner, return the character that the winner used. If
+there's a draw, return "Draw". If the game doesn't end and there is no
+winner, return "Pending".
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong> board = [&quot;O X&quot;,&quot; XO&quot;,&quot;X O&quot;]
+
+  <strong>Output: </strong> &quot;X&quot;
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong> board = [&quot;OOX&quot;,&quot;XXO&quot;,&quot;OXO&quot;]
+
+  <strong>Output: </strong> &quot;Draw&quot;
+
+  <strong>Explanation: </strong> no player wins and no empty grid left
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong> board = [&quot;OOX&quot;,&quot;XXO&quot;,&quot;OX &quot;]
+
+  <strong>Output: </strong> &quot;Pending&quot;
+
+  <strong>Explanation: </strong> no player wins but there is still a empty grid
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= board.length == board[i].length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Input follows the rules.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

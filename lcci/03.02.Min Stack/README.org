@@ -1,0 +1,157 @@
+* [[https://leetcode-cn.com/problems/min-stack-lcci][面试题 03.02.
+栈的最小值]]
+  :PROPERTIES:
+  :CUSTOM_ID: 面试题-03.02.-栈的最小值
+  :END:
+[[./lcci/03.02.Min Stack/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请设计一个栈，除了常规栈支持的pop与push函数以外，还支持min函数，该函数返回栈元素中的最小值。执行push、pop和min操作的时间复杂度必须为O(1)。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  <pre>MinStack minStack = new MinStack();<br>minStack.push(-2);<br>minStack.push(0);<br>minStack.push(-3);<br>minStack.getMin();   --> 返回 -3.<br>minStack.pop();<br>minStack.top();      --> 返回 0.<br>minStack.getMin();   --> 返回 -2.</pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+利用辅助栈存放栈的最小元素。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class MinStack:
+
+      def __init__(self):
+          """
+          initialize your data structure here.
+          """
+          self.s = []
+          self.mins = [float('inf')]
+
+      def push(self, val: int) -> None:
+          self.s.append(val)
+          self.mins.append(min(self.mins[-1], val))
+
+      def pop(self) -> None:
+          self.s.pop()
+          self.mins.pop()
+
+      def top(self) -> int:
+          return self.s[-1]
+
+      def getMin(self) -> int:
+          return self.mins[-1]
+
+
+  # Your MinStack object will be instantiated and called as such:
+  # obj = MinStack()
+  # obj.push(val)
+  # obj.pop()
+  # param_3 = obj.top()
+  # param_4 = obj.getMin()
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class MinStack {
+      private Deque<Integer> s;
+      private Deque<Integer> mins;
+
+      /** initialize your data structure here. */
+      public MinStack() {
+          s = new ArrayDeque<>();
+          mins = new ArrayDeque<>();
+          mins.push(Integer.MAX_VALUE);
+      }
+      
+      public void push(int val) {
+          s.push(val);
+          mins.push(Math.min(mins.peek(), val));
+      }
+      
+      public void pop() {
+          s.pop();
+          mins.pop();
+      }
+      
+      public int top() {
+          return s.peek();
+      }
+      
+      public int getMin() {
+          return mins.peek();
+      }
+  }
+
+  /**
+   * Your MinStack object will be instantiated and called as such:
+   * MinStack obj = new MinStack();
+   * obj.push(val);
+   * obj.pop();
+   * int param_3 = obj.top();
+   * int param_4 = obj.getMin();
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

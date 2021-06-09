@@ -1,0 +1,173 @@
+* [[https://leetcode.com/problems/rectangles-area][1459. Rectangles
+Area]]
+  :PROPERTIES:
+  :CUSTOM_ID: rectangles-area
+  :END:
+[[./solution/1400-1499/1459.Rectangles Area/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Points
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +---------------+---------+
+  | Column Name   | Type    |
+  +---------------+---------+
+  | id            | int     |
+  | x_value       | int     |
+  | y_value       | int     |
+  +---------------+---------+
+  id is the primary key for this table.
+  Each point is represented as a 2D coordinate (x_value, y_value).</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an SQL query to report all possible axis-aligned rectangles with
+non-zero area that can be formed by any two points in the Points table.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Each row in the result should contain three columns (p1, p2, area)
+where:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+p1 and p2 are the id's of the two points that determine the opposite
+corners of a rectangle.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+area is the area of the rectangle and must be non-zero.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Report the query in descending order by area first, then in ascending
+order by p1's id if there is a tie, then in ascending order by p2's id
+if there is another tie.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The query result format is in the following table:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  Points table:
+  +----------+-------------+-------------+
+  | id       | x_value     | y_value     |
+  +----------+-------------+-------------+
+  | 1        | 2           | 7           |
+  | 2        | 4           | 8           |
+  | 3        | 2           | 10          |
+  +----------+-------------+-------------+
+
+  Result table:
+  +----------+-------------+-------------+
+  | p1       | p2          | area        |
+  +----------+-------------+-------------+
+  | 2        | 3           | 4           |
+  | 1        | 2           | 2           |
+  +----------+-------------+-------------+
+
+  <img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/1400-1499/1459.Rectangles Area/images/rect.png" style="width: 200px; height: 330px;" />
+  The rectangle formed by p1 = 2 and p2 = 3 has an area equal to |4-2| * |8-10| = 4.
+  The rectangle formed by p1 = 1 and p2 = 2 has an area equal to |2-4| * |7-8| = 2.
+  Note that the rectangle formed by p1 = 1 and p2 = 3 is invalid because the area is 0.
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

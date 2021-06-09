@@ -1,0 +1,110 @@
+* [[https://leetcode.com/problems/transpose-file][194. Transpose File]]
+  :PROPERTIES:
+  :CUSTOM_ID: transpose-file
+  :END:
+[[./solution/0100-0199/0194.Transpose File/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a text file file.txt, transpose its content.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You may assume that each row has the same number of columns, and each
+field is separated by the ' ' character.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If file.txt has the following content:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  name age
+  alice 21
+  ryan 30
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Output the following:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  name alice ryan
+  age 21 30
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

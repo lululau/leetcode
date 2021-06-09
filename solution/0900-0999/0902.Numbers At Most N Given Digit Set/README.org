@@ -1,0 +1,194 @@
+* [[https://leetcode-cn.com/problems/numbers-at-most-n-given-digit-set][902.
+最大为 N 的数字组合]]
+  :PROPERTIES:
+  :CUSTOM_ID: 最大为-n-的数字组合
+  :END:
+[[./solution/0900-0999/0902.Numbers At Most N Given Digit Set/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+我们有一组排序的数字 D，它是 
+{'1','2','3','4','5','6','7','8','9'} 的非空子集。（请注意，'0'
+不包括在内。）
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+现在，我们用这些数字进行组合写数字，想用多少次就用多少次。例如 D =
+{'1','3','5'}，我们可以写出像 '13', '551', '1351315' 这样的数字。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回可以用 D 中的数字写出的小于或等于 N 的正整数的数目。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>D = [&quot;1&quot;,&quot;3&quot;,&quot;5&quot;,&quot;7&quot;], N = 100
+  <strong>输出：</strong>20
+  <strong>解释：</strong>
+  可写出的 20 个数字是：
+  1, 3, 5, 7, 11, 13, 15, 17, 31, 33, 35, 37, 51, 53, 55, 57, 71, 73, 75, 77.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>D = [&quot;1&quot;,&quot;4&quot;,&quot;9&quot;], N = 1000000000
+  <strong>输出：</strong>29523
+  <strong>解释：</strong>
+  我们可以写 3 个一位数字，9 个两位数字，27 个三位数字，
+  81 个四位数字，243 个五位数字，729 个六位数字，
+  2187 个七位数字，6561 个八位数字和 19683 个九位数字。
+  总共，可以使用D中的数字写出 29523 个整数。</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+D 是按排序顺序的数字 '1'-'9' 的子集。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= N <= 10^9
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,281 @@
+* [[https://leetcode.com/problems/target-sum][494. Target Sum]]
+  :PROPERTIES:
+  :CUSTOM_ID: target-sum
+  :END:
+[[./solution/0400-0499/0494.Target Sum/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given an integer array nums and an integer target.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You want to build an expression out of nums by adding one of the symbols
+'+' and '-' before each integer in nums and then concatenate all the
+integers.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For example, if nums = [2, 1], you can add a '+' before 2 and a '-'
+before 1 and concatenate them to build the expression "+2-1".
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the number of different expressions that you can build, which
+evaluates to target.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [1,1,1,1,1], target = 3
+  <strong>Output:</strong> 5
+  <strong>Explanation:</strong> There are 5 ways to assign symbols to make the sum of nums be target 3.
+  -1 + 1 + 1 + 1 + 1 = 3
+  +1 - 1 + 1 + 1 + 1 = 3
+  +1 + 1 - 1 + 1 + 1 = 3
+  +1 + 1 + 1 - 1 + 1 = 3
+  +1 + 1 + 1 + 1 - 1 = 3
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [1], target = 1
+  <strong>Output:</strong> 1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 20
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= nums[i] <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= sum(nums[i]) <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-1000 <= target <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+It is similar to the backpack problem, except that the index may appear
+negative, which requires special handling.
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def findTargetSumWays(self, nums: List[int], target: int) -> int:
+          if target < -1000 or target > 1000:
+              return 0
+          n = len(nums)
+          dp = [[0] * 2001 for i in range(n)]
+          dp[0][nums[0] + 1000] += 1
+          dp[0][-nums[0] + 1000] += 1
+          for i in range(1, n):
+              for j in range(-1000, 1001):
+                  if dp[i - 1][j + 1000] > 0:
+                      dp[i][j + nums[i] + 1000] += dp[i - 1][j + 1000]
+                      dp[i][j - nums[i] + 1000] += dp[i - 1][j + 1000]
+          return dp[n - 1][target + 1000]
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int findTargetSumWays(int[] nums, int target) {
+          if (target < -1000 || target > 1000) {
+              return 0;
+          }
+
+          int n = nums.length;
+          int[][] dp = new int[n][2001];
+
+          dp[0][nums[0] + 1000] += 1;
+          dp[0][-nums[0] + 1000] += 1;
+
+          for (int i = 1; i < n; i++) {
+              for (int j = -1000; j <= 1000; j++) {
+                  if (dp[i - 1][j + 1000] > 0) {
+                      dp[i][j + nums[i] + 1000] += dp[i - 1][j + 1000];
+                      dp[i][j - nums[i] + 1000] += dp[i - 1][j + 1000];
+                  }
+              }
+          }
+          return dp[n - 1][target + 1000];
+      }
+  }
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  func findTargetSumWays(nums []int, target int) int {
+      if target < -1000 || target > 1000 {
+          return 0
+      }
+      n := len(nums)
+      dp := make([][]int, n)
+      for i := 0; i < n; i++ {
+          dp[i] = make([]int, 2001)
+      }
+      dp[0][nums[0]+1000] += 1
+      dp[0][-nums[0]+1000] += 1
+      for i := 1; i < n; i++ {
+          for j := -1000; j <= 1000; j++ {
+              if dp[i-1][j+1000] > 0 {
+                  dp[i][j+nums[i]+1000] += dp[i-1][j+1000]
+                  dp[i][j-nums[i]+1000] += dp[i-1][j+1000]
+              }
+          }
+      }
+      return dp[n-1][target+1000]
+  }
+#+end_example
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

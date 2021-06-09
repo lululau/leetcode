@@ -1,0 +1,135 @@
+* [[https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words][30.
+串联所有单词的子串]]
+  :PROPERTIES:
+  :CUSTOM_ID: 串联所有单词的子串
+  :END:
+[[./solution/0000-0099/0030.Substring with Concatenation of All Words/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个字符串 s 和一些长度相同的单词 words。找出 s 中恰好可以由 words
+中所有单词串联形成的子串的起始位置。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意子串要与 words
+中的单词完全匹配，中间不能有其他字符，但不需要考虑 words 中单词串联的顺序。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：
+    s =</strong> &quot;barfoothefoobarman&quot;,
+  <strong>  words = </strong>[&quot;foo&quot;,&quot;bar&quot;]
+  <strong>输出：</strong><code>[0,9]</code>
+  <strong>解释：</strong>
+  从索引 0 和 9 开始的子串分别是 &quot;barfoo&quot; 和 &quot;foobar&quot; 。
+  输出的顺序不重要, [9,0] 也是有效答案。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：
+    s =</strong> &quot;wordgoodgoodgoodbestword&quot;,
+  <strong>  words = </strong>[&quot;word&quot;,&quot;good&quot;,&quot;best&quot;,&quot;word&quot;]
+  <code><strong>输出：</strong>[]</code>
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

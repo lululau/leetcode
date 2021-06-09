@@ -1,0 +1,132 @@
+* [[https://leetcode-cn.com/problems/tenth-line][195. 第十行]]
+  :PROPERTIES:
+  :CUSTOM_ID: 第十行
+  :END:
+[[./solution/0100-0199/0195.Tenth Line/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个文本文件 file.txt，请只打印这个文件中的第十行。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+假设 file.txt 有如下内容：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>Line 1
+  Line 2
+  Line 3
+  Line 4
+  Line 5
+  Line 6
+  Line 7
+  Line 8
+  Line 9
+  Line 10
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你的脚本应当显示第十行：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>Line 10
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+说明: 1. 如果文件少于十行，你应当输出什么？ 2.
+至少有三种不同的解法，请尝试尽可能多的方法来解题。
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

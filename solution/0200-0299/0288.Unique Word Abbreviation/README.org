@@ -1,0 +1,391 @@
+* [[https://leetcode-cn.com/problems/unique-word-abbreviation][288.
+单词的唯一缩写]]
+  :PROPERTIES:
+  :CUSTOM_ID: 单词的唯一缩写
+  :END:
+[[./solution/0200-0299/0288.Unique Word Abbreviation/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+单词的 缩写 需要遵循 
+这样的格式。如果单词只有两个字符，那么它就是它自身的 缩写 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+以下是一些单词缩写的范例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+dog --> d1g 因为第一个字母 'd' 和最后一个字母 'g' 之间有 1 个字母
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+internationalization --> i18n 因为第一个字母 'i' 和最后一个字母 'n'
+之间有 18 个字母
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+it --> it 单词只有两个字符，它就是它自身的 缩写
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+实现 ValidWordAbbr 类：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+ValidWordAbbr(String[] dictionary) 使用单词字典 dictionary 初始化对象
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+boolean isUnique(string word) 如果满足下述任意一个条件，返回 true
+；否则，返回 false ：
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+字典 dictionary 中没有任何其他单词的 缩写 与该单词 word 的 缩写 相同。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+字典 dictionary 中的所有 缩写 与该单词 word 的 缩写 相同的单词都与 word
+相同 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_example
+  </li>
+#+end_example
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入</strong>
+  ["ValidWordAbbr", "isUnique", "isUnique", "isUnique", "isUnique"]
+  [[["deer", "door", "cake", "card"]], ["dear"], ["cart"], ["cane"], ["make"]]
+  <strong>输出
+  </strong>[null, false, true, false, true]
+
+  <strong>解释</strong>
+  ValidWordAbbr validWordAbbr = new ValidWordAbbr(["deer", "door", "cake", "card"]);
+  validWordAbbr.isUnique("dear"); // 返回 false，字典中的 "deer" 与输入 "dear" 的缩写都是 "d2r"，但这两个单词不相同
+  validWordAbbr.isUnique("cart"); // 返回 true，字典中不存在缩写为 "c2t" 的单词
+  validWordAbbr.isUnique("cane"); // 返回 false，字典中的 "cake" 与输入 "cane" 的缩写都是 "c2e"，但这两个单词不相同
+  validWordAbbr.isUnique("make"); // 返回 true，字典中不存在缩写为 "m2e" 的单词
+  validWordAbbr.isUnique("cake"); // 返回 true，因为 "cake" 已经存在于字典中，并且字典中没有其他缩写为 "c2e" 的单词
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= dictionary.length <= 3 * 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= dictionary[i].length <= 20
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+dictionary[i] 由小写英文字母组成
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= word <= 20
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+word 由小写英文字母组成
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+最多调用 5000 次 isUnique
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+哈希表实现，其中 key 存放单词缩写，value
+存放单词缩写所对应的所有单词的集合。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class ValidWordAbbr:
+
+      def __init__(self, dictionary: List[str]):
+          self.words = {}
+          for word in dictionary:
+              abbr = self._word_abbr(word)
+              vals = self.words.get(abbr, set())
+              vals.add(word)
+              self.words[abbr] = vals
+
+      def isUnique(self, word: str) -> bool:
+          abbr = self._word_abbr(word)
+          vals = self.words.get(abbr)
+          return vals is None or (len(vals) == 1 and word in vals)
+
+      def _word_abbr(self, word: str) -> str:
+          n = len(word)
+          if n < 3:
+              return word
+          return f'{word[0]}{n - 2}{word[n - 1]}'
+
+
+  # Your ValidWordAbbr object will be instantiated and called as such:
+  # obj = ValidWordAbbr(dictionary)
+  # param_1 = obj.isUnique(word)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class ValidWordAbbr {
+      private Map<String, Set<String>> words;
+
+      public ValidWordAbbr(String[] dictionary) {
+          words = new HashMap<>();
+          for (String word : dictionary) {
+              String abbr = wordAbbr(word);
+              Set<String> vals = words.getOrDefault(abbr, new HashSet<>());
+              vals.add(word);
+              words.put(abbr, vals);
+          }
+      }
+
+      public boolean isUnique(String word) {
+          String abbr = wordAbbr(word);
+          Set<String> vals = words.get(abbr);
+          return vals == null || (vals.size() == 1 && vals.contains(word));
+      }
+
+      private String wordAbbr(String word) {
+          int n = word.length();
+          if (n < 3) {
+              return word;
+          }
+          StringBuilder sb = new StringBuilder();
+          sb.append(word.charAt(0)).append(n - 2).append(word.charAt(n - 1));
+          return sb.toString();
+      }
+  }
+
+  /**
+   * Your ValidWordAbbr object will be instantiated and called as such:
+   * ValidWordAbbr obj = new ValidWordAbbr(dictionary);
+   * boolean param_1 = obj.isUnique(word);
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

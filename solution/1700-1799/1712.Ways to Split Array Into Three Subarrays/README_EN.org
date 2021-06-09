@@ -1,0 +1,224 @@
+* [[https://leetcode.com/problems/ways-to-split-array-into-three-subarrays][1712.
+Ways to Split Array Into Three Subarrays]]
+  :PROPERTIES:
+  :CUSTOM_ID: ways-to-split-array-into-three-subarrays
+  :END:
+[[./solution/1700-1799/1712.Ways to Split Array Into Three Subarrays/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+A split of an integer array is good if:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The array is split into three non-empty contiguous subarrays - named
+left, mid, right respectively from left to right.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The sum of the elements in left is less than or equal to the sum of the
+elements in mid, and the sum of the elements in mid is less than or
+equal to the sum of the elements in right.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given nums, an array of non-negative integers, return the number of good
+ways to split nums. As the number may be too large, return it modulo 109
++ 7.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> nums = [1,1,1]
+
+  <strong>Output:</strong> 1
+
+  <strong>Explanation:</strong> The only good way to split nums is [1] [1] [1].</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> nums = [1,2,2,2,5,0]
+
+  <strong>Output:</strong> 3
+
+  <strong>Explanation:</strong> There are three good ways of splitting nums:
+
+  [1] [2] [2,2,5,0]
+
+  [1] [2,2] [2,5,0]
+
+  [1,2] [2,2] [5,0]
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> nums = [3,2,1]
+
+  <strong>Output:</strong> 0
+
+  <strong>Explanation:</strong> There is no good way to split nums.</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+3 <= nums.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= nums[i] <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,211 @@
+* [[https://leetcode.com/problems/special-array-with-x-elements-greater-than-or-equal-x][1608.
+Special Array With X Elements Greater Than or Equal X]]
+  :PROPERTIES:
+  :CUSTOM_ID: special-array-with-x-elements-greater-than-or-equal-x
+  :END:
+[[./solution/1600-1699/1608.Special Array With X Elements Greater Than or Equal X/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given an array nums of non-negative integers. nums is considered
+special if there exists a number x such that there are exactly x numbers
+in nums that are greater than or equal to x.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Notice that x does not have to be an element in nums.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return x if the array is special, otherwise, return -1. It can be proven
+that if nums is special, the value for x is unique.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [3,5]
+  <strong>Output:</strong> 2
+  <strong>Explanation:</strong> There are 2 values (3 and 5) that are greater than or equal to 2.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [0,0]
+  <strong>Output:</strong> -1
+  <strong>Explanation:</strong> No numbers fit the criteria for x.
+  If x = 0, there should be 0 numbers &gt;= x, but there are 2.
+  If x = 1, there should be 1 number &gt;= x, but there are 0.
+  If x = 2, there should be 2 numbers &gt;= x, but there are 0.
+  x cannot be greater since there are only 2 numbers in nums.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [0,4,3,0,4]
+  <strong>Output:</strong> 3
+  <strong>Explanation:</strong> There are 3 values that are greater than or equal to 3.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [3,6,7,7,0]
+  <strong>Output:</strong> -1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= nums[i] <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

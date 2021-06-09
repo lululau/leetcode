@@ -1,0 +1,19 @@
+* LeetCode
+  :PROPERTIES:
+  :CUSTOM_ID: leetcode
+  :END:
+[[./solution/README.org][中文文档]]
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+Press Control+F(or Command+F on the Mac) to search anything you want.
+
+{}
+
+** Copyright
+   :PROPERTIES:
+   :CUSTOM_ID: copyright
+   :END:
+[@Doocs](https://github.com/doocs)

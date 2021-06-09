@@ -1,0 +1,213 @@
+* [[https://leetcode.com/problems/buddy-strings][859. Buddy Strings]]
+  :PROPERTIES:
+  :CUSTOM_ID: buddy-strings
+  :END:
+[[./solution/0800-0899/0859.Buddy Strings/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given two strings a and b, return true if you can swap two letters in a
+so the result is equal to b, otherwise, return false.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Swapping letters is defined as taking two indices i and j (0-indexed)
+such that i != j and swapping the characters at a[i] and a[j].
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For example, swapping at indices 0 and 2 in "abcd" results in "cbad".
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> a = &quot;ab&quot;, b = &quot;ba&quot;
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> You can swap a[0] = &#39;a&#39; and a[1] = &#39;b&#39; to get &quot;ba&quot;, which is equal to b.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> a = &quot;ab&quot;, b = &quot;ab&quot;
+  <strong>Output:</strong> false
+  <strong>Explanation:</strong> The only letters you can swap are a[0] = &#39;a&#39; and a[1] = &#39;b&#39;, which results in &quot;ba&quot; != b.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> a = &quot;aa&quot;, b = &quot;aa&quot;
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> You can swap a[0] = &#39;a&#39; and a[1] = &#39;a&#39; to get &quot;aa&quot;, which is equal to b.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> a = &quot;aaaaaaabc&quot;, b = &quot;aaaaaaacb&quot;
+  <strong>Output:</strong> true
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= a.length, b.length <= 2 * 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+a and b consist of lowercase letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

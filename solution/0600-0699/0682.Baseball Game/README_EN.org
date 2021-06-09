@@ -1,0 +1,315 @@
+* [[https://leetcode.com/problems/baseball-game][682. Baseball Game]]
+  :PROPERTIES:
+  :CUSTOM_ID: baseball-game
+  :END:
+[[./solution/0600-0699/0682.Baseball Game/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are keeping score for a baseball game with strange rules. The game
+consists of several rounds, where the scores of past rounds may affect
+future rounds' scores.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+At the beginning of the game, you start with an empty record. You are
+given a list of strings ops, where ops[i] is the ith operation you must
+apply to the record and is one of the following:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+An integer x - Record a new score of x.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+"+" - Record a new score that is the sum of the previous two scores. It
+is guaranteed there will always be two previous scores.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+"D" - Record a new score that is double the previous score. It is
+guaranteed there will always be a previous score.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+"C" - Invalidate the previous score, removing it from the record. It is
+guaranteed there will always be a previous score.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the sum of all the scores on the record.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> ops = [&quot;5&quot;,&quot;2&quot;,&quot;C&quot;,&quot;D&quot;,&quot;+&quot;]
+  <strong>Output:</strong> 30
+  <strong>Explanation:</strong>
+  &quot;5&quot; - Add 5 to the record, record is now [5].
+  &quot;2&quot; - Add 2 to the record, record is now [5, 2].
+  &quot;C&quot; - Invalidate and remove the previous score, record is now [5].
+  &quot;D&quot; - Add 2 * 5 = 10 to the record, record is now [5, 10].
+  &quot;+&quot; - Add 5 + 10 = 15 to the record, record is now [5, 10, 15].
+  The total sum is 5 + 10 + 15 = 30.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> ops = [&quot;5&quot;,&quot;-2&quot;,&quot;4&quot;,&quot;C&quot;,&quot;D&quot;,&quot;9&quot;,&quot;+&quot;,&quot;+&quot;]
+  <strong>Output:</strong> 27
+  <strong>Explanation:</strong>
+  &quot;5&quot; - Add 5 to the record, record is now [5].
+  &quot;-2&quot; - Add -2 to the record, record is now [5, -2].
+  &quot;4&quot; - Add 4 to the record, record is now [5, -2, 4].
+  &quot;C&quot; - Invalidate and remove the previous score, record is now [5, -2].
+  &quot;D&quot; - Add 2 * -2 = -4 to the record, record is now [5, -2, -4].
+  &quot;9&quot; - Add 9 to the record, record is now [5, -2, -4, 9].
+  &quot;+&quot; - Add -4 + 9 = 5 to the record, record is now [5, -2, -4, 9, 5].
+  &quot;+&quot; - Add 9 + 5 = 14 to the record, record is now [5, -2, -4, 9, 5, 14].
+  The total sum is 5 + -2 + -4 + 9 + 5 + 14 = 27.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> ops = [&quot;1&quot;]
+  <strong>Output:</strong> 1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= ops.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+ops[i] is "C", "D", "+", or a string representing an integer in the
+range [-3 * 104, 3 * 104].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For operation "+", there will always be at least two previous scores on
+the record.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For operations "C" and "D", there will always be at least one previous
+score on the record.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def calPoints(self, ops: List[str]) -> int:
+          stack = []
+          for op in ops:
+              if op == 'C':
+                  stack.pop()
+              elif op == 'D':
+                  stack.append(stack[-1] << 1)
+              elif op == '+':
+                  stack.append(stack[-1] + stack[-2])
+              else:
+                  stack.append(int(op))
+          return sum(stack)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int calPoints(String[] ops) {
+          Deque<Integer> stack = new ArrayDeque<>();
+          for (String op : ops) {
+              if ("C".equals(op)) {
+                  stack.pop();
+              } else if ("D".equals(op)) {
+                  stack.push(stack.peek() << 1);
+              } else if ("+".equals(op)) {
+                  Integer a = stack.pop();
+                  Integer b = stack.peek();
+                  stack.push(a);
+                  stack.push(a + b);
+              } else {
+                  stack.push(Integer.valueOf(op));
+              }
+          }
+          int res = 0;
+          for (Integer score : stack) {
+              res += score;
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,300 @@
+* [[https://leetcode.com/problems/maximum-value-after-insertion][1881.
+Maximum Value after Insertion]]
+  :PROPERTIES:
+  :CUSTOM_ID: maximum-value-after-insertion
+  :END:
+[[./solution/1800-1899/1881.Maximum Value after Insertion/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given a very large integer n, represented as a string,​​​​​​ and
+an integer digit x. The digits in n and the digit x are in the inclusive
+range [1, 9], and n may represent a negative number.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You want to maximize n's numerical value by inserting x anywhere in the
+decimal representation of n​​​​​​. You cannot insert x to the left of
+the negative sign.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For example, if n = 73 and x = 6, it would be best to insert it between
+7 and 3, making n = 763.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If n = -55 and x = 2, it would be best to insert it before the first 5,
+making n = -255.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return a string representing the maximum value of n​​​​​​ after the
+insertion.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> n = &quot;99&quot;, x = 9
+  <strong>Output:</strong> &quot;999&quot;
+  <strong>Explanation:</strong> The result is the same regardless of where you insert 9.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> n = &quot;-13&quot;, x = 2
+  <strong>Output:</strong> &quot;-123&quot;
+  <strong>Explanation:</strong> You can make n one of {-213, -123, -132}, and the largest of those three is -123.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= x <= 9
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The digits in n​​​ are in the range [1, 9].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n is a valid representation of an integer.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+In the case of a negative n,​​​​​​ it will begin with '-'.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def maxValue(self, n: str, x: int) -> str:
+          negative = n[0] == '-'
+          i, res = 0, []
+          if negative:
+              i += 1
+              res.append('-')
+          find = False
+          while i < len(n):
+              num = int(n[i])
+              if (negative and x < num) or (not negative and x > num):
+                  res.append(str(x))
+                  find = True
+                  break
+              res.append(n[i])
+              i += 1
+          res.append(n[i:] if find else str(x))
+          return ''.join(res)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public String maxValue(String n, int x) {
+          boolean negative = n.charAt(0) == '-';
+          StringBuilder res = new StringBuilder();
+          int i = 0;
+          if (negative) {
+              ++i;
+              res.append("-");
+          }
+          boolean find = false;
+          for (; i < n.length(); ++i) {
+              int num = n.charAt(i) - '0';
+              if ((negative && x < num) || (!negative && x > num)) {
+                  res.append(x);
+                  find = true;
+                  break;
+              }
+              res.append(n.charAt(i));
+          }
+          res.append(find ? n.substring(i) : x);
+          return res.toString();
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {string} n
+   * @param {number} x
+   * @return {string}
+   */
+   var maxValue = function(n, x) {
+      let nums = [...n];
+      let sign = 1, i = 0;
+      if (nums[0] == '-') {
+          sign = -1;
+          i++;
+      }
+      while (i < n.length && (nums[i] - x) * sign >= 0) {
+          i++;
+      }
+      nums.splice(i, 0, x);
+      return nums.join('');
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

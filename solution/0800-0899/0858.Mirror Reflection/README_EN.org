@@ -1,0 +1,147 @@
+* [[https://leetcode.com/problems/mirror-reflection][858. Mirror
+Reflection]]
+  :PROPERTIES:
+  :CUSTOM_ID: mirror-reflection
+  :END:
+[[./solution/0800-0899/0858.Mirror Reflection/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+There is a special square room with mirrors on each of the four walls. 
+Except for the southwest corner, there are receptors on each of the
+remaining corners, numbered 0, 1, and 2.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The square room has walls of length p, and a laser ray from the
+southwest corner first meets the east wall at a distance q from the 0th
+receptor.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the number of the receptor that the ray meets first.  (It is
+guaranteed that the ray will meet a receptor eventually.)
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong>p = <span id="example-input-1-1">2</span>, q = <span id="example-input-1-2">1</span>
+  <strong>Output: </strong><span id="example-output-1">2</span>
+  <strong>Explanation: </strong>The ray meets receptor 2 the first time it gets reflected back to the left wall.
+  <img alt="" src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0800-0899/0858.Mirror Reflection/images/reflection.png" style="width: 218px; height: 217px;" />
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= p <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= q <= p
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

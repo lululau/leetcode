@@ -1,0 +1,237 @@
+* [[https://leetcode-cn.com/problems/sum-of-square-numbers][633.
+平方数之和]]
+  :PROPERTIES:
+  :CUSTOM_ID: 平方数之和
+  :END:
+[[./solution/0600-0699/0633.Sum of Square Numbers/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c
+。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>c = 5
+  <strong>输出：</strong>true
+  <strong>解释：</strong>1 * 1 + 2 * 2 = 5
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>c = 3
+  <strong>输出：</strong>false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>c = 4
+  <strong>输出：</strong>true
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 4：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>c = 2
+  <strong>输出：</strong>true
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 5：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>c = 1
+  <strong>输出：</strong>true</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= c <= 231 - 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+[[./images/table.png]]
+
+上图为 a，b，c 之间的关系，这题其实就是在这张“表”里查找 c
+
+从表的右上角看，不难发现它类似一棵二叉查找树，所以只需从右上角开始，按照二叉查找树的规律进行搜索
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution(object):
+      def judgeSquareSum(self, c):
+          i, j = 0, int(math.sqrt(c))
+          while i <= j:
+              s = i * i + j * j
+              if s < c:
+                  i += 1
+              elif s > c:
+                  j -= 1
+              else:
+                  return True
+          return False
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public boolean judgeSquareSum(int c) {
+          int i = 0, j = (int) Math.sqrt(c);
+          while (i <= j) {
+              int s = i * i + j * j;
+              if (s < c) {
+                  ++i;
+              } else if (s > c) {
+                  --j;
+              } else {
+                  return true;
+              }
+          }
+          return false;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

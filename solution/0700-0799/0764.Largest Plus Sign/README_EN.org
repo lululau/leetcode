@@ -1,0 +1,273 @@
+* [[https://leetcode.com/problems/largest-plus-sign][764. Largest Plus
+Sign]]
+  :PROPERTIES:
+  :CUSTOM_ID: largest-plus-sign
+  :END:
+[[./solution/0700-0799/0764.Largest Plus Sign/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+In a 2D grid from (0, 0) to (N-1, N-1), every cell contains a 1, except
+those cells in the given list mines which are 0. What is the largest
+axis-aligned plus sign of 1s contained in the grid? Return the order of
+the plus sign. If there is none, return 0.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+An "axis-aligned plus sign of 1s of order k" has some center grid[x][y]
+= 1 along with 4 arms of length k-1 going up, down, left, and right, and
+made of 1s. This is demonstrated in the diagrams below. Note that there
+could be 0s or 1s beyond the arms of the plus sign, only the relevant
+area of the plus sign is checked for 1s.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Examples of Axis-Aligned Plus Signs of Order k:
+
+#+begin_html
+  <pre>
+
+  Order 1:
+
+  000
+
+  0<b>1</b>0
+
+  000
+
+
+
+  Order 2:
+
+  00000
+
+  00<b>1</b>00
+
+  0<b>111</b>0
+
+  00<b>1</b>00
+
+  00000
+
+
+
+  Order 3:
+
+  0000000
+
+  000<b>1</b>000
+
+  000<b>1</b>000
+
+  0<b>11111</b>0
+
+  000<b>1</b>000
+
+  000<b>1</b>000
+
+  0000000
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> N = 5, mines = [[4, 2]]
+
+  <b>Output:</b> 2
+
+  <b>Explanation:</b>
+
+  11111
+
+  11111
+
+  1<b>1</b>111
+
+  <b>111</b>11
+
+  1<b>1</b>011
+
+  In the above grid, the largest plus sign can only be order 2.  One of them is marked in bold.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> N = 2, mines = []
+
+  <b>Output:</b> 1
+
+  <b>Explanation:</b>
+
+  There is no plus sign of order 2, but there is of order 1.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> N = 1, mines = [[0, 0]]
+
+  <b>Output:</b> 0
+
+  <b>Explanation:</b>
+
+  There is no plus sign, so return 0.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+N will be an integer in the range [1, 500].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+mines will have length at most 5000.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+mines[i] will be length 2 and consist of integers in the range [0, N-1].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+(Additionally, programs submitted in C, C++, or C# will be judged with a
+slightly smaller time limit.)
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

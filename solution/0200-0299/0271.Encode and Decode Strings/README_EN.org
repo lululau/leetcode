@@ -1,0 +1,300 @@
+* [[https://leetcode.com/problems/encode-and-decode-strings][271. Encode
+and Decode Strings]]
+  :PROPERTIES:
+  :CUSTOM_ID: encode-and-decode-strings
+  :END:
+[[./solution/0200-0299/0271.Encode and Decode Strings/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Design an algorithm to encode a list of strings to a string. The encoded
+string is then sent over the network and is decoded back to the original
+list of strings.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Machine 1 (sender) has the function:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  string encode(vector&lt;string&gt; strs) {
+    // ... your code
+    return encoded_string;
+  }</pre>
+#+end_html
+
+Machine 2 (receiver) has the function:
+
+#+begin_html
+  <pre>
+  vector&lt;string&gt; decode(string s) {
+    //... your code
+    return strs;
+  }
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+So Machine 1 does:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  string encoded_string = encode(strs);
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+and Machine 2 does:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  vector&lt;string&gt; strs2 = decode(encoded_string);
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+strs2 in Machine 2 should be the same as strs in Machine 1.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement the encode and decode methods.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> dummy_input = [&quot;Hello&quot;,&quot;World&quot;]
+  <strong>Output:</strong> [&quot;Hello&quot;,&quot;World&quot;]
+  <strong>Explanation:</strong>
+  Machine 1:
+  Codec encoder = new Codec();
+  String msg = encoder.encode(strs);
+  Machine 1 ---msg---&gt; Machine 2
+
+  Machine 2:
+  Codec decoder = new Codec();
+  String[] strs = decoder.decode(msg);
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> dummy_input = [&quot;&quot;]
+  <strong>Output:</strong> [&quot;&quot;]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= strs.length <= 200
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= strs[i].length <= 200
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+strs[i] contains any possible characters out of 256 valid ASCII
+characters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Follow up:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Could you write a generalized algorithm to work on any possible
+characters?
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Could you solve the problem without using any serialize methods (such as
+eval)?
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

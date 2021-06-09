@@ -1,0 +1,134 @@
+* [[https://leetcode-cn.com/problems/boolean-evaluation-lcci][08.14.
+Boolean Evaluation]]
+  :PROPERTIES:
+  :CUSTOM_ID: boolean-evaluation
+  :END:
+[[./lcci/08.14.Boolean Evaluation/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a boolean expression consisting of the symbols 0 (false), 1
+(true), & (AND), | (OR), and ^ (XOR), and a desired boolean result value
+result, implement a function to count the number of ways of
+parenthesizing the expression such that it evaluates to result.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>s = &quot;1^0|0|1&quot;, result = 0
+
+
+
+  <strong>Output: </strong>2
+
+  <strong>Explanation:</strong>&nbsp;Two possible parenthesizing ways are:
+
+  1^(0|(0|1))
+
+  1^((0|0)|1)
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>s = &quot;0&amp;0&amp;0&amp;1^1|0&quot;, result = 1
+
+
+
+  <strong>Output: </strong>10</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+There are no more than 19 operators in s.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

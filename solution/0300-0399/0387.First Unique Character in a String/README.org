@@ -1,0 +1,154 @@
+* [[https://leetcode-cn.com/problems/first-unique-character-in-a-string][387.
+字符串中的第一个唯一字符]]
+  :PROPERTIES:
+  :CUSTOM_ID: 字符串中的第一个唯一字符
+  :END:
+[[./solution/0300-0399/0387.First Unique Character in a String/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回
+-1。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>s = &quot;leetcode&quot;
+  返回 0
+
+  s = &quot;loveleetcode&quot;
+  返回 2
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：你可以假定该字符串只包含小写字母。
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+遍历字符串，用一个 map
+或者字典存放字符串中每个字符出现的次数。然后再次遍历字符串，取出对应字符出现的次数，若次数为
+1，直接返回当前字符串的下标。遍历结束，返回 -1。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def firstUniqChar(self, s: str) -> int:
+          chars = {}
+          for ch in s:
+              ch = ord(ch)
+              chars[ch] = chars.get(ch, 0) + 1
+          for i, ch in enumerate(s):
+              ch = ord(ch)
+              if chars[ch] == 1:
+                  return i
+          return -1
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int firstUniqChar(String s) {
+          Map<Character, Integer> chars = new HashMap<>(26);
+          int n = s.length();
+          for (int i = 0; i < n; ++i) {
+              char ch = s.charAt(i);
+              chars.put(ch, chars.getOrDefault(ch, 0) + 1);
+          }
+          for (int i = 0; i < n; ++i) {
+              char ch = s.charAt(i);
+              if (chars.get(ch) == 1) return i;
+          }
+          return -1;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

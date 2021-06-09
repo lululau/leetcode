@@ -1,0 +1,387 @@
+* [[https://leetcode.com/problems/implement-trie-prefix-tree][208.
+Implement Trie (Prefix Tree)]]
+  :PROPERTIES:
+  :CUSTOM_ID: implement-trie-prefix-tree
+  :END:
+[[./solution/0200-0299/0208.Implement Trie %28Prefix Tree%29/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+A trie (pronounced as "try") or prefix tree is a tree data structure
+used to efficiently store and retrieve keys in a dataset of strings.
+There are various applications of this data structure, such as
+autocomplete and spellchecker.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement the Trie class:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Trie() Initializes the trie object.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void insert(String word) Inserts the string word into the trie.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+boolean search(String word) Returns true if the string word is in the
+trie (i.e., was inserted before), and false otherwise.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+boolean startsWith(String prefix) Returns true if there is a previously
+inserted string word that has the prefix prefix, and false otherwise.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input</strong>
+  [&quot;Trie&quot;, &quot;insert&quot;, &quot;search&quot;, &quot;search&quot;, &quot;startsWith&quot;, &quot;insert&quot;, &quot;search&quot;]
+  [[], [&quot;apple&quot;], [&quot;apple&quot;], [&quot;app&quot;], [&quot;app&quot;], [&quot;app&quot;], [&quot;app&quot;]]
+  <strong>Output</strong>
+  [null, null, true, false, true, null, true]
+
+  <strong>Explanation</strong>
+  Trie trie = new Trie();
+  trie.insert(&quot;apple&quot;);
+  trie.search(&quot;apple&quot;);   // return True
+  trie.search(&quot;app&quot;);     // return False
+  trie.startsWith(&quot;app&quot;); // return True
+  trie.insert(&quot;app&quot;);
+  trie.search(&quot;app&quot;);     // return True
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= word.length, prefix.length <= 2000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+word and prefix consist only of lowercase English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+At most 3 * 104 calls in total will be made to insert, search, and
+startsWith.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Trie:
+
+      def __init__(self):
+          """
+          Initialize your data structure here.
+          """
+          self.children = [None] * 26
+          self.is_end = False
+
+      def insert(self, word: str) -> None:
+          """
+          Inserts a word into the trie.
+          """
+          node = self
+          for c in word:
+              index = ord(c) - ord("a")
+              if node.children[index] is None:
+                  node.children[index] = Trie()
+              node = node.children[index]
+          node.is_end = True
+
+      def search(self, word: str) -> bool:
+          """
+          Returns if the word is in the trie.
+          """
+          node = self._search_prefix(word)
+          return node is not None and node.is_end
+
+      def startsWith(self, prefix: str) -> bool:
+          """
+          Returns if there is any word in the trie that starts with the given prefix.
+          """
+          node = self._search_prefix(prefix)
+          return node is not None
+
+      def _search_prefix(self, prefix: str):
+          node = self
+          for c in prefix:
+              index = ord(c) - ord("a")
+              if node.children[index] is None:
+                  return None
+              node = node.children[index]
+          return node
+
+  # Your Trie object will be instantiated and called as such:
+  # obj = Trie()
+  # obj.insert(word)
+  # param_2 = obj.search(word)
+  # param_3 = obj.startsWith(prefix)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Trie {
+      private Trie[] children;
+      private boolean isEnd;
+
+      /** Initialize your data structure here. */
+      public Trie() {
+          children = new Trie[26];
+          isEnd = false;
+      }
+      
+      /** Inserts a word into the trie. */
+      public void insert(String word) {
+          Trie node = this;
+          for (int i = 0; i < word.length(); ++i) {
+              char c = word.charAt(i);
+              int index = c - 'a';
+              if (node.children[index] == null) {
+                  node.children[index] = new Trie();
+              }
+              node = node.children[index];
+          }
+          node.isEnd = true;
+      }
+      
+      /** Returns if the word is in the trie. */
+      public boolean search(String word) {
+          Trie node = searchPrefix(word);
+          return node != null && node.isEnd;
+      }
+      
+      /** Returns if there is any word in the trie that starts with the given prefix. */
+      public boolean startsWith(String prefix) {
+          Trie node = searchPrefix(prefix);
+          return node != null;
+      }
+
+      private Trie searchPrefix(String prefix) {
+          Trie node = this;
+          for (int i = 0; i < prefix.length(); ++i) {
+              char c = prefix.charAt(i);
+              int index = c - 'a';
+              if (node.children[index] == null) {
+                  return null;
+              }
+              node = node.children[index];
+          }
+          return node;
+      }
+  }
+
+  /**
+   * Your Trie object will be instantiated and called as such:
+   * Trie obj = new Trie();
+   * obj.insert(word);
+   * boolean param_2 = obj.search(word);
+   * boolean param_3 = obj.startsWith(prefix);
+   */
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * Initialize your data structure here.
+   */
+  var Trie = function() {
+      this.children = {};
+  };
+
+  /**
+   * Inserts a word into the trie. 
+   * @param {string} word
+   * @return {void}
+   */
+  Trie.prototype.insert = function(word) {
+      let node = this.children;
+      for (let char of word) {
+          if (!node[char]) {
+              node[char] = {};
+          }
+          node = node[char];
+      }
+      node.isEnd = true;
+  };
+
+  /**
+   * Returns if the word is in the trie. 
+   * @param {string} word
+   * @return {boolean}
+   */
+  Trie.prototype.search = function(word) {
+      let node = this.searchPrefix(word);
+      return node != undefined && node.isEnd != undefined;
+  };
+
+  Trie.prototype.searchPrefix = function (prefix) {
+      let node = this.children;
+      for (let char of prefix) {
+          if (!node[char]) return false;
+          node = node[char];
+      }
+      return node;
+  }
+
+  /**
+   * Returns if there is any word in the trie that starts with the given prefix. 
+   * @param {string} prefix
+   * @return {boolean}
+   */
+  Trie.prototype.startsWith = function(prefix) {
+      return this.searchPrefix(prefix);
+  };
+
+  /**
+   * Your Trie object will be instantiated and called as such:
+   * var obj = new Trie()
+   * obj.insert(word)
+   * var param_2 = obj.search(word)
+   * var param_3 = obj.startsWith(prefix)
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

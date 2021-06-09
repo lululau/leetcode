@@ -1,0 +1,212 @@
+* [[https://leetcode.com/problems/binary-tree-paths][257. Binary Tree
+Paths]]
+  :PROPERTIES:
+  :CUSTOM_ID: binary-tree-paths
+  :END:
+[[./solution/0200-0299/0257.Binary Tree Paths/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the root of a binary tree, return all root-to-leaf paths in any
+order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A leaf is a node with no children.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [1,2,3,null,5]
+  <strong>Output:</strong> [&quot;1-&gt;2-&gt;5&quot;,&quot;1-&gt;3&quot;]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [1]
+  <strong>Output:</strong> [&quot;1&quot;]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of nodes in the tree is in the range [1, 100].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-100 <= Node.val <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  # Definition for a binary tree node.
+  # class TreeNode:
+  #     def __init__(self, x):
+  #         self.val = x
+  #         self.left = None
+  #         self.right = None
+
+  class Solution:
+      def binaryTreePaths(self, root: TreeNode) -> List[str]:
+          def dfs(root):
+              if root is None:
+                  return
+              path.append(str(root.val))
+              if root.left is None and root.right is None:
+                  res.append("->".join(path))
+              dfs(root.left)
+              dfs(root.right)
+              path.pop()
+          res = []
+          path = []
+          dfs(root)
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  /**
+   * Definition for a binary tree node.
+   * public class TreeNode {
+   *     int val;
+   *     TreeNode left;
+   *     TreeNode right;
+   *     TreeNode(int x) { val = x; }
+   * }
+   */
+  class Solution {
+      private List<String> res;
+      private List<String> path;
+
+      public List<String> binaryTreePaths(TreeNode root) {
+          if (root == null) return Collections.emptyList();
+          res = new ArrayList<>();
+          path = new ArrayList<>();
+          dfs(root);
+          return res;
+      }
+
+      private void dfs(TreeNode root) {
+          if (root == null) return;
+          path.add(String.valueOf(root.val));
+          if (root.left == null && root.right == null) {
+              res.add(String.join("->", path));
+          }
+          dfs(root.left);
+          dfs(root.right);
+          path.remove(path.size() - 1);
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

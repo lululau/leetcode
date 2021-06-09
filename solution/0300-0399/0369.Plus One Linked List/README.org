@@ -1,0 +1,165 @@
+* [[https://leetcode-cn.com/problems/plus-one-linked-list][369.
+给单链表加一]]
+  :PROPERTIES:
+  :CUSTOM_ID: 给单链表加一
+  :END:
+[[./solution/0300-0399/0369.Plus One Linked List/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+用一个 非空 单链表来表示一个非负整数，然后将这个整数加一。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你可以假设这个整数除了 0 本身，没有任何前导的 0。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+这个整数的各个数位按照 高位在链表头部、低位在链表尾部 的顺序排列。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入: </strong>[1,2,3]
+  <strong>输出: </strong>[1,2,4]
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+找出链表最右一个 =val ≠ 9= 的节点 target，将 target 值加 1。然后将
+target 之后的所有节点值置为 0。
+
+若遇到如 =9 -> 9 -> 9= 的链表，就找不到 target
+了，因此，我们可以定义一个虚拟头节点 dummy，初始值为 0。刚开始将 target
+指向 dummy，这样就确保链表一定存在一个 =val ≠ 9= 的节点了。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  # Definition for singly-linked list.
+  # class ListNode:
+  #     def __init__(self, val=0, next=None):
+  #         self.val = val
+  #         self.next = next
+  class Solution:
+      def plusOne(self, head: ListNode) -> ListNode:
+          dummy = ListNode(val=0, next=head)
+          target = dummy
+          while head:
+              if head.val != 9:
+                  target = head
+              head = head.next
+          target.val += 1
+          target = target.next
+          while target:
+              target.val = 0
+              target = target.next
+          return dummy if dummy.val else dummy.next
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  /**
+   * Definition for singly-linked list.
+   * public class ListNode {
+   *     int val;
+   *     ListNode next;
+   *     ListNode() {}
+   *     ListNode(int val) { this.val = val; }
+   *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+   * }
+   */
+  class Solution {
+      public ListNode plusOne(ListNode head) {
+          ListNode dummy = new ListNode(0, head);
+          ListNode target = dummy;
+          while (head != null) {
+              if (head.val != 9) {
+                  target = head;
+              }
+              head = head.next;
+          }
+          target.val += 1;
+          target = target.next;
+          while (target != null) {
+              target.val = 0;
+              target = target.next;
+          }
+          return dummy.val == 1 ? dummy : dummy.next;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

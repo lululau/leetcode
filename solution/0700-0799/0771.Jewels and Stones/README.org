@@ -1,0 +1,194 @@
+* [[https://leetcode-cn.com/problems/jewels-and-stones][771.
+宝石与石头]]
+  :PROPERTIES:
+  :CUSTOM_ID: 宝石与石头
+  :END:
+[[./solution/0700-0799/0771.Jewels and Stones/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 给定字符串J 代表石头中宝石的类型，和字符串 S代表你拥有的石头。 S 中每个字符代表了一种你拥有的石头的类型，你想知道你拥有的石头中有多少是宝石。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+J 中的字母不重复，J 和 S中的所有字符都是字母。字母区分大小写，因此"a"和"A"是不同类型的石头。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong> J = &quot;aA&quot;, S = &quot;aAAbbbb&quot;
+  <strong>输出:</strong> 3
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong> J = &quot;z&quot;, S = &quot;ZZ&quot;
+  <strong>输出:</strong> 0
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+S 和 J 最多含有50个字母。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+ J 中的字符不重复。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+哈希表实现。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def numJewelsInStones(self, jewels: str, stones: str) -> int:
+          jewel_set = {c for c in jewels}
+          return sum([1 for c in stones if c in jewel_set])
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int numJewelsInStones(String jewels, String stones) {
+          Set<Character> jewelSet = new HashSet<>();
+          for (char ch : jewels.toCharArray()) {
+              jewelSet.add(ch);
+          }
+          int res = 0;
+          for (char ch : stones.toCharArray()) {
+              res += (jewelSet.contains(ch) ? 1 : 0);
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      int numJewelsInStones(string jewels, string stones) {
+          unordered_set<char> jewelsSet;
+          for (int i = 0; i < jewels.length(); ++i) {
+              jewelsSet.insert(jewels[i]);
+          }
+          int res = 0;
+          for (int i = 0; i < stones.length(); ++i) {
+              res += jewelsSet.count(stones[i]);
+          }
+          return res;
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

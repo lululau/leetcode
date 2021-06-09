@@ -1,0 +1,157 @@
+* [[https://leetcode.com/problems/number-of-distinct-islands][694.
+Number of Distinct Islands]]
+  :PROPERTIES:
+  :CUSTOM_ID: number-of-distinct-islands
+  :END:
+[[./solution/0600-0699/0694.Number of Distinct Islands/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a non-empty 2D array grid of 0's and 1's, an island is a group of
+1's (representing land) connected 4-directionally (horizontal or
+vertical.) You may assume all four edges of the grid are surrounded by
+water.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Count the number of distinct islands. An island is considered to be the
+same as another if and only if one island can be translated (and not
+rotated or reflected) to equal the other.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  <pre>
+
+  11000
+
+  11000
+
+  00011
+
+  00011
+
+  </pre>
+#+end_html
+
+Given the above grid map, return 1.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  <pre>11011
+
+  10000
+
+  00001
+
+  11011</pre>
+#+end_html
+
+Given the above grid map, return 3.
+
+Notice that:
+
+#+begin_html
+  <pre>
+
+  11
+
+  1
+
+  </pre>
+#+end_html
+
+and
+
+#+begin_html
+  <pre>
+
+   1
+
+  11
+
+  </pre>
+#+end_html
+
+are considered different island shapes, because we do not consider
+reflection / rotation.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+The length of each dimension in the given grid does not exceed 50.
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

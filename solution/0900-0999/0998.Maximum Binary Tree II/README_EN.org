@@ -1,0 +1,286 @@
+* [[https://leetcode.com/problems/maximum-binary-tree-ii][998. Maximum
+Binary Tree II]]
+  :PROPERTIES:
+  :CUSTOM_ID: maximum-binary-tree-ii
+  :END:
+[[./solution/0900-0999/0998.Maximum Binary Tree II/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+We are given the root node of a maximum tree: a tree where every node
+has a value greater than any other value in its subtree.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Just as in the previous problem, the given tree was constructed from an
+list A (root = Construct(A)) recursively with the following Construct(A)
+routine:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+If A is empty, return null.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Otherwise, let A[i] be the largest element of A.  Create a root node
+with value A[i].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The left child of root will be Construct([A[0], A[1], ..., A[i-1]])
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The right child of root will be Construct([A[i+1], A[i+2], ...,
+A[A.length - 1]])
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Return root.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note that we were not given A directly, only a root node root =
+Construct(A).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Suppose B is a copy of A with the value val appended to it.  It is
+guaranteed that B has unique values.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return Construct(B).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong>root = <span id="example-input-1-1">[4,1,3,null,null,2]</span>, val = <span id="example-input-1-2">5</span>
+  <strong>Output: </strong><span id="example-output-1">[5,4,null,1,3,null,null,2]
+  <strong>Explanation:</strong> A = </span><span>[1,4,2,3], B = </span><span>[1,4,2,3,5]</span>
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong>root = <span id="example-input-2-1">[5,2,4,null,1]</span>, val = <span id="example-input-2-2">3</span>
+  <strong>Output: </strong><span id="example-output-2">[5,2,4,null,1,null,3]
+  </span><span id="example-output-1"><strong>Explanation:</strong> A = </span><span>[2,1,5,4], B = </span><span>[2,1,5,4,3]</span>
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input: </strong>root = <span id="example-input-3-1">[5,2,3,null,1]</span>, val = <span id="example-input-3-2">4</span>
+  <strong>Output: </strong><span id="example-output-3">[5,2,4,null,1,3]
+  </span><span id="example-output-1"><strong>Explanation:</strong> A = </span><span>[2,1,5,3], B = </span><span>[2,1,5,3,4]</span>
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= B.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

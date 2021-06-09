@@ -1,0 +1,131 @@
+* [[https://leetcode.com/problems/print-foobar-alternately][1115. Print
+FooBar Alternately]]
+  :PROPERTIES:
+  :CUSTOM_ID: print-foobar-alternately
+  :END:
+[[./solution/1100-1199/1115.Print FooBar Alternately/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Suppose you are given the following code:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  class FooBar {
+    public void foo() {
+  &nbsp; &nbsp; for (int i = 0; i &lt; n; i++) {
+  &nbsp; &nbsp; &nbsp; print(&quot;foo&quot;);
+  &nbsp;   }
+    }
+
+    public void bar() {
+  &nbsp; &nbsp; for (int i = 0; i &lt; n; i++) {
+  &nbsp; &nbsp; &nbsp; print(&quot;bar&quot;);
+  &nbsp; &nbsp; }
+    }
+  }
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The same instance of FooBar will be passed to two different threads.
+Thread A will call foo() while thread B will call bar(). Modify the
+given program to output "foobar" n times.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <b>Input:</b> n = 1
+  <b>Output:</b> &quot;foobar&quot;
+  <strong>Explanation:</strong> There are two threads being fired asynchronously. One of them calls foo(), while the other calls bar(). &quot;foobar&quot; is being output 1 time.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <b>Input:</b> n = 2
+  <b>Output:</b> &quot;foobarfoobar&quot;
+  <strong>Explanation:</strong> &quot;foobar&quot; is being output 2 times.
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

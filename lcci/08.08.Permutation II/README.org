@@ -1,0 +1,185 @@
+* [[https://leetcode-cn.com/problems/permutation-ii-lcci][面试题 08.08.
+有重复字符串的排列组合]]
+  :PROPERTIES:
+  :CUSTOM_ID: 面试题-08.08.-有重复字符串的排列组合
+  :END:
+[[./lcci/08.08.Permutation II/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+有重复字符串的排列组合。编写一种方法，计算某字符串的所有排列组合。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong> 输入</strong>：S = &quot;qqe&quot;
+  <strong> 输出</strong>：[&quot;eqq&quot;,&quot;qeq&quot;,&quot;qqe&quot;]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong> 输入</strong>：S = &quot;ab&quot;
+  <strong> 输出</strong>：[&quot;ab&quot;, &quot;ba&quot;]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+字符都是英文字母。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+字符串长度在[1, 9]之间。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {string} S
+   * @return {string[]}
+   */
+  var permutation = function(S) {
+      let res = [];
+      let arr = [...S];
+      arr.sort();
+      let prev = [];
+      let record = new Array(S.length).fill(false);
+      dfs(arr, 0, prev, record, res);
+      return res;
+  };
+
+  function dfs(arr, depth, prev, record, res) {
+      if (depth == arr.length) {
+          res.push(prev.join(''));
+          return;
+      }
+      for (let i = 0; i < arr.length; i++) {
+          if (record[i]) {
+              continue;
+          }
+          // 剪枝
+          if (i > 0 && arr[i] == arr[i - 1] && record[i - 1]) {
+              continue;
+          }
+          prev.push(arr[i]);
+          record[i] = true;
+          dfs(arr, depth + 1, prev, record, res);
+          // 回溯
+          prev.pop();
+          record[i] = false;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,114 @@
+* [[https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal][103.
+二叉树的锯齿形层序遍历]]
+  :PROPERTIES:
+  :CUSTOM_ID: 二叉树的锯齿形层序遍历
+  :END:
+[[./solution/0100-0199/0103.Binary Tree Zigzag Level Order Traversal/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个二叉树，返回其节点值的锯齿形层序遍历。（即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+例如： 给定二叉树 [3,9,20,null,null,15,7],
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+      3
+     / \
+    9  20
+      /  \
+     15   7
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回锯齿形层序遍历如下：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  [
+    [3],
+    [20,9],
+    [15,7]
+  ]
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

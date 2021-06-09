@@ -1,0 +1,256 @@
+* [[https://leetcode.com/problems/make-two-arrays-equal-by-reversing-sub-arrays][1460.
+Make Two Arrays Equal by Reversing Sub-arrays]]
+  :PROPERTIES:
+  :CUSTOM_ID: make-two-arrays-equal-by-reversing-sub-arrays
+  :END:
+[[./solution/1400-1499/1460.Make Two Arrays Equal by Reversing Sub-arrays/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given two integer arrays of equal length target and arr.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+In one step, you can select any non-empty sub-array of arr and reverse
+it. You are allowed to make any number of steps.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return True if you can make arr equal to target, or False otherwise.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> target = [1,2,3,4], arr = [2,4,1,3]
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> You can follow the next steps to convert arr to target:
+  1- Reverse sub-array [2,4,1], arr becomes [1,4,2,3]
+  2- Reverse sub-array [4,2], arr becomes [1,2,4,3]
+  3- Reverse sub-array [4,3], arr becomes [1,2,3,4]
+  There are multiple ways to convert arr to target, this is not the only way to do so.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> target = [7], arr = [7]
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> arr is equal to target without any reverses.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> target = [1,12], arr = [12,1]
+  <strong>Output:</strong> true
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> target = [3,7,9], arr = [3,7,11]
+  <strong>Output:</strong> false
+  <strong>Explanation:</strong> arr doesn&#39;t have value 9 and it can never be converted to target.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> target = [1,1,1,1,1], arr = [1,1,1,1,1]
+  <strong>Output:</strong> true
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+target.length == arr.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= target.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= target[i] <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= arr[i] <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def canBeEqual(self, target: List[int], arr: List[int]) -> bool:
+          return sorted(target) == sorted(arr)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public boolean canBeEqual(int[] target, int[] arr) {
+          Arrays.sort(target);
+          Arrays.sort(arr);
+          return Arrays.equals(target, arr);
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

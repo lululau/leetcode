@@ -1,0 +1,98 @@
+* [[https://leetcode-cn.com/problems/median-employee-salary][569.
+员工薪水中位数]]
+  :PROPERTIES:
+  :CUSTOM_ID: 员工薪水中位数
+  :END:
+[[./solution/0500-0599/0569.Median Employee Salary/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Employee 表包含所有员工。Employee 表有三列：员工Id，公司名和薪水。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+-----+------------+--------+
+  |Id   | Company    | Salary |
+  +-----+------------+--------+
+  |1    | A          | 2341   |
+  |2    | A          | 341    |
+  |3    | A          | 15     |
+  |4    | A          | 15314  |
+  |5    | A          | 451    |
+  |6    | A          | 513    |
+  |7    | B          | 15     |
+  |8    | B          | 13     |
+  |9    | B          | 1154   |
+  |10   | B          | 1345   |
+  |11   | B          | 1221   |
+  |12   | B          | 234    |
+  |13   | C          | 2345   |
+  |14   | C          | 2645   |
+  |15   | C          | 2645   |
+  |16   | C          | 2652   |
+  |17   | C          | 65     |
+  +-----+------------+--------+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请编写SQL查询来查找每个公司的薪水中位数。挑战点：你是否可以在不使用任何内置的SQL函数的情况下解决此问题。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+-----+------------+--------+
+  |Id   | Company    | Salary |
+  +-----+------------+--------+
+  |5    | A          | 451    |
+  |6    | A          | 513    |
+  |12   | B          | 234    |
+  |9    | B          | 1154   |
+  |14   | C          | 2645   |
+  +-----+------------+--------+
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

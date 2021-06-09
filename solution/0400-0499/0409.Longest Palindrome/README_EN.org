@@ -1,0 +1,202 @@
+* [[https://leetcode.com/problems/longest-palindrome][409. Longest
+Palindrome]]
+  :PROPERTIES:
+  :CUSTOM_ID: longest-palindrome
+  :END:
+[[./solution/0400-0499/0409.Longest Palindrome/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a string s which consists of lowercase or uppercase letters,
+return the length of the longest palindrome that can be built with those
+letters.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Letters are case sensitive, for example, "Aa" is not considered a
+palindrome here.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;abccccdd&quot;
+  <strong>Output:</strong> 7
+  <strong>Explanation:</strong>
+  One longest palindrome that can be built is &quot;dccaccd&quot;, whose length is 7.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;a&quot;
+  <strong>Output:</strong> 1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> s = &quot;bb&quot;
+  <strong>Output:</strong> 2
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= s.length <= 2000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s consists of lowercase and/or uppercase English letters only.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def longestPalindrome(self, s: str) -> int:
+          res = [0] * 128
+          for ch in s:
+              res[ord(ch)] += 1
+          odd_cnt, n = 0, len(s)
+          for e in res:
+              odd_cnt += (e % 2)
+          return n if odd_cnt == 0 else n - odd_cnt + 1
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int longestPalindrome(String s) {
+          int[] res = new int[128];
+          int n = s.length();
+          for (int i = 0; i < n; ++i) {
+              res[s.charAt(i)]++;
+          }
+          int oddCnt = 0;
+          for (int e : res) {
+              oddCnt += (e % 2);
+          }
+          return oddCnt == 0 ? n : n - oddCnt + 1;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

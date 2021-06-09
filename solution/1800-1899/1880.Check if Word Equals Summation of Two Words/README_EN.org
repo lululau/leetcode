@@ -1,0 +1,334 @@
+* [[https://leetcode.com/problems/check-if-word-equals-summation-of-two-words][1880.
+Check if Word Equals Summation of Two Words]]
+  :PROPERTIES:
+  :CUSTOM_ID: check-if-word-equals-summation-of-two-words
+  :END:
+[[./solution/1800-1899/1880.Check if Word Equals Summation of Two Words/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+The letter value of a letter is its position in the alphabet starting
+from 0 (i.e. 'a' -> 0, 'b' -> 1, 'c' -> 2, etc.).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The numerical value of some string of lowercase English letters s is the
+concatenation of the letter values of each letter in s, which is then
+converted into an integer.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For example, if s = "acb", we concatenate each letter's letter value,
+resulting in "021". After converting it, we get 21.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given three strings firstWord, secondWord, and targetWord, each
+consisting of lowercase English letters 'a' through 'j' inclusive.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return true if the summation of the numerical values of firstWord and
+secondWord equals the numerical value of targetWord, or false otherwise.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> firstWord = &quot;acb&quot;, secondWord = &quot;cba&quot;, targetWord = &quot;cdb&quot;
+
+  <strong>Output:</strong> true
+
+  <strong>Explanation:</strong>
+
+  The numerical value of firstWord is &quot;acb&quot; -&gt; &quot;021&quot; -&gt; 21.
+
+  The numerical value of secondWord is &quot;cba&quot; -&gt; &quot;210&quot; -&gt; 210.
+
+  The numerical value of targetWord is &quot;cdb&quot; -&gt; &quot;231&quot; -&gt; 231.
+
+  We return true because 21 + 210 == 231.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> firstWord = &quot;aaa&quot;, secondWord = &quot;a&quot;, targetWord = &quot;aab&quot;
+
+  <strong>Output:</strong> false
+
+  <strong>Explanation:</strong> 
+
+  The numerical value of firstWord is &quot;aaa&quot; -&gt; &quot;000&quot; -&gt; 0.
+
+  The numerical value of secondWord is &quot;a&quot; -&gt; &quot;0&quot; -&gt; 0.
+
+  The numerical value of targetWord is &quot;aab&quot; -&gt; &quot;001&quot; -&gt; 1.
+
+  We return false because 0 + 0 != 1.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> firstWord = &quot;aaa&quot;, secondWord = &quot;a&quot;, targetWord = &quot;aaaa&quot;
+
+  <strong>Output:</strong> true
+
+  <strong>Explanation:</strong> 
+
+  The numerical value of firstWord is &quot;aaa&quot; -&gt; &quot;000&quot; -&gt; 0.
+
+  The numerical value of secondWord is &quot;a&quot; -&gt; &quot;0&quot; -&gt; 0.
+
+  The numerical value of targetWord is &quot;aaaa&quot; -&gt; &quot;0000&quot; -&gt; 0.
+
+  We return true because 0 + 0 == 0.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= firstWord.length, secondWord.length, targetWord.length <= 8
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+firstWord, secondWord, and targetWord consist of lowercase English
+letters from 'a' to 'j' inclusive.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def isSumEqual(self, firstWord: str, secondWord: str, targetWord: str) -> bool:
+          def convert(word):
+              res = 0
+              for c in word:
+                  res *= 10
+                  res += (ord(c) - ord('a'))
+              return res
+          return convert(firstWord) + convert(secondWord) == convert(targetWord)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public boolean isSumEqual(String firstWord, String secondWord, String targetWord) {
+          return convert(firstWord) + convert(secondWord) == convert(targetWord);
+      }
+
+      private int convert(String word) {
+          int res = 0;
+          for (char c : word.toCharArray()) {
+              res *= 10;
+              res += (c - 'a');
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      bool isSumEqual(string firstWord, string secondWord, string targetWord) {
+          return convert(firstWord) + convert(secondWord) == convert(targetWord);
+      }
+  private:
+      int convert(string word) {
+          int res = 0;
+          for (char c : word) {
+              res *= 10;
+              res += (c - 'a');
+          }
+          return res;
+      }
+  };
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {string} firstWord
+   * @param {string} secondWord
+   * @param {string} targetWord
+   * @return {boolean}
+   */
+   var isSumEqual = function(firstWord, secondWord, targetWord) {
+      let carry = 0;
+      let n1 = firstWord.length, n2 = secondWord.length;
+      let n3 = targetWord.length;
+      for (let i = 0; i < n3; i++) {
+          let num1 = getNum(firstWord.charAt(n1 - 1 - i));
+          let num2 = getNum(secondWord.charAt(n2 - 1 - i));
+          let sum = carry + num1 + num2;
+          if (getNum(targetWord.charAt(n3 - 1 - i)) != (sum % 10)) return false;
+          carry = parseInt(sum / 10);
+      }
+      return true;
+  };
+
+  function getNum (char) {
+      if (!char) return 0;
+      return char.charCodeAt() - 'a'.charCodeAt();
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

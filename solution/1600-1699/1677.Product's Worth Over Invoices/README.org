@@ -1,0 +1,182 @@
+* [[https://leetcode-cn.com/problems/products-worth-over-invoices][1677.
+发票中的产品金额]]
+  :PROPERTIES:
+  :CUSTOM_ID: 发票中的产品金额
+  :END:
+[[./solution/1600-1699/1677.Product%27s Worth Over Invoices/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Product 表：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +-------------+---------+
+  | Column Name | Type    |
+  +-------------+---------+
+  | product_id  | int     |
+  | name        | varchar |
+  +-------------+---------+
+  product_id 是这张表的主键
+  表中含有产品 id 、产品名称。产品名称都是小写的英文字母，产品名称都是唯一的
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Invoice 表：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +-------------+------+
+  | Column Name | Type |
+  +-------------+------+
+  | invoice_id  | int  |
+  | product_id  | int  |
+  | rest        | int  |
+  | paid        | int  |
+  | canceled    | int  |
+  | refunded    | int  |
+  +-------------+------+
+  invoice_id 发票 id ，是这张表的主键
+  product_id 产品 id
+  rest 应缴款项
+  paid 已支付金额
+  canceled 已取消金额
+  refunded 已退款金额
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+要求写一个SQL查询，返回全部发票中每个产品的产品名称、总应缴款项、总已支付金额、总已取消金额、总已退款金额
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+查询结果按 product_name排序
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  Product 表：
+  +------------+-------+
+  | product_id | name  |
+  +------------+-------+
+  | 0          | ham   |
+  | 1          | bacon |
+  +------------+-------+
+  Invoice table:
+  +------------+------------+------+------+----------+----------+
+  | invoice_id | product_id | rest | paid | canceled | refunded |
+  +------------+------------+------+------+----------+----------+
+  | 23         | 0          | 2    | 0    | 5        | 0        |
+  | 12         | 0          | 0    | 4    | 0        | 3        |
+  | 1          | 1          | 1    | 1    | 0        | 1        |
+  | 2          | 1          | 1    | 0    | 1        | 1        |
+  | 3          | 1          | 0    | 1    | 1        | 1        |
+  | 4          | 1          | 1    | 1    | 1        | 0        |
+  +------------+------------+------+------+----------+----------+
+  Result 表：
+  +-------+------+------+----------+----------+
+  | name  | rest | paid | canceled | refunded |
+  +-------+------+------+----------+----------+
+  | bacon | 3    | 3    | 3        | 3        |
+  | ham   | 2    | 4    | 5        | 3        |
+  +-------+------+------+----------+----------+
+  - bacon 的总应缴款项为 1 + 1 + 0 + 1 = 3
+  - bacon 的总已支付金额为 1 + 0 + 1 + 1 = 3
+  - bacon 的总已取消金额为 0 + 1 + 1 + 1 = 3
+  - bacon 的总已退款金额为 1 + 1 + 1 + 0 = 3
+  - ham 的总应缴款项为 2 + 0 = 2
+  - ham 的总已支付金额为 0 + 4 = 4
+  - ham 的总已取消金额为 5 + 0 = 5
+  - ham 的总已退款金额为 0 + 3 = 3
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

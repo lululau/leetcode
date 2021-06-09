@@ -1,0 +1,104 @@
+* [[https://leetcode-cn.com/problems/second-highest-salary][176.
+第二高的薪水]]
+  :PROPERTIES:
+  :CUSTOM_ID: 第二高的薪水
+  :END:
+[[./solution/0100-0199/0176.Second Highest Salary/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+编写一个 SQL 查询，获取 Employee 表中第二高的薪水（Salary） 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+----+--------+
+  | Id | Salary |
+  +----+--------+
+  | 1  | 100    |
+  | 2  | 200    |
+  | 3  | 300    |
+  +----+--------+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+例如上述 Employee 表，SQL查询应该返回 200
+作为第二高的薪水。如果不存在第二高的薪水，那么查询应返回 null。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+---------------------+
+  | SecondHighestSalary |
+  +---------------------+
+  | 200                 |
+  +---------------------+
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+解法 1：使用 LIMIT 语句和子查询。
+
+#+begin_src sql
+  # Write your MySQL query statement below
+  SELECT
+  (
+      SELECT DISTINCT Salary
+      FROM Employee
+      ORDER BY Salary DESC
+      LIMIT 1 OFFSET 1
+  ) AS SecondHighestSalary;
+#+end_src
+
+解法 2：使用 =MAX()= 函数，从小于 =MAX()= 的 Salary 中挑选最大值 =MAX()=
+即可。
+
+#+begin_src sql
+  # Write your MySQL query statement below
+  SELECT MAX(Salary) AS SecondHighestSalary
+  FROM Employee
+  WHERE Salary < (
+      SELECT MAX(Salary)
+      FROM Employee
+  );
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

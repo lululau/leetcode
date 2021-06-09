@@ -1,0 +1,233 @@
+* [[https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-iv][1676.
+Lowest Common Ancestor of a Binary Tree IV]]
+  :PROPERTIES:
+  :CUSTOM_ID: lowest-common-ancestor-of-a-binary-tree-iv
+  :END:
+[[./solution/1600-1699/1676.Lowest Common Ancestor of a Binary Tree IV/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the root of a binary tree and an array of TreeNode objects nodes,
+return the lowest common ancestor (LCA) of all the nodes in nodes. All
+the nodes will exist in the tree, and all values of the tree's nodes are
+unique.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Extending the definition of LCA on Wikipedia: "The lowest common
+ancestor of n nodes p1, p2, ..., pn in a binary tree T is the lowest
+node that has every pi as a descendant (where we allow a node to be a
+descendant of itself) for every valid i". A descendant of a node x is a
+node y that is on the path from node x to some leaf node.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [3,5,1,6,2,0,8,null,null,7,4], nodes = [4,7]
+  <strong>Output:</strong> 2
+  <strong>Explanation:</strong>&nbsp;The lowest common ancestor of nodes 4 and 7 is node 2.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [3,5,1,6,2,0,8,null,null,7,4], nodes = [1]
+  <strong>Output:</strong> 1
+  <strong>Explanation:</strong>&nbsp;The lowest common ancestor of a single node is the node itself.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [3,5,1,6,2,0,8,null,null,7,4], nodes = [7,6,2,4]
+  <strong>Output:</strong> 5
+  <strong>Explanation:</strong>&nbsp;The lowest common ancestor of the nodes 7, 6, 2, and 4 is node 5.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [3,5,1,6,2,0,8,null,null,7,4], nodes = [0,1,2,3,4,5,6,7,8]
+  <strong>Output:</strong> 3
+  <strong>Explanation:</strong>&nbsp;The lowest common ancestor of all the nodes is the root node.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of nodes in the tree is in the range [1, 104].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-109 <= Node.val <= 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All Node.val are unique.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All nodes[i] will exist in the tree.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All nodes[i] are distinct.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

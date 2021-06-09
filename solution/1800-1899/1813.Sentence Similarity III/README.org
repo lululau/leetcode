@@ -1,0 +1,288 @@
+* [[https://leetcode-cn.com/problems/sentence-similarity-iii][1813.
+句子相似性 III]]
+  :PROPERTIES:
+  :CUSTOM_ID: 句子相似性-iii
+  :END:
+[[./solution/1800-1899/1813.Sentence Similarity III/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+一个句子是由一些单词与它们之间的单个空格组成，且句子的开头和结尾没有多余空格。比方说，"Hello
+World" ，"HELLO" ，"hello world hello world" 都是句子。每个单词都
+只 包含大写和小写英文字母。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+如果两个句子 sentence1
+和 sentence2 ，可以通过往其中一个句子插入一个任意的句子（可以是空句子）而得到另一个句子，那么我们称这两个句子是
+相似的 。比方说，sentence1 = "Hello my name is Jane" 且 sentence2 =
+"Hello Jane" ，我们可以往 sentence2 中 "Hello" 和 "Jane" 之间插入 "my
+name is" 得到 sentence1 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你两个句子 sentence1 和 sentence2 ，如果 sentence1 和 sentence2
+是相似的，请你返回 true ，否则返回 false 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><b>输入：</b>sentence1 = "My name is Haley", sentence2 = "My Haley"
+  <b>输出：</b>true
+  <b>解释：</b>可以往 sentence2 中 "My" 和 "Haley" 之间插入 "name is" ，得到 sentence1 。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><b>输入：</b>sentence1 = "of", sentence2 = "A lot of words"
+  <b>输出：</b>false
+  <strong>解释：</strong>没法往这两个句子中的一个句子只插入一个句子就得到另一个句子。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><b>输入：</b>sentence1 = "Eating right now", sentence2 = "Eating"
+  <b>输出：</b>true
+  <b>解释：</b>可以往 sentence2 的结尾插入 "right now" 得到 sentence1 。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 4：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><b>输入：</b>sentence1 = "Luky", sentence2 = "Lucccky"
+  <b>输出：</b>false
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= sentence1.length, sentence2.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+sentence1 和 sentence2 都只包含大小写英文字母和空格。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+sentence1 和 sentence2 中的单词都只由单个空格隔开。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def areSentencesSimilar(self, sentence1: str, sentence2: str) -> bool:
+          if sentence1 == sentence2:
+              return True
+          n1, n2 = len(sentence1), len(sentence2)
+          if n1 == n2:
+              return False
+          if n1 < n2:
+              sentence1, sentence2 = sentence2, sentence1
+          words1, words2 = sentence1.split(), sentence2.split()
+          i = j = 0
+          while i < len(words2) and words1[i] == words2[i]:
+              i += 1
+          if i == len(words2):
+              return True
+          while j < len(words2) and words1[len(words1) - 1 - j] == words2[len(words2) - 1 - j]:
+              j += 1
+          if j == len(words2):
+              return True
+          return i + j == len(words2)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public boolean areSentencesSimilar(String sentence1, String sentence2) {
+          if (Objects.equals(sentence1, sentence2)) {
+              return true;
+          }
+          int n1 = sentence1.length(), n2 = sentence2.length();
+          if (n1 == n2) {
+              return false;
+          }
+          if (n1 < n2) {
+              String t = sentence1;
+              sentence1 = sentence2;
+              sentence2 = t;
+          }
+          String[] words1 = sentence1.split(" ");
+          String[] words2 = sentence2.split(" ");
+          int i = 0, j = 0;
+          while (i < words2.length &&  Objects.equals(words1[i], words2[i])) {
+              ++i;
+          }
+          if (i == words2.length) {
+              return true;
+          }
+          while (j < words2.length && Objects.equals(words1[words1.length - 1 - j], words2[words2.length - 1 - j])) {
+              ++j;
+          }
+          if (j == words2.length) {
+              return true;
+          }
+          return i + j == words2.length;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

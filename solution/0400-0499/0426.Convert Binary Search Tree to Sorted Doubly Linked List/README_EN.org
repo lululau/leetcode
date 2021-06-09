@@ -1,0 +1,340 @@
+* [[https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list][426.
+Convert Binary Search Tree to Sorted Doubly Linked List]]
+  :PROPERTIES:
+  :CUSTOM_ID: convert-binary-search-tree-to-sorted-doubly-linked-list
+  :END:
+[[./solution/0400-0499/0426.Convert Binary Search Tree to Sorted Doubly Linked List/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Convert a Binary Search Tree to a sorted Circular Doubly-Linked List in
+place.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You can think of the left and right pointers as synonymous to the
+predecessor and successor pointers in a doubly-linked list. For a
+circular doubly linked list, the predecessor of the first element is the
+last element, and the successor of the last element is the first
+element.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+We want to do the transformation in place. After the transformation, the
+left pointer of the tree node should point to its predecessor, and the
+right pointer should point to its successor. You should return the
+pointer to the smallest element of the linked list.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [4,2,5,1,3]
+
+  <img src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0400-0499/0426.Convert Binary Search Tree to Sorted Doubly Linked List/images/bstdllreturndll.png" style="width: 100%; max-width: 450px;" />
+  <strong>Output:</strong> [1,2,3,4,5]
+
+  <strong>Explanation:</strong> The figure below shows the transformed BST. The solid line indicates the successor relationship, while the dashed line means the predecessor relationship.
+  <img src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0400-0499/0426.Convert Binary Search Tree to Sorted Doubly Linked List/images/bstdllreturnbst.png" style="width: 100%; max-width: 450px;" />
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [2,1,3]
+  <strong>Output:</strong> [1,2,3]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = []
+  <strong>Output:</strong> []
+  <strong>Explanation:</strong> Input is an empty tree. Output is also an empty Linked List.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> root = [1]
+  <strong>Output:</strong> [1]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of nodes in the tree is in the range [0, 2000].
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-1000 <= Node.val <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All the values of the tree are unique.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  """
+  # Definition for a Node.
+  class Node:
+      def __init__(self, val, left=None, right=None):
+          self.val = val
+          self.left = left
+          self.right = right
+  """
+  class Solution:
+      def treeToDoublyList(self, root: 'Node') -> 'Node':
+          def dfs(cur):
+              if cur is None:
+                  return
+              dfs(cur.left)
+              if self.pre is None:
+                  self.head = cur
+              else:
+                  self.pre.right = cur
+              cur.left = self.pre
+              self.pre = cur
+              dfs(cur.right)
+          if root is None:
+              return None
+          self.head = self.pre = None
+          dfs(root)
+          self.head.left = self.pre
+          self.pre.right = self.head
+          return self.head
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  /*
+  // Definition for a Node.
+  class Node {
+      public int val;
+      public Node left;
+      public Node right;
+
+      public Node() {}
+
+      public Node(int _val) {
+          val = _val;
+      }
+
+      public Node(int _val,Node _left,Node _right) {
+          val = _val;
+          left = _left;
+          right = _right;
+      }
+  };
+  */
+
+  class Solution {
+      private Node head;
+      private Node pre;
+
+      public Node treeToDoublyList(Node root) {
+          if (root == null) return null;
+          dfs(root);
+          head.left = pre;
+          pre.right = head;
+          return head;
+      }
+
+      private void dfs(Node cur) {
+          if (cur == null) return;
+          dfs(cur.left);
+          if (pre == null) head = cur;
+          else pre.right = cur;
+          cur.left = pre;
+          pre = cur;
+          dfs(cur.right);
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * // Definition for a Node.
+   * function Node(val,left,right) {
+   *    this.val = val;
+   *    this.left = left;
+   *    this.right = right;
+   * };
+   */
+  /**
+   * @param {Node} root
+   * @return {Node}
+   */
+  var treeToDoublyList = function (root) {
+    function dfs(cur) {
+      if (!cur) return;
+      dfs(cur.left);
+      if (!pre) head = cur;
+      else pre.right = cur;
+      cur.left = pre;
+      pre = cur;
+      dfs(cur.right);
+    }
+    if (!root) return null;
+    let head, pre;
+    dfs(root);
+    head.left = pre;
+    pre.right = head;
+    return head;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

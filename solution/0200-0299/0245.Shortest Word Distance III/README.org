@@ -1,0 +1,165 @@
+* [[https://leetcode-cn.com/problems/shortest-word-distance-iii][245.
+最短单词距离 III]]
+  :PROPERTIES:
+  :CUSTOM_ID: 最短单词距离-iii
+  :END:
+[[./solution/0200-0299/0245.Shortest Word Distance III/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个单词列表和两个单词 word1 和
+word2，返回列表中这两个单词之间的最短距离。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+word1 和
+word2 是有可能相同的，并且它们将分别表示为列表中两个独立的单词。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例: 假设 words = ["practice", "makes", "perfect", "coding", "makes"].
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong> <em>word1</em> = <code>&ldquo;makes&rdquo;</code>, <em>word2</em> = <code>&ldquo;coding&rdquo;</code>
+  <strong>输出:</strong> 1
+  </pre>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong> <em>word1</em> = <code>&quot;makes&quot;</code>, <em>word2</em> = <code>&quot;makes&quot;</code>
+  <strong>输出:</strong> 3
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意: 你可以假设 word1 和 word2 都在列表里。
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def shortestWordDistance(self, wordsDict: List[str], word1: str, word2: str) -> int:
+          i1 = i2 = -1
+          shortest_distance = len(wordsDict)
+          same = word1 == word2
+          for i in range(len(wordsDict)):
+              if same:
+                  if word1 == wordsDict[i]:
+                      if i1 != -1:
+                          shortest_distance = min(shortest_distance, i - i1)
+                      i1 = i
+              else:
+                  if word1 == wordsDict[i]:
+                      i1 = i
+                  if word2 == wordsDict[i]:
+                      i2 = i
+                  if i1 != -1 and i2 != -1:
+                      shortest_distance = min(shortest_distance, abs(i1 - i2))
+          return shortest_distance
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int shortestWordDistance(String[] wordsDict, String word1, String word2) {
+          int i1 = -1, i2 = -1;
+          int shortestDistance = wordsDict.length;
+          boolean same = word1.equals(word2);
+          for (int i = 0; i < wordsDict.length; ++i) {
+              if (same) {
+                  if (word1.equals(wordsDict[i])) {
+                      if (i1 != -1) {
+                          shortestDistance = Math.min(shortestDistance, i - i1);
+                      }
+                      i1 = i;
+                  }
+              } else {
+                  if (word1.equals(wordsDict[i])) {
+                      i1 = i;
+                  }
+                  if (word2.equals(wordsDict[i])) {
+                      i2 = i;
+                  }
+                  if (i1 != -1 && i2 != -1) {
+                      shortestDistance = Math.min(shortestDistance, Math.abs(i1 - i2));
+                  }
+              }
+          }
+          return shortestDistance;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

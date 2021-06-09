@@ -1,0 +1,115 @@
+* [[https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array][421.
+数组中两个数的最大异或值]]
+  :PROPERTIES:
+  :CUSTOM_ID: 数组中两个数的最大异或值
+  :END:
+[[./solution/0400-0499/0421.Maximum XOR of Two Numbers in an Array/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个非空数组，数组中元素为 a0, a1, a2, ... , an-1，其中 0 ≤ ai <
+231 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+找到 ai 和aj 最大的异或 (XOR) 运算结果，其中0 ≤ i,  j < n 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你能在O(n)的时间解决这个问题吗？
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入:</strong> [3, 10, 5, 25, 2, 8]
+
+  <strong>输出:</strong> 28
+
+  <strong>解释:</strong> 最大的结果是 <strong>5</strong> ^ <strong>25</strong> = 28.
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

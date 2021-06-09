@@ -1,0 +1,259 @@
+* [[https://leetcode.com/problems/minimum-distance-to-type-a-word-using-two-fingers][1320.
+Minimum Distance to Type a Word Using Two Fingers]]
+  :PROPERTIES:
+  :CUSTOM_ID: minimum-distance-to-type-a-word-using-two-fingers
+  :END:
+[[./solution/1300-1399/1320.Minimum Distance to Type a Word Using Two Fingers/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You have a keyboard layout as shown above in the XY plane, where each
+English uppercase letter is located at some coordinate, for example, the
+letter A is located at coordinate (0,0), the letter B is located at
+coordinate (0,1), the letter P is located at coordinate (2,3) and the
+letter Z is located at coordinate (4,1).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the string word, return the minimum total distance to type such
+string using only two fingers. The distance between coordinates (x1,y1)
+and (x2,y2) is |x1 - x2| + |y1 - y2|. 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note that the initial positions of your two fingers are considered free
+so don't count towards your total distance, also your two fingers do not
+have to start at the first letter or the first two letters.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> word = &quot;CAKE&quot;
+
+  <strong>Output:</strong> 3
+
+  <strong>Explanation: 
+
+  </strong>Using two fingers, one optimal way to type &quot;CAKE&quot; is: 
+
+  Finger 1 on letter &#39;C&#39; -&gt; cost = 0 
+
+  Finger 1 on letter &#39;A&#39; -&gt; cost = Distance from letter &#39;C&#39; to letter &#39;A&#39; = 2 
+
+  Finger 2 on letter &#39;K&#39; -&gt; cost = 0 
+
+  Finger 2 on letter &#39;E&#39; -&gt; cost = Distance from letter &#39;K&#39; to letter &#39;E&#39; = 1 
+
+  Total distance = 3
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> word = &quot;HAPPY&quot;
+
+  <strong>Output:</strong> 6
+
+  <strong>Explanation: </strong>
+
+  Using two fingers, one optimal way to type &quot;HAPPY&quot; is:
+
+  Finger 1 on letter &#39;H&#39; -&gt; cost = 0
+
+  Finger 1 on letter &#39;A&#39; -&gt; cost = Distance from letter &#39;H&#39; to letter &#39;A&#39; = 2
+
+  Finger 2 on letter &#39;P&#39; -&gt; cost = 0
+
+  Finger 2 on letter &#39;P&#39; -&gt; cost = Distance from letter &#39;P&#39; to letter &#39;P&#39; = 0
+
+  Finger 1 on letter &#39;Y&#39; -&gt; cost = Distance from letter &#39;A&#39; to letter &#39;Y&#39; = 4
+
+  Total distance = 6
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> word = &quot;NEW&quot;
+
+  <strong>Output:</strong> 3
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> word = &quot;YEAR&quot;
+
+  <strong>Output:</strong> 7
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+2 <= word.length <= 300
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Each word[i] is an English uppercase letter.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

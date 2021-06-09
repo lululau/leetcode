@@ -1,0 +1,110 @@
+* [[https://leetcode.com/problems/find-customer-referee][584. Find
+Customer Referee]]
+  :PROPERTIES:
+  :CUSTOM_ID: find-customer-referee
+  :END:
+[[./solution/0500-0599/0584.Find Customer Referee/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a table customer holding customers information and the referee.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +------+------+-----------+
+
+  | id   | name | referee_id|
+
+  +------+------+-----------+
+
+  |    1 | Will |      NULL |
+
+  |    2 | Jane |      NULL |
+
+  |    3 | Alex |         2 |
+
+  |    4 | Bill |      NULL |
+
+  |    5 | Zack |         1 |
+
+  |    6 | Mark |         2 |
+
+  +------+------+-----------+
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write a query to return the list of customers NOT referred by the person
+with id '2'.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For the sample data above, the result is:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +------+
+
+  | name |
+
+  +------+
+
+  | Will |
+
+  | Jane |
+
+  | Bill |
+
+  | Zack |
+
+  +------+
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

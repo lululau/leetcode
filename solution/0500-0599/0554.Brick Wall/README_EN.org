@@ -1,0 +1,271 @@
+* [[https://leetcode.com/problems/brick-wall][554. Brick Wall]]
+  :PROPERTIES:
+  :CUSTOM_ID: brick-wall
+  :END:
+[[./solution/0500-0599/0554.Brick Wall/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+There is a brick wall in front of you. The wall is rectangular and has
+several rows of bricks. The bricks have the same height but different
+width. You want to draw a vertical line from the top to the bottom and
+cross the least bricks.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The brick wall is represented by a list of rows. Each row is a list of
+integers representing the width of each brick in this row from left to
+right.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If your line go through the edge of a brick, then the brick is not
+considered as crossed. You need to find out how to draw the line to
+cross the least bricks and return the number of crossed bricks.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You cannot draw a line just along one of the two vertical edges of the
+wall, in which case the line will obviously cross no bricks.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> [[1,2,2,1],
+
+          [3,1,2],
+
+          [1,3,2],
+
+          [2,4],
+
+          [3,1,2],
+
+          [1,3,1,1]]
+
+
+
+  <b>Output:</b> 2
+
+
+
+  <b>Explanation:</b> 
+
+  <img src="https://cdn.jsdelivr.net/gh/doocs/leetcode@main/solution/0500-0599/0554.Brick Wall/images/brick_wall.png" style="width: 100%; max-width: 350px" />
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The width sum of bricks in different rows are the same and won't exceed
+INT_MAX.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of bricks in each row is in range [1,10,000]. The height of
+wall is in range [1,10,000]. Total number of bricks of the wall won't
+exceed 20,000.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+The question can be understood as, let the vertical line pass through
+the edge of the brick as much as possible, use the hash table to process
+the frequency of the brick edge in different positions (not including
+the two vertical edges), and the final answer is the total number of
+rows minus the maximum Frequency.
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def leastBricks(self, wall: List[List[int]]) -> int:
+          cnt = collections.defaultdict(int)
+          for row in wall:
+              width = 0
+              for brick in row[:-1]:
+                  width += brick
+                  cnt[width] += 1
+          if not cnt:
+              return len(wall)
+          return len(wall) - cnt[max(cnt, key=cnt.get)]
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int leastBricks(List<List<Integer>> wall) {
+          Map<Integer, Integer> cnt = new HashMap<>();
+          for (List<Integer> row : wall) {
+              int width = 0;
+              for (int i = 0, n = row.size() - 1; i < n; i++) {
+                  width += row.get(i);
+                  cnt.merge(width, 1, Integer::sum);
+              }
+          }
+          int max = cnt.values().stream().max(Comparator.naturalOrder()).orElse(0);
+          return wall.size() - max;
+      }
+  }
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  func leastBricks(wall [][]int) int {
+      cnt := make(map[int]int)
+      for _, row := range wall {
+          width := 0
+          for _, brick := range row[:len(row)-1] {
+              width += brick
+              cnt[width]++
+          }
+      }
+      max := 0
+      for _, v := range cnt {
+          if v > max {
+              max = v
+          }
+      }
+      return len(wall) - max
+  }
+#+end_example
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number[][]} wall
+   * @return {number}
+   */
+  var leastBricks = function (wall) {
+    const cnt = new Map();
+    for (const row of wall) {
+      let width = 0;
+      for (let i = 0, n = row.length - 1; i < n; ++i) {
+        width += row[i];
+        cnt.set(width, (cnt.get(width) || 0) + 1);
+      }
+    }
+    let max = 0;
+    for (const v of cnt.values()) {
+      max = Math.max(max, v);
+    }
+    return wall.length - max;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

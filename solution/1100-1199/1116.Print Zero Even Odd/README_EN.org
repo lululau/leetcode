@@ -1,0 +1,172 @@
+* [[https://leetcode.com/problems/print-zero-even-odd][1116. Print Zero
+Even Odd]]
+  :PROPERTIES:
+  :CUSTOM_ID: print-zero-even-odd
+  :END:
+[[./solution/1100-1199/1116.Print Zero Even Odd/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Suppose you are given the following code:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  class ZeroEvenOdd {
+  &nbsp; public ZeroEvenOdd(int n) { ... }&nbsp;     // constructor
+    public void zero(printNumber) { ... }  // only output 0&#39;s
+    public void even(printNumber) { ... }  // only output even numbers
+    public void odd(printNumber) { ... }   // only output odd numbers
+  }
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The same instance of ZeroEvenOdd will be passed to three different
+threads:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Thread A will call zero() which should only output 0's.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Thread B will call even() which should only ouput even numbers.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Thread C will call odd() which should only output odd numbers.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Each of the threads is given a printNumber method to output an integer.
+Modify the given program to output the series 010203040506... where the
+length of the series must be 2n.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <b>Input:</b> n = 2
+  <b>Output:</b> &quot;0102&quot;
+  <strong>Explanation:</strong> There are three threads being fired asynchronously. One of them calls zero(), the other calls even(), and the last one calls odd(). &quot;0102&quot; is the correct output.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <b>Input:</b> n = 5
+  <b>Output:</b> &quot;0102030405&quot;
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

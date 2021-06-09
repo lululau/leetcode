@@ -1,0 +1,202 @@
+* [[https://leetcode-cn.com/problems/online-stock-span][901.
+股票价格跨度]]
+  :PROPERTIES:
+  :CUSTOM_ID: 股票价格跨度
+  :END:
+[[./solution/0900-0999/0901.Online Stock Span/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+编写一个 StockSpanner
+类，它收集某些股票的每日报价，并返回该股票当日价格的跨度。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+今天股票价格的跨度被定义为股票价格小于或等于今天价格的最大连续日数（从今天开始往回数，包括今天）。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+例如，如果未来7天股票的价格是 [100, 80, 60, 70, 60, 75,
+85]，那么股票跨度将是 [1, 1, 1, 2, 1, 4, 6]。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>[&quot;StockSpanner&quot;,&quot;next&quot;,&quot;next&quot;,&quot;next&quot;,&quot;next&quot;,&quot;next&quot;,&quot;next&quot;,&quot;next&quot;], [[],[100],[80],[60],[70],[60],[75],[85]]
+  <strong>输出：</strong>[null,1,1,1,2,1,4,6]
+  <strong>解释：</strong>
+  首先，初始化 S = StockSpanner()，然后：
+  S.next(100) 被调用并返回 1，
+  S.next(80) 被调用并返回 1，
+  S.next(60) 被调用并返回 1，
+  S.next(70) 被调用并返回 2，
+  S.next(60) 被调用并返回 1，
+  S.next(75) 被调用并返回 4，
+  S.next(85) 被调用并返回 6。
+
+  注意 (例如) S.next(75) 返回 4，因为截至今天的最后 4 个价格
+  (包括今天的价格 75) 小于或等于今天的价格。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+调用 StockSpanner.next(int price) 时，将有 1 <= price <= 10^5。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+每个测试用例最多可以调用  10000 次 StockSpanner.next。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+在所有测试用例中，最多调用 150000 次 StockSpanner.next。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+此问题的总时间限制减少了 50%。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

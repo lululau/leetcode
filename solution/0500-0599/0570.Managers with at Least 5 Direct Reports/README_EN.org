@@ -1,0 +1,108 @@
+* [[https://leetcode.com/problems/managers-with-at-least-5-direct-reports][570.
+Managers with at Least 5 Direct Reports]]
+  :PROPERTIES:
+  :CUSTOM_ID: managers-with-at-least-5-direct-reports
+  :END:
+[[./solution/0500-0599/0570.Managers with at Least 5 Direct Reports/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+The Employee table holds all employees including their managers. Every
+employee has an Id, and there is also a column for the manager Id.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +------+----------+-----------+----------+
+
+  |Id    |Name      |Department |ManagerId |
+
+  +------+----------+-----------+----------+
+
+  |101   |John      |A          |null      |
+
+  |102   |Dan       |A          |101       |
+
+  |103   |James     |A          |101       |
+
+  |104   |Amy       |A          |101       |
+
+  |105   |Anne      |A          |101       |
+
+  |106   |Ron       |B          |101       |
+
+  +------+----------+-----------+----------+
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the Employee table, write a SQL query that finds out managers with
+at least 5 direct report. For the above table, your SQL query should
+return:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +-------+
+
+  | Name  |
+
+  +-------+
+
+  | John  |
+
+  +-------+
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+No one would report to himself.
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

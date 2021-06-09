@@ -1,0 +1,342 @@
+* [[https://leetcode.com/problems/design-authentication-manager][1797.
+Design Authentication Manager]]
+  :PROPERTIES:
+  :CUSTOM_ID: design-authentication-manager
+  :END:
+[[./solution/1700-1799/1797.Design Authentication Manager/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+There is an authentication system that works with authentication tokens.
+For each session, the user will receive a new authentication token that
+will expire timeToLive seconds after the currentTime. If the token is
+renewed, the expiry time will be extended to expire timeToLive seconds
+after the (potentially different) currentTime.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement the AuthenticationManager class:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+AuthenticationManager(int timeToLive) constructs the
+AuthenticationManager and sets the timeToLive.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+generate(string tokenId, int currentTime) generates a new token with the
+given tokenId at the given currentTime in seconds.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+renew(string tokenId, int currentTime) renews the unexpired token with
+the given tokenId at the given currentTime in seconds. If there are no
+unexpired tokens with the given tokenId, the request is ignored, and
+nothing happens.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+countUnexpiredTokens(int currentTime) returns the number of unexpired
+tokens at the given currentTime.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note that if a token expires at time t, and another action happens on
+time t (renew or countUnexpiredTokens), the expiration takes place
+before the other actions.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input</strong>
+  [&quot;AuthenticationManager&quot;, &quot;<code>renew</code>&quot;, &quot;generate&quot;, &quot;<code>countUnexpiredTokens</code>&quot;, &quot;generate&quot;, &quot;<code>renew</code>&quot;, &quot;<code>renew</code>&quot;, &quot;<code>countUnexpiredTokens</code>&quot;]
+  [[5], [&quot;aaa&quot;, 1], [&quot;aaa&quot;, 2], [6], [&quot;bbb&quot;, 7], [&quot;aaa&quot;, 8], [&quot;bbb&quot;, 10], [15]]
+  <strong>Output</strong>
+  [null, null, null, 1, null, null, null, 0]
+
+  <strong>Explanation</strong>
+  AuthenticationManager authenticationManager = new AuthenticationManager(5); // Constructs the AuthenticationManager with <code>timeToLive</code> = 5 seconds.
+  authenticationManager.<code>renew</code>(&quot;aaa&quot;, 1); // No token exists with tokenId &quot;aaa&quot; at time 1, so nothing happens.
+  authenticationManager.generate(&quot;aaa&quot;, 2); // Generates a new token with tokenId &quot;aaa&quot; at time 2.
+  authenticationManager.<code>countUnexpiredTokens</code>(6); // The token with tokenId &quot;aaa&quot; is the only unexpired one at time 6, so return 1.
+  authenticationManager.generate(&quot;bbb&quot;, 7); // Generates a new token with tokenId &quot;bbb&quot; at time 7.
+  authenticationManager.<code>renew</code>(&quot;aaa&quot;, 8); // The token with tokenId &quot;aaa&quot; expired at time 7, and 8 &gt;= 7, so at time 8 the <code>renew</code> request is ignored, and nothing happens.
+  authenticationManager.<code>renew</code>(&quot;bbb&quot;, 10); // The token with tokenId &quot;bbb&quot; is unexpired at time 10, so the <code>renew</code> request is fulfilled and now the token will expire at time 15.
+  authenticationManager.<code>countUnexpiredTokens</code>(15); // The token with tokenId &quot;bbb&quot; expires at time 15, and the token with tokenId &quot;aaa&quot; expired at time 7, so currently no token is unexpired, so return 0.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= timeToLive <= 108
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= currentTime <= 108
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= tokenId.length <= 5
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+tokenId consists only of lowercase letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All calls to generate will contain unique values of tokenId.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The values of currentTime across all the function calls will be strictly
+increasing.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+At most 2000 calls will be made to all functions combined.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class AuthenticationManager:
+
+      def __init__(self, timeToLive: int):
+          self.timeToLive = timeToLive
+          self.tokens = {}
+
+      def generate(self, tokenId: str, currentTime: int) -> None:
+          self.tokens[tokenId] = currentTime + self.timeToLive
+
+      def renew(self, tokenId: str, currentTime: int) -> None:
+          expire_time = self.tokens.get(tokenId)
+          if expire_time is None or expire_time <= currentTime:
+              return
+          self.tokens[tokenId] = currentTime + self.timeToLive
+
+      def countUnexpiredTokens(self, currentTime: int) -> int:
+          unexpiredCount = 0
+          for val in self.tokens.values():
+              if val > currentTime:
+                  unexpiredCount += 1
+          return unexpiredCount
+
+
+  # Your AuthenticationManager object will be instantiated and called as such:
+  # obj = AuthenticationManager(timeToLive)
+  # obj.generate(tokenId,currentTime)
+  # obj.renew(tokenId,currentTime)
+  # param_3 = obj.countUnexpiredTokens(currentTime)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class AuthenticationManager {
+      private int timeToLive;
+      private Map<String, Integer> tokens;
+
+      public AuthenticationManager(int timeToLive) {
+          this.timeToLive = timeToLive;
+          tokens = new HashMap<>();
+      }
+
+      public void generate(String tokenId, int currentTime) {
+          tokens.put(tokenId, currentTime + timeToLive);
+      }
+
+      public void renew(String tokenId, int currentTime) {
+          Integer expireTime = tokens.get(tokenId);
+          if (expireTime == null || expireTime <= currentTime) {
+              return;
+          }
+          tokens.put(tokenId, currentTime + timeToLive);
+      }
+
+      public int countUnexpiredTokens(int currentTime) {
+          int unexpiredCount = 0;
+          for (Integer val : tokens.values()) {
+              if (val > currentTime) {
+                  ++unexpiredCount;
+              }
+          }
+          return unexpiredCount;
+      }
+  }
+
+  /**
+   * Your AuthenticationManager object will be instantiated and called as such:
+   * AuthenticationManager obj = new AuthenticationManager(timeToLive);
+   * obj.generate(tokenId,currentTime);
+   * obj.renew(tokenId,currentTime);
+   * int param_3 = obj.countUnexpiredTokens(currentTime);
+   */
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

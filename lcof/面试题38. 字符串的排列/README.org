@@ -1,0 +1,192 @@
+* [[https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/][面试题 38.
+字符串的排列]]
+  :PROPERTIES:
+  :CUSTOM_ID: 面试题-38.-字符串的排列
+  :END:
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+输入一个字符串，打印出该字符串中字符的所有排列。
+
+你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。
+
+*示例:*
+
+#+begin_example
+  输入：s = "abc"
+  输出：["abc","acb","bac","bca","cab","cba"]
+#+end_example
+
+*限制：*
+
+- =1 <= s 的长度 <= 8=
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def permutation(self, s: str) -> List[str]:
+          def dfs(x):
+              if x == len(s) - 1:
+                  res.append("".join(chars))
+                  return
+              t = set()
+              for i in range(x, len(s)):
+                  if chars[i] in t:
+                      continue
+                  t.add(chars[i])
+                  chars[i], chars[x] = chars[x], chars[i]
+                  dfs(x + 1)
+                  chars[i], chars[x] = chars[x], chars[i]
+          chars, res = list(s), []
+          dfs(0)
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      private char[] chars;
+      private List<String> res;
+
+      public String[] permutation(String s) {
+          chars = s.toCharArray();
+          res = new ArrayList<>();
+          dfs(0);
+          return res.toArray(new String[res.size()]);
+      }
+
+      private void dfs(int x) {
+          if (x == chars.length - 1) {
+              res.add(String.valueOf(chars));
+              return;
+          }
+          Set<Character> set = new HashSet<>();
+          for (int i = x; i < chars.length; ++i) {
+              if (set.contains(chars[i])) {
+                  continue;
+              }
+              set.add(chars[i]);
+              swap(i, x);
+              dfs(x + 1);
+              swap(i, x);
+          }
+      }
+
+      private void swap(int i, int j) {
+          char t = chars[i];
+          chars[i] = chars[j];
+          chars[j] = t;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {string} s
+   * @return {string[]}
+   */
+  var permutation = function (s) {
+    let len = s.length;
+    let res = new Set();
+    function dfs(str, isRead) {
+      if (str.length === len) {
+        res.add(str);
+        return;
+      }
+      for (let i = 0; i < len; i++) {
+        if (isRead[i]) continue;
+        isRead[i] = 1;
+        dfs(str.concat(s[i]), isRead);
+        isRead[i] = 0;
+      }
+    }
+    dfs("", {});
+    return [...res];
+  };
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      void func(string str, int index, set<string>& mySet) {
+          if (index == str.size()) {
+              // 当轮训到最后一个字符的时候，直接放入set中。加入set结构，是为了避免插入的值重复
+              mySet.insert(str);
+          } else {
+              for (int i = index; i < str.size(); i++) {
+                  // 从传入位置(index)开始算，固定第一个字符，然后后面的字符依次跟index位置交换
+                  swap(str[i], str[index]);
+                  int temp = index + 1;
+                  func(str, temp, mySet);
+                  swap(str[i], str[index]);
+              }
+          }
+      }
+
+      vector<string> permutation(string s) {
+          set<string> mySet;
+          func(s, 0, mySet);
+          vector<string> ret;
+          for (auto& x : mySet) {
+              /* 这一题加入mySet是为了进行结果的去重。
+                 但由于在最后加入了将set转vector的过程，所以时间复杂度稍高 */
+              ret.push_back(x);
+          }
+          return ret;
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

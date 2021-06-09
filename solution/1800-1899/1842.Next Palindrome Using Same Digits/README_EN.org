@@ -1,0 +1,202 @@
+* [[https://leetcode.com/problems/next-palindrome-using-same-digits][1842.
+Next Palindrome Using Same Digits]]
+  :PROPERTIES:
+  :CUSTOM_ID: next-palindrome-using-same-digits
+  :END:
+[[./solution/1800-1899/1842.Next Palindrome Using Same Digits/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given a numeric string num, representing a very large
+palindrome.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the smallest palindrome larger than num that can be created by
+rearranging its digits. If no such palindrome exists, return an empty
+string "".
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A palindrome is a number that reads the same backward as forward.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> num = &quot;1221&quot;
+
+  <strong>Output:</strong> &quot;2112&quot;
+
+  <strong>Explanation:</strong>&nbsp;The next palindrome larger than &quot;1221&quot; is &quot;2112&quot;.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> num = &quot;32123&quot;
+
+  <strong>Output:</strong> &quot;&quot;
+
+  <strong>Explanation:</strong>&nbsp;No palindromes larger than &quot;32123&quot; can be made by rearranging the digits.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> num = &quot;45544554&quot;
+
+  <strong>Output:</strong> &quot;54455445&quot;
+
+  <strong>Explanation:</strong> The next palindrome larger than &quot;45544554&quot; is &quot;54455445&quot;.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= num.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+num is a palindrome.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

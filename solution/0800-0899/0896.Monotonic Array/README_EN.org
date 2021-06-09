@@ -1,0 +1,265 @@
+* [[https://leetcode.com/problems/monotonic-array][896. Monotonic
+Array]]
+  :PROPERTIES:
+  :CUSTOM_ID: monotonic-array
+  :END:
+[[./solution/0800-0899/0896.Monotonic Array/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+An array is monotonic if it is either monotone increasing or monotone
+decreasing.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+An array A is monotone increasing if for all i <= j, A[i] <= A[j].  An
+array A is monotone decreasing if for all i <= j, A[i] >= A[j].
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return true if and only if the given array A is monotonic.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-1-1">[1,2,2,3]</span>
+
+  <strong>Output: </strong><span id="example-output-1">true</span>
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-2-1">[6,5,4,4]</span>
+
+  <strong>Output: </strong><span id="example-output-2">true</span>
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-3-1">[1,3,2]</span>
+
+  <strong>Output: </strong><span id="example-output-3">false</span>
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-4-1">[1,2,4,5]</span>
+
+  <strong>Output: </strong><span id="example-output-4">true</span>
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong><span id="example-input-5-1">[1,1,1]</span>
+
+  <strong>Output: </strong><span id="example-output-5">true</span>
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= A.length <= 50000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-100000 <= A[i] <= 100000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def isMonotonic(self, A: List[int]) -> bool:
+          increase = decrease = True
+          for i in range(1, len(A)):
+              if not increase and not decrease:
+                  return False
+              if A[i] < A[i - 1]:
+                  increase = False
+              elif A[i] > A[i - 1]:
+                  decrease = False
+          return increase or decrease
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public boolean isMonotonic(int[] A) {
+          boolean increase = true, decrease = true;
+          for (int i = 1, n = A.length; i < n; ++i) {
+              if (!increase && !decrease) return false;
+              if (A[i] < A[i - 1]) decrease = false;
+              else if (A[i] > A[i - 1]) increase = false;
+          }
+          return increase || decrease;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

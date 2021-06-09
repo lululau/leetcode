@@ -1,0 +1,132 @@
+* [[https://leetcode-cn.com/problems/delete-duplicate-emails][196.
+删除重复的电子邮箱]]
+  :PROPERTIES:
+  :CUSTOM_ID: 删除重复的电子邮箱
+  :END:
+[[./solution/0100-0199/0196.Delete Duplicate Emails/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+编写一个 SQL
+查询，来删除 Person 表中所有重复的电子邮箱，重复的邮箱里只保留 Id 最小 的那个。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+----+------------------+
+  | Id | Email            |
+  +----+------------------+
+  | 1  | john@example.com |
+  | 2  | bob@example.com  |
+  | 3  | john@example.com |
+  +----+------------------+
+  Id 是这个表的主键。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+例如，在运行你的查询语句之后，上面的 Person 表应返回以下几行:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>+----+------------------+
+  | Id | Email            |
+  +----+------------------+
+  | 1  | john@example.com |
+  | 2  | bob@example.com  |
+  +----+------------------+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+执行 SQL 之后，输出是整个 Person 表。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+使用 delete 语句。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_example
+  delete from Person where Id not in (select min(Id) from (select * from Person) as p group by p.Email)
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

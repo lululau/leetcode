@@ -1,0 +1,190 @@
+* [[https://leetcode-cn.com/problems/battleships-in-a-board][419.
+甲板上的战舰]]
+  :PROPERTIES:
+  :CUSTOM_ID: 甲板上的战舰
+  :END:
+[[./solution/0400-0499/0419.Battleships in a Board/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个二维的甲板，
+请计算其中有多少艘战舰。 战舰用 'X'表示，空位用 '.'表示。 你需要遵守以下规则：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+给你一个有效的甲板，仅由战舰或者空位组成。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+战舰只能水平或者垂直放置。换句话说,战舰只能由 1xN (1 行, N
+列)组成，或者 Nx1 (N 行, 1 列)组成，其中N可以是任意大小。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+两艘战舰之间至少有一个水平或垂直的空位分隔 - 即没有相邻的战舰。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 :
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  X..X
+  ...X
+  ...X
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+在上面的甲板中有2艘战舰。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+无效样例 :
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  ...X
+  XXXX
+  ...X
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你不会收到这样的无效甲板 - 因为战舰之间至少会有一个空位将它们分开。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+进阶:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+你可以用一次扫描算法，只使用O(1)额外空间，并且不修改甲板的值来解决这个问题吗？
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,229 @@
+* [[https://leetcode-cn.com/problems/find-anagram-mappings][760.
+找出变位映射]]
+  :PROPERTIES:
+  :CUSTOM_ID: 找出变位映射
+  :END:
+[[./solution/0700-0799/0760.Find Anagram Mappings/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定两个列表 Aand B，并且 B 是 A 的变位（即 B 是由 A
+中的元素随机排列后组成的新列表）。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+我们希望找出一个从 A 到 B 的索引映射 P 。一个映射 P[i] = j 指的是列表 A
+中的第 i 个元素出现于列表 B 中的第 j 个元素上。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+列表 A 和 B 可能出现重复元素。如果有多于一种答案，输出任意一种。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+例如，给定
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>A = [12, 28, 46, 32, 50]
+  B = [50, 12, 32, 46, 28]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+需要返回
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>[1, 4, 3, 2, 0]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+P[0] = 1 ，因为 A 中的第 0 个元素出现于 B[1]，而且 P[1] = 4 因为 A 中第
+1 个元素出现于 B[4]，以此类推。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+A, B 有相同的长度，范围为 [1, 100]。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+A[i], B[i] 都是范围在 [0, 10^5] 的整数。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def anagramMappings(self, nums1: List[int], nums2: List[int]) -> List[int]:
+          mapper = collections.defaultdict(set)
+          for i, num in enumerate(nums2):
+              mapper[num].add(i)
+          return [mapper[num].pop() for num in nums1]
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int[] anagramMappings(int[] nums1, int[] nums2) {
+          Map<Integer, Set<Integer>> map = new HashMap<>();
+          for (int i = 0; i < nums2.length; ++i) {
+              Set<Integer> s = map.getOrDefault(nums2[i], new HashSet<>());
+              s.add(i);
+              map.put(nums2[i], s);
+          }
+          int[] res = new int[nums1.length];
+          for (int i = 0; i < nums1.length; ++i) {
+              int idx = map.get(nums1[i]).iterator().next();
+              res[i] = idx;
+              map.get(nums1[i]).remove(idx);
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

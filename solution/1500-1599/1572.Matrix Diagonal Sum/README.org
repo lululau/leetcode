@@ -1,0 +1,218 @@
+* [[https://leetcode-cn.com/problems/matrix-diagonal-sum][1572.
+矩阵对角线元素的和]]
+  :PROPERTIES:
+  :CUSTOM_ID: 矩阵对角线元素的和
+  :END:
+[[./solution/1500-1599/1572.Matrix Diagonal Sum/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个正方形矩阵 mat，请你返回矩阵对角线元素的和。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你返回在矩阵主对角线上的元素和副对角线上且不在主对角线上元素的和。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例  1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>mat = [[<strong>1</strong>,2,<strong>3</strong>],
+  &nbsp;           [4,<strong>5</strong>,6],
+  &nbsp;           [<strong>7</strong>,8,<strong>9</strong>]]
+  <strong>输出：</strong>25
+  <strong>解释：</strong>对角线的和为：1 + 5 + 9 + 3 + 7 = 25
+  请注意，元素 mat[1][1] = 5 只会被计算一次。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例  2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>mat = [[<strong>1</strong>,1,1,<strong>1</strong>],
+  &nbsp;           [1,<strong>1</strong>,<strong>1</strong>,1],
+  &nbsp;           [1,<strong>1</strong>,<strong>1</strong>,1],
+  &nbsp;           [<strong>1</strong>,1,1,<strong>1</strong>]]
+  <strong>输出：</strong>8
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>mat = [[<strong>5</strong>]]
+  <strong>输出：</strong>5
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n == mat.length == mat[i].length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= mat[i][j] <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

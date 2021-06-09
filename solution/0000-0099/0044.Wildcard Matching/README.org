@@ -1,0 +1,220 @@
+* [[https://leetcode-cn.com/problems/wildcard-matching][44. 通配符匹配]]
+  :PROPERTIES:
+  :CUSTOM_ID: 通配符匹配
+  :END:
+[[./solution/0000-0099/0044.Wildcard Matching/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个字符串 (s) 和一个字符模式 (p)
+，实现一个支持 '?' 和 '*' 的通配符匹配。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>&#39;?&#39; 可以匹配任何单个字符。
+  &#39;*&#39; 可以匹配任意字符串（包括空字符串）。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+两个字符串完全匹配才算匹配成功。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+说明:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s 可能为空，且只包含从 a-z 的小写字母。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+p 可能为空，且只包含从 a-z 的小写字母，以及字符 ? 和 *。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong>
+  s = &quot;aa&quot;
+  p = &quot;a&quot;
+  <strong>输出:</strong> false
+  <strong>解释:</strong> &quot;a&quot; 无法匹配 &quot;aa&quot; 整个字符串。</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong>
+  s = &quot;aa&quot;
+  p = &quot;*&quot;
+  <strong>输出:</strong> true
+  <strong>解释:</strong>&nbsp;&#39;*&#39; 可以匹配任意字符串。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong>
+  s = &quot;cb&quot;
+  p = &quot;?a&quot;
+  <strong>输出:</strong> false
+  <strong>解释:</strong>&nbsp;&#39;?&#39; 可以匹配 &#39;c&#39;, 但第二个 &#39;a&#39; 无法匹配 &#39;b&#39;。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong>
+  s = &quot;adceb&quot;
+  p = &quot;*a*b&quot;
+  <strong>输出:</strong> true
+  <strong>解释:</strong>&nbsp;第一个 &#39;*&#39; 可以匹配空字符串, 第二个 &#39;*&#39; 可以匹配字符串 &quot;dce&quot;.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong>
+  s = &quot;acdcb&quot;
+  p = &quot;a*c?b&quot;
+  <strong>输出:</strong> false</pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

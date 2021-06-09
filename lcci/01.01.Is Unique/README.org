@@ -1,0 +1,230 @@
+* [[https://leetcode-cn.com/problems/is-unique-lcci][面试题 01.01.
+判定字符是否唯一]]
+  :PROPERTIES:
+  :CUSTOM_ID: 面试题-01.01.-判定字符是否唯一
+  :END:
+[[./lcci/01.01.Is Unique/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+实现一个算法，确定一个字符串 s 的所有字符是否全都不同。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong> <code>s</code> = &quot;leetcode&quot;
+  <strong>输出:</strong> false 
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong> <code>s</code> = &quot;abc&quot;
+  <strong>输出:</strong> true
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+限制：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= len(s) <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+如果你不使用额外的数据结构，会很加分。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+根据示例，可以假定字符串中只包含小写字母（实际验证，也符合假设）。
+
+用 bitmap 标记小写字母是否出现过。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def isUnique(self, astr: str) -> bool:
+          bitmap = 0
+          for c in astr:
+              pos = ord(c) - ord('a')
+              if (bitmap & (1 << pos)) != 0:
+                  return False
+              bitmap |= (1 << pos)
+          return True
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public boolean isUnique(String astr) {
+          int bitmap = 0;
+          for (char c : astr.toCharArray()) {
+              int pos = c - 'a';
+              if ((bitmap & (1 << pos)) != 0) {
+                  return false;
+              }
+              bitmap |= (1 << pos);
+          }
+          return true;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {string} astr
+   * @return {boolean}
+   */
+   var isUnique = function(astr) {
+      let bitmap = 0;
+      for (let i = 0; i < astr.length; ++i) {
+          const pos = astr[i].charCodeAt() - 'a'.charCodeAt();
+          if ((bitmap & (1 << pos)) != 0) {
+              return false;
+          }
+          bitmap |= (1 << pos);
+      }
+      return true;
+  };
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  func isUnique(astr string) bool {
+      bitmap := 0
+      for _, r := range astr {
+          pos := r - 'a'
+          if (bitmap & (1 << pos)) != 0 {
+              return false
+          }
+          bitmap |= (1 << pos)
+      }
+      return true
+  }
+#+end_example
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      bool isUnique(string astr) {
+          int bitmap = 0;
+          for (char c : astr) {
+              int pos = c - 'a';
+              if ((bitmap & (1 << pos)) != 0) {
+                  return false;
+              }
+              bitmap |= (1 << pos);
+          }
+          return true;
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,106 @@
+* [[https://leetcode-cn.com/problems/factorial-zeros-lcci][16.05.
+Factorial Zeros]]
+  :PROPERTIES:
+  :CUSTOM_ID: factorial-zeros
+  :END:
+[[./lcci/16.05.Factorial Zeros/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an algorithm which computes the number of trailing zeros in n
+factorial.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> 3
+
+  <strong>Output:</strong> 0
+
+  <strong>Explanation:</strong>&nbsp;3! = 6, no trailing zero.</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> 5
+
+  <strong>Output:</strong> 1
+
+  <strong>Explanation:</strong>&nbsp;5! = 120, one trailing zero.</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note: Your solution should be in logarithmic time complexity.
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

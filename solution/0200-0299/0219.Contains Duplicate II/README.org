@@ -1,0 +1,153 @@
+* [[https://leetcode-cn.com/problems/contains-duplicate-ii][219.
+存在重复元素 II]]
+  :PROPERTIES:
+  :CUSTOM_ID: 存在重复元素-ii
+  :END:
+[[./solution/0200-0299/0219.Contains Duplicate II/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个整数数组和一个整数 k，判断数组中是否存在两个不同的索引 i 和 j，使得 nums
+[i] = nums [j]，并且 i 和 j 的差的 绝对值 至多为 k。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong> nums = [1,2,3,1], k<em> </em>= 3
+  <strong>输出:</strong> true</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入: </strong>nums = [1,0,1,1], k<em> </em>=<em> </em>1
+  <strong>输出:</strong> true</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入: </strong>nums = [1,2,3,1,2,3], k<em> </em>=<em> </em>2
+  <strong>输出:</strong> false</pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+          helper = {}
+          for i, v in enumerate(nums):
+              if v in helper and i - helper[v] <= k:
+                  return True
+              helper[v] = i
+          return False
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public boolean containsNearbyDuplicate(int[] nums, int k) {
+          Map<Integer, Integer> helper = new HashMap<>();
+          for (int i = 0, n = nums.length; i < n; ++i) {
+              if (helper.containsKey(nums[i])) {
+                  int j = helper.get(nums[i]);
+                  if (i - j <= k) {
+                      return true;
+                  }
+              }
+              helper.put(nums[i], i);
+          }
+          return false;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

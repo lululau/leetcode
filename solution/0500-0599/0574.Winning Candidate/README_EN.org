@@ -1,0 +1,141 @@
+* [[https://leetcode.com/problems/winning-candidate][574. Winning
+Candidate]]
+  :PROPERTIES:
+  :CUSTOM_ID: winning-candidate
+  :END:
+[[./solution/0500-0599/0574.Winning Candidate/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Candidate
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +-----+---------+
+  | id  | Name    |
+  +-----+---------+
+  | 1   | A       |
+  | 2   | B       |
+  | 3   | C       |
+  | 4   | D       |
+  | 5   | E       |
+  +-----+---------+  
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Vote
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +-----+--------------+
+  | id  | CandidateId  |
+  +-----+--------------+
+  | 1   |     2        |
+  | 2   |     4        |
+  | 3   |     3        |
+  | 4   |     2        |
+  | 5   |     5        |
+  +-----+--------------+
+  id is the auto-increment primary key,
+  CandidateId is the id appeared in Candidate table.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write a sql to find the name of the winning candidate, the above example
+will return the winner B.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +------+
+  | Name |
+  +------+
+  | B    |
+  +------+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Notes:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+You may assume there is no tie, in other words there will be only one
+winning candidate.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

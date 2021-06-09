@@ -1,0 +1,236 @@
+* [[https://leetcode.com/problems/npv-queries][1421. NPV Queries]]
+  :PROPERTIES:
+  :CUSTOM_ID: npv-queries
+  :END:
+[[./solution/1400-1499/1421.NPV Queries/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: NPV
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +---------------+---------+
+
+  | Column Name   | Type    |
+
+  +---------------+---------+
+
+  | id            | int     |
+
+  | year          | int     |
+
+  | npv           | int     |
+
+  +---------------+---------+
+
+  (id, year) is the primary key of this table.
+
+  The table has information about the id and the year of each inventory and the corresponding net present value.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Table: Queries
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +---------------+---------+
+
+  | Column Name   | Type    |
+
+  +---------------+---------+
+
+  | id            | int     |
+
+  | year          | int     |
+
+  +---------------+---------+
+
+  (id, year) is the primary key of this table.
+
+  The table has information about the id and the year of each inventory query.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Write an SQL query to find the npv of all each query of queries table.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the result table in any order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The query result format is in the following example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  NPV table:
+
+  +------+--------+--------+
+
+  | id   | year   | npv    |
+
+  +------+--------+--------+
+
+  | 1    | 2018   | 100    |
+
+  | 7    | 2020   | 30     |
+
+  | 13   | 2019   | 40     |
+
+  | 1    | 2019   | 113    |
+
+  | 2    | 2008   | 121    |
+
+  | 3    | 2009   | 12     |
+
+  | 11   | 2020   | 99     |
+
+  | 7    | 2019   | 0      |
+
+  +------+--------+--------+
+
+
+
+  Queries table:
+
+  +------+--------+
+
+  | id   | year   |
+
+  +------+--------+
+
+  | 1    | 2019   |
+
+  | 2    | 2008   |
+
+  | 3    | 2009   |
+
+  | 7    | 2018   |
+
+  | 7    | 2019   |
+
+  | 7    | 2020   |
+
+  | 13   | 2019   |
+
+  +------+--------+
+
+
+
+  Result table:
+
+  +------+--------+--------+
+
+  | id   | year   | npv    |
+
+  +------+--------+--------+
+
+  | 1    | 2019   | 113    |
+
+  | 2    | 2008   | 121    |
+
+  | 3    | 2009   | 12     |
+
+  | 7    | 2018   | 0      |
+
+  | 7    | 2019   | 0      |
+
+  | 7    | 2020   | 30     |
+
+  | 13   | 2019   | 40     |
+
+  +------+--------+--------+
+
+
+
+  The npv value of (7, 2018) is not present in the NPV table, we consider it 0.
+
+  The npv values of all other queries can be found in the NPV table.
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

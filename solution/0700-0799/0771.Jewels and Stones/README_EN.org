@@ -1,0 +1,207 @@
+* [[https://leetcode.com/problems/jewels-and-stones][771. Jewels and
+Stones]]
+  :PROPERTIES:
+  :CUSTOM_ID: jewels-and-stones
+  :END:
+[[./solution/0700-0799/0771.Jewels and Stones/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You're given strings jewels representing the types of stones that are
+jewels, and stones representing the stones you have. Each character in
+stones is a type of stone you have. You want to know how many of the
+stones you have are also jewels.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Letters are case sensitive, so "a" is considered a different type of
+stone from "A".
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>Input:</strong> jewels = "aA", stones = "aAAbbbb"
+  <strong>Output:</strong> 3
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>Input:</strong> jewels = "z", stones = "ZZ"
+  <strong>Output:</strong> 0
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= jewels.length, stones.length <= 50
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+jewels and stones consist of only English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All the characters of jewels are unique.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def numJewelsInStones(self, jewels: str, stones: str) -> int:
+          jewel_set = {c for c in jewels}
+          return sum([1 for c in stones if c in jewel_set])
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int numJewelsInStones(String jewels, String stones) {
+          Set<Character> jewelSet = new HashSet<>();
+          for (char ch : jewels.toCharArray()) {
+              jewelSet.add(ch);
+          }
+          int res = 0;
+          for (char ch : stones.toCharArray()) {
+              res += (jewelSet.contains(ch) ? 1 : 0);
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      int numJewelsInStones(string jewels, string stones) {
+          unordered_set<char> jewelsSet;
+          for (int i = 0; i < jewels.length(); ++i) {
+              jewelsSet.insert(jewels[i]);
+          }
+          int res = 0;
+          for (int i = 0; i < stones.length(); ++i) {
+              res += jewelsSet.count(stones[i]);
+          }
+          return res;
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,229 @@
+* [[https://leetcode-cn.com/problems/repeated-dna-sequences][187.
+重复的DNA序列]]
+  :PROPERTIES:
+  :CUSTOM_ID: 重复的dna序列
+  :END:
+[[./solution/0100-0199/0187.Repeated DNA Sequences/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+所有 DNA 都由一系列缩写为 'A'，'C'，'G' 和 'T'
+的核苷酸组成，例如："ACGAATTCCG"。在研究 DNA 时，识别 DNA
+中的重复序列有时会对研究非常有帮助。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+编写一个函数来找出所有目标子串，目标子串的长度为 10，且在 DNA 字符串 s
+中出现次数超过一次。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
+  <strong>输出：</strong>["AAAAACCCCC","CCCCCAAAAA"]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>s = "AAAAAAAAAAAAA"
+  <strong>输出：</strong>["AAAAAAAAAA"]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= s.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s[i] 为 'A'、'C'、'G' 或 'T'
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def findRepeatedDnaSequences(self, s: str) -> List[str]:
+          n = 10
+          subs = set()
+          res = set()
+          for i in range(len(s) - n + 1):
+              sub = s[i:i + n]
+              if sub in subs:
+                  res.add(sub)
+              subs.add(sub)
+          return list(res)
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public List<String> findRepeatedDnaSequences(String s) {
+          int len = 10;
+          Set<String> subs = new HashSet<>();
+          Set<String> res = new HashSet<>();
+          for (int i = 0; i < s.length() - len + 1; ++i) {
+              String sub = s.substring(i, i + len);
+              if (subs.contains(sub)) {
+                  res.add(sub);
+              }
+              subs.add(sub);
+          }
+          return new ArrayList<>(res);
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {string} s
+   * @return {string[]}
+   */
+  var findRepeatedDnaSequences = function(s) {
+      let n = 10;
+      let subs = new Set();
+      let res = new Set();
+      for (let i = 0; i < s.length - n + 1; i++) {
+          let sub = s.slice(i, i + n);
+          if (subs.has(sub)) {
+              res.add(sub);
+          }
+          subs.add(sub);
+      }
+      return [...res];
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

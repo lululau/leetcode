@@ -1,0 +1,94 @@
+* [[https://leetcode.com/problems/employees-earning-more-than-their-managers][181.
+Employees Earning More Than Their Managers]]
+  :PROPERTIES:
+  :CUSTOM_ID: employees-earning-more-than-their-managers
+  :END:
+[[./solution/0100-0199/0181.Employees Earning More Than Their Managers/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+The Employee table holds all employees including their managers. Every
+employee has an Id, and there is also a column for the manager Id.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +----+-------+--------+-----------+
+
+  | Id | Name  | Salary | ManagerId |
+
+  +----+-------+--------+-----------+
+
+  | 1  | Joe   | 70000  | 3         |
+
+  | 2  | Henry | 80000  | 4         |
+
+  | 3  | Sam   | 60000  | NULL      |
+
+  | 4  | Max   | 90000  | NULL      |
+
+  +----+-------+--------+-----------+
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the Employee table, write a SQL query that finds out employees who
+earn more than their managers. For the above table, Joe is the only
+employee who earns more than his manager.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  +----------+
+
+  | Employee |
+
+  +----------+
+
+  | Joe      |
+
+  +----------+
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_example
+  select Name as Employee from Employee Curr where
+      Salary > (select Salary from Employee where Id = Curr.ManagerId)
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

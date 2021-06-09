@@ -1,0 +1,245 @@
+* [[https://leetcode-cn.com/problems/line-reflection][356. 直线镜像]]
+  :PROPERTIES:
+  :CUSTOM_ID: 直线镜像
+  :END:
+[[./solution/0300-0399/0356.Line Reflection/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+在一个二维平面空间中，给你 n 个点的坐标。问，是否能找出一条平行于
+y 轴的直线，让这些点关于这条直线成镜像排布？
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意：题目数据中可能有重复的点。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+进阶：你能找到比 O(n2) 更优的解法吗?
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>points = [[1,1],[-1,1]]
+  <strong>输出：</strong>true
+  <strong>解释：</strong>可以找出 x = 0 这条线。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>points = [[1,1],[-1,-1]]
+  <strong>输出：</strong>false
+  <strong>解释：</strong>无法找出这样一条线。</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n == points.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 10^4
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-10^8 <= points[i][j] <= 10^8
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+先找出所有点中的最小、最大的 x 坐标 =minX= 和
+=maxX=。若存在满足条件的直线，则直线
+=x = (minX + maxX) / 2=。(或者说：=s = minX + maxX=)
+
+遍历每个点 =point(x, y)=，若 =(s - x, y)=
+不在点集里，说明不满足条件，直接返回 false。遍历结束返回 true。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def isReflected(self, points: List[List[int]]) -> bool:
+          min_x, max_x = float('inf'), float('-inf')
+          point_set = set()
+          for x, y in points:
+              min_x = min(min_x, x)
+              max_x = max(max_x, x)
+              point_set.add((x, y))
+          s = min_x + max_x
+          for x, y in points:
+              if (s - x, y) not in point_set:
+                  return False
+          return True
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public boolean isReflected(int[][] points) {
+          int minX = Integer.MAX_VALUE, maxX = Integer.MIN_VALUE;
+          Set<String> pointSet = new HashSet<>();
+          for (int[] point : points) {
+              minX = Math.min(minX, point[0]);
+              maxX = Math.max(maxX, point[0]);
+              pointSet.add(point[0] + "." + point[1]);
+          }
+          long s = minX + maxX;
+          for (int[] point : points) {
+              if (!pointSet.contains((s - point[0]) + "." + point[1])) {
+                  return false;
+              }
+          }
+          return true;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,296 @@
+* [[https://leetcode.com/problems/check-if-array-pairs-are-divisible-by-k][1497.
+Check If Array Pairs Are Divisible by k]]
+  :PROPERTIES:
+  :CUSTOM_ID: check-if-array-pairs-are-divisible-by-k
+  :END:
+[[./solution/1400-1499/1497.Check If Array Pairs Are Divisible by k/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array of integers arr of even length n and an integer k.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+We want to divide the array into exactly n / 2 pairs such that the sum
+of each pair is divisible by k.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return True If you can find a way to do that or False otherwise.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> arr = [1,2,3,4,5,10,6,7,8,9], k = 5
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> Pairs are (1,9),(2,8),(3,7),(4,6) and (5,10).
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> arr = [1,2,3,4,5,6], k = 7
+  <strong>Output:</strong> true
+  <strong>Explanation:</strong> Pairs are (1,6),(2,5) and(3,4).
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> arr = [1,2,3,4,5,6], k = 10
+  <strong>Output:</strong> false
+  <strong>Explanation:</strong> You can try all possible pairs to see that there is no way to divide arr into 3 pairs each with sum divisible by 10.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> arr = [-10,10], k = 2
+  <strong>Output:</strong> true
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 5:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> arr = [-1,1,-2,2,-3,3,-4,4], k = 3
+  <strong>Output:</strong> true
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+arr.length == n
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+n is even.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-109 <= arr[i] <= 109
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= k <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def isPathCrossing(self, path: str) -> bool:
+          x = y = 0
+          visited = set()
+          visited.add('0.0')
+          for c in path:
+              if c == 'N':
+                  y += 1
+              elif c == 'S':
+                  y -= 1
+              elif c == 'E':
+                  x += 1
+              else:
+                  x -= 1
+              pos = f'{x}.{y}'
+              if pos in visited:
+                  return True
+              visited.add(pos)
+          return False
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public boolean isPathCrossing(String path) {
+          Set<String> visited = new HashSet<>();
+          visited.add("0.0");
+          int x = 0, y = 0;
+          for (int i = 0; i < path.length(); ++i) {
+              char c = path.charAt(i);
+              if (c == 'N') {
+                  ++y;
+              } else if (c == 'S') {
+                  --y;
+              } else if (c == 'E') {
+                  ++x;
+              } else {
+                  --x;
+              }
+              String pos = x + "." + y;
+              if (visited.contains(pos)) {
+                  return true;
+              }
+              visited.add(pos);
+          }
+          return false;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

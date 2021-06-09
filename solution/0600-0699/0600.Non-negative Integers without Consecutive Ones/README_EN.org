@@ -1,0 +1,107 @@
+* [[https://leetcode.com/problems/non-negative-integers-without-consecutive-ones][600.
+Non-negative Integers without Consecutive Ones]]
+  :PROPERTIES:
+  :CUSTOM_ID: non-negative-integers-without-consecutive-ones
+  :END:
+[[./solution/0600-0699/0600.Non-negative Integers without Consecutive Ones/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a positive integer n, find the number of non-negative integers
+less than or equal to n, whose binary representations do NOT contain
+consecutive ones.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  <pre>
+
+  <b>Input:</b> 5
+
+  <b>Output:</b> 5
+
+  <b>Explanation:</b> 
+
+  Here are the non-negative integers <= 5 with their corresponding binary representations:
+
+  0 : 0
+
+  1 : 1
+
+  2 : 10
+
+  3 : 11
+
+  4 : 100
+
+  5 : 101
+
+  Among them, only integer 3 disobeys the rule (two consecutive ones) and the other 5 satisfy the rule. 
+
+  </pre>
+#+end_html
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+1 <= n <= 109
+
+#+begin_html
+  </p>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

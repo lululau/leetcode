@@ -1,0 +1,327 @@
+* [[https://leetcode.com/problems/lexicographically-smallest-string-after-applying-operations][1625.
+Lexicographically Smallest String After Applying Operations]]
+  :PROPERTIES:
+  :CUSTOM_ID: lexicographically-smallest-string-after-applying-operations
+  :END:
+[[./solution/1600-1699/1625.Lexicographically Smallest String After Applying Operations/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given a string s of even length consisting of digits from 0 to
+9, and two integers a and b.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You can apply either of the following two operations any number of times
+and in any order on s:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Add a to all odd indices of s (0-indexed). Digits post 9 are cycled back
+to 0. For example, if s = "3456" and a = 5, s becomes "3951".
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Rotate s to the right by b positions. For example, if s = "3456" and b =
+1, s becomes "6345".
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the lexicographically smallest string you can obtain by applying
+the above operations any number of times on s.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A string a is lexicographically smaller than a string b (of the same
+length) if in the first position where a and b differ, string a has a
+letter that appears earlier in the alphabet than the corresponding
+letter in b. For example, "0158" is lexicographically smaller than
+"0190" because the first position they differ is at the third letter,
+and '5' comes before '9'.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> s = &quot;5525&quot;, a = 9, b = 2
+
+  <strong>Output:</strong> &quot;2050&quot;
+
+  <strong>Explanation: </strong>We can apply the following operations:
+
+  Start:  &quot;5525&quot;
+
+  Rotate: &quot;2555&quot;
+
+  Add:    &quot;2454&quot;
+
+  Add:    &quot;2353&quot;
+
+  Rotate: &quot;5323&quot;
+
+  Add:    &quot;5222&quot;
+
+  ​​​​​​​Add:    &quot;5121&quot;
+
+  ​​​​​​​Rotate: &quot;2151&quot;
+
+  ​​​​​​​Add:    &quot;2050&quot;​​​​​​​​​​​​
+
+  There is no way to obtain a string that is lexicographically smaller then &quot;2050&quot;.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> s = &quot;74&quot;, a = 5, b = 1
+
+  <strong>Output:</strong> &quot;24&quot;
+
+  <strong>Explanation: </strong>We can apply the following operations:
+
+  Start:  &quot;74&quot;
+
+  Rotate: &quot;47&quot;
+
+  ​​​​​​​Add:    &quot;42&quot;
+
+  ​​​​​​​Rotate: &quot;24&quot;​​​​​​​​​​​​
+
+  There is no way to obtain a string that is lexicographically smaller then &quot;24&quot;.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> s = &quot;0011&quot;, a = 4, b = 2
+
+  <strong>Output:</strong> &quot;0011&quot;
+
+  <strong>Explanation: </strong>There are no sequence of operations that will give us a lexicographically smaller string than &quot;0011&quot;.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input:</strong> s = &quot;43987654&quot;, a = 7, b = 3
+
+  <strong>Output:</strong> &quot;00553311&quot;
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+2 <= s.length <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s.length is even.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+s consists of digits from 0 to 9 only.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= a <= 9
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= b <= s.length - 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,302 @@
+* [[https://leetcode.com/problems/bulls-and-cows][299. Bulls and Cows]]
+  :PROPERTIES:
+  :CUSTOM_ID: bulls-and-cows
+  :END:
+[[./solution/0200-0299/0299.Bulls and Cows/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are playing the Bulls and Cows game with your friend.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You write down a secret number and ask your friend to guess what the
+number is. When your friend makes a guess, you provide a hint with the
+following info:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of "bulls", which are digits in the guess that are in the
+correct position.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+The number of "cows", which are digits in the guess that are in your
+secret number but are located in the wrong position. Specifically, the
+non-bull digits in the guess that could be rearranged such that they
+become bulls.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given the secret number secret and your friend's guess guess, return the
+hint for your friend's guess.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The hint should be formatted as "xAyB", where x is the number of bulls
+and y is the number of cows. Note that both secret and guess may contain
+duplicate digits.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> secret = &quot;1807&quot;, guess = &quot;7810&quot;
+  <strong>Output:</strong> &quot;1A3B&quot;
+  <strong>Explanation:</strong> Bulls are connected with a &#39;|&#39; and cows are underlined:
+  &quot;1807&quot;
+    |
+  &quot;<u>7</u>8<u>10</u>&quot;</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> secret = &quot;1123&quot;, guess = &quot;0111&quot;
+  <strong>Output:</strong> &quot;1A1B&quot;
+  <strong>Explanation:</strong> Bulls are connected with a &#39;|&#39; and cows are underlined:
+  &quot;1123&quot;        &quot;1123&quot;
+    |      or     |
+  &quot;01<u>1</u>1&quot;        &quot;011<u>1</u>&quot;
+  Note that only one of the two unmatched 1s is counted as a cow since the non-bull digits can only be rearranged to allow one 1 to be a bull.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> secret = &quot;1&quot;, guess = &quot;0&quot;
+  <strong>Output:</strong> &quot;0A0B&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> secret = &quot;1&quot;, guess = &quot;1&quot;
+  <strong>Output:</strong> &quot;1A0B&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= secret.length, guess.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+secret.length == guess.length
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+secret and guess consist of digits only.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def getHint(self, secret: str, guess: str) -> str:
+          a_cnt = b_cnt = 0
+          nums1 = dict()
+          nums2 = dict()
+          for i in range(len(secret)):
+              if secret[i] == guess[i]:
+                  a_cnt += 1
+              else:
+                  nums1[secret[i]] = nums1.get(secret[i], 0) + 1
+                  nums2[guess[i]] = nums2.get(guess[i], 0) + 1
+          for i, v in nums1.items():
+              if i in nums2:
+                  b_cnt += min(v, nums2[i])
+          return f'{a_cnt}A{b_cnt}B'
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public String getHint(String secret, String guess) {
+          int aCnt = 0, bCnt = 0;
+          Map<Character, Integer> nums1 = new HashMap<>();
+          Map<Character, Integer> nums2 = new HashMap<>();
+          for (int i = 0; i < secret.length(); ++i) {
+              if (secret.charAt(i) == guess.charAt(i)) {
+                  ++aCnt;
+              } else {
+                  nums1.put(secret.charAt(i), nums1.getOrDefault(secret.charAt(i), 0) + 1);
+                  nums2.put(guess.charAt(i), nums2.getOrDefault(guess.charAt(i), 0) + 1);
+              }
+          }
+
+          for (Map.Entry<Character, Integer> entry : nums1.entrySet()) {
+              if (nums2.containsKey(entry.getKey())) {
+                  bCnt += Math.min(entry.getValue(), nums2.get(entry.getKey()));
+              }
+          }
+          return String.format("%dA%dB", aCnt, bCnt);
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

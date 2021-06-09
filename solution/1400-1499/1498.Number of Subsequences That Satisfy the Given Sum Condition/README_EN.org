@@ -1,0 +1,211 @@
+* [[https://leetcode.com/problems/number-of-subsequences-that-satisfy-the-given-sum-condition][1498.
+Number of Subsequences That Satisfy the Given Sum Condition]]
+  :PROPERTIES:
+  :CUSTOM_ID: number-of-subsequences-that-satisfy-the-given-sum-condition
+  :END:
+[[./solution/1400-1499/1498.Number of Subsequences That Satisfy the Given Sum Condition/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array of integers nums and an integer target.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the number of non-empty subsequences of nums such that the sum of
+the minimum and maximum element on it is less or equal to target. Since
+the answer may be too large, return it modulo 109 + 7.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [3,5,6,7], target = 9
+  <strong>Output:</strong> 4
+  <strong>Explanation: </strong>There are 4 subsequences that satisfy the condition.
+  [3] -&gt; Min value + max value &lt;= target (3 + 3 &lt;= 9)
+  [3,5] -&gt; (3 + 5 &lt;= 9)
+  [3,5,6] -&gt; (3 + 6 &lt;= 9)
+  [3,6] -&gt; (3 + 6 &lt;= 9)
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [3,3,6,8], target = 10
+  <strong>Output:</strong> 6
+  <strong>Explanation: </strong>There are 6 subsequences that satisfy the condition. (nums can have repeated numbers).
+  [3] , [3] , [3,3], [3,6] , [3,6] , [3,3,6]</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [2,3,3,4,6,7], target = 12
+  <strong>Output:</strong> 61
+  <strong>Explanation: </strong>There are 63 non-empty subsequences, two of them don&#39;t satisfy the condition ([6,7], [7]).
+  Number of valid subsequences (63 - 2 = 61).
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> nums = [5,2,4,1,7,6,8], target = 16
+  <strong>Output:</strong> 127
+  <strong>Explanation: </strong>All non-empty subset satisfy the condition (2^7 - 1) = 127</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums.length <= 105
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= nums[i] <= 106
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= target <= 106
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

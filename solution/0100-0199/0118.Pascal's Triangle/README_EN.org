@@ -1,0 +1,198 @@
+* [[https://leetcode.com/problems/pascals-triangle][118. Pascal's
+Triangle]]
+  :PROPERTIES:
+  :CUSTOM_ID: pascals-triangle
+  :END:
+[[./solution/0100-0199/0118.Pascal%27s Triangle/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an integer numRows, return the first numRows of Pascal's triangle.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+In Pascal's triangle, each number is the sum of the two numbers directly
+above it as shown:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>Input:</strong> numRows = 5
+  <strong>Output:</strong> [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>Input:</strong> numRows = 1
+  <strong>Output:</strong> [[1]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= numRows <= 30
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def generate(self, numRows: int) -> List[List[int]]:
+          if numRows == 0:
+              return []
+          res = []
+          for i in range(numRows):
+              t = [1 if j == 0 or j == i else 0 for j in range(i + 1)]
+              for j in range(1, i):
+                  t[j] = res[i - 1][j - 1] + res[i - 1][j]
+              res.append(t)
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public List<List<Integer>> generate(int numRows) {
+          List<List<Integer>> res = new ArrayList<>();
+          if (numRows == 0) return res;
+          for (int i = 0; i < numRows; ++i) {
+              // 每一行
+              List<Integer> t = new ArrayList<>();
+              for (int j = 0; j < i + 1; ++j) {
+                  boolean firstOrLast = j == 0 || j == i;
+                  // 设置每一行首尾元素为1，其它元素为0
+                  t.add(firstOrLast ? 1 : 0);
+              }
+              for (int j = 1; j < i; ++j) {
+                  int val = res.get(i - 1).get(j - 1) + res.get(i - 1).get(j);
+                  t.set(j, val);
+              }
+              res.add(t);
+          }
+          return res;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  const generate = function (numRows) {
+    let arr = [];
+    for (let i = 0; i < numRows; i++) {
+      let row = [];
+      row[0] = 1;
+      row[i] = 1;
+      for (let j = 1; j < row.length - 1; j++) {
+        row[j] = arr[i - 1][j - 1] + arr[i - 1][j];
+      }
+      arr.push(row);
+    }
+    return arr;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

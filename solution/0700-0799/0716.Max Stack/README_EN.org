@@ -1,0 +1,249 @@
+* [[https://leetcode.com/problems/max-stack][716. Max Stack]]
+  :PROPERTIES:
+  :CUSTOM_ID: max-stack
+  :END:
+[[./solution/0700-0799/0716.Max Stack/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Design a max stack data structure that supports the stack operations and
+supports finding the stack's maximum element.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Implement the MaxStack class:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+MaxStack() Initializes the stack object.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+void push(int x) Pushes element x onto the stack.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int pop() Removes the element on top of the stack and returns it.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int top() Gets the element on the top of the stack without removing it.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int peekMax() Retrieves the maximum element in the stack without
+removing it.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+int popMax() Retrieves the maximum element in the stack and removes it.
+If there is more than one maximum element, only remove the top-most one.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input</strong>
+  [&quot;MaxStack&quot;, &quot;push&quot;, &quot;push&quot;, &quot;push&quot;, &quot;top&quot;, &quot;popMax&quot;, &quot;top&quot;, &quot;peekMax&quot;, &quot;pop&quot;, &quot;top&quot;]
+  [[], [5], [1], [5], [], [], [], [], [], []]
+  <strong>Output</strong>
+  [null, null, null, null, 5, 5, 1, 5, 1, 5]
+
+  <strong>Explanation</strong>
+  MaxStack stk = new MaxStack();
+  stk.push(5);   // [<strong><u>5</u></strong>] the top of the stack and the maximum number is 5.
+  stk.push(1);   // [<u>5</u>, <strong>1</strong>] the top of the stack is 1, but the maximum is 5.
+  stk.push(5);   // [5, 1, <strong><u>5</u></strong>] the top of the stack is 5, which is also the maximum, because it is the top most one.
+  stk.top();     // return 5, [5, 1, <strong><u>5</u></strong>] the stack did not change.
+  stk.popMax();  // return 5, [<u>5</u>, <strong>1</strong>] the stack is changed now, and the top is different from the max.
+  stk.top();     // return 1, [<u>5</u>, <strong>1</strong>] the stack did not change.
+  stk.peekMax(); // return 5, [<u>5</u>, <strong>1</strong>] the stack did not change.
+  stk.pop();     // return 1, [<strong><u>5</u></strong>] the top of the stack and the max element is now 5.
+  stk.top();     // return 5, [<strong><u>5</u></strong>] the stack did not change.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-107 <= x <= 107
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+At most 104 calls will be made to push, pop, top, peekMax, and popMax.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+There will be at least one element in the stack when pop, top, peekMax,
+or popMax is called.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+Follow up: Could you come up with a solution that supports O(1) for each
+top call and O(logn) for each other call? 
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

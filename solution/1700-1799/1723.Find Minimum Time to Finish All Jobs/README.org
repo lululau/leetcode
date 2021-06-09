@@ -1,0 +1,194 @@
+* [[https://leetcode-cn.com/problems/find-minimum-time-to-finish-all-jobs][1723.
+完成所有工作的最短时间]]
+  :PROPERTIES:
+  :CUSTOM_ID: 完成所有工作的最短时间
+  :END:
+[[./solution/1700-1799/1723.Find Minimum Time to Finish All Jobs/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给你一个整数数组 jobs ，其中 jobs[i] 是完成第 i 项工作要花费的时间。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+请你将这些工作分配给 k
+位工人。所有工作都应该分配给工人，且每项工作只能分配给一位工人。工人的
+工作时间
+是完成分配给他们的所有工作花费时间的总和。请你设计一套最佳的工作分配方案，使工人的
+最大工作时间 得以 最小化 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回分配方案中尽可能 最小 的 最大工作时间 。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>jobs = [3,2,3], k = 3
+  <strong>输出：</strong>3
+  <strong>解释：</strong>给每位工人分配一项工作，最大工作时间是 3 。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>输入：</strong>jobs = [1,2,4,7,8], k = 2
+  <strong>输出：</strong>11
+  <strong>解释：</strong>按下述方式分配工作：
+  1 号工人：1、2、8（工作时间 = 1 + 2 + 8 = 11）
+  2 号工人：4、7（工作时间 = 4 + 7 = 11）
+  最大工作时间是 11 。</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= k <= jobs.length <= 12
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= jobs[i] <= 107
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

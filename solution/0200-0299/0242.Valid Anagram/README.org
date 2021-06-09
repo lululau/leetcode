@@ -1,0 +1,160 @@
+* [[https://leetcode-cn.com/problems/valid-anagram][242.
+有效的字母异位词]]
+  :PROPERTIES:
+  :CUSTOM_ID: 有效的字母异位词
+  :END:
+[[./solution/0200-0299/0242.Valid Anagram/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong> <em>s</em> = &quot;anagram&quot;, <em>t</em> = &quot;nagaram&quot;
+  <strong>输出:</strong> true
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入:</strong> <em>s</em> = &quot;rat&quot;, <em>t</em> = &quot;car&quot;
+  <strong>输出: </strong>false</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+说明: 你可以假设字符串只包含小写字母。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+进阶: 如果输入字符串包含 unicode
+字符怎么办？你能否调整你的解法来应对这种情况？
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+哈希表解决。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def isAnagram(self, s: str, t: str) -> bool:
+          if len(s) != len(t):
+              return False
+          n = len(s)
+          chars = [0] * 26
+          for i in range(n):
+              chars[ord(s[i]) - ord('a')] += 1
+              chars[ord(t[i]) - ord('a')] -= 1
+          for i in range(26):
+              if chars[i] != 0:
+                  return False
+          return True
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public boolean isAnagram(String s, String t) {
+          int n;
+          if ((n = s.length()) != t.length()) {
+              return false;
+          }
+          int[] chars = new int[26];
+          for (int i = 0; i < n; ++i) {
+              ++chars[s.charAt(i) - 'a'];
+              --chars[t.charAt(i) - 'a'];
+          }
+          for (int i = 0; i < 26; ++i) {
+              if (chars[i] != 0) {
+                  return false;
+              }
+          }
+          return true;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

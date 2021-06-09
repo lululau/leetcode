@@ -1,0 +1,124 @@
+* [[https://leetcode-cn.com/problems/fix-names-in-a-table][1667.
+修复表中的名字]]
+  :PROPERTIES:
+  :CUSTOM_ID: 修复表中的名字
+  :END:
+[[./solution/1600-1699/1667.Fix Names in a Table/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+表： Users
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  +----------------+---------+
+  | Column Name    | Type    |
+  +----------------+---------+
+  | user_id        | int     |
+  | name           | varchar |
+  +----------------+---------+
+  user_id 是该表的主键。
+  该表包含用户的 ID 和名字。名字仅由小写和大写字符组成。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+编写一个 SQL
+查询来修复名字，使得只有第一个字符是大写的，其余都是小写的。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回按 user_id 排序的结果表。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+查询结果格式示例如下：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  Users table:
+  +---------+-------+
+  | user_id | name  |
+  +---------+-------+
+  | 1       | aLice |
+  | 2       | bOB   |
+  +---------+-------+
+
+  Result table:
+  +---------+-------+
+  | user_id | name  |
+  +---------+-------+
+  | 1       | Alice |
+  | 2       | Bob   |
+  +---------+-------+
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *SQL*
+    :PROPERTIES:
+    :CUSTOM_ID: sql
+    :END:
+#+begin_src sql
+#+end_src
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

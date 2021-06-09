@@ -1,0 +1,211 @@
+* [[https://leetcode.com/problems/most-stones-removed-with-same-row-or-column][947.
+Most Stones Removed with Same Row or Column]]
+  :PROPERTIES:
+  :CUSTOM_ID: most-stones-removed-with-same-row-or-column
+  :END:
+[[./solution/0900-0999/0947.Most Stones Removed with Same Row or Column/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+On a 2D plane, we place n stones at some integer coordinate points. Each
+coordinate point may have at most one stone.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A stone can be removed if it shares either the same row or the same
+column as another stone that has not been removed.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array stones of length n where stones[i] = [xi, yi] represents
+the location of the ith stone, return the largest possible number of
+stones that can be removed.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> stones = [[0,0],[0,1],[1,0],[1,2],[2,1],[2,2]]
+  <strong>Output:</strong> 5
+  <strong>Explanation:</strong> One way to remove 5 stones is as follows:
+  1. Remove stone [2,2] because it shares the same row as [2,1].
+  2. Remove stone [2,1] because it shares the same column as [0,1].
+  3. Remove stone [1,2] because it shares the same row as [1,0].
+  4. Remove stone [1,0] because it shares the same column as [0,0].
+  5. Remove stone [0,1] because it shares the same row as [0,0].
+  Stone [0,0] cannot be removed since it does not share a row/column with another stone still on the plane.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> stones = [[0,0],[0,2],[1,1],[2,0],[2,2]]
+  <strong>Output:</strong> 3
+  <strong>Explanation:</strong> One way to make 3 moves is as follows:
+  1. Remove stone [2,2] because it shares the same row as [2,0].
+  2. Remove stone [2,0] because it shares the same column as [0,0].
+  3. Remove stone [0,2] because it shares the same row as [0,0].
+  Stones [0,0] and [1,1] cannot be removed since they do not share a row/column with another stone still on the plane.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> stones = [[0,0]]
+  <strong>Output:</strong> 0
+  <strong>Explanation:</strong> [0,0] is the only stone on the plane, so you cannot remove it.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= stones.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= xi, yi <= 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+No two stones are at the same coordinate point.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

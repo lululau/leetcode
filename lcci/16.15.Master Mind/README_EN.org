@@ -1,0 +1,204 @@
+* [[https://leetcode-cn.com/problems/master-mind-lcci][16.15. Master
+Mind]]
+  :PROPERTIES:
+  :CUSTOM_ID: master-mind
+  :END:
+[[./lcci/16.15.Master Mind/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+The Game of Master Mind is played as follows:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+The computer has four slots, and each slot will contain a ball that is
+red (R). yellow (Y). green (G) or blue (B). For example, the computer
+might have RGGB (Slot #1 is red, Slots #2 and #3 are green, Slot #4 is
+blue).
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You, the user, are trying to guess the solution. You might, for example,
+guess YRGB.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+When you guess the correct color for the correct slot, you get a "hit:'
+If you guess a color that exists but is in the wrong slot, you get a
+"pseudo-hit:' Note that a slot that is a hit can never count as a
+pseudo-hit.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example, if the actual solution is RGBY and you guess GGRR, you have
+one hit and one pseudo-hit. Write a method that, given a guess and a
+solution, returns the number of hits and pseudo-hits.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a sequence of colors solution, and a guess, write a method that
+return the number of hits and pseudo-hit answer, where answer[0] is the
+number of hits and answer[1] is the number of pseudo-hit.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong> solution=&quot;RGBY&quot;,guess=&quot;GGRR&quot;
+
+  <strong>Output: </strong> [1,1]
+
+  <strong>Explanation: </strong> hit once, pseudo-hit once.
+
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Note:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+len(solution) = len(guess) = 4
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+There are only "R","G","B","Y" in solution and guess.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {string} solution
+   * @param {string} guess
+   * @return {number[]}
+   */
+   var masterMind = function(solution, guess) {
+      let counts1 = {R: 0, G: 0, B: 0, Y: 0};
+      let counts2 = {R: 0, G: 0, B: 0, Y: 0};
+      let res1 = 0;
+      for (let i = 0; i < solution.length; i++) {
+          let s1 = solution.charAt(i), s2 = guess.charAt(i);
+          if (s1 == s2) {
+              res1++;
+          } else {
+              counts1[s1] += 1;
+              counts2[s2] += 1;
+          }
+      }
+      let res2 = ['R', 'G', 'B', 'Y'].reduce((a, c) => a + Math.min(counts1[c], counts2[c]), 0);
+      return [res1, res2];
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

@@ -1,0 +1,176 @@
+* [[https://leetcode.com/problems/find-minimum-time-to-finish-all-jobs][1723.
+Find Minimum Time to Finish All Jobs]]
+  :PROPERTIES:
+  :CUSTOM_ID: find-minimum-time-to-finish-all-jobs
+  :END:
+[[./solution/1700-1799/1723.Find Minimum Time to Finish All Jobs/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given an integer array jobs, where jobs[i] is the amount of time
+it takes to complete the ith job.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+There are k workers that you can assign jobs to. Each job should be
+assigned to exactly one worker. The working time of a worker is the sum
+of the time it takes to complete all jobs assigned to them. Your goal is
+to devise an optimal assignment such that the maximum working time of
+any worker is minimized.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the minimum possible maximum working time of any assignment.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> jobs = [3,2,3], k = 3
+  <strong>Output:</strong> 3
+  <strong>Explanation:</strong> By assigning each person one job, the maximum time is 3.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> jobs = [1,2,4,7,8], k = 2
+  <strong>Output:</strong> 11
+  <strong>Explanation:</strong> Assign the jobs the following way:
+  Worker 1: 1, 2, 8 (working time = 1 + 2 + 8 = 11)
+  Worker 2: 4, 7 (working time = 4 + 7 = 11)
+  The maximum working time is 11.</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= k <= jobs.length <= 12
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= jobs[i] <= 107
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

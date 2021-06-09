@@ -1,0 +1,243 @@
+* [[https://leetcode-cn.com/problems/target-sum][494. 目标和]]
+  :PROPERTIES:
+  :CUSTOM_ID: 目标和
+  :END:
+[[./solution/0400-0499/0494.Target Sum/README_EN.org][English Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+给定一个非负整数数组，a1, a2, ..., an,
+和一个目标数，S。现在你有两个符号 + 和 -。对于数组中的任意一个整数，你都可以从 + 或 -中选择一个符号添加在前面。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+返回可以使最终数组和为目标数 S 的所有添加符号的方法数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>nums: [1, 1, 1, 1, 1], S: 3
+  <strong>输出：</strong>5
+  <strong>解释：</strong>
+
+  -1+1+1+1+1 = 3
+  +1-1+1+1+1 = 3
+  +1+1-1+1+1 = 3
+  +1+1+1-1+1 = 3
+  +1+1+1+1-1 = 3
+
+  一共有5种方法让最终目标和为3。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+数组非空，且长度不会超过 20 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+初始的数组的和不会超过 1000 。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+保证返回的最终结果能被 32 位整数存下。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+类似背包问题，只不过下标可能会出现负数，需要特殊处理。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def findTargetSumWays(self, nums: List[int], target: int) -> int:
+          if target < -1000 or target > 1000:
+              return 0
+          n = len(nums)
+          dp = [[0] * 2001 for i in range(n)]
+          dp[0][nums[0] + 1000] += 1
+          dp[0][-nums[0] + 1000] += 1
+          for i in range(1, n):
+              for j in range(-1000, 1001):
+                  if dp[i - 1][j + 1000] > 0:
+                      dp[i][j + nums[i] + 1000] += dp[i - 1][j + 1000]
+                      dp[i][j - nums[i] + 1000] += dp[i - 1][j + 1000]
+          return dp[n - 1][target + 1000]
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int findTargetSumWays(int[] nums, int target) {
+          if (target < -1000 || target > 1000) {
+              return 0;
+          }
+
+          int n = nums.length;
+          int[][] dp = new int[n][2001];
+
+          dp[0][nums[0] + 1000] += 1;
+          dp[0][-nums[0] + 1000] += 1;
+
+          for (int i = 1; i < n; i++) {
+              for (int j = -1000; j <= 1000; j++) {
+                  if (dp[i - 1][j + 1000] > 0) {
+                      dp[i][j + nums[i] + 1000] += dp[i - 1][j + 1000];
+                      dp[i][j - nums[i] + 1000] += dp[i - 1][j + 1000];
+                  }
+              }
+          }
+          return dp[n - 1][target + 1000];
+      }
+  }
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_example
+  func findTargetSumWays(nums []int, target int) int {
+      if target < -1000 || target > 1000 {
+          return 0
+      }
+      n := len(nums)
+      dp := make([][]int, n)
+      for i := 0; i < n; i++ {
+          dp[i] = make([]int, 2001)
+      }
+      dp[0][nums[0]+1000] += 1
+      dp[0][-nums[0]+1000] += 1
+      for i := 1; i < n; i++ {
+          for j := -1000; j <= 1000; j++ {
+              if dp[i-1][j+1000] > 0 {
+                  dp[i][j+nums[i]+1000] += dp[i-1][j+1000]
+                  dp[i][j-nums[i]+1000] += dp[i-1][j+1000]
+              }
+          }
+      }
+      return dp[n-1][target+1000]
+  }
+#+end_example
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

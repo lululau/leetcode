@@ -1,0 +1,255 @@
+* [[https://leetcode.com/problems/high-five][1086. High Five]]
+  :PROPERTIES:
+  :CUSTOM_ID: high-five
+  :END:
+[[./solution/1000-1099/1086.High Five/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given a list of the scores of different students, items, where items[i]
+= [IDi, scorei] represents one score from a student with IDi, calculate
+each student's top five average.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the answer as an array of pairs result, where result[j] = [IDj,
+topFiveAveragej] represents the student with IDj and their top five
+average. Sort result by IDj in increasing order.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+A student's top five average is calculated by taking the sum of their
+top five scores and dividing it by 5 using integer division.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> items = [[1,91],[1,92],[2,93],[2,97],[1,60],[2,77],[1,65],[1,87],[1,100],[2,100],[2,76]]
+  <strong>Output:</strong> [[1,87],[2,88]]
+  <strong>Explanation: </strong>
+  The student with ID = 1 got scores 91, 92, 60, 65, 87, and 100. Their top five average is (100 + 92 + 91 + 87 + 65) / 5 = 87.
+  The student with ID = 2 got scores 93, 97, 77, 100, and 76. Their top five average is (100 + 97 + 93 + 77 + 76) / 5 = 88.6, but with integer division their average converts to 88.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> items = [[1,100],[7,100],[1,100],[7,100],[1,100],[7,100],[1,100],[7,100],[1,100],[7,100]]
+  <strong>Output:</strong> [[1,100],[7,100]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= items.length <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+items[i].length == 2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= IDi <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= scorei <= 100
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+For each IDi, there will be at least five scores.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def highFive(self, items: List[List[int]]) -> List[List[int]]:
+          s = [None] * 101
+          for i, score in items:
+              if s[i] is None:
+                  s[i] = []
+              s[i].append(score)
+          res = []
+          for i, scores in enumerate(s):
+              if scores is None:
+                  continue
+              avg = sum(heapq.nlargest(5, scores)) // 5
+              res.append([i, avg])
+          return res
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int[][] highFive(int[][] items) {
+          int size = 0;
+          PriorityQueue[] s = new PriorityQueue[101];
+          int n = 5;
+          for (int[] item : items) {
+              int i = item[0], score = item[1];
+              if (s[i] == null) {
+                  ++size;
+                  s[i] = new PriorityQueue<>(n);
+              }
+              s[i].offer(score);
+              if (s[i].size() > n) {
+                  s[i].poll();
+              }
+          }
+          int[][] res = new int[size][2];
+          int j = 0;
+          for (int i = 0; i < 101; ++i) {
+              if (s[i] == null) {
+                  continue;
+              }
+              int avg = sum(s[i]) / n;
+              res[j][0] = i;
+              res[j++][1] = avg;
+          }
+          return res;
+      }
+
+      private int sum(PriorityQueue<Integer> q) {
+          int s = 0;
+          while (!q.isEmpty()) {
+              s += q.poll();
+          }
+          return s;
+      }
+  }
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

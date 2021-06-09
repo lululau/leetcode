@@ -1,0 +1,267 @@
+* [[https://leetcode-cn.com/problems/last-stone-weight-ii][1049.
+最后一块石头的重量 II]]
+  :PROPERTIES:
+  :CUSTOM_ID: 最后一块石头的重量-ii
+  :END:
+[[./solution/1000-1099/1049.Last Stone Weight II/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+有一堆石头，每块石头的重量都是正整数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+每一回合，从中选出任意两块石头，然后将它们一起粉碎。假设石头的重量分别为 x
+和 y，且 x <= y。那么粉碎的可能结果如下：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+如果 x == y，那么两块石头都会被完全粉碎；
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+如果 x !=
+y，那么重量为 x 的石头将会完全粉碎，而重量为 y 的石头新重量为 y-x。
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+最后，最多只会剩下一块石头。返回此石头最小的可能重量。如果没有石头剩下，就返回
+0。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong>[2,7,4,1,8,1]
+  <strong>输出：</strong>1
+  <strong>解释：</strong>
+  组合 2 和 4，得到 2，所以数组转化为 [2,7,1,8,1]，
+  组合 7 和 8，得到 1，所以数组转化为 [2,1,1,1]，
+  组合 2 和 1，得到 1，所以数组转化为 [1,1,1]，
+  组合 1 和 1，得到 0，所以数组转化为 [1]，这就是最优值。
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+提示：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= stones.length <= 30
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= stones[i] <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+*两个*石头的重量越接近，粉碎后的新重量就越小。同样的，*两堆*石头的重量越接近，它们粉碎后的新重量也越小。
+
+所以本题可以转换为，计算容量为 =sum / 2= 的背包最多能装多少石头。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def lastStoneWeightII(self, stones: List[int]) -> int:
+          s = sum(stones)
+          n = s // 2
+          dp = [False for i in range(n + 1)]
+          dp[0] = True
+          for stone in stones:
+              for j in range(n, stone - 1, -1):
+                  dp[j] = dp[j] or dp[j - stone]
+          for j in range(n, -1, -1):
+              if dp[j]:
+                  return s - j - j
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int lastStoneWeightII(int[] stones) {
+          int sum = 0;
+          for (int stone : stones) {
+              sum += stone;
+          }
+          int n = sum / 2;
+          boolean[] dp = new boolean[n + 1];
+          dp[0] = true;
+          for (int stone : stones) {
+              for (int j = n; j >= stone; j--) {
+                  dp[j] = dp[j] || dp[j - stone];
+              }
+          }
+          for (int j = n; ; j--) {
+              if (dp[j]) {
+                  return sum - j - j;
+              }
+          }
+      }
+  }
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  func lastStoneWeightII(stones []int) int {
+      sum := 0
+      for _, stone := range stones {
+          sum += stone
+      }
+      n := sum / 2
+      dp := make([]bool, n+1)
+      dp[0] = true
+      for _, stone := range stones {
+          for j := n; j >= stone; j-- {
+              dp[j] = dp[j] || dp[j-stone]
+          }
+      }
+      for j := n; ; j-- {
+          if dp[j] {
+              return sum - j - j
+          }
+      }
+  }
+#+end_example
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

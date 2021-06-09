@@ -1,0 +1,183 @@
+* [[https://leetcode.com/problems/smallest-common-region][1257. Smallest
+Common Region]]
+  :PROPERTIES:
+  :CUSTOM_ID: smallest-common-region
+  :END:
+[[./solution/1200-1299/1257.Smallest Common Region/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given some lists of regions where the first region of each list
+includes all other regions in that list.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Naturally, if a region X contains another region Y then X is bigger than
+Y. Also by definition a region X contains itself.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Given two regions region1, region2, find out the smallest region that
+contains both of them.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+If you are given regions r1, r2 and r3 such that r1 includes r3, it is
+guaranteed there is no r2 such that r2 includes r3. It's guaranteed the
+smallest region exists.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:
+  </strong>regions = [[&quot;Earth&quot;,&quot;North America&quot;,&quot;South America&quot;],
+  [&quot;North America&quot;,&quot;United States&quot;,&quot;Canada&quot;],
+  [&quot;United States&quot;,&quot;New York&quot;,&quot;Boston&quot;],
+  [&quot;Canada&quot;,&quot;Ontario&quot;,&quot;Quebec&quot;],
+  [&quot;South America&quot;,&quot;Brazil&quot;]],
+  region1 = &quot;Quebec&quot;,
+  region2 = &quot;New York&quot;
+  <strong>Output:</strong> &quot;North America&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+2 <= regions.length <= 10^4
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+region1 != region2
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+All strings consist of English letters and spaces with at most 20
+letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

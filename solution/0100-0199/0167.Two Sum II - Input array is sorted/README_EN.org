@@ -1,0 +1,270 @@
+* [[https://leetcode.com/problems/two-sum-ii-input-array-is-sorted][167.
+Two Sum II - Input array is sorted]]
+  :PROPERTIES:
+  :CUSTOM_ID: two-sum-ii---input-array-is-sorted
+  :END:
+[[./solution/0100-0199/0167.Two Sum II - Input array is sorted/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an array of integers numbers that is already sorted in ascending
+order, find two numbers such that they add up to a specific target
+number.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Return the indices of the two numbers (1-indexed) as an integer array
+answer of size 2, where 1 <= answer[0] < answer[1] <= numbers.length.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You may assume that each input would have exactly one solution and you
+may not use the same element twice.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> numbers = [2,7,11,15], target = 9
+  <strong>Output:</strong> [1,2]
+  <strong>Explanation:</strong> The sum of 2 and 7 is 9. Therefore index1 = 1, index2 = 2.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> numbers = [2,3,4], target = 6
+  <strong>Output:</strong> [1,3]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> numbers = [-1,0], target = -1
+  <strong>Output:</strong> [1,2]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+2 <= numbers.length <= 3 * 104
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-1000 <= numbers[i] <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+numbers is sorted in increasing order.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+-1000 <= target <= 1000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Only one valid answer exists.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def twoSum(self, numbers: List[int], target: int) -> List[int]:
+          low, high = 0, len(numbers) - 1
+          while low <= high:
+              if numbers[low] + numbers[high] == target:
+                  return [low + 1, high + 1]
+              if numbers[low] + numbers[high] < target:
+                  low += 1
+              else:
+                  high -= 1
+          return [-1, -1]
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public int[] twoSum(int[] numbers, int target) {
+          int low = 0, high = numbers.length - 1;
+          while (low <= high) {
+              if (numbers[low] + numbers[high] == target) {
+                  return new int[]{low + 1, high + 1};
+              }
+              if (numbers[low] + numbers[high] < target) {
+                  ++low;
+              } else {
+                  --high;
+              }
+          }
+          return new int[]{-1, -1};
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      vector<int> twoSum(vector<int>& numbers, int target) {
+          int low = 0, high = numbers.size() - 1;
+          while (low <= high) {
+              if (numbers[low] + numbers[high] == target) {
+                  return {low + 1, high + 1};
+              }
+              if (numbers[low] + numbers[high] < target) {
+                  ++low;
+              } else {
+                  --high;
+              }
+          }
+          return {-1, -1};
+      }
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

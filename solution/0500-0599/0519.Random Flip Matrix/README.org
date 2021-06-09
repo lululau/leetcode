@@ -1,0 +1,193 @@
+* [[https://leetcode-cn.com/problems/random-flip-matrix][519.
+随机翻转矩阵]]
+  :PROPERTIES:
+  :CUSTOM_ID: 随机翻转矩阵
+  :END:
+[[./solution/0500-0599/0519.Random Flip Matrix/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+题中给出一个 n_rows 行 n_cols 列的二维矩阵，且所有值被初始化为
+0。要求编写一个 flip 函数，均匀随机的将矩阵中的 0 变为
+1，并返回该值的位置下标 [row_id,col_id]；同样编写一个 reset
+函数，将所有的值都重新置为 0。尽量最少调用随机函数
+Math.random()，并且优化时间和空间复杂度。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ol>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= n_rows, n_cols <= 10000
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= row.id < n_rows 并且 0 <= col.id < n_cols
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+当矩阵中没有值为 0 时，不可以调用 flip 函数
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+调用 flip 和 reset 函数的次数加起来不会超过 1000 次
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ol>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入: 
+  </strong>[&quot;Solution&quot;,&quot;flip&quot;,&quot;flip&quot;,&quot;flip&quot;,&quot;flip&quot;]
+  [[2,3],[],[],[],[]]
+  <strong>输出: </strong>[null,[0,1],[1,2],[1,0],[1,1]]
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入: 
+  </strong>[&quot;Solution&quot;,&quot;flip&quot;,&quot;flip&quot;,&quot;reset&quot;,&quot;flip&quot;]
+  [[1,2],[],[],[],[]]
+  <strong>输出: </strong>[null,[0,0],[0,1],null,[0,0]]</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+输入语法解释：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+输入包含两个列表：被调用的子程序和他们的参数。Solution
+的构造函数有两个参数，分别为 n_rows 和 n_cols。flip 和 reset
+没有参数，参数总会以列表形式给出，哪怕该列表为空
+
+#+begin_html
+  </p>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

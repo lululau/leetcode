@@ -1,0 +1,162 @@
+* [[https://leetcode-cn.com/problems/find-majority-element-lcci][17.10.
+Find Majority Element]]
+  :PROPERTIES:
+  :CUSTOM_ID: find-majority-element
+  :END:
+[[./lcci/17.10.Find Majority Element/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+A majority element is an element that makes up more than half of the
+items in an array. Given a positive integers array, find the majority
+element. If there is no majority element, return -1. Do this in O(N)
+time and O(1) space.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>[1,2,5,9,5,9,5,5,5]
+
+  <strong>Output: </strong>5</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>[3,2]
+
+  <strong>Output: </strong>-1</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+
+  <strong>Input: </strong>[2,2,1,1,1,2,2]
+
+  <strong>Output: </strong>2
+
+  </pre>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+Boyer--Moore majority vote algorithm
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number[]} nums
+   * @return {number}
+   */
+  var majorityElement = function(nums) {
+      let candidate = 0, count = 0;
+      for (let num of nums) {
+          if (count == 0) candidate = num;
+          if (candidate == num) {
+              count++;
+          } else {
+              count--;
+          }
+      }
+      let n = 0;
+      for (let num of nums) {
+          if (candidate == num) n++;
+      }
+      return n > (nums.length / 2) ? candidate : -1;
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

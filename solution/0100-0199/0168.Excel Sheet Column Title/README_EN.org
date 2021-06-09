@@ -1,0 +1,249 @@
+* [[https://leetcode.com/problems/excel-sheet-column-title][168. Excel
+Sheet Column Title]]
+  :PROPERTIES:
+  :CUSTOM_ID: excel-sheet-column-title
+  :END:
+[[./solution/0100-0199/0168.Excel Sheet Column Title/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given an integer columnNumber, return its corresponding column title as
+it appears in an Excel sheet.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+For example:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  A -&gt; 1
+  B -&gt; 2
+  C -&gt; 3
+  ...
+  Z -&gt; 26
+  AA -&gt; 27
+  AB -&gt; 28 
+  ...
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> columnNumber = 1
+  <strong>Output:</strong> &quot;A&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> columnNumber = 28
+  <strong>Output:</strong> &quot;AB&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 3:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> columnNumber = 701
+  <strong>Output:</strong> &quot;ZY&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 4:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> columnNumber = 2147483647
+  <strong>Output:</strong> &quot;FXSHRXW&quot;
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= columnNumber <= 231 - 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  class Solution:
+      def convertToTitle(self, columnNumber: int) -> str:
+          res = []
+          while columnNumber:
+              columnNumber -= 1
+              res.append(chr(ord('A') + columnNumber % 26))
+              columnNumber //= 26
+          return ''.join(res[::-1])
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  class Solution {
+      public String convertToTitle(int columnNumber) {
+          StringBuilder res = new StringBuilder();
+          while (columnNumber != 0) {
+              --columnNumber;
+              res.append((char) ('A' + columnNumber % 26));
+              columnNumber /= 26;
+          }
+          return res.reverse().toString();
+      }
+  }
+#+end_src
+
+*** *TypeScript*
+    :PROPERTIES:
+    :CUSTOM_ID: typescript
+    :END:
+#+begin_example
+  function convertToTitle(columnNumber: number): string {
+      let res: string[] = [];
+      while (columnNumber > 0) {
+          --columnNumber;
+          let num: number = columnNumber % 26;
+          res.unshift(String.fromCharCode(num + 65));
+          columnNumber = Math.floor(columnNumber / 26);
+      }
+      return res.join('');
+  };
+#+end_example
+
+*** *C#*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_example
+  public class Solution {
+      public string ConvertToTitle(int columnNumber) {
+          StringBuilder res = new StringBuilder();
+          while (columnNumber != 0) {
+              --columnNumber;
+              res.Append((char) ('A' + columnNumber % 26));
+              columnNumber /= 26;
+          }
+          return new string(res.ToString().Reverse().ToArray());
+      }
+  }
+#+end_example
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

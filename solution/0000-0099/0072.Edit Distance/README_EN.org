@@ -1,0 +1,205 @@
+* [[https://leetcode.com/problems/edit-distance][72. Edit Distance]]
+  :PROPERTIES:
+  :CUSTOM_ID: edit-distance
+  :END:
+[[./solution/0000-0099/0072.Edit Distance/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+Given two strings word1 and word2, return the minimum number of
+operations required to convert word1 to word2.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You have the following three operations permitted on a word:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Insert a character
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Delete a character
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+Replace a character
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> word1 = &quot;horse&quot;, word2 = &quot;ros&quot;
+  <strong>Output:</strong> 3
+  <strong>Explanation:</strong> 
+  horse -&gt; rorse (replace &#39;h&#39; with &#39;r&#39;)
+  rorse -&gt; rose (remove &#39;r&#39;)
+  rose -&gt; ros (remove &#39;e&#39;)
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> word1 = &quot;intention&quot;, word2 = &quot;execution&quot;
+  <strong>Output:</strong> 5
+  <strong>Explanation:</strong> 
+  intention -&gt; inention (remove &#39;t&#39;)
+  inention -&gt; enention (replace &#39;i&#39; with &#39;e&#39;)
+  enention -&gt; exention (replace &#39;n&#39; with &#39;x&#39;)
+  exention -&gt; exection (replace &#39;n&#39; with &#39;c&#39;)
+  exection -&gt; execution (insert &#39;u&#39;)
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+0 <= word1.length, word2.length <= 500
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+word1 and word2 consist of lowercase English letters.
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

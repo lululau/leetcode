@@ -1,0 +1,241 @@
+* [[https://leetcode.com/problems/first-bad-version][278. First Bad
+Version]]
+  :PROPERTIES:
+  :CUSTOM_ID: first-bad-version
+  :END:
+[[./solution/0200-0299/0278.First Bad Version/README.org][中文文档]]
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+
+#+begin_html
+  <p>
+#+end_html
+
+You are a product manager and currently leading a team to develop a new
+product. Unfortunately, the latest version of your product fails the
+quality check. Since each version is developed based on the previous
+version, all the versions after a bad version are also bad.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Suppose you have n versions [1, 2, ..., n] and you want to find out the
+first bad one, which causes all the following ones to be bad.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+You are given an API bool isBadVersion(version) which returns whether
+version is bad. Implement a function to find the first bad version. You
+should minimize the number of calls to the API.
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 1:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> n = 5, bad = 4
+  <strong>Output:</strong> 4
+  <strong>Explanation:</strong>
+  call isBadVersion(3) -&gt; false
+  call isBadVersion(5)&nbsp;-&gt; true
+  call isBadVersion(4)&nbsp;-&gt; true
+  Then 4 is the first bad version.
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Example 2:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre>
+  <strong>Input:</strong> n = 1, bad = 1
+  <strong>Output:</strong> 1
+  </pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+ 
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+Constraints:
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <ul>
+#+end_html
+
+#+begin_html
+  <li>
+#+end_html
+
+1 <= bad <= n <= 231 - 1
+
+#+begin_html
+  </li>
+#+end_html
+
+#+begin_html
+  </ul>
+#+end_html
+
+** Solutions
+   :PROPERTIES:
+   :CUSTOM_ID: solutions
+   :END:
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+#+begin_src python
+  # The isBadVersion API is already defined for you.
+  # @param version, an integer
+  # @return an integer
+  # def isBadVersion(version):
+
+  class Solution:
+      def firstBadVersion(self, n):
+          """
+          :type n: int
+          :rtype: int
+          """
+          low, high = 1, n
+          while low < high:
+              mid = (low + high) >> 1
+              if isBadVersion(mid):
+                  high = mid
+              else:
+                  low = mid + 1
+          return low
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+#+begin_src java
+  /* The isBadVersion API is defined in the parent class VersionControl.
+        boolean isBadVersion(int version); */
+
+  public class Solution extends VersionControl {
+      public int firstBadVersion(int n) {
+          int low = 1, high = n;
+          while (low < high) {
+              int mid = (low + high) >>> 1;
+              if (isBadVersion(mid)) high = mid;
+              else low = mid + 1;
+          }
+          return low;
+      }
+  }
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * Definition for isBadVersion()
+   *
+   * @param {integer} version number
+   * @return {boolean} whether the version is bad
+   * isBadVersion = function(version) {
+   *     ...
+   * };
+   */
+
+  /**
+   * @param {function} isBadVersion()
+   * @return {function}
+   */
+  var solution = function (isBadVersion) {
+    /**
+     * @param {integer} n Total versions
+     * @return {integer} The first bad version
+     */
+    return function (n) {
+      let low = 1,
+        high = n;
+      while (low < high) {
+        const mid = (low + high) >>> 1;
+        if (isBadVersion(mid)) {
+          high = mid;
+        } else {
+          low = mid + 1;
+        }
+      }
+      return low;
+    };
+  };
+#+end_src
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html

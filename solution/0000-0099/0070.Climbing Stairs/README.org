@@ -1,0 +1,205 @@
+* [[https://leetcode-cn.com/problems/climbing-stairs][70. 爬楼梯]]
+  :PROPERTIES:
+  :CUSTOM_ID: 爬楼梯
+  :END:
+[[./solution/0000-0099/0070.Climbing Stairs/README_EN.org][English
+Version]]
+
+** 题目描述
+   :PROPERTIES:
+   :CUSTOM_ID: 题目描述
+   :END:
+
+#+begin_html
+  <!-- 这里写题目描述 -->
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+注意：给定 n 是一个正整数。
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 1：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong> 2
+  <strong>输出：</strong> 2
+  <strong>解释：</strong> 有两种方法可以爬到楼顶。
+  1.  1 阶 + 1 阶
+  2.  2 阶</pre>
+#+end_html
+
+#+begin_html
+  <p>
+#+end_html
+
+示例 2：
+
+#+begin_html
+  </p>
+#+end_html
+
+#+begin_html
+  <pre><strong>输入：</strong> 3
+  <strong>输出：</strong> 3
+  <strong>解释：</strong> 有三种方法可以爬到楼顶。
+  1.  1 阶 + 1 阶 + 1 阶
+  2.  1 阶 + 2 阶
+  3.  2 阶 + 1 阶
+  </pre>
+#+end_html
+
+** 解法
+   :PROPERTIES:
+   :CUSTOM_ID: 解法
+   :END:
+
+#+begin_html
+  <!-- 这里可写通用的实现逻辑 -->
+#+end_html
+
+想上第 =n= 级台阶，可从第 =n-1= 级台阶爬一级上去，也可从第 =n-2=
+级台阶爬两级上去，即：=f(n) = f(n-1) + f(n-2)=。递推求解即可。
+
+#+begin_html
+  <!-- tabs:start -->
+#+end_html
+
+*** *Python3*
+    :PROPERTIES:
+    :CUSTOM_ID: python3
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src python
+  class Solution:
+      def climbStairs(self, n: int) -> int:
+          a, b = 0, 1
+          for _ in range(n):
+              a, b = b, a + b
+          return b
+#+end_src
+
+*** *Java*
+    :PROPERTIES:
+    :CUSTOM_ID: java
+    :END:
+
+#+begin_html
+  <!-- 这里可写当前语言的特殊实现逻辑 -->
+#+end_html
+
+#+begin_src java
+  class Solution {
+      public int climbStairs(int n) {
+          int a = 0, b = 1;
+          for (int i = 0; i < n; ++i) {
+              int c = a + b;
+              a = b;
+              b = c;
+          }
+          return b;
+      }
+  }
+#+end_src
+
+*** *C++*
+    :PROPERTIES:
+    :CUSTOM_ID: c
+    :END:
+#+begin_src cpp
+  class Solution {
+  public:
+      int climbStairs(int n) {
+          int a = 0, b = 1;
+          for (int i = 0; i < n; ++i) {
+              int c = a + b;
+              a = b;
+              b = c;
+          }
+          return b;
+      }
+  };
+#+end_src
+
+*** *JavaScript*
+    :PROPERTIES:
+    :CUSTOM_ID: javascript
+    :END:
+#+begin_src js
+  /**
+   * @param {number} n
+   * @return {number}
+   */
+  var climbStairs = function (n) {
+    let a = 0,
+      b = 1;
+    for (let i = 0; i < n; ++i) {
+      const c = a + b;
+      a = b;
+      b = c;
+    }
+    return b;
+  };
+#+end_src
+
+*** *Go*
+    :PROPERTIES:
+    :CUSTOM_ID: go
+    :END:
+#+begin_example
+  func climbStairs(n int) int {
+      a, b := 0, 1
+      for i := 0; i < n; i++ {
+          a, b = b, a + b
+      }
+      return b
+  }
+#+end_example
+
+*** *...*
+    :PROPERTIES:
+    :CUSTOM_ID: section
+    :END:
+#+begin_example
+#+end_example
+
+#+begin_html
+  <!-- tabs:end -->
+#+end_html
